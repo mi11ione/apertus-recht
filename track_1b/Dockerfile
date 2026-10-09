@@ -14,6 +14,13 @@ COPY tests ./tests
 ENTRYPOINT ["statute-twins"]
 CMD ["selfcheck"]
 
+FROM python:3.12.7 AS llama-build
+# llama-cpp-python 0.3.19 vendors a 2026 llama.cpp that supports the Apertus architecture; built from source because
+# its prebuilt CPU wheels are musl-linked. Portable AVX2 build (no -march=native), a few minutes on a laptop.
+ENV CMAKE_ARGS="-DGGML_NATIVE=OFF -DGGML_AVX=ON -DGGML_AVX2=ON -DGGML_FMA=ON -DGGML_F16C=ON"
+RUN pip wheel --no-deps -w /wheels "llama-cpp-python==0.3.19"
+
 FROM base AS gguf
-RUN pip install "numpy==2.1.3" "jinja2==3.1.4" "huggingface_hub==0.26.2" && \
-    pip install "llama-cpp-python==0.3.19" --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu
+COPY --from=llama-build /wheels /wheels
+RUN pip install "numpy==2.1.3" "jinja2==3.1.4" "huggingface_hub==0.26.2" "diskcache==5.6.3" "typing-extensions" && \
+    pip install --no-deps /wheels/llama_cpp_python-0.3.19-*.whl
