@@ -22,7 +22,7 @@ frames:
   F05: "Faits : {Date}, {actor} se trouvait à {place}. {Setting}, {act}. {Pron} a agi intentionnellement."
   F06: "Faits : {Actor} vit à {place}. {Date}, il s'est passé ce qui suit : {setting}, {act}. {Pron} savait ce qu'{pron} faisait et le voulait."
   F07: "Faits : Selon l'acte d'accusation, {date}, à {place}, {actor} s'est exprimé{e} comme suit : {setting}, {act}. {Pron} a agi intentionnellement."
-  F08: "Faits : {Date}, à {place}, un incident impliquant {actor} a été consigné au dossier : {setting}, {act}. Il est établi qu'{pron} a agi intentionnellement."
+  F08: "Faits : {Date}, à {place}, s'est produit l'incident suivant, impliquant {actor} : {setting}, {act}. Il est établi qu'{pron} a agi intentionnellement."
 
 actors:
   m1: {surface: "un homme", gender: m}
@@ -216,7 +216,7 @@ acts:
   a2B1: "{pron} a promu une vision du monde qui assigne un rang inférieur {g.a}"
   a2B2: "{pron} a fait la promotion d'une idéologie qui a pour but de dénigrer systématiquement {g.def}"
   a2C1: "{pron} a diffusé une doctrine qui présente systématiquement comme des êtres inférieurs {g.def}"
-  a2C2: "{pron} a diffusé systématiquement des thèses selon lesquelles {g.def} vaudraient moins que les autres êtres humains"
+  a2C2: "{pron} a diffusé systématiquement des thèses présentant comme moins dignes que les autres êtres humains {g.def}"
   # Abs. 4 (al. 4, 1re phrase): abaissement contraire à la dignité humaine
   a4A1: "{pron} a abaissé d'une façon qui porte atteinte à la dignité humaine {g.def}"
   a4A2: "{pron} a dévalorisé {g.def} d'une manière contraire à la dignité humaine"
@@ -256,5 +256,5 @@ settings:
   # contested: the facts that ATF 130 IV 111 consid. 5.2 makes decisive (relationships, number of people) are mixed
   cont_clubchat:  "dans un groupe de discussion fermé réunissant environ 30 membres de son club sportif, dont {pron} connaissait bien quelques-uns et la plupart seulement superficiellement"
   cont_party:     "lors d'une fête d'anniversaire dans son jardin, devant environ 20 invités, parmi lesquels des amis, des voisins et quelques connaissances de connaissances"
-  cont_office:    "dans un courriel adressé aux 25 collaboratrices et collaborateurs de son service"
+  cont_office:    "dans un courriel adressé à quelque 25 collègues de travail, anciens et actuels"
   cont_assoc:     "lors d'une séance non publique d'une association de quartier comptant environ 25 membres, dont certains se connaissent depuis des années et d'autres n'ont adhéré que récemment"

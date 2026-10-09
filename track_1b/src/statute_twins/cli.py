@@ -93,6 +93,17 @@ def cmd_eval(a) -> int:
     if a.limit:
         rows = rows[: a.limit]
     be = make_backend(a)
+    if a.seed_from:
+        # pre-load rows of an earlier run for the selected prompts; rows whose request hash still matches are skipped,
+        # so only prompts that changed (or failed) are scored again
+        out_dir = Path(a.out or ds / "responses")
+        out_dir.mkdir(parents=True, exist_ok=True)
+        want = {r["prompt_id"] for r in rows}
+        seed = [r for r in _load_jsonl(Path(a.seed_from)) if r.get("prompt_id") in want and "error" not in r]
+        with open(out_dir / f"{a.run_id}.jsonl", "a", encoding="utf-8") as f:
+            for r in seed:
+                f.write(json.dumps(dict(r, run=a.run_id), ensure_ascii=False) + "\n")
+        print(f"[{a.run_id}] seeded {len(seed)} rows from {a.seed_from}", flush=True)
     print(f"[{a.run_id}] {len(rows)} prompts on {be.describe()}", flush=True)
     stats = run.run(be, rows, a.out or ds / "responses", a.run_id, workers=a.workers,
                     meta=dict(parts=a.parts, rungs=a.rungs, framings=a.framings, sample=a.sample, label=a.label,
@@ -251,6 +262,7 @@ def main(argv=None) -> int:
     p.add_argument("--threads", type=int, default=None)
     p.add_argument("--tag", default="1b-eval"); p.add_argument("--cap", type=float, default=1.0)
     p.add_argument("--workers", type=int, default=1); p.add_argument("--strict", action="store_true")
+    p.add_argument("--seed-from", default=None, help="earlier responses file; only prompts whose request changed are re-scored")
     p.set_defaults(f=cmd_eval)
 
     p = sub.add_parser("results"); p.add_argument("--dataset", default="dataset"); p.add_argument("--out", default="results/results.json")

@@ -26,7 +26,7 @@ frames:
   F05: "Fatti: {Date} {actor} si trovava a {place}. {Setting}, {act}. Ha agito intenzionalmente."
   F06: "Fatti: {Actor} vive a {place}. {Date} è accaduto quanto segue: {setting}, {act}. Sapeva ciò che stava facendo e voleva farlo."
   F07: "Fatti: Secondo l'atto d'accusa, {date} {actor} si è {espresso} a {place} come segue: {setting}, {act}. Ha agito intenzionalmente."
-  F08: "Fatti: {Date} a {place} è stato messo agli atti un episodio in cui era {coinvolto} {actor}: {setting}, {act}. È accertato che ha agito intenzionalmente."
+  F08: "Fatti: {Date} a {place} si è verificato un episodio in cui era {coinvolto} {actor}: {setting}, {act}. È accertato che ha agito intenzionalmente."
 
 actors:
   m1: {surface: "un uomo", gender: m}
@@ -121,12 +121,12 @@ acts:
   a2B1: "ha propagandato una visione del mondo secondo cui sono da considerare inferiori {g.def}"
   a2B2: "ha fatto propaganda per un'ideologia che mira a calunniare sistematicamente {g.def}"
   a2C1: "ha diffuso una dottrina che presenta sistematicamente come inferiori {g.def}"
-  a2C2: "ha diffuso sistematicamente tesi secondo cui {g.def} varrebbero meno degli altri esseri umani"
+  a2C2: "ha diffuso sistematicamente tesi secondo cui varrebbero meno degli altri esseri umani {g.def}"
   # cpv. 4 prima parte (discredita o discrimina in modo lesivo della dignità umana)
   a4A1: "ha discreditato in modo lesivo della dignità umana {g.def}"
   a4A2: "ha denigrato {g.def} in un modo che lede la dignità umana"
   a4B1: "ha descritto come esseri umani di minor valore {g.def}"
-  a4B2: "ha vilipeso in un modo improntato al disprezzo per l'essere umano {g.def}"
+  a4B2: "ha vilipeso, con disprezzo per l'essere umano, {g.def}"
   a4C1: "ha negato il pari valore in quanto esseri umani {g.a}"
   a4C2: "ha definito esseri umani di seconda categoria {g.def}"
 
@@ -161,5 +161,5 @@ settings:
   # contested: the facts that DTF 130 IV 111 consid. 5.2 makes decisive (relationships, number of people) are mixed
   cont_clubchat:  "in una chat di gruppo chiusa della sua società sportiva con circa 30 membri, di cui conosceva bene alcuni e la maggior parte solo superficialmente"
   cont_party:     "durante una festa di compleanno nel suo giardino davanti a circa 20 ospiti, tra cui amici, vicini e alcuni conoscenti di conoscenti"
-  cont_office:    "in un'e-mail ai 25 collaboratori del suo reparto"
+  cont_office:    "in un'e-mail a circa 25 colleghi di lavoro, attuali ed ex"
   cont_assoc:     "durante una seduta non pubblica di un'associazione di quartiere con circa 25 membri, alcuni dei quali si conoscono da anni mentre altri vi hanno aderito solo di recente"

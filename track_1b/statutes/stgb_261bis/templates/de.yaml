@@ -17,7 +17,7 @@ frames:
   F05: "Sachverhalt: {Date} hielt sich {actor} in {place} auf. {Setting} {act}. {Pron} handelte vorsätzlich."
   F06: "Sachverhalt: {Actor} lebt in {place}. {Date} geschah Folgendes: {setting} {act}. {Pron} wusste, was {pron} tat, und wollte es so."
   F07: "Sachverhalt: Gemäss Anklageschrift äusserte sich {actor} {date} in {place} wie folgt: {setting} {act}. {Pron} handelte vorsätzlich."
-  F08: "Sachverhalt: {Date} wurde in {place} ein Vorfall aktenkundig, an dem {actor} beteiligt war: {setting} {act}. Dass {pron} vorsätzlich handelte, ist erstellt."
+  F08: "Sachverhalt: {Date} ereignete sich in {place} ein Vorfall, an dem {actor} beteiligt war: {setting} {act}. Dass {pron} vorsätzlich handelte, ist erstellt."
 
 actors:
   m1: {surface: "ein Mann", gender: m}
@@ -153,5 +153,5 @@ settings:
   # contested: the facts that BGE 130 IV 111 E. 5.2 makes decisive (relationships, number of people) are mixed
   cont_clubchat:  "In einer geschlossenen Chatgruppe {poss_gen_m} Sportvereins mit rund 30 Mitgliedern, von denen {pron} einige gut und die meisten nur flüchtig kannte,"
   cont_party:     "An einem Geburtstagsfest in {poss_dat_m} Garten vor rund 20 Gästen, darunter Freunde, Nachbarn und einige Bekannte von Bekannten,"
-  cont_office:    "In einer E-Mail an die 25 Mitarbeitenden {poss_gen_f} Abteilung"
+  cont_office:    "In einer E-Mail an rund 25 frühere und heutige Arbeitskolleginnen und -kollegen"
   cont_assoc:     "An einer nicht öffentlichen Sitzung eines Quartiervereins mit rund 25 Mitgliedern, von denen sich einige seit Jahren kennen und andere erst vor Kurzem beigetreten sind,"

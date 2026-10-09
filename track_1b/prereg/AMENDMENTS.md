@@ -42,3 +42,13 @@ that sees both and the excerpt. The engine-court comparison is then rerun on the
 pre-registered rule unchanged. Made after the first-pass result (30/30) had been computed; both results are reported.
 (2) Gold adjudication: the queue (every annotator disagreement, every contested item, a seeded 10% sample of agreeing
 settled items) is adjudicated by two independent agents, with a third agent on their disagreements.
+
+## A5 (2026-10-10, 01:35, after the German 70B and 8B core results had been analysed): wording fixes from review
+A lawyer-persona review (dogfood round 1) found: frame F08 dated the *recording* of the incident ("wurde aktenkundig",
+"consigné au dossier", "messo agli atti"), not the act, which makes the date-boundary items ambiguous; the contested
+e-mail setting ("an die 25 Mitarbeitenden ihrer Abteilung") was incoherent for retired or student actors; two FR/IT act
+phrasings were clumsy. Fixed in DE/FR/IT templates (F08: "ereignete sich" / "s'est produit" / "si è verificato";
+e-mail to "rund 25 frühere und heutige Arbeitskolleginnen und -kollegen"; FR a2C2, IT a2C2/a4B2 word order). No slot,
+fact or gold label changes; the item texts change for 88 DE, 123 FR and 151 IT items (880 / 1,230 / 1,510 prompts),
+which are re-scored for every model. Because this amendment follows an analysis of the DE results, the pre-amendment
+responses and results are kept unchanged in `dataset/archive/` and the report states both where they differ.

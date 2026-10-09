@@ -11,6 +11,7 @@ on:
       shards: {description: "number of shards", default: "16"}
       shard_list: {description: "JSON list of shard indices to run", default: "[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]"}
       sample: {description: "stable sample of N items (empty = all)", default: ""}
+      seed_from: {description: "released responses file to resume from (only changed prompts are re-scored)", default: ""}
       run_id: {description: "run id", default: "8b-gguf-q4_k_m-cpu"}
 defaults:
   run: {working-directory: track_1b}
@@ -65,6 +66,7 @@ jobs:
             --label "Colby/apertus-v1.5-8b-text-Q4_K_M-GGUF (CPU, llama-cpp-python 0.3.19)" \
             --run-id "${{ inputs.run_id }}-s${{ matrix.shard }}" --parts "${{ inputs.parts }}" --rungs "${{ inputs.rungs }}" \
             --framings "${{ inputs.framings }}" --shard "${{ matrix.shard }}/${{ inputs.shards }}" --out /tmp/out --n-ctx 1024 \
-            ${{ inputs.sample && format('--sample {0}', inputs.sample) || '' }}
+            ${{ inputs.sample && format('--sample {0}', inputs.sample) || '' }} \
+            ${{ inputs.seed_from && format('--seed-from {0}', inputs.seed_from) || '' }}
       - uses: actions/upload-artifact@v4
         with: {name: "shard-${{ matrix.shard }}", path: /tmp/out}

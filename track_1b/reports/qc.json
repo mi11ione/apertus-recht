@@ -37,7 +37,7 @@
    "n_hits": 0,
    "scanned": {
     "items": 2142,
-    "responses": 24505,
+    "responses": 25028,
     "metadata": 2142
    }
   },
@@ -121,10 +121,10 @@
   "diversity": {
    "de": {
     "items": 660,
-    "distinct_1": 0.0154,
+    "distinct_1": 0.0155,
     "distinct_2": 0.0522,
     "distinct_3": 0.099,
-    "mean_words": 44.1,
+    "mean_words": 44.2,
     "min_words": 32,
     "max_words": 75,
     "slot_values_used": {
@@ -144,11 +144,11 @@
    "fr": {
     "items": 660,
     "distinct_1": 0.0136,
-    "distinct_2": 0.0323,
-    "distinct_3": 0.058,
-    "mean_words": 54.9,
+    "distinct_2": 0.0322,
+    "distinct_3": 0.0578,
+    "mean_words": 54.5,
     "min_words": 39,
-    "max_words": 86,
+    "max_words": 83,
     "slot_values_used": {
      "act": 18,
      "actor": 8,
@@ -166,11 +166,11 @@
    "it": {
     "items": 660,
     "distinct_1": 0.014,
-    "distinct_2": 0.0342,
-    "distinct_3": 0.0633,
-    "mean_words": 50.9,
+    "distinct_2": 0.0338,
+    "distinct_3": 0.0623,
+    "mean_words": 50.4,
     "min_words": 35,
-    "max_words": 84,
+    "max_words": 82,
     "slot_values_used": {
      "act": 18,
      "actor": 8,
