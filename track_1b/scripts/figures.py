@@ -126,9 +126,87 @@ def fig_builds(R, out):
     save(fig, out, "fig4_builds")
 
 
+# ------------------------------------------------------------------------------------------- Synopse
+SYN_ROWS = [
+    ("setting:failed", "Statement only among family or friends", "acquit", "BGE 130 IV 111 E. 5.2"),
+    ("characteristic:not_listed|canton", "Group defined by canton", "acquit", "closed list"),
+    ("characteristic:not_listed|occupation", "Group defined by occupation", "acquit", "closed list"),
+    ("characteristic:not_listed|age", "Group defined by age", "acquit", "closed list"),
+    ("characteristic:not_listed|gender_identity", "Group defined by gender identity", "acquit", "closed list; Pa.Iv. 13.407"),
+    ("characteristic:not_listed|sex", "Group defined by sex", "acquit", "closed list"),
+    ("characteristic:not_listed|disability", "Group defined by disability", "acquit", "closed list"),
+    ("characteristic:not_listed|political_opinion", "Group defined by political opinion", "acquit", "closed list"),
+    ("characteristic:not_yet_covered", "Sexual orientation, act before 1 Jul 2020", "acquit", "AS 2020 1609; Art. 2"),
+    ("act_date:not_in_force", "Any group, act before 1995", "acquit", "AS 1994 2887; Art. 2"),
+    ("placebo|family_wording", "Public statement in family wording", "convict", "BGE 130 IV 111"),
+    ("placebo|synonym", "Listed characteristic, other word", "convict", "Art. 261bis"),
+    ("placebo|date_overapplied", "Race, ethnicity, religion, act 2018–20", "convict", "AS 1994 2887"),
+    ("placebo|date", "Sexual orientation, 1 Jul or Aug 2020", "convict", "AS 2020 1609"),
+]
+SYN_COLS = [(l, r) for l in ("de", "fr", "it") for r in ("R0", "R3", "R4")]
+
+
+def _syn_cell(edits_run, lang, edit, rung):
+    es = [e for e in edits_run if e["lang"] == lang and e["edit"] == edit and e["rung"] == rung]
+    if not es:
+        return None
+    kind = es[0]["kind"]
+    anchored = [e for e in es if e["status"] != "u"]
+    bad = [e for e in anchored if e["status"] in ("F", "broken")]
+    conv = next((e for e in es if e["framing"] == "conv"), es[0])
+    state = "unreadable" if not anchored else ("red" if len(bad) == len(anchored) else ("amber" if bad else "ok"))
+    return dict(state=state, k=conv["v_convicted"], n=conv["n"], kind=kind)
+
+
+def fig_synopse(R, out, run="publicai-70b-fc-core", extra_runs=("publicai-70b-fc-core-fr", "publicai-70b-fc-core-it")):
+    edits_all = []
+    for r in (run,) + tuple(extra_runs):
+        if r in R["runs"]:
+            edits_all += R["runs"][r]["edits"]
+    rows = [r for r in SYN_ROWS if any(e["edit"] == r[0] for e in edits_all)]
+    fig, ax = plt.subplots(figsize=(7.0, 0.22 * len(rows) + 0.55))
+    ax.set_axis_off()
+    x0, cw, rh = 4.1, 0.62, 1.0
+    tint = {"red": "#f6c5cb", "amber": "#fbe3e6", "ok": PAPER, "unreadable": "#ececea"}
+    for j, (l, rung) in enumerate(SYN_COLS):
+        ax.text(x0 + j * cw + cw / 2, -0.55, rung, ha="center", fontfamily=MONO, fontsize=6.8, color=INK2)
+        if rung == "R0":
+            ax.text(x0 + j * cw, -1.35, {"de": "Deutsch", "fr": "Français", "it": "Italiano"}[l], fontsize=7.5, color=INK, fontweight="semibold")
+            ax.plot([x0 + j * cw, x0 + (j + 3) * cw - 0.06], [-1.05, -1.05], color=INK, lw=0.5)
+    ax.text(0, -1.35, "One fact changed", fontsize=7.5, fontweight="semibold")
+    ax.text(3.15, -1.35, "Law", fontsize=7.5, fontweight="semibold")
+    for i, (edit, label, law, src) in enumerate(rows):
+        y = i * rh
+        if i and rows[i - 1][2] != law:
+            ax.plot([0, x0 + len(SYN_COLS) * cw], [y - 0.5, y - 0.5], color=INK, lw=0.5)
+        ax.text(0, y, label, va="center", fontsize=7.4)
+        ax.text(3.15, y, law, va="center", fontsize=7.2, fontfamily=MONO, color=INK)
+        for j, (l, rung) in enumerate(SYN_COLS):
+            c = None
+            for r in (run,) + tuple(extra_runs):
+                if r in R["runs"]:
+                    c = c or _syn_cell(R["runs"][r]["edits"], l, edit, rung)
+            xx = x0 + j * cw
+            if c is None:
+                ax.text(xx + cw / 2, y, "·", ha="center", va="center", color=GREY)
+                continue
+            ax.add_patch(plt.Rectangle((xx + 0.02, y - 0.42), cw - 0.06, 0.84, facecolor=tint[c["state"]], edgecolor="none"))
+            ax.text(xx + cw / 2, y, f"{c['k']}/{c['n']}", ha="center", va="center", fontfamily=MONO, fontsize=6.4,
+                    color=RED if c["state"] == "red" else INK)
+    ax.set_xlim(-0.05, x0 + len(SYN_COLS) * cw + 0.05)
+    ax.set_ylim(len(rows) - 0.45, -1.75)
+    fig.subplots_adjust(left=0.01, right=0.99, top=0.98, bottom=0.02)
+    caption(fig, ax, 1, "Synopse: the law in force next to the law Apertus v1.5 70B applies. Cells: variants convicted "
+            "(Ja/Nein), k/n. Red: the model convicts against the law (or acquits a placebo) in every readable framing; "
+            "light red: in one of the two framings; grey: no framing convicts the base case. R0: no law in the prompt; "
+            "R3: statute, BGE rule and closed list; R4: and the 1 July 2020 clause.")
+    save(fig, out, "fig1_synopse")
+
+
 def main(results: str, out: str):
     R = json.loads(Path(results).read_text())
     out = Path(out)
+    fig_synopse(R, out)
     fig_stage(R, out)
     fig_builds(R, out)
     print("figures written to", out)
