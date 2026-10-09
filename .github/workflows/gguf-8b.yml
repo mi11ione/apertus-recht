@@ -8,7 +8,9 @@ on:
       parts: {description: "eval parts", default: "core_de"}
       rungs: {description: "rungs", default: "R0,R3"}
       framings: {description: "framings", default: "conv,ver"}
-      shards: {description: "number of shards (must match the matrix below)", default: "16"}
+      shards: {description: "number of shards", default: "16"}
+      shard_list: {description: "JSON list of shard indices to run", default: "[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]"}
+      sample: {description: "stable sample of N items (empty = all)", default: ""}
       run_id: {description: "run id", default: "8b-gguf-q4_k_m-cpu"}
 defaults:
   run: {working-directory: track_1b}
@@ -18,7 +20,7 @@ jobs:
     timeout-minutes: 340
     strategy:
       fail-fast: false
-      matrix: {shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
+      matrix: {shard: "${{ fromJSON(inputs.shard_list) }}"}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -43,6 +45,7 @@ jobs:
             --gguf-sha256 a037df8d87ff6caacee794ee85f55342f2152e0d359b7389033300c3bee5f299 \
             --label "Colby/apertus-v1.5-8b-text-Q4_K_M-GGUF (CPU, llama-cpp-python 0.3.19)" \
             --run-id "${{ inputs.run_id }}-s${{ matrix.shard }}" --parts "${{ inputs.parts }}" --rungs "${{ inputs.rungs }}" \
-            --framings "${{ inputs.framings }}" --shard "${{ matrix.shard }}/${{ inputs.shards }}" --out /tmp/out --n-ctx 1024
+            --framings "${{ inputs.framings }}" --shard "${{ matrix.shard }}/${{ inputs.shards }}" --out /tmp/out --n-ctx 1024 \
+            ${{ inputs.sample && format('--sample {0}', inputs.sample) || '' }}
       - uses: actions/upload-artifact@v4
         with: {name: "shard-${{ matrix.shard }}", path: /tmp/out}
