@@ -14,6 +14,7 @@ Builds and their labels (see docs/builds.md for the evidence behind each label):
                          (spikes/live/results.md), exact forced choice via prefill + prompt_logprobs
   publicai-70b-gen       Public AI name swiss-ai/apertus-v1.5-70b (fp1-nes), free generation      live/results/gen_apertus-v1.5-70b.json
   qwen3-8b-mlx4          mlx-community/Qwen3-8B-4bit, comparator (not Apertus)                 linie9/results/qwen.json
+  8b-bf16-blend-RLVR-DPO-a{0.25,0.5,0.75}  exact bf16 weight blends of RLVR and DPO (exhibit)    dial/results/stage_dial_d1_a*.json
 """
 from __future__ import annotations
 
@@ -163,6 +164,11 @@ def main(spikes: str, out: str) -> None:
     stage9(spikes, out, "gguf/stage_gguf_q4.json", "8b-gguf-q4_k_m",
            dict(model="Colby/apertus-v1.5-8b-text-Q4_K_M-GGUF", file="apertus-v1.5-8b-text-q4_k_m.gguf",
                 sha256="a037df8d87ff6caacee794ee85f55342f2152e0d359b7389033300c3bee5f299", runtime="llama.cpp 0.6.0 (ggml 0.26.0), Metal"))
+    for a in ("0.25", "0.5", "0.75"):
+        stage9(spikes, out, f"dial/results/stage_dial_d1_a{a}.json", f"8b-bf16-blend-RLVR-DPO-a{a}",
+               dict(model=f"W = (1-a)*{B}-RLVR + a*{B}-DPO, a={a}, exact bf16 weight blend", precision="bf16",
+                    runtime="MLX 0.32.3 / mlx-lm 0.32.0 (M4, 24 GB)", exhibit="weight-blend dial (spikes/dial/results.md)",
+                    note="84-item subset (frames L15-L20); a=0 and a=1 reproduce 8b-bf16-RLVR / -DPO to 0.0000 nats"))
     live_fc(spikes, out)
     live_gen(spikes, out)
     qwen(spikes, out)

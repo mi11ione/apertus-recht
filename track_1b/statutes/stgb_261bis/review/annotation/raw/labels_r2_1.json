@@ -1,0 +1,866 @@
+[
+ {
+  "id": "R35412",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "Act in May 1993, before Art. 261bis entered into force on 1 January 1995; no retroactive punishment.",
+  "note": ""
+ },
+ {
+  "id": "R71387",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R94552",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R80905",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Publicly accessible publication; family wording does not make it private. Protected characteristic, act after 1995.",
+  "note": ""
+ },
+ {
+  "id": "R17053",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "Act in May 1993, before Art. 261bis entered into force on 1 January 1995; no retroactive punishment.",
+  "note": ""
+ },
+ {
+  "id": "R43058",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Publicly accessible publication; family wording does not make it private. Protected characteristic, act after 1995.",
+  "note": ""
+ },
+ {
+  "id": "R59883",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R95347",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R37459",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R44453",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R64205",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R77896",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R27642",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R95510",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R51460",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Publicly accessible publication; family wording does not make it private. Protected characteristic, act after 1995.",
+  "note": ""
+ },
+ {
+  "id": "R47338",
+  "label": "open",
+  "deciding_element": "setting",
+  "confidence": "medium",
+  "reason": "Closed chat of ~30 sports-club members, few known well, most superficially; relationship facts mixed under BGE 130 IV 111.",
+  "note": ""
+ },
+ {
+  "id": "R80496",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "Act in May 1993, before Art. 261bis entered into force on 1 January 1995; no retroactive punishment.",
+  "note": ""
+ },
+ {
+  "id": "R27592",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R22207",
+  "label": "open",
+  "deciding_element": "setting",
+  "confidence": "medium",
+  "reason": "Non-public neighbourhood association meeting, ~25 members, some long-acquainted, some new; trust relationships mixed.",
+  "note": ""
+ },
+ {
+  "id": "R76220",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R38869",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Publicly accessible publication; family wording does not make it private. Protected characteristic, act after 1995.",
+  "note": ""
+ },
+ {
+  "id": "R70758",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R89621",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "Act in May 1993, before Art. 261bis entered into force on 1 January 1995; no retroactive punishment.",
+  "note": ""
+ },
+ {
+  "id": "R46862",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R48886",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Publicly accessible publication; family wording does not make it private. Protected characteristic, act after 1995.",
+  "note": ""
+ },
+ {
+  "id": "R42426",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R94919",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R77960",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Publicly accessible publication; family wording does not make it private. Protected characteristic, act after 1995.",
+  "note": ""
+ },
+ {
+  "id": "R61041",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "Act in May 1993, before Art. 261bis entered into force on 1 January 1995; no retroactive punishment.",
+  "note": ""
+ },
+ {
+  "id": "R46946",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R34093",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Publicly accessible publication; family wording does not make it private. Protected characteristic, act after 1995.",
+  "note": ""
+ },
+ {
+  "id": "R72884",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Publicly accessible publication; family wording does not make it private. Protected characteristic, act after 1995.",
+  "note": ""
+ },
+ {
+  "id": "R57813",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R14074",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R88329",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Publicly accessible publication; family wording does not make it private. Protected characteristic, act after 1995.",
+  "note": ""
+ },
+ {
+  "id": "R94503",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R59166",
+  "label": "open",
+  "deciding_element": "setting",
+  "confidence": "medium",
+  "reason": "Non-public neighbourhood association meeting, ~25 members, some long-acquainted, some new; trust relationships mixed.",
+  "note": ""
+ },
+ {
+  "id": "R18398",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R27530",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R23285",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "Act in May 1993, before Art. 261bis entered into force on 1 January 1995; no retroactive punishment.",
+  "note": ""
+ },
+ {
+  "id": "R65511",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R90248",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R52438",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R35009",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "Act in May 1993, before Art. 261bis entered into force on 1 January 1995; no retroactive punishment.",
+  "note": ""
+ },
+ {
+  "id": "R19979",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R85842",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R43326",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R14299",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R93895",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R44271",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Publicly accessible publication; family wording does not make it private. Protected characteristic, act after 1995.",
+  "note": ""
+ },
+ {
+  "id": "R97933",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R78228",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R34822",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R66903",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R31988",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R35238",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R71903",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R44888",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R19087",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Publicly accessible publication; family wording does not make it private. Protected characteristic, act after 1995.",
+  "note": ""
+ },
+ {
+  "id": "R70551",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R26278",
+  "label": "open",
+  "deciding_element": "setting",
+  "confidence": "medium",
+  "reason": "Email to 25 department colleagues; nature of personal relationships or trust not stated, so publicity undetermined.",
+  "note": ""
+ },
+ {
+  "id": "R23137",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R87741",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R45119",
+  "label": "open",
+  "deciding_element": "setting",
+  "confidence": "medium",
+  "reason": "Garden birthday party, ~20 guests: friends, neighbours and acquaintances of acquaintances; private character genuinely mixed.",
+  "note": ""
+ },
+ {
+  "id": "R27082",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R60504",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R87232",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "Act in May 1993, before Art. 261bis entered into force on 1 January 1995; no retroactive punishment.",
+  "note": ""
+ },
+ {
+  "id": "R94539",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "Act in October 1994, before Art. 261bis entered into force on 1 January 1995; no retroactive punishment.",
+  "note": ""
+ },
+ {
+  "id": "R22829",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R39186",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R86546",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R40727",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R31542",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R48726",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R95185",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "Act in October 1994, before Art. 261bis entered into force on 1 January 1995; no retroactive punishment.",
+  "note": ""
+ },
+ {
+  "id": "R28048",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R24122",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R27145",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R54371",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R64049",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R53068",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R92538",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R53722",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "Act in October 1994, before Art. 261bis entered into force on 1 January 1995; no retroactive punishment.",
+  "note": ""
+ },
+ {
+  "id": "R81696",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R40911",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R12633",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Publicly accessible publication; family wording does not make it private. Protected characteristic, act after 1995.",
+  "note": ""
+ },
+ {
+  "id": "R88979",
+  "label": "open",
+  "deciding_element": "setting",
+  "confidence": "medium",
+  "reason": "Garden birthday party, ~20 guests: friends, neighbours and acquaintances of acquaintances; private character genuinely mixed.",
+  "note": ""
+ },
+ {
+  "id": "R46538",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R60067",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Publicly accessible publication; family wording does not make it private. Protected characteristic, act after 1995.",
+  "note": ""
+ },
+ {
+  "id": "R28268",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R84624",
+  "label": "open",
+  "deciding_element": "setting",
+  "confidence": "medium",
+  "reason": "Non-public neighbourhood association meeting, ~25 members, some long-acquainted, some new; trust relationships mixed.",
+  "note": ""
+ },
+ {
+  "id": "R45040",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R32412",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "Act in May 1993, before Art. 261bis entered into force on 1 January 1995; no retroactive punishment.",
+  "note": ""
+ },
+ {
+  "id": "R76315",
+  "label": "open",
+  "deciding_element": "setting",
+  "confidence": "medium",
+  "reason": "Closed chat of ~30 sports-club members, few known well, most superficially; relationship facts mixed under BGE 130 IV 111.",
+  "note": ""
+ },
+ {
+  "id": "R43741",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R38574",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R81927",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R27299",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R66169",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R81068",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R35053",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R26459",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R27110",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "Act in October 1994, before Art. 261bis entered into force on 1 January 1995; no retroactive punishment.",
+  "note": ""
+ },
+ {
+  "id": "R98482",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R40447",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Publicly accessible publication; family wording does not make it private. Protected characteristic, act after 1995.",
+  "note": ""
+ },
+ {
+  "id": "R43135",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "Act in May 1993, before Art. 261bis entered into force on 1 January 1995; no retroactive punishment.",
+  "note": ""
+ },
+ {
+  "id": "R13267",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "R93629",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic (race/ethnicity/religion), qualifying conduct, act after 1 January 1995.",
+  "note": ""
+ }
+]

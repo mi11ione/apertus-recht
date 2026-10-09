@@ -1,0 +1,8 @@
+{
+ "frozen_at": "2026-10-09T20:42:12+0200",
+ "files": {
+  "prereg/PREREG_court.md": "aebeb4250d56571b2c4327d87ee32d715874359c7caf7bef5f0715394963655b",
+  "statutes/stgb_261bis/statute.yaml": "43e190fe1d7a3a7d2ce0b1dc5c1f60afeae6dde73a85c6c1382e1ea52cee1fda",
+  "src/statute_twins/gold/engine.py": "398da37808d6ddbd03df320dcbc7ffab6d8d3cb4f23de293cf172db89030efc4"
+ }
+}

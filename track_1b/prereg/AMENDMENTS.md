@@ -17,7 +17,7 @@ As allowed by the lock note, `templates/fr.yaml` (religion base form → statuto
 ethnicity base → "appartenance ethnique", synonym → "origine ethnique") and `templates/it.yaml` (a1A2, a4B2) changed
 before any FR/IT item was scored. Findings: `statutes/stgb_261bis/review/bt/backtranslation_{fr,it}.md` (0 critical).
 
-## A3 (2026-10-09, 20:50, before any core-set result was analysed): two wording defects found by blind annotation
+## A3 (2026-10-09, 20:38, before any core-set result was analysed): two wording defects found by blind annotation
 Blind second annotation (`statutes/stgb_261bis/review/annotation/`) found (1) acts dated 1993/94 set on social media,
 video platforms or online forums (an anachronism; verdict unaffected) and (2) the contested setting `cont_assoc`
 ("15 members who have known each other for years"), which 5/5 annotators read as clearly private, i.e. not genuinely

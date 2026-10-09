@@ -26,16 +26,22 @@ ELEM = {"none": "all_met", "setting": "setting", "characteristic": "characterist
 
 
 def main(labels_dir: str) -> None:
-    blind = json.loads((OUT / "blind_ids.json").read_text())
+    # round 1: blind_ids.json + labels_<k>.json; round 2 (items re-worded by amendment A3): blind_ids_r2.json +
+    # labels_r2_<k>.json. A later round replaces the earlier label of the same item.
+    blind = {}
+    for f in sorted(OUT.glob("blind_ids*.json")):
+        blind.update(json.loads(f.read_text()))
     items = {i["id"]: i for i in load_items(ROOT / "dataset")}
-    rows = []
-    for p in sorted(Path(labels_dir).glob("labels_*.json")):
+    by_item = {}
+    for p in sorted(Path(labels_dir).glob("labels_*.json"), key=lambda p: ("_r2_" in p.name, p.name)):
+        rnd = 2 if "_r2_" in p.name else 1
         for r in json.loads(p.read_text()):
             iid = blind[r["id"]]
-            rows.append(dict(item_id=iid, blind_id=r["id"], annotator=f"claude-agent-{p.stem.split('_')[1]}",
-                             label=r["label"], deciding_element=r["deciding_element"], confidence=r["confidence"],
-                             reason=r["reason"], note=r.get("note", "")))
-    assert len({r["item_id"] for r in rows}) == len(rows) == len(blind), "missing or duplicate labels"
+            by_item[iid] = dict(item_id=iid, blind_id=r["id"], round=rnd, annotator=f"claude-agent-r{rnd}-{p.stem.split('_')[-1]}",
+                                label=r["label"], deciding_element=r["deciding_element"], confidence=r["confidence"],
+                                reason=r["reason"], note=r.get("note", ""))
+    rows = list(by_item.values())
+    assert len(rows) == len(set(blind.values())), "missing labels"
     (OUT / "labels.jsonl").write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in sorted(rows, key=lambda r: r["item_id"])))
 
     def summarise(sel):

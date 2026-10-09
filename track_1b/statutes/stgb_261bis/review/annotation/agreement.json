@@ -1,21 +1,19 @@
 {
  "all": {
   "n": 960,
-  "agree": 953,
-  "agreement": 0.9927083333333333,
+  "agree": 960,
+  "agreement": 1.0,
   "agreement_ci": [
-   0.9850257138717621,
-   0.9964635044458189
+   0.9960144287366574,
+   1.0
   ],
-  "kappa": 0.9843678032576381,
+  "kappa": 1.0,
   "deciding_element_agree": 315,
   "deciding_element_n": 315,
   "confusion": {
    "acquit->acquit": 315,
    "convict->convict": 624,
-   "open->acquit": 5,
-   "open->convict": 2,
-   "open->open": 14
+   "open->open": 21
   }
  },
  "family:CHAR": {
@@ -52,20 +50,18 @@
  },
  "family:CONTESTED": {
   "n": 63,
-  "agree": 56,
-  "agreement": 0.8888888888888888,
+  "agree": 63,
+  "agreement": 1.0,
   "agreement_ci": [
-   0.7879534424991748,
-   0.9451245133761628
+   0.9425288004111484,
+   1.0
   ],
-  "kappa": 0.7586206896551724,
+  "kappa": 1.0,
   "deciding_element_agree": 0,
   "deciding_element_n": 0,
   "confusion": {
    "convict->convict": 42,
-   "open->acquit": 5,
-   "open->convict": 2,
-   "open->open": 14
+   "open->open": 21
   }
  },
  "family:DATE_CTRL": {
@@ -133,39 +129,36 @@
  },
  "lang:de": {
   "n": 660,
-  "agree": 654,
-  "agreement": 0.990909090909091,
+  "agree": 660,
+  "agreement": 1.0,
   "agreement_ci": [
-   0.9803095995459175,
-   0.9958270839796397
+   0.9942132887760303,
+   1.0
   ],
-  "kappa": 0.980456026058632,
+  "kappa": 1.0,
   "deciding_element_agree": 215,
   "deciding_element_n": 215,
   "confusion": {
    "acquit->acquit": 215,
    "convict->convict": 430,
-   "open->acquit": 4,
-   "open->convict": 2,
-   "open->open": 9
+   "open->open": 15
   }
  },
  "lang:fr": {
   "n": 150,
-  "agree": 149,
-  "agreement": 0.9933333333333333,
+  "agree": 150,
+  "agreement": 1.0,
   "agreement_ci": [
-   0.9632071602251817,
-   0.9988221986649826
+   0.9750297556319235,
+   1.0
   ],
-  "kappa": 0.9857617465590887,
+  "kappa": 1.0,
   "deciding_element_agree": 50,
   "deciding_element_n": 50,
   "confusion": {
    "acquit->acquit": 50,
    "convict->convict": 97,
-   "open->acquit": 1,
-   "open->open": 2
+   "open->open": 3
   }
  },
  "lang:it": {
@@ -202,19 +195,17 @@
  },
  "variant:contested": {
   "n": 21,
-  "agree": 14,
-  "agreement": 0.6666666666666666,
+  "agree": 21,
+  "agreement": 1.0,
   "agreement_ci": [
-   0.4537345197425524,
-   0.8280524739491653
+   0.8453609810751531,
+   1.0
   ],
-  "kappa": 0.0,
+  "kappa": 1.0,
   "deciding_element_agree": 0,
   "deciding_element_n": 0,
   "confusion": {
-   "open->acquit": 5,
-   "open->convict": 2,
-   "open->open": 14
+   "open->open": 21
   }
  },
  "variant:placebo": {
