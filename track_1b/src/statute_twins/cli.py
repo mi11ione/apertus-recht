@@ -87,8 +87,9 @@ def make_backend(a):
     from .harness.backends.openai_compat import OpenAICompat, gateway_transport
     if a.backend == "gateway":
         return OpenAICompat(base_url="gateway:" + (a.model or ""), api_key="", model=a.model, mode=a.mode, seed=a.seed,
-                            transport=gateway_transport(a.tag, a.cap), label=a.label)
-    return OpenAICompat(base_url=a.base_url, model=a.model, mode=a.mode, seed=a.seed, label=a.label)
+                            transport=gateway_transport(a.tag, a.cap), label=a.label, max_tokens_generate=a.max_tokens)
+    return OpenAICompat(base_url=a.base_url, model=a.model, mode=a.mode, seed=a.seed, label=a.label,
+                        max_tokens_generate=a.max_tokens)
 
 
 def cmd_eval(a) -> int:
@@ -242,6 +243,13 @@ def cmd_selfcheck(a) -> int:
         for d in diffs[:20]:
             print("  FAIL", d)
     print("  PASS" if not diffs else f"  FAIL ({len(diffs)} differences)")
+    print("== step 2b: every stored response belongs to the current prompt (request hash recomputed)")
+    stale = check_request_hashes(Path(a.dataset))
+    for line in stale["report"]:
+        print("  " + line)
+    if stale["mismatches"]:
+        ok = False
+    print("  PASS" if not stale["mismatches"] else f"  FAIL ({stale['mismatches']} responses do not match their prompt)")
     if a.live:
         from .harness import selfcheck_live
         print(f"== step 3: live slice ({a.live})")
@@ -278,6 +286,33 @@ def cmd_preview(a) -> int:
             print("   rejected: " + i["rejected"])
         print()
     return 0
+
+
+def check_request_hashes(ds: Path) -> dict:
+    """For every released run that records its backend, recompute each row's request hash from the current prompt."""
+    from .harness.backends.base import request_key
+    from .harness.run import read_jsonl
+    prompts = {}
+    for p in (ds / "eval").glob("prompts_*.jsonl"):
+        for r in _load_jsonl(p):
+            prompts[r["prompt_id"]] = r
+    report, bad = [], 0
+    for run in released_runs(ds) or []:
+        mp = ds / "responses" / f"{run}.meta.json"
+        meta = json.loads(mp.read_text()) if mp.exists() else {}
+        if not isinstance(meta.get("backend"), dict):
+            report.append(f"{run}: imported measurement (no request hashes); checked by its source sha256")
+            continue
+        n = m = 0
+        for r in read_jsonl(ds / "responses" / f"{run}.jsonl"):
+            if "request_sha256" not in r or r["prompt_id"] not in prompts:
+                continue
+            n += 1
+            if request_key(meta["backend"], prompts[r["prompt_id"]], meta.get("params") or {}) != r["request_sha256"]:
+                m += 1
+        bad += m
+        report.append(f"{run}: {n - m}/{n} rows match their prompt")
+    return dict(mismatches=bad, report=report)
 
 
 def cmd_new(a) -> int:
@@ -322,6 +357,7 @@ def main(argv=None) -> int:
     p.add_argument("--mode", default="auto", choices=["auto", "exact_prefill", "top_logprobs", "generate"],
                    help="scoring method for openai backends (auto probes the endpoint once)")
     p.add_argument("--seed", type=int, default=None, help="sampling seed sent to the endpoint (fresh samples on caching providers)")
+    p.add_argument("--max-tokens", type=int, default=24, help="generation length in generate mode (open questions: 250)")
     p.add_argument("--gguf", default=None); p.add_argument("--gguf-sha256", default=None); p.add_argument("--n-ctx", type=int, default=2048)
     p.add_argument("--threads", type=int, default=None)
     p.add_argument("--tag", default="1b-eval"); p.add_argument("--cap", type=float, default=1.0)

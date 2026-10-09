@@ -54,22 +54,65 @@ def classify(t: dict, st) -> dict:
                 acquittal_ground=t.get("acquittal_ground"), facts=facts)
 
 
-def main(path: str) -> None:
+def summarise(rows, label):
+    ins = [r for r in rows if r["status"] == "in_scope"]
+    k = sum(r["agree"] for r in ins)
+    status = collections.Counter(r["status"] for r in rows)
+    lo, hi = wilson(k, len(ins))
+    conf = collections.Counter((r["court_verdict"], r["engine"]) for r in ins)
+    return dict(label=label, decisions=len(rows), in_scope=len(ins), agree=k, ci=[lo, hi], counts=dict(status),
+                court_convict=sum(r["court_verdict"] == "convict" for r in ins),
+                court_acquit=sum(r["court_verdict"] == "acquit" for r in ins),
+                confusion={f"court {a} / engine {b}": n for (a, b), n in sorted(conf.items())})
+
+
+def main(*paths: str) -> None:
     st = statute.load(ROOT / "statutes/stgb_261bis")
-    tuples = [json.loads(l) for l in Path(path).read_text(encoding="utf-8").splitlines() if l.strip()]
-    rows = [classify(t, st) for t in tuples]
+    tuples = []
+    for path in paths:
+        stratum = "B" if path.endswith("_B.jsonl") else "A"
+        for l in Path(path).read_text(encoding="utf-8").split("\n"):
+            if l.strip():
+                t = json.loads(l)
+                t["stratum"] = stratum
+                tuples.append(t)
+    # a decision that appears in both strata (e.g. as BGE and as docket) is counted once, in stratum A
+    seen = {t["decision_id"] for t in tuples if t["stratum"] == "A"}
+    tuples = [t for t in tuples if t["stratum"] == "A" or t["decision_id"] not in seen]
+    rows = []
+    for t in tuples:
+        r = classify(t, st)
+        r["stratum"] = t["stratum"]
+        rows.append(r)
+    strata = {s_: summarise([r for r in rows if r["stratum"] == s_], s_) for s_ in sorted({r["stratum"] for r in rows})}
+    pooled = summarise(rows, "pooled")
+    # POST HOC (not pre-registered): decisions whose only missing element is the act date, the characteristic is not
+    # sexual orientation and the decision is from 1998 or later; the act date is bounded by the decision date
+    ph_rows = []
+    for t in tuples:
+        r0 = classify(t, st)
+        if r0["status"] == "unextractable" and not t.get("act_date") and t.get("characteristic") != "sexual_orientation" \
+                and "unclear" not in (t.get("setting"), t.get("characteristic"), t.get("paragraph")) and (t.get("date") or "0") >= "1998":
+            r1 = classify(dict(t, act_date=t["date"][:4]), st)
+            if r1["status"] == "in_scope":
+                ph_rows.append(r1)
+    posthoc = dict(note="post hoc, not pre-registered: act date bounded by the decision date (>= 1998), characteristic "
+                        "other than sexual orientation", added=len(ph_rows), agree=sum(r["agree"] for r in ph_rows),
+                   acquittals=sum(r["court_verdict"] == "acquit" for r in ph_rows),
+                   combined=f"{pooled['agree'] + sum(r['agree'] for r in ph_rows)}/{pooled['in_scope'] + len(ph_rows)}")
     ins = [r for r in rows if r["status"] == "in_scope"]
     k = sum(r["agree"] for r in ins)
     ver = [r for r in ins if r.get("verified")]
     kv = sum(r["agree"] for r in ver)
     status = collections.Counter(r["status"] for r in rows)
     lo, hi = wilson(k, len(ins))
-    summary = (f"{len(tuples)} decisions triaged; {len(ins)} in scope; engine agrees with the court in {k}/{len(ins)} "
+    summary = (f"{len(tuples)} decisions triaged ({', '.join(f'stratum {k_}: {v_['decisions']}' for k_, v_ in strata.items())}); "
+               f"{len(ins)} in scope ({pooled['court_convict']} convictions, {pooled['court_acquit']} acquittals); engine agrees with the court in {k}/{len(ins)} "
                f"(Wilson 95% {lo:.2f}-{hi:.2f}); {status['out_of_scope']} out of scope (unmodelled grounds), "
                f"{status['unextractable']} unextractable, {status['excluded']} excluded; every tuple extracted twice by "
                f"independent agents, conflicts settled by a third (amendment A4)")
     pool = json.loads((ROOT / "statutes/stgb_261bis/review/court/pool.json").read_text()) if (ROOT / "statutes/stgb_261bis/review/court/pool.json").exists() else {}
-    rep = dict(summary=summary, pool=pool, counts=dict(status), in_scope=len(ins), agree=k, agreement_ci=[lo, hi],
+    rep = dict(summary=summary, pool=pool, strata=strata, pooled=pooled, posthoc_act_date_bound=posthoc, counts=dict(status), in_scope=len(ins), agree=k, agreement_ci=[lo, hi],
                verified=len(ver), verified_agree=kv,
                confusion={f"court {a} / engine {b}": n for (a, b), n in sorted(collections.Counter((r["court_verdict"], r["engine"]) for r in ins).items())},
                by_ground=dict(collections.Counter(r.get("acquittal_ground") for r in ins if r["court_verdict"] == "acquit")),
@@ -80,4 +123,4 @@ def main(path: str) -> None:
 
 
 if __name__ == "__main__":
-    main(sys.argv[1])
+    main(*sys.argv[1:])

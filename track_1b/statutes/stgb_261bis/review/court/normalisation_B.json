@@ -1,0 +1,60 @@
+{
+ "duplicate_groups": {
+  "BGE 126 IV 230 = 6S.291/2000": [
+   "bge_126 IV 230",
+   "bger_6S.291_2000",
+   "bge_BGE_126_IV_230"
+  ],
+  "BGE 148 IV 188 = 6B_1360/2021": [
+   "bger_6B_1360_2021",
+   "bge_BGE_148_IV_188"
+  ],
+  "VD Jug/2016/440 = PE11.004600": [
+   "vd_gerichte_PE11.004600",
+   "vd_findinfo_Jug___2016___440"
+  ],
+  "VD Décision/2019/755 = PE17.013320": [
+   "vd_gerichte_PE17.013320",
+   "vd_findinfo_D_cision___2019___755"
+  ],
+  "GE OCA/147/2009 = P/1859/2009": [
+   "ge_gerichte_OCA_147_2009",
+   "ge_gerichte_P_1859_2009"
+  ],
+  "VD Jug/2025/175 = PE23.011214": [
+   "vd_findinfo_Jug___2025___175",
+   "vd_gerichte_PE23.011214"
+  ],
+  "NE ARMP.2018.117": [
+   "ne_gerichte_ARMP.2018.117_d20181003",
+   "ne_gerichte_ARMP.2018.117"
+  ],
+  "VD Décision/2018/506 = PE16.018259": [
+   "vd_gerichte_PE16.018259",
+   "vd_findinfo_D_cision___2018___506"
+  ],
+  "BGE 150 IV 10 = 6B_234/2022": [
+   "bger_6B_234_2022",
+   "bge_BGE_150_IV_10",
+   "bge_150 IV 10"
+  ],
+  "BGE 126 IV 176 = 6S.420/1999": [
+   "bge_126 IV 176",
+   "bger_6S.420_1999",
+   "bge_BGE_126_IV_176"
+  ],
+  "docket CCP.1997.6488": [
+   "ne_gerichte_CCP.1997.6488_d19970408",
+   "ne_gerichte_CCP.1997.6488"
+  ],
+  "docket CACIV.2022.12": [
+   "ne_gerichte_CACIV.2022.12",
+   "ne_gerichte_CACIV.2022.12_d20180913"
+  ],
+  "GE ACJP/268/2008 = P/18703/2005": [
+   "ge_gerichte_ACJP_268_2008",
+   "ge_gerichte_P_18703_2005"
+  ]
+ },
+ "same_docket_as_stratum_A": []
+}

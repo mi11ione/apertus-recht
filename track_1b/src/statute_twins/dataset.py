@@ -74,6 +74,9 @@ def write_eval(statute_dir: Path, out: Path, reviews: dict | None = None) -> dic
     for name, rows in parts.items():
         _jsonl(out / "eval" / f"{name}.jsonl", rows)
         _jsonl(out / "eval" / f"prompts_{name}.jsonl", build.build_prompts(d, rows))
+        if name != "battery162" and all("open" in (d.prompts[l].get("framings") or {}) for l in d.langs):
+            # free-text questions (generate + judge), kept in their own file so forced-choice prompt files never change
+            _jsonl(out / "eval" / f"prompts_open_{name}.jsonl", build.build_prompts(d, rows, rungs=["R0", "R3"], framings=["open"]))
     _jsonl(out / "metadata" / "items.jsonl", [item_metadata(d, i, reviews) for rows in parts.values() for i in rows])
     srcs = {k: dict(v, licence=SOURCE_LICENCES.get(v.get("kind"), "public domain")) for k, v in d.statute.sources.items()}
     (out / "metadata").mkdir(parents=True, exist_ok=True)

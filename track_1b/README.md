@@ -57,7 +57,19 @@ Exact forced choice on vLLM endpoints, first-token log-probabilities elsewhere, 
 
 ## How we know the gold is right
 
-⟨checks⟩
+- **Against the official text.** Tests check every closed-list term and both amendment dates against the pinned Fedlex
+  consolidations and their footnotes in DE, FR and IT; mutation tests change one rule (drop religion, move the 2020 date
+  by a day, make private settings public) and check that exactly the items it governs flip.
+- **Against blind annotators.** 960 items labelled blind (opaque ids, no access to code or gold) by six agents:
+  939/939 settled items agree with the code gold, deciding element 315/315. Two independent adjudicators then reviewed
+  every contested item and a blind sample of settled ones: 115/115 gold correct.
+- **Against Swiss courts.** ⟨court⟩
+- **Against the training data.** 0 of 35,241 item 13-grams occur in the 1,069,365 decisions of `voilaj/swiss-caselaw`
+  (in the Apertus v1.5 training data); the same scan finds 846 of 1,525 13-grams of the statute itself.
+- **Against our own earlier numbers.** The analysis reproduces the published exploration results exactly, and replays
+  cached live scores bit for bit (`tests/test_reproduce_spikes.py`).
+- **Before seeing results.** The held-out test and the court rule were frozen by hash (`prereg/`); every later change
+  is listed with its timing in `prereg/AMENDMENTS.md`.
 
 ## Use it for another statute
 

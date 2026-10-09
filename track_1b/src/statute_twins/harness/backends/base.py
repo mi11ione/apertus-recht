@@ -63,9 +63,12 @@ def request_key(backend_desc: dict, row: dict, params: dict) -> str:
 
 _STRIP = re.compile(r"[*«»\"“”„'`]")
 PARSE = {
-    "de": dict(yes=r"ja", no=r"nein", guilty=r"schuldig", not_guilty=r"nicht\s+schuldig", head=r"(urteil|das urteil lautet)"),
-    "fr": dict(yes=r"oui", no=r"non", guilty=r"coupable", not_guilty=r"non\s+coupable", head=r"(jugement|verdict|le jugement est)"),
-    "it": dict(yes=r"s[iì]", no=r"no", guilty=r"colpevole", not_guilty=r"non\s+colpevole", head=r"(sentenza|verdetto|la sentenza è)"),
+    "de": dict(yes=r"ja", no=r"nein", guilty=r"schuldig", not_guilty=r"nicht\s+schuldig", head=r"(urteil|das urteil lautet)",
+               punish=r"strafbar", not_punish=r"(nicht|kaum|nicht\s+ohne\s+weiteres)\s+strafbar"),
+    "fr": dict(yes=r"oui", no=r"non", guilty=r"coupable", not_guilty=r"non\s+coupable", head=r"(jugement|verdict|le jugement est)",
+               punish=r"punissable", not_punish=r"(n['’]est\s+pas|pas|ne\s+serait\s+pas)\s+punissable"),
+    "it": dict(yes=r"s[iì]", no=r"no", guilty=r"colpevole", not_guilty=r"non\s+colpevole", head=r"(sentenza|verdetto|la sentenza è)",
+               punish=r"punibile", not_punish=r"non\s+(è\s+|sarebbe\s+)?punibile"),
 }
 
 
@@ -73,6 +76,17 @@ def parse_decision(lang: str, framing: str, text: str) -> str:
     """Deterministic parse of a free-text answer into convict / acquit / unparsed."""
     p = PARSE[lang]
     s = _STRIP.sub("", (text or "").strip().lower())
+    if framing == "open":
+        # first sentence decides; a free-text answer that hedges stays unparsed and is left to the judges
+        first = re.split(r"(?<=[.!?])\s", s, maxsplit=1)[0]
+        for chunk in (first, s):
+            neg = re.search(p["not_punish"], chunk) or re.match(rf"^\W*{p['no']}\b", chunk)
+            pos = re.search(rf"\b{p['punish']}\b", chunk) or re.match(rf"^\W*{p['yes']}\b", chunk)
+            if neg:
+                return "acquit"
+            if pos:
+                return "convict"
+        return "unparsed"
     if framing == "conv":
         m = re.match(rf"^\W*({p['yes']}|{p['no']})\b", s)
         if m:

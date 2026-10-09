@@ -58,7 +58,9 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("first"); ap.add_argument("second"); ap.add_argument("work")
     ap.add_argument("--tiebreak", default=None)
+    ap.add_argument("--stratum", default="A", help="A: tuples.jsonl; B: tuples_B.jsonl")
     a = ap.parse_args()
+    suffix = "" if a.stratum == "A" else f"_{a.stratum}"
     A = load(f"{a.first}/tuples_*.jsonl")
     B = load(f"{a.second}/second_*.jsonl")
     ids = sorted(set(A) & set(B))
@@ -69,7 +71,7 @@ def main():
         agree[f] = dict(agree=sum(x == y for x, y in zip(pa, pb)), n=len(ids), kappa=round(cohen_kappa(pa, pb), 3))
     conflicts = {i: [f for f in relevant(A[i], B[i]) if norm(A[i], f) != norm(B[i], f)] for i in ids}
     conflicts = {i: fs for i, fs in conflicts.items() if fs}
-    (D / "extraction_agreement.json").write_text(json.dumps(dict(decisions=len(ids), per_field=agree,
+    (D / f"extraction_agreement{suffix}.json").write_text(json.dumps(dict(decisions=len(ids), per_field=agree,
         decisions_with_rule_relevant_conflict=len(conflicts), conflicts=conflicts), indent=1) + "\n")
     print(json.dumps(agree), len(conflicts), "decisions with conflicts")
     work = Path(a.work)
@@ -87,10 +89,22 @@ def main():
         print("tie-break packet:", work / "tiebreak_packet.txt")
         return
     T = load(a.tiebreak)
-    old = {json.loads(l)["decision_id"]: json.loads(l) for l in (D / "tuples.jsonl").read_text(encoding="utf-8").split("\n") if l.strip()}
+    tpath = D / f"tuples{suffix}.jsonl"
+    if tpath.exists():
+        old = {json.loads(l)["decision_id"]: json.loads(l) for l in tpath.read_text(encoding="utf-8").split("\n") if l.strip()}
+    else:
+        ix = {c["decision_id"]: c for c in json.loads((work / "index.json").read_text())["chosen"]}
+        old = {i: dict(decision_id=i, court=ix[i]["court"], language=ix[i]["language"], date=ix[i]["date"],
+                       docket=ix[i]["docket"], cites_bge_130_IV_111=ix[i]["cites_bge_130_IV_111"], stratum=a.stratum,
+                       normalisation=None) for i in ids}
+    norm_p = D / f"normalisation{suffix}.json"
+    dups = json.loads(norm_p.read_text()) if norm_p.exists() else {}
+    drop = {i for v in (dups.get("duplicate_groups") or {}).values() for i in v[1:]}
     out = []
     for i in ids:
         r = dict(old[i])
+        if i in drop:
+            r["normalisation"] = "duplicate of another decision in the sample (counted once)"
         src = T.get(i) or A[i]
         for k in ("rules_on_261bis", "outcome", "act_date", "setting", "characteristic", "paragraph", "acquittal_ground"):
             r[k] = src.get(k)
@@ -100,7 +114,7 @@ def main():
             r["rules_on_261bis"] = False
         r["verified"] = "second extraction" + (" + tie-break" if i in T else "")
         out.append(r)
-    (D / "tuples.jsonl").write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in out), encoding="utf-8")
+    tpath.write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in out), encoding="utf-8")
     print("reconciled", len(out), "tie-broken", len(T))
 
 

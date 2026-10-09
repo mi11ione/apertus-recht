@@ -1,5 +1,5 @@
 {
- "summary": "150 decisions triaged; 30 in scope; engine agrees with the court in 30/30 (Wilson 95% 0.89-1.00); 8 out of scope (unmodelled grounds), 27 unextractable, 85 excluded; every tuple extracted twice by independent agents, conflicts settled by a third (amendment A4)",
+ "summary": "326 decisions triaged (stratum A: 150, stratum B: 176); 58 in scope (55 convictions, 3 acquittals); engine agrees with the court in 58/58 (Wilson 95% 0.94-1.00); 24 out of scope (unmodelled grounds), 50 unextractable, 194 excluded; every tuple extracted twice by independent agents, conflicts settled by a third (amendment A4)",
  "pool": {
   "pool": 754,
   "pool_citing_bge": 130,
@@ -1212,26 +1212,102 @@
    }
   ]
  },
- "counts": {
-  "excluded": 85,
-  "in_scope": 30,
-  "unextractable": 27,
-  "out_of_scope": 8
+ "strata": {
+  "A": {
+   "label": "A",
+   "decisions": 150,
+   "in_scope": 30,
+   "agree": 30,
+   "ci": [
+    0.8864866068260312,
+    0.9999999999999999
+   ],
+   "counts": {
+    "excluded": 85,
+    "in_scope": 30,
+    "unextractable": 27,
+    "out_of_scope": 8
+   },
+   "court_convict": 29,
+   "court_acquit": 1,
+   "confusion": {
+    "court acquit / engine acquit": 1,
+    "court convict / engine convict": 29
+   }
+  },
+  "B": {
+   "label": "B",
+   "decisions": 176,
+   "in_scope": 28,
+   "agree": 28,
+   "ci": [
+    0.8793566952341543,
+    0.9999999999999998
+   ],
+   "counts": {
+    "excluded": 109,
+    "out_of_scope": 16,
+    "in_scope": 28,
+    "unextractable": 23
+   },
+   "court_convict": 26,
+   "court_acquit": 2,
+   "confusion": {
+    "court acquit / engine acquit": 2,
+    "court convict / engine convict": 26
+   }
+  }
  },
- "in_scope": 30,
- "agree": 30,
+ "pooled": {
+  "label": "pooled",
+  "decisions": 326,
+  "in_scope": 58,
+  "agree": 58,
+  "ci": [
+   0.9378821442127971,
+   1.0
+  ],
+  "counts": {
+   "excluded": 194,
+   "in_scope": 58,
+   "unextractable": 50,
+   "out_of_scope": 24
+  },
+  "court_convict": 55,
+  "court_acquit": 3,
+  "confusion": {
+   "court acquit / engine acquit": 3,
+   "court convict / engine convict": 55
+  }
+ },
+ "posthoc_act_date_bound": {
+  "note": "post hoc, not pre-registered: act date bounded by the decision date (>= 1998), characteristic other than sexual orientation",
+  "added": 26,
+  "agree": 26,
+  "acquittals": 1,
+  "combined": "84/84"
+ },
+ "counts": {
+  "excluded": 194,
+  "in_scope": 58,
+  "unextractable": 50,
+  "out_of_scope": 24
+ },
+ "in_scope": 58,
+ "agree": 58,
  "agreement_ci": [
-  0.8864866068260312,
-  0.9999999999999999
+  0.9378821442127971,
+  1.0
  ],
- "verified": 30,
- "verified_agree": 30,
+ "verified": 58,
+ "verified_agree": 58,
  "confusion": {
-  "court acquit / engine acquit": 1,
-  "court convict / engine convict": 29
+  "court acquit / engine acquit": 3,
+  "court convict / engine convict": 55
  },
  "by_ground": {
-  "setting": 1
+  "setting": 2,
+  "characteristic": 1
  },
  "disagreements": [],
  "rows": [
@@ -1242,7 +1318,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "ag_strafgericht_SBK.2023.56",
@@ -1251,7 +1328,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "ag_strafgericht_SST.2022.149",
@@ -1270,7 +1348,8 @@
     "characteristic": "ethnicity",
     "paragraph": "abs4",
     "setting": "public"
-   }
+   },
+   "stratum": "A"
   },
   {
    "decision_id": "be_zivilstraf_BK 2025 642",
@@ -1279,7 +1358,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "be_zivilstraf_BK 2026 46",
@@ -1288,7 +1368,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "be_zivilstraf_BK_2018_165",
@@ -1297,7 +1378,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "be_zivilstraf_BK_2021_112",
@@ -1306,7 +1388,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "be_zivilstraf_BK_2021_54",
@@ -1315,7 +1398,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "be_zivilstraf_BK_2024_363",
@@ -1324,7 +1408,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "be_zivilstraf_SK_2015_164",
@@ -1343,7 +1428,8 @@
     "characteristic": "ethnicity",
     "paragraph": "abs1",
     "setting": "public"
-   }
+   },
+   "stratum": "A"
   },
   {
    "decision_id": "be_zivilstraf_SK_2016_33",
@@ -1362,7 +1448,8 @@
     "characteristic": "ethnicity",
     "paragraph": "abs4",
     "setting": "public"
-   }
+   },
+   "stratum": "A"
   },
   {
    "decision_id": "be_zivilstraf_SK_2022_424",
@@ -1371,7 +1458,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "be_zivilstraf_SK_2022_597",
@@ -1380,7 +1468,8 @@
    "outcome": "convicted",
    "verified": "second extraction",
    "status": "unextractable",
-   "why": "a modelled element is unclear"
+   "why": "a modelled element is unclear",
+   "stratum": "A"
   },
   {
    "decision_id": "bge_130 IV 111",
@@ -1389,7 +1478,8 @@
    "outcome": "remanded",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "bge_133 IV 308",
@@ -1398,7 +1488,8 @@
    "outcome": "acquitted",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "bge_145 IV 23",
@@ -1407,7 +1498,8 @@
    "outcome": "acquitted",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "bge_BGE_123_IV_202",
@@ -1426,7 +1518,8 @@
     "characteristic": "religion",
     "paragraph": "abs1",
     "setting": "public"
-   }
+   },
+   "stratum": "A"
   },
   {
    "decision_id": "bge_BGE_130_IV_111",
@@ -1435,7 +1528,8 @@
    "outcome": "remanded",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "bge_BGE_133_IV_308",
@@ -1444,7 +1538,8 @@
    "outcome": "acquitted",
    "verified": "second extraction",
    "status": "out_of_scope",
-   "why": "acquitted on unmodelled ground: dignity"
+   "why": "acquitted on unmodelled ground: dignity",
+   "stratum": "A"
   },
   {
    "decision_id": "bge_BGE_138_III_641",
@@ -1453,7 +1548,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "bge_BGE_141_IV_215",
@@ -1462,7 +1558,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "bge_BGE_145_IV_23",
@@ -1471,7 +1568,8 @@
    "outcome": "acquitted",
    "verified": "second extraction",
    "status": "out_of_scope",
-   "why": "acquitted on unmodelled ground: intent"
+   "why": "acquitted on unmodelled ground: intent",
+   "stratum": "A"
   },
   {
    "decision_id": "bge_BGE_149_IV_170",
@@ -1490,7 +1588,8 @@
     "characteristic": "religion",
     "paragraph": "abs4",
     "setting": "public"
-   }
+   },
+   "stratum": "A"
   },
   {
    "decision_id": "bge_BGE_150_IV_292",
@@ -1499,7 +1598,8 @@
    "outcome": "convicted",
    "verified": "second extraction",
    "status": "unextractable",
-   "why": "a modelled element is unclear"
+   "why": "a modelled element is unclear",
+   "stratum": "A"
   },
   {
    "decision_id": "bger_1D_1_2025",
@@ -1508,7 +1608,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "bger_6B_1008_2024",
@@ -1527,7 +1628,8 @@
     "characteristic": "sexual_orientation",
     "paragraph": "abs1",
     "setting": "public"
-   }
+   },
+   "stratum": "A"
   },
   {
    "decision_id": "bger_6B_1024_2010",
@@ -1546,7 +1648,8 @@
     "characteristic": "religion",
     "paragraph": "abs4",
     "setting": "public"
-   }
+   },
+   "stratum": "A"
   },
   {
    "decision_id": "bger_6B_1323_2023",
@@ -1555,7 +1658,8 @@
    "outcome": "convicted",
    "verified": "second extraction",
    "status": "unextractable",
-   "why": "a modelled element is unclear"
+   "why": "a modelled element is unclear",
+   "stratum": "A"
   },
   {
    "decision_id": "bger_6B_1438_2021",
@@ -1574,7 +1678,8 @@
     "characteristic": "religion",
     "paragraph": "abs4",
     "setting": "public"
-   }
+   },
+   "stratum": "A"
   },
   {
    "decision_id": "bger_6B_196_2026",
@@ -1583,7 +1688,8 @@
    "outcome": "convicted",
    "verified": "second extraction",
    "status": "unextractable",
-   "why": "a modelled element is unclear"
+   "why": "a modelled element is unclear",
+   "stratum": "A"
   },
   {
    "decision_id": "bger_6B_256_2014",
@@ -1592,7 +1698,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "bger_6B_350_2019",
@@ -1611,7 +1718,8 @@
     "characteristic": "religion",
     "paragraph": "abs4",
     "setting": "public"
-   }
+   },
+   "stratum": "A"
   },
   {
    "decision_id": "bger_6B_516_2025",
@@ -1620,7 +1728,8 @@
    "outcome": "convicted",
    "verified": "second extraction",
    "status": "unextractable",
-   "why": "a modelled element is unclear"
+   "why": "a modelled element is unclear",
+   "stratum": "A"
   },
   {
    "decision_id": "bger_6B_627_2015",
@@ -1639,7 +1748,8 @@
     "characteristic": "religion",
     "paragraph": "abs4",
     "setting": "public"
-   }
+   },
+   "stratum": "A"
   },
   {
    "decision_id": "bger_6B_636_2020",
@@ -1658,7 +1768,8 @@
     "characteristic": "ethnicity",
     "paragraph": "abs1",
     "setting": "public"
-   }
+   },
+   "stratum": "A"
   },
   {
    "decision_id": "bger_6B_694_2025",
@@ -1667,7 +1778,8 @@
    "outcome": "convicted",
    "verified": "second extraction + tie-break",
    "status": "unextractable",
-   "why": "a modelled element is unclear"
+   "why": "a modelled element is unclear",
+   "stratum": "A"
   },
   {
    "decision_id": "bger_6B_734_2016",
@@ -1686,7 +1798,8 @@
     "characteristic": "religion",
     "paragraph": "abs4",
     "setting": "public"
-   }
+   },
+   "stratum": "A"
   },
   {
    "decision_id": "bger_6B_748_2022",
@@ -1695,7 +1808,8 @@
    "outcome": "remanded",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "bger_6B_777_2022",
@@ -1714,7 +1828,8 @@
     "characteristic": "religion",
     "paragraph": "abs4",
     "setting": "public"
-   }
+   },
+   "stratum": "A"
   },
   {
    "decision_id": "bger_6B_805_2017",
@@ -1723,7 +1838,8 @@
    "outcome": "acquitted",
    "verified": "second extraction + tie-break",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "bger_6B_857_2022",
@@ -1732,7 +1848,8 @@
    "outcome": "convicted",
    "verified": "second extraction",
    "status": "unextractable",
-   "why": "a modelled element is unclear"
+   "why": "a modelled element is unclear",
+   "stratum": "A"
   },
   {
    "decision_id": "bger_6P.232_2006",
@@ -1741,7 +1858,8 @@
    "outcome": "acquitted",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "bger_6P.79_2006",
@@ -1750,7 +1868,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "bger_6S.297_2005",
@@ -1759,7 +1878,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "bger_7B_165_2024",
@@ -1768,7 +1888,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "bs_appellationsgericht_AG.2024.375",
@@ -1787,7 +1908,8 @@
     "characteristic": "ethnicity",
     "paragraph": "abs4",
     "setting": "public"
-   }
+   },
+   "stratum": "A"
   },
   {
    "decision_id": "bs_appellationsgericht_AG.2025.549",
@@ -1796,7 +1918,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "bstger_BG.2012.2",
@@ -1805,7 +1928,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "bstger_BG.2012.26",
@@ -1814,7 +1938,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "bstger_CA.2021.9",
@@ -1823,7 +1948,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "bstger_RR.2019.279",
@@ -1832,7 +1958,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "bstger_RR.2019.81",
@@ -1841,7 +1968,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "bstger_SK.2013.39",
@@ -1850,7 +1978,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "not_decided"
+   "why": "not_decided",
+   "stratum": "A"
   },
   {
    "decision_id": "bstger_SK.2017.49",
@@ -1859,7 +1988,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "bstger_SK.2019.71",
@@ -1868,7 +1998,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "bstger_SK.2019.74",
@@ -1877,7 +2008,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "bstger_SK.2021.22",
@@ -1886,7 +2018,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "bstger_SK.2022.55",
@@ -1895,7 +2028,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "bstger_SK.2023.21",
@@ -1904,7 +2038,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "bstger_SK.2024.52",
@@ -1913,7 +2048,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "bstger_SK.2024.62",
@@ -1922,7 +2058,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "bstger_SK.2025.19",
@@ -1931,7 +2068,8 @@
    "outcome": "acquitted",
    "verified": "second extraction",
    "status": "unextractable",
-   "why": "a modelled element is unclear"
+   "why": "a modelled element is unclear",
+   "stratum": "A"
   },
   {
    "decision_id": "bstger_TPF_2020_30",
@@ -1940,7 +2078,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "bstger_TPF_2021_31",
@@ -1949,7 +2088,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "bvger_A-5236_2022",
@@ -1958,7 +2098,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "bvger_E-4024_2017",
@@ -1967,7 +2108,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "ch_vb_2005-2848_631_",
@@ -1976,7 +2118,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "ge_gerichte_AARP_123_2022",
@@ -1995,7 +2138,8 @@
     "characteristic": "religion",
     "paragraph": "abs4",
     "setting": "public"
-   }
+   },
+   "stratum": "A"
   },
   {
    "decision_id": "ge_gerichte_AARP_154_2024",
@@ -2004,7 +2148,8 @@
    "outcome": "acquitted",
    "verified": "second extraction",
    "status": "out_of_scope",
-   "why": "abs3 not modelled"
+   "why": "abs3 not modelled",
+   "stratum": "A"
   },
   {
    "decision_id": "ge_gerichte_AARP_156_2026",
@@ -2013,7 +2158,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "ge_gerichte_AARP_214_2016",
@@ -2032,7 +2178,8 @@
     "characteristic": "religion",
     "paragraph": "abs4",
     "setting": "public"
-   }
+   },
+   "stratum": "A"
   },
   {
    "decision_id": "ge_gerichte_AARP_245_2025",
@@ -2041,7 +2188,8 @@
    "outcome": "convicted",
    "verified": "second extraction",
    "status": "unextractable",
-   "why": "a modelled element is unclear"
+   "why": "a modelled element is unclear",
+   "stratum": "A"
   },
   {
    "decision_id": "ge_gerichte_AARP_258_2021",
@@ -2050,7 +2198,8 @@
    "outcome": "convicted",
    "verified": "second extraction + tie-break",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "ge_gerichte_AARP_397_2014",
@@ -2069,7 +2218,8 @@
     "characteristic": "religion",
     "paragraph": "abs1",
     "setting": "public"
-   }
+   },
+   "stratum": "A"
   },
   {
    "decision_id": "ge_gerichte_AARP_431_2014",
@@ -2088,7 +2238,8 @@
     "characteristic": "religion",
     "paragraph": "abs4",
     "setting": "public"
-   }
+   },
+   "stratum": "A"
   },
   {
    "decision_id": "ge_gerichte_AARP_75_2024",
@@ -2097,7 +2248,8 @@
    "outcome": "convicted",
    "verified": "second extraction",
    "status": "unextractable",
-   "why": "a modelled element is unclear"
+   "why": "a modelled element is unclear",
+   "stratum": "A"
   },
   {
    "decision_id": "ge_gerichte_ACPR_332_2019",
@@ -2106,7 +2258,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "ge_gerichte_ACPR_397_2025",
@@ -2115,7 +2268,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "ge_gerichte_ACPR_446_2021",
@@ -2124,7 +2278,8 @@
    "outcome": "not_decided",
    "verified": "second extraction + tie-break",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "ge_gerichte_ACPR_654_2025",
@@ -2133,7 +2288,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "ge_gerichte_ACPR_971_2023",
@@ -2142,7 +2298,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "ge_gerichte_A_3828_2024",
@@ -2151,7 +2308,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "ge_gerichte_JTCO_120_2024",
@@ -2160,7 +2318,8 @@
    "outcome": "acquitted",
    "verified": "second extraction",
    "status": "unextractable",
-   "why": "a modelled element is unclear"
+   "why": "a modelled element is unclear",
+   "stratum": "A"
   },
   {
    "decision_id": "ge_gerichte_JTDP_1330_2019",
@@ -2169,7 +2328,8 @@
    "outcome": "convicted",
    "verified": "second extraction",
    "status": "unextractable",
-   "why": "a modelled element is unclear"
+   "why": "a modelled element is unclear",
+   "stratum": "A"
   },
   {
    "decision_id": "ge_gerichte_JTDP_160_2025",
@@ -2188,7 +2348,8 @@
     "characteristic": "race",
     "paragraph": "abs4",
     "setting": "public"
-   }
+   },
+   "stratum": "A"
   },
   {
    "decision_id": "ge_gerichte_P_1033_2020",
@@ -2197,7 +2358,8 @@
    "outcome": "convicted",
    "verified": "second extraction",
    "status": "unextractable",
-   "why": "a modelled element is unclear"
+   "why": "a modelled element is unclear",
+   "stratum": "A"
   },
   {
    "decision_id": "ge_gerichte_P_12568_2023",
@@ -2206,7 +2368,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "ge_gerichte_P_14261_2019",
@@ -2225,7 +2388,8 @@
     "characteristic": "religion",
     "paragraph": "abs4",
     "setting": "public"
-   }
+   },
+   "stratum": "A"
   },
   {
    "decision_id": "ge_gerichte_P_14678_2025",
@@ -2234,7 +2398,8 @@
    "outcome": "not_decided",
    "verified": "second extraction + tie-break",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "ge_gerichte_P_15574_2022",
@@ -2253,7 +2418,8 @@
     "characteristic": "race",
     "paragraph": "abs4",
     "setting": "public"
-   }
+   },
+   "stratum": "A"
   },
   {
    "decision_id": "ge_gerichte_P_2155_2015",
@@ -2272,7 +2438,8 @@
     "characteristic": "religion",
     "paragraph": "abs4",
     "setting": "public"
-   }
+   },
+   "stratum": "A"
   },
   {
    "decision_id": "ge_gerichte_P_23847_2016",
@@ -2281,7 +2448,8 @@
    "outcome": "convicted",
    "verified": "second extraction + tie-break",
    "status": "unextractable",
-   "why": "a modelled element is unclear"
+   "why": "a modelled element is unclear",
+   "stratum": "A"
   },
   {
    "decision_id": "ge_gerichte_P_24860_2018",
@@ -2290,7 +2458,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "ge_gerichte_P_3866_2020",
@@ -2299,7 +2468,8 @@
    "outcome": "acquitted",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "ge_gerichte_P_7558_2011",
@@ -2318,7 +2488,8 @@
     "characteristic": "religion",
     "paragraph": "abs1",
     "setting": "public"
-   }
+   },
+   "stratum": "A"
   },
   {
    "decision_id": "ge_gerichte_P_9756_2011",
@@ -2337,7 +2508,8 @@
     "characteristic": "religion",
     "paragraph": "abs1",
     "setting": "public"
-   }
+   },
+   "stratum": "A"
   },
   {
    "decision_id": "gr_gerichte_BK 2008 8",
@@ -2346,7 +2518,8 @@
    "outcome": "not_decided",
    "verified": "second extraction + tie-break",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "gr_gerichte_PKG_2017_22",
@@ -2365,7 +2538,8 @@
     "characteristic": "ethnicity",
     "paragraph": "abs4",
     "setting": "public"
-   }
+   },
+   "stratum": "A"
   },
   {
    "decision_id": "gr_gerichte_SK1 2016 49",
@@ -2384,7 +2558,8 @@
     "characteristic": "race",
     "paragraph": "abs4",
     "setting": "public"
-   }
+   },
+   "stratum": "A"
   },
   {
    "decision_id": "gr_gerichte_SK1 2016 50",
@@ -2403,7 +2578,8 @@
     "characteristic": "race",
     "paragraph": "abs4",
     "setting": "public"
-   }
+   },
+   "stratum": "A"
   },
   {
    "decision_id": "lu_gerichte_KA_06_53",
@@ -2412,7 +2588,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "mkg_MKGE_16_Nr_7",
@@ -2421,7 +2598,8 @@
    "outcome": "remanded",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "ne_gerichte_ARMP.2024.174",
@@ -2430,7 +2608,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "ne_gerichte_CPEN.2021.9",
@@ -2439,7 +2618,8 @@
    "outcome": "acquitted",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "ne_gerichte_CPEN.2021.9_d20011028",
@@ -2448,7 +2628,8 @@
    "outcome": "acquitted",
    "verified": "second extraction",
    "status": "out_of_scope",
-   "why": "acquitted on unmodelled ground: dignity"
+   "why": "acquitted on unmodelled ground: dignity",
+   "stratum": "A"
   },
   {
    "decision_id": "ne_gerichte_CPEN.2022.32",
@@ -2467,7 +2648,8 @@
     "characteristic": "race",
     "paragraph": "abs4",
     "setting": "public"
-   }
+   },
+   "stratum": "A"
   },
   {
    "decision_id": "so_gerichte_BKBES.2021.98",
@@ -2476,7 +2658,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "so_gerichte_ZZ.1996.17",
@@ -2485,7 +2668,8 @@
    "outcome": "remanded",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "ti_gerichte_72.2006.89_d20070619",
@@ -2494,7 +2678,8 @@
    "outcome": "convicted",
    "verified": "second extraction",
    "status": "unextractable",
-   "why": "a modelled element is unclear"
+   "why": "a modelled element is unclear",
+   "stratum": "A"
   },
   {
    "decision_id": "vd_findinfo_Arr_t___2009___376",
@@ -2503,7 +2688,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "vd_findinfo_D_cision___2014___645",
@@ -2512,7 +2698,8 @@
    "outcome": "not_decided",
    "verified": "second extraction + tie-break",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "vd_findinfo_D_cision___2016___793",
@@ -2521,7 +2708,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "vd_findinfo_D_cision___2016___797",
@@ -2530,7 +2718,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "vd_findinfo_D_cision___2020___559",
@@ -2539,7 +2728,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "vd_findinfo_D_cision___2023___408",
@@ -2548,7 +2738,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "vd_findinfo_Jug___2016___226",
@@ -2557,7 +2748,8 @@
    "outcome": "convicted",
    "verified": "second extraction",
    "status": "unextractable",
-   "why": "a modelled element is unclear"
+   "why": "a modelled element is unclear",
+   "stratum": "A"
   },
   {
    "decision_id": "vd_findinfo_Jug___2017___64",
@@ -2566,7 +2758,8 @@
    "outcome": "acquitted",
    "verified": "second extraction",
    "status": "out_of_scope",
-   "why": "acquitted on unmodelled ground: justification"
+   "why": "acquitted on unmodelled ground: justification",
+   "stratum": "A"
   },
   {
    "decision_id": "vd_findinfo_Jug___2022___142",
@@ -2575,7 +2768,8 @@
    "outcome": "acquitted",
    "verified": "second extraction + tie-break",
    "status": "unextractable",
-   "why": "a modelled element is unclear"
+   "why": "a modelled element is unclear",
+   "stratum": "A"
   },
   {
    "decision_id": "vd_findinfo_Jug___2022___185",
@@ -2584,7 +2778,8 @@
    "outcome": "convicted",
    "verified": "second extraction",
    "status": "unextractable",
-   "why": "a modelled element is unclear"
+   "why": "a modelled element is unclear",
+   "stratum": "A"
   },
   {
    "decision_id": "vd_findinfo_Jug___2023___344",
@@ -2593,7 +2788,8 @@
    "outcome": "convicted",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "vd_findinfo_Jug___2025___177",
@@ -2602,7 +2798,8 @@
    "outcome": "convicted",
    "verified": "second extraction",
    "status": "unextractable",
-   "why": "a modelled element is unclear"
+   "why": "a modelled element is unclear",
+   "stratum": "A"
   },
   {
    "decision_id": "vd_gerichte_0efb9f68-c92d-42ec-ad8d-aa9ee19a2c93",
@@ -2611,7 +2808,8 @@
    "outcome": "acquitted",
    "verified": "second extraction",
    "status": "unextractable",
-   "why": "a modelled element is unclear"
+   "why": "a modelled element is unclear",
+   "stratum": "A"
   },
   {
    "decision_id": "vd_gerichte_6e22884d-65de-41bc-8641-46fe1adcd793",
@@ -2620,7 +2818,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "vd_gerichte_PE14.013250",
@@ -2629,7 +2828,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "vd_gerichte_PE16.019356",
@@ -2638,7 +2838,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "vd_gerichte_PE16.020736",
@@ -2647,7 +2848,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "vd_gerichte_PE19.023590",
@@ -2656,7 +2858,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "vd_gerichte_PE21.016382",
@@ -2665,7 +2868,8 @@
    "outcome": "convicted",
    "verified": "second extraction",
    "status": "unextractable",
-   "why": "a modelled element is unclear"
+   "why": "a modelled element is unclear",
+   "stratum": "A"
   },
   {
    "decision_id": "vd_gerichte_PE22.020526",
@@ -2674,7 +2878,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "vd_gerichte_PE22.021777",
@@ -2683,7 +2888,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "vd_gerichte_PE23.016672",
@@ -2692,7 +2898,8 @@
    "outcome": "not_decided",
    "verified": "second extraction + tie-break",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "vd_gerichte_PE24.001742",
@@ -2701,7 +2908,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "vd_gerichte_PE24.017877",
@@ -2710,7 +2918,8 @@
    "outcome": "convicted",
    "verified": "second extraction",
    "status": "unextractable",
-   "why": "a modelled element is unclear"
+   "why": "a modelled element is unclear",
+   "stratum": "A"
   },
   {
    "decision_id": "vd_gerichte_PE25.014438",
@@ -2719,7 +2928,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "vd_gerichte_PM23.016447",
@@ -2728,7 +2938,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "vd_gerichte_ca8f400a-93de-4e50-bb3e-78b1b5fb3026",
@@ -2737,7 +2948,8 @@
    "outcome": "convicted",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "vd_gerichte_f0af1c43-b289-4ce4-9bc3-6fe3c0b809fb",
@@ -2746,7 +2958,8 @@
    "outcome": "convicted",
    "verified": "second extraction",
    "status": "unextractable",
-   "why": "a modelled element is unclear"
+   "why": "a modelled element is unclear",
+   "stratum": "A"
   },
   {
    "decision_id": "vs_gerichte_P1 09 29",
@@ -2755,7 +2968,8 @@
    "outcome": "convicted",
    "verified": "second extraction + tie-break",
    "status": "out_of_scope",
-   "why": "abs3 not modelled"
+   "why": "abs3 not modelled",
+   "stratum": "A"
   },
   {
    "decision_id": "vs_gerichte_P2 24 41",
@@ -2764,7 +2978,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "zh_bezirksgericht_dietikon_GG220033",
@@ -2773,7 +2988,8 @@
    "outcome": "convicted",
    "verified": "second extraction",
    "status": "unextractable",
-   "why": "a modelled element is unclear"
+   "why": "a modelled element is unclear",
+   "stratum": "A"
   },
   {
    "decision_id": "zh_bezirksgericht_hinwil_GG240033",
@@ -2782,7 +2998,8 @@
    "outcome": "convicted",
    "verified": "second extraction + tie-break",
    "status": "out_of_scope",
-   "why": "abs3 not modelled"
+   "why": "abs3 not modelled",
+   "stratum": "A"
   },
   {
    "decision_id": "zh_bezirksgericht_zuerich_GG250039",
@@ -2791,7 +3008,8 @@
    "outcome": "acquitted",
    "verified": "second extraction",
    "status": "out_of_scope",
-   "why": "acquitted on unmodelled ground: dignity"
+   "why": "acquitted on unmodelled ground: dignity",
+   "stratum": "A"
   },
   {
    "decision_id": "zh_kassationsgericht_AC050016",
@@ -2800,7 +3018,8 @@
    "outcome": "remanded",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "zh_obergericht_PS130135",
@@ -2809,7 +3028,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "zh_obergericht_SB120294",
@@ -2818,7 +3038,8 @@
    "outcome": "not_decided",
    "verified": "second extraction",
    "status": "excluded",
-   "why": "does not rule on a 261bis charge"
+   "why": "does not rule on a 261bis charge",
+   "stratum": "A"
   },
   {
    "decision_id": "zh_obergericht_SB140397",
@@ -2827,7 +3048,8 @@
    "outcome": "convicted",
    "verified": "second extraction",
    "status": "unextractable",
-   "why": "a modelled element is unclear"
+   "why": "a modelled element is unclear",
+   "stratum": "A"
   },
   {
    "decision_id": "zh_obergericht_SB140436",
@@ -2846,7 +3068,8 @@
     "characteristic": "religion",
     "paragraph": "abs4",
     "setting": "public"
-   }
+   },
+   "stratum": "A"
   },
   {
    "decision_id": "zh_obergericht_SB170332",
@@ -2855,7 +3078,8 @@
    "outcome": "convicted",
    "verified": "second extraction + tie-break",
    "status": "unextractable",
-   "why": "a modelled element is unclear"
+   "why": "a modelled element is unclear",
+   "stratum": "A"
   },
   {
    "decision_id": "zh_obergericht_SB230225",
@@ -2875,7 +3099,8 @@
     "characteristic": "gender_identity",
     "paragraph": "abs4",
     "setting": "private"
-   }
+   },
+   "stratum": "A"
   },
   {
    "decision_id": "zh_obergericht_SB240091",
@@ -2884,7 +3109,2049 @@
    "outcome": "convicted",
    "verified": "second extraction",
    "status": "unextractable",
-   "why": "a modelled element is unclear"
+   "why": "a modelled element is unclear",
+   "stratum": "A"
+  },
+  {
+   "decision_id": "ag_strafgericht_SBK.2023.122",
+   "court": "ag_strafgericht",
+   "language": "de",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "ag_strafgericht_SST.2025.194",
+   "court": "ag_strafgericht",
+   "language": "de",
+   "outcome": "convicted",
+   "verified": "second extraction",
+   "status": "out_of_scope",
+   "why": "abs5 not modelled",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "be_zivilstraf_BK_2020_28",
+   "court": "be_zivilstraf",
+   "language": "fr",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "be_zivilstraf_BK_2020_426",
+   "court": "be_zivilstraf",
+   "language": "de",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "be_zivilstraf_BK_2023_23",
+   "court": "be_zivilstraf",
+   "language": "de",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bge_124 IV 121",
+   "court": "bge",
+   "language": "fr",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bge_125 IV 206",
+   "court": "bge",
+   "language": "fr",
+   "outcome": "remanded",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bge_126 IV 176",
+   "court": "bge",
+   "language": "de",
+   "outcome": "acquitted",
+   "verified": "second extraction",
+   "status": "in_scope",
+   "engine": "acquit",
+   "engine_reason": "setting:failed",
+   "court_verdict": "acquit",
+   "agree": true,
+   "acquittal_ground": "setting",
+   "facts": {
+    "act_date": "1995-07-01",
+    "characteristic": "religion",
+    "paragraph": "abs2",
+    "setting": "private"
+   },
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bge_126 IV 20",
+   "court": "bge",
+   "language": "fr",
+   "outcome": "convicted",
+   "verified": "second extraction",
+   "status": "unextractable",
+   "why": "a modelled element is unclear",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bge_126 IV 230",
+   "court": "bge",
+   "language": "fr",
+   "outcome": "acquitted",
+   "verified": "second extraction + tie-break",
+   "status": "unextractable",
+   "why": "a modelled element is unclear",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bge_129 IV 95",
+   "court": "bge",
+   "language": "de",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bge_150 IV 10",
+   "court": "bge",
+   "language": "it",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bge_BGE_124_IV_121",
+   "court": "bge",
+   "language": "fr",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bge_BGE_125_IV_206",
+   "court": "bge",
+   "language": "fr",
+   "outcome": "remanded",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bge_BGE_126_IV_176",
+   "court": "bge",
+   "language": "de",
+   "outcome": "acquitted",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bge_BGE_126_IV_20",
+   "court": "bge",
+   "language": "fr",
+   "outcome": "convicted",
+   "verified": "second extraction",
+   "status": "unextractable",
+   "why": "a modelled element is unclear",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bge_BGE_126_IV_230",
+   "court": "bge",
+   "language": "fr",
+   "outcome": "acquitted",
+   "verified": "second extraction + tie-break",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bge_BGE_129_IV_95",
+   "court": "bge",
+   "language": "de",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bge_BGE_143_IV_193",
+   "court": "bge",
+   "language": "de",
+   "outcome": "convicted",
+   "verified": "second extraction",
+   "status": "in_scope",
+   "engine": "convict",
+   "engine_reason": "convict",
+   "court_verdict": "convict",
+   "agree": true,
+   "acquittal_ground": null,
+   "facts": {
+    "act_date": "2011-08-19",
+    "characteristic": "ethnicity",
+    "paragraph": "abs1",
+    "setting": "public"
+   },
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bge_BGE_143_IV_308",
+   "court": "bge",
+   "language": "fr",
+   "outcome": "convicted",
+   "verified": "second extraction",
+   "status": "in_scope",
+   "engine": "convict",
+   "engine_reason": "convict",
+   "court_verdict": "convict",
+   "agree": true,
+   "acquittal_ground": null,
+   "facts": {
+    "act_date": "2013-07-01",
+    "characteristic": "religion",
+    "paragraph": "abs4",
+    "setting": "public"
+   },
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bge_BGE_143_IV_380",
+   "court": "bge",
+   "language": "fr",
+   "outcome": "remanded",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bge_BGE_148_IV_188",
+   "court": "bge",
+   "language": "fr",
+   "outcome": "acquitted",
+   "verified": "second extraction + tie-break",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bge_BGE_150_IV_10",
+   "court": "bge",
+   "language": "it",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bger_1B_79_2016",
+   "court": "bger",
+   "language": "de",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bger_1P.147_2003",
+   "court": "bger",
+   "language": "fr",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bger_1P.227_2005",
+   "court": "bger",
+   "language": "fr",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bger_1P.297_2003",
+   "court": "bger",
+   "language": "fr",
+   "outcome": "convicted",
+   "verified": "second extraction",
+   "status": "unextractable",
+   "why": "a modelled element is unclear",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bger_5A_195_2016",
+   "court": "bger",
+   "language": "de",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bger_6B_1017_2014",
+   "court": "bger",
+   "language": "fr",
+   "outcome": "convicted",
+   "verified": "second extraction",
+   "status": "in_scope",
+   "engine": "convict",
+   "engine_reason": "convict",
+   "court_verdict": "convict",
+   "agree": true,
+   "acquittal_ground": null,
+   "facts": {
+    "act_date": "2011-06-17",
+    "characteristic": "religion",
+    "paragraph": "abs1",
+    "setting": "public"
+   },
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bger_6B_1100_2014",
+   "court": "bger",
+   "language": "fr",
+   "outcome": "convicted",
+   "verified": "second extraction",
+   "status": "in_scope",
+   "engine": "convict",
+   "engine_reason": "convict",
+   "court_verdict": "convict",
+   "agree": true,
+   "acquittal_ground": null,
+   "facts": {
+    "act_date": "2010-07-01",
+    "characteristic": "religion",
+    "paragraph": "abs1",
+    "setting": "public"
+   },
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bger_6B_1126_2020",
+   "court": "bger",
+   "language": "fr",
+   "outcome": "convicted",
+   "verified": "second extraction",
+   "status": "in_scope",
+   "engine": "convict",
+   "engine_reason": "convict",
+   "court_verdict": "convict",
+   "agree": true,
+   "acquittal_ground": null,
+   "facts": {
+    "act_date": "2017-07-01",
+    "characteristic": "religion",
+    "paragraph": "abs4",
+    "setting": "public"
+   },
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bger_6B_1360_2021",
+   "court": "bger",
+   "language": "fr",
+   "outcome": "acquitted",
+   "verified": "second extraction + tie-break",
+   "status": "out_of_scope",
+   "why": "acquitted on unmodelled ground: other",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bger_6B_199_2024",
+   "court": "bger",
+   "language": "fr",
+   "outcome": "convicted",
+   "verified": "second extraction + tie-break",
+   "status": "unextractable",
+   "why": "a modelled element is unclear",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bger_6B_234_2022",
+   "court": "bger",
+   "language": "it",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bger_6B_267_2018",
+   "court": "bger",
+   "language": "fr",
+   "outcome": "convicted",
+   "verified": "second extraction",
+   "status": "in_scope",
+   "engine": "convict",
+   "engine_reason": "convict",
+   "court_verdict": "convict",
+   "agree": true,
+   "acquittal_ground": null,
+   "facts": {
+    "act_date": "2015-01-07",
+    "characteristic": "religion",
+    "paragraph": "abs1",
+    "setting": "public"
+   },
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bger_6B_361_2010",
+   "court": "bger",
+   "language": "fr",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bger_6B_398_2007",
+   "court": "bger",
+   "language": "fr",
+   "outcome": "convicted",
+   "verified": "second extraction",
+   "status": "in_scope",
+   "engine": "convict",
+   "engine_reason": "convict",
+   "court_verdict": "convict",
+   "agree": true,
+   "acquittal_ground": null,
+   "facts": {
+    "act_date": "2005-05-07",
+    "characteristic": "ethnicity",
+    "paragraph": "abs4",
+    "setting": "public"
+   },
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bger_6B_406_2020",
+   "court": "bger",
+   "language": "fr",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bger_6B_43_2017",
+   "court": "bger",
+   "language": "de",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bger_6B_440_2019",
+   "court": "bger",
+   "language": "de",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bger_6B_491_2024",
+   "court": "bger",
+   "language": "fr",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bger_6B_568_2007",
+   "court": "bger",
+   "language": "de",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bger_6B_594_2024",
+   "court": "bger",
+   "language": "de",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bger_6B_610_2016",
+   "court": "bger",
+   "language": "de",
+   "outcome": "convicted",
+   "verified": "second extraction",
+   "status": "in_scope",
+   "engine": "convict",
+   "engine_reason": "convict",
+   "court_verdict": "convict",
+   "agree": true,
+   "acquittal_ground": null,
+   "facts": {
+    "act_date": "2011-08-19",
+    "characteristic": "ethnicity",
+    "paragraph": "abs1",
+    "setting": "public"
+   },
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bger_6B_644_2020",
+   "court": "bger",
+   "language": "fr",
+   "outcome": "convicted",
+   "verified": "second extraction",
+   "status": "in_scope",
+   "engine": "convict",
+   "engine_reason": "convict",
+   "court_verdict": "convict",
+   "agree": true,
+   "acquittal_ground": null,
+   "facts": {
+    "act_date": "2014-08-22",
+    "characteristic": "religion",
+    "paragraph": "abs1",
+    "setting": "public"
+   },
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bger_6B_849_2018",
+   "court": "bger",
+   "language": "fr",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bger_6B_986_2016",
+   "court": "bger",
+   "language": "fr",
+   "outcome": "remanded",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bger_6F_12_2023",
+   "court": "bger",
+   "language": "fr",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bger_6F_6_2016",
+   "court": "bger",
+   "language": "fr",
+   "outcome": "acquitted",
+   "verified": "second extraction",
+   "status": "out_of_scope",
+   "why": "acquitted on unmodelled ground: justification",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bger_6P.132_1999",
+   "court": "bger",
+   "language": "de",
+   "outcome": "convicted",
+   "verified": "second extraction + tie-break",
+   "status": "in_scope",
+   "engine": "convict",
+   "engine_reason": "convict",
+   "court_verdict": "convict",
+   "agree": true,
+   "acquittal_ground": null,
+   "facts": {
+    "act_date": "1995-10-02",
+    "characteristic": "religion",
+    "paragraph": "abs4",
+    "setting": "public"
+   },
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bger_6P.137_2004",
+   "court": "bger",
+   "language": "fr",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bger_6P.29_2005",
+   "court": "bger",
+   "language": "fr",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bger_6S.196_2002",
+   "court": "bger",
+   "language": "de",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bger_6S.291_2000",
+   "court": "bger",
+   "language": "fr",
+   "outcome": "acquitted",
+   "verified": "second extraction + tie-break",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bger_6S.318_2003",
+   "court": "bger",
+   "language": "de",
+   "outcome": "remanded",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bger_6S.367_1998",
+   "court": "bger",
+   "language": "de",
+   "outcome": "convicted",
+   "verified": "second extraction",
+   "status": "unextractable",
+   "why": "a modelled element is unclear",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bger_6S.390_2000",
+   "court": "bger",
+   "language": "fr",
+   "outcome": "convicted",
+   "verified": "second extraction",
+   "status": "unextractable",
+   "why": "a modelled element is unclear",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bger_6S.391_2000",
+   "court": "bger",
+   "language": "fr",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bger_6S.420_1999",
+   "court": "bger",
+   "language": "de",
+   "outcome": "convicted",
+   "verified": "second extraction + tie-break",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bger_6S.614_2001",
+   "court": "bger",
+   "language": "de",
+   "outcome": "convicted",
+   "verified": "second extraction + tie-break",
+   "status": "in_scope",
+   "engine": "convict",
+   "engine_reason": "convict",
+   "court_verdict": "convict",
+   "agree": true,
+   "acquittal_ground": null,
+   "facts": {
+    "act_date": "1999-07-01",
+    "characteristic": "religion",
+    "paragraph": "abs4",
+    "setting": "public"
+   },
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bs_appellationsgericht_AG.2014.111",
+   "court": "bs_appellationsgericht",
+   "language": "de",
+   "outcome": "convicted",
+   "verified": "second extraction",
+   "status": "in_scope",
+   "engine": "convict",
+   "engine_reason": "convict",
+   "court_verdict": "convict",
+   "agree": true,
+   "acquittal_ground": null,
+   "facts": {
+    "act_date": "2010-07-01",
+    "characteristic": "religion",
+    "paragraph": "abs4",
+    "setting": "public"
+   },
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bs_appellationsgericht_AG.2014.380",
+   "court": "bs_appellationsgericht",
+   "language": "de",
+   "outcome": "acquitted",
+   "verified": "second extraction",
+   "status": "unextractable",
+   "why": "a modelled element is unclear",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bs_appellationsgericht_AG.2016.108",
+   "court": "bs_appellationsgericht",
+   "language": "de",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bs_appellationsgericht_AG.2017.447",
+   "court": "bs_appellationsgericht",
+   "language": "de",
+   "outcome": "acquitted",
+   "verified": "second extraction + tie-break",
+   "status": "out_of_scope",
+   "why": "acquitted on unmodelled ground: dignity",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bs_appellationsgericht_AG.2017.79",
+   "court": "bs_appellationsgericht",
+   "language": "de",
+   "outcome": "acquitted",
+   "verified": "second extraction",
+   "status": "out_of_scope",
+   "why": "acquitted on unmodelled ground: dignity",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bs_appellationsgericht_AG.2023.59",
+   "court": "bs_appellationsgericht",
+   "language": "de",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bs_appellationsgericht_AG.2023.60",
+   "court": "bs_appellationsgericht",
+   "language": "de",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bstger_CA.2020.22",
+   "court": "bstger",
+   "language": "de",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bstger_CA.2026.6",
+   "court": "bstger",
+   "language": "fr",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bstger_SK.2007.4",
+   "court": "bstger",
+   "language": "fr",
+   "outcome": "acquitted",
+   "verified": "second extraction + tie-break",
+   "status": "out_of_scope",
+   "why": "acquitted on unmodelled ground: dignity",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bstger_SK.2011.29",
+   "court": "bstger",
+   "language": "de",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bstger_SK.2014.29",
+   "court": "bstger",
+   "language": "de",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bstger_SK.2019.38",
+   "court": "bstger",
+   "language": "de",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bstger_SK.2020.7",
+   "court": "bstger",
+   "language": "de",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "bstger_TPF_2012_127",
+   "court": "bstger",
+   "language": "de",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "ch_vb_2001-0703_5649",
+   "court": "ch_vb",
+   "language": "de",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "ch_vb_2003-2496_4693_",
+   "court": "ch_vb",
+   "language": "de",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "ch_vb_2005-2318_1057_",
+   "court": "ch_vb",
+   "language": "de",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "ch_vb_2007-1053_3461_",
+   "court": "ch_vb",
+   "language": "de",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "ch_vb_92.029",
+   "court": "ch_vb",
+   "language": "de",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "ch_vb_99.033",
+   "court": "ch_vb",
+   "language": "de",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "ch_vb_JAAC_64.75__",
+   "court": "ch_vb",
+   "language": "de",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "fr_gerichte_501_2020_161",
+   "court": "fr_gerichte",
+   "language": "fr",
+   "outcome": "convicted",
+   "verified": "second extraction + tie-break",
+   "status": "unextractable",
+   "why": "a modelled element is unclear",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "fr_gerichte_501_2024_64",
+   "court": "fr_gerichte",
+   "language": "fr",
+   "outcome": "convicted",
+   "verified": "second extraction",
+   "status": "in_scope",
+   "engine": "convict",
+   "engine_reason": "convict",
+   "court_verdict": "convict",
+   "agree": true,
+   "acquittal_ground": null,
+   "facts": {
+    "act_date": "2023-07-01",
+    "characteristic": "sexual_orientation",
+    "paragraph": "abs1",
+    "setting": "public"
+   },
+   "stratum": "B"
+  },
+  {
+   "decision_id": "fr_gerichte_501_2024_94",
+   "court": "fr_gerichte",
+   "language": "de",
+   "outcome": "convicted",
+   "verified": "second extraction",
+   "status": "unextractable",
+   "why": "a modelled element is unclear",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "fr_gerichte_501_2025_116",
+   "court": "fr_gerichte",
+   "language": "fr",
+   "outcome": "convicted",
+   "verified": "second extraction",
+   "status": "in_scope",
+   "engine": "convict",
+   "engine_reason": "convict",
+   "court_verdict": "convict",
+   "agree": true,
+   "acquittal_ground": null,
+   "facts": {
+    "act_date": "2024-05-12",
+    "characteristic": "sexual_orientation",
+    "paragraph": "abs4",
+    "setting": "public"
+   },
+   "stratum": "B"
+  },
+  {
+   "decision_id": "fr_gerichte_501_2025_95",
+   "court": "fr_gerichte",
+   "language": "fr",
+   "outcome": "acquitted",
+   "verified": "second extraction",
+   "status": "out_of_scope",
+   "why": "acquitted on unmodelled ground: other",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "fr_gerichte_502_2016_181",
+   "court": "fr_gerichte",
+   "language": "fr",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "fr_gerichte_502_2017_282",
+   "court": "fr_gerichte",
+   "language": "fr",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "fr_gerichte_502_2022_72",
+   "court": "fr_gerichte",
+   "language": "fr",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "ge_gerichte_AARP_119_2024",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "ge_gerichte_AARP_204_2025",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "outcome": "acquitted",
+   "verified": "second extraction",
+   "status": "out_of_scope",
+   "why": "acquitted on unmodelled ground: other",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "ge_gerichte_AARP_323_2018",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "ge_gerichte_AARP_62_2022",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "outcome": "convicted",
+   "verified": "second extraction",
+   "status": "unextractable",
+   "why": "a modelled element is unclear",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "ge_gerichte_AARP_85_2020",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "ge_gerichte_ACJP_268_2008",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "outcome": "convicted",
+   "verified": "second extraction + tie-break",
+   "status": "unextractable",
+   "why": "a modelled element is unclear",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "ge_gerichte_ACPR_264_2026",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "ge_gerichte_ACPR_615_2026",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "ge_gerichte_ACPR_775_2025",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "ge_gerichte_ACPR_77_2024",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "ge_gerichte_ATAS_412_2024",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "ge_gerichte_A_802_2024",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "ge_gerichte_JTDP_230_2026",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "outcome": "convicted",
+   "verified": "second extraction + tie-break",
+   "status": "in_scope",
+   "engine": "convict",
+   "engine_reason": "convict",
+   "court_verdict": "convict",
+   "agree": true,
+   "acquittal_ground": null,
+   "facts": {
+    "act_date": "2024-07-01",
+    "characteristic": "race",
+    "paragraph": "abs4",
+    "setting": "public"
+   },
+   "stratum": "B"
+  },
+  {
+   "decision_id": "ge_gerichte_JTDP_551_2024",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "outcome": "acquitted",
+   "verified": "second extraction",
+   "status": "out_of_scope",
+   "why": "acquitted on unmodelled ground: other",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "ge_gerichte_JTDP_900_2025",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "outcome": "convicted",
+   "verified": "second extraction",
+   "status": "in_scope",
+   "engine": "convict",
+   "engine_reason": "convict",
+   "court_verdict": "convict",
+   "agree": true,
+   "acquittal_ground": null,
+   "facts": {
+    "act_date": "2024-11-22",
+    "characteristic": "race",
+    "paragraph": "abs4",
+    "setting": "public"
+   },
+   "stratum": "B"
+  },
+  {
+   "decision_id": "ge_gerichte_JTDP_924_2021",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "outcome": "convicted",
+   "verified": "second extraction",
+   "status": "in_scope",
+   "engine": "convict",
+   "engine_reason": "convict",
+   "court_verdict": "convict",
+   "agree": true,
+   "acquittal_ground": null,
+   "facts": {
+    "act_date": "2019-01-04",
+    "characteristic": "religion",
+    "paragraph": "abs4",
+    "setting": "public"
+   },
+   "stratum": "B"
+  },
+  {
+   "decision_id": "ge_gerichte_OCA_147_2009",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "ge_gerichte_P_14167_2021",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "ge_gerichte_P_14414_2022",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "outcome": "acquitted",
+   "verified": "second extraction",
+   "status": "out_of_scope",
+   "why": "acquitted on unmodelled ground: other",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "ge_gerichte_P_18314_2017",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "ge_gerichte_P_1859_2009",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "ge_gerichte_P_18703_2005",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "outcome": "convicted",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "ge_gerichte_P_19124_2020",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "outcome": "convicted",
+   "verified": "second extraction",
+   "status": "unextractable",
+   "why": "a modelled element is unclear",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "ge_gerichte_P_21878_2015",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "ge_gerichte_P_23839_2021",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "ge_gerichte_P_26978_2024",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "outcome": "convicted",
+   "verified": "second extraction",
+   "status": "in_scope",
+   "engine": "convict",
+   "engine_reason": "convict",
+   "court_verdict": "convict",
+   "agree": true,
+   "acquittal_ground": null,
+   "facts": {
+    "act_date": "2024-11-22",
+    "characteristic": "race",
+    "paragraph": "abs4",
+    "setting": "public"
+   },
+   "stratum": "B"
+  },
+  {
+   "decision_id": "ge_gerichte_P_3228_2022",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "ge_gerichte_P_6468_2017",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "gr_gerichte_PKG_1997_35",
+   "court": "gr_gerichte",
+   "language": "de",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "mkg_MKGE_14_Nr_31",
+   "court": "mkg",
+   "language": "de",
+   "outcome": "remanded",
+   "verified": "second extraction + tie-break",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "ne_gerichte_ARMP.2018.117",
+   "court": "ne_gerichte",
+   "language": "fr",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "ne_gerichte_ARMP.2018.117_d20181003",
+   "court": "ne_gerichte",
+   "language": "fr",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "ne_gerichte_CACIV.2022.12",
+   "court": "ne_gerichte",
+   "language": "fr",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "ne_gerichte_CACIV.2022.12_d20180913",
+   "court": "ne_gerichte",
+   "language": "fr",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "ne_gerichte_CCP.1997.6488",
+   "court": "ne_gerichte",
+   "language": "fr",
+   "outcome": "acquitted",
+   "verified": "second extraction + tie-break",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "ne_gerichte_CCP.1997.6488_d19970408",
+   "court": "ne_gerichte",
+   "language": "fr",
+   "outcome": "acquitted",
+   "verified": "second extraction",
+   "status": "out_of_scope",
+   "why": "acquitted on unmodelled ground: intent",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "ne_gerichte_CCP.1998.6615",
+   "court": "ne_gerichte",
+   "language": "fr",
+   "outcome": "convicted",
+   "verified": "second extraction",
+   "status": "in_scope",
+   "engine": "convict",
+   "engine_reason": "convict",
+   "court_verdict": "convict",
+   "agree": true,
+   "acquittal_ground": null,
+   "facts": {
+    "act_date": "1997-09-06",
+    "characteristic": "ethnicity",
+    "paragraph": "abs4",
+    "setting": "public"
+   },
+   "stratum": "B"
+  },
+  {
+   "decision_id": "ne_gerichte_CCP.2001.76",
+   "court": "ne_gerichte",
+   "language": "fr",
+   "outcome": "convicted",
+   "verified": "second extraction",
+   "status": "unextractable",
+   "why": "a modelled element is unclear",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "ti_gerichte_17.2016.120",
+   "court": "ti_gerichte",
+   "language": "it",
+   "outcome": "acquitted",
+   "verified": "second extraction + tie-break",
+   "status": "unextractable",
+   "why": "a modelled element is unclear",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "ubi_b.711",
+   "court": "ubi",
+   "language": "fr",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "vd_findinfo_D_cision___2012___46",
+   "court": "vd_findinfo",
+   "language": "fr",
+   "outcome": "remanded",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "vd_findinfo_D_cision___2016___688",
+   "court": "vd_findinfo",
+   "language": "fr",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "vd_findinfo_D_cision___2017___912",
+   "court": "vd_findinfo",
+   "language": "fr",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "vd_findinfo_D_cision___2018___506",
+   "court": "vd_findinfo",
+   "language": "fr",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "vd_findinfo_D_cision___2019___755",
+   "court": "vd_findinfo",
+   "language": "fr",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "vd_findinfo_HC___2010___387",
+   "court": "vd_findinfo",
+   "language": "fr",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "vd_findinfo_Jug___2016___440",
+   "court": "vd_findinfo",
+   "language": "fr",
+   "outcome": "acquitted",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "vd_findinfo_Jug___2018___20",
+   "court": "vd_findinfo",
+   "language": "fr",
+   "outcome": "convicted",
+   "verified": "second extraction",
+   "status": "in_scope",
+   "engine": "convict",
+   "engine_reason": "convict",
+   "court_verdict": "convict",
+   "agree": true,
+   "acquittal_ground": null,
+   "facts": {
+    "act_date": "2015-01-07",
+    "characteristic": "religion",
+    "paragraph": "abs1",
+    "setting": "public"
+   },
+   "stratum": "B"
+  },
+  {
+   "decision_id": "vd_findinfo_Jug___2019___36",
+   "court": "vd_findinfo",
+   "language": "fr",
+   "outcome": "convicted",
+   "verified": "second extraction",
+   "status": "in_scope",
+   "engine": "convict",
+   "engine_reason": "convict",
+   "court_verdict": "convict",
+   "agree": true,
+   "acquittal_ground": null,
+   "facts": {
+    "act_date": "2015-07-01",
+    "characteristic": "religion",
+    "paragraph": "abs4",
+    "setting": "public"
+   },
+   "stratum": "B"
+  },
+  {
+   "decision_id": "vd_findinfo_Jug___2022___423",
+   "court": "vd_findinfo",
+   "language": "fr",
+   "outcome": "convicted",
+   "verified": "second extraction",
+   "status": "unextractable",
+   "why": "a modelled element is unclear",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "vd_findinfo_Jug___2023___480",
+   "court": "vd_findinfo",
+   "language": "fr",
+   "outcome": "convicted",
+   "verified": "second extraction",
+   "status": "unextractable",
+   "why": "a modelled element is unclear",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "vd_findinfo_Jug___2025___175",
+   "court": "vd_findinfo",
+   "language": "fr",
+   "outcome": "acquitted",
+   "verified": "second extraction",
+   "status": "out_of_scope",
+   "why": "acquitted on unmodelled ground: intent",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "vd_gerichte_43eb08a2-f27e-4044-9460-f51975364389",
+   "court": "vd_gerichte",
+   "language": "fr",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "vd_gerichte_PE05.025301",
+   "court": "vd_gerichte",
+   "language": "fr",
+   "outcome": "acquitted",
+   "verified": "second extraction",
+   "status": "out_of_scope",
+   "why": "acquitted on unmodelled ground: justification",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "vd_gerichte_PE10.031577",
+   "court": "vd_gerichte",
+   "language": "fr",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "vd_gerichte_PE11.004600",
+   "court": "vd_gerichte",
+   "language": "fr",
+   "outcome": "acquitted",
+   "verified": "second extraction",
+   "status": "out_of_scope",
+   "why": "acquitted on unmodelled ground: intent",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "vd_gerichte_PE15.004399",
+   "court": "vd_gerichte",
+   "language": "fr",
+   "outcome": "convicted",
+   "verified": "second extraction",
+   "status": "in_scope",
+   "engine": "convict",
+   "engine_reason": "convict",
+   "court_verdict": "convict",
+   "agree": true,
+   "acquittal_ground": null,
+   "facts": {
+    "act_date": "2015-01-07",
+    "characteristic": "religion",
+    "paragraph": "abs1",
+    "setting": "public"
+   },
+   "stratum": "B"
+  },
+  {
+   "decision_id": "vd_gerichte_PE15.013067",
+   "court": "vd_gerichte",
+   "language": "fr",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "vd_gerichte_PE16.006073",
+   "court": "vd_gerichte",
+   "language": "fr",
+   "outcome": "convicted",
+   "verified": "second extraction",
+   "status": "in_scope",
+   "engine": "convict",
+   "engine_reason": "convict",
+   "court_verdict": "convict",
+   "agree": true,
+   "acquittal_ground": null,
+   "facts": {
+    "act_date": "2015-07-01",
+    "characteristic": "religion",
+    "paragraph": "abs4",
+    "setting": "public"
+   },
+   "stratum": "B"
+  },
+  {
+   "decision_id": "vd_gerichte_PE16.013289",
+   "court": "vd_gerichte",
+   "language": "fr",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "vd_gerichte_PE16.018259",
+   "court": "vd_gerichte",
+   "language": "fr",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "vd_gerichte_PE17.013320",
+   "court": "vd_gerichte",
+   "language": "fr",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "vd_gerichte_PE20.004987",
+   "court": "vd_gerichte",
+   "language": "fr",
+   "outcome": "convicted",
+   "verified": "second extraction",
+   "status": "unextractable",
+   "why": "a modelled element is unclear",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "vd_gerichte_PE23.011214",
+   "court": "vd_gerichte",
+   "language": "fr",
+   "outcome": "acquitted",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "vd_gerichte_PE24.002596",
+   "court": "vd_gerichte",
+   "language": "fr",
+   "outcome": "convicted",
+   "verified": "second extraction + tie-break",
+   "status": "in_scope",
+   "engine": "convict",
+   "engine_reason": "convict",
+   "court_verdict": "convict",
+   "agree": true,
+   "acquittal_ground": null,
+   "facts": {
+    "act_date": "2023-04-17",
+    "characteristic": "ethnicity",
+    "paragraph": "abs4",
+    "setting": "public"
+   },
+   "stratum": "B"
+  },
+  {
+   "decision_id": "vd_gerichte_PE24.027477",
+   "court": "vd_gerichte",
+   "language": "fr",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "vd_gerichte_PE25.008509",
+   "court": "vd_gerichte",
+   "language": "fr",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "vd_gerichte_PE25.021003",
+   "court": "vd_gerichte",
+   "language": "fr",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "vs_gerichte_P1 17 51",
+   "court": "vs_gerichte",
+   "language": "fr",
+   "outcome": "convicted",
+   "verified": "second extraction",
+   "status": "in_scope",
+   "engine": "convict",
+   "engine_reason": "convict",
+   "court_verdict": "convict",
+   "agree": true,
+   "acquittal_ground": null,
+   "facts": {
+    "act_date": "2014-08-22",
+    "characteristic": "religion",
+    "paragraph": "abs1",
+    "setting": "public"
+   },
+   "stratum": "B"
+  },
+  {
+   "decision_id": "vs_gerichte_P1 23 62",
+   "court": "vs_gerichte",
+   "language": "fr",
+   "outcome": "convicted",
+   "verified": "second extraction",
+   "status": "in_scope",
+   "engine": "convict",
+   "engine_reason": "convict",
+   "court_verdict": "convict",
+   "agree": true,
+   "acquittal_ground": null,
+   "facts": {
+    "act_date": "2022-07-01",
+    "characteristic": "race",
+    "paragraph": "abs1",
+    "setting": "public"
+   },
+   "stratum": "B"
+  },
+  {
+   "decision_id": "vs_gerichte_P1 24 63",
+   "court": "vs_gerichte",
+   "language": "fr",
+   "outcome": "acquitted",
+   "verified": "second extraction",
+   "status": "unextractable",
+   "why": "a modelled element is unclear",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "zg_obergericht_BS_2023_102",
+   "court": "zg_obergericht",
+   "language": "de",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "zh_bezirksgericht_buelach_GG210066",
+   "court": "zh_bezirksgericht_buelach",
+   "language": "de",
+   "outcome": "acquitted",
+   "verified": "second extraction",
+   "characteristic_substituted": "other:migrants",
+   "status": "in_scope",
+   "engine": "acquit",
+   "engine_reason": "characteristic:not_listed",
+   "court_verdict": "acquit",
+   "agree": true,
+   "acquittal_ground": "characteristic",
+   "facts": {
+    "act_date": "2020-02-20",
+    "characteristic": "gender_identity",
+    "paragraph": "abs4",
+    "setting": "public"
+   },
+   "stratum": "B"
+  },
+  {
+   "decision_id": "zh_bezirksgericht_zuerich_DG210212",
+   "court": "zh_bezirksgericht_zuerich",
+   "language": "de",
+   "outcome": "convicted",
+   "verified": "second extraction + tie-break",
+   "status": "unextractable",
+   "why": "a modelled element is unclear",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "zh_bezirksgericht_zuerich_GG200094",
+   "court": "zh_bezirksgericht_zuerich",
+   "language": "de",
+   "outcome": "convicted",
+   "verified": "second extraction + tie-break",
+   "status": "unextractable",
+   "why": "a modelled element is unclear",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "zh_bezirksgericht_zuerich_GG250065",
+   "court": "zh_bezirksgericht_zuerich",
+   "language": "de",
+   "outcome": "acquitted",
+   "verified": "second extraction",
+   "status": "out_of_scope",
+   "why": "acquitted on unmodelled ground: other",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "zh_kassationsgericht_AC050013",
+   "court": "zh_kassationsgericht",
+   "language": "de",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "zh_obergericht_SB150194",
+   "court": "zh_obergericht",
+   "language": "de",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "zh_obergericht_SB180224",
+   "court": "zh_obergericht",
+   "language": "de",
+   "outcome": "convicted",
+   "verified": "second extraction",
+   "status": "unextractable",
+   "why": "a modelled element is unclear",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "zh_obergericht_SB180281",
+   "court": "zh_obergericht",
+   "language": "de",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "zh_obergericht_SB200089",
+   "court": "zh_obergericht",
+   "language": "de",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "zh_obergericht_SB200458",
+   "court": "zh_obergericht",
+   "language": "de",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "zh_obergericht_SB200471",
+   "court": "zh_obergericht",
+   "language": "de",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "zh_obergericht_SB240542",
+   "court": "zh_obergericht",
+   "language": "de",
+   "outcome": "convicted",
+   "verified": "second extraction",
+   "status": "unextractable",
+   "why": "a modelled element is unclear",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "zh_obergericht_SB250477",
+   "court": "zh_obergericht",
+   "language": "de",
+   "outcome": "acquitted",
+   "verified": "second extraction + tie-break",
+   "status": "out_of_scope",
+   "why": "acquitted on unmodelled ground: other",
+   "stratum": "B"
+  },
+  {
+   "decision_id": "zh_obergericht_UE250003",
+   "court": "zh_obergericht",
+   "language": "de",
+   "outcome": "not_decided",
+   "verified": "second extraction",
+   "status": "excluded",
+   "why": "does not rule on a 261bis charge",
+   "stratum": "B"
   }
  ]
 }

@@ -133,6 +133,11 @@ def test_candidate_logprob_rejects_wrong_tokens():
     ("de", "ver", "schuldig", "convict"), ("fr", "conv", "Oui, car", "convict"), ("fr", "ver", "Jugement : non coupable", "acquit"),
     ("it", "conv", "No.", "acquit"), ("it", "conv", "Sì", "convict"), ("it", "ver", "Sentenza: colpevole", "convict"),
     ("de", "conv", "Das kommt darauf an.", "unparsed"),
+    ("de", "open", "Nein, das ist nicht strafbar, weil die Äusserung privat war.", "acquit"),
+    ("de", "open", "Ja. Das ist nach Art. 261bis StGB strafbar.", "convict"),
+    ("fr", "open", "Non, ce n'est pas punissable car les propos étaient privés.", "acquit"),
+    ("it", "open", "Sì, è punibile ai sensi dell'art. 261bis CP.", "convict"),
+    ("de", "open", "Das hängt von den Umständen ab.", "unparsed"),
 ])
 def test_parse_decision(lang, framing, text, want):
     assert parse_decision(lang, framing, text) == want

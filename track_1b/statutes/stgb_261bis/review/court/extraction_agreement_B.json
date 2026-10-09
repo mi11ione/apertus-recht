@@ -1,0 +1,111 @@
+{
+ "decisions": 176,
+ "per_field": {
+  "rules_on_261bis": {
+   "agree": 174,
+   "n": 176,
+   "kappa": 0.977
+  },
+  "outcome": {
+   "agree": 173,
+   "n": 176,
+   "kappa": 0.972
+  },
+  "setting": {
+   "agree": 162,
+   "n": 176,
+   "kappa": 0.852
+  },
+  "characteristic": {
+   "agree": 155,
+   "n": 176,
+   "kappa": 0.837
+  },
+  "paragraph": {
+   "agree": 164,
+   "n": 176,
+   "kappa": 0.899
+  },
+  "acquittal_ground": {
+   "agree": 173,
+   "n": 176,
+   "kappa": 0.94
+  },
+  "act_year": {
+   "agree": 153,
+   "n": 176,
+   "kappa": 0.829
+  }
+ },
+ "decisions_with_rule_relevant_conflict": 21,
+ "conflicts": {
+  "bge_126 IV 230": [
+   "act_year"
+  ],
+  "bge_BGE_126_IV_230": [
+   "act_year"
+  ],
+  "bge_BGE_148_IV_188": [
+   "act_year",
+   "acquittal_ground"
+  ],
+  "bger_6B_1360_2021": [
+   "paragraph"
+  ],
+  "bger_6B_199_2024": [
+   "paragraph"
+  ],
+  "bger_6P.132_1999": [
+   "setting"
+  ],
+  "bger_6S.291_2000": [
+   "act_year"
+  ],
+  "bger_6S.420_1999": [
+   "act_year"
+  ],
+  "bger_6S.614_2001": [
+   "setting"
+  ],
+  "bs_appellationsgericht_AG.2017.447": [
+   "acquittal_ground"
+  ],
+  "bstger_SK.2007.4": [
+   "paragraph"
+  ],
+  "fr_gerichte_501_2020_161": [
+   "act_year"
+  ],
+  "ge_gerichte_ACJP_268_2008": [
+   "paragraph"
+  ],
+  "ge_gerichte_JTDP_230_2026": [
+   "characteristic"
+  ],
+  "mkg_MKGE_14_Nr_31": [
+   "rules_on_261bis",
+   "outcome"
+  ],
+  "ne_gerichte_CCP.1997.6488": [
+   "rules_on_261bis",
+   "outcome",
+   "acquittal_ground"
+  ],
+  "ti_gerichte_17.2016.120": [
+   "characteristic"
+  ],
+  "vd_gerichte_PE24.002596": [
+   "characteristic"
+  ],
+  "zh_bezirksgericht_zuerich_DG210212": [
+   "setting",
+   "paragraph"
+  ],
+  "zh_bezirksgericht_zuerich_GG200094": [
+   "characteristic"
+  ],
+  "zh_obergericht_SB250477": [
+   "act_year"
+  ]
+ }
+}
