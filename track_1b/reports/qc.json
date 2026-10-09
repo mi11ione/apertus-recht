@@ -37,7 +37,7 @@
    "n_hits": 0,
    "scanned": {
     "items": 2142,
-    "responses": 9097,
+    "responses": 24505,
     "metadata": 2142
    }
   },
@@ -197,6 +197,21 @@
    "n": 648,
    "min": 0.855614,
    "median": 0.970684
+  },
+  "8b-bf16-blend-RLVR-DPO-a0.25": {
+   "n": 336,
+   "min": 0.890256,
+   "median": 0.982672
+  },
+  "8b-bf16-blend-RLVR-DPO-a0.5": {
+   "n": 336,
+   "min": 0.962661,
+   "median": 0.999414
+  },
+  "8b-bf16-blend-RLVR-DPO-a0.75": {
+   "n": 336,
+   "min": 0.977021,
+   "median": 0.999977
   },
   "8b-gguf-q4_k_m": {
    "n": 648,

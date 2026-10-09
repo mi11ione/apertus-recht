@@ -32,3 +32,13 @@ red/amber rule and the gold engine are unchanged.
 |---|---|---|
 | dataset/eval/core_de.jsonl | c54f6c3fdb7861b89737258be2d3a8801c824287ad7d9f727349bc491a75f267 | 2428ca73ddadce916ba3e69578f19aeae4ae0ccf94f8a0548caf5a904bd941a6 |
 | statutes/stgb_261bis/design.yaml | (A1 value) | df8a364b97438c5c742174ff08d23afd207e60cc1fa52d809dec0b7a6df9f4cc |
+
+## A4 (2026-10-10, 00:05): verification by independent agents instead of a human reviewer
+Team decision: no human labelling or adjudication. (1) Court tuples: instead of verification by reviewer R1, all 150
+triaged decisions are extracted a second time by independent Claude agents that do not see the first extraction;
+per-field agreement is reported, and every decision on which the two extractions disagree on a field that enters the
+rule (rules_on_261bis, outcome, setting, characteristic, paragraph, act date, acquittal ground) goes to a third agent
+that sees both and the excerpt. The engine-court comparison is then rerun on the reconciled tuples with the
+pre-registered rule unchanged. Made after the first-pass result (30/30) had been computed; both results are reported.
+(2) Gold adjudication: the queue (every annotator disagreement, every contested item, a seeded 10% sample of agreeing
+settled items) is adjudicated by two independent agents, with a third agent on their disagreements.

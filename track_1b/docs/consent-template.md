@@ -4,8 +4,9 @@ This dataset has **no data subjects**: every scenario is synthetic, generated fr
 man", "a student"); no real person, name, address or identifier occurs (PII gate in `statute-twins qc`). Court
 decisions used for validation are public-domain judgments (Swiss Copyright Act Art. 5) and are referenced by id only.
 
-The only people involved are reviewers who adjudicate labels or check translations. Each signs the following
-before reviewing. The signed forms are kept by the team and are not published; reviewers appear in the dataset only
+Version 1.0 of the dataset involved no human reviewers: every label was produced by reproducible agent runs. This form
+is for anyone who extends the set with human reviewers or human-written scenarios; each such person signs it before
+reviewing. The signed forms are kept by the team and are not published; reviewers appear in the dataset only
 under a pseudonym (R1, R2, …).
 
 ---

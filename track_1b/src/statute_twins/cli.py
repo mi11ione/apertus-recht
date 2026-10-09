@@ -134,7 +134,10 @@ def compute_results(ds: Path, runs: list[str] | None = None) -> dict:
         res["heldout"] = {l: heldout.run(items, rows, lang=l) for l in langs}
         out["runs"][p.stem] = dict(meta=meta, **res)
     out["comparisons"] = dict(reference=compare.REFERENCE, build_parity=compare.build_parity(loaded),
-                              stage_trajectory=compare.stage_trajectory(items, loaded))
+                              stage_trajectory=compare.stage_trajectory(items, loaded),
+                              cross_language=compare.cross_language(items, loaded, {"de": "publicai-70b-fc-core",
+                                                                                     "fr": "publicai-70b-fc-core-fr",
+                                                                                     "it": "publicai-70b-fc-core-it"}))
     return out
 
 

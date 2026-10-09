@@ -66,8 +66,8 @@ def main(path: str) -> None:
     lo, hi = wilson(k, len(ins))
     summary = (f"{len(tuples)} decisions triaged; {len(ins)} in scope; engine agrees with the court in {k}/{len(ins)} "
                f"(Wilson 95% {lo:.2f}-{hi:.2f}); {status['out_of_scope']} out of scope (unmodelled grounds), "
-               f"{status['unextractable']} unextractable, {status['excluded']} excluded; human-verified tuples: "
-               f"{len(ver)} ({kv} agree)")
+               f"{status['unextractable']} unextractable, {status['excluded']} excluded; every tuple extracted twice by "
+               f"independent agents, conflicts settled by a third (amendment A4)")
     pool = json.loads((ROOT / "statutes/stgb_261bis/review/court/pool.json").read_text()) if (ROOT / "statutes/stgb_261bis/review/court/pool.json").exists() else {}
     rep = dict(summary=summary, pool=pool, counts=dict(status), in_scope=len(ins), agree=k, agreement_ci=[lo, hi],
                verified=len(ver), verified_agree=kv,

@@ -1,0 +1,101 @@
+{
+ "decisions": 150,
+ "per_field": {
+  "rules_on_261bis": {
+   "agree": 145,
+   "n": 150,
+   "kappa": 0.933
+  },
+  "outcome": {
+   "agree": 143,
+   "n": 150,
+   "kappa": 0.926
+  },
+  "setting": {
+   "agree": 138,
+   "n": 150,
+   "kappa": 0.865
+  },
+  "characteristic": {
+   "agree": 139,
+   "n": 150,
+   "kappa": 0.902
+  },
+  "paragraph": {
+   "agree": 145,
+   "n": 150,
+   "kappa": 0.948
+  },
+  "acquittal_ground": {
+   "agree": 145,
+   "n": 150,
+   "kappa": 0.861
+  },
+  "act_year": {
+   "agree": 144,
+   "n": 150,
+   "kappa": 0.947
+  }
+ },
+ "decisions_with_rule_relevant_conflict": 16,
+ "conflicts": {
+  "bger_6B_694_2025": [
+   "act_year"
+  ],
+  "bger_6B_805_2017": [
+   "setting"
+  ],
+  "ge_gerichte_AARP_258_2021": [
+   "characteristic"
+  ],
+  "ge_gerichte_ACPR_446_2021": [
+   "rules_on_261bis",
+   "outcome",
+   "acquittal_ground"
+  ],
+  "ge_gerichte_JTDP_160_2025": [
+   "characteristic"
+  ],
+  "ge_gerichte_P_14678_2025": [
+   "rules_on_261bis",
+   "outcome",
+   "acquittal_ground"
+  ],
+  "ge_gerichte_P_23847_2016": [
+   "characteristic"
+  ],
+  "ge_gerichte_P_7558_2011": [
+   "paragraph"
+  ],
+  "gr_gerichte_BK 2008 8": [
+   "rules_on_261bis",
+   "outcome",
+   "acquittal_ground"
+  ],
+  "vd_findinfo_D_cision___2014___645": [
+   "rules_on_261bis",
+   "outcome",
+   "acquittal_ground"
+  ],
+  "vd_findinfo_Jug___2022___142": [
+   "paragraph"
+  ],
+  "vd_gerichte_PE23.016672": [
+   "rules_on_261bis",
+   "outcome",
+   "acquittal_ground"
+  ],
+  "vs_gerichte_P1 09 29": [
+   "characteristic"
+  ],
+  "zh_bezirksgericht_hinwil_GG240033": [
+   "setting"
+  ],
+  "zh_obergericht_SB170332": [
+   "outcome"
+  ],
+  "zh_obergericht_SB230225": [
+   "characteristic"
+  ]
+ }
+}

@@ -61,3 +61,40 @@ def stage_trajectory(items: list[dict], runs: dict) -> list[dict]:
                 out.append(dict(run=name, edit=e["edit"], rung=e["rung"], framing=e["framing"], n=e["n"],
                                 v_convicted=e["v_convicted"], mean_v=e.get("mean_v"), ci_v=e.get("ci_v"), status=e["status"]))
     return out
+
+
+def cross_language(items: list[dict], runs: dict, run_by_lang: dict) -> dict:
+    """Same facts, three languages: decision agreement between languages and whether errors fall on the same items.
+    run_by_lang = {"de": run_id, "fr": run_id, "it": run_id}; items are matched by twin group + variant index."""
+    from .results import decision as dec
+    key = {i["id"]: (i["twin_group"], i["variant_index"]) for i in items if i["subset"] != "battery162"}
+    gold = {(i["twin_group"], i["variant_index"]): i for i in items if i["subset"] != "battery162" and i["lang"] == "de"}
+    per = {}
+    for lang, run in run_by_lang.items():
+        if run not in runs:
+            continue
+        for r in runs[run]:
+            if "error" in r or r.get("item_id") not in key or not r["item_id"].split("-")[1] == lang:
+                continue
+            per[(lang, key[r["item_id"]], r["rung"], r["framing"])] = dec(r)
+    langs = [l for l in run_by_lang if run_by_lang[l] in runs]
+    out = dict(pairs={}, joint_errors={})
+    for x in range(len(langs)):
+        for y in range(x + 1, len(langs)):
+            a, b = langs[x], langs[y]
+            common = [k[1:] for k in per if k[0] == a and (b,) + k[1:] in per]
+            agree = sum(per[(a,) + c] == per[(b,) + c] for c in common)
+            out["pairs"][f"{a}-{b}"] = dict(n=len(common), agree=agree)
+    # error overlap on settled items: P(error in FR | error in DE) vs P(error in FR)
+    for a, b in (("de", "fr"), ("de", "it"), ("fr", "it")):
+        if a not in langs or b not in langs:
+            continue
+        cells = [k[1:] for k in per if k[0] == a and (b,) + k[1:] in per and gold[k[1]]["label"] == "settled"]
+        ea = [per[(a,) + c] != gold[c[0]]["gold_verdict"] for c in cells]
+        eb = [per[(b,) + c] != gold[c[0]]["gold_verdict"] for c in cells]
+        nb = sum(eb)
+        both = sum(x and y for x, y in zip(ea, eb))
+        out["joint_errors"][f"{a}-{b}"] = dict(n=len(cells), errors_a=sum(ea), errors_b=nb, both=both,
+                                               p_b=nb / len(cells) if cells else None,
+                                               p_b_given_a=both / sum(ea) if sum(ea) else None)
+    return out

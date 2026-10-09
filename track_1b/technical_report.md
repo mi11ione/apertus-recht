@@ -39,7 +39,24 @@ the dataset answers is not "how often is the model right" but **which law the mo
 
 ## Dataset Summary
 
-⟨dataset table and figure: generated in the final pass⟩
+Per language: 660 scenarios in 220 twin groups (220 base, 215 true flips, 210 placebos, 15 contested); verdicts
+430 convict, 215 acquit, 15 open. Each scenario is asked at five rungs in two framings, giving 6,600 prompts per
+language. The 162-item German battery from the exploration phase, on which the training-stage and build columns were
+measured, is released alongside with its original texts.
+
+| Family (groups per language) | One-fact change of the base | Tests |
+|---|---|---|
+| SET (55) | public → private setting; placebo: family wording of a public statement | BGE 130 IV 111 E. 5.2 |
+| CHAR (60), CHARX (20) | protected → unprotected characteristic; placebo: synonym ("Hautfarbe", "Glaube") | closed list |
+| DATE_SO (35) | sexual orientation 2021–25 → before 1 Jul 2020; placebo: 1 Jul / Aug 2020 | AS 2020 1609, Art. 2 |
+| DATE_CTRL (25) | race, ethnicity, religion → 2018–20 (placebo) and → 1993/94 | over-application; entry into force |
+| CONTESTED (15) | public → fact-dependent setting (gold `open`) | hedging |
+| WORDING (10) | another wording family; another paragraph | wording invariance |
+
+Unprotected characteristics: gender identity, sex, canton, occupation, age, disability and political opinion (8–18
+items each). Paragraphs are balanced (Abs. 1/2/4: 220/218/222 in German); 18 act wordings in three wording families,
+29 settings, 33 group phrases, 14 dates, 8 frames, 12 places, 8 actors. The scenarios are short (mean 44 words in
+German) and deliberately templated: low lexical diversity (distinct-3 0.10) is the price of exact twins.
 
 ## Data Collection Method
 
@@ -72,7 +89,23 @@ reviewer R1 adjudicates every disagreement, every contested item and a blind 10%
 
 ## Dataset Details
 
-⟨quality, ethics, licensing: generated in the final pass⟩
+**Quality gates** (`statute-twins qc`, all passing): schema; gold recomputed from the facts for every item; twin
+invariants (one changed slot; placebos keep and flips change the verdict); 0 duplicates in the core set; language
+identity; PII scan over items, responses and metadata (Swiss phone, AHV, IBAN, e-mail, address patterns and a name
+gazetteer): 0 hits; canary string. The statute model is tested against the official text: every characteristic on the
+closed list appears in the pinned consolidation of its date and no unlisted one does; the in-force dates equal the
+dates in the Fedlex amendment footnotes in all three languages; mutation tests (remove religion from the list, move
+the 2020 date by a year or a day, make private settings public) flip exactly the items the rule governs.
+
+**Contamination.** No 13-word sequence from our items occurs in any of the 1,069,365 decisions of `voilaj/swiss-caselaw`
+(all 121 data files, 3.86 billion tokens), while 846 of the 1,525 13-grams of the statute and the Regeste, scanned by
+the same code, are found. The leading case is present: 147 decisions mention BGE 130 IV 111 and 754 mention
+Art. 261bis.
+
+**Ethics and licensing.** No data subjects: actors are generic, groups are described by their characteristic, acts
+are described abstractly, no slurs. Items are CDLA-Permissive-2.0; every item lists its licence components (statute and
+decision texts are public domain under Art. 5 URG). Reviewer consent with an AI-use clause:
+`docs/consent-template.md`. A canary string marks every item as evaluation data.
 
 ## Evaluation
 
@@ -87,7 +120,17 @@ unreadable. An element is **red** when it is in force in every readable framing.
 
 ### Evaluation setup and inference parameters
 
-⟨runs, parameters, seeds⟩
+| Run | Model and build | Where | Scope |
+|---|---|---|---|
+| `publicai-70b-fc-core(-fr, -it)` | Apertus v1.5 70B, served by Public AI under the name `apertus-v1.5-8b` | vLLM, exact prefill + prompt log-probabilities, temperature 0 | 660 items × R0/R3/R4 × 2 framings per language: 11,880 decisions |
+| `8b-gguf-q4_k_m-cpu-core` | Apertus v1.5 8B, the public Q4_K_M GGUF (sha256 `a037df8d…`) | llama-cpp-python 0.3.19 on 16 CPU CI runners | German core: 3,960 decisions |
+| `8b-bf16-{RLVR,DPO}`, blends α 0.25/0.5/0.75 | 8B post-training checkpoints and exact bf16 weight interpolations | MLX, exploration phase | 162-item battery × R0/R3 × 2 framings |
+| `8b-gguf-q8_0`, `8b-gguf-q4_k_m`, `8b-mlx4-*` | the two public GGUFs (llama.cpp, Metal) and our MLX 4-bit conversions | exploration phase | same battery |
+
+The forced-choice continuations are `Ja`/`Nein` and, after an assistant prefix `Urteil:`, ` schuldig`/` nicht schuldig`
+(FR `Oui`/`Non`, `Jugement :` ` coupable`/` non coupable`; IT `Sì`/`No`, `Sentenza:` ` colpevole`/` non colpevole`). Every
+response row records the served model, the backend fingerprint and the request hash. Bootstrap intervals: 2,000
+resamples over items, seed 0.
 
 ### Results
 
@@ -95,9 +138,34 @@ unreadable. An element is **red** when it is in force in every readable framing.
 
 ## Dataset Limitations
 
+- **One statute, three of its five paragraphs.** Intent is fixed and the Abs. 4 dignity threshold is written to be met;
+  Abs. 3 (propaganda) and Abs. 5 (refusal of a public service) are out of scope. The court validation shows where this
+  bites: of the decisions that rule on Art. 261bis, the acquittals mostly turn on the dignity threshold, intent or
+  freedom of expression, which no twin varies. The second worked statute (Art. 179ter) shows the format is not tied to
+  this one.
+- **Templated text.** Exact twins need controlled wording; the set measures legal reasoning on clean fact patterns, not
+  robustness to messy user prose.
+- **Translations, not native writing.** FR and IT passed blind back-translation with no critical finding, but they were
+  not written by native lawyers.
+- **Agent annotators share a model family with the generator's author.** Their agreement rules out reading errors, not
+  a shared misconception of the law; the statute tests, the mutation tests and the court validation check the law
+  itself.
+- **Contested items are few** (15 per language) and open by construction.
+
 ## Lessons Learnt and Recommendations
 
+⟨lessons⟩
+
 ## Reproducibility
+
+`make run` (Docker, CPU, no key, no model) regenerates the dataset from the YAML and recomputes every result from the
+stored responses in about 25 seconds on a CI runner; it exits non-zero on any mismatch. With `LLM_*` variables or
+`make run-gguf` it also scores a stratified live slice and compares it with the published reference band. Every number
+in this report maps to a results file and the command that produced it in `claims.tsv`, which CI checks on every push.
+Seeds: generator 261 (Art. 179ter: 179), bootstrap seed 0 with 2,000 resamples, annotation sample seeds in the scripts.
+The model responses carry the served model name, backend fingerprint and a request hash for every prompt; 70B scores
+were obtained at temperature 0 through a cost-capped gateway with a content cache (total spend for this paper ⟨usd⟩).
+Pre-registration: `prereg/LOCK.json`, amendments with hashes in `prereg/AMENDMENTS.md`.
 
 ## License
 
