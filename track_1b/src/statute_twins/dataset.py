@@ -98,12 +98,21 @@ def write_eval(statute_dir: Path, out: Path, reviews: dict | None = None) -> dic
     return {k: len(v) for k, v in parts.items()}
 
 
-def manifest(out: Path) -> dict:
+def run_of(filename: str) -> str:
+    """Run id of a response file name (run ids may contain dots, e.g. ...-a0.25.jsonl)."""
+    for suf in (".meta.json", ".jsonl"):
+        if filename.endswith(suf):
+            return filename[: -len(suf)]
+    return filename
+
+
+def manifest(out: Path, exclude_runs: set | None = None) -> dict:
+    """sha256 of every released file; `exclude_runs` leaves out response runs still being written."""
     out = Path(out)
     files = {}
     for sub in ("eval", "metadata", "responses"):
         for p in sorted((out / sub).rglob("*")):
-            if p.is_file():
+            if p.is_file() and not (exclude_runs and run_of(p.name) in exclude_runs):
                 files[str(p.relative_to(out))] = _sha(p)
     m = dict(files=files)
     (out / "MANIFEST.json").write_text(json.dumps(m, indent=1, sort_keys=True) + "\n", encoding="utf-8")

@@ -31,7 +31,7 @@ def _reviews(statute_dir: Path) -> dict:
 def cmd_build(a) -> int:
     from . import dataset
     counts = dataset.write_eval(Path(a.statute), Path(a.out), _reviews(a.statute))
-    dataset.manifest(Path(a.out))
+    dataset.manifest(Path(a.out), set(a.exclude_runs.split(",")) if a.exclude_runs else None)
     print(json.dumps(counts))
     return 0
 
@@ -106,6 +106,15 @@ def all_items(ds: Path) -> list[dict]:
     return load_items(ds)
 
 
+def released_runs(ds: Path) -> list[str] | None:
+    """The response runs listed in MANIFEST.json (a run still being written is not released yet)."""
+    m = ds / "MANIFEST.json"
+    if not m.exists():
+        return None
+    from .dataset import run_of
+    return sorted({run_of(Path(f).name) for f in json.loads(m.read_text())["files"] if f.startswith("responses/")})
+
+
 def compute_results(ds: Path, runs: list[str] | None = None) -> dict:
     from .analysis import results as R
     from .harness.run import read_jsonl
@@ -140,7 +149,7 @@ def _round(o, nd=6):
 
 
 def cmd_results(a) -> int:
-    res = _round(compute_results(Path(a.dataset), a.runs.split(",") if a.runs else None))
+    res = _round(compute_results(Path(a.dataset), a.runs.split(",") if a.runs else released_runs(Path(a.dataset))))
     Path(a.out).parent.mkdir(parents=True, exist_ok=True)
     Path(a.out).write_text(json.dumps(res, ensure_ascii=False, indent=1, sort_keys=True) + "\n", encoding="utf-8")
     print(f"wrote {a.out}: {len(res['runs'])} runs")
@@ -183,7 +192,7 @@ def cmd_selfcheck(a) -> int:
     print("  PASS" if not probs else f"  FAIL ({len(probs)} problems)")
     print("== step 2: re-score the stored responses and compare with the published results")
     stored = json.loads(Path(a.results).read_text())
-    fresh = _round(compute_results(Path(a.dataset)))
+    fresh = _round(compute_results(Path(a.dataset), released_runs(Path(a.dataset))))
     diffs = _compare(stored, json.loads(json.dumps(fresh)), a.tol)
     if diffs:
         ok = False
@@ -217,7 +226,9 @@ def main(argv=None) -> int:
     sub = ap.add_subparsers(dest="cmd", required=True)
     S = "statutes/stgb_261bis"
 
-    p = sub.add_parser("build"); p.add_argument("--statute", default=S); p.add_argument("--out", default="dataset"); p.set_defaults(f=cmd_build)
+    p = sub.add_parser("build"); p.add_argument("--statute", default=S); p.add_argument("--out", default="dataset")
+    p.add_argument("--exclude-runs", default=None, help="response runs still being written (left out of the manifest)")
+    p.set_defaults(f=cmd_build)
     p = sub.add_parser("verify"); p.add_argument("--statute", default=S); p.add_argument("--dataset", default="dataset"); p.set_defaults(f=cmd_verify)
     p = sub.add_parser("qc"); p.add_argument("--statute", default=S); p.add_argument("--dataset", default="dataset")
     p.add_argument("--out", default="reports/qc.json"); p.set_defaults(f=cmd_qc)
