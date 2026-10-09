@@ -189,7 +189,7 @@ families:
     title: over-application control - characteristics covered since 1995 keep their protection before 2020; acts before 1995 are not punishable
     groups: 25
     base:
-      setting: {tags: [public], placebo_of: null}
+      setting: {tags: [public], not_tags: [online], placebo_of: null}   # no online settings before 1995
       group:   {tags: [since1995], synonym_of: null}
       date:    {tags: [recent]}
     variants:

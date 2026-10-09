@@ -29,7 +29,7 @@
    "passed": true,
    "checked": 2142,
    "mismatches": [],
-   "min_share": 0.579
+   "min_share": 0.591
   },
   "pii": {
    "passed": true,
@@ -37,7 +37,7 @@
    "n_hits": 0,
    "scanned": {
     "items": 2142,
-    "responses": 8712,
+    "responses": 9097,
     "metadata": 2142
    }
   },
@@ -91,9 +91,9 @@
   },
   "by_characteristic": {
    "religion": 137,
-   "ethnicity": 151,
+   "ethnicity": 154,
    "sexual_orientation": 175,
-   "race": 97,
+   "race": 94,
    "gender_identity": 16,
    "political_opinion": 8,
    "sex": 18,
@@ -108,22 +108,22 @@
    "contested": 15
   },
   "by_paragraph": {
-   "abs1": 219,
-   "abs4": 221,
-   "abs2": 220
+   "abs1": 220,
+   "abs4": 222,
+   "abs2": 218
   },
   "by_wording_family": {
-   "A": 221,
+   "A": 220,
    "C": 219,
-   "B": 220
+   "B": 221
   },
   "twin_groups": 220,
   "diversity": {
    "de": {
     "items": 660,
     "distinct_1": 0.0154,
-    "distinct_2": 0.0521,
-    "distinct_3": 0.0993,
+    "distinct_2": 0.0522,
+    "distinct_3": 0.099,
     "mean_words": 44.1,
     "min_words": 32,
     "max_words": 75,
@@ -145,10 +145,10 @@
     "items": 660,
     "distinct_1": 0.0136,
     "distinct_2": 0.0323,
-    "distinct_3": 0.0587,
-    "mean_words": 54.6,
+    "distinct_3": 0.058,
+    "mean_words": 54.9,
     "min_words": 39,
-    "max_words": 85,
+    "max_words": 86,
     "slot_values_used": {
      "act": 18,
      "actor": 8,
@@ -166,10 +166,10 @@
    "it": {
     "items": 660,
     "distinct_1": 0.014,
-    "distinct_2": 0.0345,
-    "distinct_3": 0.0645,
-    "mean_words": 50.5,
-    "min_words": 33,
+    "distinct_2": 0.0342,
+    "distinct_3": 0.0633,
+    "mean_words": 50.9,
+    "min_words": 35,
     "max_words": 84,
     "slot_values_used": {
      "act": 18,

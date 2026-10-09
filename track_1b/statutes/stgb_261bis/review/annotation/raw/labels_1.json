@@ -1,0 +1,1282 @@
+[
+ {
+  "id": "Q19132",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Municipal assembly of ~120 voters is public despite relatives present; ethnicity (Tamils) protected; ideology of inferiority.",
+  "note": ""
+ },
+ {
+  "id": "Q75948",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (race); act after 1995; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q48408",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Occupation (teachers) is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q99759",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (religion, free church); act after 1995; religion protected since 1995; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q52021",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Forest-hut meeting of ~40 invited mostly strangers is public per BGE 130 IV 111; race (skin colour) protected.",
+  "note": ""
+ },
+ {
+  "id": "Q72534",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (ethnicity, Roma); act after 1995; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q79893",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (sexual orientation); act after 1995, after 1 July 2020; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q26682",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (race); act after 1995; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q43663",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Age is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q66481",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (ethnicity, Roma); act after 1995; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q48126",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Forest-hut meeting of ~40 mostly unknown invitees is public; sexual orientation protected in June 2025.",
+  "note": ""
+ },
+ {
+  "id": "Q63652",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Sexual orientation protected only from 1 July 2020; act in November 2018 is before that, no retroactivity (Art. 2 StGB).",
+  "note": ""
+ },
+ {
+  "id": "Q96273",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Municipal assembly of ~120 is public; religion protected; spreading systematically denigrating doctrine.",
+  "note": ""
+ },
+ {
+  "id": "Q90085",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Published newspaper letter is public; signing for family does not make it private; race protected.",
+  "note": ""
+ },
+ {
+  "id": "Q30895",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Forest-hut meeting of ~40 mostly strangers is public; race (skin colour) protected; ideology of inferiority.",
+  "note": ""
+ },
+ {
+  "id": "Q47000",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (race, skin colour); act after 1995; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q59670",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Dinner with three close long-time friends at home: private setting shaped by personal relationships/trust, so not public (BGE 130 IV 111).",
+  "note": ""
+ },
+ {
+  "id": "Q98898",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Gender identity is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q98912",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (race); act after 1995; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q89203",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (ethnicity); act after 1995; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q91089",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "Act in October 1994 predates entry into force of Art. 261bis on 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "Q97396",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (sexual orientation); act after 1995, after 1 July 2020; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q67678",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Forest-hut meeting of ~40 mostly strangers is public; sexual orientation protected in August 2020.",
+  "note": ""
+ },
+ {
+  "id": "Q35489",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Age is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q59784",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Sexual orientation protected only from 1 July 2020; act in November 2018 is before that, no retroactivity (Art. 2 StGB).",
+  "note": ""
+ },
+ {
+  "id": "Q54151",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (race); act after 1995; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q35907",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "Act in May 1993 predates entry into force of Art. 261bis on 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "Q55269",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (sexual orientation); act after 1995, August 2020 after 1 July 2020; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q10565",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (race); act after 1995; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q97433",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Telephone conversation with his brother: private setting shaped by personal relationships/trust, so not public (BGE 130 IV 111).",
+  "note": ""
+ },
+ {
+  "id": "Q56568",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Disability is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q48718",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Forest-hut meeting of ~40 mostly strangers is public; sexual orientation protected in September 2021.",
+  "note": ""
+ },
+ {
+  "id": "Q35333",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Forest-hut meeting of ~40 mostly strangers is public; religion (Hindus) protected; incitement to discrimination.",
+  "note": ""
+ },
+ {
+  "id": "Q97164",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Sexual orientation protected only from 1 July 2020; act in March 2019 is before that, no retroactivity (Art. 2 StGB).",
+  "note": ""
+ },
+ {
+  "id": "Q97532",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Published newspaper letter is public; family signature irrelevant; ethnicity (Kurds) protected; call to hatred.",
+  "note": ""
+ },
+ {
+  "id": "Q32499",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Occupation (construction workers) is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q93894",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Canton of origin is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q44207",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Sex/gender is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q96136",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Occupation (teachers) is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q64619",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Age is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q40308",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Political opinion is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q63509",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (religion); act after 1995; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q55290",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (religion); act after 1995; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q96056",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Sexual orientation protected only from 1 July 2020; act in March 2019 is before that, no retroactivity (Art. 2 StGB).",
+  "note": ""
+ },
+ {
+  "id": "Q62415",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (ethnicity); act after 1995; date 30 June 2020 irrelevant for ethnicity; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q10474",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (sexual orientation); act after 1995, on 1 July 2020 when protection began; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q24723",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (ethnicity, Roma); act after 1995; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q75753",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Leaflets to passers-by are public; family framing and children do not make it private; religion protected.",
+  "note": ""
+ },
+ {
+  "id": "Q79697",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (religion); act after 1995; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q36541",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "Act in May 1993 predates entry into force of Art. 261bis on 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "Q10169",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Sexual orientation protected only from 1 July 2020; act in November 2018 is before that, no retroactivity (Art. 2 StGB).",
+  "note": ""
+ },
+ {
+  "id": "Q78432",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "medium",
+  "reason": "Closed meeting of 15 members acquainted for years: private setting shaped by personal relationships/trust, so not public (BGE 130 IV 111).",
+  "note": ""
+ },
+ {
+  "id": "Q50702",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Age is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q98119",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Forest-hut meeting of ~40 mostly strangers is public; ethnicity (Kurds) protected; call to deny housing/jobs.",
+  "note": ""
+ },
+ {
+  "id": "Q31936",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Sexual orientation protected only from 1 July 2020; act in 30 June 2020 is before that, no retroactivity (Art. 2 StGB).",
+  "note": ""
+ },
+ {
+  "id": "Q76992",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Family chat limited to parents and siblings: private setting shaped by personal relationships/trust, so not public (BGE 130 IV 111).",
+  "note": ""
+ },
+ {
+  "id": "Q68211",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Canton of origin is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q36908",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (sexual orientation); act after 1995, after 1 July 2020; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q44590",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (sexual orientation); act after 1995, on 1 July 2020 when protection began; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q64635",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "medium",
+  "reason": "Closed meeting of 15 members acquainted for years: private setting shaped by personal relationships/trust, so not public (BGE 130 IV 111).",
+  "note": ""
+ },
+ {
+  "id": "Q71344",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (ethnicity); act after 1995; June 2020 date irrelevant for ethnicity; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q83449",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (religion, free church); act after 1995; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q79603",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Forest-hut meeting of ~40 mostly strangers is public; act on 1 July 2020, sexual orientation protected that day.",
+  "note": ""
+ },
+ {
+  "id": "Q92048",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (religion); act after 1995; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q91238",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Occupation (construction workers) is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q92797",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Sexual orientation protected only from 1 July 2020; act in September 2019 is before that, no retroactivity (Art. 2 StGB).",
+  "note": ""
+ },
+ {
+  "id": "Q89421",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (ethnicity, Roma); act after 1995; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q47683",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (ethnicity, Yenish); act after 1995; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q36251",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Personal message sent only to her sister: private setting shaped by personal relationships/trust, so not public (BGE 130 IV 111).",
+  "note": ""
+ },
+ {
+  "id": "Q12702",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Age is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q23782",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (sexual orientation); act after 1995, after 1 July 2020; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q50304",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (religion); act after 1995; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q19905",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Family dinner with only husband and two adult children: private setting shaped by personal relationships/trust, so not public (BGE 130 IV 111).",
+  "note": ""
+ },
+ {
+  "id": "Q86088",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Forest-hut meeting of ~40 mostly strangers is public; ethnicity (Roma) protected; call to hatred.",
+  "note": ""
+ },
+ {
+  "id": "Q14189",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (race); act after 1995; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q17643",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (sexual orientation); act after 1995, after 1 July 2020; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q64627",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Municipal assembly of ~120 is public despite relatives present; religion protected; degrading Muslims.",
+  "note": ""
+ },
+ {
+  "id": "Q49284",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Leaflets to passers-by are public despite family framing; sexual orientation protected in June 2025.",
+  "note": ""
+ },
+ {
+  "id": "Q58395",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "Act in October 1994 predates entry into force of Art. 261bis on 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "Q83037",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (race); act after 1995; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q92103",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (religion); act after 1995; June 2020 date irrelevant for religion; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q87071",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (ethnicity, Kurds); act after 1995; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q85354",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public rally of ~300 is public; attending as family outing irrelevant; religion protected.",
+  "note": ""
+ },
+ {
+  "id": "Q48688",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (sexual orientation); act after 1995, March 2023; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q35428",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Occupation (construction workers) is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q23121",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Age is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q61729",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (ethnicity, Kurds); act after 1995; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q62225",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (sexual orientation); act after 1995, August 2020 after 1 July 2020; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q32577",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (race); act after 1995; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q44708",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (ethnicity, Yenish); act after 1995; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q70400",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Sexual orientation protected only from 1 July 2020; act in June 2020 is before that, no retroactivity (Art. 2 StGB).",
+  "note": ""
+ },
+ {
+  "id": "Q53130",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Forest-hut meeting of ~40 mostly strangers is public; sexual orientation protected in August 2020.",
+  "note": ""
+ },
+ {
+  "id": "Q26838",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Canton of origin is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q27126",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "Act in May 1993 predates entry into force of Art. 261bis on 1 January 1995.",
+  "note": "WORDING: public social-media profile in May 1993 is anachronistic; label unaffected."
+ },
+ {
+  "id": "Q68530",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (race); act after 1995; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q60989",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Sexual orientation protected only from 1 July 2020; act in November 2018 is before that, no retroactivity (Art. 2 StGB).",
+  "note": ""
+ },
+ {
+  "id": "Q64809",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Family dinner with only husband and two adult children: private setting shaped by personal relationships/trust, so not public (BGE 130 IV 111).",
+  "note": ""
+ },
+ {
+  "id": "Q83647",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (ethnicity, Roma); act after 1995; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q33440",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (religion, faith); act after 1995; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q57164",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Municipal assembly of ~120 is public despite relatives present; religion protected; ideology of systematic denigration.",
+  "note": ""
+ },
+ {
+  "id": "Q42789",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Sexual orientation protected only from 1 July 2020; act in March 2019 is before that, no retroactivity (Art. 2 StGB).",
+  "note": ""
+ },
+ {
+  "id": "Q37212",
+  "label": "open",
+  "deciding_element": "setting",
+  "confidence": "medium",
+  "reason": "Email to 25 department colleagues: workplace relationships and trust unspecified; publicity under BGE 130 IV 111 genuinely uncertain.",
+  "note": ""
+ },
+ {
+  "id": "Q45858",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (sexual orientation); act after 1995, on 1 July 2020 when protection began; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q70707",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (religion, free church); act after 1995; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q85060",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "medium",
+  "reason": "Closed meeting of 15 members acquainted for years: private setting shaped by personal relationships/trust, so not public (BGE 130 IV 111).",
+  "note": ""
+ },
+ {
+  "id": "Q60155",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (ethnicity, Roma); act after 1995; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q34073",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (religion); act after 1995; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q72806",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (race, skin colour); act after 1995; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q85077",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Gender identity is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q92031",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (sexual orientation); act after 1995, on 1 July 2020 when protection began; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q72436",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (ethnicity, Roma); act after 1995; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q32214",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (religion, faith); act after 1995; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q19797",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (religion); act after 1995; date 30 June 2020 irrelevant for religion; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q79686",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "Act in May 1993 predates entry into force of Art. 261bis on 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "Q41401",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (race); act after 1995; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q70276",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Gender identity is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q78573",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Sexual orientation protected only from 1 July 2020; act in March 2019 is before that, no retroactivity (Art. 2 StGB).",
+  "note": ""
+ },
+ {
+  "id": "Q12020",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Family dinner with only wife and two adult children: private setting shaped by personal relationships/trust, so not public (BGE 130 IV 111).",
+  "note": ""
+ },
+ {
+  "id": "Q25055",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Freely accessible forum is public; family sign-off irrelevant; race protected; call to hatred.",
+  "note": ""
+ },
+ {
+  "id": "Q53220",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Gender identity is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q74765",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "~40 invitees via general appeal, mostly strangers: public despite family hut and relatives; sexual orientation protected May 2022.",
+  "note": ""
+ },
+ {
+  "id": "Q19456",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Age is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q54007",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Occupation (teachers) is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q95876",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (race); act after 1995; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q10516",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (religion, faith); act after 1995; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q84660",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Family dinner with only husband and two adult children: private setting shaped by personal relationships/trust, so not public (BGE 130 IV 111).",
+  "note": ""
+ },
+ {
+  "id": "Q99211",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "Act in October 1994 predates entry into force of Art. 261bis on 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "Q79862",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (religion, faith); act after 1995; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q46091",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (ethnicity, Tamils); act after 1995; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q93035",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Municipal assembly of ~120 is public despite relatives present; religion protected; contemptuous vilification.",
+  "note": ""
+ },
+ {
+  "id": "Q11573",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Crowded tram addressed to all passengers is public; children present irrelevant; race protected.",
+  "note": ""
+ },
+ {
+  "id": "Q86407",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (sexual orientation); act after 1995, March 2023; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q51823",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Forest-hut meeting of ~40 mostly strangers is public; religion (faith) protected; call to discriminate.",
+  "note": ""
+ },
+ {
+  "id": "Q64255",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Freely accessible video is public despite family title; ethnicity (Kurds) protected; spreading denigrating doctrine.",
+  "note": ""
+ },
+ {
+  "id": "Q44280",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Personal message sent only to her sister: private setting shaped by personal relationships/trust, so not public (BGE 130 IV 111).",
+  "note": ""
+ },
+ {
+  "id": "Q31755",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Forest-hut meeting of ~40 mostly strangers is public; religion (Hindus) protected; incitement to discrimination.",
+  "note": ""
+ },
+ {
+  "id": "Q27845",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Disability is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q87089",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (sexual orientation); act after 1995, June 2025; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q16224",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Leaflets to passers-by are public despite family framing and children; race protected.",
+  "note": ""
+ },
+ {
+  "id": "Q62070",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (ethnicity, Yenish); act after 1995; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q14737",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Municipal assembly of ~120 is public despite relatives present; race protected; contemptuous vilification.",
+  "note": ""
+ },
+ {
+  "id": "Q16259",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (religion); act after 1995; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q54877",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (religion, free church); act after 1995; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q77021",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Sex/gender is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q40140",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (sexual orientation); act after 1995, August 2020 after 1 July 2020; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q82779",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Canton of origin is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q48293",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (sexual orientation); act after 1995, August 2020 after 1 July 2020; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q30777",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Age is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q67551",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Disability is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q17537",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Freely accessible forum is public; family sign-off irrelevant; ethnicity (Tamils) protected; defamatory ideology.",
+  "note": ""
+ },
+ {
+  "id": "Q64751",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (sexual orientation); act after 1995, June 2025; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q40094",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (sexual orientation); act after 1995, on 1 July 2020 when protection began; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q34704",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (religion, free church); act after 1995; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q25357",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Leaflets to passers-by are public despite family framing and children; race protected; denigrating doctrine.",
+  "note": ""
+ },
+ {
+  "id": "Q73525",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Forest-hut meeting of ~40 mostly strangers is public; religion (Hindus) protected; denigrating doctrine.",
+  "note": ""
+ },
+ {
+  "id": "Q32523",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (race); act after 1995; November 2018; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q45756",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Age is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q46109",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; protected characteristic (religion); act after 1995; conduct meets offence.",
+  "note": ""
+ },
+ {
+  "id": "Q96093",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Canton of origin is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q57863",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Crowded tram addressed to all passengers is public; children present irrelevant; ethnicity (Roma) protected.",
+  "note": ""
+ }
+]

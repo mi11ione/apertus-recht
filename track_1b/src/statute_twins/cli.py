@@ -85,6 +85,11 @@ def cmd_eval(a) -> int:
     from .harness import run
     ds = Path(a.dataset)
     rows = _prompt_rows(ds, a.parts.split(","), a.rungs.split(","), a.framings.split(","), a.sample)
+    if a.shard:
+        import hashlib
+        k, n = (int(x) for x in a.shard.split("/"))
+        rows = [r for r in rows if int(hashlib.sha256(r["item_id"].encode()).hexdigest(), 16) % n == k]
+    rows.sort(key=lambda r: (r["item_id"], r["rung"], r["framing"]))   # consecutive prompts share prefixes
     if a.limit:
         rows = rows[: a.limit]
     be = make_backend(a)
@@ -215,6 +220,7 @@ def main(argv=None) -> int:
     p.add_argument("--parts", default="core_de"); p.add_argument("--rungs", default="R0,R3"); p.add_argument("--framings", default="conv,ver")
     p.add_argument("--sample", type=int, default=None, help="stable sample of N items (all chosen rungs/framings)")
     p.add_argument("--limit", type=int, default=None)
+    p.add_argument("--shard", default=None, help="k/n: score only items whose sha256(id) mod n == k")
     p.add_argument("--model", default=os.environ.get("LLM_NAME")); p.add_argument("--base-url", default=os.environ.get("LLM_BASE_URL"))
     p.add_argument("--mode", default="auto", choices=["auto", "exact_prefill", "top_logprobs", "generate"])
     p.add_argument("--seed", type=int, default=None)

@@ -1,0 +1,1282 @@
+[
+ {
+  "id": "Q22120",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for race; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q72239",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Family framing does not make a public setting private; protected characteristic, after 1995; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q61250",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement on/after 1 July 2020 targeting a group for sexual orientation; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q66195",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement on/after 1 July 2020 targeting a group for sexual orientation; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q81317",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for ethnicity; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q81407",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for ethnicity; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q59737",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for race; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q58840",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for religion; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q87610",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Family framing does not make a public setting private; protected characteristic, after 1995; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q94086",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for ethnicity; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q59457",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Sex/gender is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q43942",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for religion; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q23774",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement on/after 1 July 2020 targeting a group for sexual orientation; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q36709",
+  "label": "open",
+  "deciding_element": "setting",
+  "confidence": "medium",
+  "reason": "~20 guests mixing friends, neighbours and acquaintances of acquaintances; private character depends on facts not given.",
+  "note": ""
+ },
+ {
+  "id": "Q56103",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for ethnicity; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q18272",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Dinner with three long-standing close friends at home is a private setting.",
+  "note": ""
+ },
+ {
+  "id": "Q44305",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement on/after 1 July 2020 targeting a group for sexual orientation; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q99264",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Closed meeting with ~40 invited mostly unknown participants is public per BGE 130 IV 111; protected characteristic.",
+  "note": ""
+ },
+ {
+  "id": "Q22924",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Sexual orientation protected only from 1 July 2020; act predates it, no retroactive punishment (Art. 2 StGB).",
+  "note": ""
+ },
+ {
+  "id": "Q10588",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "Act before 1 January 1995, when Art. 261bis entered into force; not punishable.",
+  "note": ""
+ },
+ {
+  "id": "Q58198",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for ethnicity; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q61175",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Disability is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q51079",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Occupation is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q87781",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement on/after 1 July 2020 targeting a group for sexual orientation; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q41050",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for religion; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q87804",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Sex/gender is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q26282",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Occupation is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q89221",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Closed meeting with ~40 invited mostly unknown participants is public per BGE 130 IV 111; protected characteristic.",
+  "note": ""
+ },
+ {
+  "id": "Q97047",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Sex/gender is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q47920",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for race; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q46193",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for ethnicity; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q63454",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement on/after 1 July 2020 targeting a group for sexual orientation; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q26899",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "Act before 1 January 1995, when Art. 261bis entered into force; not punishable.",
+  "note": ""
+ },
+ {
+  "id": "Q27679",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Family chat with only parents and siblings is a private setting per BGE 130 IV 111.",
+  "note": ""
+ },
+ {
+  "id": "Q97423",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for race; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q26992",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Family framing does not make a public setting private; protected characteristic, after 1995; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q47638",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for religion; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q96702",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement on/after 1 July 2020 targeting a group for sexual orientation; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q13548",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for ethnicity; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q81842",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Closed meeting with ~40 invited mostly unknown participants is public per BGE 130 IV 111; protected characteristic.",
+  "note": ""
+ },
+ {
+  "id": "Q76564",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for ethnicity; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q80129",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for ethnicity; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q44374",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement on/after 1 July 2020 targeting a group for sexual orientation; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q28666",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Sexual orientation protected only from 1 July 2020; act predates it, no retroactive punishment (Art. 2 StGB).",
+  "note": ""
+ },
+ {
+  "id": "Q42367",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Sexual orientation protected only from 1 July 2020; act predates it, no retroactive punishment (Art. 2 StGB).",
+  "note": ""
+ },
+ {
+  "id": "Q63910",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Sex/gender is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q78633",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Sexual orientation protected only from 1 July 2020; act predates it, no retroactive punishment (Art. 2 StGB).",
+  "note": ""
+ },
+ {
+  "id": "Q82405",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for ethnicity; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q26821",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Cantonal origin is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q44749",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Political opinion is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q49754",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for ethnicity; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q66913",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for ethnicity; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q60318",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Political opinion is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q55301",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for ethnicity; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q13851",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement on/after 1 July 2020 targeting a group for sexual orientation; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q74482",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement on/after 1 July 2020 targeting a group for sexual orientation; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q39946",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement on/after 1 July 2020 targeting a group for sexual orientation; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q72668",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for religion; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q95357",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for religion; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q18689",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Phone call with own brother is a private setting.",
+  "note": ""
+ },
+ {
+  "id": "Q75508",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for religion; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q49520",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for race; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q41676",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Family framing does not make a public setting private; protected characteristic, after 1995; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q76514",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement on/after 1 July 2020 targeting a group for sexual orientation; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q14960",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for race; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q26628",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for religion; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q69471",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for ethnicity; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q19160",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Closed meeting with ~40 invited mostly unknown participants is public per BGE 130 IV 111; protected characteristic.",
+  "note": ""
+ },
+ {
+  "id": "Q56537",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Gender identity is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q83599",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Disability is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q26903",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Family framing does not make a public setting private; protected characteristic, after 1995; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q94275",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Occupation is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q56567",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement on/after 1 July 2020 targeting a group for sexual orientation; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q80202",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Sexual orientation protected only from 1 July 2020; act predates it, no retroactive punishment (Art. 2 StGB).",
+  "note": ""
+ },
+ {
+  "id": "Q15265",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for religion; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q18471",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Sexual orientation protected only from 1 July 2020; act predates it, no retroactive punishment (Art. 2 StGB).",
+  "note": ""
+ },
+ {
+  "id": "Q11969",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for religion; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q38325",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement on/after 1 July 2020 targeting a group for sexual orientation; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q12044",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Family framing does not make a public setting private; protected characteristic, after 1995; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q69118",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for religion; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q36546",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement on/after 1 July 2020 targeting a group for sexual orientation; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q94309",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Sexual orientation protected only from 1 July 2020; act predates it, no retroactive punishment (Art. 2 StGB).",
+  "note": ""
+ },
+ {
+  "id": "Q78768",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for ethnicity; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q70051",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement on/after 1 July 2020 targeting a group for sexual orientation; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q75092",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for religion; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q93295",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Dinner with only spouse and two adult children at home is a private setting.",
+  "note": ""
+ },
+ {
+  "id": "Q10409",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for ethnicity; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q38393",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for ethnicity; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q15854",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for religion; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q89578",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "Act before 1 January 1995, when Art. 261bis entered into force; not punishable.",
+  "note": "WORDING: online platform/social media in October 1994 is anachronistic; outcome unaffected."
+ },
+ {
+  "id": "Q38858",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement on/after 1 July 2020 targeting a group for sexual orientation; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q30403",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Family chat with only parents and siblings is a private setting per BGE 130 IV 111.",
+  "note": ""
+ },
+ {
+  "id": "Q93927",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for race; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q66547",
+  "label": "open",
+  "deciding_element": "setting",
+  "confidence": "low",
+  "reason": "Closed club chat, ~30 members mostly known only fleetingly; relationship/trust facts mixed, publicity not clearly decided.",
+  "note": ""
+ },
+ {
+  "id": "Q34176",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Closed meeting with ~40 invited mostly unknown participants is public per BGE 130 IV 111; protected characteristic.",
+  "note": ""
+ },
+ {
+  "id": "Q26460",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Sexual orientation protected only from 1 July 2020; act predates it, no retroactive punishment (Art. 2 StGB).",
+  "note": ""
+ },
+ {
+  "id": "Q81999",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Family framing does not make a public setting private; protected characteristic, after 1995; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q69984",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for religion; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q47816",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement on/after 1 July 2020 targeting a group for sexual orientation; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q89796",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement on/after 1 July 2020 targeting a group for sexual orientation; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q12731",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement on/after 1 July 2020 targeting a group for sexual orientation; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q14275",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement on/after 1 July 2020 targeting a group for sexual orientation; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q49529",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for religion; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q17410",
+  "label": "open",
+  "deciding_element": "setting",
+  "confidence": "medium",
+  "reason": "~20 guests mixing friends, neighbours and acquaintances of acquaintances; private character depends on facts not given.",
+  "note": ""
+ },
+ {
+  "id": "Q91946",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for race; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q14270",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for ethnicity; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q99984",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Family framing does not make a public setting private; protected characteristic, after 1995; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q42658",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for religion; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q84655",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for ethnicity; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q61570",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Disability is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q58682",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "Act before 1 January 1995, when Art. 261bis entered into force; not punishable.",
+  "note": "WORDING: online platform/social media in October 1994 is anachronistic; outcome unaffected."
+ },
+ {
+  "id": "Q75308",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for religion; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q27849",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for race; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q47255",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Family framing does not make a public setting private; protected characteristic, after 1995; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q85219",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for ethnicity; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q55694",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for religion; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q29612",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "Act before 1 January 1995, when Art. 261bis entered into force; not punishable.",
+  "note": "WORDING: online platform/social media in October 1994 is anachronistic; outcome unaffected."
+ },
+ {
+  "id": "Q14182",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Family framing does not make a public setting private; protected characteristic, after 1995; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q53210",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for race; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q85500",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for ethnicity; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q58876",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for religion; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q80290",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "Act before 1 January 1995, when Art. 261bis entered into force; not punishable.",
+  "note": ""
+ },
+ {
+  "id": "Q36331",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Age is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q97335",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Age is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q64382",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Family framing does not make a public setting private; protected characteristic, after 1995; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q98690",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement on/after 1 July 2020 targeting a group for sexual orientation; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q44595",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Phone call with own brother is a private setting.",
+  "note": ""
+ },
+ {
+  "id": "Q33272",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement on/after 1 July 2020 targeting a group for sexual orientation; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q77166",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Closed meeting with ~40 invited mostly unknown participants is public per BGE 130 IV 111; protected characteristic.",
+  "note": ""
+ },
+ {
+  "id": "Q43300",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Closed meeting with ~40 invited mostly unknown participants is public per BGE 130 IV 111; protected characteristic.",
+  "note": ""
+ },
+ {
+  "id": "Q72732",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for race; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q20403",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Dinner with three long-standing close friends at home is a private setting.",
+  "note": ""
+ },
+ {
+  "id": "Q61007",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Gender identity is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q64061",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Family framing does not make a public setting private; protected characteristic, after 1995; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q44112",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Sex/gender is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q89431",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Family framing does not make a public setting private; protected characteristic, after 1995; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q49756",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Gender identity is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q72839",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Closed meeting with ~40 invited mostly unknown participants is public per BGE 130 IV 111; protected characteristic.",
+  "note": ""
+ },
+ {
+  "id": "Q10014",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement on/after 1 July 2020 targeting a group for sexual orientation; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q82977",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for race; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q32532",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for religion; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q13974",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Political opinion is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q42781",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Cantonal origin is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q40381",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Gender identity is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q32661",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement on/after 1 July 2020 targeting a group for sexual orientation; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q98386",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for race; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q12331",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement on/after 1 July 2020 targeting a group for sexual orientation; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q79280",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Age is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q39148",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for ethnicity; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q49289",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Closed meeting with ~40 invited mostly unknown participants is public per BGE 130 IV 111; protected characteristic.",
+  "note": ""
+ },
+ {
+  "id": "Q43529",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for race; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q52187",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for race; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q61566",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for ethnicity; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q56985",
+  "label": "open",
+  "deciding_element": "setting",
+  "confidence": "low",
+  "reason": "Email to 25 departmental colleagues; workplace circle, trust and relationships unclear, publicity not clearly decided.",
+  "note": ""
+ },
+ {
+  "id": "Q62572",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement on/after 1 July 2020 targeting a group for sexual orientation; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q31148",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement on/after 1 July 2020 targeting a group for sexual orientation; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q44752",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement on/after 1 July 2020 targeting a group for sexual orientation; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q59091",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for ethnicity; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q31747",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Personal message sent only to his sister is a private setting.",
+  "note": ""
+ },
+ {
+  "id": "Q10792",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public statement after 1995 targeting a group for ethnicity; all elements met.",
+  "note": ""
+ }
+]

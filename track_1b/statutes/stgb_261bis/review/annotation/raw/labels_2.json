@@ -1,0 +1,1282 @@
+[
+ {
+  "id": "Q19259",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Phone call with own brother is a private family setting; not public.",
+  "note": ""
+ },
+ {
+  "id": "Q83361",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Sex/gender is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q35983",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting despite family wording; protected characteristic; act after entry into force.",
+  "note": ""
+ },
+ {
+  "id": "Q83269",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic, act after entry into force; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q32759",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic, act after entry into force; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q56357",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; sexual orientation protected for acts from 1 July 2020; act falls after that date.",
+  "note": ""
+ },
+ {
+  "id": "Q95537",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic, act after entry into force; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q80117",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Age is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q20677",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "Act committed before Art. 261bis entered into force on 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "Q98850",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic, act after entry into force; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q24885",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Phone call with own brother is a private family setting; not public.",
+  "note": ""
+ },
+ {
+  "id": "Q26475",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Gender identity is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q27950",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic, act after entry into force; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q29686",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public market; race protected since 1995, so 30 June 2020 date is irrelevant; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q81476",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic, act after entry into force; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q21338",
+  "label": "open",
+  "deciding_element": "setting",
+  "confidence": "medium",
+  "reason": "Email to 25 department colleagues: workplace ties may or may not amount to personal relationships/trust; BGE 130 IV 111 factors mixed.",
+  "note": ""
+ },
+ {
+  "id": "Q14336",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Family chat limited to parents and siblings is a private family circle; not public.",
+  "note": ""
+ },
+ {
+  "id": "Q77204",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Disability is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q94752",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic, act after entry into force; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q59708",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Cantonal origin is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q31831",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic, act after entry into force; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q56387",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting despite family wording; protected characteristic; act after entry into force.",
+  "note": ""
+ },
+ {
+  "id": "Q40350",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "Act committed before Art. 261bis entered into force on 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "Q90607",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic, act after entry into force; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q89726",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic, act after entry into force; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q90096",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic, act after entry into force; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q31116",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic, act after entry into force; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q54576",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic, act after entry into force; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q16922",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Sex/gender is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q54879",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Age is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q91928",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public tram; act on 1 July 2020, the day sexual orientation became protected; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q67165",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Dinner with only husband and adult children is the closest family circle; not public.",
+  "note": ""
+ },
+ {
+  "id": "Q34640",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; sexual orientation protected for acts from 1 July 2020; act falls after that date.",
+  "note": ""
+ },
+ {
+  "id": "Q50300",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; sexual orientation protected for acts from 1 July 2020; act falls after that date.",
+  "note": ""
+ },
+ {
+  "id": "Q33537",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Personal message sent only to his sister is private family communication; not public.",
+  "note": ""
+ },
+ {
+  "id": "Q24566",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "Act committed before Art. 261bis entered into force on 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "Q29210",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "Act committed before Art. 261bis entered into force on 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "Q75084",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; sexual orientation protected for acts from 1 July 2020; act falls after that date.",
+  "note": ""
+ },
+ {
+  "id": "Q94266",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic, act after entry into force; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q78320",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic, act after entry into force; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q11643",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; sexual orientation protected for acts from 1 July 2020; act falls after that date.",
+  "note": ""
+ },
+ {
+  "id": "Q40289",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; sexual orientation protected for acts from 1 July 2020; act falls after that date.",
+  "note": ""
+ },
+ {
+  "id": "Q59392",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Skin colour is race; public social media post; act after entry into force; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q99407",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Faith is religion; crowded tram addressed to all passengers is public; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q22709",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting despite family wording/presence; sexual orientation protected since 1 July 2020; act after that date.",
+  "note": ""
+ },
+ {
+  "id": "Q40848",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "Act committed before Art. 261bis entered into force on 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "Q84284",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic, act after entry into force; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q68176",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Closed meeting with ~40 mostly unknown invitees is public per BGE 130 IV 111; family presence irrelevant; protected characteristic.",
+  "note": ""
+ },
+ {
+  "id": "Q88965",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic, act after entry into force; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q20509",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Family chat limited to parents and siblings is a private family circle; not public.",
+  "note": ""
+ },
+ {
+  "id": "Q31159",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Dinner with three long-standing close friends at home is a private circle of friends; not public.",
+  "note": ""
+ },
+ {
+  "id": "Q31819",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; sexual orientation protected for acts from 1 July 2020; act falls after that date.",
+  "note": ""
+ },
+ {
+  "id": "Q68186",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic, act after entry into force; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q58905",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic, act after entry into force; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q43161",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic, act after entry into force; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q51077",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; sexual orientation protected for acts from 1 July 2020; act falls after that date.",
+  "note": ""
+ },
+ {
+  "id": "Q87240",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic, act after entry into force; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q15976",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting despite family wording; protected characteristic; act after entry into force.",
+  "note": ""
+ },
+ {
+  "id": "Q86591",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic, act after entry into force; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q61973",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic, act after entry into force; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q12671",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; sexual orientation protected for acts from 1 July 2020; act falls after that date.",
+  "note": ""
+ },
+ {
+  "id": "Q49405",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Closed meeting with ~40 mostly unknown invitees is public per BGE 130 IV 111; family presence irrelevant; protected characteristic.",
+  "note": ""
+ },
+ {
+  "id": "Q30817",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Faith is religion; public rally of ~300; act after entry into force; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q27399",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting despite family wording/presence; sexual orientation protected since 1 July 2020; act after that date.",
+  "note": ""
+ },
+ {
+  "id": "Q11479",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; sexual orientation protected for acts from 1 July 2020; act falls after that date.",
+  "note": ""
+ },
+ {
+  "id": "Q47439",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting despite family wording; protected characteristic; act after entry into force.",
+  "note": ""
+ },
+ {
+  "id": "Q82876",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting despite family wording; protected characteristic; act after entry into force.",
+  "note": ""
+ },
+ {
+  "id": "Q48762",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Sexual orientation protected only for acts from 1 July 2020; act predates that (Art. 2 StGB, no retroactivity).",
+  "note": ""
+ },
+ {
+  "id": "Q48024",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; sexual orientation protected for acts from 1 July 2020; act falls after that date.",
+  "note": ""
+ },
+ {
+  "id": "Q26201",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Sexual orientation protected only for acts from 1 July 2020; act predates that (Art. 2 StGB, no retroactivity).",
+  "note": ""
+ },
+ {
+  "id": "Q74545",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting despite family wording; protected characteristic; act after entry into force.",
+  "note": ""
+ },
+ {
+  "id": "Q66032",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Age is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q19476",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting despite family wording; protected characteristic; act after entry into force.",
+  "note": ""
+ },
+ {
+  "id": "Q15281",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public market; ethnicity protected since 1995, so June 2020 date is irrelevant; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q56365",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Dinner with three long-standing close friends at home is a private circle of friends; not public.",
+  "note": ""
+ },
+ {
+  "id": "Q31489",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting despite family wording; protected characteristic; act after entry into force.",
+  "note": ""
+ },
+ {
+  "id": "Q89492",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Gender identity is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q99594",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; sexual orientation protected for acts from 1 July 2020; act falls after that date.",
+  "note": ""
+ },
+ {
+  "id": "Q51592",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Cantonal origin is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q53848",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic, act after entry into force; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q97030",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic, act after entry into force; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q52854",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "Act committed before Art. 261bis entered into force on 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "Q14530",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Faith is religion; busy market before many customers is public; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q59368",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Personal message sent only to his sister is private family communication; not public.",
+  "note": ""
+ },
+ {
+  "id": "Q45477",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Family-run stand but statement made before many customers at busy market: public; sexual orientation protected since July 2020.",
+  "note": ""
+ },
+ {
+  "id": "Q89989",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; sexual orientation protected for acts from 1 July 2020; act falls after that date.",
+  "note": ""
+ },
+ {
+  "id": "Q39705",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; sexual orientation protected for acts from 1 July 2020; act falls after that date.",
+  "note": ""
+ },
+ {
+  "id": "Q81824",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Dinner with three long-standing close friends at home is a private circle of friends; not public.",
+  "note": ""
+ },
+ {
+  "id": "Q29758",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "Act committed before Art. 261bis entered into force on 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "Q98392",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Gender identity is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q12430",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic, act after entry into force; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q47850",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; sexual orientation protected for acts from 1 July 2020; act falls after that date.",
+  "note": ""
+ },
+ {
+  "id": "Q62369",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic, act after entry into force; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q64932",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting despite family wording; protected characteristic; act after entry into force.",
+  "note": ""
+ },
+ {
+  "id": "Q77144",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; sexual orientation protected for acts from 1 July 2020; act falls after that date.",
+  "note": ""
+ },
+ {
+  "id": "Q39862",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic, act after entry into force; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q32826",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic, act after entry into force; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q78697",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Sexual orientation protected only for acts from 1 July 2020; act predates that (Art. 2 StGB, no retroactivity).",
+  "note": ""
+ },
+ {
+  "id": "Q63251",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Family chat limited to parents and siblings is a private family circle; not public.",
+  "note": ""
+ },
+ {
+  "id": "Q17152",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public rally; act on 1 July 2020, the day sexual orientation became protected; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q37808",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Faith is religion; freely accessible online forum is public; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q41688",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; sexual orientation protected for acts from 1 July 2020; act falls after that date.",
+  "note": ""
+ },
+ {
+  "id": "Q94909",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; sexual orientation protected for acts from 1 July 2020; act falls after that date.",
+  "note": ""
+ },
+ {
+  "id": "Q44053",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Personal message sent only to his sister is private family communication; not public.",
+  "note": ""
+ },
+ {
+  "id": "Q31474",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Occupation is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q84341",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic, act after entry into force; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q22315",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic, act after entry into force; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q66978",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic, act after entry into force; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q10566",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; sexual orientation protected for acts from 1 July 2020; act falls after that date.",
+  "note": ""
+ },
+ {
+  "id": "Q84129",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic, act after entry into force; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q13763",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting despite family wording; protected characteristic; act after entry into force.",
+  "note": ""
+ },
+ {
+  "id": "Q36481",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic, act after entry into force; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q27269",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting despite family wording; protected characteristic; act after entry into force.",
+  "note": ""
+ },
+ {
+  "id": "Q33559",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting despite family wording/presence; sexual orientation protected since 1 July 2020; act after that date.",
+  "note": ""
+ },
+ {
+  "id": "Q92478",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; sexual orientation protected for acts from 1 July 2020; act falls after that date.",
+  "note": ""
+ },
+ {
+  "id": "Q49383",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Sex/gender is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q18030",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; sexual orientation protected for acts from 1 July 2020; act falls after that date.",
+  "note": ""
+ },
+ {
+  "id": "Q43370",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; sexual orientation protected for acts from 1 July 2020; act falls after that date.",
+  "note": ""
+ },
+ {
+  "id": "Q34017",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Sexual orientation protected only for acts from 1 July 2020; act predates that (Art. 2 StGB, no retroactivity).",
+  "note": ""
+ },
+ {
+  "id": "Q85989",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Sexual orientation protected only for acts from 1 July 2020; act predates that (Art. 2 StGB, no retroactivity).",
+  "note": ""
+ },
+ {
+  "id": "Q66443",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic, act after entry into force; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q29509",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic, act after entry into force; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q10422",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic, act after entry into force; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q94354",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Phone call with own brother is a private family setting; not public.",
+  "note": ""
+ },
+ {
+  "id": "Q14666",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic, act after entry into force; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q75926",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Closed meeting with ~40 mostly unknown invitees is public per BGE 130 IV 111; family presence irrelevant; protected characteristic.",
+  "note": ""
+ },
+ {
+  "id": "Q61881",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting despite family wording/presence; sexual orientation protected since 1 July 2020; act after that date.",
+  "note": ""
+ },
+ {
+  "id": "Q68490",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic, act after entry into force; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q19702",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic, act after entry into force; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q31710",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Sexual orientation protected only for acts from 1 July 2020; act predates that (Art. 2 StGB, no retroactivity).",
+  "note": ""
+ },
+ {
+  "id": "Q87100",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic, act after entry into force; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q40581",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting despite family wording; protected characteristic; act after entry into force.",
+  "note": ""
+ },
+ {
+  "id": "Q54737",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; sexual orientation protected for acts from 1 July 2020; act falls after that date.",
+  "note": ""
+ },
+ {
+  "id": "Q66972",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Age is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q27313",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; sexual orientation protected for acts from 1 July 2020; act falls after that date.",
+  "note": ""
+ },
+ {
+  "id": "Q72674",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Homosexuality is sexual orientation; public video in March 2023, after 1 July 2020; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q90245",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic, act after entry into force; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q21926",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Family chat limited to parents and siblings is a private family circle; not public.",
+  "note": ""
+ },
+ {
+  "id": "Q58440",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic, act after entry into force; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q75793",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic, act after entry into force; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q30955",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic, act after entry into force; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q40490",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting despite family wording; protected characteristic; act after entry into force.",
+  "note": ""
+ },
+ {
+  "id": "Q85088",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting despite family wording; protected characteristic; act after entry into force.",
+  "note": ""
+ },
+ {
+  "id": "Q73522",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Political conviction is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q37315",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Sex/gender is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q23167",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Family-run stand but statement made before many customers at busy market: public; ethnicity protected.",
+  "note": ""
+ },
+ {
+  "id": "Q67191",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; sexual orientation protected for acts from 1 July 2020; act falls after that date.",
+  "note": ""
+ },
+ {
+  "id": "Q90135",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting despite family wording; protected characteristic; act after entry into force.",
+  "note": ""
+ },
+ {
+  "id": "Q36434",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Phone call with own brother is a private family setting; not public.",
+  "note": ""
+ },
+ {
+  "id": "Q32751",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Political conviction is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q27644",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting despite family wording/presence; sexual orientation protected since 1 July 2020; act after that date.",
+  "note": ""
+ },
+ {
+  "id": "Q72313",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Sex/gender is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q42560",
+  "label": "open",
+  "deciding_element": "setting",
+  "confidence": "medium",
+  "reason": "Birthday party of ~20 with friends, neighbours and acquaintances of acquaintances: private/public mix, decisive relationship facts unclear.",
+  "note": ""
+ },
+ {
+  "id": "Q32594",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting; sexual orientation protected for acts from 1 July 2020; act falls after that date.",
+  "note": ""
+ },
+ {
+  "id": "Q99981",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Sexual orientation protected only for acts from 1 July 2020; act predates that (Art. 2 StGB, no retroactivity).",
+  "note": ""
+ },
+ {
+  "id": "Q43623",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic, act after entry into force; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q31999",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Family chat limited to parents and siblings is a private family circle; not public.",
+  "note": ""
+ },
+ {
+  "id": "Q95389",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic, act after entry into force; all elements met.",
+  "note": ""
+ },
+ {
+  "id": "Q77610",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Gender identity is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "Q98113",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public setting, protected characteristic, act after entry into force; all elements met.",
+  "note": ""
+ }
+]

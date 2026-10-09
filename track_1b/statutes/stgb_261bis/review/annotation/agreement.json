@@ -1,0 +1,250 @@
+{
+ "all": {
+  "n": 960,
+  "agree": 953,
+  "agreement": 0.9927083333333333,
+  "agreement_ci": [
+   0.9850257138717621,
+   0.9964635044458189
+  ],
+  "kappa": 0.9843678032576381,
+  "deciding_element_agree": 315,
+  "deciding_element_n": 315,
+  "confusion": {
+   "acquit->acquit": 315,
+   "convict->convict": 624,
+   "open->acquit": 5,
+   "open->convict": 2,
+   "open->open": 14
+  }
+ },
+ "family:CHAR": {
+  "n": 264,
+  "agree": 264,
+  "agreement": 1.0,
+  "agreement_ci": [
+   0.9856577139416427,
+   1.0
+  ],
+  "kappa": 1.0,
+  "deciding_element_agree": 88,
+  "deciding_element_n": 88,
+  "confusion": {
+   "acquit->acquit": 88,
+   "convict->convict": 176
+  }
+ },
+ "family:CHARX": {
+  "n": 90,
+  "agree": 90,
+  "agreement": 1.0,
+  "agreement_ci": [
+   0.9590643744356734,
+   1.0
+  ],
+  "kappa": 1.0,
+  "deciding_element_agree": 60,
+  "deciding_element_n": 60,
+  "confusion": {
+   "acquit->acquit": 60,
+   "convict->convict": 30
+  }
+ },
+ "family:CONTESTED": {
+  "n": 63,
+  "agree": 56,
+  "agreement": 0.8888888888888888,
+  "agreement_ci": [
+   0.7879534424991748,
+   0.9451245133761628
+  ],
+  "kappa": 0.7586206896551724,
+  "deciding_element_agree": 0,
+  "deciding_element_n": 0,
+  "confusion": {
+   "convict->convict": 42,
+   "open->acquit": 5,
+   "open->convict": 2,
+   "open->open": 14
+  }
+ },
+ "family:DATE_CTRL": {
+  "n": 111,
+  "agree": 111,
+  "agreement": 1.0,
+  "agreement_ci": [
+   0.9665498953066078,
+   1.0
+  ],
+  "kappa": 1.0,
+  "deciding_element_agree": 37,
+  "deciding_element_n": 37,
+  "confusion": {
+   "acquit->acquit": 37,
+   "convict->convict": 74
+  }
+ },
+ "family:DATE_SO": {
+  "n": 153,
+  "agree": 153,
+  "agreement": 1.0,
+  "agreement_ci": [
+   0.9755073763686055,
+   1.0
+  ],
+  "kappa": 1.0,
+  "deciding_element_agree": 51,
+  "deciding_element_n": 51,
+  "confusion": {
+   "acquit->acquit": 51,
+   "convict->convict": 102
+  }
+ },
+ "family:SET": {
+  "n": 237,
+  "agree": 237,
+  "agreement": 1.0,
+  "agreement_ci": [
+   0.9840498440779082,
+   1.0
+  ],
+  "kappa": 1.0,
+  "deciding_element_agree": 79,
+  "deciding_element_n": 79,
+  "confusion": {
+   "acquit->acquit": 79,
+   "convict->convict": 158
+  }
+ },
+ "family:WORDING": {
+  "n": 42,
+  "agree": 42,
+  "agreement": 1.0,
+  "agreement_ci": [
+   0.916201209134296,
+   0.9999999999999999
+  ],
+  "kappa": 1.0,
+  "deciding_element_agree": 0,
+  "deciding_element_n": 0,
+  "confusion": {
+   "convict->convict": 42
+  }
+ },
+ "lang:de": {
+  "n": 660,
+  "agree": 654,
+  "agreement": 0.990909090909091,
+  "agreement_ci": [
+   0.9803095995459175,
+   0.9958270839796397
+  ],
+  "kappa": 0.980456026058632,
+  "deciding_element_agree": 215,
+  "deciding_element_n": 215,
+  "confusion": {
+   "acquit->acquit": 215,
+   "convict->convict": 430,
+   "open->acquit": 4,
+   "open->convict": 2,
+   "open->open": 9
+  }
+ },
+ "lang:fr": {
+  "n": 150,
+  "agree": 149,
+  "agreement": 0.9933333333333333,
+  "agreement_ci": [
+   0.9632071602251817,
+   0.9988221986649826
+  ],
+  "kappa": 0.9857617465590887,
+  "deciding_element_agree": 50,
+  "deciding_element_n": 50,
+  "confusion": {
+   "acquit->acquit": 50,
+   "convict->convict": 97,
+   "open->acquit": 1,
+   "open->open": 2
+  }
+ },
+ "lang:it": {
+  "n": 150,
+  "agree": 150,
+  "agreement": 1.0,
+  "agreement_ci": [
+   0.9750297556319235,
+   1.0
+  ],
+  "kappa": 1.0,
+  "deciding_element_agree": 50,
+  "deciding_element_n": 50,
+  "confusion": {
+   "acquit->acquit": 50,
+   "convict->convict": 97,
+   "open->open": 3
+  }
+ },
+ "variant:base": {
+  "n": 320,
+  "agree": 320,
+  "agreement": 1.0,
+  "agreement_ci": [
+   0.9881378411686904,
+   1.0
+  ],
+  "kappa": 1.0,
+  "deciding_element_agree": 0,
+  "deciding_element_n": 0,
+  "confusion": {
+   "convict->convict": 320
+  }
+ },
+ "variant:contested": {
+  "n": 21,
+  "agree": 14,
+  "agreement": 0.6666666666666666,
+  "agreement_ci": [
+   0.4537345197425524,
+   0.8280524739491653
+  ],
+  "kappa": 0.0,
+  "deciding_element_agree": 0,
+  "deciding_element_n": 0,
+  "confusion": {
+   "open->acquit": 5,
+   "open->convict": 2,
+   "open->open": 14
+  }
+ },
+ "variant:placebo": {
+  "n": 304,
+  "agree": 304,
+  "agreement": 1.0,
+  "agreement_ci": [
+   0.9875213077685823,
+   1.0
+  ],
+  "kappa": 1.0,
+  "deciding_element_agree": 0,
+  "deciding_element_n": 0,
+  "confusion": {
+   "convict->convict": 304
+  }
+ },
+ "variant:true_flip": {
+  "n": 315,
+  "agree": 315,
+  "agreement": 1.0,
+  "agreement_ci": [
+   0.9879518214635491,
+   0.9999999999999999
+  ],
+  "kappa": 1.0,
+  "deciding_element_agree": 315,
+  "deciding_element_n": 315,
+  "confusion": {
+   "acquit->acquit": 315
+  }
+ }
+}

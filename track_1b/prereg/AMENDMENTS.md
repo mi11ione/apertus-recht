@@ -16,3 +16,19 @@ and after (sha256 lists compared; only the design.yaml snapshot under `dataset/m
 As allowed by the lock note, `templates/fr.yaml` (religion base form → statutory "appartenance religieuse";
 ethnicity base → "appartenance ethnique", synonym → "origine ethnique") and `templates/it.yaml` (a1A2, a4B2) changed
 before any FR/IT item was scored. Findings: `statutes/stgb_261bis/review/bt/backtranslation_{fr,it}.md` (0 critical).
+
+## A3 (2026-10-09, 20:50, before any core-set result was analysed): two wording defects found by blind annotation
+Blind second annotation (`statutes/stgb_261bis/review/annotation/`) found (1) acts dated 1993/94 set on social media,
+video platforms or online forums (an anachronism; verdict unaffected) and (2) the contested setting `cont_assoc`
+("15 members who have known each other for years"), which 5/5 annotators read as clearly private, i.e. not genuinely
+contested. Fixes: online settings are tagged `online` and excluded from the DATE_CTRL base; `cont_assoc` now reads
+"about 25 members, some of whom have known each other for years and some of whom joined only recently" (DE/FR/IT).
+Effect: 150 items per language change (DATE_CTRL 75, CONTESTED 45, WORDING 30; the later families are re-drawn by the
+seeded sampler). The 70B core run, which had scored 385 of 3,960 DE prompts and whose results had not been looked at,
+was stopped and resumed; prompts whose text changed are re-scored (cache key = request hash). The held-out test, the
+red/amber rule and the gold engine are unchanged.
+
+| file | sha256 before A3 | after A3 |
+|---|---|---|
+| dataset/eval/core_de.jsonl | c54f6c3fdb7861b89737258be2d3a8801c824287ad7d9f727349bc491a75f267 | 2428ca73ddadce916ba3e69578f19aeae4ae0ccf94f8a0548caf5a904bd941a6 |
+| statutes/stgb_261bis/design.yaml | (A1 value) | df8a364b97438c5c742174ff08d23afd207e60cc1fa52d809dec0b7a6df9f4cc |

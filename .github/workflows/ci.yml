@@ -1,0 +1,30 @@
+name: ci
+on:
+  push:
+  pull_request:
+  schedule: [{cron: "17 3 * * *"}]
+  workflow_dispatch:
+defaults:
+  run: {working-directory: track_1b}
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install -e ".[dev]" jinja2==3.1.4 numpy==2.1.3
+      - name: unit, mutation, oracle and statute tests
+        run: python -m pytest -q
+      - name: make run steps 1-2 without Docker (dataset regenerates; results recompute)
+        run: statute-twins selfcheck
+      - name: quality-control gates (schema, gold, twins, duplicates, language, PII, canary)
+        run: statute-twins qc --out /tmp/qc.json
+      - name: every number in the README, report and notes maps to a results file (claims.tsv)
+        run: python scripts/check_claims.py
+  make-run:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: make run (clean checkout, Docker, CPU), timed
+        run: /usr/bin/time -v make run 2>&1 | tee /tmp/make_run.log; grep -q "SELF-CHECK PASS" /tmp/make_run.log

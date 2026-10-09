@@ -110,7 +110,7 @@ groups:
 acts:
   # cpv. 1 (incita all'odio o alla discriminazione)
   a1A1: "ha incitato all'odio contro {g.def}"
-  a1A2: "ha incitato alla discriminazione {g.di}"
+  a1A2: "ha incitato alla discriminazione contro {g.def}"
   a1B1: "ha esortato a odiare {g.def}"
   a1B2: "ha fomentato l'odio contro {g.def}"
   a1C1: "ha invitato a svantaggiare ed emarginare {g.def}"
@@ -126,7 +126,7 @@ acts:
   a4A1: "ha discreditato in modo lesivo della dignità umana {g.def}"
   a4A2: "ha denigrato {g.def} in un modo che lede la dignità umana"
   a4B1: "ha descritto come esseri umani di minor valore {g.def}"
-  a4B2: "ha vilipeso in modo disumano {g.def}"
+  a4B2: "ha vilipeso in un modo improntato al disprezzo per l'essere umano {g.def}"
   a4C1: "ha negato il pari valore in quanto esseri umani {g.a}"
   a4C2: "ha definito esseri umani di seconda categoria {g.def}"
 
@@ -162,4 +162,4 @@ settings:
   cont_clubchat:  "in una chat di gruppo chiusa della sua società sportiva con circa 30 membri, di cui conosceva bene alcuni e la maggior parte solo superficialmente"
   cont_party:     "durante una festa di compleanno nel suo giardino davanti a circa 20 ospiti, tra cui amici, vicini e alcuni conoscenti di conoscenti"
   cont_office:    "in un'e-mail ai 25 collaboratori del suo reparto"
-  cont_assoc:     "durante una seduta non pubblica di un'associazione di quartiere con 15 membri che si conoscono da anni"
+  cont_assoc:     "durante una seduta non pubblica di un'associazione di quartiere con circa 25 membri, alcuni dei quali si conoscono da anni mentre altri vi hanno aderito solo di recente"

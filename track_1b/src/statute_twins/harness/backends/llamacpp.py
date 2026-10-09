@@ -52,6 +52,7 @@ class LlamaCpp(Backend):
             llama = Llama(model_path=self.model_path, n_ctx=n_ctx, n_threads=self.n_threads, logits_all=False,
                           verbose=False, n_gpu_layers=0)
         self.llm = llama
+        self._kv: list[int] = []          # tokens currently in the KV cache (prompt part), for prefix reuse
         meta = getattr(self.llm, "metadata", {}) or {}
         self.template = meta.get("tokenizer.chat_template")
         self.bos = self._piece(int(meta.get("tokenizer.ggml.bos_token_id", 1)))
@@ -93,8 +94,18 @@ class LlamaCpp(Backend):
             if full[:len(pre)] != pre:
                 raise ValueError(f"tokenisation of prompt+{side!r} does not extend the prompt tokens")
             conts[side] = full[len(pre):]
-        self.llm.reset()
-        self.llm.eval(pre)
+        # reuse the KV cache for the longest common prefix with the previous prompt (same system prompt and, for
+        # consecutive rungs/framings of one item, the same scenario text); at least one token is evaluated so that
+        # the logits at the last prompt position are fresh
+        lcp = 0
+        for x, y in zip(self._kv, pre):
+            if x != y:
+                break
+            lcp += 1
+        lcp = min(lcp, len(pre) - 1)
+        self.llm.n_tokens = lcp
+        self.llm.eval(pre[lcp:])
+        self._kv = list(pre)
         n = self.llm.n_tokens
         first = self.llm.scores[n - 1]
         out = {}
@@ -107,4 +118,4 @@ class LlamaCpp(Backend):
             self.llm.n_tokens = n          # rewind: the next eval drops KV entries beyond n
             out[side] = lp
         return Score(out["convict"], out["acquit"], "llamacpp", self.label, self.sha256,
-                     extra=dict(ntok={k: len(v) for k, v in conts.items()}, prompt_tokens=len(pre)))
+                     extra=dict(ntok={k: len(v) for k, v in conts.items()}, prompt_tokens=len(pre), reused=lcp))
