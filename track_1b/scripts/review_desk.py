@@ -24,7 +24,8 @@ def load():
             bt.append(dict(id=f"{l}:{u['id']}", lang=l, unit=u["id"], de=u["de"], tr=u[l], back=bts[l][u["id"]]["de"],
                            note=bts[l][u["id"]].get("note", "")))
     court = []
-    cp = R / "court/review.jsonl"
+    import os
+    cp = Path(os.environ.get("COURT_REVIEW", R / "court/review.jsonl"))   # contains quotes: kept outside the repository
     if cp.exists():
         court = [json.loads(l) for l in cp.read_text(encoding="utf-8").splitlines() if l.strip()]
     return q, bt, court

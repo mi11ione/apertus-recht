@@ -1,0 +1,45 @@
+{
+ "duplicate_groups": {
+  "BGE 133 IV 308 / 6P.232/2006": [
+   "bge_BGE_133_IV_308",
+   "bge_133 IV 308",
+   "bger_6P.232_2006"
+  ],
+  "BGE 145 IV 23 / 6B_805/2017": [
+   "bge_BGE_145_IV_23",
+   "bge_145 IV 23",
+   "bger_6B_805_2017"
+  ],
+  "NE CPEN.2021.9": [
+   "ne_gerichte_CPEN.2021.9_d20011028",
+   "ne_gerichte_CPEN.2021.9"
+  ],
+  "GE AARP/258/2021 = P/23847/2016": [
+   "ge_gerichte_P_23847_2016",
+   "ge_gerichte_AARP_258_2021"
+  ],
+  "VD Jug/2023/344 = PE21.016382": [
+   "vd_gerichte_PE21.016382",
+   "vd_findinfo_Jug___2023___344"
+  ],
+  "VD Jug/2016/226 (27.05.2016)": [
+   "vd_findinfo_Jug___2016___226",
+   "vd_gerichte_ca8f400a-93de-4e50-bb3e-78b1b5fb3026"
+  ],
+  "GE AARP/154/2024 = P/3866/2020": [
+   "ge_gerichte_AARP_154_2024",
+   "ge_gerichte_P_3866_2020"
+  ],
+  "VD D_cision/2016/793 = PE16.019356": [
+   "vd_findinfo_D_cision___2016___793",
+   "vd_gerichte_PE16.019356"
+  ]
+ },
+ "non_prosecution": [
+  "ge_gerichte_ACPR_446_2021",
+  "ge_gerichte_P_14678_2025",
+  "gr_gerichte_BK 2008 8",
+  "vd_findinfo_D_cision___2014___645",
+  "vd_gerichte_PE23.016672"
+ ]
+}
