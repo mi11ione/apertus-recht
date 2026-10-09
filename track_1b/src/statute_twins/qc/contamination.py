@@ -134,11 +134,16 @@ def main(argv=None) -> int:
         files = files[-a.limit_files:]
     ig = item_grams(Path(a.dataset))
     ref = reference_grams(Path(a.statute), Path(a.dataset))
-    tri = {g[:3] for g in ig}
+    # positive control: the statute paragraphs, the BGE Regeste and our prompt rungs are scanned with the same code; the
+    # Regeste and the statute are known to be in the corpus, so control hits must be found or the scan is broken
+    control = {g: {"control"} for g in ref if g not in ig}
+    ig_all = dict(ig)
+    ig_all.update(control)
+    tri = {g[:3] for g in ig_all}
     work = Path(a.workdir)
     cand_dir = work / "candidates"
     cand_dir.mkdir(parents=True, exist_ok=True)
-    keys = set(ig)
+    keys = set(ig_all)
     print(f"{len(files)} files, {sum(s for _, s in files) / 1e9:.2f} GB; {len(keys)} item 13-grams ({len(keys & ref)} statute-derived)", flush=True)
     results = []
     with ProcessPoolExecutor(a.workers) as ex:
@@ -151,16 +156,21 @@ def main(argv=None) -> int:
     for r in results:
         for g, ids in r["hits"].items():
             hits[g].update(ids)
-    rows = []
+    rows, ctrl = [], {}
     for g, dec in sorted(hits.items()):
         gt = tuple(g.split())
+        if gt not in ig:
+            ctrl[g] = len(dec)
+            continue
         rows.append(dict(ngram=g, kind="statute-derived" if gt in ref else "scenario", decisions=sorted(dec)[:10],
                          n_decisions=len(dec), n_items=len(ig[gt])))
     scen = [r for r in rows if r["kind"] == "scenario"]
     items_hit = sorted({i for r in scen for i in ig[tuple(r["ngram"].split())]})
     rep = dict(corpus="voilaj/swiss-caselaw", revision=a.revision, files=len(results),
                rows=sum(r["rows"] for r in results), tokens=sum(r["tokens"] for r in results),
-               n=N, item_ngrams=len(keys), item_ngrams_statute_derived=len(keys & ref),
+               n=N, item_ngrams=len(ig), item_ngrams_statute_derived=len(set(ig) & ref),
+               positive_control=dict(ngrams=len(control), found=len(ctrl), docs_max=max(ctrl.values()) if ctrl else 0,
+                                     passed=len(ctrl) > 0, examples=sorted(ctrl, key=lambda g: -ctrl[g])[:5]),
                matching_ngrams=len(rows), matching_statute_derived=len(rows) - len(scen), matching_scenario=len(scen),
                items_with_scenario_match=len(items_hit), items_with_scenario_match_ids=items_hit[:50],
                exposure=dict(docs_bge_130_IV_111=sum(r["docs_130"] for r in results),

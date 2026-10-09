@@ -1,0 +1,14 @@
+{
+ "run": "8b-bf16-blend-RLVR-DPO-a0.5",
+ "rows": 336,
+ "jsonl_sha256": "655cc8d1fdb548303e9d3fcdaea0f819e1b4642a1e4d50cefd64c39471c34c79",
+ "model": "W = (1-a)*swiss-ai/Apertus-v1.5-8B-RLVR + a*swiss-ai/Apertus-v1.5-8B-DPO, a=0.5, exact bf16 weight blend",
+ "precision": "bf16",
+ "runtime": "MLX 0.32.3 / mlx-lm 0.32.0 (M4, 24 GB)",
+ "exhibit": "weight-blend dial (spikes/dial/results.md)",
+ "note": "84-item subset (frames L15-L20); a=0 and a=1 reproduce 8b-bf16-RLVR / -DPO to 0.0000 nats",
+ "protocol": "chat",
+ "source_file": "spikes/dial/results/stage_dial_d1_a0.5.json",
+ "source_sha256": "4480252663ac28930e8a3c8605d9789c38a8d7154867cb1f4ceb42d2eb81800e",
+ "questions_note": "stage9.py question strings, byte-identical to prompts/de.yaml R0/R3"
+}

@@ -1,0 +1,1131 @@
+{
+ "corpus": "voilaj/swiss-caselaw",
+ "revision": "c4158e6a49f9bcfcec3eb17e0277501c3a1f6f17",
+ "files": 121,
+ "rows": 1069365,
+ "tokens": 3863627009,
+ "n": 13,
+ "item_ngrams": 35241,
+ "item_ngrams_statute_derived": 0,
+ "positive_control": {
+  "ngrams": 1525,
+  "found": 846,
+  "docs_max": 304,
+  "passed": true,
+  "examples": [
+   "d une peine privative de liberté de trois ans au plus ou d",
+   "peine privative de liberté de trois ans au plus ou d une peine",
+   "privative de liberté de trois ans au plus ou d une peine pécuniaire",
+   "une peine privative de liberté de trois ans au plus ou d une",
+   "puni d une peine privative de liberté de trois ans au plus ou"
+  ]
+ },
+ "matching_ngrams": 0,
+ "matching_statute_derived": 0,
+ "matching_scenario": 0,
+ "items_with_scenario_match": 0,
+ "items_with_scenario_match_ids": [],
+ "exposure": {
+  "docs_bge_130_IV_111": 147,
+  "docs_261bis": 754,
+  "docs_both": 130,
+  "docs_both_by_language": {
+   "it": 4,
+   "fr": 71,
+   "de": 55
+  }
+ },
+ "matches": [],
+ "per_file": [
+  {
+   "file": "data/ag_anwaltskommission.parquet",
+   "rows": 32,
+   "tokens": 26102,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 1.5
+  },
+  {
+   "file": "data/ag_aufsichtskommission.parquet",
+   "rows": 5,
+   "tokens": 3507,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 1.4
+  },
+  {
+   "file": "data/ag_baugesetzgebung.parquet",
+   "rows": 198,
+   "tokens": 81529,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 2.0
+  },
+  {
+   "file": "data/ag_departement_bks.parquet",
+   "rows": 12,
+   "tokens": 31661,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 1.6
+  },
+  {
+   "file": "data/ag_departement_bvu.parquet",
+   "rows": 97,
+   "tokens": 258172,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 2.0
+  },
+  {
+   "file": "data/ag_departement_gs.parquet",
+   "rows": 19,
+   "tokens": 79539,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 2.2
+  },
+  {
+   "file": "data/ag_departement_vi.parquet",
+   "rows": 42,
+   "tokens": 73651,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 2.2
+  },
+  {
+   "file": "data/ag_gerichte.parquet",
+   "rows": 2833,
+   "tokens": 2836457,
+   "docs_130": 0,
+   "docs_261": 1,
+   "docs_both": 0,
+   "secs": 12.4
+  },
+  {
+   "file": "data/ag_handelsgericht.parquet",
+   "rows": 338,
+   "tokens": 1648501,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 4.4
+  },
+  {
+   "file": "data/ag_justizgericht.parquet",
+   "rows": 6,
+   "tokens": 19565,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 1.4
+  },
+  {
+   "file": "data/ag_regierungsrat.parquet",
+   "rows": 248,
+   "tokens": 824139,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 3.7
+  },
+  {
+   "file": "data/ag_spezialverwaltungsgericht.parquet",
+   "rows": 1219,
+   "tokens": 4388411,
+   "docs_130": 0,
+   "docs_261": 1,
+   "docs_both": 0,
+   "secs": 10.8
+  },
+  {
+   "file": "data/ag_strafgericht.parquet",
+   "rows": 2176,
+   "tokens": 11014539,
+   "docs_130": 3,
+   "docs_261": 9,
+   "docs_both": 3,
+   "secs": 25.7
+  },
+  {
+   "file": "data/ag_versicherungsgericht.parquet",
+   "rows": 2102,
+   "tokens": 6510583,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 10.7
+  },
+  {
+   "file": "data/ag_verwaltungsgericht.parquet",
+   "rows": 1919,
+   "tokens": 7695128,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 17.1
+  },
+  {
+   "file": "data/ag_weitere.parquet",
+   "rows": 24,
+   "tokens": 1648,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 1.3
+  },
+  {
+   "file": "data/ag_zivilgericht.parquet",
+   "rows": 1962,
+   "tokens": 7050630,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 16.6
+  },
+  {
+   "file": "data/ai_gerichte.parquet",
+   "rows": 182,
+   "tokens": 1830383,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 5.0
+  },
+  {
+   "file": "data/ar_gerichte.parquet",
+   "rows": 4614,
+   "tokens": 6579796,
+   "docs_130": 3,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 16.7
+  },
+  {
+   "file": "data/bazg.parquet",
+   "rows": 120,
+   "tokens": 332741,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 2.2
+  },
+  {
+   "file": "data/be_anwaltsaufsicht.parquet",
+   "rows": 78,
+   "tokens": 273659,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 2.2
+  },
+  {
+   "file": "data/be_bvd.parquet",
+   "rows": 2094,
+   "tokens": 4301644,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 8.9
+  },
+  {
+   "file": "data/be_direktionen.parquet",
+   "rows": 218,
+   "tokens": 1269463,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 4.3
+  },
+  {
+   "file": "data/be_steuerrekurs.parquet",
+   "rows": 343,
+   "tokens": 272716,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 2.3
+  },
+  {
+   "file": "data/be_verwaltungsgericht.parquet",
+   "rows": 12174,
+   "tokens": 56603525,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 85.5
+  },
+  {
+   "file": "data/be_weitere.parquet",
+   "rows": 840,
+   "tokens": 1019663,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 4.0
+  },
+  {
+   "file": "data/be_zivilstraf.parquet",
+   "rows": 6087,
+   "tokens": 46048889,
+   "docs_130": 8,
+   "docs_261": 39,
+   "docs_both": 8,
+   "secs": 64.3
+  },
+  {
+   "file": "data/bge.parquet",
+   "rows": 49259,
+   "tokens": 122866298,
+   "docs_130": 11,
+   "docs_261": 49,
+   "docs_both": 9,
+   "secs": 165.9
+  },
+  {
+   "file": "data/bger.parquet",
+   "rows": 193765,
+   "tokens": 414854887,
+   "docs_130": 24,
+   "docs_261": 142,
+   "docs_both": 20,
+   "secs": 774.3
+  },
+  {
+   "file": "data/bl_gerichte.parquet",
+   "rows": 19454,
+   "tokens": 48836337,
+   "docs_130": 0,
+   "docs_261": 6,
+   "docs_both": 0,
+   "secs": 64.7
+  },
+  {
+   "file": "data/bpatger.parquet",
+   "rows": 197,
+   "tokens": 1665729,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 4.5
+  },
+  {
+   "file": "data/bs_appellationsgericht.parquet",
+   "rows": 8815,
+   "tokens": 33129118,
+   "docs_130": 1,
+   "docs_261": 14,
+   "docs_both": 1,
+   "secs": 61.8
+  },
+  {
+   "file": "data/bs_gerichte.parquet",
+   "rows": 1,
+   "tokens": 5382,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 1.5
+  },
+  {
+   "file": "data/bs_personalrekurskommission.parquet",
+   "rows": 15,
+   "tokens": 27561,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 1.5
+  },
+  {
+   "file": "data/bs_sozialversicherungsgericht.parquet",
+   "rows": 2233,
+   "tokens": 8982678,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 20.7
+  },
+  {
+   "file": "data/bs_steuerrekurskommission.parquet",
+   "rows": 37,
+   "tokens": 78606,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 1.9
+  },
+  {
+   "file": "data/bs_zivilgericht.parquet",
+   "rows": 4,
+   "tokens": 29555,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 1.6
+  },
+  {
+   "file": "data/bstger.parquet",
+   "rows": 11710,
+   "tokens": 50530925,
+   "docs_130": 15,
+   "docs_261": 41,
+   "docs_both": 15,
+   "secs": 69.4
+  },
+  {
+   "file": "data/bvger.parquet",
+   "rows": 109273,
+   "tokens": 464979803,
+   "docs_130": 1,
+   "docs_261": 8,
+   "docs_both": 1,
+   "secs": 998.9
+  },
+  {
+   "file": "data/ch_bundesrat.parquet",
+   "rows": 39,
+   "tokens": 112559,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 2.1
+  },
+  {
+   "file": "data/ch_vb.parquet",
+   "rows": 23046,
+   "tokens": 109156920,
+   "docs_130": 1,
+   "docs_261": 44,
+   "docs_both": 1,
+   "secs": 142.7
+  },
+  {
+   "file": "data/comcom.parquet",
+   "rows": 64,
+   "tokens": 1328618,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 4.4
+  },
+  {
+   "file": "data/delta-2026-10-09.parquet",
+   "rows": 345,
+   "tokens": 0,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 2.5
+  },
+  {
+   "file": "data/edoeb.parquet",
+   "rows": 1818,
+   "tokens": 3103793,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 6.3
+  },
+  {
+   "file": "data/elcom.parquet",
+   "rows": 435,
+   "tokens": 2906147,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 6.0
+  },
+  {
+   "file": "data/emark.parquet",
+   "rows": 433,
+   "tokens": 1287280,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 4.0
+  },
+  {
+   "file": "data/esbk.parquet",
+   "rows": 60,
+   "tokens": 177142,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 2.0
+  },
+  {
+   "file": "data/eschk.parquet",
+   "rows": 419,
+   "tokens": 2682207,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 5.0
+  },
+  {
+   "file": "data/estv.parquet",
+   "rows": 3,
+   "tokens": 4487,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 1.3
+  },
+  {
+   "file": "data/finma.parquet",
+   "rows": 455,
+   "tokens": 94519,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 2.0
+  },
+  {
+   "file": "data/finma_versicherungsrecht.parquet",
+   "rows": 2585,
+   "tokens": 11691399,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 23.6
+  },
+  {
+   "file": "data/fr_anwaltsaufsicht.parquet",
+   "rows": 3,
+   "tokens": 4816,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 1.5
+  },
+  {
+   "file": "data/fr_gerichte.parquet",
+   "rows": 14827,
+   "tokens": 69614820,
+   "docs_130": 1,
+   "docs_261": 21,
+   "docs_both": 0,
+   "secs": 100.8
+  },
+  {
+   "file": "data/ge_gerichte.parquet",
+   "rows": 171005,
+   "tokens": 718018482,
+   "docs_130": 26,
+   "docs_261": 114,
+   "docs_both": 26,
+   "secs": 1090.7
+  },
+  {
+   "file": "data/gl_gerichte.parquet",
+   "rows": 1420,
+   "tokens": 6507319,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 16.9
+  },
+  {
+   "file": "data/gr_gerichte.parquet",
+   "rows": 15862,
+   "tokens": 65358073,
+   "docs_130": 4,
+   "docs_261": 14,
+   "docs_both": 4,
+   "secs": 94.7
+  },
+  {
+   "file": "data/ju_gerichte.parquet",
+   "rows": 1227,
+   "tokens": 7548213,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 11.3
+  },
+  {
+   "file": "data/lu_gerichte.parquet",
+   "rows": 5185,
+   "tokens": 11014035,
+   "docs_130": 1,
+   "docs_261": 3,
+   "docs_both": 1,
+   "secs": 25.2
+  },
+  {
+   "file": "data/mkg.parquet",
+   "rows": 1244,
+   "tokens": 1790354,
+   "docs_130": 1,
+   "docs_261": 2,
+   "docs_both": 1,
+   "secs": 5.8
+  },
+  {
+   "file": "data/ne_gerichte.parquet",
+   "rows": 10853,
+   "tokens": 43265090,
+   "docs_130": 4,
+   "docs_261": 23,
+   "docs_both": 4,
+   "secs": 62.4
+  },
+  {
+   "file": "data/ne_jurisprudence_adm.parquet",
+   "rows": 1648,
+   "tokens": 5325659,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 9.0
+  },
+  {
+   "file": "data/nw_gerichte.parquet",
+   "rows": 1067,
+   "tokens": 6597586,
+   "docs_130": 0,
+   "docs_261": 8,
+   "docs_both": 0,
+   "secs": 17.7
+  },
+  {
+   "file": "data/ow_gerichte.parquet",
+   "rows": 3470,
+   "tokens": 3676596,
+   "docs_130": 0,
+   "docs_261": 2,
+   "docs_both": 0,
+   "secs": 16.8
+  },
+  {
+   "file": "data/postcom.parquet",
+   "rows": 334,
+   "tokens": 669024,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 3.1
+  },
+  {
+   "file": "data/preisueberwacher.parquet",
+   "rows": 29,
+   "tokens": 78864,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 2.1
+  },
+  {
+   "file": "data/rab.parquet",
+   "rows": 5,
+   "tokens": 38102,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 1.6
+  },
+  {
+   "file": "data/sav_international.parquet",
+   "rows": 4,
+   "tokens": 22217,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 1.6
+  },
+  {
+   "file": "data/sav_kantone.parquet",
+   "rows": 33,
+   "tokens": 111672,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 1.3
+  },
+  {
+   "file": "data/sg_gerichte.parquet",
+   "rows": 3141,
+   "tokens": 1084021,
+   "docs_130": 0,
+   "docs_261": 1,
+   "docs_both": 0,
+   "secs": 3.6
+  },
+  {
+   "file": "data/sg_handelsgericht.parquet",
+   "rows": 49,
+   "tokens": 237562,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 2.1
+  },
+  {
+   "file": "data/sg_kantonsgericht.parquet",
+   "rows": 1083,
+   "tokens": 3300035,
+   "docs_130": 0,
+   "docs_261": 2,
+   "docs_both": 0,
+   "secs": 8.9
+  },
+  {
+   "file": "data/sg_publikationen.parquet",
+   "rows": 630,
+   "tokens": 3240314,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 6.1
+  },
+  {
+   "file": "data/sg_versicherungsgericht.parquet",
+   "rows": 7642,
+   "tokens": 33982913,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 63.1
+  },
+  {
+   "file": "data/sg_verwaltungsgericht.parquet",
+   "rows": 2793,
+   "tokens": 11754171,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 22.1
+  },
+  {
+   "file": "data/sg_verwaltungsrekurskommission.parquet",
+   "rows": 1183,
+   "tokens": 3474452,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 5.6
+  },
+  {
+   "file": "data/sh_gerichte.parquet",
+   "rows": 716,
+   "tokens": 40159,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 2.0
+  },
+  {
+   "file": "data/sh_obergericht.parquet",
+   "rows": 718,
+   "tokens": 276983,
+   "docs_130": 0,
+   "docs_261": 2,
+   "docs_both": 0,
+   "secs": 2.1
+  },
+  {
+   "file": "data/so_gerichte.parquet",
+   "rows": 13618,
+   "tokens": 53449122,
+   "docs_130": 0,
+   "docs_261": 4,
+   "docs_both": 0,
+   "secs": 92.5
+  },
+  {
+   "file": "data/sz_gerichte.parquet",
+   "rows": 3443,
+   "tokens": 4685606,
+   "docs_130": 0,
+   "docs_261": 2,
+   "docs_both": 0,
+   "secs": 5.9
+  },
+  {
+   "file": "data/sz_verwaltungsgericht.parquet",
+   "rows": 2242,
+   "tokens": 2122575,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 4.0
+  },
+  {
+   "file": "data/ta_sst.parquet",
+   "rows": 87,
+   "tokens": 801112,
+   "docs_130": 1,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 3.5
+  },
+  {
+   "file": "data/tg_anwaltskommission.parquet",
+   "rows": 5,
+   "tokens": 5408,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 1.4
+  },
+  {
+   "file": "data/tg_gerichte.parquet",
+   "rows": 1162,
+   "tokens": 2094630,
+   "docs_130": 0,
+   "docs_261": 2,
+   "docs_both": 0,
+   "secs": 4.2
+  },
+  {
+   "file": "data/tg_obergericht.parquet",
+   "rows": 2443,
+   "tokens": 3474487,
+   "docs_130": 0,
+   "docs_261": 2,
+   "docs_both": 0,
+   "secs": 7.6
+  },
+  {
+   "file": "data/ti_gerichte.parquet",
+   "rows": 66987,
+   "tokens": 192128287,
+   "docs_130": 1,
+   "docs_261": 10,
+   "docs_both": 1,
+   "secs": 531.2
+  },
+  {
+   "file": "data/ubi.parquet",
+   "rows": 679,
+   "tokens": 2366539,
+   "docs_130": 0,
+   "docs_261": 9,
+   "docs_both": 0,
+   "secs": 4.3
+  },
+  {
+   "file": "data/ur_gerichte.parquet",
+   "rows": 1240,
+   "tokens": 2530093,
+   "docs_130": 0,
+   "docs_261": 1,
+   "docs_both": 0,
+   "secs": 4.1
+  },
+  {
+   "file": "data/vd_findinfo.parquet",
+   "rows": 74798,
+   "tokens": 346948595,
+   "docs_130": 11,
+   "docs_261": 48,
+   "docs_both": 11,
+   "secs": 851.2
+  },
+  {
+   "file": "data/vd_gerichte.parquet",
+   "rows": 65948,
+   "tokens": 290340865,
+   "docs_130": 14,
+   "docs_261": 60,
+   "docs_both": 14,
+   "secs": 663.7
+  },
+  {
+   "file": "data/vd_omni.parquet",
+   "rows": 28033,
+   "tokens": 122646735,
+   "docs_130": 0,
+   "docs_261": 2,
+   "docs_both": 0,
+   "secs": 141.5
+  },
+  {
+   "file": "data/vs_gerichte.parquet",
+   "rows": 7011,
+   "tokens": 26689860,
+   "docs_130": 1,
+   "docs_261": 8,
+   "docs_both": 1,
+   "secs": 36.7
+  },
+  {
+   "file": "data/weko.parquet",
+   "rows": 299,
+   "tokens": 10757741,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 21.3
+  },
+  {
+   "file": "data/zg_anwaltsaufsicht.parquet",
+   "rows": 27,
+   "tokens": 40055,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 1.6
+  },
+  {
+   "file": "data/zg_datenschutzstelle.parquet",
+   "rows": 101,
+   "tokens": 153246,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 1.7
+  },
+  {
+   "file": "data/zg_kantonsgericht.parquet",
+   "rows": 134,
+   "tokens": 270029,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 2.2
+  },
+  {
+   "file": "data/zg_obergericht.parquet",
+   "rows": 1722,
+   "tokens": 7632082,
+   "docs_130": 0,
+   "docs_261": 3,
+   "docs_both": 0,
+   "secs": 17.9
+  },
+  {
+   "file": "data/zg_regierungsrat.parquet",
+   "rows": 308,
+   "tokens": 879767,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 3.1
+  },
+  {
+   "file": "data/zg_strafgericht.parquet",
+   "rows": 23,
+   "tokens": 22048,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 1.4
+  },
+  {
+   "file": "data/zg_verwaltungsgericht.parquet",
+   "rows": 1930,
+   "tokens": 8021729,
+   "docs_130": 0,
+   "docs_261": 1,
+   "docs_both": 0,
+   "secs": 18.6
+  },
+  {
+   "file": "data/zh_arbeitsgericht.parquet",
+   "rows": 623,
+   "tokens": 1170448,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 3.9
+  },
+  {
+   "file": "data/zh_baurekursgericht.parquet",
+   "rows": 1162,
+   "tokens": 3717300,
+   "docs_130": 0,
+   "docs_261": 1,
+   "docs_both": 0,
+   "secs": 7.8
+  },
+  {
+   "file": "data/zh_bezirksgericht_affoltern.parquet",
+   "rows": 12,
+   "tokens": 123490,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 1.9
+  },
+  {
+   "file": "data/zh_bezirksgericht_andelfingen.parquet",
+   "rows": 11,
+   "tokens": 78910,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 2.0
+  },
+  {
+   "file": "data/zh_bezirksgericht_buelach.parquet",
+   "rows": 72,
+   "tokens": 571402,
+   "docs_130": 0,
+   "docs_261": 1,
+   "docs_both": 0,
+   "secs": 2.7
+  },
+  {
+   "file": "data/zh_bezirksgericht_dielsdorf.parquet",
+   "rows": 75,
+   "tokens": 597939,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 2.9
+  },
+  {
+   "file": "data/zh_bezirksgericht_dietikon.parquet",
+   "rows": 78,
+   "tokens": 655654,
+   "docs_130": 1,
+   "docs_261": 1,
+   "docs_both": 1,
+   "secs": 2.9
+  },
+  {
+   "file": "data/zh_bezirksgericht_hinwil.parquet",
+   "rows": 59,
+   "tokens": 526800,
+   "docs_130": 1,
+   "docs_261": 1,
+   "docs_both": 1,
+   "secs": 2.2
+  },
+  {
+   "file": "data/zh_bezirksgericht_horgen.parquet",
+   "rows": 109,
+   "tokens": 483164,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 2.7
+  },
+  {
+   "file": "data/zh_bezirksgericht_meilen.parquet",
+   "rows": 84,
+   "tokens": 533467,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 2.7
+  },
+  {
+   "file": "data/zh_bezirksgericht_pfaeffikon.parquet",
+   "rows": 34,
+   "tokens": 301514,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 2.1
+  },
+  {
+   "file": "data/zh_bezirksgericht_uster.parquet",
+   "rows": 43,
+   "tokens": 469047,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 2.4
+  },
+  {
+   "file": "data/zh_bezirksgericht_winterthur.parquet",
+   "rows": 91,
+   "tokens": 908483,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 3.6
+  },
+  {
+   "file": "data/zh_bezirksgericht_zuerich.parquet",
+   "rows": 433,
+   "tokens": 4819663,
+   "docs_130": 1,
+   "docs_261": 6,
+   "docs_both": 1,
+   "secs": 11.1
+  },
+  {
+   "file": "data/zh_gerichte.parquet",
+   "rows": 32,
+   "tokens": 86362,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 1.9
+  },
+  {
+   "file": "data/zh_handelsgericht.parquet",
+   "rows": 4712,
+   "tokens": 14412608,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 21.3
+  },
+  {
+   "file": "data/zh_kassationsgericht.parquet",
+   "rows": 1461,
+   "tokens": 6721373,
+   "docs_130": 1,
+   "docs_261": 4,
+   "docs_both": 1,
+   "secs": 10.0
+  },
+  {
+   "file": "data/zh_mietgericht.parquet",
+   "rows": 179,
+   "tokens": 1425017,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 3.1
+  },
+  {
+   "file": "data/zh_obergericht.parquet",
+   "rows": 28793,
+   "tokens": 119327504,
+   "docs_130": 11,
+   "docs_261": 41,
+   "docs_both": 5,
+   "secs": 151.9
+  },
+  {
+   "file": "data/zh_sozialversicherungsgericht.parquet",
+   "rows": 34854,
+   "tokens": 142703138,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 231.2
+  },
+  {
+   "file": "data/zh_steuerrekursgericht.parquet",
+   "rows": 904,
+   "tokens": 3409598,
+   "docs_130": 0,
+   "docs_261": 0,
+   "docs_both": 0,
+   "secs": 7.6
+  },
+  {
+   "file": "data/zh_verwaltungsgericht.parquet",
+   "rows": 12686,
+   "tokens": 45883794,
+   "docs_130": 0,
+   "docs_261": 1,
+   "docs_both": 0,
+   "secs": 71.8
+  }
+ ],
+ "finished": "2026-10-09 21:05"
+}

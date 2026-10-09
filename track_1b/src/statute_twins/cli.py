@@ -109,14 +109,23 @@ def all_items(ds: Path) -> list[dict]:
 def compute_results(ds: Path, runs: list[str] | None = None) -> dict:
     from .analysis import results as R
     from .harness.run import read_jsonl
+    from .analysis import compare, heldout
     items = all_items(ds)
     out = dict(schema="statute-twins-results/v1", runs={})
+    loaded = {}
     for p in sorted((ds / "responses").glob("*.jsonl")):
         if runs and p.stem not in runs:
             continue
         rows = read_jsonl(p)
+        loaded[p.stem] = rows
         meta = json.loads((ds / "responses" / f"{p.stem}.meta.json").read_text()) if (ds / "responses" / f"{p.stem}.meta.json").exists() else {}
-        out["runs"][p.stem] = dict(meta=meta, **R.run_results(items, rows))
+        res = R.run_results(items, rows)
+        core_ids = {i["id"]: i["lang"] for i in items if i["subset"] != "battery162"}
+        langs = sorted({core_ids[r["item_id"]] for r in rows if r.get("item_id") in core_ids})
+        res["heldout"] = {l: heldout.run(items, rows, lang=l) for l in langs}
+        out["runs"][p.stem] = dict(meta=meta, **res)
+    out["comparisons"] = dict(reference=compare.REFERENCE, build_parity=compare.build_parity(loaded),
+                              stage_trajectory=compare.stage_trajectory(items, loaded))
     return out
 
 

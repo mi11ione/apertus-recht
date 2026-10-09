@@ -1,0 +1,1212 @@
+{
+ "pool": 754,
+ "pool_citing_bge": 130,
+ "triaged": 150,
+ "by_language": {
+  "de": 67,
+  "fr": 79,
+  "it": 4
+ },
+ "chosen": [
+  {
+   "decision_id": "bger_6B_636_2020",
+   "court": "bger",
+   "language": "de",
+   "date": "2022-03-10",
+   "docket": "6B 636/2020",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "ge_gerichte_P_2155_2015",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "date": "2016-05-15",
+   "docket": "P/2155/2015",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "bge_BGE_133_IV_308",
+   "court": "bge",
+   "language": "de",
+   "date": "2007-07-05",
+   "docket": "BGE 133 IV 308",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "bger_6S.297_2005",
+   "court": "bger",
+   "language": "de",
+   "date": "2005-10-31",
+   "docket": "6S.297/2005",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "ge_gerichte_AARP_431_2014",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "date": "2014-10-09",
+   "docket": "AARP/431/2014",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "bge_BGE_150_IV_292",
+   "court": "bge",
+   "language": "fr",
+   "date": "2024-03-11",
+   "docket": "BGE 150 IV 292",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "bger_6B_805_2017",
+   "court": "bger",
+   "language": "it",
+   "date": "2018-12-06",
+   "docket": "6B_805/2017",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "vd_gerichte_PE14.013250",
+   "court": "vd_gerichte",
+   "language": "fr",
+   "date": "2014-07-03",
+   "docket": "PE14.013250",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "ge_gerichte_P_9756_2011",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "date": "2014-09-08",
+   "docket": "P/9756/2011",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "bger_6B_256_2014",
+   "court": "bger",
+   "language": "de",
+   "date": "2015-04-08",
+   "docket": "6B 256/2014",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "be_zivilstraf_SK_2022_424",
+   "court": "be_zivilstraf",
+   "language": "de",
+   "date": "2024-02-12",
+   "docket": "SK 2022 424",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "bger_6B_694_2025",
+   "court": "bger",
+   "language": "fr",
+   "date": "2025-10-02",
+   "docket": "6B_694/2025",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "bstger_SK.2013.39",
+   "court": "bstger",
+   "language": "de",
+   "date": "2014-05-02",
+   "docket": "SK.2013.39",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "vd_findinfo_D_cision___2016___797",
+   "court": "vd_findinfo",
+   "language": "fr",
+   "date": "2016-11-17",
+   "docket": "Décision / 2016 / 797",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "bvger_A-5236_2022",
+   "court": "bvger",
+   "language": "de",
+   "date": "2023-08-21",
+   "docket": "A-5236/2022",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "ge_gerichte_AARP_123_2022",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "date": "2022-04-28",
+   "docket": "AARP/123/2022",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "zh_obergericht_SB170332",
+   "court": "zh_obergericht",
+   "language": "de",
+   "date": "2018-03-02",
+   "docket": "SB170332",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "ne_gerichte_CPEN.2022.32",
+   "court": "ne_gerichte",
+   "language": "fr",
+   "date": "2023-02-21",
+   "docket": "CPEN.2022.32",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "be_zivilstraf_BK_2024_363",
+   "court": "be_zivilstraf",
+   "language": "de",
+   "date": "2024-08-19",
+   "docket": "BK 2024 363",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "vd_findinfo_D_cision___2020___559",
+   "court": "vd_findinfo",
+   "language": "fr",
+   "date": "2020-05-29",
+   "docket": "Décision / 2020 / 559",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "bger_6B_857_2022",
+   "court": "bger",
+   "language": "fr",
+   "date": "2023-04-13",
+   "docket": "6B 857/2022",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "be_zivilstraf_BK 2026 46",
+   "court": "be_zivilstraf",
+   "language": "de",
+   "date": "2026-06-01",
+   "docket": "BK 2026 46",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "bger_7B_165_2024",
+   "court": "bger",
+   "language": "fr",
+   "date": "2024-02-29",
+   "docket": "7B 165/2024",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "bstger_SK.2023.21",
+   "court": "bstger",
+   "language": "de",
+   "date": "2023-10-17",
+   "docket": "SK.2023.21",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "ne_gerichte_CPEN.2021.9_d20011028",
+   "court": "ne_gerichte",
+   "language": "fr",
+   "date": "2001-10-28",
+   "docket": "CPEN.2021.9",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "vd_gerichte_PE21.016382",
+   "court": "vd_gerichte",
+   "language": "fr",
+   "date": "2022-12-16",
+   "docket": "PE21.016382",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "bger_6B_1008_2024",
+   "court": "bger",
+   "language": "fr",
+   "date": "2025-05-08",
+   "docket": "6B_1008/2024",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "ge_gerichte_P_23847_2016",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "date": "2021-08-16",
+   "docket": "P/23847/2016",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "bstger_SK.2021.22",
+   "court": "bstger",
+   "language": "de",
+   "date": "2021-11-11",
+   "docket": "SK.2021.22",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "ag_strafgericht_SST.2022.149",
+   "court": "ag_strafgericht",
+   "language": "de",
+   "date": "2022-11-01",
+   "docket": "SST.2022.149",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "ge_gerichte_AARP_156_2026",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "date": "2026-04-30",
+   "docket": "AARP/156/2026",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "ge_gerichte_AARP_258_2021",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "date": "2021-08-16",
+   "docket": "AARP/258/2021",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "vd_findinfo_Arr_t___2009___376",
+   "court": "vd_findinfo",
+   "language": "fr",
+   "date": "2009-04-15",
+   "docket": "Arrêt / 2009 / 376",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "vd_findinfo_Jug___2023___344",
+   "court": "vd_findinfo",
+   "language": "fr",
+   "date": "2022-12-16",
+   "docket": "Jug / 2023 / 344",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "gr_gerichte_SK1 2016 50",
+   "court": "gr_gerichte",
+   "language": "de",
+   "date": "2017-06-28",
+   "docket": "SK1 2016 50",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "bstger_SK.2019.71",
+   "court": "bstger",
+   "language": "de",
+   "date": "2020-09-11",
+   "docket": "SK.2019.71",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "ge_gerichte_AARP_397_2014",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "date": "2014-09-16",
+   "docket": "AARP/397/2014",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "be_zivilstraf_SK_2022_597",
+   "court": "be_zivilstraf",
+   "language": "de",
+   "date": "2024-06-14",
+   "docket": "SK 2022 597",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "be_zivilstraf_BK_2021_54",
+   "court": "be_zivilstraf",
+   "language": "fr",
+   "date": "2021-10-06",
+   "docket": "BK 2021 54",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "bstger_CA.2021.9",
+   "court": "bstger",
+   "language": "de",
+   "date": "2021-12-01",
+   "docket": "CA.2021.9",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "vd_findinfo_Jug___2022___142",
+   "court": "vd_findinfo",
+   "language": "fr",
+   "date": "2021-11-18",
+   "docket": "Jug / 2022 / 142",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "lu_gerichte_KA_06_53",
+   "court": "lu_gerichte",
+   "language": "de",
+   "date": "2006-05-24",
+   "docket": "KA 06 53",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "vd_gerichte_PE24.017877",
+   "court": "vd_gerichte",
+   "language": "fr",
+   "date": "2024-12-20",
+   "docket": "PE24.017877",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "ag_strafgericht_SBK.2023.56",
+   "court": "ag_strafgericht",
+   "language": "de",
+   "date": "2023-06-07",
+   "docket": "SBK.2023.56",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "ge_gerichte_P_1033_2020",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "date": "2024-02-13",
+   "docket": "P/1033/2020",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "bger_6B_516_2025",
+   "court": "bger",
+   "language": "fr",
+   "date": "2025-09-24",
+   "docket": "6B_516/2025",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "zh_obergericht_SB240091",
+   "court": "zh_obergericht",
+   "language": "de",
+   "date": "2024-10-11",
+   "docket": "SB240091",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "vd_gerichte_PE19.023590",
+   "court": "vd_gerichte",
+   "language": "fr",
+   "date": "2020-05-29",
+   "docket": "PE19.023590",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "bstger_SK.2024.62",
+   "court": "bstger",
+   "language": "de",
+   "date": "2025-03-24",
+   "docket": "SK.2024.62",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "vs_gerichte_P1 09 29",
+   "court": "vs_gerichte",
+   "language": "de",
+   "date": "2010-01-28",
+   "docket": "P1 09 29",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "vd_gerichte_PM23.016447",
+   "court": "vd_gerichte",
+   "language": "fr",
+   "date": "2025-02-26",
+   "docket": "PM23.016447",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "be_zivilstraf_SK_2016_33",
+   "court": "be_zivilstraf",
+   "language": "de",
+   "date": "2015-11-05",
+   "docket": "SK 2016 33",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "ge_gerichte_AARP_154_2024",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "date": "2024-04-18",
+   "docket": "AARP/154/2024",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "vd_findinfo_Jug___2016___226",
+   "court": "vd_findinfo",
+   "language": "fr",
+   "date": "2016-03-07",
+   "docket": "Jug / 2016 / 226",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "bge_BGE_141_IV_215",
+   "court": "bge",
+   "language": "de",
+   "date": "2015-04-08",
+   "docket": "BGE 141 IV 215",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "vd_gerichte_ca8f400a-93de-4e50-bb3e-78b1b5fb3026",
+   "court": "vd_gerichte",
+   "language": "fr",
+   "date": "2016-05-27",
+   "docket": "220",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "mkg_MKGE_16_Nr_7",
+   "court": "mkg",
+   "language": "de",
+   "date": "2024-11-22",
+   "docket": "MKGE 16 Nr. 7",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "zh_bezirksgericht_dietikon_GG220033",
+   "court": "zh_bezirksgericht_dietikon",
+   "language": "de",
+   "date": "2022-11-08",
+   "docket": "GG220033",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "vd_gerichte_PE16.020736",
+   "court": "vd_gerichte",
+   "language": "fr",
+   "date": "2016-11-17",
+   "docket": "PE16.020736",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "ge_gerichte_P_24860_2018",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "date": "2021-04-06",
+   "docket": "P/24860/2018",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "ge_gerichte_JTCO_120_2024",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "date": "2024-11-12",
+   "docket": "JTCO/120/2024",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "bs_appellationsgericht_AG.2024.375",
+   "court": "bs_appellationsgericht",
+   "language": "de",
+   "date": "2024-05-24",
+   "docket": "SB.2022.80",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "zh_obergericht_SB140397",
+   "court": "zh_obergericht",
+   "language": "de",
+   "date": "2015-04-28",
+   "docket": "SB140397",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "bger_6B_734_2016",
+   "court": "bger",
+   "language": "fr",
+   "date": "2017-07-18",
+   "docket": "6B_734/2016",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "bstger_TPF_2021_31",
+   "court": "bstger",
+   "language": "de",
+   "date": "2021-01-01",
+   "docket": "TPF 2021 31",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "ge_gerichte_AARP_75_2024",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "date": "2024-02-13",
+   "docket": "AARP/75/2024",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "vd_gerichte_PE22.020526",
+   "court": "vd_gerichte",
+   "language": "fr",
+   "date": "2023-05-22",
+   "docket": "PE22.020526",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "bger_6B_1024_2010",
+   "court": "bger",
+   "language": "de",
+   "date": "2011-02-24",
+   "docket": "6B_1024/2010",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "ne_gerichte_CPEN.2021.9",
+   "court": "ne_gerichte",
+   "language": "fr",
+   "date": "2021-09-07",
+   "docket": "CPEN.2021.9",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "gr_gerichte_SK1 2016 49",
+   "court": "gr_gerichte",
+   "language": "de",
+   "date": "2017-06-28",
+   "docket": "SK1 2016 49",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "ge_gerichte_ACPR_971_2023",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "date": "2023-11-22",
+   "docket": "ACPR/971/2023",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "ti_gerichte_72.2006.89_d20070619",
+   "court": "ti_gerichte",
+   "language": "it",
+   "date": "2007-06-19",
+   "docket": "72.2006.89",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "bstger_TPF_2020_30",
+   "court": "bstger",
+   "language": "de",
+   "date": "2020-02-19",
+   "docket": "TPF 2020 30",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "ch_vb_2005-2848_631_",
+   "court": "ch_vb",
+   "language": "de",
+   "date": "2006-01-17",
+   "docket": "2005-2848 631",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "ge_gerichte_ACPR_654_2025",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "date": "2025-06-26",
+   "docket": "ACPR/654/2025",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "ge_gerichte_P_3866_2020",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "date": "2024-04-18",
+   "docket": "P/3866/2020",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "vd_gerichte_6e22884d-65de-41bc-8641-46fe1adcd793",
+   "court": "vd_gerichte",
+   "language": "fr",
+   "date": "2009-06-26",
+   "docket": "393",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "vd_findinfo_D_cision___2016___793",
+   "court": "vd_findinfo",
+   "language": "fr",
+   "date": "2016-11-17",
+   "docket": "Décision / 2016 / 793",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "zh_bezirksgericht_zuerich_GG250039",
+   "court": "zh_bezirksgericht_zuerich",
+   "language": "de",
+   "date": "2025-06-03",
+   "docket": "GG250039",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "bge_145 IV 23",
+   "court": "bge",
+   "language": "it",
+   "date": "2018-12-06",
+   "docket": "145 IV 23",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "bge_130 IV 111",
+   "court": "bge",
+   "language": "de",
+   "date": "2004-05-27",
+   "docket": "130 IV 111",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "ne_gerichte_ARMP.2024.174",
+   "court": "ne_gerichte",
+   "language": "fr",
+   "date": "2025-01-31",
+   "docket": "ARMP.2024.174",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "vd_findinfo_Jug___2022___185",
+   "court": "vd_findinfo",
+   "language": "fr",
+   "date": "2021-10-07",
+   "docket": "Jug / 2022 / 185",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "vd_gerichte_PE16.019356",
+   "court": "vd_gerichte",
+   "language": "fr",
+   "date": "2016-11-17",
+   "docket": "PE16.019356",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "zh_bezirksgericht_hinwil_GG240033",
+   "court": "zh_bezirksgericht_hinwil",
+   "language": "de",
+   "date": "2025-01-08",
+   "docket": "GG240033",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "bger_6B_627_2015",
+   "court": "bger",
+   "language": "de",
+   "date": "2015-11-04",
+   "docket": "6B_627/2015",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "ge_gerichte_P_14261_2019",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "date": "2022-04-28",
+   "docket": "P/14261/2019",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "bger_6B_350_2019",
+   "court": "bger",
+   "language": "fr",
+   "date": "2019-05-29",
+   "docket": "6B_350/2019",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "ag_strafgericht_SBK.2023.114",
+   "court": "ag_strafgericht",
+   "language": "de",
+   "date": "2023-08-02",
+   "docket": "SBK.2023.114",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "ge_gerichte_P_15574_2022",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "date": "2025-06-30",
+   "docket": "P/15574/2022",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "bger_6P.79_2006",
+   "court": "bger",
+   "language": "de",
+   "date": "2006-10-06",
+   "docket": "6P.79/2006",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "bger_6B_196_2026",
+   "court": "bger",
+   "language": "fr",
+   "date": "2026-06-18",
+   "docket": "6B_196/2026",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "vd_findinfo_D_cision___2023___408",
+   "court": "vd_findinfo",
+   "language": "fr",
+   "date": "2023-05-22",
+   "docket": "Décision / 2023 / 408",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "gr_gerichte_PKG_2017_22",
+   "court": "gr_gerichte",
+   "language": "de",
+   "date": "2017-04-13",
+   "docket": "PKG 2017 22",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "be_zivilstraf_BK_2021_112",
+   "court": "be_zivilstraf",
+   "language": "de",
+   "date": "2021-02-18",
+   "docket": "BK 2021 112",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "zh_obergericht_SB140436",
+   "court": "zh_obergericht",
+   "language": "de",
+   "date": "2015-04-27",
+   "docket": "SB140436",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "ge_gerichte_P_12568_2023",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "date": "2023-12-13",
+   "docket": "P/12568/2023",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "bstger_SK.2022.55",
+   "court": "bstger",
+   "language": "de",
+   "date": "2023-05-30",
+   "docket": "SK.2022.55",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "bstger_SK.2019.74",
+   "court": "bstger",
+   "language": "de",
+   "date": "2020-10-07",
+   "docket": "SK.2019.74",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "zh_kassationsgericht_AC050016",
+   "court": "zh_kassationsgericht",
+   "language": "de",
+   "date": "2005-10-04",
+   "docket": "AC050016",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "ge_gerichte_ACPR_446_2021",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "date": "2021-04-06",
+   "docket": "ACPR/446/2021",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "ge_gerichte_JTDP_1330_2019",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "date": "2019-09-27",
+   "docket": "JTDP/1330/2019",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "bge_133 IV 308",
+   "court": "bge",
+   "language": "de",
+   "date": "2007-07-05",
+   "docket": "133 IV 308",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "bger_6B_777_2022",
+   "court": "bger",
+   "language": "fr",
+   "date": "2023-03-16",
+   "docket": "6B_777/2022",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "vd_gerichte_f0af1c43-b289-4ce4-9bc3-6fe3c0b809fb",
+   "court": "vd_gerichte",
+   "language": "fr",
+   "date": "2022-03-09",
+   "docket": "37",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "vd_gerichte_0efb9f68-c92d-42ec-ad8d-aa9ee19a2c93",
+   "court": "vd_gerichte",
+   "language": "fr",
+   "date": "2022-04-01",
+   "docket": "116",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "bge_BGE_145_IV_23",
+   "court": "bge",
+   "language": "it",
+   "date": "2018-12-06",
+   "docket": "BGE 145 IV 23",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "bstger_RR.2019.279",
+   "court": "bstger",
+   "language": "de",
+   "date": "2020-02-19",
+   "docket": "RR.2019.279",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "bger_6P.232_2006",
+   "court": "bger",
+   "language": "de",
+   "date": "2007-07-05",
+   "docket": "6P.232/2006",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "vd_findinfo_Jug___2025___177",
+   "court": "vd_findinfo",
+   "language": "fr",
+   "date": "2024-12-20",
+   "docket": "Jug / 2025 / 177",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "ge_gerichte_JTDP_160_2025",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "date": "2025-02-11",
+   "docket": "JTDP/160/2025",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "ge_gerichte_P_7558_2011",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "date": "2014-10-07",
+   "docket": "P/7558/2011",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "gr_gerichte_BK 2008 8",
+   "court": "gr_gerichte",
+   "language": "de",
+   "date": "2008-04-16",
+   "docket": "BK 2008 8",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "ge_gerichte_AARP_214_2016",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "date": "2016-05-15",
+   "docket": "AARP/214/2016",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "bger_6B_1438_2021",
+   "court": "bger",
+   "language": "fr",
+   "date": "2023-02-16",
+   "docket": "6B_1438/2021",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "vd_gerichte_PE23.016672",
+   "court": "vd_gerichte",
+   "language": "fr",
+   "date": "2024-01-09",
+   "docket": "PE23.016672",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "ge_gerichte_P_14678_2025",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "date": "2025-06-26",
+   "docket": "P/14678/2025",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "be_zivilstraf_SK_2015_164",
+   "court": "be_zivilstraf",
+   "language": "de",
+   "date": "2016-03-15",
+   "docket": "SK 2015 164",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "vd_findinfo_D_cision___2014___645",
+   "court": "vd_findinfo",
+   "language": "fr",
+   "date": "2014-07-03",
+   "docket": "Décision / 2014 / 645",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "bstger_SK.2025.19",
+   "court": "bstger",
+   "language": "fr",
+   "date": "2026-03-12",
+   "docket": "SK.2025.19",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "bger_6B_748_2022",
+   "court": "bger",
+   "language": "fr",
+   "date": "2023-06-02",
+   "docket": "6B_748/2022",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "bstger_SK.2024.52",
+   "court": "bstger",
+   "language": "de",
+   "date": "2024-11-13",
+   "docket": "SK.2024.52",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "ge_gerichte_AARP_245_2025",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "date": "2025-06-30",
+   "docket": "AARP/245/2025",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "bge_BGE_130_IV_111",
+   "court": "bge",
+   "language": "de",
+   "date": "2004-01-01",
+   "docket": "BGE 130 IV 111",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "bstger_BG.2012.26",
+   "court": "bstger",
+   "language": "de",
+   "date": "2012-09-25",
+   "docket": "BG.2012.26",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "zh_obergericht_SB230225",
+   "court": "zh_obergericht",
+   "language": "de",
+   "date": "2024-01-16",
+   "docket": "SB230225",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "bge_BGE_149_IV_170",
+   "court": "bge",
+   "language": "fr",
+   "date": "2023-03-16",
+   "docket": "BGE 149 IV 170",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "bstger_RR.2019.81",
+   "court": "bstger",
+   "language": "de",
+   "date": "2019-11-27",
+   "docket": "RR.2019.81",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "bger_6B_1323_2023",
+   "court": "bger",
+   "language": "fr",
+   "date": "2024-03-11",
+   "docket": "6B_1323/2023",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "vd_gerichte_PE25.014438",
+   "court": "vd_gerichte",
+   "language": "fr",
+   "date": "2026-03-02",
+   "docket": "PE25.014438",
+   "cites_bge_130_IV_111": true
+  },
+  {
+   "decision_id": "zh_obergericht_SB120294",
+   "court": "zh_obergericht",
+   "language": "de",
+   "date": "2012-11-26",
+   "docket": "SB120294",
+   "cites_bge_130_IV_111": false
+  },
+  {
+   "decision_id": "ge_gerichte_ACPR_397_2025",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "date": "2025-04-29",
+   "docket": "ACPR/397/2025",
+   "cites_bge_130_IV_111": false
+  },
+  {
+   "decision_id": "vd_gerichte_PE24.001742",
+   "court": "vd_gerichte",
+   "language": "fr",
+   "date": "2024-06-28",
+   "docket": "PE24.001742",
+   "cites_bge_130_IV_111": false
+  },
+  {
+   "decision_id": "bge_BGE_123_IV_202",
+   "court": "bge",
+   "language": "de",
+   "date": "1997-12-05",
+   "docket": "BGE 123 IV 202",
+   "cites_bge_130_IV_111": false
+  },
+  {
+   "decision_id": "so_gerichte_BKBES.2021.98",
+   "court": "so_gerichte",
+   "language": "de",
+   "date": "2021-06-14",
+   "docket": "BKBES.2021.98",
+   "cites_bge_130_IV_111": false
+  },
+  {
+   "decision_id": "bge_BGE_138_III_641",
+   "court": "bge",
+   "language": "de",
+   "date": "2012-08-29",
+   "docket": "BGE 138 III 641",
+   "cites_bge_130_IV_111": false
+  },
+  {
+   "decision_id": "be_zivilstraf_BK_2018_165",
+   "court": "be_zivilstraf",
+   "language": "de",
+   "date": "2018-08-10",
+   "docket": "BK 2018 165",
+   "cites_bge_130_IV_111": false
+  },
+  {
+   "decision_id": "vs_gerichte_P2 24 41",
+   "court": "vs_gerichte",
+   "language": "fr",
+   "date": "2024-06-11",
+   "docket": "P2 24 41",
+   "cites_bge_130_IV_111": false
+  },
+  {
+   "decision_id": "bs_appellationsgericht_AG.2025.549",
+   "court": "bs_appellationsgericht",
+   "language": "de",
+   "date": "2025-09-23",
+   "docket": "VD.2025.16",
+   "cites_bge_130_IV_111": false
+  },
+  {
+   "decision_id": "be_zivilstraf_BK 2025 642",
+   "court": "be_zivilstraf",
+   "language": "de",
+   "date": "2026-06-08",
+   "docket": "BK 2025 642",
+   "cites_bge_130_IV_111": false
+  },
+  {
+   "decision_id": "zh_obergericht_PS130135",
+   "court": "zh_obergericht",
+   "language": "de",
+   "date": "2013-09-24",
+   "docket": "PS130135",
+   "cites_bge_130_IV_111": false
+  },
+  {
+   "decision_id": "vd_gerichte_PE22.021777",
+   "court": "vd_gerichte",
+   "language": "fr",
+   "date": "2023-05-22",
+   "docket": "PE22.021777",
+   "cites_bge_130_IV_111": false
+  },
+  {
+   "decision_id": "bstger_BG.2012.2",
+   "court": "bstger",
+   "language": "de",
+   "date": "2012-03-16",
+   "docket": "BG.2012.2",
+   "cites_bge_130_IV_111": false
+  },
+  {
+   "decision_id": "bvger_E-4024_2017",
+   "court": "bvger",
+   "language": "fr",
+   "date": "2018-04-06",
+   "docket": "E-4024/2017",
+   "cites_bge_130_IV_111": false
+  },
+  {
+   "decision_id": "ge_gerichte_ACPR_332_2019",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "date": "2018-10-26",
+   "docket": "ACPR/332/2019",
+   "cites_bge_130_IV_111": false
+  },
+  {
+   "decision_id": "vd_findinfo_Jug___2017___64",
+   "court": "vd_findinfo",
+   "language": "fr",
+   "date": "2007-03-09",
+   "docket": "Jug / 2017 / 64",
+   "cites_bge_130_IV_111": false
+  },
+  {
+   "decision_id": "ge_gerichte_A_3828_2024",
+   "court": "ge_gerichte",
+   "language": "fr",
+   "date": "2025-06-24",
+   "docket": "A/3828/2024",
+   "cites_bge_130_IV_111": false
+  },
+  {
+   "decision_id": "bger_1D_1_2025",
+   "court": "bger",
+   "language": "de",
+   "date": "2026-04-01",
+   "docket": "1D_1/2025",
+   "cites_bge_130_IV_111": false
+  },
+  {
+   "decision_id": "bstger_SK.2017.49",
+   "court": "bstger",
+   "language": "de",
+   "date": "2018-06-15",
+   "docket": "SK.2017.49",
+   "cites_bge_130_IV_111": false
+  },
+  {
+   "decision_id": "so_gerichte_ZZ.1996.17",
+   "court": "so_gerichte",
+   "language": "de",
+   "date": "1996-11-25",
+   "docket": "ZZ.1996.17",
+   "cites_bge_130_IV_111": false
+  }
+ ]
+}
