@@ -1,0 +1,6 @@
+{
+ "gguf:Colby/apertus-v1.5-8b-text-Q4_K_M-GGUF": {"run": "8b-gguf-q4_k_m-cpu-core", "min_agreement": 0.9, "max_mean_abs_diff": 1.0, "min_pairs": 50,
+   "calibrated_on": "GitHub Actions ubuntu-24.04, 2 vCPU, llama-cpp-python 0.3.19 built with AVX2 (no -march=native); other CPUs may differ slightly"},
+ "api:swiss-ai/apertus-v1.5-8b@https://api.publicai.co/v1": {"run": "publicai-70b-fc-core", "min_agreement": 0.95, "max_mean_abs_diff": 1.0, "min_pairs": 50,
+   "calibrated_on": "Public AI vLLM backend tp8-pp2 (serves the 70B under this name), temperature 0, exact prefill"}
+}

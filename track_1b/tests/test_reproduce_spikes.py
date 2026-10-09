@@ -70,3 +70,17 @@ def test_published_red_edit_numbers(edits, run, edit, rung, fr, k, n, m):
 @pytest.mark.parametrize("run, edit, rung, fr, k", PUBLISHED_REF, ids=lambda x: str(x))
 def test_published_reference_counts(edits, run, edit, rung, fr, k):
     assert edits[(run, edit, rung, fr)]["ref_convicted"] == k
+
+
+def test_core_and_legacy_edits_do_not_collide(d261):
+    """Regression: core and legacy edits share names; keyed by subset, neither may overwrite the other."""
+    from statute_twins.generator import build
+    items = build.build_items(d261, build.build_scenarios(d261)) + legacy.build_legacy_items(d261)
+    core, leg = R.core_pairs(items), R.legacy_pairs(items)
+    assert not set(core) & set(leg)
+    merged = dict(core)
+    merged.update(leg)
+    for lang in d261.langs:
+        for name in ("setting:failed", "characteristic:not_yet_covered", "characteristic:not_listed|canton"):
+            assert (lang, name, "core") in merged
+    assert ("de", "setting:failed", "battery162") in merged

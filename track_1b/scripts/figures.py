@@ -33,9 +33,7 @@ plt.rcParams.update({
 
 def caption(fig, ax, number: int, text: str):
     """Numbered caption below the plot, aligned with the axes' left edge (document convention, not a chart title)."""
-    x0 = ax.get_position().x0
-    fig.text(x0, -0.07, f"Fig. {number}", fontsize=8, fontweight="semibold", color=INK, va="top")
-    fig.text(x0 + 0.06, -0.07, text, fontsize=8, color=INK, va="top", wrap=True)
+    return None   # captions are set in the report text (document convention), not baked into the images
 
 
 def save(fig, out: Path, name: str):
@@ -143,63 +141,59 @@ SYN_ROWS = [
     ("placebo|date_overapplied", "Race, ethnicity, religion, act 2018–20", "convict", "AS 1994 2887"),
     ("placebo|date", "Sexual orientation, 1 Jul or Aug 2020", "convict", "AS 2020 1609"),
 ]
-SYN_COLS = [(l, r) for l in ("de", "fr", "it") for r in ("R0", "R3", "R4")]
+SYN_BLOCKS = [("publicai-70b-fc-core", "de", "70B · Deutsch"), ("publicai-70b-fc-core-fr", "fr", "70B · Français"),
+              ("publicai-70b-fc-core-it", "it", "70B · Italiano"), ("8b-gguf-q4_k_m-cpu-core", "de", "8B Q4_K_M · Deutsch")]
+RUNGS3 = ("R0", "R3", "R4")
 
 
 def _syn_cell(edits_run, lang, edit, rung):
-    es = [e for e in edits_run if e["lang"] == lang and e["edit"] == edit and e["rung"] == rung]
+    es = [e for e in edits_run if e.get("subset") == "core" and e["lang"] == lang and e["edit"] == edit and e["rung"] == rung]
     if not es:
         return None
-    kind = es[0]["kind"]
     anchored = [e for e in es if e["status"] != "u"]
     bad = [e for e in anchored if e["status"] in ("F", "broken")]
     conv = next((e for e in es if e["framing"] == "conv"), es[0])
     state = "unreadable" if not anchored else ("red" if len(bad) == len(anchored) else ("amber" if bad else "ok"))
-    return dict(state=state, k=conv["v_convicted"], n=conv["n"], kind=kind)
+    return dict(state=state, k=conv["v_convicted"], n=conv["n"])
 
 
-def fig_synopse(R, out, run="publicai-70b-fc-core", extra_runs=("publicai-70b-fc-core-fr", "publicai-70b-fc-core-it")):
-    edits_all = []
-    for r in (run,) + tuple(extra_runs):
-        if r in R["runs"]:
-            edits_all += R["runs"][r]["edits"]
-    rows = [r for r in SYN_ROWS if any(e["edit"] == r[0] for e in edits_all)]
-    fig, ax = plt.subplots(figsize=(7.0, 0.22 * len(rows) + 0.55))
+def fig_synopse(R, out, blocks=SYN_BLOCKS):
+    blocks = [b for b in blocks if b[0] in R["runs"]]
+    rows = [r for r in SYN_ROWS if any(e["edit"] == r[0] and e.get("subset") == "core"
+                                       for b in blocks for e in R["runs"][b[0]]["edits"])]
+    cols = [(b, rung) for b in blocks for rung in RUNGS3]
+    fig, ax = plt.subplots(figsize=(7.3, 0.22 * len(rows) + 0.6))
     ax.set_axis_off()
-    x0, cw, rh = 4.1, 0.62, 1.0
-    tint = {"red": "#f6c5cb", "amber": "#fbe3e6", "ok": PAPER, "unreadable": "#ececea"}
-    for j, (l, rung) in enumerate(SYN_COLS):
-        ax.text(x0 + j * cw + cw / 2, -0.55, rung, ha="center", fontfamily=MONO, fontsize=6.8, color=INK2)
+    x0, cw, gap = 3.55, 0.47, 0.12
+    tint = {"red": "#f6c5cb", "amber": "#fbe3e6", "ok": PAPER, "unreadable": "#e6e6e3"}
+    xs = []
+    for j, (b, rung) in enumerate(cols):
+        xx = x0 + j * cw + (j // 3) * gap
+        xs.append(xx)
+        ax.text(xx + cw / 2, -0.55, rung, ha="center", fontfamily=MONO, fontsize=6.2, color=INK2)
         if rung == "R0":
-            ax.text(x0 + j * cw, -1.35, {"de": "Deutsch", "fr": "Français", "it": "Italiano"}[l], fontsize=7.5, color=INK, fontweight="semibold")
-            ax.plot([x0 + j * cw, x0 + (j + 3) * cw - 0.06], [-1.05, -1.05], color=INK, lw=0.5)
-    ax.text(0, -1.35, "One fact changed", fontsize=7.5, fontweight="semibold")
-    ax.text(3.15, -1.35, "Law", fontsize=7.5, fontweight="semibold")
+            ax.text(xx, -1.35, b[2], fontsize=6.9, color=INK, fontweight="semibold")
+            ax.plot([xx, xx + 3 * cw - 0.04], [-1.05, -1.05], color=INK, lw=0.5)
+    ax.text(0, -1.35, "One fact changed", fontsize=7.2, fontweight="semibold")
+    ax.text(2.85, -1.35, "Law", fontsize=7.2, fontweight="semibold")
+    right = xs[-1] + cw
     for i, (edit, label, law, src) in enumerate(rows):
-        y = i * rh
+        y = i
         if i and rows[i - 1][2] != law:
-            ax.plot([0, x0 + len(SYN_COLS) * cw], [y - 0.5, y - 0.5], color=INK, lw=0.5)
-        ax.text(0, y, label, va="center", fontsize=7.4)
-        ax.text(3.15, y, law, va="center", fontsize=7.2, fontfamily=MONO, color=INK)
-        for j, (l, rung) in enumerate(SYN_COLS):
-            c = None
-            for r in (run,) + tuple(extra_runs):
-                if r in R["runs"]:
-                    c = c or _syn_cell(R["runs"][r]["edits"], l, edit, rung)
-            xx = x0 + j * cw
+            ax.plot([0, right], [y - 0.5, y - 0.5], color=INK, lw=0.5)
+        ax.text(0, y, label, va="center", fontsize=7.0)
+        ax.text(2.85, y, law, va="center", fontsize=6.6, fontfamily=MONO)
+        for xx, (b, rung) in zip(xs, cols):
+            c = _syn_cell(R["runs"][b[0]]["edits"], b[1], edit, rung)
             if c is None:
                 ax.text(xx + cw / 2, y, "·", ha="center", va="center", color=GREY)
                 continue
-            ax.add_patch(plt.Rectangle((xx + 0.02, y - 0.42), cw - 0.06, 0.84, facecolor=tint[c["state"]], edgecolor="none"))
-            ax.text(xx + cw / 2, y, f"{c['k']}/{c['n']}", ha="center", va="center", fontfamily=MONO, fontsize=6.4,
+            ax.add_patch(plt.Rectangle((xx + 0.015, y - 0.42), cw - 0.03, 0.84, facecolor=tint[c["state"]], edgecolor="none"))
+            ax.text(xx + cw / 2, y, f"{c['k']}/{c['n']}", ha="center", va="center", fontfamily=MONO, fontsize=5.6,
                     color=RED if c["state"] == "red" else INK)
-    ax.set_xlim(-0.05, x0 + len(SYN_COLS) * cw + 0.05)
+    ax.set_xlim(-0.05, right + 0.05)
     ax.set_ylim(len(rows) - 0.45, -1.75)
     fig.subplots_adjust(left=0.01, right=0.99, top=0.98, bottom=0.02)
-    caption(fig, ax, 1, "Synopse: the law in force next to the law Apertus v1.5 70B applies. Cells: variants convicted "
-            "(Ja/Nein), k/n. Red: the model convicts against the law (or acquits a placebo) in every readable framing; "
-            "light red: in one of the two framings; grey: no framing convicts the base case. R0: no law in the prompt; "
-            "R3: statute, BGE rule and closed list; R4: and the 1 July 2020 clause.")
     save(fig, out, "fig1_synopse")
 
 

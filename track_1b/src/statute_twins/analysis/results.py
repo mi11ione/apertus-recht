@@ -116,7 +116,7 @@ def core_pairs(items: list[dict]) -> dict:
     out = defaultdict(list)
     for i in items:
         if i["subset"] != "battery162" and i["variant"] != "base":
-            out[(i["lang"], edit_name(i))].append((i["id"], i["base_id"]))
+            out[(i["lang"], edit_name(i), "core")].append((i["id"], i["base_id"]))
     return out
 
 
@@ -129,11 +129,11 @@ def legacy_pairs(items: list[dict]) -> dict:
         if s == "ladder" and var in ("true", "group", "time"):
             name = {"true": "setting:failed", "group": "characteristic:not_listed|gender_identity",
                     "time": "characteristic:not_yet_covered"}[var]
-            out[("de", name)].append((iid, by[(s, item, "placebo")]))
+            out[("de", name, "battery162")].append((iid, by[(s, item, "placebo")]))
         if s == "never" and var == "base":
             trait, frame = item.split("-", 1)
             if trait in ("canton", "occupation", "age"):
-                out[("de", f"characteristic:not_listed|{trait}")].append((iid, by[("never", f"sexual_orientation-{frame}", "base")]))
+                out[("de", f"characteristic:not_listed|{trait}", "battery162")].append((iid, by[("never", f"sexual_orientation-{frame}", "base")]))
     return out
 
 
@@ -163,7 +163,7 @@ def edits(items: list[dict], rows: list[dict], pairs: dict, seed: int = 0) -> li
     rx = index(rows)
     rungs = sorted({r["rung"] for r in rx.values()})
     out = []
-    for (lang, name), prs in sorted(pairs.items()):
+    for (lang, name, subset), prs in sorted(pairs.items()):
         kind = "placebo" if name.startswith("placebo") else ("contested" if name.startswith("contested") else "flip")
         for rung in rungs:
             for fr in FRAMINGS:
@@ -172,7 +172,7 @@ def edits(items: list[dict], rows: list[dict], pairs: dict, seed: int = 0) -> li
                 if not v_rows:
                     continue
                 los = [(lo_or_none(a), lo_or_none(b)) for a, b in v_rows]
-                rec = dict(lang=lang, edit=name, kind=kind, rung=rung, framing=fr, n=len(v_rows),
+                rec = dict(lang=lang, subset=subset, edit=name, kind=kind, rung=rung, framing=fr, n=len(v_rows),
                            v_convicted=sum(decision(a) == "convict" for a, _ in v_rows),
                            ref_convicted=sum(decision(b) == "convict" for _, b in v_rows))
                 if all(x is not None and y is not None for x, y in los):
@@ -189,24 +189,24 @@ def edits(items: list[dict], rows: list[dict], pairs: dict, seed: int = 0) -> li
 
 
 def colours(edit_rows: list[dict]) -> list[dict]:
-    """red / amber / none per (lang, edit, rung) over the anchored framings (true flips only)."""
+    """red / amber / none per (subset, lang, edit, rung) over the anchored framings (true flips only)."""
     by = defaultdict(list)
     for e in edit_rows:
         if e["kind"] == "flip":
-            by[(e["lang"], e["edit"], e["rung"])].append(e)
+            by[(e["subset"], e["lang"], e["edit"], e["rung"])].append(e)
     out = []
-    for (lang, name, rung), es in sorted(by.items()):
+    for (subset, lang, name, rung), es in sorted(by.items()):
         anchored = [e for e in es if e["status"] != "u"]
         f = [e for e in anchored if e["status"] == "F"]
         colour = "unreadable" if not anchored else ("red" if len(f) == len(anchored) else ("amber" if f else "none"))
-        out.append(dict(lang=lang, edit=name, rung=rung, colour=colour,
+        out.append(dict(subset=subset, lang=lang, edit=name, rung=rung, colour=colour,
                         cells={e["framing"]: e["status"] for e in es}))
     return out
 
 
 def run_results(items: list[dict], rows: list[dict], seed: int = 0) -> dict:
     pairs = core_pairs(items)
-    pairs.update(legacy_pairs(items))
+    pairs.update(legacy_pairs(items))       # keys carry the subset, so the two never collide
     core_ids = {i["id"] for i in items if i["subset"] != "battery162"}
     sub = [r for r in rows if r.get("item_id") in core_ids]
     leg = [r for r in rows if r.get("item_id") not in core_ids]
