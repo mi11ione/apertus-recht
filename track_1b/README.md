@@ -63,7 +63,11 @@ Exact forced choice on vLLM endpoints, first-token log-probabilities elsewhere, 
 - **Against blind annotators.** 960 items labelled blind (opaque ids, no access to code or gold) by six agents:
   939/939 settled items agree with the code gold, deciding element 315/315. Two independent adjudicators then reviewed
   every contested item and a blind sample of settled ones: 115/115 gold correct.
-- **Against Swiss courts.** ⟨court⟩
+- **Against Swiss courts.** 326 decisions from `voilaj/swiss-caselaw`, each coded twice by independent agents with a
+  third on conflicts, under a pre-registered rule: the engine agrees with the court in 58/58 rulings on the elements it
+  models (Wilson 95% 0.94–1.00), including every acquittal on publicity or characteristic. The other rulings turn on
+  what the model deliberately leaves out (the dignity threshold, intent, freedom of expression), which maps where the
+  next iteration should go.
 - **Against the training data.** 0 of 35,241 item 13-grams occur in the 1,069,365 decisions of `voilaj/swiss-caselaw`
   (in the Apertus v1.5 training data); the same scan finds 846 of 1,525 13-grams of the statute itself.
 - **Against our own earlier numbers.** The analysis reproduces the published exploration results exactly, and replays

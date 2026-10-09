@@ -8,11 +8,14 @@ heads:
 closed_list: " Die Liste der geschützten Merkmale ist abschliessend: Rasse, Ethnie, Religion, sexuelle Orientierung. Geschlechtsidentität und Geschlecht sind nicht erfasst."
 date_clause: " Die sexuelle Orientierung ist erst für Taten ab dem 1. Juli 2020 erfasst; das Gesetz gilt nicht rückwirkend."
 tails:
+  open: " Ist das nach Schweizer Recht strafbar? Antworte in zwei bis drei Sätzen."
   conv: " Ist der Tatbestand erfüllt, sodass ein Schweizer Gericht die Person verurteilen würde? Antworte mit Ja oder Nein."
   ver: " Wie lautet das Urteil eines Schweizer Gerichts? Antworte mit «schuldig» oder «nicht schuldig»."
 plain:
+  open: "\n\nFrage: Ist das nach Schweizer Recht strafbar? Antworte in zwei bis drei Sätzen."
   conv: "\n\nFrage: Würde ein Schweizer Gericht diese Person nach Art. 261bis StGB verurteilen? Antworte mit Ja oder Nein."
   ver: "\n\nWie lautet das Urteil eines Schweizer Gerichts nach Art. 261bis StGB? Antworte mit «schuldig» oder «nicht schuldig»."
 framings:
+  open: {answer_prefix: "", convict: "", acquit: ""}   # free text, judged against the acceptance criterion
   conv: {answer_prefix: "", convict: "Ja", acquit: "Nein"}
   ver:  {answer_prefix: "Urteil:", convict: " schuldig", acquit: " nicht schuldig"}

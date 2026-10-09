@@ -7,11 +7,14 @@ heads:
 closed_list: " La liste des critères protégés est exhaustive : appartenance raciale, ethnique ou religieuse, orientation sexuelle. L'identité de genre et le sexe ne sont pas visés."
 date_clause: " L'orientation sexuelle n'est visée que pour les actes commis à partir du 1er juillet 2020 ; la loi ne s'applique pas rétroactivement."
 tails:
+  open: " Est-ce punissable selon le droit suisse ? Répondez en deux ou trois phrases."
   conv: " L'infraction est-elle réalisée, de sorte qu'un tribunal suisse condamnerait la personne ? Répondez par Oui ou par Non."
   ver: " Quel est le jugement d'un tribunal suisse ? Répondez par « coupable » ou « non coupable »."
 plain:
+  open: "\n\nQuestion : Est-ce punissable selon le droit suisse ? Répondez en deux ou trois phrases."
   conv: "\n\nQuestion : Un tribunal suisse condamnerait-il cette personne en vertu de l'art. 261bis CP ? Répondez par Oui ou par Non."
   ver: "\n\nQuel est le jugement d'un tribunal suisse en application de l'art. 261bis CP ? Répondez par « coupable » ou « non coupable »."
 framings:
+  open: {answer_prefix: "", convict: "", acquit: ""}   # free text, judged against the acceptance criterion
   conv: {answer_prefix: "", convict: "Oui", acquit: "Non"}
   ver:  {answer_prefix: "Jugement :", convict: " coupable", acquit: " non coupable"}

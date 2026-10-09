@@ -154,7 +154,23 @@ resamples over items, seed 0.
 
 ## Lessons Learnt and Recommendations
 
-⟨lessons⟩
+**For Apertus users.** Do not ask Apertus about Art. 261bis without the law in context: with none, it convicts on every
+variant we tried. Paste the statute and BGE 130 IV 111 and it applies the publicity rule, but it still needs the closed
+list spelled out *and* applied; state dates explicitly, and expect the 1 July 2020 clause to be over-applied. Prefer
+the Q8_0 GGUF or the served model to 4-bit MLX conversions, which changed verdicts in our measurements.
+
+**For Apertus developers.** The conviction prior is created by post-training, not pre-training: at full precision the
+step from RLVR to DPO turns a closed-list acquittal (canton, 0/6) into a conviction (6/6), and exact weight blends show a
+smooth S-curve between the two. The leading case is in the training data, verbatim. Preference data that rewards
+"condemning" answers to discrimination questions is a plausible cause worth testing; twin items like ours give a
+measurable target for a fix, element by element, before and after.
+
+**For dataset builders.** Computed gold turns a legal benchmark into software: the statute model is tested against
+the official text, mutations of the law flip exactly the items they should, and a new statute is five YAML files. Blind
+review by personas found wording defects that no automated gate caught (a frame that dated the recording instead of the
+act); we fixed them and re-scored, and the pre-registration records when. The next iteration should add the elements
+courts actually argue about (the dignity threshold, interpretation of coded speech, political debate) as contested
+items written with practitioners.
 
 ## Reproducibility
 

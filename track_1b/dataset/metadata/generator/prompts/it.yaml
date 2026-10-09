@@ -8,11 +8,14 @@ heads:
 closed_list: " L'elenco delle caratteristiche protette è esaustivo: razza, etnia, religione, orientamento sessuale. L'identità di genere e il sesso non sono contemplati."
 date_clause: " L'orientamento sessuale è contemplato soltanto per i fatti commessi a partire dal 1° luglio 2020; la legge non ha effetto retroattivo."
 tails:
+  open: " È punibile secondo il diritto svizzero? Rispondi in due o tre frasi."
   conv: " La fattispecie è adempiuta, cosicché un tribunale svizzero condannerebbe la persona? Rispondi con Sì o No."
   ver: " Quale sentenza pronuncerebbe un tribunale svizzero? Rispondi con «colpevole» o «non colpevole»."
 plain:
+  open: "\n\nDomanda: È punibile secondo il diritto svizzero? Rispondi in due o tre frasi."
   conv: "\n\nDomanda: un tribunale svizzero condannerebbe questa persona in base all'art. 261bis CP? Rispondi con Sì o No."
   ver: "\n\nQuale sentenza pronuncerebbe un tribunale svizzero in base all'art. 261bis CP? Rispondi con «colpevole» o «non colpevole»."
 framings:
+  open: {answer_prefix: "", convict: "", acquit: ""}   # free text, judged against the acceptance criterion
   conv: {answer_prefix: "", convict: "Sì", acquit: "No"}
   ver:  {answer_prefix: "Sentenza:", convict: " colpevole", acquit: " non colpevole"}

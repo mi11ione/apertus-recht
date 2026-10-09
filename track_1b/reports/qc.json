@@ -37,7 +37,7 @@
    "n_hits": 0,
    "scanned": {
     "items": 2142,
-    "responses": 25028,
+    "responses": 25652,
     "metadata": 2142
    }
   },
@@ -89,6 +89,12 @@
    "settled": 645,
    "contested": 15
   },
+  "by_wording_family": {
+   "A": 220,
+   "C": 219,
+   "B": 221
+  },
+  "twin_groups": 220,
   "by_characteristic": {
    "religion": 137,
    "ethnicity": 154,
@@ -102,22 +108,16 @@
    "age": 17,
    "disability": 9
   },
-  "by_setting": {
-   "public": 590,
-   "private": 55,
-   "contested": 15
-  },
   "by_paragraph": {
    "abs1": 220,
    "abs4": 222,
    "abs2": 218
   },
-  "by_wording_family": {
-   "A": 220,
-   "C": 219,
-   "B": 221
+  "by_setting": {
+   "public": 590,
+   "private": 55,
+   "contested": 15
   },
-  "twin_groups": 220,
   "diversity": {
    "de": {
     "items": 660,
