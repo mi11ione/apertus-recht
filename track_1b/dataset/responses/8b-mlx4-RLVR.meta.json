@@ -1,0 +1,12 @@
+{
+ "run": "8b-mlx4-RLVR",
+ "rows": 648,
+ "jsonl_sha256": "84dd3d79e97598f6558ed8aa756af394022783a28d9beb36e249a651af1cfcee",
+ "model": "swiss-ai/Apertus-v1.5-8B-RLVR",
+ "precision": "MLX 4-bit g64 (own conversion)",
+ "runtime": "mlx-lm 0.32.0 (M2 Air)",
+ "protocol": "chat",
+ "source_file": "spikes/linie9/results/stage_RLVR.json",
+ "source_sha256": "4cf0af78eefae69f0a0efaf3d2251f7fc45874bff6ffdab86986b8317100e20c",
+ "questions_note": "stage9.py question strings, byte-identical to prompts/de.yaml R0/R3"
+}

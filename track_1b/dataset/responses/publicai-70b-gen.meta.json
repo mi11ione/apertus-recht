@@ -1,0 +1,10 @@
+{
+ "run": "publicai-70b-gen",
+ "rows": 792,
+ "jsonl_sha256": "f43355b6c441f74f2a3f3015090d07fb4f8ed76d30c881b98a69981cc6abcc8f",
+ "model": "Apertus v1.5 70B (Public AI name swiss-ai/apertus-v1.5-70b, backend fp1-nes)",
+ "requested_model": "swiss-ai/apertus-v1.5-70b",
+ "protocol": "plain user message, greedy, 24 tokens, decision parsed",
+ "source_file": "spikes/live/results/gen_apertus-v1.5-70b.json",
+ "source_sha256": "543e0f0ca0b54fb74f91b54ed675099d9b149654338ba0089be2c3e3e4a7555d"
+}

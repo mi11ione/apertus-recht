@@ -1,0 +1,12 @@
+{
+ "run": "8b-bf16-DPO",
+ "rows": 648,
+ "jsonl_sha256": "646c73f89f083124c01c8918ec6f55d59c7a58fdee986075b33460dc74383429",
+ "model": "swiss-ai/Apertus-v1.5-8B-DPO",
+ "precision": "bf16",
+ "runtime": "MLX 0.32.3 / mlx-lm 0.32.0 (M4, 24 GB)",
+ "protocol": "chat",
+ "source_file": "spikes/linie9/results/stage_bf16_DPO.json",
+ "source_sha256": "af088be62f8dd487a5815195e962ca8cfc7b1eb7660f79dcd4bb99716e1eefc5",
+ "questions_note": "stage9.py question strings, byte-identical to prompts/de.yaml R0/R3"
+}

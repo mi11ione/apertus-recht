@@ -1,0 +1,157 @@
+# German surface templates for Art. 261bis StGB scenarios. Slot ids are shared with design.yaml (which holds the legal
+# facts) and with fr.yaml / it.yaml (translations). Placeholders:
+#   {date} {place} {actor} {setting} {act}        slot surfaces; a capitalised name ({Date}, {Actor}, ...) capitalises
+#                                                 the first letter.
+#   {pron} {Pron} {poss_*} {spouse_*}             actor morphology (see `actors`).
+#   {g.nom} {g.dat}                               case forms of the target group (accusative = nominative for every
+#                                                 plural group phrase used here).
+# Writing rules: no hateful wording, no slurs, no names of real persons; acts are described abstractly in the statute's
+# own vocabulary; every scenario ends with intent stated, so intent is never the deciding element.
+lang: de
+
+frames:
+  F01: "Sachverhalt: {Date} äusserte sich {actor} in {place} wie folgt: {setting} {act}. {Pron} handelte vorsätzlich."
+  F02: "Sachverhalt: {Date} kam es in {place} zu folgendem Vorfall, an dem {actor} beteiligt war: {setting} {act}. {Pron} handelte vorsätzlich."
+  F03: "Sachverhalt: {Actor} aus {place} steht unter folgendem Vorwurf: {setting} {act}, und zwar {date}. {Pron} handelte vorsätzlich."
+  F04: "Sachverhalt: In {place} äusserte sich {actor} {date} wie folgt: {setting} {act}. Der Vorsatz ist unbestritten."
+  F05: "Sachverhalt: {Date} hielt sich {actor} in {place} auf. {Setting} {act}. {Pron} handelte vorsätzlich."
+  F06: "Sachverhalt: {Actor} lebt in {place}. {Date} geschah Folgendes: {setting} {act}. {Pron} wusste, was {pron} tat, und wollte es so."
+  F07: "Sachverhalt: Gemäss Anklageschrift äusserte sich {actor} {date} in {place} wie folgt: {setting} {act}. {Pron} handelte vorsätzlich."
+  F08: "Sachverhalt: {Date} wurde in {place} ein Vorfall aktenkundig, an dem {actor} beteiligt war: {setting} {act}. Dass {pron} vorsätzlich handelte, ist erstellt."
+
+actors:
+  m1: {surface: "ein Mann", gender: m}
+  m2: {surface: "ein Rentner", gender: m}
+  m3: {surface: "ein Unternehmer", gender: m}
+  m4: {surface: "ein Student", gender: m}
+  f1: {surface: "eine Frau", gender: f}
+  f2: {surface: "eine Rentnerin", gender: f}
+  f3: {surface: "eine Unternehmerin", gender: f}
+  f4: {surface: "eine Studentin", gender: f}
+
+morphology:
+  m: {pron: er, poss_dat_n: seinem, poss_dat_m: seinem, poss_dat_f: seiner, poss_dat_pl: seinen, poss_acc_f: seine,
+      poss_nom_pl: seine, poss_gen_f: seiner, poss_gen_m: seines, poss_gen_pl: seiner,
+      spouse_nom: "seine Ehefrau", spouse_dat: "seiner Ehefrau", spouse_gen: "seiner Ehefrau"}
+  f: {pron: sie, poss_dat_n: ihrem, poss_dat_m: ihrem, poss_dat_f: ihrer, poss_dat_pl: ihren, poss_acc_f: ihre,
+      poss_nom_pl: ihre, poss_gen_f: ihrer, poss_gen_m: ihres, poss_gen_pl: ihrer,
+      spouse_nom: "ihr Ehemann", spouse_dat: "ihrem Ehemann", spouse_gen: "ihres Ehemannes"}
+
+places:
+  zh: Zürich
+  be: Bern
+  bs: Basel
+  lu: Luzern
+  sg: St. Gallen
+  wi: Winterthur
+  bi: Biel/Bienne
+  ch: Chur
+  aa: Aarau
+  th: Thun
+  sh: Schaffhausen
+  zg: Zug
+
+dates:
+  d1994_10: "im Oktober 1994"
+  d1993_05: "im Mai 1993"
+  d2018_11: "im November 2018"
+  d2019_03: "im März 2019"
+  d2019_09: "im September 2019"
+  d2020_06: "im Juni 2020"
+  d2020_06_30: "am 30. Juni 2020"
+  d2020_07_01: "am 1. Juli 2020"
+  d2020_08: "im August 2020"
+  d2021_09: "im September 2021"
+  d2022_05: "im Mai 2022"
+  d2023_03: "im März 2023"
+  d2024_01: "im Januar 2024"
+  d2025_06: "im Juni 2025"
+
+groups:
+  race_black:      {nom: "Schwarze Menschen wegen ihrer Rasse", dat: "Schwarzen Menschen wegen ihrer Rasse"}
+  race_african:    {nom: "Menschen afrikanischer Herkunft wegen ihrer Rasse", dat: "Menschen afrikanischer Herkunft wegen ihrer Rasse"}
+  race_asian:      {nom: "Menschen asiatischer Herkunft wegen ihrer Rasse", dat: "Menschen asiatischer Herkunft wegen ihrer Rasse"}
+  race_black_syn:  {nom: "Schwarze Menschen wegen ihrer Hautfarbe", dat: "Schwarzen Menschen wegen ihrer Hautfarbe"}
+  eth_roma:        {nom: "Angehörige der Roma wegen ihrer Ethnie", dat: "Angehörigen der Roma wegen ihrer Ethnie"}
+  eth_yenish:      {nom: "Angehörige der Jenischen wegen ihrer Ethnie", dat: "Angehörigen der Jenischen wegen ihrer Ethnie"}
+  eth_kosovo:      {nom: "Kosovo-Albaner wegen ihrer Ethnie", dat: "Kosovo-Albanern wegen ihrer Ethnie"}
+  eth_tamil:       {nom: "Tamilen wegen ihrer Ethnie", dat: "Tamilen wegen ihrer Ethnie"}
+  eth_kurd:        {nom: "Kurden wegen ihrer Ethnie", dat: "Kurden wegen ihrer Ethnie"}
+  eth_roma_syn:    {nom: "Angehörige der Roma wegen ihrer ethnischen Zugehörigkeit", dat: "Angehörigen der Roma wegen ihrer ethnischen Zugehörigkeit"}
+  rel_jewish:      {nom: "Juden wegen ihrer Religion", dat: "Juden wegen ihrer Religion"}
+  rel_muslim:      {nom: "Muslime wegen ihrer Religion", dat: "Muslimen wegen ihrer Religion"}
+  rel_free:        {nom: "Angehörige einer christlichen Freikirche wegen ihrer Religion", dat: "Angehörigen einer christlichen Freikirche wegen ihrer Religion"}
+  rel_hindu:       {nom: "Hindus wegen ihrer Religion", dat: "Hindus wegen ihrer Religion"}
+  rel_muslim_syn:  {nom: "Muslime wegen ihres Glaubens", dat: "Muslimen wegen ihres Glaubens"}
+  rel_jewish_syn:  {nom: "Juden wegen ihres Glaubens", dat: "Juden wegen ihres Glaubens"}
+  so_homo:         {nom: "homosexuelle Personen wegen ihrer sexuellen Orientierung", dat: "homosexuellen Personen wegen ihrer sexuellen Orientierung"}
+  so_lesbian:      {nom: "lesbische Frauen wegen ihrer sexuellen Orientierung", dat: "lesbischen Frauen wegen ihrer sexuellen Orientierung"}
+  so_bi:           {nom: "bisexuelle Personen wegen ihrer sexuellen Orientierung", dat: "bisexuellen Personen wegen ihrer sexuellen Orientierung"}
+  so_gay:          {nom: "schwule Männer wegen ihrer sexuellen Orientierung", dat: "schwulen Männern wegen ihrer sexuellen Orientierung"}
+  so_homo_syn:     {nom: "homosexuelle Personen wegen ihrer Homosexualität", dat: "homosexuellen Personen wegen ihrer Homosexualität"}
+  gi_trans:        {nom: "trans Personen wegen ihrer Geschlechtsidentität", dat: "trans Personen wegen ihrer Geschlechtsidentität"}
+  gi_nonbinary:    {nom: "nichtbinäre Personen wegen ihrer Geschlechtsidentität", dat: "nichtbinären Personen wegen ihrer Geschlechtsidentität"}
+  sex_women:       {nom: "Frauen wegen ihres Geschlechts", dat: "Frauen wegen ihres Geschlechts"}
+  sex_men:         {nom: "Männer wegen ihres Geschlechts", dat: "Männern wegen ihres Geschlechts"}
+  can_zh:          {nom: "Zürcherinnen und Zürcher wegen ihrer Kantonszugehörigkeit", dat: "Zürcherinnen und Zürchern wegen ihrer Kantonszugehörigkeit"}
+  can_vs:          {nom: "Walliserinnen und Walliser wegen ihrer Kantonszugehörigkeit", dat: "Walliserinnen und Wallisern wegen ihrer Kantonszugehörigkeit"}
+  occ_build:       {nom: "Bauarbeiter wegen ihres Berufs", dat: "Bauarbeitern wegen ihres Berufs"}
+  occ_teach:       {nom: "Lehrpersonen wegen ihres Berufs", dat: "Lehrpersonen wegen ihres Berufs"}
+  age_old:         {nom: "ältere Menschen wegen ihres Alters", dat: "älteren Menschen wegen ihres Alters"}
+  age_young:       {nom: "junge Erwachsene wegen ihres Alters", dat: "jungen Erwachsenen wegen ihres Alters"}
+  dis:             {nom: "Menschen mit einer Behinderung wegen ihrer Behinderung", dat: "Menschen mit einer Behinderung wegen ihrer Behinderung"}
+  pol:             {nom: "Mitglieder einer politischen Partei wegen ihrer politischen Überzeugung", dat: "Mitgliedern einer politischen Partei wegen ihrer politischen Überzeugung"}
+
+acts:
+  a1A1: "rief {pron} zu Hass gegen {g.nom} auf"
+  a1A2: "rief {pron} zur Diskriminierung von {g.dat} auf"
+  a1B1: "forderte {pron} dazu auf, {g.nom} zu hassen"
+  a1B2: "stachelte {pron} zum Hass gegen {g.nom} an"
+  a1C1: "warb {pron} dafür, {g.nom} zu benachteiligen und auszugrenzen"
+  a1C2: "rief {pron} dazu auf, {g.dat} Wohnungen und Arbeitsstellen zu verweigern"
+  a2A1: "verbreitete {pron} eine Ideologie, die auf die systematische Herabsetzung von {g.dat} gerichtet ist"
+  a2A2: "verbreitete {pron} Schriften einer Lehre, die {g.nom} systematisch herabsetzt"
+  a2B1: "propagierte {pron} eine Weltanschauung, nach der {g.nom} als minderwertig gelten"
+  a2B2: "warb {pron} für eine Ideologie, die darauf abzielt, {g.nom} systematisch zu verleumden"
+  a2C1: "verbreitete {pron} eine Lehre, die {g.nom} systematisch als minderwertig darstellt"
+  a2C2: "verbreitete {pron} systematisch Thesen, wonach {g.nom} weniger wert seien als andere Menschen"
+  a4A1: "setzte {pron} {g.nom} in einer gegen die Menschenwürde verstossenden Weise herab"
+  a4A2: "würdigte {pron} {g.nom} in einer Weise herab, die gegen die Menschenwürde verstösst"
+  a4B1: "stellte {pron} {g.nom} als Menschen minderen Werts dar"
+  a4B2: "verunglimpfte {pron} {g.nom} in menschenverachtender Weise"
+  a4C1: "sprach {pron} {g.dat} die Gleichwertigkeit als Menschen ab"
+  a4C2: "bezeichnete {pron} {g.nom} als Menschen zweiter Klasse"
+
+settings:
+  # public
+  pub_rally:      "An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen"
+  pub_rally_fam:  "An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen, die {pron} als «Familienausflug» zusammen mit {spouse_dat} und {poss_dat_pl} Kindern besuchte,"
+  pub_post:       "In einem öffentlich einsehbaren Beitrag auf {poss_dat_n} Social-Media-Profil"
+  pub_post_fam:   "In einem öffentlich einsehbaren Beitrag auf {poss_dat_n} Social-Media-Profil, den {pron} an {poss_acc_f} Familie richtete («Liebe Familie, …») und den auch {poss_nom_pl} Eltern und Geschwister lesen,"
+  pub_letter:     "In einem Leserbrief, der in einer Regionalzeitung abgedruckt wurde,"
+  pub_letter_fam: "In einem Leserbrief, der in einer Regionalzeitung abgedruckt wurde und den {pron} im Namen {poss_gen_f} ganzen Familie unterzeichnete,"
+  pub_hut:        "An einer Versammlung in einer Waldhütte vor rund 40 Teilnehmenden, die über einen allgemeinen Aufruf eingeladen worden waren und die {pron} zum grössten Teil nicht persönlich kannte,"
+  pub_hut_fam:    "An einer Versammlung in einer Waldhütte {poss_gen_f} Familie vor rund 40 Teilnehmenden, die über einen allgemeinen Aufruf eingeladen worden waren und die {pron} zum grössten Teil nicht persönlich kannte, wobei auch {spouse_nom} und {poss_nom_pl} Kinder anwesend waren,"
+  pub_flyer:      "Auf Flugblättern, die {pron} in einer belebten Fussgängerzone an Passanten verteilte,"
+  pub_flyer_fam:  "Auf Flugblättern, die {pron} zusammen mit {poss_dat_pl} Kindern in einer belebten Fussgängerzone an Passanten verteilte und mit «Eine Familie sagt die Wahrheit» überschrieb,"
+  pub_speech:     "In einer Rede an einer Gemeindeversammlung vor rund 120 Stimmberechtigten"
+  pub_speech_fam: "In einer Rede an einer Gemeindeversammlung vor rund 120 Stimmberechtigten, unter denen auch {poss_nom_pl} Eltern und Geschwister sassen,"
+  pub_video:      "In einem Video, das {pron} auf einer frei zugänglichen Videoplattform veröffentlichte,"
+  pub_video_fam:  "In einem Video, das {pron} auf einer frei zugänglichen Videoplattform veröffentlichte und mit «Botschaft an meine Familie» betitelte,"
+  pub_tram:       "In einem vollbesetzten Tram, laut und an alle Fahrgäste gerichtet,"
+  pub_tram_fam:   "In einem vollbesetzten Tram, laut und an alle Fahrgäste gerichtet, während {pron} mit {poss_dat_pl} Kindern unterwegs war,"
+  pub_market:     "An einem Stand auf einem gut besuchten Wochenmarkt, vor zahlreichen Kundinnen und Kunden,"
+  pub_market_fam: "An dem Stand, den {pron} zusammen mit {poss_dat_pl} Geschwistern als Familienbetrieb auf einem gut besuchten Wochenmarkt führt, vor zahlreichen Kundinnen und Kunden,"
+  pub_forum:      "In einem Kommentar in einem frei zugänglichen Online-Forum"
+  pub_forum_fam:  "In einem Kommentar in einem frei zugänglichen Online-Forum, den {pron} mit «Gruss an die ganze Familie» unterschrieb,"
+  # private (BGE 130 IV 111 E. 5.2: family, friends, personal relationships or particular trust)
+  priv_dinner:    "Beim Abendessen im engsten Familienkreis in {poss_dat_f} Wohnung, im Beisein nur {spouse_gen} und {poss_gen_pl} beiden erwachsenen Kinder,"
+  priv_friends:   "Bei einem Abendessen mit drei langjährigen engen Freunden in {poss_dat_f} Wohnung"
+  priv_message:   "In einer persönlichen Nachricht, die {pron} nur an {poss_acc_f} Schwester schickte,"
+  priv_phone:     "In einem Telefongespräch mit {poss_dat_m} Bruder"
+  priv_famchat:   "In einem Familien-Chat, dem nur {poss_nom_pl} Eltern und Geschwister angehören,"
+  # contested: the facts that BGE 130 IV 111 E. 5.2 makes decisive (relationships, number of people) are mixed
+  cont_clubchat:  "In einer geschlossenen Chatgruppe {poss_gen_m} Sportvereins mit rund 30 Mitgliedern, von denen {pron} einige gut und die meisten nur flüchtig kannte,"
+  cont_party:     "An einem Geburtstagsfest in {poss_dat_m} Garten vor rund 20 Gästen, darunter Freunde, Nachbarn und einige Bekannte von Bekannten,"
+  cont_office:    "In einer E-Mail an die 25 Mitarbeitenden {poss_gen_f} Abteilung"
+  cont_assoc:     "An einer nicht öffentlichen Sitzung eines Quartiervereins mit 15 Mitgliedern, die einander seit Jahren kennen,"

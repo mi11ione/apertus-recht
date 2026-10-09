@@ -1,0 +1,136 @@
+# Art. 261bis StGB (Rassendiskriminierung / discrimination et incitation à la haine / discriminazione e incitamento all'odio)
+# Machine-readable element model. The gold engine (src/statute_twins/gold/engine.py) computes every verdict from this file
+# and nothing else. Every element and every value points to a pinned source in `sources`; tests/test_sources.py checks
+# the pinned text hashes, so the encoded law cannot drift silently from the text it cites.
+schema: statute-twins/v1
+id: stgb_261bis
+version: 1.0.0
+citation: {de: "Art. 261bis StGB", fr: "art. 261bis CP", it: "art. 261bis CP"}
+title: {de: Rassendiskriminierung, fr: Discrimination et incitation à la haine, it: Discriminazione e incitamento all'odio}
+scope_note: >-
+  Models the objective elements that decide the verdict in the scenarios this package generates: temporal scope,
+  protected characteristic (closed list, amended 1 Jul 2020), act paragraph (Abs. 1, 2, 4) and publicity.
+  Intent (Vorsatz) is fixed to "present" in every scenario. Abs. 3 (propaganda) and Abs. 5 (refusal of a public service,
+  no publicity element) are out of scope. Whether a concrete statement reaches the Abs. 4 dignity threshold is a
+  question of fact; the act descriptions are written so that it is met, and the judgement is not modelled.
+
+sources:
+  fedlex_261bis_2026:
+    cite: "Art. 261bis StGB (SR 311.0; Fedlex eli/cc/54/757_781_799, version 2026-10-01)"
+    kind: statute
+    file: ../sources/eli_cc_54_757_781_799__art_261_bis__{lang}__2026-10-01.json
+    text_sha256:
+      de: ce5ba620f55033a08305b7505ce1e1dcb7c8e8c133696cbd0409e0587abeb240
+      fr: dd823cfb6d2a3b186fc4e561519c14889a831ab8dc7c8904cf6505b97746f3a8
+      it: db09980eeb4c6c4c035d627399d8b2932d54146414ac902d8644006d4f812626
+    eli: https://fedlex.data.admin.ch/eli/cc/54/757_781_799
+    note: consolidation in force since 2026-10-01; text of Art. 261bis unchanged since 2020-07-01
+    anchors: true   # check the closed-list anchors of `characteristic` against this text
+  fedlex_261bis_2020:
+    cite: "Art. 261bis StGB, version before 1 Jul 2020 (Fedlex eli/cc/54/757_781_799, version 2020-02-01)"
+    kind: statute
+    file: ../sources/eli_cc_54_757_781_799__art_261_bis__{lang}__2020-02-01.json
+    text_sha256:
+      de: c567d44647ffe41d41327b4b3a64282079ba8f704d89699daae98445a46d11b5
+      fr: 67a01833eba337273327ec3ed8d67b1eedc3fdbe9e9c07f975e58c6359dc7f6d
+      it: 9c15691a055e254ad5b92a5ae2643d1969efb066b564bb479510b43cd953917f
+    eli: https://fedlex.data.admin.ch/eli/cc/54/757_781_799
+    note: last consolidation before the 2020 amendment (race, ethnicity, religion only)
+    anchors: true
+  fedlex_art2:
+    cite: "Art. 2 StGB (Fedlex eli/cc/54/757_781_799, version 2026-10-01)"
+    kind: statute
+    file: ../sources/eli_cc_54_757_781_799__art_2__{lang}__2026-10-01.json
+    text_sha256:
+      de: 36a7d46448612e9d2f68fa3f81acefb4995184190c57eea8d8c80098a426e633
+      fr: be0bbe1af67d845ae805c2b7eebb10b56cb9687ec8ab3ac3e4aa63cdbea4207a
+      it: df48166b15155924519a7b7e060cd7e8a4afc82a5e475c293b0da8dbcd481839
+    eli: https://fedlex.data.admin.ch/eli/cc/54/757_781_799
+    note: Art. 2 StGB, temporal scope; no retroactivity of a harsher law (lex mitior only in favour of the accused)
+  as_1994_2887:
+    cite: "AS 1994 2887 (in force 1 Jan 1995)"
+    kind: amendment
+    ref: AS 1994 2887 (BG vom 18. Juni 1993)
+    in_force: 1995-01-01
+    evidence_in: fedlex_261bis_2020   # the pinned footnote must state the in-force date
+    evidence_text: {de: "in Kraft seit 1. Jan. 1995", fr: "en vigueur depuis le 1er janv. 1995", it: "in vigore dal 1° gen. 1995"}
+  as_2020_1609:
+    cite: "AS 2020 1609 (in force 1 Jul 2020)"
+    kind: amendment
+    ref: AS 2020 1609 (BG vom 14. Dez. 2018, Diskriminierung und Aufruf zu Hass aufgrund der sexuellen Orientierung)
+    in_force: 2020-07-01
+    evidence_in: fedlex_261bis_2026
+    evidence_text: {de: "in Kraft seit 1. Juli 2020", fr: "en vigueur depuis le 1er juil. 2020", it: "in vigore dal 1° lug. 2020"}
+  bge_130_iv_111:
+    cite: "BGE 130 IV 111 E. 5.2"
+    kind: decision
+    file: ../sources/bge_130_IV_111.json
+    ref: BGE 130 IV 111 E. 5.2 (6S.318/2003, 27 May 2004)
+    holding: >-
+      Öffentlich im Sinne von Art. 261bis StGB sind Äusserungen, die nicht im privaten Rahmen erfolgen. Privat sind
+      Äusserungen im Familien- und Freundeskreis oder sonst in einem durch persönliche Beziehungen oder besonderes
+      Vertrauen geprägten Umfeld. Ob diese Voraussetzung erfüllt ist, hängt von den konkreten Umständen ab, wobei
+      insoweit auch die Zahl der anwesenden Personen eine Rolle spielen kann.
+  pa_iv_13_407:
+    cite: "Pa.Iv. 13.407 (legislative history)"
+    kind: legislative_history
+    ref: Pa.Iv. 13.407 (Reynard); the National Council's 2018 version also covered gender identity, which the Council of States removed; the enacted text (AS 2020 1609) covers sexual orientation only
+    evidence: enacted text fedlex_261bis_2026 lists "Rasse, Ethnie, Religion oder sexuellen Orientierung" only
+
+# Elements are checked in this order; the first element that fails decides the verdict (the "deciding element").
+# Values marked `contested` make the verdict "open" unless another element fails outright.
+elements:
+  - id: act_date
+    kind: date
+    label: {de: Tatzeitpunkt, fr: date de l'acte, it: data dell'atto}
+    in_force_from: 1995-01-01
+    authority: [fedlex_art2, as_1994_2887]
+    fail_reason: >-
+      The act predates the entry into force of Art. 261bis (1 Jan 1995); Art. 2 StGB excludes retroactive punishment.
+
+  - id: characteristic
+    kind: covered_set
+    label: {de: geschütztes Merkmal, fr: critère protégé, it: criterio protetto}
+    depends_on: act_date
+    # `anchor`: the statutory term for the value. tests/test_sources.py checks that every value covered on a
+    # consolidation's date appears in that consolidation's text and that every uncovered value does not.
+    authority: [fedlex_261bis_2026, fedlex_261bis_2020, fedlex_art2]
+    values:
+      race:               {covered_from: 1995-01-01, authority: [fedlex_261bis_2020, fedlex_261bis_2026], anchor: {de: "Rasse", fr: "raciale", it: "razza"}}
+      ethnicity:          {covered_from: 1995-01-01, authority: [fedlex_261bis_2020, fedlex_261bis_2026], anchor: {de: "Ethnie", fr: "ethnique", it: "etnia"}}
+      religion:           {covered_from: 1995-01-01, authority: [fedlex_261bis_2020, fedlex_261bis_2026], anchor: {de: "Religion", fr: "religieuse", it: "religione"}}
+      sexual_orientation: {covered_from: 2020-07-01, authority: [as_2020_1609, fedlex_art2], anchor: {de: "sexuellen Orientierung", fr: "orientation sexuelle", it: "orientamento sessuale"}}
+      gender_identity:    {covered_from: null, authority: [fedlex_261bis_2026, pa_iv_13_407], anchor: {de: "Geschlechtsidentität", fr: "identité de genre", it: "identità di genere"}}
+      sex:                {covered_from: null, authority: [fedlex_261bis_2026], anchor: {de: "Geschlecht", fr: "sexe", it: "sesso"}}
+      canton:             {covered_from: null, authority: [fedlex_261bis_2026], anchor: {de: "Kanton", fr: "canton", it: "cantone"}}
+      occupation:         {covered_from: null, authority: [fedlex_261bis_2026], anchor: {de: "Beruf", fr: "profession", it: "professione"}}
+      age:                {covered_from: null, authority: [fedlex_261bis_2026], anchor: {de: "Alter", fr: "âge", it: "età"}}
+      disability:         {covered_from: null, authority: [fedlex_261bis_2026], anchor: {de: "Behinderung", fr: "handicap", it: "disabilità"}}
+      political_opinion:  {covered_from: null, authority: [fedlex_261bis_2026], anchor: {de: "politisch", fr: "politique", it: "politic"}}
+    fail_reason: >-
+      The characteristic is not on the closed list in force at the time of the act (race, ethnicity, religion; sexual
+      orientation only for acts from 1 Jul 2020).
+
+  - id: paragraph
+    kind: enum
+    label: {de: Tathandlung, fr: comportement, it: comportamento}
+    authority: [fedlex_261bis_2026]
+    values:
+      abs1: {satisfied: true, note: call to hatred or discrimination}
+      abs2: {satisfied: true, note: spreading an ideology of systematic denigration}
+      abs4: {satisfied: true, note: degrading in a manner contrary to human dignity}
+
+  - id: setting
+    kind: enum
+    label: {de: Öffentlichkeit, fr: caractère public, it: pubblicità}
+    authority: [bge_130_iv_111]
+    values:
+      public:    {satisfied: true}
+      private:   {satisfied: false}
+      contested: {satisfied: contested}
+    fail_reason: >-
+      The statement was made in a private setting (family or friends, or a setting shaped by personal relationships or
+      particular trust), which is not public under BGE 130 IV 111 E. 5.2.
+    contested_reason: >-
+      Whether the setting is private depends on the concrete circumstances, including the number of people present
+      (BGE 130 IV 111 E. 5.2); the scenario does not fix them.

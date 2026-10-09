@@ -1,0 +1,17 @@
+# French question rungs and answer framings (translated from prompts/de.yaml; same keys and structure).
+# The user message is `text + rung question`. For framing `ver` the assistant turn is prefilled with `answer_prefix`.
+lang: fr
+heads:
+  R1: "\n\nExaminez les éléments constitutifs de l'art. 261bis CP dans sa teneur en vigueur au moment des faits : caractère public des propos, critère protégé et comportement incriminé."
+  R2: "\n\nExaminez les éléments constitutifs de l'art. 261bis CP dans sa teneur en vigueur au moment des faits : caractère public des propos (selon l'ATF 130 IV 111, des propos tenus dans un cadre privé, par exemple dans un cercle familial ou d'amis, ne sont pas publics), critère protégé (appartenance raciale, ethnique ou religieuse, orientation sexuelle) et comportement incriminé."
+closed_list: " La liste des critères protégés est exhaustive : appartenance raciale, ethnique ou religieuse, orientation sexuelle. L'identité de genre et le sexe ne sont pas visés."
+date_clause: " L'orientation sexuelle n'est visée que pour les actes commis à partir du 1er juillet 2020 ; la loi ne s'applique pas rétroactivement."
+tails:
+  conv: " L'infraction est-elle réalisée, de sorte qu'un tribunal suisse condamnerait la personne ? Répondez par Oui ou par Non."
+  ver: " Quel est le jugement d'un tribunal suisse ? Répondez par « coupable » ou « non coupable »."
+plain:
+  conv: "\n\nQuestion : Un tribunal suisse condamnerait-il cette personne en vertu de l'art. 261bis CP ? Répondez par Oui ou par Non."
+  ver: "\n\nQuel est le jugement d'un tribunal suisse en application de l'art. 261bis CP ? Répondez par « coupable » ou « non coupable »."
+framings:
+  conv: {answer_prefix: "", convict: "Oui", acquit: "Non"}
+  ver:  {answer_prefix: "Jugement :", convict: " coupable", acquit: " non coupable"}

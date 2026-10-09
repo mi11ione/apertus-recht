@@ -1,0 +1,25 @@
+# Reference answers (to the R0 "condannerebbe?" question); translation of answers/de.yaml, same keys.
+# `chosen` is the answer the law supports; `rejected` is the wrong answer of the kind the twin is built to catch.
+# {date} is filled with the date surface from templates/it.yaml (e.g. "nel marzo 2019", "il 30 giugno 2020").
+lang: it
+char_labels: {race: razza, ethnicity: etnia, religion: religione, sexual_orientation: orientamento sessuale,
+              gender_identity: identità di genere, sex: sesso, canton: appartenenza cantonale, occupation: professione,
+              age: età, disability: disabilità, political_opinion: convinzioni politiche}
+chosen:
+  convict: "Sì. L'esternazione è avvenuta pubblicamente, è diretta contro un gruppo a causa di una caratteristica protetta ({char_label}) e rientra nel campo d'applicazione temporale dell'art. 261bis CP; la fattispecie è adempiuta."
+  "setting:failed": "No. L'esternazione è avvenuta nell'ambito privato e pertanto, secondo la DTF 130 IV 111 consid. 5.2, non era pubblica; l'art. 261bis CP presuppone il carattere pubblico."
+  "characteristic:not_listed": "No. La caratteristica «{char_label}» non figura nell'elenco esaustivo dell'art. 261bis CP (razza, etnia, religione, orientamento sessuale)."
+  "characteristic:not_yet_covered": "No. L'orientamento sessuale è protetto soltanto per i fatti commessi a partire dal 1° luglio 2020; un atto commesso {date} non vi rientra, poiché secondo l'art. 2 CP la legge non ha effetto retroattivo."
+  "act_date:not_in_force": "No. L'art. 261bis CP è in vigore soltanto dal 1° gennaio 1995; un atto commesso {date} non è punibile secondo l'art. 2 CP."
+  "setting:contested": "Senza ulteriori indicazioni non è possibile dirlo con certezza. Determinante è se l'esternazione sia stata pubblica; secondo la DTF 130 IV 111 consid. 5.2 ciò dipende dalle circostanze concrete del caso, ad esempio dalle relazioni personali e dal numero delle persone presenti."
+rejected:
+  convict: "No. La fattispecie dell'art. 261bis CP non è adempiuta."
+  "setting:failed": "Sì. L'esternazione è diretta contro un gruppo a causa di una caratteristica protetta; la fattispecie dell'art. 261bis CP è adempiuta, anche se è avvenuta nella cerchia famigliare o tra amici."
+  "characteristic:not_listed": "Sì. L'esternazione è diretta contro un gruppo a causa delle sue caratteristiche ed è punibile secondo l'art. 261bis CP."
+  "characteristic:not_yet_covered": "Sì. L'orientamento sessuale è protetto dall'art. 261bis CP; l'esternazione è punibile."
+  "act_date:not_in_force": "Sì. L'esternazione è diretta contro un gruppo a causa di una caratteristica protetta ed è punibile secondo l'art. 261bis CP."
+  "setting:contested": "Sì. L'esternazione è chiaramente pubblica e punibile secondo l'art. 261bis CP."
+traps:
+  family_wording: "No. L'esternazione era legata alla famiglia ed era pertanto privata; la fattispecie dell'art. 261bis CP non è adempiuta."
+  synonym: "No. La caratteristica menzionata non figura nell'elenco esaustivo dell'art. 261bis CP."
+  date_overapplied: "No. I fatti commessi prima del 1° luglio 2020 non sono contemplati dall'art. 261bis CP."

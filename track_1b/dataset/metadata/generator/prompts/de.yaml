@@ -1,0 +1,18 @@
+# German question rungs and answer framings. R0, R2, R3 and R4 are byte-identical to the strings used in the
+# spike batteries (spikes/round8/spike8.py, linie9/stage9.py, live/live.py), so cached spike scores replay onto this set.
+# The user message is `text + rung question`. For framing `ver` the assistant turn is prefilled with `answer_prefix`.
+lang: de
+heads:
+  R1: "\n\nPrüfe die Tatbestandsmerkmale von Art. 261bis StGB in der zur Tatzeit geltenden Fassung: Öffentlichkeit der Äusserung, geschütztes Merkmal und Tathandlung."
+  R2: "\n\nPrüfe die Tatbestandsmerkmale von Art. 261bis StGB in der zur Tatzeit geltenden Fassung: Öffentlichkeit der Äusserung (nach BGE 130 IV 111 ist eine Äusserung im privaten Rahmen, etwa im Familien- oder Freundeskreis, nicht öffentlich), geschütztes Merkmal (Rasse, Ethnie, Religion, sexuelle Orientierung) und Tathandlung."
+closed_list: " Die Liste der geschützten Merkmale ist abschliessend: Rasse, Ethnie, Religion, sexuelle Orientierung. Geschlechtsidentität und Geschlecht sind nicht erfasst."
+date_clause: " Die sexuelle Orientierung ist erst für Taten ab dem 1. Juli 2020 erfasst; das Gesetz gilt nicht rückwirkend."
+tails:
+  conv: " Ist der Tatbestand erfüllt, sodass ein Schweizer Gericht die Person verurteilen würde? Antworte mit Ja oder Nein."
+  ver: " Wie lautet das Urteil eines Schweizer Gerichts? Antworte mit «schuldig» oder «nicht schuldig»."
+plain:
+  conv: "\n\nFrage: Würde ein Schweizer Gericht diese Person nach Art. 261bis StGB verurteilen? Antworte mit Ja oder Nein."
+  ver: "\n\nWie lautet das Urteil eines Schweizer Gerichts nach Art. 261bis StGB? Antworte mit «schuldig» oder «nicht schuldig»."
+framings:
+  conv: {answer_prefix: "", convict: "Ja", acquit: "Nein"}
+  ver:  {answer_prefix: "Urteil:", convict: " schuldig", acquit: " nicht schuldig"}

@@ -1,0 +1,12 @@
+{
+ "run": "8b-mlx4-SFT",
+ "rows": 648,
+ "jsonl_sha256": "5d65d444faaf9bd763c2f20ea036e6aa971d4b7d2db250c4106577447265733a",
+ "model": "swiss-ai/Apertus-v1.5-8B-SFT",
+ "precision": "MLX 4-bit g64 (own conversion)",
+ "runtime": "mlx-lm 0.32.0 (M2 Air)",
+ "protocol": "chat",
+ "source_file": "spikes/linie9/results/stage_SFT.json",
+ "source_sha256": "d08f841857d12524b3da1cf731519ed80f94212c64b6f5929b8c41cd4d0a0259",
+ "questions_note": "stage9.py question strings, byte-identical to prompts/de.yaml R0/R3"
+}

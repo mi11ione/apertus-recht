@@ -1,0 +1,28 @@
+{
+ "kind": "decision",
+ "id": "BGE 130 IV 111",
+ "docket": "6S.318/2003",
+ "date": "2004-05-27",
+ "court": "Bundesgericht, Kassationshof",
+ "consideration": "E. 5.2",
+ "regeste": {
+  "de": "Rassendiskriminierung (Art. 261bis StGB); Begriff der Öffentlichkeit. Ob Öffentlichkeit im Sinne eines bestimmten Straftatbestands gegeben ist, hängt wesentlich von dem durch die Strafbestimmung geschützten Rechtsgut sowie davon ab, weshalb darin Öffentlichkeit als strafbegründendes Merkmal vorausgesetzt wird (E. 4.3). Öffentlich im Sinne von Art. 261bis StGB sind Äusserungen, die nicht im privaten Rahmen erfolgen. Privat sind Äusserungen im Familien- und Freundeskreis oder sonst in einem durch persönliche Beziehungen oder besonderes Vertrauen geprägten Umfeld. Ob diese Voraussetzung erfüllt ist, hängt von den konkreten Umständen ab, wobei insoweit auch die Zahl der anwesenden Personen eine Rolle spielen kann (Änderung der Rechtsprechung; E. 5.2). Öffentlichkeit bejaht im Falle von Äusserungen an einem Vortrag, der im Rahmen einer geschlossenen Veranstaltung in einer Waldhütte gehalten wurde, an welcher 40 bis 50 geladene Skinheads teilnahmen, die verschiedenen Gruppierungen angehörten (E. 6).",
+  "fr": "Discrimination raciale (art. 261bis CP); caractère public de l'acte. Savoir si un acte a été commis publiquement, au sens d'une infraction déterminée, dépend principalement du bien juridique protégé et du motif pour lequel le caractère public a été érigé en élément constitutif (consid. 4.3). Sont prononcées publiquement, au sens de l'art. 261bis CP, les allégations qui n'interviennent pas dans un cadre privé. Privées sont celles qui ont lieu dans un cercle familial ou d'amis ou dans un environnement de relations personnelles ou empreint d'une confiance particulière. Savoir si cette condition est remplie dépend des circonstances concrètes, parmi lesquelles le nombre des personnes présentes peut jouer un rôle (changement de jurisprudence; consid. 5.2 ). Caractère public admis pour des allégations contenues dans un discours qui a eu lieu lors d'une réunion fermée, dans un refuge forestier, devant 40 à 50 skinheads appartenant à différents groupuscules (consid. 6).",
+  "it": "Discriminazione razziale (art. 261bis CP); nozione di \"pubblicità\". Il carattere pubblico di un determinato fatto di reato dipende essenzialmente dal bene giuridico protetto e dal motivo per cui la \"pubblicità\" dello stesso è stata eretta a elemento costitutivo della fattispecie legale (consid. 4.3). È da considerarsi pubblico, ai sensi dell'art. 261bis CP, ciò che viene espresso al di fuori dell'ambito privato. Appartiene all'ambito privato quanto viene espresso nel seno della cerchia famigliare, di un gruppo di amici o altrimenti in un ambiente caratterizzato da relazioni personali o da particolare confidenza. Per giudicare se tale condizione è perfezionata occorre tenere conto delle circostanze concrete del caso, fra le quali può essere di rilievo il numero delle persone presenti (modifica della giurisprudenza; consid. 5.2). Carattere pubblico ammesso nel caso di asserzioni contenute in un discorso tenuto in occasione di una riunione a porte chiuse in un rifugio forestale, davanti a 40-50 skinheads appartenenti a differenti raggruppamenti (consid. 6)."
+ },
+ "regeste_sha256": {
+  "de": "02a83c0800bb11e63e4f1b6a2ebee03a48c812d4899f7c7c604e5f171c34cf0b",
+  "fr": "2a15210bc5b23ebbff9728a888fbdd92139ae68c0d688af08a63fdc20b4b47c3",
+  "it": "79059b9f00761cb4fcecc56f67f4a56a0c5235515de6500a0480c67f59128003"
+ },
+ "source": {
+  "dataset": "voilaj/swiss-caselaw",
+  "revision": "f57a5b425f778a05b632c2eedd00824a73233cfa",
+  "decision_ids": [
+   "bge_130 IV 111",
+   "bge_BGE_130_IV_111"
+  ],
+  "url": "https://search.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?lang=de&type=highlight_simple_query&page=20&from_date=&to_date=&from_year=2004&to_year=2004&sort=relevance&insertion_date=&from_date_push=&top_subcollection_clir=bge&query_words=&part=all&de_fr=&de_it=&fr_de=&fr_it=&it_de=&it_fr=&orig=&translation="
+ },
+ "licence": "public domain (URG Art. 5 Abs. 1 lit. c); swiss-caselaw CC0"
+}

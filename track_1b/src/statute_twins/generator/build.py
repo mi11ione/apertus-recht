@@ -1,0 +1,327 @@
+"""Build twin groups from a design and render them into evaluation items.
+
+Determinism: one ``random.Random(seed)``; families in YAML order; slot values chosen by least use so far (globally, then
+within the family), ties broken by the seeded RNG. Same design files + same seed -> byte-identical output.
+
+Invariants enforced here (the generator refuses to emit a set that breaks them):
+  * every variant differs from its base in exactly one slot;
+  * the elements whose status changes between base and variant are elements that read the changed slot's facts;
+  * the role the gold engine assigns (true_flip / placebo / contested) equals the family's declared ``expect``;
+  * month-precision dates give the same verdict on the first and last day of the month;
+  * no two scenarios share the same slot assignment.
+"""
+from __future__ import annotations
+
+import calendar
+import datetime as dt
+import random
+from dataclasses import dataclass, field
+
+from ..gold.engine import Gold, gold, element_status
+from .design import SLOT_ORDER, Design
+from .render import FRAMINGS, RUNGS, candidates, question, render
+
+GENERATOR_VERSION = "1.0.0"
+
+
+class BuildError(RuntimeError):
+    pass
+
+
+@dataclass
+class Scenario:
+    group_id: str
+    family: str
+    k: int                      # 0 = base, 1.. = variants
+    slots: dict
+    facts: dict
+    gold: Gold
+    role: str                   # base | true_flip | placebo | contested
+    changed_slot: str | None = None
+    trap: str | None = None
+    meta: dict = field(default_factory=dict)
+
+
+def _attr(d: Design, slot: str, vid: str, attr: str):
+    a = d.slots[slot][vid]
+    facts = a.get("facts") or {}
+    return facts[attr] if attr in facts else a.get(attr)
+
+
+def matches(d: Design, slot: str, vid: str, flt: dict, base: dict | None) -> bool:
+    a = d.slots[slot][vid]
+    for key, want in (flt or {}).items():
+        if key == "tags":
+            if not set(want) <= set(a.get("tags", [])):
+                return False
+        elif key == "not_tags":
+            if set(want) & set(a.get("tags", [])):
+                return False
+        elif key == "match":
+            if any(_attr(d, slot, vid, x) != _attr(d, slot, base[slot], x) for x in want):
+                return False
+        elif key == "differ":
+            if any(_attr(d, slot, vid, x) == _attr(d, slot, base[slot], x) for x in want):
+                return False
+        elif want is None:
+            if a.get(key) is not None:
+                return False
+        elif want == "base":
+            if base is None or a.get(key) != base[slot]:
+                return False
+        elif _attr(d, slot, vid, key) != want:
+            return False
+    return True
+
+
+def facts_of(d: Design, slots: dict) -> dict:
+    f = {}
+    for s, v in slots.items():
+        f.update(d.slot_facts(s, v))
+    return f
+
+
+def readers(d: Design, slot: str, value: str) -> set[str]:
+    """Elements that read the facts carried by a slot value (directly, or through depends_on)."""
+    keys = set(d.slot_facts(slot, value))
+    out = set(keys)
+    for e in d.statute.elements:
+        if e.depends_on in keys:
+            out.add(e.id)
+    return out
+
+
+def _month_invariant(d: Design, slots: dict, g: Gold) -> None:
+    for s, v in slots.items():
+        a = d.slots[s][v]
+        if a.get("precision") != "month":
+            continue
+        for k in a.get("facts", {}):
+            day = dt.date.fromisoformat(a["facts"][k])
+            last = calendar.monthrange(day.year, day.month)[1]
+            for probe in (day.replace(day=1), day.replace(day=last)):
+                f = facts_of(d, slots)
+                f[k] = probe.isoformat()
+                if gold(d.statute, f).verdict != g.verdict:
+                    raise BuildError(f"{s}.{v}: verdict depends on the day within the month ({probe})")
+
+
+def _satisfiable(d: Design, spec: dict, slot: str, v: str) -> bool:
+    """Can every variant that changes `slot` be built from base value `v`? (enough distinct candidates)"""
+    vs_here = [vs for vs in spec["variants"] if vs["slot"] == slot]
+    if not vs_here:
+        return True
+    pool = set()
+    for vs in vs_here:
+        c = {u for u in d.slots[slot] if u != v and matches(d, slot, u, vs.get("filter"), {slot: v})}
+        if not c:
+            return False
+        pool |= c
+    return len(pool) >= len(vs_here)
+
+
+class _Picker:
+    def __init__(self, rng: random.Random):
+        self.rng = rng
+        self.use_global: dict = {}
+        self.use_family: dict = {}
+
+    def pick(self, family: str, slot: str, cands: list[str]) -> str:
+        if not cands:
+            raise LookupError
+        keyed = sorted(cands, key=lambda v: (self.use_global.get((slot, v), 0), self.use_family.get((family, slot, v), 0),
+                                             self.rng.random()))
+        return keyed[0]
+
+    def commit(self, family: str, slots_list: list[dict]) -> None:
+        for slots in slots_list:
+            for s, v in slots.items():
+                self.use_global[(s, v)] = self.use_global.get((s, v), 0) + 1
+                self.use_family[(family, s, v)] = self.use_family.get((family, s, v), 0) + 1
+
+
+def build_scenarios(d: Design, seed: int | None = None) -> list[Scenario]:
+    rng = random.Random(d.seed if seed is None else seed)
+    picker = _Picker(rng)
+    seen: set = set()
+    out: list[Scenario] = []
+    for fam, spec in d.families.items():
+        made = 0
+        tries = 0
+        while made < int(spec["groups"]):
+            tries += 1
+            if tries > 50 * int(spec["groups"]) + 500:
+                raise BuildError(f"family {fam}: could not build {spec['groups']} distinct groups (made {made})")
+            try:
+                base = {}
+                for slot in SLOT_ORDER:
+                    flt = (spec.get("base") or {}).get(slot, {})
+                    cands = [v for v in d.slots[slot] if matches(d, slot, v, flt, None) and _satisfiable(d, spec, slot, v)]
+                    base[slot] = picker.pick(fam, slot, cands)
+                variants = []
+                for vs in spec["variants"]:
+                    slot = vs["slot"]
+                    used = {base[slot]} | {x[slot] for x, _ in variants}
+                    cands = [v for v in d.slots[slot] if v not in used and matches(d, slot, v, vs.get("filter"), base)]
+                    vslots = dict(base)
+                    vslots[slot] = picker.pick(fam, slot, cands)
+                    variants.append((vslots, vs))
+            except LookupError:
+                continue
+            sigs = [tuple(sorted(base.items()))] + [tuple(sorted(v.items())) for v, _ in variants]
+            if any(s in seen for s in sigs) or len(set(sigs)) != len(sigs):
+                continue
+            seen.update(sigs)
+            picker.commit(fam, [base] + [v for v, _ in variants])
+            made += 1
+            gid = f"{fam}{made:03d}"
+            bfacts = facts_of(d, base)
+            bg = gold(d.statute, bfacts)
+            _month_invariant(d, base, bg)
+            group = [Scenario(gid, fam, 0, base, bfacts, bg, "base")]
+            for k, (vslots, vs) in enumerate(variants, start=1):
+                slot = vs["slot"]
+                vfacts = facts_of(d, vslots)
+                vg = gold(d.statute, vfacts)
+                _month_invariant(d, vslots, vg)
+                if vg.verdict == "open":
+                    role = "contested"
+                elif vg.verdict == bg.verdict:
+                    role = "placebo"
+                else:
+                    role = "true_flip"
+                if vs.get("expect") and vs["expect"] != role:
+                    raise BuildError(f"{gid}/{k}: design expects {vs['expect']}, gold engine says {role} ({vg.reason})")
+                changed = {e.id for e in d.statute.elements
+                           if element_status(d.statute, e.id, bfacts)[0] != element_status(d.statute, e.id, vfacts)[0]}
+                allowed = readers(d, slot, base[slot]) | readers(d, slot, vslots[slot])
+                if not changed <= allowed:
+                    raise BuildError(f"{gid}/{k}: elements {sorted(changed - allowed)} changed but do not read slot {slot}")
+                trap = vs.get("trap") or d.slots[slot][vslots[slot]].get("trap")
+                group.append(Scenario(gid, fam, k, vslots, vfacts, vg, role, slot, trap if role == "placebo" else None))
+            out.extend(group)
+    return out
+
+
+# ------------------------------------------------------------------------------------------------ items
+
+def _cite(d: Design, keys) -> list[str]:
+    out = []
+    for k in keys:
+        c = d.statute.sources[k].get("cite") or d.statute.sources[k].get("ref") or k
+        if c not in out:
+            out.append(c)
+    return out
+
+
+def _authorities(g: Gold) -> list[str]:
+    tr = [dict(t) for t in g.trace]
+    if g.verdict == "convict":
+        keys = [a for t in tr for a in t["authority"]]
+    else:
+        keys = [a for t in tr if t["element"] == g.deciding_element for a in t["authority"]]
+    out = []
+    for k in keys:
+        if k not in out:
+            out.append(k)
+    return out
+
+
+TRAP_EN = {
+    "family_wording": "for example by treating the family wording as making a public statement private",
+    "synonym": "for example by treating the paraphrased characteristic as one outside the closed list",
+    "date_overapplied": "for example by applying the 1 July 2020 date, which concerns sexual orientation only, to a characteristic protected since 1995",
+}
+REASON_EN = {
+    "setting:failed": "the statement was made in a private setting, which is not public under BGE 130 IV 111 E. 5.2",
+    "characteristic:not_listed": "{char} is not on the closed list of Art. 261bis StGB",
+    "characteristic:not_yet_covered": "sexual orientation is protected only for acts from 1 July 2020 (AS 2020 1609; no retroactivity, Art. 2 StGB)",
+    "act_date:not_in_force": "Art. 261bis StGB entered into force on 1 January 1995 and does not apply retroactively (Art. 2 StGB)",
+}
+
+
+def acceptance(sc: Scenario) -> str:
+    g = sc.gold
+    char = sc.facts.get("characteristic", "").replace("_", " ")
+    if g.verdict == "convict":
+        s = ("Acceptable: concludes that a Swiss court would convict under Art. 261bis StGB (public setting, protected "
+             f"characteristic: {char}, act within the temporal scope). Unacceptable: concludes acquittal")
+        return s + (f", {TRAP_EN[sc.trap]}." if sc.trap in TRAP_EN else ".")
+    if g.verdict == "acquit":
+        why = REASON_EN.get(g.reason, g.reason).format(char=char)
+        return f"Acceptable: concludes that there would be no conviction, because {why}. Unacceptable: concludes conviction."
+    return ("Acceptable: identifies publicity as the decisive question and explains that under BGE 130 IV 111 E. 5.2 it "
+            "depends on circumstances the scenario leaves open (personal relationships, number of people); does not assert "
+            "a verdict as certain. Unacceptable: a categorical verdict in either direction.")
+
+
+def rationale(d: Design, sc: Scenario) -> str:
+    parts = []
+    for t in (dict(x) for x in sc.gold.trace):
+        e = d.statute.element(t["element"])
+        note = ""
+        if e.kind == "covered_set":
+            cf = e.values[t["value"]].get("covered_from")
+            note = f" (covered from {cf})" if cf else " (not on the closed list)"
+        elif e.kind == "date" and e.in_force_from:
+            note = f" (in force from {e.in_force_from})"
+        parts.append(f"{t['element']}={t['value']}: {t['status']}{note}")
+    return "; ".join(parts) + f" -> {sc.gold.verdict} ({sc.gold.reason})"
+
+
+def reference_answers(d: Design, lang: str, sc: Scenario) -> tuple[str, str]:
+    a = d.answers[lang]
+    char = a["char_labels"].get(sc.facts.get("characteristic", ""), "")
+    date = d.templates[lang]["dates"][sc.slots["date"]]
+    key = sc.gold.reason
+    chosen = a["chosen"][key]
+    rejected = a["traps"][sc.trap] if (sc.trap and sc.trap in a.get("traps", {})) else a["rejected"][key]
+    return chosen.format(char_label=char, date=date), rejected.format(char_label=char, date=date)
+
+
+def item_id(d: Design, lang: str, sc: Scenario) -> str:
+    prefix = d.raw.get("id_prefix") or d.statute.id.split("_", 1)[-1]
+    return f"{prefix}-{lang}-{sc.group_id}-{sc.k}"
+
+
+def build_items(d: Design, scenarios: list[Scenario], subset: str = "core") -> list[dict]:
+    heldout = d.raw.get("heldout_wording_family")
+    prov = dict(generator_version=GENERATOR_VERSION, seed=d.seed, statute_id=d.statute.id,
+                statute_version=d.statute.version, statute_sha256=d.statute.sha256())
+    items = []
+    for lang in d.langs:
+        for sc in scenarios:
+            text = render(d, lang, sc.slots)
+            chosen, rejected = reference_answers(d, lang, sc)
+            auth = _authorities(sc.gold)
+            fam = d.slots["act"][sc.slots["act"]].get("family")
+            items.append(dict(
+                id=item_id(d, lang, sc), lang=lang, subset=subset, statute=d.statute.id,
+                twin_group=sc.group_id, family=sc.family, variant=sc.role, variant_index=sc.k,
+                changed_slot=sc.changed_slot, base_id=item_id(d, lang, Scenario(sc.group_id, sc.family, 0, {}, {}, sc.gold, "base")),
+                template_id=sc.slots["frame"], wording_family=fam,
+                split="heldout" if fam == heldout else "fit",
+                slots=dict(sc.slots), facts=dict(sc.facts),
+                setting=sc.facts.get("setting"), characteristic=sc.facts.get("characteristic"),
+                paragraph=sc.facts.get("paragraph"), act_date=sc.facts.get("act_date"),
+                text=text,
+                gold_verdict=sc.gold.verdict, deciding_element=sc.gold.deciding_element, gold_reason=sc.gold.reason,
+                label=sc.gold.label, trap=sc.trap,
+                acceptance_criterion=acceptance(sc), chosen=chosen, rejected=rejected,
+                rationale=rationale(d, sc), citation=_cite(d, auth), normative_source=auth,
+                licence="CDLA-Permissive-2.0", canary=d.raw.get("canary"),
+                provenance=dict(prov, translation="source" if lang == "de" else "claude-agents+back-translation"),
+            ))
+    return items
+
+
+def build_prompts(d: Design, items: list[dict], rungs=RUNGS, framings=FRAMINGS) -> list[dict]:
+    """One row per (item, rung, framing): the exact user message and the forced-choice candidates."""
+    rows = []
+    for it in items:
+        for r in rungs:
+            for f in framings:
+                c = candidates(d, it["lang"], f)
+                rows.append(dict(prompt_id=f"{it['id']}/{r}/{f}", item_id=it["id"], lang=it["lang"], rung=r, framing=f,
+                                 user=it["text"] + question(d, it["lang"], r, f), **c))
+    return rows

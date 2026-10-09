@@ -1,0 +1,13 @@
+{
+ "run": "8b-mlx4-base-completion",
+ "rows": 648,
+ "jsonl_sha256": "3794cff76590cc353b55bd83d097135a9a0b83ef38bc91638e89fec97b47607a",
+ "model": "swiss-ai/Apertus-v1.5-8B-base",
+ "precision": "MLX 4-bit g64",
+ "runtime": "mlx-lm 0.32.0",
+ "note": "template-free completion (<s> + fact + question + Antwort:/Urteil:); not comparable to chat rows",
+ "protocol": "comp",
+ "source_file": "spikes/linie9/results/stage_base.json",
+ "source_sha256": "b4ebd7d187d7ef92f36da5864471c1f51bd4d70c23b27e98ad4abd69799a5cc7",
+ "questions_note": "stage9.py question strings, byte-identical to prompts/de.yaml R0/R3"
+}

@@ -1,0 +1,13 @@
+{
+ "run": "8b-gguf-q4_k_m",
+ "rows": 648,
+ "jsonl_sha256": "1989d29e281b7a90a68fdf1e36f3a912393d9738e1e88b362cdb7a3ee3412ed6",
+ "model": "Colby/apertus-v1.5-8b-text-Q4_K_M-GGUF",
+ "file": "apertus-v1.5-8b-text-q4_k_m.gguf",
+ "sha256": "a037df8d87ff6caacee794ee85f55342f2152e0d359b7389033300c3bee5f299",
+ "runtime": "llama.cpp 0.6.0 (ggml 0.26.0), Metal",
+ "protocol": "chat",
+ "source_file": "spikes/gguf/stage_gguf_q4.json",
+ "source_sha256": "aae0812437f4ccecf246770fd638874f15c26d5e167163850985dafe03b0dab6",
+ "questions_note": "stage9.py question strings, byte-identical to prompts/de.yaml R0/R3"
+}

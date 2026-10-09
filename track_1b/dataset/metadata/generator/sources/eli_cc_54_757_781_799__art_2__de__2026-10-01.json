@@ -1,0 +1,16 @@
+{
+ "eli": "eli/cc/54/757_781_799",
+ "eid": "art_2",
+ "lang": "de",
+ "requested_date": "2026-10-09",
+ "applicability_date": "2026-10-01",
+ "url": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/54/757_781_799/20261001/de/xml/fedlex-data-admin-ch-eli-cc-54-757_781_799-20261001-de-xml.xml",
+ "xml_sha256": "6a83a4d0fe4d6bb4d012750eb5e23141aaff8a1e81c33b7508efdac6299d7b76",
+ "paragraphs": [
+  "Nach diesem Gesetze wird beurteilt, wer nach dessen Inkrafttreten ein Verbrechen oder Vergehen begeht.",
+  "Hat der Täter ein Verbrechen oder Vergehen vor Inkrafttreten dieses Gesetzes begangen, erfolgt die Beurteilung aber erst nachher, so ist dieses Gesetz anzuwenden, wenn es für ihn das mildere ist."
+ ],
+ "text_sha256": "36a7d46448612e9d2f68fa3f81acefb4995184190c57eea8d8c80098a426e633",
+ "notes": [],
+ "fetched": "2026-10-09"
+}

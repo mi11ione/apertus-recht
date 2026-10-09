@@ -1,0 +1,16 @@
+{
+ "eli": "eli/cc/54/757_781_799",
+ "eid": "art_2",
+ "lang": "fr",
+ "requested_date": "2026-10-09",
+ "applicability_date": "2026-10-01",
+ "url": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/54/757_781_799/20261001/fr/xml/fedlex-data-admin-ch-eli-cc-54-757_781_799-20261001-fr-xml.xml",
+ "xml_sha256": "4e3ed9f45332b85f99bde2dc46631aac27cafd297ba306436cfabfab83ee8d1a",
+ "paragraphs": [
+  "Est jugé d’après le présent code quiconque commet un crime ou un délit après l’entrée en vigueur de ce code.",
+  "Le présent code est aussi applicable aux crimes et aux délits commis avant la date de son entrée en vigueur si l’auteur n’est mis en jugement qu’après cette date et si le présent code lui est plus favorable que la loi en vigueur au moment de l’infraction."
+ ],
+ "text_sha256": "be0bbe1af67d845ae805c2b7eebb10b56cb9687ec8ab3ac3e4aa63cdbea4207a",
+ "notes": [],
+ "fetched": "2026-10-09"
+}

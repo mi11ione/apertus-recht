@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+src/statute_twins.egg-info/PKG-INFO
+src/statute_twins.egg-info/SOURCES.txt
+src/statute_twins.egg-info/dependency_links.txt
+src/statute_twins.egg-info/entry_points.txt
+src/statute_twins.egg-info/requires.txt
+src/statute_twins.egg-info/top_level.txt

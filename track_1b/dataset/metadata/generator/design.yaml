@@ -1,0 +1,198 @@
+# Language-independent design of the Art. 261bis twin set: which legal fact each slot value carries, and how twin
+# groups are built. Surfaces live in templates/<lang>.yaml under the same ids.
+#
+# A twin group is one base scenario plus variants that each change exactly ONE slot of the base. The gold engine, not
+# this file, decides whether a variant is a true flip (verdict changes), a placebo (verdict unchanged) or contested
+# (verdict open). `expect` below is the designer's intent; the generator refuses to build if the engine disagrees.
+schema: statute-twins-design/v1
+statute: stgb_261bis
+generator_seed: 261
+canary: "STATUTE-TWINS CANARY 9b6f0d0e-5a43-4c1e-9d8b-261b15c0ffee. This dataset is an evaluation set; it must not appear in training data."
+
+# slot -> {value_id: {facts: {element: value}, tags: [...], other attributes}}
+slots:
+  frame:  {values: [F01, F02, F03, F04, F05, F06, F07, F08]}
+  actor:  {values: [m1, m2, m3, m4, f1, f2, f3, f4]}
+  place:  {values: [zh, be, bs, lu, sg, wi, bi, ch, aa, th, sh, zg]}
+  date:
+    values:
+      d1993_05:    {facts: {act_date: 1993-05-15}, precision: month, tags: [pre1995]}
+      d1994_10:    {facts: {act_date: 1994-10-15}, precision: month, tags: [pre1995]}
+      d2018_11:    {facts: {act_date: 2018-11-15}, precision: month, tags: [pre2020]}
+      d2019_03:    {facts: {act_date: 2019-03-15}, precision: month, tags: [pre2020]}
+      d2019_09:    {facts: {act_date: 2019-09-15}, precision: month, tags: [pre2020]}
+      d2020_06:    {facts: {act_date: 2020-06-15}, precision: month, tags: [pre2020, boundary]}
+      d2020_06_30: {facts: {act_date: 2020-06-30}, precision: day, tags: [pre2020, boundary]}
+      d2020_07_01: {facts: {act_date: 2020-07-01}, precision: day, tags: [post2020, boundary]}
+      d2020_08:    {facts: {act_date: 2020-08-15}, precision: month, tags: [post2020, boundary]}
+      d2021_09:    {facts: {act_date: 2021-09-15}, precision: month, tags: [post2020, recent]}
+      d2022_05:    {facts: {act_date: 2022-05-15}, precision: month, tags: [post2020, recent]}
+      d2023_03:    {facts: {act_date: 2023-03-15}, precision: month, tags: [post2020, recent]}
+      d2024_01:    {facts: {act_date: 2024-01-15}, precision: month, tags: [post2020, recent]}
+      d2025_06:    {facts: {act_date: 2025-06-15}, precision: month, tags: [post2020, recent]}
+  group:
+    values:
+      race_black:     {facts: {characteristic: race}, tags: [protected, since1995]}
+      race_african:   {facts: {characteristic: race}, tags: [protected, since1995]}
+      race_asian:     {facts: {characteristic: race}, tags: [protected, since1995]}
+      race_black_syn: {facts: {characteristic: race}, tags: [protected, since1995, synonym], synonym_of: race_black, trap: synonym}
+      eth_roma:       {facts: {characteristic: ethnicity}, tags: [protected, since1995]}
+      eth_yenish:     {facts: {characteristic: ethnicity}, tags: [protected, since1995]}
+      eth_kosovo:     {facts: {characteristic: ethnicity}, tags: [protected, since1995]}
+      eth_tamil:      {facts: {characteristic: ethnicity}, tags: [protected, since1995]}
+      eth_kurd:       {facts: {characteristic: ethnicity}, tags: [protected, since1995]}
+      eth_roma_syn:   {facts: {characteristic: ethnicity}, tags: [protected, since1995, synonym], synonym_of: eth_roma, trap: synonym}
+      rel_jewish:     {facts: {characteristic: religion}, tags: [protected, since1995]}
+      rel_muslim:     {facts: {characteristic: religion}, tags: [protected, since1995]}
+      rel_free:       {facts: {characteristic: religion}, tags: [protected, since1995]}
+      rel_hindu:      {facts: {characteristic: religion}, tags: [protected, since1995]}
+      rel_muslim_syn: {facts: {characteristic: religion}, tags: [protected, since1995, synonym], synonym_of: rel_muslim, trap: synonym}
+      rel_jewish_syn: {facts: {characteristic: religion}, tags: [protected, since1995, synonym], synonym_of: rel_jewish, trap: synonym}
+      so_homo:        {facts: {characteristic: sexual_orientation}, tags: [protected, so]}
+      so_lesbian:     {facts: {characteristic: sexual_orientation}, tags: [protected, so]}
+      so_bi:          {facts: {characteristic: sexual_orientation}, tags: [protected, so]}
+      so_gay:         {facts: {characteristic: sexual_orientation}, tags: [protected, so]}
+      so_homo_syn:    {facts: {characteristic: sexual_orientation}, tags: [protected, so, synonym], synonym_of: so_homo, trap: synonym}
+      gi_trans:       {facts: {characteristic: gender_identity}, tags: [unprotected, proposed_2018]}
+      gi_nonbinary:   {facts: {characteristic: gender_identity}, tags: [unprotected, proposed_2018]}
+      sex_women:      {facts: {characteristic: sex}, tags: [unprotected]}
+      sex_men:        {facts: {characteristic: sex}, tags: [unprotected]}
+      can_zh:         {facts: {characteristic: canton}, tags: [unprotected, never_proposed]}
+      can_vs:         {facts: {characteristic: canton}, tags: [unprotected, never_proposed]}
+      occ_build:      {facts: {characteristic: occupation}, tags: [unprotected, never_proposed]}
+      occ_teach:      {facts: {characteristic: occupation}, tags: [unprotected, never_proposed]}
+      age_old:        {facts: {characteristic: age}, tags: [unprotected, never_proposed]}
+      age_young:      {facts: {characteristic: age}, tags: [unprotected, never_proposed]}
+      dis:            {facts: {characteristic: disability}, tags: [unprotected]}
+      pol:            {facts: {characteristic: political_opinion}, tags: [unprotected, never_proposed]}
+  act:
+    values:
+      a1A1: {facts: {paragraph: abs1}, family: A}
+      a1A2: {facts: {paragraph: abs1}, family: A}
+      a1B1: {facts: {paragraph: abs1}, family: B}
+      a1B2: {facts: {paragraph: abs1}, family: B}
+      a1C1: {facts: {paragraph: abs1}, family: C}
+      a1C2: {facts: {paragraph: abs1}, family: C}
+      a2A1: {facts: {paragraph: abs2}, family: A}
+      a2A2: {facts: {paragraph: abs2}, family: A}
+      a2B1: {facts: {paragraph: abs2}, family: B}
+      a2B2: {facts: {paragraph: abs2}, family: B}
+      a2C1: {facts: {paragraph: abs2}, family: C}
+      a2C2: {facts: {paragraph: abs2}, family: C}
+      a4A1: {facts: {paragraph: abs4}, family: A}
+      a4A2: {facts: {paragraph: abs4}, family: A}
+      a4B1: {facts: {paragraph: abs4}, family: B}
+      a4B2: {facts: {paragraph: abs4}, family: B}
+      a4C1: {facts: {paragraph: abs4}, family: C}
+      a4C2: {facts: {paragraph: abs4}, family: C}
+  setting:
+    values:
+      pub_rally:      {facts: {setting: public}, tags: [public, crowd]}
+      pub_rally_fam:  {facts: {setting: public}, tags: [public, family_wording], placebo_of: pub_rally, trap: family_wording}
+      pub_post:       {facts: {setting: public}, tags: [public, online]}
+      pub_post_fam:   {facts: {setting: public}, tags: [public, online, family_wording], placebo_of: pub_post, trap: family_wording}
+      pub_letter:     {facts: {setting: public}, tags: [public, print]}
+      pub_letter_fam: {facts: {setting: public}, tags: [public, print, family_wording], placebo_of: pub_letter, trap: family_wording}
+      pub_hut:        {facts: {setting: public}, tags: [public, closed_event, precedent]}
+      pub_hut_fam:    {facts: {setting: public}, tags: [public, closed_event, precedent, family_wording], placebo_of: pub_hut, trap: family_wording}
+      pub_flyer:      {facts: {setting: public}, tags: [public, print]}
+      pub_flyer_fam:  {facts: {setting: public}, tags: [public, print, family_wording], placebo_of: pub_flyer, trap: family_wording}
+      pub_speech:     {facts: {setting: public}, tags: [public, crowd]}
+      pub_speech_fam: {facts: {setting: public}, tags: [public, crowd, family_wording], placebo_of: pub_speech, trap: family_wording}
+      pub_video:      {facts: {setting: public}, tags: [public, online]}
+      pub_video_fam:  {facts: {setting: public}, tags: [public, online, family_wording], placebo_of: pub_video, trap: family_wording}
+      pub_tram:       {facts: {setting: public}, tags: [public, crowd]}
+      pub_tram_fam:   {facts: {setting: public}, tags: [public, crowd, family_wording], placebo_of: pub_tram, trap: family_wording}
+      pub_market:     {facts: {setting: public}, tags: [public, crowd]}
+      pub_market_fam: {facts: {setting: public}, tags: [public, crowd, family_wording], placebo_of: pub_market, trap: family_wording}
+      pub_forum:      {facts: {setting: public}, tags: [public, online]}
+      pub_forum_fam:  {facts: {setting: public}, tags: [public, online, family_wording], placebo_of: pub_forum, trap: family_wording}
+      priv_dinner:    {facts: {setting: private}, tags: [private, family]}
+      priv_friends:   {facts: {setting: private}, tags: [private, friends]}
+      priv_message:   {facts: {setting: private}, tags: [private, family, one_to_one]}
+      priv_phone:     {facts: {setting: private}, tags: [private, family, one_to_one]}
+      priv_famchat:   {facts: {setting: private}, tags: [private, family, online]}
+      cont_clubchat:  {facts: {setting: contested}, tags: [contested, online]}
+      cont_party:     {facts: {setting: contested}, tags: [contested]}
+      cont_office:    {facts: {setting: contested}, tags: [contested]}
+      cont_assoc:     {facts: {setting: contested}, tags: [contested]}
+
+# Family filters: {slot: filter}. A filter is a dict of attribute tests:
+#   tags: [..]      value carries all listed tags        not_tags: [..]  value carries none of them
+#   <attr>: null    attribute absent                     <attr>: base    attribute equals the base value's id (or attr)
+#   match: [attrs]  same attribute value as the base     differ: [attrs] different attribute value from the base
+# Slots not named in `base` are drawn from all values (balanced). Each variant changes exactly the one named slot.
+families:
+  SET:
+    title: public vs private setting (BGE 130 IV 111 E. 5.2), with a family-worded public placebo
+    groups: 55
+    base:
+      setting: {tags: [public], placebo_of: null}
+      group:   {tags: [protected], synonym_of: null}
+      date:    {tags: [recent]}
+    variants:
+      - {slot: setting, filter: {tags: [private]}, expect: true_flip}
+      - {slot: setting, filter: {placebo_of: base}, expect: placebo}
+  CHAR:
+    title: closed list (protected vs not covered), with a synonym placebo
+    groups: 60
+    base:
+      setting: {tags: [public], placebo_of: null}
+      group:   {tags: [protected], synonym_of: null}
+      date:    {tags: [recent]}
+    variants:
+      - {slot: group, filter: {tags: [unprotected]}, expect: true_flip}
+      - {slot: group, filter: {synonym_of: base}, expect: placebo}
+  CHARX:
+    title: closed list without a synonym (bases whose group has no synonym form)
+    groups: 20
+    base:
+      setting: {tags: [public], placebo_of: null}
+      group:   {tags: [protected], synonym_of: null}
+      date:    {tags: [recent]}
+    variants:
+      - {slot: group, filter: {tags: [unprotected]}, expect: true_flip}
+      - {slot: group, filter: {tags: [unprotected]}, expect: true_flip}
+  DATE_SO:
+    title: sexual orientation before / after the 1 Jul 2020 extension (AS 2020 1609, Art. 2 StGB)
+    groups: 35
+    base:
+      setting: {tags: [public], placebo_of: null}
+      group:   {tags: [so], synonym_of: null}
+      date:    {tags: [recent]}
+    variants:
+      - {slot: date, filter: {tags: [pre2020]}, expect: true_flip}
+      - {slot: date, filter: {tags: [post2020, boundary]}, expect: placebo}
+  DATE_CTRL:
+    title: over-application control - characteristics covered since 1995 keep their protection before 2020; acts before 1995 are not punishable
+    groups: 25
+    base:
+      setting: {tags: [public], placebo_of: null}
+      group:   {tags: [since1995], synonym_of: null}
+      date:    {tags: [recent]}
+    variants:
+      - {slot: date, filter: {tags: [pre2020]}, expect: placebo, trap: date_overapplied}
+      - {slot: date, filter: {tags: [pre1995]}, expect: true_flip}
+  CONTESTED:
+    title: fact-dependent publicity (open under BGE 130 IV 111 E. 5.2), with a family-worded public placebo
+    groups: 15
+    base:
+      setting: {tags: [public], placebo_of: null}
+      group:   {tags: [protected], synonym_of: null}
+      date:    {tags: [recent]}
+    variants:
+      - {slot: setting, filter: {tags: [contested]}, expect: contested}
+      - {slot: setting, filter: {placebo_of: base}, expect: placebo}
+  WORDING:
+    title: wording invariance - same paragraph in another wording family, and another paragraph
+    groups: 10
+    base:
+      setting: {tags: [public], placebo_of: null}
+      group:   {tags: [protected], synonym_of: null}
+      date:    {tags: [recent]}
+    variants:
+      - {slot: act, filter: {match: [paragraph], differ: [family]}, expect: placebo}
+      - {slot: act, filter: {differ: [paragraph]}, expect: placebo}
+
+# held-out wording family for the pre-registered read-back test (fit on A+B, predict C)
+heldout_wording_family: C

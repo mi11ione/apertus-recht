@@ -1,0 +1,2603 @@
+[
+ {
+  "id": "frame.F01",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "frame.F01.f",
+  "slots": {
+   "frame": "F01",
+   "actor": "f1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich eine Frau in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief sie zu Hass gegen Muslime wegen ihrer Religion auf. Sie handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, une femme s'est exprimée comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, elle a incité à la haine envers les musulmans en raison de leur religion. Elle a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 una donna si è espressa a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "frame.F02",
+  "slots": {
+   "frame": "F02",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 kam es in Zürich zu folgendem Vorfall, an dem ein Mann beteiligt war: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, l'incident suivant, impliquant un homme, s'est produit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 a Zurigo si è verificato il seguente episodio, che ha visto coinvolto un uomo: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "frame.F02.f",
+  "slots": {
+   "frame": "F02",
+   "actor": "f1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 kam es in Zürich zu folgendem Vorfall, an dem eine Frau beteiligt war: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief sie zu Hass gegen Muslime wegen ihrer Religion auf. Sie handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, l'incident suivant, impliquant une femme, s'est produit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, elle a incité à la haine envers les musulmans en raison de leur religion. Elle a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 a Zurigo si è verificato il seguente episodio, che ha visto coinvolta una donna: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "frame.F03",
+  "slots": {
+   "frame": "F03",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Ein Mann aus Zürich steht unter folgendem Vorwurf: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Muslime wegen ihrer Religion auf, und zwar im März 2023. Er handelte vorsätzlich.",
+  "fr": "Faits : Un homme domicilié à Zurich se voit reprocher ce qui suit : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les musulmans en raison de leur religion, et ce en mars 2023. Il a agi intentionnellement.",
+  "it": "Fatti: Un uomo di Zurigo è accusato di quanto segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione, e precisamente nel marzo 2023. Ha agito intenzionalmente."
+ },
+ {
+  "id": "frame.F03.f",
+  "slots": {
+   "frame": "F03",
+   "actor": "f1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Eine Frau aus Zürich steht unter folgendem Vorwurf: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief sie zu Hass gegen Muslime wegen ihrer Religion auf, und zwar im März 2023. Sie handelte vorsätzlich.",
+  "fr": "Faits : Une femme domiciliée à Zurich se voit reprocher ce qui suit : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, elle a incité à la haine envers les musulmans en raison de leur religion, et ce en mars 2023. Elle a agi intentionnellement.",
+  "it": "Fatti: Una donna di Zurigo è accusata di quanto segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione, e precisamente nel marzo 2023. Ha agito intenzionalmente."
+ },
+ {
+  "id": "frame.F04",
+  "slots": {
+   "frame": "F04",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: In Zürich äusserte sich ein Mann im März 2023 wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Muslime wegen ihrer Religion auf. Der Vorsatz ist unbestritten.",
+  "fr": "Faits : À Zurich, en mars 2023, un homme s'est exprimé comme suit : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les musulmans en raison de leur religion. L'intention n'est pas contestée.",
+  "it": "Fatti: A Zurigo un uomo si è espresso nel marzo 2023 come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione. L'intenzione non è contestata."
+ },
+ {
+  "id": "frame.F04.f",
+  "slots": {
+   "frame": "F04",
+   "actor": "f1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: In Zürich äusserte sich eine Frau im März 2023 wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief sie zu Hass gegen Muslime wegen ihrer Religion auf. Der Vorsatz ist unbestritten.",
+  "fr": "Faits : À Zurich, en mars 2023, une femme s'est exprimée comme suit : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, elle a incité à la haine envers les musulmans en raison de leur religion. L'intention n'est pas contestée.",
+  "it": "Fatti: A Zurigo una donna si è espressa nel marzo 2023 come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione. L'intenzione non è contestata."
+ },
+ {
+  "id": "frame.F05",
+  "slots": {
+   "frame": "F05",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 hielt sich ein Mann in Zürich auf. An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme se trouvait à Zurich. Lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si trovava a Zurigo. Durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "frame.F05.f",
+  "slots": {
+   "frame": "F05",
+   "actor": "f1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 hielt sich eine Frau in Zürich auf. An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief sie zu Hass gegen Muslime wegen ihrer Religion auf. Sie handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, une femme se trouvait à Zurich. Lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, elle a incité à la haine envers les musulmans en raison de leur religion. Elle a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 una donna si trovava a Zurigo. Durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "frame.F06",
+  "slots": {
+   "frame": "F06",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Ein Mann lebt in Zürich. Im März 2023 geschah Folgendes: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er wusste, was er tat, und wollte es so.",
+  "fr": "Faits : Un homme vit à Zurich. En mars 2023, il s'est passé ce qui suit : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les musulmans en raison de leur religion. Il savait ce qu'il faisait et le voulait.",
+  "it": "Fatti: Un uomo vive a Zurigo. Nel marzo 2023 è accaduto quanto segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione. Sapeva ciò che stava facendo e voleva farlo."
+ },
+ {
+  "id": "frame.F06.f",
+  "slots": {
+   "frame": "F06",
+   "actor": "f1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Eine Frau lebt in Zürich. Im März 2023 geschah Folgendes: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief sie zu Hass gegen Muslime wegen ihrer Religion auf. Sie wusste, was sie tat, und wollte es so.",
+  "fr": "Faits : Une femme vit à Zurich. En mars 2023, il s'est passé ce qui suit : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, elle a incité à la haine envers les musulmans en raison de leur religion. Elle savait ce qu'elle faisait et le voulait.",
+  "it": "Fatti: Una donna vive a Zurigo. Nel marzo 2023 è accaduto quanto segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione. Sapeva ciò che stava facendo e voleva farlo."
+ },
+ {
+  "id": "frame.F07",
+  "slots": {
+   "frame": "F07",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Gemäss Anklageschrift äusserte sich ein Mann im März 2023 in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : Selon l'acte d'accusation, en mars 2023, à Zurich, un homme s'est exprimé comme suit : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Secondo l'atto d'accusa, nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "frame.F07.f",
+  "slots": {
+   "frame": "F07",
+   "actor": "f1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Gemäss Anklageschrift äusserte sich eine Frau im März 2023 in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief sie zu Hass gegen Muslime wegen ihrer Religion auf. Sie handelte vorsätzlich.",
+  "fr": "Faits : Selon l'acte d'accusation, en mars 2023, à Zurich, une femme s'est exprimée comme suit : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, elle a incité à la haine envers les musulmans en raison de leur religion. Elle a agi intentionnellement.",
+  "it": "Fatti: Secondo l'atto d'accusa, nel marzo 2023 una donna si è espressa a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "frame.F08",
+  "slots": {
+   "frame": "F08",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 wurde in Zürich ein Vorfall aktenkundig, an dem ein Mann beteiligt war: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Muslime wegen ihrer Religion auf. Dass er vorsätzlich handelte, ist erstellt.",
+  "fr": "Faits : En mars 2023, à Zurich, un incident impliquant un homme a été consigné au dossier : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les musulmans en raison de leur religion. Il est établi qu'il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 a Zurigo è stato messo agli atti un episodio in cui era coinvolto un uomo: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione. È accertato che ha agito intenzionalmente."
+ },
+ {
+  "id": "frame.F08.f",
+  "slots": {
+   "frame": "F08",
+   "actor": "f1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 wurde in Zürich ein Vorfall aktenkundig, an dem eine Frau beteiligt war: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief sie zu Hass gegen Muslime wegen ihrer Religion auf. Dass sie vorsätzlich handelte, ist erstellt.",
+  "fr": "Faits : En mars 2023, à Zurich, un incident impliquant une femme a été consigné au dossier : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, elle a incité à la haine envers les musulmans en raison de leur religion. Il est établi qu'elle a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 a Zurigo è stato messo agli atti un episodio in cui era coinvolta una donna: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione. È accertato che ha agito intenzionalmente."
+ },
+ {
+  "id": "actor.m1",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "actor.m2",
+  "slots": {
+   "frame": "F01",
+   "actor": "m2",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Rentner in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un retraité s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un pensionato si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "actor.m3",
+  "slots": {
+   "frame": "F01",
+   "actor": "m3",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Unternehmer in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un entrepreneur s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un imprenditore si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "actor.m4",
+  "slots": {
+   "frame": "F01",
+   "actor": "m4",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Student in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un étudiant s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 uno studente si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "actor.f1",
+  "slots": {
+   "frame": "F01",
+   "actor": "f1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich eine Frau in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief sie zu Hass gegen Muslime wegen ihrer Religion auf. Sie handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, une femme s'est exprimée comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, elle a incité à la haine envers les musulmans en raison de leur religion. Elle a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 una donna si è espressa a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "actor.f2",
+  "slots": {
+   "frame": "F01",
+   "actor": "f2",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich eine Rentnerin in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief sie zu Hass gegen Muslime wegen ihrer Religion auf. Sie handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, une retraitée s'est exprimée comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, elle a incité à la haine envers les musulmans en raison de leur religion. Elle a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 una pensionata si è espressa a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "actor.f3",
+  "slots": {
+   "frame": "F01",
+   "actor": "f3",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich eine Unternehmerin in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief sie zu Hass gegen Muslime wegen ihrer Religion auf. Sie handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, une entrepreneuse s'est exprimée comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, elle a incité à la haine envers les musulmans en raison de leur religion. Elle a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un'imprenditrice si è espressa a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "actor.f4",
+  "slots": {
+   "frame": "F01",
+   "actor": "f4",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich eine Studentin in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief sie zu Hass gegen Muslime wegen ihrer Religion auf. Sie handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, une étudiante s'est exprimée comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, elle a incité à la haine envers les musulmans en raison de leur religion. Elle a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 una studentessa si è espressa a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "place.zh",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "place.be",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "be",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Bern wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Berne : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Berna come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "place.bs",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "bs",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Basel wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Bâle : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Basilea come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "place.lu",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "lu",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Luzern wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Lucerne : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Lucerna come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "place.sg",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "sg",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in St. Gallen wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Saint-Gall : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a San Gallo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "place.wi",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "wi",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Winterthur wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Winterthour : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Winterthur come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "place.bi",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "bi",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Biel/Bienne wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Bienne : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Bienne come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "place.ch",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "ch",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Chur wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Coire : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Coira come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "place.aa",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "aa",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Aarau wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Aarau : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso ad Aarau come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "place.th",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "th",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Thun wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Thoune : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Thun come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "place.sh",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "sh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Schaffhausen wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Schaffhouse : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Sciaffusa come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "place.zg",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zg",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zug wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zoug : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zugo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "date.d1993_05",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d1993_05",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im Mai 1993 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mai 1993, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel maggio 1993 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "date.d1994_10",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d1994_10",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im Oktober 1994 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En octobre 1994, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nell'ottobre 1994 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "date.d2018_11",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2018_11",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im November 2018 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En novembre 2018, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel novembre 2018 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "date.d2019_03",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2019_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2019 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2019, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2019 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "date.d2019_09",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2019_09",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im September 2019 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En septembre 2019, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel settembre 2019 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "date.d2020_06",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2020_06",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im Juni 2020 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En juin 2020, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel giugno 2020 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "date.d2020_06_30",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2020_06_30",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Am 30. Juni 2020 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : Le 30 juin 2020, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Il 30 giugno 2020 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "date.d2020_07_01",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2020_07_01",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Am 1. Juli 2020 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : Le 1er juillet 2020, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Il 1° luglio 2020 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "date.d2020_08",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2020_08",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im August 2020 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En août 2020, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nell'agosto 2020 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "date.d2021_09",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2021_09",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im September 2021 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En septembre 2021, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel settembre 2021 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "date.d2022_05",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2022_05",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im Mai 2022 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mai 2022, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel maggio 2022 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "date.d2023_03",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "date.d2024_01",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2024_01",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im Januar 2024 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En janvier 2024, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel gennaio 2024 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "date.d2025_06",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2025_06",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im Juni 2025 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En juin 2025, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel giugno 2025 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "group.race_black",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "race_black",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Schwarze Menschen wegen ihrer Rasse auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les personnes noires en raison de leur appartenance raciale. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro le persone nere a causa della loro razza. Ha agito intenzionalmente."
+ },
+ {
+  "id": "group.race_african",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "race_african",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Menschen afrikanischer Herkunft wegen ihrer Rasse auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les personnes d'origine africaine en raison de leur appartenance raciale. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro le persone di origine africana a causa della loro razza. Ha agito intenzionalmente."
+ },
+ {
+  "id": "group.race_asian",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "race_asian",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Menschen asiatischer Herkunft wegen ihrer Rasse auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les personnes d'origine asiatique en raison de leur appartenance raciale. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro le persone di origine asiatica a causa della loro razza. Ha agito intenzionalmente."
+ },
+ {
+  "id": "group.race_black_syn",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "race_black_syn",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Schwarze Menschen wegen ihrer Hautfarbe auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les personnes noires en raison de leur couleur de peau. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro le persone nere a causa del colore della loro pelle. Ha agito intenzionalmente."
+ },
+ {
+  "id": "group.eth_roma",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "eth_roma",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Angehörige der Roma wegen ihrer Ethnie auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les Roms en raison de leur appartenance ethnique. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i membri della comunità rom a causa della loro etnia. Ha agito intenzionalmente."
+ },
+ {
+  "id": "group.eth_yenish",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "eth_yenish",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Angehörige der Jenischen wegen ihrer Ethnie auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les Yéniches en raison de leur appartenance ethnique. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i membri della comunità jenisch a causa della loro etnia. Ha agito intenzionalmente."
+ },
+ {
+  "id": "group.eth_kosovo",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "eth_kosovo",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Kosovo-Albaner wegen ihrer Ethnie auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les Albanais du Kosovo en raison de leur appartenance ethnique. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro gli albanesi del Kosovo a causa della loro etnia. Ha agito intenzionalmente."
+ },
+ {
+  "id": "group.eth_tamil",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "eth_tamil",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Tamilen wegen ihrer Ethnie auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les Tamouls en raison de leur appartenance ethnique. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i tamil a causa della loro etnia. Ha agito intenzionalmente."
+ },
+ {
+  "id": "group.eth_kurd",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "eth_kurd",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Kurden wegen ihrer Ethnie auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les Kurdes en raison de leur appartenance ethnique. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i curdi a causa della loro etnia. Ha agito intenzionalmente."
+ },
+ {
+  "id": "group.eth_roma_syn",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "eth_roma_syn",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Angehörige der Roma wegen ihrer ethnischen Zugehörigkeit auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les Roms en raison de leur origine ethnique. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i membri della comunità rom a causa della loro appartenenza etnica. Ha agito intenzionalmente."
+ },
+ {
+  "id": "group.rel_jewish",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_jewish",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Juden wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les juifs en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro gli ebrei a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "group.rel_muslim",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "group.rel_free",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_free",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Angehörige einer christlichen Freikirche wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les membres d'une Église libre chrétienne en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i membri di una chiesa cristiana libera a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "group.rel_hindu",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_hindu",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Hindus wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les hindous en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro gli indù a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "group.rel_muslim_syn",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim_syn",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Muslime wegen ihres Glaubens auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les musulmans en raison de leur foi. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro fede. Ha agito intenzionalmente."
+ },
+ {
+  "id": "group.rel_jewish_syn",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_jewish_syn",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Juden wegen ihres Glaubens auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les juifs en raison de leur foi. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro gli ebrei a causa della loro fede. Ha agito intenzionalmente."
+ },
+ {
+  "id": "group.so_homo",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "so_homo",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen homosexuelle Personen wegen ihrer sexuellen Orientierung auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les personnes homosexuelles en raison de leur orientation sexuelle. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro le persone omosessuali a causa del loro orientamento sessuale. Ha agito intenzionalmente."
+ },
+ {
+  "id": "group.so_lesbian",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "so_lesbian",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen lesbische Frauen wegen ihrer sexuellen Orientierung auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les femmes lesbiennes en raison de leur orientation sexuelle. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro le donne lesbiche a causa del loro orientamento sessuale. Ha agito intenzionalmente."
+ },
+ {
+  "id": "group.so_bi",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "so_bi",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen bisexuelle Personen wegen ihrer sexuellen Orientierung auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les personnes bisexuelles en raison de leur orientation sexuelle. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro le persone bisessuali a causa del loro orientamento sessuale. Ha agito intenzionalmente."
+ },
+ {
+  "id": "group.so_gay",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "so_gay",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen schwule Männer wegen ihrer sexuellen Orientierung auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les hommes gays en raison de leur orientation sexuelle. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro gli uomini gay a causa del loro orientamento sessuale. Ha agito intenzionalmente."
+ },
+ {
+  "id": "group.so_homo_syn",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "so_homo_syn",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen homosexuelle Personen wegen ihrer Homosexualität auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les personnes homosexuelles en raison de leur homosexualité. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro le persone omosessuali a causa della loro omosessualità. Ha agito intenzionalmente."
+ },
+ {
+  "id": "group.gi_trans",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "gi_trans",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen trans Personen wegen ihrer Geschlechtsidentität auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les personnes trans en raison de leur identité de genre. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro le persone trans a causa della loro identità di genere. Ha agito intenzionalmente."
+ },
+ {
+  "id": "group.gi_nonbinary",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "gi_nonbinary",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen nichtbinäre Personen wegen ihrer Geschlechtsidentität auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les personnes non binaires en raison de leur identité de genre. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro le persone non binarie a causa della loro identità di genere. Ha agito intenzionalmente."
+ },
+ {
+  "id": "group.sex_women",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "sex_women",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Frauen wegen ihres Geschlechts auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les femmes en raison de leur sexe. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro le donne a causa del loro sesso. Ha agito intenzionalmente."
+ },
+ {
+  "id": "group.sex_men",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "sex_men",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Männer wegen ihres Geschlechts auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les hommes en raison de leur sexe. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro gli uomini a causa del loro sesso. Ha agito intenzionalmente."
+ },
+ {
+  "id": "group.can_zh",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "can_zh",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Zürcherinnen und Zürcher wegen ihrer Kantonszugehörigkeit auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les Zurichoises et les Zurichois en raison de leur appartenance cantonale. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro le zurighesi e gli zurighesi a causa della loro appartenenza cantonale. Ha agito intenzionalmente."
+ },
+ {
+  "id": "group.can_vs",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "can_vs",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Walliserinnen und Walliser wegen ihrer Kantonszugehörigkeit auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les Valaisannes et les Valaisans en raison de leur appartenance cantonale. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro le vallesane e i vallesani a causa della loro appartenenza cantonale. Ha agito intenzionalmente."
+ },
+ {
+  "id": "group.occ_build",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "occ_build",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Bauarbeiter wegen ihres Berufs auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les ouvriers du bâtiment en raison de leur profession. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro gli operai edili a causa della loro professione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "group.occ_teach",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "occ_teach",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Lehrpersonen wegen ihres Berufs auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les enseignantes et les enseignants en raison de leur profession. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i docenti a causa della loro professione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "group.age_old",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "age_old",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen ältere Menschen wegen ihres Alters auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les personnes âgées en raison de leur âge. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro le persone anziane a causa della loro età. Ha agito intenzionalmente."
+ },
+ {
+  "id": "group.age_young",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "age_young",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen junge Erwachsene wegen ihres Alters auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les jeunes adultes en raison de leur âge. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i giovani adulti a causa della loro età. Ha agito intenzionalmente."
+ },
+ {
+  "id": "group.dis",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "dis",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Menschen mit einer Behinderung wegen ihrer Behinderung auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les personnes en situation de handicap en raison de leur handicap. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro le persone con disabilità a causa della loro disabilità. Ha agito intenzionalmente."
+ },
+ {
+  "id": "group.pol",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "pol",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Mitglieder einer politischen Partei wegen ihrer politischen Überzeugung auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les membres d'un parti politique en raison de leurs opinions politiques. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i membri di un partito politico a causa delle loro convinzioni politiche. Ha agito intenzionalmente."
+ },
+ {
+  "id": "act.a1A1",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "act.a1A2",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A2",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zur Diskriminierung von Muslimen wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la discrimination envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato alla discriminazione dei musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "act.a1B1",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1B1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen forderte er dazu auf, Muslime wegen ihrer Religion zu hassen. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a appelé à haïr les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha esortato a odiare i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "act.a1B2",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1B2",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen stachelte er zum Hass gegen Muslime wegen ihrer Religion an. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a attisé la haine contre les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha fomentato l'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "act.a1C1",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1C1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen warb er dafür, Muslime wegen ihrer Religion zu benachteiligen und auszugrenzen. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a préconisé de défavoriser et d'exclure les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha invitato a svantaggiare ed emarginare i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "act.a1C2",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1C2",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er dazu auf, Muslimen wegen ihrer Religion Wohnungen und Arbeitsstellen zu verweigern. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a exhorté à refuser des logements et des emplois aux musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato a negare alloggi e posti di lavoro ai musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "act.a2A1",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a2A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen verbreitete er eine Ideologie, die auf die systematische Herabsetzung von Muslimen wegen ihrer Religion gerichtet ist. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a propagé une idéologie visant à rabaisser de façon systématique les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha propagato un'ideologia intesa a discreditare sistematicamente i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "act.a2A2",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a2A2",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen verbreitete er Schriften einer Lehre, die Muslime wegen ihrer Religion systematisch herabsetzt. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a diffusé les écrits d'une doctrine qui rabaisse systématiquement les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha diffuso scritti di una dottrina che discredita sistematicamente i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "act.a2B1",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a2B1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen propagierte er eine Weltanschauung, nach der Muslime wegen ihrer Religion als minderwertig gelten. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a promu une vision du monde qui assigne un rang inférieur aux musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha propagandato una visione del mondo secondo cui sono da considerare inferiori i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "act.a2B2",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a2B2",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen warb er für eine Ideologie, die darauf abzielt, Muslime wegen ihrer Religion systematisch zu verleumden. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a fait la promotion d'une idéologie qui a pour but de dénigrer systématiquement les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha fatto propaganda per un'ideologia che mira a calunniare sistematicamente i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "act.a2C1",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a2C1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen verbreitete er eine Lehre, die Muslime wegen ihrer Religion systematisch als minderwertig darstellt. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a diffusé une doctrine qui présente systématiquement comme des êtres inférieurs les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha diffuso una dottrina che presenta sistematicamente come inferiori i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "act.a2C2",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a2C2",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen verbreitete er systematisch Thesen, wonach Muslime wegen ihrer Religion weniger wert seien als andere Menschen. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a diffusé systématiquement des thèses selon lesquelles les musulmans en raison de leur religion vaudraient moins que les autres êtres humains. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha diffuso sistematicamente tesi secondo cui i musulmani a causa della loro religione varrebbero meno degli altri esseri umani. Ha agito intenzionalmente."
+ },
+ {
+  "id": "act.a4A1",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a4A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen setzte er Muslime wegen ihrer Religion in einer gegen die Menschenwürde verstossenden Weise herab. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a abaissé d'une façon qui porte atteinte à la dignité humaine les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha discreditato in modo lesivo della dignità umana i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "act.a4A2",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a4A2",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen würdigte er Muslime wegen ihrer Religion in einer Weise herab, die gegen die Menschenwürde verstösst. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a dévalorisé les musulmans en raison de leur religion d'une manière contraire à la dignité humaine. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha denigrato i musulmani a causa della loro religione in un modo che lede la dignità umana. Ha agito intenzionalmente."
+ },
+ {
+  "id": "act.a4B1",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a4B1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen stellte er Muslime wegen ihrer Religion als Menschen minderen Werts dar. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a présenté comme des êtres humains de moindre valeur les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha descritto come esseri umani di minor valore i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "act.a4B2",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a4B2",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen verunglimpfte er Muslime wegen ihrer Religion in menschenverachtender Weise. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a vilipendé les musulmans en raison de leur religion d'une manière empreinte de mépris pour l'être humain. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha vilipeso in modo disumano i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "act.a4C1",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a4C1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen sprach er Muslimen wegen ihrer Religion die Gleichwertigkeit als Menschen ab. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a nié l'égale valeur humaine des musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha negato il pari valore in quanto esseri umani ai musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "act.a4C2",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a4C2",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen bezeichnete er Muslime wegen ihrer Religion als Menschen zweiter Klasse. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a qualifié d'êtres humains de seconde zone les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha definito esseri umani di seconda categoria i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.pub_rally",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.pub_rally.f",
+  "slots": {
+   "frame": "F01",
+   "actor": "f1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich eine Frau in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen rief sie zu Hass gegen Muslime wegen ihrer Religion auf. Sie handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, une femme s'est exprimée comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, elle a incité à la haine envers les musulmans en raison de leur religion. Elle a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 una donna si è espressa a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.pub_rally_fam",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally_fam"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen, die er als «Familienausflug» zusammen mit seiner Ehefrau und seinen Kindern besuchte, rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes et à laquelle il assistait en « sortie familiale » avec son épouse et ses enfants, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, alla quale ha partecipato come «gita in famiglia» insieme a sua moglie e ai suoi figli, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.pub_rally_fam.f",
+  "slots": {
+   "frame": "F01",
+   "actor": "f1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_rally_fam"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich eine Frau in Zürich wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen, die sie als «Familienausflug» zusammen mit ihrem Ehemann und ihren Kindern besuchte, rief sie zu Hass gegen Muslime wegen ihrer Religion auf. Sie handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, une femme s'est exprimée comme suit à Zurich : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes et à laquelle elle assistait en « sortie familiale » avec son mari et ses enfants, elle a incité à la haine envers les musulmans en raison de leur religion. Elle a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 una donna si è espressa a Zurigo come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, alla quale ha partecipato come «gita in famiglia» insieme a suo marito e ai suoi figli, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.pub_post",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_post"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: In einem öffentlich einsehbaren Beitrag auf seinem Social-Media-Profil rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : dans une publication consultable publiquement sur son profil de réseau social, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: in un post consultabile pubblicamente sul suo profilo sui social media, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.pub_post.f",
+  "slots": {
+   "frame": "F01",
+   "actor": "f1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_post"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich eine Frau in Zürich wie folgt: In einem öffentlich einsehbaren Beitrag auf ihrem Social-Media-Profil rief sie zu Hass gegen Muslime wegen ihrer Religion auf. Sie handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, une femme s'est exprimée comme suit à Zurich : dans une publication consultable publiquement sur son profil de réseau social, elle a incité à la haine envers les musulmans en raison de leur religion. Elle a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 una donna si è espressa a Zurigo come segue: in un post consultabile pubblicamente sul suo profilo sui social media, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.pub_post_fam",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_post_fam"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: In einem öffentlich einsehbaren Beitrag auf seinem Social-Media-Profil, den er an seine Familie richtete («Liebe Familie, …») und den auch seine Eltern und Geschwister lesen, rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : dans une publication consultable publiquement sur son profil de réseau social, publication qu'il a adressée à sa famille (« Chère famille, … ») et que lisent aussi ses parents et ses frères et sœurs, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: in un post consultabile pubblicamente sul suo profilo sui social media, rivolto alla sua famiglia («Cara famiglia, …») e letto anche dai suoi genitori e dai suoi fratelli, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.pub_post_fam.f",
+  "slots": {
+   "frame": "F01",
+   "actor": "f1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_post_fam"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich eine Frau in Zürich wie folgt: In einem öffentlich einsehbaren Beitrag auf ihrem Social-Media-Profil, den sie an ihre Familie richtete («Liebe Familie, …») und den auch ihre Eltern und Geschwister lesen, rief sie zu Hass gegen Muslime wegen ihrer Religion auf. Sie handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, une femme s'est exprimée comme suit à Zurich : dans une publication consultable publiquement sur son profil de réseau social, publication qu'elle a adressée à sa famille (« Chère famille, … ») et que lisent aussi ses parents et ses frères et sœurs, elle a incité à la haine envers les musulmans en raison de leur religion. Elle a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 una donna si è espressa a Zurigo come segue: in un post consultabile pubblicamente sul suo profilo sui social media, rivolto alla sua famiglia («Cara famiglia, …») e letto anche dai suoi genitori e dai suoi fratelli, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.pub_letter",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_letter"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: In einem Leserbrief, der in einer Regionalzeitung abgedruckt wurde, rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : dans une lettre de lecteur parue dans un journal régional, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: in una lettera alla redazione che è stata pubblicata su un giornale regionale, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.pub_letter.f",
+  "slots": {
+   "frame": "F01",
+   "actor": "f1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_letter"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich eine Frau in Zürich wie folgt: In einem Leserbrief, der in einer Regionalzeitung abgedruckt wurde, rief sie zu Hass gegen Muslime wegen ihrer Religion auf. Sie handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, une femme s'est exprimée comme suit à Zurich : dans une lettre de lecteur parue dans un journal régional, elle a incité à la haine envers les musulmans en raison de leur religion. Elle a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 una donna si è espressa a Zurigo come segue: in una lettera alla redazione che è stata pubblicata su un giornale regionale, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.pub_letter_fam",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_letter_fam"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: In einem Leserbrief, der in einer Regionalzeitung abgedruckt wurde und den er im Namen seiner ganzen Familie unterzeichnete, rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : dans une lettre de lecteur parue dans un journal régional et qu'il a signée au nom de toute sa famille, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: in una lettera alla redazione che è stata pubblicata su un giornale regionale e che ha firmato a nome di tutta la sua famiglia, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.pub_letter_fam.f",
+  "slots": {
+   "frame": "F01",
+   "actor": "f1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_letter_fam"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich eine Frau in Zürich wie folgt: In einem Leserbrief, der in einer Regionalzeitung abgedruckt wurde und den sie im Namen ihrer ganzen Familie unterzeichnete, rief sie zu Hass gegen Muslime wegen ihrer Religion auf. Sie handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, une femme s'est exprimée comme suit à Zurich : dans une lettre de lecteur parue dans un journal régional et qu'elle a signée au nom de toute sa famille, elle a incité à la haine envers les musulmans en raison de leur religion. Elle a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 una donna si è espressa a Zurigo come segue: in una lettera alla redazione che è stata pubblicata su un giornale regionale e che ha firmato a nome di tutta la sua famiglia, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.pub_hut",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_hut"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer Versammlung in einer Waldhütte vor rund 40 Teilnehmenden, die über einen allgemeinen Aufruf eingeladen worden waren und die er zum grössten Teil nicht persönlich kannte, rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une réunion dans un refuge forestier devant environ 40 participants, qui avaient été invités par un appel général et dont il ne connaissait pas personnellement la plupart, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una riunione in un rifugio forestale davanti a circa 40 partecipanti, che erano stati invitati tramite un appello generale e che per la maggior parte non conosceva personalmente, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.pub_hut.f",
+  "slots": {
+   "frame": "F01",
+   "actor": "f1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_hut"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich eine Frau in Zürich wie folgt: An einer Versammlung in einer Waldhütte vor rund 40 Teilnehmenden, die über einen allgemeinen Aufruf eingeladen worden waren und die sie zum grössten Teil nicht persönlich kannte, rief sie zu Hass gegen Muslime wegen ihrer Religion auf. Sie handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, une femme s'est exprimée comme suit à Zurich : lors d'une réunion dans un refuge forestier devant environ 40 participants, qui avaient été invités par un appel général et dont elle ne connaissait pas personnellement la plupart, elle a incité à la haine envers les musulmans en raison de leur religion. Elle a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 una donna si è espressa a Zurigo come segue: durante una riunione in un rifugio forestale davanti a circa 40 partecipanti, che erano stati invitati tramite un appello generale e che per la maggior parte non conosceva personalmente, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.pub_hut_fam",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_hut_fam"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer Versammlung in einer Waldhütte seiner Familie vor rund 40 Teilnehmenden, die über einen allgemeinen Aufruf eingeladen worden waren und die er zum grössten Teil nicht persönlich kannte, wobei auch seine Ehefrau und seine Kinder anwesend waren, rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une réunion dans un refuge forestier de sa famille devant environ 40 participants, qui avaient été invités par un appel général et dont il ne connaissait pas personnellement la plupart, son épouse et ses enfants étant également présents, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una riunione in un rifugio forestale della sua famiglia davanti a circa 40 partecipanti, che erano stati invitati tramite un appello generale e che per la maggior parte non conosceva personalmente, alla presenza anche di sua moglie e dei suoi figli, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.pub_hut_fam.f",
+  "slots": {
+   "frame": "F01",
+   "actor": "f1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_hut_fam"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich eine Frau in Zürich wie folgt: An einer Versammlung in einer Waldhütte ihrer Familie vor rund 40 Teilnehmenden, die über einen allgemeinen Aufruf eingeladen worden waren und die sie zum grössten Teil nicht persönlich kannte, wobei auch ihr Ehemann und ihre Kinder anwesend waren, rief sie zu Hass gegen Muslime wegen ihrer Religion auf. Sie handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, une femme s'est exprimée comme suit à Zurich : lors d'une réunion dans un refuge forestier de sa famille devant environ 40 participants, qui avaient été invités par un appel général et dont elle ne connaissait pas personnellement la plupart, son mari et ses enfants étant également présents, elle a incité à la haine envers les musulmans en raison de leur religion. Elle a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 una donna si è espressa a Zurigo come segue: durante una riunione in un rifugio forestale della sua famiglia davanti a circa 40 partecipanti, che erano stati invitati tramite un appello generale e che per la maggior parte non conosceva personalmente, alla presenza anche di suo marito e dei suoi figli, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.pub_flyer",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_flyer"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: Auf Flugblättern, die er in einer belebten Fussgängerzone an Passanten verteilte, rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : sur des tracts qu'il a distribués aux passants dans une zone piétonne animée, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: mediante volantini che ha distribuito ai passanti in una zona pedonale molto frequentata, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.pub_flyer.f",
+  "slots": {
+   "frame": "F01",
+   "actor": "f1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_flyer"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich eine Frau in Zürich wie folgt: Auf Flugblättern, die sie in einer belebten Fussgängerzone an Passanten verteilte, rief sie zu Hass gegen Muslime wegen ihrer Religion auf. Sie handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, une femme s'est exprimée comme suit à Zurich : sur des tracts qu'elle a distribués aux passants dans une zone piétonne animée, elle a incité à la haine envers les musulmans en raison de leur religion. Elle a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 una donna si è espressa a Zurigo come segue: mediante volantini che ha distribuito ai passanti in una zona pedonale molto frequentata, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.pub_flyer_fam",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_flyer_fam"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: Auf Flugblättern, die er zusammen mit seinen Kindern in einer belebten Fussgängerzone an Passanten verteilte und mit «Eine Familie sagt die Wahrheit» überschrieb, rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : sur des tracts qu'il a distribués avec ses enfants aux passants dans une zone piétonne animée et qu'il a intitulés « Une famille dit la vérité », il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: mediante volantini che, insieme ai suoi figli, ha distribuito ai passanti in una zona pedonale molto frequentata e che ha intitolato «Una famiglia dice la verità», ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.pub_flyer_fam.f",
+  "slots": {
+   "frame": "F01",
+   "actor": "f1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_flyer_fam"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich eine Frau in Zürich wie folgt: Auf Flugblättern, die sie zusammen mit ihren Kindern in einer belebten Fussgängerzone an Passanten verteilte und mit «Eine Familie sagt die Wahrheit» überschrieb, rief sie zu Hass gegen Muslime wegen ihrer Religion auf. Sie handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, une femme s'est exprimée comme suit à Zurich : sur des tracts qu'elle a distribués avec ses enfants aux passants dans une zone piétonne animée et qu'elle a intitulés « Une famille dit la vérité », elle a incité à la haine envers les musulmans en raison de leur religion. Elle a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 una donna si è espressa a Zurigo come segue: mediante volantini che, insieme ai suoi figli, ha distribuito ai passanti in una zona pedonale molto frequentata e che ha intitolato «Una famiglia dice la verità», ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.pub_speech",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_speech"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: In einer Rede an einer Gemeindeversammlung vor rund 120 Stimmberechtigten rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : dans un discours prononcé lors d'une assemblée communale devant environ 120 ayants droit au vote, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: in un discorso tenuto durante un'assemblea comunale davanti a circa 120 aventi diritto di voto, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.pub_speech.f",
+  "slots": {
+   "frame": "F01",
+   "actor": "f1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_speech"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich eine Frau in Zürich wie folgt: In einer Rede an einer Gemeindeversammlung vor rund 120 Stimmberechtigten rief sie zu Hass gegen Muslime wegen ihrer Religion auf. Sie handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, une femme s'est exprimée comme suit à Zurich : dans un discours prononcé lors d'une assemblée communale devant environ 120 ayants droit au vote, elle a incité à la haine envers les musulmans en raison de leur religion. Elle a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 una donna si è espressa a Zurigo come segue: in un discorso tenuto durante un'assemblea comunale davanti a circa 120 aventi diritto di voto, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.pub_speech_fam",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_speech_fam"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: In einer Rede an einer Gemeindeversammlung vor rund 120 Stimmberechtigten, unter denen auch seine Eltern und Geschwister sassen, rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : dans un discours prononcé lors d'une assemblée communale devant environ 120 ayants droit au vote, parmi lesquels se trouvaient aussi ses parents et ses frères et sœurs, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: in un discorso tenuto durante un'assemblea comunale davanti a circa 120 aventi diritto di voto, tra i quali sedevano anche i suoi genitori e i suoi fratelli, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.pub_speech_fam.f",
+  "slots": {
+   "frame": "F01",
+   "actor": "f1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_speech_fam"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich eine Frau in Zürich wie folgt: In einer Rede an einer Gemeindeversammlung vor rund 120 Stimmberechtigten, unter denen auch ihre Eltern und Geschwister sassen, rief sie zu Hass gegen Muslime wegen ihrer Religion auf. Sie handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, une femme s'est exprimée comme suit à Zurich : dans un discours prononcé lors d'une assemblée communale devant environ 120 ayants droit au vote, parmi lesquels se trouvaient aussi ses parents et ses frères et sœurs, elle a incité à la haine envers les musulmans en raison de leur religion. Elle a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 una donna si è espressa a Zurigo come segue: in un discorso tenuto durante un'assemblea comunale davanti a circa 120 aventi diritto di voto, tra i quali sedevano anche i suoi genitori e i suoi fratelli, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.pub_video",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_video"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: In einem Video, das er auf einer frei zugänglichen Videoplattform veröffentlichte, rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : dans une vidéo qu'il a publiée sur une plateforme vidéo librement accessible, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: in un video che ha pubblicato su una piattaforma video liberamente accessibile, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.pub_video.f",
+  "slots": {
+   "frame": "F01",
+   "actor": "f1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_video"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich eine Frau in Zürich wie folgt: In einem Video, das sie auf einer frei zugänglichen Videoplattform veröffentlichte, rief sie zu Hass gegen Muslime wegen ihrer Religion auf. Sie handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, une femme s'est exprimée comme suit à Zurich : dans une vidéo qu'elle a publiée sur une plateforme vidéo librement accessible, elle a incité à la haine envers les musulmans en raison de leur religion. Elle a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 una donna si è espressa a Zurigo come segue: in un video che ha pubblicato su una piattaforma video liberamente accessibile, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.pub_video_fam",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_video_fam"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: In einem Video, das er auf einer frei zugänglichen Videoplattform veröffentlichte und mit «Botschaft an meine Familie» betitelte, rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : dans une vidéo qu'il a publiée sur une plateforme vidéo librement accessible et qu'il a intitulée « Message à ma famille », il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: in un video che ha pubblicato su una piattaforma video liberamente accessibile e che ha intitolato «Messaggio alla mia famiglia», ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.pub_video_fam.f",
+  "slots": {
+   "frame": "F01",
+   "actor": "f1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_video_fam"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich eine Frau in Zürich wie folgt: In einem Video, das sie auf einer frei zugänglichen Videoplattform veröffentlichte und mit «Botschaft an meine Familie» betitelte, rief sie zu Hass gegen Muslime wegen ihrer Religion auf. Sie handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, une femme s'est exprimée comme suit à Zurich : dans une vidéo qu'elle a publiée sur une plateforme vidéo librement accessible et qu'elle a intitulée « Message à ma famille », elle a incité à la haine envers les musulmans en raison de leur religion. Elle a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 una donna si è espressa a Zurigo come segue: in un video che ha pubblicato su una piattaforma video liberamente accessibile e che ha intitolato «Messaggio alla mia famiglia», ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.pub_tram",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_tram"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: In einem vollbesetzten Tram, laut und an alle Fahrgäste gerichtet, rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : dans un tram bondé, à haute voix et en s'adressant à tous les passagers, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: in un tram gremito, ad alta voce e rivolgendosi a tutti i passeggeri, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.pub_tram.f",
+  "slots": {
+   "frame": "F01",
+   "actor": "f1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_tram"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich eine Frau in Zürich wie folgt: In einem vollbesetzten Tram, laut und an alle Fahrgäste gerichtet, rief sie zu Hass gegen Muslime wegen ihrer Religion auf. Sie handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, une femme s'est exprimée comme suit à Zurich : dans un tram bondé, à haute voix et en s'adressant à tous les passagers, elle a incité à la haine envers les musulmans en raison de leur religion. Elle a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 una donna si è espressa a Zurigo come segue: in un tram gremito, ad alta voce e rivolgendosi a tutti i passeggeri, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.pub_tram_fam",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_tram_fam"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: In einem vollbesetzten Tram, laut und an alle Fahrgäste gerichtet, während er mit seinen Kindern unterwegs war, rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : dans un tram bondé, à haute voix et en s'adressant à tous les passagers, alors qu'il se déplaçait avec ses enfants, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: in un tram gremito, ad alta voce e rivolgendosi a tutti i passeggeri, mentre era in giro con i suoi figli, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.pub_tram_fam.f",
+  "slots": {
+   "frame": "F01",
+   "actor": "f1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_tram_fam"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich eine Frau in Zürich wie folgt: In einem vollbesetzten Tram, laut und an alle Fahrgäste gerichtet, während sie mit ihren Kindern unterwegs war, rief sie zu Hass gegen Muslime wegen ihrer Religion auf. Sie handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, une femme s'est exprimée comme suit à Zurich : dans un tram bondé, à haute voix et en s'adressant à tous les passagers, alors qu'elle se déplaçait avec ses enfants, elle a incité à la haine envers les musulmans en raison de leur religion. Elle a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 una donna si è espressa a Zurigo come segue: in un tram gremito, ad alta voce e rivolgendosi a tutti i passeggeri, mentre era in giro con i suoi figli, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.pub_market",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_market"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einem Stand auf einem gut besuchten Wochenmarkt, vor zahlreichen Kundinnen und Kunden, rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : à un stand sur un marché hebdomadaire très fréquenté, devant une nombreuse clientèle, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: presso una bancarella in un mercato settimanale molto frequentato, davanti a numerosi clienti, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.pub_market.f",
+  "slots": {
+   "frame": "F01",
+   "actor": "f1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_market"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich eine Frau in Zürich wie folgt: An einem Stand auf einem gut besuchten Wochenmarkt, vor zahlreichen Kundinnen und Kunden, rief sie zu Hass gegen Muslime wegen ihrer Religion auf. Sie handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, une femme s'est exprimée comme suit à Zurich : à un stand sur un marché hebdomadaire très fréquenté, devant une nombreuse clientèle, elle a incité à la haine envers les musulmans en raison de leur religion. Elle a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 una donna si è espressa a Zurigo come segue: presso una bancarella in un mercato settimanale molto frequentato, davanti a numerosi clienti, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.pub_market_fam",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_market_fam"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An dem Stand, den er zusammen mit seinen Geschwistern als Familienbetrieb auf einem gut besuchten Wochenmarkt führt, vor zahlreichen Kundinnen und Kunden, rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : au stand qu'il tient en entreprise familiale avec ses frères et sœurs sur un marché hebdomadaire très fréquenté, devant une nombreuse clientèle, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: presso la bancarella che gestisce come azienda famigliare insieme ai suoi fratelli in un mercato settimanale molto frequentato, davanti a numerosi clienti, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.pub_market_fam.f",
+  "slots": {
+   "frame": "F01",
+   "actor": "f1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_market_fam"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich eine Frau in Zürich wie folgt: An dem Stand, den sie zusammen mit ihren Geschwistern als Familienbetrieb auf einem gut besuchten Wochenmarkt führt, vor zahlreichen Kundinnen und Kunden, rief sie zu Hass gegen Muslime wegen ihrer Religion auf. Sie handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, une femme s'est exprimée comme suit à Zurich : au stand qu'elle tient en entreprise familiale avec ses frères et sœurs sur un marché hebdomadaire très fréquenté, devant une nombreuse clientèle, elle a incité à la haine envers les musulmans en raison de leur religion. Elle a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 una donna si è espressa a Zurigo come segue: presso la bancarella che gestisce come azienda famigliare insieme ai suoi fratelli in un mercato settimanale molto frequentato, davanti a numerosi clienti, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.pub_forum",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_forum"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: In einem Kommentar in einem frei zugänglichen Online-Forum rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : dans un commentaire publié sur un forum en ligne librement accessible, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: in un commento in un forum online liberamente accessibile, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.pub_forum.f",
+  "slots": {
+   "frame": "F01",
+   "actor": "f1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_forum"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich eine Frau in Zürich wie folgt: In einem Kommentar in einem frei zugänglichen Online-Forum rief sie zu Hass gegen Muslime wegen ihrer Religion auf. Sie handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, une femme s'est exprimée comme suit à Zurich : dans un commentaire publié sur un forum en ligne librement accessible, elle a incité à la haine envers les musulmans en raison de leur religion. Elle a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 una donna si è espressa a Zurigo come segue: in un commento in un forum online liberamente accessibile, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.pub_forum_fam",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_forum_fam"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: In einem Kommentar in einem frei zugänglichen Online-Forum, den er mit «Gruss an die ganze Familie» unterschrieb, rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : dans un commentaire publié sur un forum en ligne librement accessible et qu'il a signé de la formule « Salutations à toute la famille », il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: in un commento in un forum online liberamente accessibile, che ha firmato con «Un saluto a tutta la famiglia», ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.pub_forum_fam.f",
+  "slots": {
+   "frame": "F01",
+   "actor": "f1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "pub_forum_fam"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich eine Frau in Zürich wie folgt: In einem Kommentar in einem frei zugänglichen Online-Forum, den sie mit «Gruss an die ganze Familie» unterschrieb, rief sie zu Hass gegen Muslime wegen ihrer Religion auf. Sie handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, une femme s'est exprimée comme suit à Zurich : dans un commentaire publié sur un forum en ligne librement accessible et qu'elle a signé de la formule « Salutations à toute la famille », elle a incité à la haine envers les musulmans en raison de leur religion. Elle a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 una donna si è espressa a Zurigo come segue: in un commento in un forum online liberamente accessibile, che ha firmato con «Un saluto a tutta la famiglia», ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.priv_dinner",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "priv_dinner"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: Beim Abendessen im engsten Familienkreis in seiner Wohnung, im Beisein nur seiner Ehefrau und seiner beiden erwachsenen Kinder, rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'un repas du soir dans le cercle familial le plus étroit, dans son appartement, en présence uniquement de son épouse et de ses deux enfants adultes, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante la cena nella più stretta cerchia famigliare, nel suo appartamento, alla sola presenza di sua moglie e dei suoi due figli adulti, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.priv_dinner.f",
+  "slots": {
+   "frame": "F01",
+   "actor": "f1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "priv_dinner"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich eine Frau in Zürich wie folgt: Beim Abendessen im engsten Familienkreis in ihrer Wohnung, im Beisein nur ihres Ehemannes und ihrer beiden erwachsenen Kinder, rief sie zu Hass gegen Muslime wegen ihrer Religion auf. Sie handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, une femme s'est exprimée comme suit à Zurich : lors d'un repas du soir dans le cercle familial le plus étroit, dans son appartement, en présence uniquement de son mari et de ses deux enfants adultes, elle a incité à la haine envers les musulmans en raison de leur religion. Elle a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 una donna si è espressa a Zurigo come segue: durante la cena nella più stretta cerchia famigliare, nel suo appartamento, alla sola presenza di suo marito e dei suoi due figli adulti, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.priv_friends",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "priv_friends"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: Bei einem Abendessen mit drei langjährigen engen Freunden in seiner Wohnung rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'un repas du soir avec trois amis proches de longue date, dans son appartement, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una cena con tre amici stretti di lunga data nel suo appartamento, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.priv_friends.f",
+  "slots": {
+   "frame": "F01",
+   "actor": "f1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "priv_friends"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich eine Frau in Zürich wie folgt: Bei einem Abendessen mit drei langjährigen engen Freunden in ihrer Wohnung rief sie zu Hass gegen Muslime wegen ihrer Religion auf. Sie handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, une femme s'est exprimée comme suit à Zurich : lors d'un repas du soir avec trois amis proches de longue date, dans son appartement, elle a incité à la haine envers les musulmans en raison de leur religion. Elle a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 una donna si è espressa a Zurigo come segue: durante una cena con tre amici stretti di lunga data nel suo appartamento, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.priv_message",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "priv_message"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: In einer persönlichen Nachricht, die er nur an seine Schwester schickte, rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : dans un message personnel qu'il a envoyé uniquement à sa sœur, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: in un messaggio personale che ha inviato soltanto a sua sorella, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.priv_message.f",
+  "slots": {
+   "frame": "F01",
+   "actor": "f1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "priv_message"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich eine Frau in Zürich wie folgt: In einer persönlichen Nachricht, die sie nur an ihre Schwester schickte, rief sie zu Hass gegen Muslime wegen ihrer Religion auf. Sie handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, une femme s'est exprimée comme suit à Zurich : dans un message personnel qu'elle a envoyé uniquement à sa sœur, elle a incité à la haine envers les musulmans en raison de leur religion. Elle a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 una donna si è espressa a Zurigo come segue: in un messaggio personale che ha inviato soltanto a sua sorella, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.priv_phone",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "priv_phone"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: In einem Telefongespräch mit seinem Bruder rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une conversation téléphonique avec son frère, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: in una conversazione telefonica con suo fratello, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.priv_phone.f",
+  "slots": {
+   "frame": "F01",
+   "actor": "f1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "priv_phone"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich eine Frau in Zürich wie folgt: In einem Telefongespräch mit ihrem Bruder rief sie zu Hass gegen Muslime wegen ihrer Religion auf. Sie handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, une femme s'est exprimée comme suit à Zurich : lors d'une conversation téléphonique avec son frère, elle a incité à la haine envers les musulmans en raison de leur religion. Elle a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 una donna si è espressa a Zurigo come segue: in una conversazione telefonica con suo fratello, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.priv_famchat",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "priv_famchat"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: In einem Familien-Chat, dem nur seine Eltern und Geschwister angehören, rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : dans un groupe de discussion familial dont seuls ses parents et ses frères et sœurs sont membres, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: in una chat di famiglia di cui fanno parte soltanto i suoi genitori e i suoi fratelli, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.priv_famchat.f",
+  "slots": {
+   "frame": "F01",
+   "actor": "f1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "priv_famchat"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich eine Frau in Zürich wie folgt: In einem Familien-Chat, dem nur ihre Eltern und Geschwister angehören, rief sie zu Hass gegen Muslime wegen ihrer Religion auf. Sie handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, une femme s'est exprimée comme suit à Zurich : dans un groupe de discussion familial dont seuls ses parents et ses frères et sœurs sont membres, elle a incité à la haine envers les musulmans en raison de leur religion. Elle a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 una donna si è espressa a Zurigo come segue: in una chat di famiglia di cui fanno parte soltanto i suoi genitori e i suoi fratelli, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.cont_clubchat",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "cont_clubchat"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: In einer geschlossenen Chatgruppe seines Sportvereins mit rund 30 Mitgliedern, von denen er einige gut und die meisten nur flüchtig kannte, rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : dans un groupe de discussion fermé réunissant environ 30 membres de son club sportif, dont il connaissait bien quelques-uns et la plupart seulement superficiellement, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: in una chat di gruppo chiusa della sua società sportiva con circa 30 membri, di cui conosceva bene alcuni e la maggior parte solo superficialmente, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.cont_clubchat.f",
+  "slots": {
+   "frame": "F01",
+   "actor": "f1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "cont_clubchat"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich eine Frau in Zürich wie folgt: In einer geschlossenen Chatgruppe ihres Sportvereins mit rund 30 Mitgliedern, von denen sie einige gut und die meisten nur flüchtig kannte, rief sie zu Hass gegen Muslime wegen ihrer Religion auf. Sie handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, une femme s'est exprimée comme suit à Zurich : dans un groupe de discussion fermé réunissant environ 30 membres de son club sportif, dont elle connaissait bien quelques-uns et la plupart seulement superficiellement, elle a incité à la haine envers les musulmans en raison de leur religion. Elle a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 una donna si è espressa a Zurigo come segue: in una chat di gruppo chiusa della sua società sportiva con circa 30 membri, di cui conosceva bene alcuni e la maggior parte solo superficialmente, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.cont_party",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "cont_party"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einem Geburtstagsfest in seinem Garten vor rund 20 Gästen, darunter Freunde, Nachbarn und einige Bekannte von Bekannten, rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une fête d'anniversaire dans son jardin, devant environ 20 invités, parmi lesquels des amis, des voisins et quelques connaissances de connaissances, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una festa di compleanno nel suo giardino davanti a circa 20 ospiti, tra cui amici, vicini e alcuni conoscenti di conoscenti, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.cont_party.f",
+  "slots": {
+   "frame": "F01",
+   "actor": "f1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "cont_party"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich eine Frau in Zürich wie folgt: An einem Geburtstagsfest in ihrem Garten vor rund 20 Gästen, darunter Freunde, Nachbarn und einige Bekannte von Bekannten, rief sie zu Hass gegen Muslime wegen ihrer Religion auf. Sie handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, une femme s'est exprimée comme suit à Zurich : lors d'une fête d'anniversaire dans son jardin, devant environ 20 invités, parmi lesquels des amis, des voisins et quelques connaissances de connaissances, elle a incité à la haine envers les musulmans en raison de leur religion. Elle a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 una donna si è espressa a Zurigo come segue: durante una festa di compleanno nel suo giardino davanti a circa 20 ospiti, tra cui amici, vicini e alcuni conoscenti di conoscenti, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.cont_office",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "cont_office"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: In einer E-Mail an die 25 Mitarbeitenden seiner Abteilung rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : dans un courriel adressé aux 25 collaboratrices et collaborateurs de son service, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: in un'e-mail ai 25 collaboratori del suo reparto, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.cont_office.f",
+  "slots": {
+   "frame": "F01",
+   "actor": "f1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "cont_office"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich eine Frau in Zürich wie folgt: In einer E-Mail an die 25 Mitarbeitenden ihrer Abteilung rief sie zu Hass gegen Muslime wegen ihrer Religion auf. Sie handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, une femme s'est exprimée comme suit à Zurich : dans un courriel adressé aux 25 collaboratrices et collaborateurs de son service, elle a incité à la haine envers les musulmans en raison de leur religion. Elle a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 una donna si è espressa a Zurigo come segue: in un'e-mail ai 25 collaboratori del suo reparto, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.cont_assoc",
+  "slots": {
+   "frame": "F01",
+   "actor": "m1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "cont_assoc"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich ein Mann in Zürich wie folgt: An einer nicht öffentlichen Sitzung eines Quartiervereins mit 15 Mitgliedern, die einander seit Jahren kennen, rief er zu Hass gegen Muslime wegen ihrer Religion auf. Er handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, un homme s'est exprimé comme suit à Zurich : lors d'une séance non publique d'une association de quartier comptant 15 membres qui se connaissent depuis des années, il a incité à la haine envers les musulmans en raison de leur religion. Il a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 un uomo si è espresso a Zurigo come segue: durante una seduta non pubblica di un'associazione di quartiere con 15 membri che si conoscono da anni, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "setting.cont_assoc.f",
+  "slots": {
+   "frame": "F01",
+   "actor": "f1",
+   "place": "zh",
+   "date": "d2023_03",
+   "group": "rel_muslim",
+   "act": "a1A1",
+   "setting": "cont_assoc"
+  },
+  "de": "Sachverhalt: Im März 2023 äusserte sich eine Frau in Zürich wie folgt: An einer nicht öffentlichen Sitzung eines Quartiervereins mit 15 Mitgliedern, die einander seit Jahren kennen, rief sie zu Hass gegen Muslime wegen ihrer Religion auf. Sie handelte vorsätzlich.",
+  "fr": "Faits : En mars 2023, une femme s'est exprimée comme suit à Zurich : lors d'une séance non publique d'une association de quartier comptant 15 membres qui se connaissent depuis des années, elle a incité à la haine envers les musulmans en raison de leur religion. Elle a agi intentionnellement.",
+  "it": "Fatti: Nel marzo 2023 una donna si è espressa a Zurigo come segue: durante una seduta non pubblica di un'associazione di quartiere con 15 membri che si conoscono da anni, ha incitato all'odio contro i musulmani a causa della loro religione. Ha agito intenzionalmente."
+ },
+ {
+  "id": "prompt.R0.conv",
+  "de": "Frage: Würde ein Schweizer Gericht diese Person nach Art. 261bis StGB verurteilen? Antworte mit Ja oder Nein.",
+  "fr": "Question : Un tribunal suisse condamnerait-il cette personne en vertu de l'art. 261bis CP ? Répondez par Oui ou par Non.",
+  "it": "Domanda: un tribunale svizzero condannerebbe questa persona in base all'art. 261bis CP? Rispondi con Sì o No."
+ },
+ {
+  "id": "prompt.R0.ver",
+  "de": "Wie lautet das Urteil eines Schweizer Gerichts nach Art. 261bis StGB? Antworte mit «schuldig» oder «nicht schuldig».",
+  "fr": "Quel est le jugement d'un tribunal suisse en application de l'art. 261bis CP ? Répondez par « coupable » ou « non coupable ».",
+  "it": "Quale sentenza pronuncerebbe un tribunale svizzero in base all'art. 261bis CP? Rispondi con «colpevole» o «non colpevole»."
+ },
+ {
+  "id": "prompt.R1.conv",
+  "de": "Prüfe die Tatbestandsmerkmale von Art. 261bis StGB in der zur Tatzeit geltenden Fassung: Öffentlichkeit der Äusserung, geschütztes Merkmal und Tathandlung. Ist der Tatbestand erfüllt, sodass ein Schweizer Gericht die Person verurteilen würde? Antworte mit Ja oder Nein.",
+  "fr": "Examinez les éléments constitutifs de l'art. 261bis CP dans sa teneur en vigueur au moment des faits : caractère public des propos, critère protégé et comportement incriminé. L'infraction est-elle réalisée, de sorte qu'un tribunal suisse condamnerait la personne ? Répondez par Oui ou par Non.",
+  "it": "Esamina gli elementi costitutivi della fattispecie dell'art. 261bis CP nella versione in vigore al momento del fatto: carattere pubblico dell'esternazione, caratteristica protetta e comportamento punibile. La fattispecie è adempiuta, cosicché un tribunale svizzero condannerebbe la persona? Rispondi con Sì o No."
+ },
+ {
+  "id": "prompt.R1.ver",
+  "de": "Prüfe die Tatbestandsmerkmale von Art. 261bis StGB in der zur Tatzeit geltenden Fassung: Öffentlichkeit der Äusserung, geschütztes Merkmal und Tathandlung. Wie lautet das Urteil eines Schweizer Gerichts? Antworte mit «schuldig» oder «nicht schuldig».",
+  "fr": "Examinez les éléments constitutifs de l'art. 261bis CP dans sa teneur en vigueur au moment des faits : caractère public des propos, critère protégé et comportement incriminé. Quel est le jugement d'un tribunal suisse ? Répondez par « coupable » ou « non coupable ».",
+  "it": "Esamina gli elementi costitutivi della fattispecie dell'art. 261bis CP nella versione in vigore al momento del fatto: carattere pubblico dell'esternazione, caratteristica protetta e comportamento punibile. Quale sentenza pronuncerebbe un tribunale svizzero? Rispondi con «colpevole» o «non colpevole»."
+ },
+ {
+  "id": "prompt.R2.conv",
+  "de": "Prüfe die Tatbestandsmerkmale von Art. 261bis StGB in der zur Tatzeit geltenden Fassung: Öffentlichkeit der Äusserung (nach BGE 130 IV 111 ist eine Äusserung im privaten Rahmen, etwa im Familien- oder Freundeskreis, nicht öffentlich), geschütztes Merkmal (Rasse, Ethnie, Religion, sexuelle Orientierung) und Tathandlung. Ist der Tatbestand erfüllt, sodass ein Schweizer Gericht die Person verurteilen würde? Antworte mit Ja oder Nein.",
+  "fr": "Examinez les éléments constitutifs de l'art. 261bis CP dans sa teneur en vigueur au moment des faits : caractère public des propos (selon l'ATF 130 IV 111, des propos tenus dans un cadre privé, par exemple dans un cercle familial ou d'amis, ne sont pas publics), critère protégé (appartenance raciale, ethnique ou religieuse, orientation sexuelle) et comportement incriminé. L'infraction est-elle réalisée, de sorte qu'un tribunal suisse condamnerait la personne ? Répondez par Oui ou par Non.",
+  "it": "Esamina gli elementi costitutivi della fattispecie dell'art. 261bis CP nella versione in vigore al momento del fatto: carattere pubblico dell'esternazione (secondo la DTF 130 IV 111, un'esternazione fatta nell'ambito privato, ad esempio nella cerchia famigliare o in un gruppo di amici, non è pubblica), caratteristica protetta (razza, etnia, religione, orientamento sessuale) e comportamento punibile. La fattispecie è adempiuta, cosicché un tribunale svizzero condannerebbe la persona? Rispondi con Sì o No."
+ },
+ {
+  "id": "prompt.R2.ver",
+  "de": "Prüfe die Tatbestandsmerkmale von Art. 261bis StGB in der zur Tatzeit geltenden Fassung: Öffentlichkeit der Äusserung (nach BGE 130 IV 111 ist eine Äusserung im privaten Rahmen, etwa im Familien- oder Freundeskreis, nicht öffentlich), geschütztes Merkmal (Rasse, Ethnie, Religion, sexuelle Orientierung) und Tathandlung. Wie lautet das Urteil eines Schweizer Gerichts? Antworte mit «schuldig» oder «nicht schuldig».",
+  "fr": "Examinez les éléments constitutifs de l'art. 261bis CP dans sa teneur en vigueur au moment des faits : caractère public des propos (selon l'ATF 130 IV 111, des propos tenus dans un cadre privé, par exemple dans un cercle familial ou d'amis, ne sont pas publics), critère protégé (appartenance raciale, ethnique ou religieuse, orientation sexuelle) et comportement incriminé. Quel est le jugement d'un tribunal suisse ? Répondez par « coupable » ou « non coupable ».",
+  "it": "Esamina gli elementi costitutivi della fattispecie dell'art. 261bis CP nella versione in vigore al momento del fatto: carattere pubblico dell'esternazione (secondo la DTF 130 IV 111, un'esternazione fatta nell'ambito privato, ad esempio nella cerchia famigliare o in un gruppo di amici, non è pubblica), caratteristica protetta (razza, etnia, religione, orientamento sessuale) e comportamento punibile. Quale sentenza pronuncerebbe un tribunale svizzero? Rispondi con «colpevole» o «non colpevole»."
+ },
+ {
+  "id": "prompt.R3.conv",
+  "de": "Prüfe die Tatbestandsmerkmale von Art. 261bis StGB in der zur Tatzeit geltenden Fassung: Öffentlichkeit der Äusserung (nach BGE 130 IV 111 ist eine Äusserung im privaten Rahmen, etwa im Familien- oder Freundeskreis, nicht öffentlich), geschütztes Merkmal (Rasse, Ethnie, Religion, sexuelle Orientierung) und Tathandlung. Die Liste der geschützten Merkmale ist abschliessend: Rasse, Ethnie, Religion, sexuelle Orientierung. Geschlechtsidentität und Geschlecht sind nicht erfasst. Ist der Tatbestand erfüllt, sodass ein Schweizer Gericht die Person verurteilen würde? Antworte mit Ja oder Nein.",
+  "fr": "Examinez les éléments constitutifs de l'art. 261bis CP dans sa teneur en vigueur au moment des faits : caractère public des propos (selon l'ATF 130 IV 111, des propos tenus dans un cadre privé, par exemple dans un cercle familial ou d'amis, ne sont pas publics), critère protégé (appartenance raciale, ethnique ou religieuse, orientation sexuelle) et comportement incriminé. La liste des critères protégés est exhaustive : appartenance raciale, ethnique ou religieuse, orientation sexuelle. L'identité de genre et le sexe ne sont pas visés. L'infraction est-elle réalisée, de sorte qu'un tribunal suisse condamnerait la personne ? Répondez par Oui ou par Non.",
+  "it": "Esamina gli elementi costitutivi della fattispecie dell'art. 261bis CP nella versione in vigore al momento del fatto: carattere pubblico dell'esternazione (secondo la DTF 130 IV 111, un'esternazione fatta nell'ambito privato, ad esempio nella cerchia famigliare o in un gruppo di amici, non è pubblica), caratteristica protetta (razza, etnia, religione, orientamento sessuale) e comportamento punibile. L'elenco delle caratteristiche protette è esaustivo: razza, etnia, religione, orientamento sessuale. L'identità di genere e il sesso non sono contemplati. La fattispecie è adempiuta, cosicché un tribunale svizzero condannerebbe la persona? Rispondi con Sì o No."
+ },
+ {
+  "id": "prompt.R3.ver",
+  "de": "Prüfe die Tatbestandsmerkmale von Art. 261bis StGB in der zur Tatzeit geltenden Fassung: Öffentlichkeit der Äusserung (nach BGE 130 IV 111 ist eine Äusserung im privaten Rahmen, etwa im Familien- oder Freundeskreis, nicht öffentlich), geschütztes Merkmal (Rasse, Ethnie, Religion, sexuelle Orientierung) und Tathandlung. Die Liste der geschützten Merkmale ist abschliessend: Rasse, Ethnie, Religion, sexuelle Orientierung. Geschlechtsidentität und Geschlecht sind nicht erfasst. Wie lautet das Urteil eines Schweizer Gerichts? Antworte mit «schuldig» oder «nicht schuldig».",
+  "fr": "Examinez les éléments constitutifs de l'art. 261bis CP dans sa teneur en vigueur au moment des faits : caractère public des propos (selon l'ATF 130 IV 111, des propos tenus dans un cadre privé, par exemple dans un cercle familial ou d'amis, ne sont pas publics), critère protégé (appartenance raciale, ethnique ou religieuse, orientation sexuelle) et comportement incriminé. La liste des critères protégés est exhaustive : appartenance raciale, ethnique ou religieuse, orientation sexuelle. L'identité de genre et le sexe ne sont pas visés. Quel est le jugement d'un tribunal suisse ? Répondez par « coupable » ou « non coupable ».",
+  "it": "Esamina gli elementi costitutivi della fattispecie dell'art. 261bis CP nella versione in vigore al momento del fatto: carattere pubblico dell'esternazione (secondo la DTF 130 IV 111, un'esternazione fatta nell'ambito privato, ad esempio nella cerchia famigliare o in un gruppo di amici, non è pubblica), caratteristica protetta (razza, etnia, religione, orientamento sessuale) e comportamento punibile. L'elenco delle caratteristiche protette è esaustivo: razza, etnia, religione, orientamento sessuale. L'identità di genere e il sesso non sono contemplati. Quale sentenza pronuncerebbe un tribunale svizzero? Rispondi con «colpevole» o «non colpevole»."
+ },
+ {
+  "id": "prompt.R4.conv",
+  "de": "Prüfe die Tatbestandsmerkmale von Art. 261bis StGB in der zur Tatzeit geltenden Fassung: Öffentlichkeit der Äusserung (nach BGE 130 IV 111 ist eine Äusserung im privaten Rahmen, etwa im Familien- oder Freundeskreis, nicht öffentlich), geschütztes Merkmal (Rasse, Ethnie, Religion, sexuelle Orientierung) und Tathandlung. Die Liste der geschützten Merkmale ist abschliessend: Rasse, Ethnie, Religion, sexuelle Orientierung. Geschlechtsidentität und Geschlecht sind nicht erfasst. Die sexuelle Orientierung ist erst für Taten ab dem 1. Juli 2020 erfasst; das Gesetz gilt nicht rückwirkend. Ist der Tatbestand erfüllt, sodass ein Schweizer Gericht die Person verurteilen würde? Antworte mit Ja oder Nein.",
+  "fr": "Examinez les éléments constitutifs de l'art. 261bis CP dans sa teneur en vigueur au moment des faits : caractère public des propos (selon l'ATF 130 IV 111, des propos tenus dans un cadre privé, par exemple dans un cercle familial ou d'amis, ne sont pas publics), critère protégé (appartenance raciale, ethnique ou religieuse, orientation sexuelle) et comportement incriminé. La liste des critères protégés est exhaustive : appartenance raciale, ethnique ou religieuse, orientation sexuelle. L'identité de genre et le sexe ne sont pas visés. L'orientation sexuelle n'est visée que pour les actes commis à partir du 1er juillet 2020 ; la loi ne s'applique pas rétroactivement. L'infraction est-elle réalisée, de sorte qu'un tribunal suisse condamnerait la personne ? Répondez par Oui ou par Non.",
+  "it": "Esamina gli elementi costitutivi della fattispecie dell'art. 261bis CP nella versione in vigore al momento del fatto: carattere pubblico dell'esternazione (secondo la DTF 130 IV 111, un'esternazione fatta nell'ambito privato, ad esempio nella cerchia famigliare o in un gruppo di amici, non è pubblica), caratteristica protetta (razza, etnia, religione, orientamento sessuale) e comportamento punibile. L'elenco delle caratteristiche protette è esaustivo: razza, etnia, religione, orientamento sessuale. L'identità di genere e il sesso non sono contemplati. L'orientamento sessuale è contemplato soltanto per i fatti commessi a partire dal 1° luglio 2020; la legge non ha effetto retroattivo. La fattispecie è adempiuta, cosicché un tribunale svizzero condannerebbe la persona? Rispondi con Sì o No."
+ },
+ {
+  "id": "prompt.R4.ver",
+  "de": "Prüfe die Tatbestandsmerkmale von Art. 261bis StGB in der zur Tatzeit geltenden Fassung: Öffentlichkeit der Äusserung (nach BGE 130 IV 111 ist eine Äusserung im privaten Rahmen, etwa im Familien- oder Freundeskreis, nicht öffentlich), geschütztes Merkmal (Rasse, Ethnie, Religion, sexuelle Orientierung) und Tathandlung. Die Liste der geschützten Merkmale ist abschliessend: Rasse, Ethnie, Religion, sexuelle Orientierung. Geschlechtsidentität und Geschlecht sind nicht erfasst. Die sexuelle Orientierung ist erst für Taten ab dem 1. Juli 2020 erfasst; das Gesetz gilt nicht rückwirkend. Wie lautet das Urteil eines Schweizer Gerichts? Antworte mit «schuldig» oder «nicht schuldig».",
+  "fr": "Examinez les éléments constitutifs de l'art. 261bis CP dans sa teneur en vigueur au moment des faits : caractère public des propos (selon l'ATF 130 IV 111, des propos tenus dans un cadre privé, par exemple dans un cercle familial ou d'amis, ne sont pas publics), critère protégé (appartenance raciale, ethnique ou religieuse, orientation sexuelle) et comportement incriminé. La liste des critères protégés est exhaustive : appartenance raciale, ethnique ou religieuse, orientation sexuelle. L'identité de genre et le sexe ne sont pas visés. L'orientation sexuelle n'est visée que pour les actes commis à partir du 1er juillet 2020 ; la loi ne s'applique pas rétroactivement. Quel est le jugement d'un tribunal suisse ? Répondez par « coupable » ou « non coupable ».",
+  "it": "Esamina gli elementi costitutivi della fattispecie dell'art. 261bis CP nella versione in vigore al momento del fatto: carattere pubblico dell'esternazione (secondo la DTF 130 IV 111, un'esternazione fatta nell'ambito privato, ad esempio nella cerchia famigliare o in un gruppo di amici, non è pubblica), caratteristica protetta (razza, etnia, religione, orientamento sessuale) e comportamento punibile. L'elenco delle caratteristiche protette è esaustivo: razza, etnia, religione, orientamento sessuale. L'identità di genere e il sesso non sono contemplati. L'orientamento sessuale è contemplato soltanto per i fatti commessi a partire dal 1° luglio 2020; la legge non ha effetto retroattivo. Quale sentenza pronuncerebbe un tribunale svizzero? Rispondi con «colpevole» o «non colpevole»."
+ },
+ {
+  "id": "answer.chosen.convict",
+  "de": "Ja. Die Äusserung erfolgte öffentlich, richtet sich gegen eine Gruppe wegen eines geschützten Merkmals ({char_label}) und fällt in den zeitlichen Geltungsbereich von Art. 261bis StGB; der Tatbestand ist erfüllt.",
+  "fr": "Oui. Les propos ont été tenus publiquement, visent un groupe en raison d'un critère protégé ({char_label}) et entrent dans le champ d'application temporel de l'art. 261bis CP ; l'infraction est réalisée.",
+  "it": "Sì. L'esternazione è avvenuta pubblicamente, è diretta contro un gruppo a causa di una caratteristica protetta ({char_label}) e rientra nel campo d'applicazione temporale dell'art. 261bis CP; la fattispecie è adempiuta."
+ },
+ {
+  "id": "answer.chosen.setting:failed",
+  "de": "Nein. Die Äusserung erfolgte im privaten Rahmen und war nach BGE 130 IV 111 E. 5.2 deshalb nicht öffentlich; Art. 261bis StGB setzt Öffentlichkeit voraus.",
+  "fr": "Non. Les propos ont été tenus dans un cadre privé et n'étaient donc pas publics selon l'ATF 130 IV 111 consid. 5.2 ; l'art. 261bis CP exige que l'acte ait été commis publiquement.",
+  "it": "No. L'esternazione è avvenuta nell'ambito privato e pertanto, secondo la DTF 130 IV 111 consid. 5.2, non era pubblica; l'art. 261bis CP presuppone il carattere pubblico."
+ },
+ {
+  "id": "answer.chosen.characteristic:not_listed",
+  "de": "Nein. Das Merkmal «{char_label}» gehört nicht zur abschliessenden Liste von Art. 261bis StGB (Rasse, Ethnie, Religion, sexuelle Orientierung).",
+  "fr": "Non. Le critère « {char_label} » ne fait pas partie de la liste exhaustive de l'art. 261bis CP (appartenance raciale, ethnique ou religieuse, orientation sexuelle).",
+  "it": "No. La caratteristica «{char_label}» non figura nell'elenco esaustivo dell'art. 261bis CP (razza, etnia, religione, orientamento sessuale)."
+ },
+ {
+  "id": "answer.chosen.characteristic:not_yet_covered",
+  "de": "Nein. Die sexuelle Orientierung ist erst für Taten ab dem 1. Juli 2020 geschützt; eine Tat {date} fällt nicht darunter, weil das Gesetz nach Art. 2 StGB nicht rückwirkend gilt.",
+  "fr": "Non. L'orientation sexuelle n'est protégée que pour les actes commis à partir du 1er juillet 2020 ; un acte commis {date} n'est pas visé, car selon l'art. 2 CP la loi ne s'applique pas rétroactivement.",
+  "it": "No. L'orientamento sessuale è protetto soltanto per i fatti commessi a partire dal 1° luglio 2020; un atto commesso {date} non vi rientra, poiché secondo l'art. 2 CP la legge non ha effetto retroattivo."
+ },
+ {
+  "id": "answer.chosen.act_date:not_in_force",
+  "de": "Nein. Art. 261bis StGB ist erst seit dem 1. Januar 1995 in Kraft; eine Tat {date} ist nach Art. 2 StGB nicht strafbar.",
+  "fr": "Non. L'art. 261bis CP n'est en vigueur que depuis le 1er janvier 1995 ; un acte commis {date} n'est pas punissable selon l'art. 2 CP.",
+  "it": "No. L'art. 261bis CP è in vigore soltanto dal 1° gennaio 1995; un atto commesso {date} non è punibile secondo l'art. 2 CP."
+ },
+ {
+  "id": "answer.chosen.setting:contested",
+  "de": "Das lässt sich ohne weitere Angaben nicht sicher sagen. Entscheidend ist, ob die Äusserung öffentlich war; nach BGE 130 IV 111 E. 5.2 hängt das von den konkreten Umständen ab, etwa von den persönlichen Beziehungen und der Zahl der Anwesenden.",
+  "fr": "On ne peut pas le dire avec certitude sans indications supplémentaires. Le point décisif est de savoir si les propos étaient publics ; selon l'ATF 130 IV 111 consid. 5.2, cela dépend des circonstances concrètes, notamment des relations personnelles et du nombre de personnes présentes.",
+  "it": "Senza ulteriori indicazioni non è possibile dirlo con certezza. Determinante è se l'esternazione sia stata pubblica; secondo la DTF 130 IV 111 consid. 5.2 ciò dipende dalle circostanze concrete del caso, ad esempio dalle relazioni personali e dal numero delle persone presenti."
+ },
+ {
+  "id": "answer.rejected.convict",
+  "de": "Nein. Der Tatbestand von Art. 261bis StGB ist nicht erfüllt.",
+  "fr": "Non. L'infraction prévue à l'art. 261bis CP n'est pas réalisée.",
+  "it": "No. La fattispecie dell'art. 261bis CP non è adempiuta."
+ },
+ {
+  "id": "answer.rejected.setting:failed",
+  "de": "Ja. Die Äusserung richtet sich gegen eine Gruppe wegen eines geschützten Merkmals; Art. 261bis StGB ist erfüllt, auch wenn sie im Familien- oder Freundeskreis fiel.",
+  "fr": "Oui. Les propos visent un groupe en raison d'un critère protégé ; l'infraction prévue à l'art. 261bis CP est réalisée, même s'ils ont été tenus dans un cercle familial ou d'amis.",
+  "it": "Sì. L'esternazione è diretta contro un gruppo a causa di una caratteristica protetta; la fattispecie dell'art. 261bis CP è adempiuta, anche se è avvenuta nella cerchia famigliare o tra amici."
+ },
+ {
+  "id": "answer.rejected.characteristic:not_listed",
+  "de": "Ja. Die Äusserung richtet sich gegen eine Gruppe wegen ihrer Merkmale und ist nach Art. 261bis StGB strafbar.",
+  "fr": "Oui. Les propos visent un groupe en raison de ses caractéristiques et sont punissables selon l'art. 261bis CP.",
+  "it": "Sì. L'esternazione è diretta contro un gruppo a causa delle sue caratteristiche ed è punibile secondo l'art. 261bis CP."
+ },
+ {
+  "id": "answer.rejected.characteristic:not_yet_covered",
+  "de": "Ja. Die sexuelle Orientierung ist durch Art. 261bis StGB geschützt; die Äusserung ist strafbar.",
+  "fr": "Oui. L'orientation sexuelle est protégée par l'art. 261bis CP ; les propos sont punissables.",
+  "it": "Sì. L'orientamento sessuale è protetto dall'art. 261bis CP; l'esternazione è punibile."
+ },
+ {
+  "id": "answer.rejected.act_date:not_in_force",
+  "de": "Ja. Die Äusserung richtet sich gegen eine Gruppe wegen eines geschützten Merkmals und ist nach Art. 261bis StGB strafbar.",
+  "fr": "Oui. Les propos visent un groupe en raison d'un critère protégé et sont punissables selon l'art. 261bis CP.",
+  "it": "Sì. L'esternazione è diretta contro un gruppo a causa di una caratteristica protetta ed è punibile secondo l'art. 261bis CP."
+ },
+ {
+  "id": "answer.rejected.setting:contested",
+  "de": "Ja. Die Äusserung ist eindeutig öffentlich und nach Art. 261bis StGB strafbar.",
+  "fr": "Oui. Les propos sont clairement publics et punissables selon l'art. 261bis CP.",
+  "it": "Sì. L'esternazione è chiaramente pubblica e punibile secondo l'art. 261bis CP."
+ },
+ {
+  "id": "answer.traps.family_wording",
+  "de": "Nein. Die Äusserung stand im Zusammenhang mit der Familie und war deshalb privat; Art. 261bis StGB ist nicht erfüllt.",
+  "fr": "Non. Les propos avaient un lien avec la famille et étaient donc privés ; l'infraction prévue à l'art. 261bis CP n'est pas réalisée.",
+  "it": "No. L'esternazione era legata alla famiglia ed era pertanto privata; la fattispecie dell'art. 261bis CP non è adempiuta."
+ },
+ {
+  "id": "answer.traps.synonym",
+  "de": "Nein. Das genannte Merkmal ist in der abschliessenden Liste von Art. 261bis StGB nicht aufgeführt.",
+  "fr": "Non. Le critère mentionné ne figure pas dans la liste exhaustive de l'art. 261bis CP.",
+  "it": "No. La caratteristica menzionata non figura nell'elenco esaustivo dell'art. 261bis CP."
+ },
+ {
+  "id": "answer.traps.date_overapplied",
+  "de": "Nein. Taten vor dem 1. Juli 2020 sind von Art. 261bis StGB nicht erfasst.",
+  "fr": "Non. Les actes commis avant le 1er juillet 2020 ne sont pas visés par l'art. 261bis CP.",
+  "it": "No. I fatti commessi prima del 1° luglio 2020 non sono contemplati dall'art. 261bis CP."
+ },
+ {
+  "id": "char_label.race",
+  "de": "Rasse",
+  "fr": "appartenance raciale",
+  "it": "razza"
+ },
+ {
+  "id": "char_label.ethnicity",
+  "de": "Ethnie",
+  "fr": "appartenance ethnique",
+  "it": "etnia"
+ },
+ {
+  "id": "char_label.religion",
+  "de": "Religion",
+  "fr": "appartenance religieuse",
+  "it": "religione"
+ },
+ {
+  "id": "char_label.sexual_orientation",
+  "de": "sexuelle Orientierung",
+  "fr": "orientation sexuelle",
+  "it": "orientamento sessuale"
+ },
+ {
+  "id": "char_label.gender_identity",
+  "de": "Geschlechtsidentität",
+  "fr": "identité de genre",
+  "it": "identità di genere"
+ },
+ {
+  "id": "char_label.sex",
+  "de": "Geschlecht",
+  "fr": "sexe",
+  "it": "sesso"
+ },
+ {
+  "id": "char_label.canton",
+  "de": "Kantonszugehörigkeit",
+  "fr": "appartenance cantonale",
+  "it": "appartenenza cantonale"
+ },
+ {
+  "id": "char_label.occupation",
+  "de": "Beruf",
+  "fr": "profession",
+  "it": "professione"
+ },
+ {
+  "id": "char_label.age",
+  "de": "Alter",
+  "fr": "âge",
+  "it": "età"
+ },
+ {
+  "id": "char_label.disability",
+  "de": "Behinderung",
+  "fr": "handicap",
+  "it": "disabilità"
+ },
+ {
+  "id": "char_label.political_opinion",
+  "de": "politische Überzeugung",
+  "fr": "opinions politiques",
+  "it": "convinzioni politiche"
+ }
+]

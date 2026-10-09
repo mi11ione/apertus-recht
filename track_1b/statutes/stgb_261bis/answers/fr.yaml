@@ -1,0 +1,25 @@
+# Reference answers in French (translated from answers/de.yaml; same keys). `{char_label}` is filled from char_labels,
+# `{date}` with the date surface from templates/fr.yaml (e.g. "en mars 2019", "le 30 juin 2020").
+lang: fr
+char_labels: {race: appartenance raciale, ethnicity: appartenance ethnique, religion: appartenance religieuse,
+              sexual_orientation: orientation sexuelle, gender_identity: identité de genre, sex: sexe,
+              canton: appartenance cantonale, occupation: profession, age: âge, disability: handicap,
+              political_opinion: opinions politiques}
+chosen:
+  convict: "Oui. Les propos ont été tenus publiquement, visent un groupe en raison d'un critère protégé ({char_label}) et entrent dans le champ d'application temporel de l'art. 261bis CP ; l'infraction est réalisée."
+  "setting:failed": "Non. Les propos ont été tenus dans un cadre privé et n'étaient donc pas publics selon l'ATF 130 IV 111 consid. 5.2 ; l'art. 261bis CP exige que l'acte ait été commis publiquement."
+  "characteristic:not_listed": "Non. Le critère « {char_label} » ne fait pas partie de la liste exhaustive de l'art. 261bis CP (appartenance raciale, ethnique ou religieuse, orientation sexuelle)."
+  "characteristic:not_yet_covered": "Non. L'orientation sexuelle n'est protégée que pour les actes commis à partir du 1er juillet 2020 ; un acte commis {date} n'est pas visé, car selon l'art. 2 CP la loi ne s'applique pas rétroactivement."
+  "act_date:not_in_force": "Non. L'art. 261bis CP n'est en vigueur que depuis le 1er janvier 1995 ; un acte commis {date} n'est pas punissable selon l'art. 2 CP."
+  "setting:contested": "On ne peut pas le dire avec certitude sans indications supplémentaires. Le point décisif est de savoir si les propos étaient publics ; selon l'ATF 130 IV 111 consid. 5.2, cela dépend des circonstances concrètes, notamment des relations personnelles et du nombre de personnes présentes."
+rejected:
+  convict: "Non. L'infraction prévue à l'art. 261bis CP n'est pas réalisée."
+  "setting:failed": "Oui. Les propos visent un groupe en raison d'un critère protégé ; l'infraction prévue à l'art. 261bis CP est réalisée, même s'ils ont été tenus dans un cercle familial ou d'amis."
+  "characteristic:not_listed": "Oui. Les propos visent un groupe en raison de ses caractéristiques et sont punissables selon l'art. 261bis CP."
+  "characteristic:not_yet_covered": "Oui. L'orientation sexuelle est protégée par l'art. 261bis CP ; les propos sont punissables."
+  "act_date:not_in_force": "Oui. Les propos visent un groupe en raison d'un critère protégé et sont punissables selon l'art. 261bis CP."
+  "setting:contested": "Oui. Les propos sont clairement publics et punissables selon l'art. 261bis CP."
+traps:
+  family_wording: "Non. Les propos avaient un lien avec la famille et étaient donc privés ; l'infraction prévue à l'art. 261bis CP n'est pas réalisée."
+  synonym: "Non. Le critère mentionné ne figure pas dans la liste exhaustive de l'art. 261bis CP."
+  date_overapplied: "Non. Les actes commis avant le 1er juillet 2020 ne sont pas visés par l'art. 261bis CP."

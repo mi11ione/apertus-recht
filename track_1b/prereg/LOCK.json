@@ -1,0 +1,16 @@
+{
+ "frozen_at": "2026-10-09T20:23:49+0200",
+ "files": {
+  "statutes/stgb_261bis/statute.yaml": "43e190fe1d7a3a7d2ce0b1dc5c1f60afeae6dde73a85c6c1382e1ea52cee1fda",
+  "statutes/stgb_261bis/design.yaml": "1f8a076c4b5cb537c9cb20272a3fa6d1ff59863298fffda1f650de2db13b7e66",
+  "src/statute_twins/gold/engine.py": "398da37808d6ddbd03df320dcbc7ffab6d8d3cb4f23de293cf172db89030efc4",
+  "src/statute_twins/analysis/heldout.py": "92a26cfba38f666ef9bd88e68b520c5ab6361ee291a401cd0366bce23652a8d7",
+  "src/statute_twins/analysis/results.py": "dc9d1eac872135a5ad2590133cafe01e60c0b16d7dbcab407ddb2c7be29a5f18",
+  "src/statute_twins/analysis/stats.py": "43e48e2e4a76e1c6f30430722f748cb22bb90d1c1dbf099a7e516e8ea2b045b1",
+  "dataset/eval/core_de.jsonl": "c54f6c3fdb7861b89737258be2d3a8801c824287ad7d9f727349bc491a75f267",
+  "dataset/eval/core_fr.jsonl": "aea06bcf919ee902c9b106bb222e6a613c33dbca0ba561f398b6f93b52358a17",
+  "dataset/eval/core_it.jsonl": "f87fb9eb688ffeff92da4f417d5d494c82a404365eac713e531b168755d18c0d",
+  "prereg/PREREG.md": "6c743044fb519c96a2e059cb802ac7c2a990b4d2b32f3646718c1878c64ceecb"
+ },
+ "note": "FR/IT item files may change after the translation review; DE core and the test code may not."
+}

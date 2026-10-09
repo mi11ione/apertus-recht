@@ -1,0 +1,12 @@
+{
+ "run": "8b-mlx4-DPO",
+ "rows": 648,
+ "jsonl_sha256": "8343b85c58b85e3b2a99d5141dc2c835b0f1fbcbba175c1eb9ce1820a243a436",
+ "model": "swiss-ai/Apertus-v1.5-8B-DPO",
+ "precision": "MLX 4-bit g64 (own conversion)",
+ "runtime": "mlx-lm 0.32.0 (M2 Air)",
+ "protocol": "chat",
+ "source_file": "spikes/linie9/results/stage_DPO.json",
+ "source_sha256": "792c9c00372224889dc14b5b87c41ae5b0f83f8d07a9327d25efe61fc683ceda",
+ "questions_note": "stage9.py question strings, byte-identical to prompts/de.yaml R0/R3"
+}

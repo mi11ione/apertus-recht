@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "statute-twins"
+version = "1.0.0.dev0"
+description = "Minimal-twin legal evaluation sets with code-computed gold, and a self-checking harness (reference statute: Art. 261bis StGB)."
+readme = "README.md"
+license = {text = "Apache-2.0"}
+requires-python = ">=3.10"
+dependencies = ["pyyaml>=6"]
+
+[project.optional-dependencies]
+llamacpp = ["llama-cpp-python>=0.3.2"]
+hf = ["huggingface_hub>=0.24", "pyarrow>=15"]
+figures = ["matplotlib>=3.8"]
+dev = ["pytest>=8"]
+
+[project.scripts]
+statute-twins = "statute_twins.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+statute_twins = ["templates/*.yaml", "templates/**/*.yaml"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

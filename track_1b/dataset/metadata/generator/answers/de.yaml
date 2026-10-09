@@ -1,0 +1,25 @@
+# Reference answers (to the R0 "verurteilen?" question). `chosen` is the answer the law supports; `rejected` is the
+# wrong answer of the kind the twin is built to catch. Keys: <deciding_element>:<reason_code> from the gold engine, or
+# `convict`; `traps` override the generic rejected answer of a convict item when the item carries that trap.
+lang: de
+char_labels: {race: Rasse, ethnicity: Ethnie, religion: Religion, sexual_orientation: sexuelle Orientierung,
+              gender_identity: Geschlechtsidentität, sex: Geschlecht, canton: Kantonszugehörigkeit, occupation: Beruf,
+              age: Alter, disability: Behinderung, political_opinion: politische Überzeugung}
+chosen:
+  convict: "Ja. Die Äusserung erfolgte öffentlich, richtet sich gegen eine Gruppe wegen eines geschützten Merkmals ({char_label}) und fällt in den zeitlichen Geltungsbereich von Art. 261bis StGB; der Tatbestand ist erfüllt."
+  "setting:failed": "Nein. Die Äusserung erfolgte im privaten Rahmen und war nach BGE 130 IV 111 E. 5.2 deshalb nicht öffentlich; Art. 261bis StGB setzt Öffentlichkeit voraus."
+  "characteristic:not_listed": "Nein. Das Merkmal «{char_label}» gehört nicht zur abschliessenden Liste von Art. 261bis StGB (Rasse, Ethnie, Religion, sexuelle Orientierung)."
+  "characteristic:not_yet_covered": "Nein. Die sexuelle Orientierung ist erst für Taten ab dem 1. Juli 2020 geschützt; eine Tat {date} fällt nicht darunter, weil das Gesetz nach Art. 2 StGB nicht rückwirkend gilt."
+  "act_date:not_in_force": "Nein. Art. 261bis StGB ist erst seit dem 1. Januar 1995 in Kraft; eine Tat {date} ist nach Art. 2 StGB nicht strafbar."
+  "setting:contested": "Das lässt sich ohne weitere Angaben nicht sicher sagen. Entscheidend ist, ob die Äusserung öffentlich war; nach BGE 130 IV 111 E. 5.2 hängt das von den konkreten Umständen ab, etwa von den persönlichen Beziehungen und der Zahl der Anwesenden."
+rejected:
+  convict: "Nein. Der Tatbestand von Art. 261bis StGB ist nicht erfüllt."
+  "setting:failed": "Ja. Die Äusserung richtet sich gegen eine Gruppe wegen eines geschützten Merkmals; Art. 261bis StGB ist erfüllt, auch wenn sie im Familien- oder Freundeskreis fiel."
+  "characteristic:not_listed": "Ja. Die Äusserung richtet sich gegen eine Gruppe wegen ihrer Merkmale und ist nach Art. 261bis StGB strafbar."
+  "characteristic:not_yet_covered": "Ja. Die sexuelle Orientierung ist durch Art. 261bis StGB geschützt; die Äusserung ist strafbar."
+  "act_date:not_in_force": "Ja. Die Äusserung richtet sich gegen eine Gruppe wegen eines geschützten Merkmals und ist nach Art. 261bis StGB strafbar."
+  "setting:contested": "Ja. Die Äusserung ist eindeutig öffentlich und nach Art. 261bis StGB strafbar."
+traps:
+  family_wording: "Nein. Die Äusserung stand im Zusammenhang mit der Familie und war deshalb privat; Art. 261bis StGB ist nicht erfüllt."
+  synonym: "Nein. Das genannte Merkmal ist in der abschliessenden Liste von Art. 261bis StGB nicht aufgeführt."
+  date_overapplied: "Nein. Taten vor dem 1. Juli 2020 sind von Art. 261bis StGB nicht erfasst."

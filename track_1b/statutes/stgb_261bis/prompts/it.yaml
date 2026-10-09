@@ -1,0 +1,18 @@
+# Italian question rungs and answer framings (translation of prompts/de.yaml; same keys, same leading "\n\n" and
+# leading spaces). The user message is `text + rung question`. For framing `ver` the assistant turn is prefilled with
+# `answer_prefix`.
+lang: it
+heads:
+  R1: "\n\nEsamina gli elementi costitutivi della fattispecie dell'art. 261bis CP nella versione in vigore al momento del fatto: carattere pubblico dell'esternazione, caratteristica protetta e comportamento punibile."
+  R2: "\n\nEsamina gli elementi costitutivi della fattispecie dell'art. 261bis CP nella versione in vigore al momento del fatto: carattere pubblico dell'esternazione (secondo la DTF 130 IV 111, un'esternazione fatta nell'ambito privato, ad esempio nella cerchia famigliare o in un gruppo di amici, non è pubblica), caratteristica protetta (razza, etnia, religione, orientamento sessuale) e comportamento punibile."
+closed_list: " L'elenco delle caratteristiche protette è esaustivo: razza, etnia, religione, orientamento sessuale. L'identità di genere e il sesso non sono contemplati."
+date_clause: " L'orientamento sessuale è contemplato soltanto per i fatti commessi a partire dal 1° luglio 2020; la legge non ha effetto retroattivo."
+tails:
+  conv: " La fattispecie è adempiuta, cosicché un tribunale svizzero condannerebbe la persona? Rispondi con Sì o No."
+  ver: " Quale sentenza pronuncerebbe un tribunale svizzero? Rispondi con «colpevole» o «non colpevole»."
+plain:
+  conv: "\n\nDomanda: un tribunale svizzero condannerebbe questa persona in base all'art. 261bis CP? Rispondi con Sì o No."
+  ver: "\n\nQuale sentenza pronuncerebbe un tribunale svizzero in base all'art. 261bis CP? Rispondi con «colpevole» o «non colpevole»."
+framings:
+  conv: {answer_prefix: "", convict: "Sì", acquit: "No"}
+  ver:  {answer_prefix: "Sentenza:", convict: " colpevole", acquit: " non colpevole"}

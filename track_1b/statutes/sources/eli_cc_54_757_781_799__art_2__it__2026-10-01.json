@@ -1,0 +1,16 @@
+{
+ "eli": "eli/cc/54/757_781_799",
+ "eid": "art_2",
+ "lang": "it",
+ "requested_date": "2026-10-09",
+ "applicability_date": "2026-10-01",
+ "url": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/54/757_781_799/20261001/it/xml/fedlex-data-admin-ch-eli-cc-54-757_781_799-20261001-it-xml.xml",
+ "xml_sha256": "32620945e02cb5ccacf1429d4aef1d19c7ebc3338b83aa4522013bd8f3469b6b",
+ "paragraphs": [
+  "È giudicato secondo il presente Codice chiunque commette un crimine o un delitto dopo che il Codice è entrato in vigore.",
+  "Il presente Codice si applica anche in caso di crimini o delitti commessi prima della sua entrata in vigore ma giudicati dopo, se più favorevole all’autore."
+ ],
+ "text_sha256": "df48166b15155924519a7b7e060cd7e8a4afc82a5e475c293b0da8dbcd481839",
+ "notes": [],
+ "fetched": "2026-10-09"
+}

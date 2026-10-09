@@ -1,0 +1,12 @@
+{
+ "run": "publicai-70b-fc",
+ "rows": 792,
+ "jsonl_sha256": "9a05643009fdcc17e5d01e69d129d4687b0591b91a6b2ced13c59f2cdb5735f1",
+ "model": "Apertus v1.5 70B as served by Public AI under the name swiss-ai/apertus-v1.5-8b",
+ "requested_model": "swiss-ai/apertus-v1.5-8b",
+ "size_evidence": "spikes/live/results.md: same weights as the -70b name (760/792 byte-identical greedy outputs); MMLU 84.4% vs 70.8% for the v1 8B route; tp8-pp2 deployment",
+ "protocol": "exact forced choice: candidate prefilled as assistant turn, prompt_logprobs summed (live.py fc)",
+ "temperature": 0,
+ "source_file": "spikes/live/results/fc_apertus-v1.5-8b.json",
+ "source_sha256": "787d264cac3729ae6687c904351e9b0502c5d8a5b56d65b5e62b8bcc97468c03"
+}

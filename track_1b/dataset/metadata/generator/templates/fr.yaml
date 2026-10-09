@@ -1,0 +1,260 @@
+# French (Swiss legal register) surface templates for Art. 261bis StGB (art. 261bis CP) scenarios. Translated from
+# templates/de.yaml (same ids; legal facts in design.yaml). Placeholders:
+#   {date} {place} {actor} {setting} {act}        slot surfaces; a capitalised name ({Date}, {Actor}, {Setting}, ...)
+#                                                 capitalises the first letter.
+#   {pron} {Pron} {e} {spouse}                    actor morphology (see `morphology`): subject pronoun il/elle,
+#                                                 past-participle agreement "" / "e", spouse "son épouse" / "son mari".
+#                                                 French possessives (son/sa/ses) agree with the possessed noun, not
+#                                                 with the actor, so they are written out in the settings.
+#   {g.def} {g.de} {g.a}                          forms of the target group: les ... / des ... / aux ... (contractions
+#                                                 of de + les and à + les are spelled out per group).
+# Comma rule: settings carry no leading or trailing comma; frames join them as "{setting}, {act}". Settings start in
+# lower case (they follow a colon); F05, where the setting opens a sentence, uses {Setting}.
+# Writing rules as in de.yaml: no hateful wording, no slurs, no names of real persons; acts use the statute's own
+# vocabulary (family A) or neutral paraphrases (families B, C); every scenario ends with intent stated.
+lang: fr
+
+frames:
+  F01: "Faits : {Date}, {actor} s'est exprimé{e} comme suit à {place} : {setting}, {act}. {Pron} a agi intentionnellement."
+  F02: "Faits : {Date}, l'incident suivant, impliquant {actor}, s'est produit à {place} : {setting}, {act}. {Pron} a agi intentionnellement."
+  F03: "Faits : {Actor} domicilié{e} à {place} se voit reprocher ce qui suit : {setting}, {act}, et ce {date}. {Pron} a agi intentionnellement."
+  F04: "Faits : À {place}, {date}, {actor} s'est exprimé{e} comme suit : {setting}, {act}. L'intention n'est pas contestée."
+  F05: "Faits : {Date}, {actor} se trouvait à {place}. {Setting}, {act}. {Pron} a agi intentionnellement."
+  F06: "Faits : {Actor} vit à {place}. {Date}, il s'est passé ce qui suit : {setting}, {act}. {Pron} savait ce qu'{pron} faisait et le voulait."
+  F07: "Faits : Selon l'acte d'accusation, {date}, à {place}, {actor} s'est exprimé{e} comme suit : {setting}, {act}. {Pron} a agi intentionnellement."
+  F08: "Faits : {Date}, à {place}, un incident impliquant {actor} a été consigné au dossier : {setting}, {act}. Il est établi qu'{pron} a agi intentionnellement."
+
+actors:
+  m1: {surface: "un homme", gender: m}
+  m2: {surface: "un retraité", gender: m}
+  m3: {surface: "un entrepreneur", gender: m}
+  m4: {surface: "un étudiant", gender: m}
+  f1: {surface: "une femme", gender: f}
+  f2: {surface: "une retraitée", gender: f}
+  f3: {surface: "une entrepreneuse", gender: f}
+  f4: {surface: "une étudiante", gender: f}
+
+morphology:
+  m: {pron: il, e: "", spouse: "son épouse"}
+  f: {pron: elle, e: "e", spouse: "son mari"}
+
+places:
+  zh: Zurich
+  be: Berne
+  bs: Bâle
+  lu: Lucerne
+  sg: Saint-Gall
+  wi: Winterthour
+  bi: Bienne
+  ch: Coire
+  aa: Aarau
+  th: Thoune
+  sh: Schaffhouse
+  zg: Zoug
+
+dates:
+  d1994_10: "en octobre 1994"
+  d1993_05: "en mai 1993"
+  d2018_11: "en novembre 2018"
+  d2019_03: "en mars 2019"
+  d2019_09: "en septembre 2019"
+  d2020_06: "en juin 2020"
+  d2020_06_30: "le 30 juin 2020"
+  d2020_07_01: "le 1er juillet 2020"
+  d2020_08: "en août 2020"
+  d2021_09: "en septembre 2021"
+  d2022_05: "en mai 2022"
+  d2023_03: "en mars 2023"
+  d2024_01: "en janvier 2024"
+  d2025_06: "en juin 2025"
+
+groups:
+  race_black:
+    def: "les personnes noires en raison de leur appartenance raciale"
+    de: "des personnes noires en raison de leur appartenance raciale"
+    a: "aux personnes noires en raison de leur appartenance raciale"
+  race_african:
+    def: "les personnes d'origine africaine en raison de leur appartenance raciale"
+    de: "des personnes d'origine africaine en raison de leur appartenance raciale"
+    a: "aux personnes d'origine africaine en raison de leur appartenance raciale"
+  race_asian:
+    def: "les personnes d'origine asiatique en raison de leur appartenance raciale"
+    de: "des personnes d'origine asiatique en raison de leur appartenance raciale"
+    a: "aux personnes d'origine asiatique en raison de leur appartenance raciale"
+  race_black_syn:
+    def: "les personnes noires en raison de leur couleur de peau"
+    de: "des personnes noires en raison de leur couleur de peau"
+    a: "aux personnes noires en raison de leur couleur de peau"
+  eth_roma:
+    def: "les Roms en raison de leur appartenance ethnique"
+    de: "des Roms en raison de leur appartenance ethnique"
+    a: "aux Roms en raison de leur appartenance ethnique"
+  eth_yenish:
+    def: "les Yéniches en raison de leur appartenance ethnique"
+    de: "des Yéniches en raison de leur appartenance ethnique"
+    a: "aux Yéniches en raison de leur appartenance ethnique"
+  eth_kosovo:
+    def: "les Albanais du Kosovo en raison de leur appartenance ethnique"
+    de: "des Albanais du Kosovo en raison de leur appartenance ethnique"
+    a: "aux Albanais du Kosovo en raison de leur appartenance ethnique"
+  eth_tamil:
+    def: "les Tamouls en raison de leur appartenance ethnique"
+    de: "des Tamouls en raison de leur appartenance ethnique"
+    a: "aux Tamouls en raison de leur appartenance ethnique"
+  eth_kurd:
+    def: "les Kurdes en raison de leur appartenance ethnique"
+    de: "des Kurdes en raison de leur appartenance ethnique"
+    a: "aux Kurdes en raison de leur appartenance ethnique"
+  eth_roma_syn:
+    def: "les Roms en raison de leur origine ethnique"
+    de: "des Roms en raison de leur origine ethnique"
+    a: "aux Roms en raison de leur origine ethnique"
+  rel_jewish:
+    def: "les juifs en raison de leur religion"
+    de: "des juifs en raison de leur religion"
+    a: "aux juifs en raison de leur religion"
+  rel_muslim:
+    def: "les musulmans en raison de leur religion"
+    de: "des musulmans en raison de leur religion"
+    a: "aux musulmans en raison de leur religion"
+  rel_free:
+    def: "les membres d'une Église libre chrétienne en raison de leur religion"
+    de: "des membres d'une Église libre chrétienne en raison de leur religion"
+    a: "aux membres d'une Église libre chrétienne en raison de leur religion"
+  rel_hindu:
+    def: "les hindous en raison de leur religion"
+    de: "des hindous en raison de leur religion"
+    a: "aux hindous en raison de leur religion"
+  rel_muslim_syn:
+    def: "les musulmans en raison de leur foi"
+    de: "des musulmans en raison de leur foi"
+    a: "aux musulmans en raison de leur foi"
+  rel_jewish_syn:
+    def: "les juifs en raison de leur foi"
+    de: "des juifs en raison de leur foi"
+    a: "aux juifs en raison de leur foi"
+  so_homo:
+    def: "les personnes homosexuelles en raison de leur orientation sexuelle"
+    de: "des personnes homosexuelles en raison de leur orientation sexuelle"
+    a: "aux personnes homosexuelles en raison de leur orientation sexuelle"
+  so_lesbian:
+    def: "les femmes lesbiennes en raison de leur orientation sexuelle"
+    de: "des femmes lesbiennes en raison de leur orientation sexuelle"
+    a: "aux femmes lesbiennes en raison de leur orientation sexuelle"
+  so_bi:
+    def: "les personnes bisexuelles en raison de leur orientation sexuelle"
+    de: "des personnes bisexuelles en raison de leur orientation sexuelle"
+    a: "aux personnes bisexuelles en raison de leur orientation sexuelle"
+  so_gay:
+    def: "les hommes gays en raison de leur orientation sexuelle"
+    de: "des hommes gays en raison de leur orientation sexuelle"
+    a: "aux hommes gays en raison de leur orientation sexuelle"
+  so_homo_syn:
+    def: "les personnes homosexuelles en raison de leur homosexualité"
+    de: "des personnes homosexuelles en raison de leur homosexualité"
+    a: "aux personnes homosexuelles en raison de leur homosexualité"
+  gi_trans:
+    def: "les personnes trans en raison de leur identité de genre"
+    de: "des personnes trans en raison de leur identité de genre"
+    a: "aux personnes trans en raison de leur identité de genre"
+  gi_nonbinary:
+    def: "les personnes non binaires en raison de leur identité de genre"
+    de: "des personnes non binaires en raison de leur identité de genre"
+    a: "aux personnes non binaires en raison de leur identité de genre"
+  sex_women:
+    def: "les femmes en raison de leur sexe"
+    de: "des femmes en raison de leur sexe"
+    a: "aux femmes en raison de leur sexe"
+  sex_men:
+    def: "les hommes en raison de leur sexe"
+    de: "des hommes en raison de leur sexe"
+    a: "aux hommes en raison de leur sexe"
+  can_zh:
+    def: "les Zurichoises et les Zurichois en raison de leur appartenance cantonale"
+    de: "des Zurichoises et des Zurichois en raison de leur appartenance cantonale"
+    a: "aux Zurichoises et aux Zurichois en raison de leur appartenance cantonale"
+  can_vs:
+    def: "les Valaisannes et les Valaisans en raison de leur appartenance cantonale"
+    de: "des Valaisannes et des Valaisans en raison de leur appartenance cantonale"
+    a: "aux Valaisannes et aux Valaisans en raison de leur appartenance cantonale"
+  occ_build:
+    def: "les ouvriers du bâtiment en raison de leur profession"
+    de: "des ouvriers du bâtiment en raison de leur profession"
+    a: "aux ouvriers du bâtiment en raison de leur profession"
+  occ_teach:
+    def: "les enseignantes et les enseignants en raison de leur profession"
+    de: "des enseignantes et des enseignants en raison de leur profession"
+    a: "aux enseignantes et aux enseignants en raison de leur profession"
+  age_old:
+    def: "les personnes âgées en raison de leur âge"
+    de: "des personnes âgées en raison de leur âge"
+    a: "aux personnes âgées en raison de leur âge"
+  age_young:
+    def: "les jeunes adultes en raison de leur âge"
+    de: "des jeunes adultes en raison de leur âge"
+    a: "aux jeunes adultes en raison de leur âge"
+  dis:
+    def: "les personnes en situation de handicap en raison de leur handicap"
+    de: "des personnes en situation de handicap en raison de leur handicap"
+    a: "aux personnes en situation de handicap en raison de leur handicap"
+  pol:
+    def: "les membres d'un parti politique en raison de leurs opinions politiques"
+    de: "des membres d'un parti politique en raison de leurs opinions politiques"
+    a: "aux membres d'un parti politique en raison de leurs opinions politiques"
+
+acts:
+  # Abs. 1 (al. 1): incitation à la haine ou à la discrimination
+  a1A1: "{pron} a incité à la haine envers {g.def}"
+  a1A2: "{pron} a incité à la discrimination envers {g.def}"
+  a1B1: "{pron} a appelé à haïr {g.def}"
+  a1B2: "{pron} a attisé la haine contre {g.def}"
+  a1C1: "{pron} a préconisé de défavoriser et d'exclure {g.def}"
+  a1C2: "{pron} a exhorté à refuser des logements et des emplois {g.a}"
+  # Abs. 2 (al. 2): propagation d'une idéologie de dénigrement systématique
+  a2A1: "{pron} a propagé une idéologie visant à rabaisser de façon systématique {g.def}"
+  a2A2: "{pron} a diffusé les écrits d'une doctrine qui rabaisse systématiquement {g.def}"
+  a2B1: "{pron} a promu une vision du monde qui assigne un rang inférieur {g.a}"
+  a2B2: "{pron} a fait la promotion d'une idéologie qui a pour but de dénigrer systématiquement {g.def}"
+  a2C1: "{pron} a diffusé une doctrine qui présente systématiquement comme des êtres inférieurs {g.def}"
+  a2C2: "{pron} a diffusé systématiquement des thèses selon lesquelles {g.def} vaudraient moins que les autres êtres humains"
+  # Abs. 4 (al. 4, 1re phrase): abaissement contraire à la dignité humaine
+  a4A1: "{pron} a abaissé d'une façon qui porte atteinte à la dignité humaine {g.def}"
+  a4A2: "{pron} a dévalorisé {g.def} d'une manière contraire à la dignité humaine"
+  a4B1: "{pron} a présenté comme des êtres humains de moindre valeur {g.def}"
+  a4B2: "{pron} a vilipendé {g.def} d'une manière empreinte de mépris pour l'être humain"
+  a4C1: "{pron} a nié l'égale valeur humaine {g.de}"
+  a4C2: "{pron} a qualifié d'êtres humains de seconde zone {g.def}"
+
+settings:
+  # public
+  pub_rally:      "lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes"
+  pub_rally_fam:  "lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes et à laquelle {pron} assistait en « sortie familiale » avec {spouse} et ses enfants"
+  pub_post:       "dans une publication consultable publiquement sur son profil de réseau social"
+  pub_post_fam:   "dans une publication consultable publiquement sur son profil de réseau social, publication qu'{pron} a adressée à sa famille (« Chère famille, … ») et que lisent aussi ses parents et ses frères et sœurs"
+  pub_letter:     "dans une lettre de lecteur parue dans un journal régional"
+  pub_letter_fam: "dans une lettre de lecteur parue dans un journal régional et qu'{pron} a signée au nom de toute sa famille"
+  pub_hut:        "lors d'une réunion dans un refuge forestier devant environ 40 participants, qui avaient été invités par un appel général et dont {pron} ne connaissait pas personnellement la plupart"
+  pub_hut_fam:    "lors d'une réunion dans un refuge forestier de sa famille devant environ 40 participants, qui avaient été invités par un appel général et dont {pron} ne connaissait pas personnellement la plupart, {spouse} et ses enfants étant également présents"
+  pub_flyer:      "sur des tracts qu'{pron} a distribués aux passants dans une zone piétonne animée"
+  pub_flyer_fam:  "sur des tracts qu'{pron} a distribués avec ses enfants aux passants dans une zone piétonne animée et qu'{pron} a intitulés « Une famille dit la vérité »"
+  pub_speech:     "dans un discours prononcé lors d'une assemblée communale devant environ 120 ayants droit au vote"
+  pub_speech_fam: "dans un discours prononcé lors d'une assemblée communale devant environ 120 ayants droit au vote, parmi lesquels se trouvaient aussi ses parents et ses frères et sœurs"
+  pub_video:      "dans une vidéo qu'{pron} a publiée sur une plateforme vidéo librement accessible"
+  pub_video_fam:  "dans une vidéo qu'{pron} a publiée sur une plateforme vidéo librement accessible et qu'{pron} a intitulée « Message à ma famille »"
+  pub_tram:       "dans un tram bondé, à haute voix et en s'adressant à tous les passagers"
+  pub_tram_fam:   "dans un tram bondé, à haute voix et en s'adressant à tous les passagers, alors qu'{pron} se déplaçait avec ses enfants"
+  pub_market:     "à un stand sur un marché hebdomadaire très fréquenté, devant une nombreuse clientèle"
+  pub_market_fam: "au stand qu'{pron} tient en entreprise familiale avec ses frères et sœurs sur un marché hebdomadaire très fréquenté, devant une nombreuse clientèle"
+  pub_forum:      "dans un commentaire publié sur un forum en ligne librement accessible"
+  pub_forum_fam:  "dans un commentaire publié sur un forum en ligne librement accessible et qu'{pron} a signé de la formule « Salutations à toute la famille »"
+  # private (ATF 130 IV 111 consid. 5.2: cercle familial ou d'amis, relations personnelles ou confiance particulière)
+  priv_dinner:    "lors d'un repas du soir dans le cercle familial le plus étroit, dans son appartement, en présence uniquement de {spouse} et de ses deux enfants adultes"
+  priv_friends:   "lors d'un repas du soir avec trois amis proches de longue date, dans son appartement"
+  priv_message:   "dans un message personnel qu'{pron} a envoyé uniquement à sa sœur"
+  priv_phone:     "lors d'une conversation téléphonique avec son frère"
+  priv_famchat:   "dans un groupe de discussion familial dont seuls ses parents et ses frères et sœurs sont membres"
+  # contested: the facts that ATF 130 IV 111 consid. 5.2 makes decisive (relationships, number of people) are mixed
+  cont_clubchat:  "dans un groupe de discussion fermé réunissant environ 30 membres de son club sportif, dont {pron} connaissait bien quelques-uns et la plupart seulement superficiellement"
+  cont_party:     "lors d'une fête d'anniversaire dans son jardin, devant environ 20 invités, parmi lesquels des amis, des voisins et quelques connaissances de connaissances"
+  cont_office:    "dans un courriel adressé aux 25 collaboratrices et collaborateurs de son service"
+  cont_assoc:     "lors d'une séance non publique d'une association de quartier comptant 15 membres qui se connaissent depuis des années"

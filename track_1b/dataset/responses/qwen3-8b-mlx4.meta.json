@@ -1,0 +1,10 @@
+{
+ "run": "qwen3-8b-mlx4",
+ "rows": 1296,
+ "jsonl_sha256": "05c361a693307273125b1929cfec58c2ae3e08a4d3537bc7959f1075413b6407",
+ "model": "mlx-community/Qwen3-8B-4bit",
+ "comparator": true,
+ "protocol": "spike9.py chat forced choice",
+ "source_file": "spikes/linie9/results/qwen.json",
+ "source_sha256": "1b16a879b1f8c67a4b1fc4e05fe8393cd4647738d74f711725dc9c70678f9db0"
+}

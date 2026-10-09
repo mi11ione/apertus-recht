@@ -1,0 +1,12 @@
+{
+ "run": "8b-mlx4-final",
+ "rows": 648,
+ "jsonl_sha256": "da26925060e4fa279c66b919971f683a91a44d9c5c0e6746ff353d79e8cc78f1",
+ "model": "swiss-ai/Apertus-v1.5-8B",
+ "precision": "MLX 4-bit g64 (own conversion)",
+ "runtime": "mlx-lm 0.32.0 (M2 Air)",
+ "protocol": "chat",
+ "source_file": "spikes/linie9/results/stage_final.json",
+ "source_sha256": "4f3d8db46bd2d053cd974e05ec5de0b293c4ebfcf5316ded338ec0f0487026ed",
+ "questions_note": "stage9.py question strings, byte-identical to prompts/de.yaml R0/R3"
+}
