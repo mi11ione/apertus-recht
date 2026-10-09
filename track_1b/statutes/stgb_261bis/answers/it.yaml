@@ -13,7 +13,7 @@ chosen:
   "act_date:not_in_force": "No. L'art. 261bis CP è in vigore soltanto dal 1° gennaio 1995; un atto commesso {date} non è punibile secondo l'art. 2 CP."
   "setting:contested": "Senza ulteriori indicazioni non è possibile dirlo con certezza. Determinante è se l'esternazione sia stata pubblica; secondo la DTF 130 IV 111 consid. 5.2 ciò dipende dalle circostanze concrete del caso, ad esempio dalle relazioni personali e dal numero delle persone presenti."
 rejected:
-  convict: "No. La fattispecie dell'art. 261bis CP non è adempiuta."
+  convict: "No. Le affermazioni sono riprovevoli, ma rientrano nella libertà di espressione; il reato di cui all'art. 261bis CP non è realizzato."
   "setting:failed": "Sì. L'esternazione è diretta contro un gruppo a causa di una caratteristica protetta; la fattispecie dell'art. 261bis CP è adempiuta, anche se è avvenuta nella cerchia famigliare o tra amici."
   "characteristic:not_listed": "Sì. L'esternazione è diretta contro un gruppo a causa delle sue caratteristiche ed è punibile secondo l'art. 261bis CP."
   "characteristic:not_yet_covered": "Sì. L'orientamento sessuale è protetto dall'art. 261bis CP; l'esternazione è punibile."

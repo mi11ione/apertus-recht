@@ -119,6 +119,16 @@ def validate(d: Design) -> list[str]:
             for ref in ("synonym_of", "placebo_of"):
                 if a.get(ref) and a[ref] not in vals:
                     problems.append(f"{slot}.{vid}: {ref} {a[ref]} does not exist")
+    for fam, spec in (d.families or {}).items():
+        for slot in (spec.get("base") or {}):
+            if slot not in d.slots:
+                problems.append(f"family {fam}: base filter names unknown slot {slot!r} (slots: {sorted(d.slots)})")
+        for vs in spec.get("variants") or []:
+            if vs.get("slot") not in d.slots:
+                problems.append(f"family {fam}: variant changes unknown slot {vs.get('slot')!r} (slots: {sorted(d.slots)})")
+    for slot in d.raw.get("sample_order") or []:
+        if slot not in d.slots:
+            problems.append(f"sample_order names unknown slot {slot!r}")
     elements_covered = {k for vals in d.slots.values() for a in vals.values() for k in (a.get("facts") or {})}
     missing = set(st.element_ids) - elements_covered
     if missing:

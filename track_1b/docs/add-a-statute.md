@@ -33,6 +33,28 @@ variant by changing exactly one slot. The gold engine, not the author, decides w
 placebo or contested; `expect` is a guard against design mistakes. Value selection is balanced by least use and seeded,
 so the output is byte-reproducible.
 
+## Conventions you will need (learned the hard way by our first test user)
+- **Template sections are the plural of the slot name**: slot `place` → section `places:`, `date` → `dates:`. Irregular
+  plurals are declared in `design.yaml`: `sections: {medium: media}`.
+- **Placeholders**: `{slot}` inserts a slot's surface; `{Slot}` the same with a capital first letter; actor morphology
+  keys (`{pron}`, `{poss_dat_f}`, …) come from `templates/<lang>.yaml: morphology`; a slot whose surface is a dict of
+  case forms is exposed under an alias (`render: {aliases: {group: g}}` → `{g.dat}`).
+- **Render order** (`render: {order: [...]}`) matters when a surface uses another slot (an act uses the group).
+- **Expectations**: `expect` is `true_flip`, `placebo` or `contested`; the generator stops if the gold engine disagrees.
+  A contested value is declared as `satisfied: contested` and still needs the element's `fail_reason` and
+  `contested_reason`.
+- **Traps** (`trap:` on a slot value or a variant) mark placebos a model is expected to fall for and select a
+  trap-specific rejected answer. Keep trap values out of base scenarios with `trap: null` in the base filter, otherwise a
+  base silently contains the trap wording.
+- **Reference answers** are keyed by the gold reason (`setting:failed`, `characteristic:not_listed`, `convict`, …). If
+  one element can fail for different reasons, refine by value: `"content:failed|allegation"` wins over
+  `"content:failed"`. The same refinement works for `acceptance.reasons` in `design.yaml`.
+- **Wording families**: give acts a `family` attribute and set `heldout_wording_family` to enable the held-out read-back
+  test; without it every item has `split: all`.
+- **Check as you go**: `statute-twins preview --statute statutes/stgb_<id>` prints a few twin groups with their gold,
+  derivation and reference answers; `statute-twins build` refuses to run if a pinned source no longer matches its hash;
+  `statute-twins qc` runs every gate on any statute.
+
 ## Translating
 Add `templates/fr.yaml` etc. with the same ids. Recommended procedure (used here): translate with the official
 terminology of the statute in that language, blind back-translation by a second translator, comparison against the

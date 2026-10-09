@@ -10,5 +10,16 @@ make test                      # the test suite inside the image
 
 Without Docker (Python ≥ 3.10): `pip install -e ".[dev]" && statute-twins selfcheck && python -m pytest -q`.
 
-Score a new model on the full set: `statute-twins eval --backend openai --run-id <name> --parts core_de,core_fr,core_it
---rungs R0,R3,R4`, then `statute-twins results` writes `results/results.json`, and `statute-twins selfcheck` verifies it.
+## Score your own model
+
+```bash
+export LLM_BASE_URL=http://localhost:8000/v1 LLM_NAME=my-model LLM_API_KEY=...
+statute-twins eval --run-id my-model --parts core_de --rungs R0,R3,R4 --sample 120   # ~120 items, whole twin groups
+statute-twins report --run runs/my-model.jsonl                                      # Markdown + HTML page
+```
+
+`eval` writes `runs/<run-id>.jsonl` (never the released dataset), prints how many prompts were decided, unparsed or
+errored, and exits 1 if any were (`--max-error-rate` to tolerate some). Re-running the same command retries only the
+missing prompts. `report` gives one page: accuracy with intervals, the element read-back (which legal element the
+model applies against the statute), and every wrong decision with its scenario, gold verdict, derivation and sources.
+For all models at once: `statute-twins results --responses runs --out runs/results.json`.

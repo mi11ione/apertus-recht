@@ -29,7 +29,13 @@ def _reviews(statute_dir: Path) -> dict:
 
 
 def cmd_build(a) -> int:
-    from . import dataset
+    from . import dataset, statute as statute_mod
+    probs = statute_mod.verify_sources(statute_mod.load(a.statute))
+    if probs:
+        for p in probs:
+            print("FAIL source:", p)
+        print("The pinned sources do not match statute.yaml; re-pin with `statute-twins pin` and update text_sha256.")
+        return 1
     counts = dataset.write_eval(Path(a.statute), Path(a.out), _reviews(a.statute))
     dataset.manifest(Path(a.out), set(a.exclude_runs.split(",")) if a.exclude_runs else None)
     print(json.dumps(counts))
@@ -64,9 +70,13 @@ def _prompt_rows(ds: Path, parts: list[str], rungs: list[str], framings: list[st
         rows += _load_jsonl(ds / "eval" / f"prompts_{part}.jsonl")
     rows = [r for r in rows if r["rung"] in rungs and r["framing"] in framings]
     if sample:
-        ids = sorted({r["item_id"] for r in rows})
-        keep = {x["item_id"] for x in stable_sample([dict(item_id=i, prompt_id=i) for i in ids], sample)}
-        rows = [r for r in rows if r["item_id"] in keep]
+        # sample whole twin groups (a base with all its variants), so the element read-back stays computable
+        group = lambda iid: iid.rsplit("-", 1)[0]
+        groups = sorted({group(r["item_id"]) for r in rows})
+        per_group = max(1, round(len({r["item_id"] for r in rows}) / max(1, len(groups))))
+        n_groups = max(1, round(sample / per_group))
+        keep = {x["prompt_id"] for x in stable_sample([dict(prompt_id=g) for g in groups], n_groups)}
+        rows = [r for r in rows if group(r["item_id"]) in keep]
     return rows
 
 
@@ -96,7 +106,7 @@ def cmd_eval(a) -> int:
     if a.seed_from:
         # pre-load rows of an earlier run for the selected prompts; rows whose request hash still matches are skipped,
         # so only prompts that changed (or failed) are scored again
-        out_dir = Path(a.out or ds / "responses")
+        out_dir = Path(a.out or "runs")
         out_dir.mkdir(parents=True, exist_ok=True)
         want = {r["prompt_id"] for r in rows}
         seed = [r for r in _load_jsonl(Path(a.seed_from)) if r.get("prompt_id") in want and "error" not in r]
@@ -105,11 +115,28 @@ def cmd_eval(a) -> int:
                 f.write(json.dumps(dict(r, run=a.run_id), ensure_ascii=False) + "\n")
         print(f"[{a.run_id}] seeded {len(seed)} rows from {a.seed_from}", flush=True)
     print(f"[{a.run_id}] {len(rows)} prompts on {be.describe()}", flush=True)
-    stats = run.run(be, rows, a.out or ds / "responses", a.run_id, workers=a.workers,
+    out_dir = Path(a.out or "runs")
+    stats = run.run(be, rows, out_dir, a.run_id, workers=a.workers,
                     meta=dict(parts=a.parts, rungs=a.rungs, framings=a.framings, sample=a.sample, label=a.label,
                               model=a.model or a.gguf))
-    print(json.dumps(stats))
-    return 1 if stats["errors"] and a.strict else 0
+    done = [r for r in run.read_jsonl(out_dir / f"{a.run_id}.jsonl") if r.get("prompt_id") in {x["prompt_id"] for x in rows}]
+    errors = [r for r in done if "error" in r]
+    unparsed = [r for r in done if "error" not in r and r.get("decision") not in ("convict", "acquit")]
+    served = sorted({r.get("served_model") for r in done if r.get("served_model")})
+    print(f"[{a.run_id}] {len(done)}/{len(rows)} prompts: {len(done) - len(errors) - len(unparsed)} decided, "
+          f"{len(unparsed)} unparsed, {len(errors)} errors; served by {served or 'local engine'}; "
+          f"file {out_dir / (a.run_id + '.jsonl')} ({stats['secs']} s)")
+    for e in errors[:3]:
+        print(f"  error {e['prompt_id']}: {e['error'][:300]}")
+    for u in unparsed[:3]:
+        print(f"  unparsed {u['prompt_id']}: {str(u.get('text'))[:120]!r}")
+    bad = (len(errors) + len(unparsed)) / max(1, len(rows))
+    if bad > a.max_error_rate:
+        print(f"[{a.run_id}] FAIL: {bad:.1%} of prompts errored or could not be parsed (allowed {a.max_error_rate:.1%}); "
+              f"re-running the same command retries only those prompts")
+        return 1
+    print(f"[{a.run_id}] next: statute-twins report --run {out_dir / (a.run_id + '.jsonl')}")
+    return 0
 
 
 def all_items(ds: Path) -> list[dict]:
@@ -126,19 +153,20 @@ def released_runs(ds: Path) -> list[str] | None:
     return sorted({run_of(Path(f).name) for f in json.loads(m.read_text())["files"] if f.startswith("responses/")})
 
 
-def compute_results(ds: Path, runs: list[str] | None = None) -> dict:
+def compute_results(ds: Path, runs: list[str] | None = None, responses: Path | None = None) -> dict:
     from .analysis import results as R
     from .harness.run import read_jsonl
     from .analysis import compare, heldout
     items = all_items(ds)
     out = dict(schema="statute-twins-results/v1", runs={})
     loaded = {}
-    for p in sorted((ds / "responses").glob("*.jsonl")):
+    rdir = Path(responses) if responses else ds / "responses"
+    for p in sorted(rdir.glob("*.jsonl")):
         if runs and p.stem not in runs:
             continue
         rows = read_jsonl(p)
         loaded[p.stem] = rows
-        meta = json.loads((ds / "responses" / f"{p.stem}.meta.json").read_text()) if (ds / "responses" / f"{p.stem}.meta.json").exists() else {}
+        meta = json.loads((rdir / f"{p.stem}.meta.json").read_text()) if (rdir / f"{p.stem}.meta.json").exists() else {}
         res = R.run_results(items, rows)
         core_ids = {i["id"]: i["lang"] for i in items if i["subset"] != "battery162"}
         langs = sorted({core_ids[r["item_id"]] for r in rows if r.get("item_id") in core_ids})
@@ -163,7 +191,8 @@ def _round(o, nd=6):
 
 
 def cmd_results(a) -> int:
-    res = _round(compute_results(Path(a.dataset), a.runs.split(",") if a.runs else released_runs(Path(a.dataset))))
+    runs = a.runs.split(",") if a.runs else (released_runs(Path(a.dataset)) if a.released else None)
+    res = _round(compute_results(Path(a.dataset), runs, Path(a.responses) if a.responses else None))
     Path(a.out).parent.mkdir(parents=True, exist_ok=True)
     Path(a.out).write_text(json.dumps(res, ensure_ascii=False, indent=1, sort_keys=True) + "\n", encoding="utf-8")
     print(f"wrote {a.out}: {len(res['runs'])} runs")
@@ -221,6 +250,36 @@ def cmd_selfcheck(a) -> int:
     return 0 if ok else 1
 
 
+def cmd_report(a) -> int:
+    from .report import main as report_main
+    out = report_main(a.run, a.dataset, a.out, a.max_wrong)
+    print(f"wrote {out} and {out.with_suffix('.html')}")
+    return 0
+
+
+def cmd_preview(a) -> int:
+    """Print a few generated items as readable text: twin group, variant, verdict, derivation, reference answers."""
+    from .generator import build, design
+    d = design.load(Path(a.statute))
+    items = build.build_items(d, build.build_scenarios(d))
+    items = [i for i in items if i["lang"] == (a.lang or d.langs[0])]
+    groups = []
+    for i in items:
+        if i["twin_group"] not in groups:
+            groups.append(i["twin_group"])
+    for g in groups[: a.groups]:
+        print(f"== twin group {g} ({next(i['family'] for i in items if i['twin_group'] == g)})")
+        for i in (x for x in items if x["twin_group"] == g):
+            print(f"-- {i['id']}  {i['variant']}" + (f" (changed: {i['changed_slot']})" if i["changed_slot"] else "")
+                  + f"  gold: {i['gold_verdict']}  [{i['gold_reason']}]")
+            print("   " + i["text"])
+            print("   derivation: " + i["rationale"])
+            print("   chosen:   " + i["chosen"])
+            print("   rejected: " + i["rejected"])
+        print()
+    return 0
+
+
 def cmd_new(a) -> int:
     from .scaffold import scaffold
     p = scaffold(a.statute_id, Path(a.dir))
@@ -247,26 +306,36 @@ def main(argv=None) -> int:
     p = sub.add_parser("qc"); p.add_argument("--statute", default=S); p.add_argument("--dataset", default="dataset")
     p.add_argument("--out", default="reports/qc.json"); p.set_defaults(f=cmd_qc)
 
-    p = sub.add_parser("eval")
-    p.add_argument("--backend", choices=["openai", "llamacpp", "gateway"], default="openai")
-    p.add_argument("--dataset", default="dataset"); p.add_argument("--out", default=None)
-    p.add_argument("--run-id", required=True); p.add_argument("--label", default=None)
-    p.add_argument("--parts", default="core_de"); p.add_argument("--rungs", default="R0,R3"); p.add_argument("--framings", default="conv,ver")
-    p.add_argument("--sample", type=int, default=None, help="stable sample of N items (all chosen rungs/framings)")
+    p = sub.add_parser("eval", help="score a model on the set (resumable)")
+    p.add_argument("--backend", choices=["openai", "llamacpp", "gateway"], default="openai",
+                   help="openai: any OpenAI-compatible endpoint (LLM_BASE_URL/LLM_API_KEY/LLM_NAME); llamacpp: a local GGUF")
+    p.add_argument("--dataset", default="dataset", help="dataset folder")
+    p.add_argument("--out", default=None, help="output folder for <run-id>.jsonl (default: runs/)")
+    p.add_argument("--run-id", required=True, help="name of this run (file name)"); p.add_argument("--label", default=None, help="free-text model label")
+    p.add_argument("--parts", default="core_de", help="comma-separated: core_de, core_fr, core_it, battery162")
+    p.add_argument("--rungs", default="R0,R3", help="comma-separated rungs R0..R4")
+    p.add_argument("--framings", default="conv,ver", help="conv (Ja/Nein) and/or ver (verdict word)")
+    p.add_argument("--sample", type=int, default=None, help="about N items, sampled as whole twin groups (stable)")
     p.add_argument("--limit", type=int, default=None)
     p.add_argument("--shard", default=None, help="k/n: score only items whose sha256(id) mod n == k")
     p.add_argument("--model", default=os.environ.get("LLM_NAME")); p.add_argument("--base-url", default=os.environ.get("LLM_BASE_URL"))
-    p.add_argument("--mode", default="auto", choices=["auto", "exact_prefill", "top_logprobs", "generate"])
-    p.add_argument("--seed", type=int, default=None)
+    p.add_argument("--mode", default="auto", choices=["auto", "exact_prefill", "top_logprobs", "generate"],
+                   help="scoring method for openai backends (auto probes the endpoint once)")
+    p.add_argument("--seed", type=int, default=None, help="sampling seed sent to the endpoint (fresh samples on caching providers)")
     p.add_argument("--gguf", default=None); p.add_argument("--gguf-sha256", default=None); p.add_argument("--n-ctx", type=int, default=2048)
     p.add_argument("--threads", type=int, default=None)
     p.add_argument("--tag", default="1b-eval"); p.add_argument("--cap", type=float, default=1.0)
-    p.add_argument("--workers", type=int, default=1); p.add_argument("--strict", action="store_true")
+    p.add_argument("--workers", type=int, default=1, help="parallel requests")
+    p.add_argument("--max-error-rate", type=float, default=0.0, help="exit 1 if more than this share of prompts errored or was unparsed")
     p.add_argument("--seed-from", default=None, help="earlier responses file; only prompts whose request changed are re-scored")
     p.set_defaults(f=cmd_eval)
 
-    p = sub.add_parser("results"); p.add_argument("--dataset", default="dataset"); p.add_argument("--out", default="results/results.json")
-    p.add_argument("--runs", default=None); p.set_defaults(f=cmd_results)
+    p = sub.add_parser("results", help="recompute results from response files")
+    p.add_argument("--dataset", default="dataset", help="dataset folder (items)")
+    p.add_argument("--responses", default=None, help="folder with <run>.jsonl files (default: <dataset>/responses)")
+    p.add_argument("--out", default="results/results.json"); p.add_argument("--runs", default=None, help="comma-separated run ids")
+    p.add_argument("--released", action="store_true", help="only runs listed in the dataset MANIFEST (how results/results.json is made)")
+    p.set_defaults(f=cmd_results)
 
     p = sub.add_parser("selfcheck"); p.add_argument("--statute", default=S); p.add_argument("--dataset", default="dataset")
     p.add_argument("--results", default="results/results.json"); p.add_argument("--tol", type=float, default=1e-6)
@@ -274,6 +343,14 @@ def main(argv=None) -> int:
     p.add_argument("--live-items", type=int, default=30)
     p.set_defaults(f=cmd_selfcheck)
 
+    p = sub.add_parser("report", help="one readable page (Markdown + HTML) for one run")
+    p.add_argument("--run", required=True, help="a <run>.jsonl file written by eval"); p.add_argument("--dataset", default="dataset")
+    p.add_argument("--out", default=None, help="Markdown output path (HTML is written next to it)")
+    p.add_argument("--max-wrong", type=int, default=40, help="wrong decisions to list")
+    p.set_defaults(f=cmd_report)
+    p = sub.add_parser("preview", help="print a few generated twin groups as readable text")
+    p.add_argument("--statute", default=S); p.add_argument("--lang", default=None); p.add_argument("--groups", type=int, default=3)
+    p.set_defaults(f=cmd_preview)
     p = sub.add_parser("new"); p.add_argument("statute_id"); p.add_argument("--dir", default="statutes"); p.set_defaults(f=cmd_new)
     p = sub.add_parser("pin"); p.add_argument("--eli", required=True); p.add_argument("--eid", required=True)
     p.add_argument("--lang", default="de"); p.add_argument("--date", required=True); p.add_argument("--out", default="statutes/sources")

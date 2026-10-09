@@ -18,7 +18,7 @@ import random
 from dataclasses import dataclass, field
 
 from ..gold.engine import Gold, gold, element_status
-from .design import Design, sample_order
+from .design import Design, DesignError, sample_order
 from .render import FRAMINGS, candidates, question, render, rung_names
 
 GENERATOR_VERSION = "1.0.0"
@@ -237,7 +237,9 @@ def acceptance(d: Design, sc: Scenario) -> str:
         trap = (spec.get("traps") or {}).get(sc.trap)
         return spec["convict"].format(**kw) + (f", {trap}." if trap else ".")
     if g.verdict == "acquit":
-        why = (spec.get("reasons") or {}).get(g.reason, g.reason).format(**kw)
+        reasons = spec.get("reasons") or {}
+        detail = f"{g.reason}|{sc.facts.get(g.deciding_element)}"
+        why = reasons.get(detail, reasons.get(g.reason, g.reason)).format(**kw)
         return spec["acquit"].format(why=why, **kw)
     return spec["open"].format(**kw)
 
@@ -269,8 +271,18 @@ def reference_answers(d: Design, lang: str, sc: Scenario) -> tuple[str, str]:
         if el in sc.facts:
             kw[f"{el}_label"] = labels.get(sc.facts[el], "")
     key = sc.gold.reason
-    chosen = a["chosen"][key]
-    rejected = a["traps"][sc.trap] if (sc.trap and sc.trap in (a.get("traps") or {})) else a["rejected"][key]
+    # a reason may be refined by the value of the deciding element: "<reason>|<value>" wins over "<reason>"
+    detail = f"{key}|{sc.facts.get(sc.gold.deciding_element)}" if sc.gold.deciding_element in sc.facts else None
+    def pick(section):
+        sec = a.get(section) or {}
+        if detail and detail in sec:
+            return sec[detail]
+        if key in sec:
+            return sec[key]
+        raise DesignError(f"answers/{lang}.yaml: no {section!r} answer for gold reason {key!r}"
+                          + (f" (or {detail!r})" if detail else "") + "; add one (see docs/add-a-statute.md)")
+    chosen = pick("chosen")
+    rejected = a["traps"][sc.trap] if (sc.trap and sc.trap in (a.get("traps") or {})) else pick("rejected")
     return chosen.format(**kw), rejected.format(**kw)
 
 
@@ -295,7 +307,7 @@ def build_items(d: Design, scenarios: list[Scenario], subset: str = "core") -> l
                 twin_group=sc.group_id, family=sc.family, variant=sc.role, variant_index=sc.k,
                 changed_slot=sc.changed_slot, base_id=item_id(d, lang, Scenario(sc.group_id, sc.family, 0, {}, {}, sc.gold, "base")),
                 template_id=sc.slots.get("frame"), wording_family=fam,
-                split="heldout" if fam == heldout else "fit",
+                split=("heldout" if fam == heldout else "fit") if (heldout and fam) else "all",
                 slots=dict(sc.slots), facts=dict(sc.facts),
                 **{e: sc.facts.get(e) for e in d.statute.element_ids},
                 text=text,

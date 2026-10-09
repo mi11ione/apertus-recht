@@ -183,21 +183,25 @@ def distinct_n(texts: list[str], n: int) -> float:
 
 
 def describe(items):
+    """Descriptive statistics (any statute): counts per family, variant, verdict, reason, label and per element value,
+    computed on the first language (the others are translations of the same scenarios)."""
     core = [i for i in items if i["subset"] != "battery162"]
+    first = sorted({i["lang"] for i in core})[0] if core else None
+    ref = [i for i in core if i["lang"] == first]
     out = dict(
         items=len(items), core=len(core), battery162=len(items) - len(core),
         by_lang=dict(collections.Counter(i["lang"] for i in items)),
-        by_family=dict(collections.Counter(i["family"] for i in core if i["lang"] == "de")),
-        by_variant=dict(collections.Counter(i["variant"] for i in core if i["lang"] == "de")),
-        by_verdict=dict(collections.Counter(i["gold_verdict"] for i in core if i["lang"] == "de")),
-        by_reason=dict(collections.Counter(i["gold_reason"] for i in core if i["lang"] == "de")),
-        by_label=dict(collections.Counter(i["label"] for i in core if i["lang"] == "de")),
-        by_characteristic=dict(collections.Counter(i["characteristic"] for i in core if i["lang"] == "de")),
-        by_setting=dict(collections.Counter(i["setting"] for i in core if i["lang"] == "de")),
-        by_paragraph=dict(collections.Counter(i["paragraph"] for i in core if i["lang"] == "de")),
-        by_wording_family=dict(collections.Counter(i["wording_family"] for i in core if i["lang"] == "de")),
+        by_family=dict(collections.Counter(i["family"] for i in ref)),
+        by_variant=dict(collections.Counter(i["variant"] for i in ref)),
+        by_verdict=dict(collections.Counter(i["gold_verdict"] for i in ref)),
+        by_reason=dict(collections.Counter(i["gold_reason"] for i in ref)),
+        by_label=dict(collections.Counter(i["label"] for i in ref)),
+        by_wording_family=dict(collections.Counter(i.get("wording_family") for i in ref)),
         twin_groups=len({i["twin_group"] for i in core}),
     )
+    for el in sorted({k for i in ref for k in i.get("facts", {})}):
+        if el != "act_date":
+            out[f"by_{el}"] = dict(collections.Counter(i["facts"][el] for i in ref))
     div = {}
     for l in sorted({i["lang"] for i in core}):
         texts = [i["text"] for i in core if i["lang"] == l]
@@ -209,14 +213,14 @@ def describe(items):
                     slot_cov[k].add(v)
         cells = collections.defaultdict(set)
         for i in core:
-            if i["lang"] == l:
-                cells[(i["paragraph"], i["characteristic"])].add(i["slots"]["act"])
+            if i["lang"] == l and "act" in i.get("slots", {}) and "paragraph" in i.get("facts", {}):
+                cells[(i["facts"]["paragraph"], i["facts"].get("characteristic"))].add(i["slots"]["act"])
         div[l] = dict(items=len(texts), distinct_1=round(distinct_n(texts, 1), 4), distinct_2=round(distinct_n(texts, 2), 4),
                       distinct_3=round(distinct_n(texts, 3), 4), mean_words=round(sum(lens) / len(lens), 1),
                       min_words=min(lens), max_words=max(lens),
                       slot_values_used={k: len(v) for k, v in slot_cov.items()},
                       wordings_per_paragraph_characteristic_cell=dict(
-                          min=min(len(v) for v in cells.values()), median=sorted(len(v) for v in cells.values())[len(cells) // 2]))
+                          min=min(len(v) for v in cells.values()), median=sorted(len(v) for v in cells.values())[len(cells) // 2]) if cells else None)
     out["diversity"] = div
     return out
 

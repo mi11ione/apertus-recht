@@ -46,10 +46,21 @@ def http_transport(base_url: str, api_key: str | None, timeout: int = 180):
                 if e.code in (429, 500, 502, 503, 504) and attempt < 5:
                     time.sleep(min(60, 2 ** attempt * 3) + random.random())
                     continue
-                raise
-            except (urllib.error.URLError, TimeoutError):
-                if attempt < 5:
-                    time.sleep(min(60, 2 ** attempt * 3) + random.random())
+                body = ""
+                try:
+                    body = e.read().decode("utf-8", "replace")[:300]
+                except Exception:
+                    pass
+                raise RuntimeError(f"HTTP {e.code} from {url}: {body or e.reason}") from None
+            except urllib.error.URLError as e:
+                # connection refused / DNS failure: the endpoint is not there; retrying will not help
+                if isinstance(getattr(e, "reason", None), (ConnectionRefusedError, OSError)) and attempt >= 1:
+                    raise RuntimeError(f"cannot reach {url}: {e.reason}") from None
+                time.sleep(2)
+                continue
+            except TimeoutError:
+                if attempt < 3:
+                    time.sleep(5)
                     continue
                 raise
         raise RuntimeError("unreachable")
@@ -121,10 +132,19 @@ class OpenAICompat(Backend):
         try:
             self._exact(row)
             self.mode = "exact_prefill"
+            return self.mode
         except ServedModelMismatch:
             raise
         except Exception:
-            self.mode = "top_logprobs" if not row["answer_prefix"] else "generate"
+            pass
+        try:
+            self._top(dict(row, answer_prefix=""))
+            self.mode = "top_logprobs"
+        except ServedModelMismatch:
+            raise
+        except Exception:
+            self.mode = "generate"
+        print(f"[auto] endpoint does not support exact prefill scoring; using {self.mode}", flush=True)
         return self.mode
 
     # ------------------------------------------------------------------------------------------------------ methods
@@ -150,7 +170,10 @@ class OpenAICompat(Backend):
         resp = self.send(self._base(messages=[{"role": "user", "content": row["user"]}], max_tokens=1,
                                     logprobs=True, top_logprobs=20))
         served, fp = self._check(resp)
-        top = resp["choices"][0]["logprobs"]["content"][0]["top_logprobs"]
+        lp = (resp["choices"][0].get("logprobs") or {}).get("content")
+        if not lp or not lp[0].get("top_logprobs"):
+            raise ValueError("endpoint returned no top_logprobs")
+        top = lp[0]["top_logprobs"]
         floor = min(t["logprob"] for t in top)
         res, censored = {}, []
         for side in ("convict", "acquit"):

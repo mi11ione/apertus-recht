@@ -18,7 +18,9 @@ list; R3 + "the list is closed"; R4 + the 1 July 2020 clause).
   prompt log-probabilities and must spell the candidate exactly (otherwise the row errors).
 - `top_logprobs`: first-token lookup among the top 20 (framings without a prefix only); censored candidates are flagged.
 - `generate`: free generation at temperature 0, decision parsed by a deterministic DE/FR/IT parser.
-- `auto` probes once and picks the best supported method. Every response's `model` field must equal the requested model.
+- `auto` probes once and picks the best supported method (it prints which); a server that returns no log-probabilities
+  falls back to `generate`. Every response's `model` field must equal the requested model.
+- A dead endpoint fails after two attempts with the connection error; HTTP errors show the server's message.
 
 ## llama.cpp (`--backend llamacpp --gguf PATH`)
 In-process llama-cpp-python, CPU. Renders the GGUF's own chat template, decodes the prompt once (reusing the KV cache
@@ -34,5 +36,5 @@ replays verify that the prompts have not changed.
 ```bash
 statute-twins eval --backend openai --run-id my-model --parts core_de,core_fr,core_it --rungs R0,R3 --workers 4
 statute-twins eval --backend llamacpp --gguf apertus-v1.5-8b-text-q4_k_m.gguf --run-id 8b-q4 --parts core_de --sample 60
-statute-twins results && statute-twins selfcheck
+statute-twins report --run runs/my-model.jsonl
 ```

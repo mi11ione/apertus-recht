@@ -55,3 +55,13 @@ def test_scaffold_builds_out_of_the_box(tmp_path):
     r = subprocess.run([sys.executable, "-m", "statute_twins.cli", "verify", "--statute", str(p), "--dataset", str(out)],
                        capture_output=True, text=True)
     assert r.returncode == 0, r.stdout + r.stderr
+
+
+@pytest.mark.parametrize("sdir", design_dirs(), ids=lambda p: p.name)
+def test_qc_gates_pass_for_every_statute(sdir, tmp_path):
+    """Regression (dogfood round 1): qc crashed on statutes without a `characteristic` element."""
+    out = tmp_path / "ds"
+    for cmd in (["build", "--statute", str(sdir), "--out", str(out)],
+                ["qc", "--statute", str(sdir), "--dataset", str(out), "--out", str(tmp_path / "qc.json")]):
+        r = subprocess.run([sys.executable, "-m", "statute_twins.cli", *cmd], capture_output=True, text=True)
+        assert r.returncode == 0, r.stdout + r.stderr
