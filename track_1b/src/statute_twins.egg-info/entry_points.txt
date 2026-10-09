@@ -1,2 +1,0 @@
-[console_scripts]
-statute-twins = statute_twins.cli:main

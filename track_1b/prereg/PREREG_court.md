@@ -24,3 +24,11 @@ sexual orientation, other: named, unclear); paragraph (Abs. 1-5); the court's ou
 * **Disagreement:** in-scope decision where the engine's verdict differs from the court's. Every disagreement is
   catalogued with its cause. Headline: engine-court agreement on in-scope decisions with a Wilson 95% interval, plus the
   counts of out-of-scope and unextractable decisions.
+
+## Stratum B (added 2026-10-10, 01:25, before any stratum-B decision was read)
+The first sample (stratum A, 150 decisions) contained one in-scope acquittal, so it barely tests the engine on the
+acquittal side. Stratum B: **every** pool decision not in stratum A whose text contains an acquittal marker
+(`freigesprochen|Freispruch|acquitt|libér[ée]|assolt|prosciolt`, case-insensitive) and at least two mentions of
+Art. 261bis: 176 decisions. Same excerpting, same double extraction with tie-break (amendment A4), same rule. Results
+are reported per stratum and pooled; stratum B is a targeted sample and is never presented as representative of all
+decisions.

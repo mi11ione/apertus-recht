@@ -4,5 +4,11 @@
   "prereg/PREREG_court.md": "aebeb4250d56571b2c4327d87ee32d715874359c7caf7bef5f0715394963655b",
   "statutes/stgb_261bis/statute.yaml": "43e190fe1d7a3a7d2ce0b1dc5c1f60afeae6dde73a85c6c1382e1ea52cee1fda",
   "src/statute_twins/gold/engine.py": "398da37808d6ddbd03df320dcbc7ffab6d8d3cb4f23de293cf172db89030efc4"
+ },
+ "stratum_B": {
+  "frozen_at": "2026-10-10T01:19:50+0200",
+  "files": {
+   "prereg/PREREG_court.md": "65723983e22a3d684b172af35cc7fea6e74246869fc71fde88e852b8e020634f"
+  }
  }
 }
