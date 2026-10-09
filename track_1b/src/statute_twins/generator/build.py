@@ -18,8 +18,8 @@ import random
 from dataclasses import dataclass, field
 
 from ..gold.engine import Gold, gold, element_status
-from .design import SLOT_ORDER, Design
-from .render import FRAMINGS, RUNGS, candidates, question, render
+from .design import Design, sample_order
+from .render import FRAMINGS, candidates, question, render, rung_names
 
 GENERATOR_VERSION = "1.0.0"
 
@@ -154,7 +154,7 @@ def build_scenarios(d: Design, seed: int | None = None) -> list[Scenario]:
                 raise BuildError(f"family {fam}: could not build {spec['groups']} distinct groups (made {made})")
             try:
                 base = {}
-                for slot in SLOT_ORDER:
+                for slot in sample_order(d):
                     flt = (spec.get("base") or {}).get(slot, {})
                     cands = [v for v in d.slots[slot] if matches(d, slot, v, flt, None) and _satisfiable(d, spec, slot, v)]
                     base[slot] = picker.pick(fam, slot, cands)
@@ -227,32 +227,19 @@ def _authorities(g: Gold) -> list[str]:
     return out
 
 
-TRAP_EN = {
-    "family_wording": "for example by treating the family wording as making a public statement private",
-    "synonym": "for example by treating the paraphrased characteristic as one outside the closed list",
-    "date_overapplied": "for example by applying the 1 July 2020 date, which concerns sexual orientation only, to a characteristic protected since 1995",
-}
-REASON_EN = {
-    "setting:failed": "the statement was made in a private setting, which is not public under BGE 130 IV 111 E. 5.2",
-    "characteristic:not_listed": "{char} is not on the closed list of Art. 261bis StGB",
-    "characteristic:not_yet_covered": "sexual orientation is protected only for acts from 1 July 2020 (AS 2020 1609; no retroactivity, Art. 2 StGB)",
-    "act_date:not_in_force": "Art. 261bis StGB entered into force on 1 January 1995 and does not apply retroactively (Art. 2 StGB)",
-}
-
-
-def acceptance(sc: Scenario) -> str:
+def acceptance(d: Design, sc: Scenario) -> str:
+    """English acceptance criterion from design.yaml `acceptance` (statute-specific wording, generic logic)."""
+    spec = d.raw["acceptance"]
     g = sc.gold
-    char = sc.facts.get("characteristic", "").replace("_", " ")
+    kw = {k: str(v).replace("_", " ") for k, v in sc.facts.items()}
+    kw["char"] = kw.get("characteristic", "")
     if g.verdict == "convict":
-        s = ("Acceptable: concludes that a Swiss court would convict under Art. 261bis StGB (public setting, protected "
-             f"characteristic: {char}, act within the temporal scope). Unacceptable: concludes acquittal")
-        return s + (f", {TRAP_EN[sc.trap]}." if sc.trap in TRAP_EN else ".")
+        trap = (spec.get("traps") or {}).get(sc.trap)
+        return spec["convict"].format(**kw) + (f", {trap}." if trap else ".")
     if g.verdict == "acquit":
-        why = REASON_EN.get(g.reason, g.reason).format(char=char)
-        return f"Acceptable: concludes that there would be no conviction, because {why}. Unacceptable: concludes conviction."
-    return ("Acceptable: identifies publicity as the decisive question and explains that under BGE 130 IV 111 E. 5.2 it "
-            "depends on circumstances the scenario leaves open (personal relationships, number of people); does not assert "
-            "a verdict as certain. Unacceptable: a categorical verdict in either direction.")
+        why = (spec.get("reasons") or {}).get(g.reason, g.reason).format(**kw)
+        return spec["acquit"].format(why=why, **kw)
+    return spec["open"].format(**kw)
 
 
 def rationale(d: Design, sc: Scenario) -> str:
@@ -270,13 +257,21 @@ def rationale(d: Design, sc: Scenario) -> str:
 
 
 def reference_answers(d: Design, lang: str, sc: Scenario) -> tuple[str, str]:
+    """(chosen, rejected) in the item language. Placeholders: {char_label} (answers.char_labels of the characteristic),
+    {date} (the date slot's surface), and {<element>_label} for any element listed under answers.labels."""
     a = d.answers[lang]
-    char = a["char_labels"].get(sc.facts.get("characteristic", ""), "")
-    date = d.templates[lang]["dates"][sc.slots["date"]]
+    kw = {}
+    if "characteristic" in sc.facts:
+        kw["char_label"] = (a.get("char_labels") or {}).get(sc.facts["characteristic"], "")
+    if "date" in sc.slots:
+        kw["date"] = d.templates[lang]["dates"][sc.slots["date"]]
+    for el, labels in (a.get("labels") or {}).items():
+        if el in sc.facts:
+            kw[f"{el}_label"] = labels.get(sc.facts[el], "")
     key = sc.gold.reason
     chosen = a["chosen"][key]
-    rejected = a["traps"][sc.trap] if (sc.trap and sc.trap in a.get("traps", {})) else a["rejected"][key]
-    return chosen.format(char_label=char, date=date), rejected.format(char_label=char, date=date)
+    rejected = a["traps"][sc.trap] if (sc.trap and sc.trap in (a.get("traps") or {})) else a["rejected"][key]
+    return chosen.format(**kw), rejected.format(**kw)
 
 
 def item_id(d: Design, lang: str, sc: Scenario) -> str:
@@ -294,20 +289,19 @@ def build_items(d: Design, scenarios: list[Scenario], subset: str = "core") -> l
             text = render(d, lang, sc.slots)
             chosen, rejected = reference_answers(d, lang, sc)
             auth = _authorities(sc.gold)
-            fam = d.slots["act"][sc.slots["act"]].get("family")
+            fam = d.slots["act"][sc.slots["act"]].get("family") if "act" in sc.slots else None
             items.append(dict(
                 id=item_id(d, lang, sc), lang=lang, subset=subset, statute=d.statute.id,
                 twin_group=sc.group_id, family=sc.family, variant=sc.role, variant_index=sc.k,
                 changed_slot=sc.changed_slot, base_id=item_id(d, lang, Scenario(sc.group_id, sc.family, 0, {}, {}, sc.gold, "base")),
-                template_id=sc.slots["frame"], wording_family=fam,
+                template_id=sc.slots.get("frame"), wording_family=fam,
                 split="heldout" if fam == heldout else "fit",
                 slots=dict(sc.slots), facts=dict(sc.facts),
-                setting=sc.facts.get("setting"), characteristic=sc.facts.get("characteristic"),
-                paragraph=sc.facts.get("paragraph"), act_date=sc.facts.get("act_date"),
+                **{e: sc.facts.get(e) for e in d.statute.element_ids},
                 text=text,
                 gold_verdict=sc.gold.verdict, deciding_element=sc.gold.deciding_element, gold_reason=sc.gold.reason,
                 label=sc.gold.label, trap=sc.trap,
-                acceptance_criterion=acceptance(sc), chosen=chosen, rejected=rejected,
+                acceptance_criterion=acceptance(d, sc), chosen=chosen, rejected=rejected,
                 rationale=rationale(d, sc), citation=_cite(d, auth), normative_source=auth,
                 licence="CDLA-Permissive-2.0", canary=d.raw.get("canary"),
                 provenance=dict(prov, translation="source" if lang == "de" else "claude-agents+back-translation"),
@@ -315,11 +309,11 @@ def build_items(d: Design, scenarios: list[Scenario], subset: str = "core") -> l
     return items
 
 
-def build_prompts(d: Design, items: list[dict], rungs=RUNGS, framings=FRAMINGS) -> list[dict]:
+def build_prompts(d: Design, items: list[dict], rungs=None, framings=FRAMINGS) -> list[dict]:
     """One row per (item, rung, framing): the exact user message and the forced-choice candidates."""
     rows = []
     for it in items:
-        for r in rungs:
+        for r in (rungs or rung_names(d, it["lang"])):
             for f in framings:
                 c = candidates(d, it["lang"], f)
                 rows.append(dict(prompt_id=f"{it['id']}/{r}/{f}", item_id=it["id"], lang=it["lang"], rung=r, framing=f,

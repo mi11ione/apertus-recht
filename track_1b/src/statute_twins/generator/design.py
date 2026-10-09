@@ -10,7 +10,20 @@ import yaml
 
 from .. import statute as statute_mod
 
-SLOT_ORDER = ["date", "group", "act", "setting", "frame", "actor", "place"]
+DEFAULT_SECTIONS = {"frame": "frames", "actor": "actors", "place": "places", "date": "dates", "group": "groups",
+                    "act": "acts", "setting": "settings"}
+
+
+def section(slot: str, d: "Design | None" = None) -> str:
+    """Name of the template section holding a slot's surfaces: design.yaml `sections` override, else the default
+    plural of the slot name."""
+    if d is not None and slot in (d.raw.get("sections") or {}):
+        return d.raw["sections"][slot]
+    return DEFAULT_SECTIONS.get(slot, slot + "s")
+
+
+def sample_order(d: "Design") -> list[str]:
+    return list(d.raw.get("sample_order") or d.slots)
 
 
 class DesignError(ValueError):
@@ -82,8 +95,6 @@ def load(root: str | Path, langs: list[str] | None = None) -> Design:
     return d
 
 
-TEMPLATE_KEY = {"frame": "frames", "actor": "actors", "place": "places", "date": "dates", "group": "groups",
-                "act": "acts", "setting": "settings"}
 
 
 def placeholders(s: str) -> set[str]:
@@ -116,16 +127,20 @@ def validate(d: Design) -> list[str]:
         morph_keys = set()
         for g in t.get("morphology", {}).values():
             morph_keys |= set(g)
-        allowed = {"date", "Date", "place", "Place", "actor", "Actor", "setting", "Setting", "act", "Act"}
+        aliases = (d.raw.get("render") or {}).get("aliases") or {}
+        names = {aliases.get(s, s) for s in d.slots if s != "frame"}
+        allowed = names | {n[:1].upper() + n[1:] for n in names}
         allowed |= morph_keys | {k[:1].upper() + k[1:] for k in morph_keys}
-        forms_used = {ph[2:] for key in ("acts", "settings", "frames") for x in (t.get(key) or {}).values()
-                      for ph in placeholders(str(x)) if ph.startswith("g.")}
-        allowed |= {f"g.{f}" for f in forms_used}
-        for gid, forms in (t.get("groups") or {}).items():
-            missing_forms = forms_used - set(forms)
-            if missing_forms:
-                problems.append(f"{lang}: group {gid} lacks case forms {sorted(missing_forms)}")
-        for slot, key in TEMPLATE_KEY.items():
+        for slot, alias in aliases.items():
+            forms_used = {ph[len(alias) + 1:] for key in {section(s, d) for s in d.slots} for x in (t.get(key) or {}).values()
+                          for ph in placeholders(str(x)) if ph.startswith(alias + ".")}
+            allowed |= {f"{alias}.{f}" for f in forms_used}
+            for gid, forms in (t.get(section(slot, d)) or {}).items():
+                missing_forms = forms_used - set(forms)
+                if missing_forms:
+                    problems.append(f"{lang}: {slot} {gid} lacks case forms {sorted(missing_forms)}")
+        for slot in d.slots:
+            key = section(slot, d)
             surf = t.get(key) or {}
             for vid in d.slots[slot]:
                 if vid not in surf:

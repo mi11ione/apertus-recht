@@ -4,7 +4,7 @@ from __future__ import annotations
 import re
 import string
 
-from .design import Design
+from .design import Design, section
 
 
 class _Group:
@@ -36,17 +36,21 @@ def _fill(template: str, ctx: dict) -> str:
 
 
 def render(d: Design, lang: str, slots: dict) -> str:
-    """Scenario text for a slot assignment {date, group, act, setting, frame, actor, place}."""
+    """Scenario text for a slot assignment. Non-frame slots are resolved in design.render.order (default: declaration
+    order); their surfaces may use earlier slots, the actor's morphology and case-form aliases; the frame comes last."""
     t = d.templates[lang]
-    actor = t["actors"][slots["actor"]]
-    morph = dict(t["morphology"][actor["gender"]])
-    ctx = dict(morph)
-    ctx["actor"] = actor["surface"]
-    ctx["g"] = _Group(t["groups"][slots["group"]])
-    ctx["date"] = t["dates"][slots["date"]]
-    ctx["place"] = t["places"][slots["place"]]
-    ctx["act"] = _fill(t["acts"][slots["act"]], ctx)
-    ctx["setting"] = _fill(t["settings"][slots["setting"]], ctx)
+    spec = d.raw.get("render") or {}
+    aliases = spec.get("aliases") or {}
+    ctx: dict = {}
+    if "actor" in slots and "morphology" in t:
+        ctx.update(t["morphology"][t["actors"][slots["actor"]]["gender"]])
+    for slot in spec.get("order") or [s for s in d.slots if s != "frame"]:
+        surf = t[section(slot, d)][slots[slot]]
+        name = aliases.get(slot, slot)
+        if isinstance(surf, dict):
+            ctx[name] = surf["surface"] if "surface" in surf else _Group(surf)
+        else:
+            ctx[name] = _fill(surf, ctx)
     text = _fill(t["frames"][slots["frame"]], ctx)
     for pat, rep in t.get("rewrite") or []:
         text = re.sub(pat, rep, text)
@@ -57,10 +61,22 @@ RUNGS = ["R0", "R1", "R2", "R3", "R4"]
 FRAMINGS = ["conv", "ver"]
 
 
+def rung_names(d: Design, lang: str) -> list[str]:
+    spec = d.prompts[lang].get("rungs")
+    return list(spec) if spec else list(RUNGS)
+
+
 def question(d: Design, lang: str, rung: str, framing: str) -> str:
-    """The question appended to the scenario text. R0 plain; R1 elements named; R2 + publicity rule and list;
-    R3 + closed list; R4 + temporal clause."""
+    """The question appended to the scenario text. If prompts/<lang>.yaml has `rungs: {R0: [parts...]}`, the rung is the
+    concatenation of those parts, where `plain` and `tail` mean plain[framing] and tails[framing] and any other name is
+    a top-level string of the prompts file. Otherwise the Art. 261bis ladder: R0 plain; R1 elements named; R2 + publicity
+    rule and list; R3 + closed list; R4 + temporal clause."""
     p = d.prompts[lang]
+    if p.get("rungs"):
+        parts = []
+        for k in p["rungs"][rung]:
+            parts.append(p["plain"][framing] if k == "plain" else p["tails"][framing] if k == "tail" else p[k])
+        return "".join(parts)
     if rung == "R0":
         return p["plain"][framing]
     if rung == "R1":

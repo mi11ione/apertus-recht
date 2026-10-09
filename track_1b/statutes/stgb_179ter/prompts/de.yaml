@@ -1,0 +1,16 @@
+lang: de
+rungs:
+  R0: [plain]
+  R1: [elements, tail]
+  R2: [elements, complaint_rule, tail]
+elements: "\n\nPrüfe die Tatbestandsmerkmale von Art. 179ter StGB: Gesprächsteilnahme, nichtöffentliches Gespräch, Aufnahme auf einen Tonträger und fehlende Einwilligung der anderen Beteiligten."
+complaint_rule: " Die Tat wird nur auf Antrag verfolgt; das Antragsrecht erlischt drei Monate, nachdem der antragsberechtigten Person der Täter bekannt wird (Art. 31 StGB)."
+tails:
+  conv: " Würde ein Schweizer Gericht die Person nach Art. 179ter StGB verurteilen? Antworte mit Ja oder Nein."
+  ver: " Wie lautet das Urteil eines Schweizer Gerichts nach Art. 179ter StGB? Antworte mit «schuldig» oder «nicht schuldig»."
+plain:
+  conv: "\n\nFrage: Würde ein Schweizer Gericht diese Person nach Art. 179ter StGB verurteilen? Antworte mit Ja oder Nein."
+  ver: "\n\nWie lautet das Urteil eines Schweizer Gerichts nach Art. 179ter StGB? Antworte mit «schuldig» oder «nicht schuldig»."
+framings:
+  conv: {answer_prefix: "", convict: "Ja", acquit: "Nein"}
+  ver:  {answer_prefix: "Urteil:", convict: " schuldig", acquit: " nicht schuldig"}

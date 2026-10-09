@@ -1,0 +1,15 @@
+{
+ "eli": "eli/cc/54/757_781_799",
+ "eid": "art_31",
+ "lang": "de",
+ "requested_date": "2026-10-09",
+ "applicability_date": "2026-10-01",
+ "url": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/54/757_781_799/20261001/de/xml/fedlex-data-admin-ch-eli-cc-54-757_781_799-20261001-de-xml.xml",
+ "xml_sha256": "6a83a4d0fe4d6bb4d012750eb5e23141aaff8a1e81c33b7508efdac6299d7b76",
+ "paragraphs": [
+  "Das Antragsrecht erlischt nach Ablauf von drei Monaten. Die Frist beginnt mit dem Tag, an welchem der antragsberechtigten Person der Täter bekannt wird."
+ ],
+ "text_sha256": "c20dbf2e84ed421d566c7f47a66a1f65b2bd1389d76a8d0cefb3cf99d1151e8d",
+ "notes": [],
+ "fetched": "2026-10-09"
+}

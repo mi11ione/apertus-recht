@@ -73,3 +73,8 @@ from the Italian regesto of DTF 130 IV 111.
    indicative; the conditional fits a hypothetical case better.
 5. **Mitarbeitende (`cont_office`)** became "collaboratori", the generic masculine. The count (25) and the "suo reparto"
    relationship are kept, so the setting stays contested.
+
+## Changes after the back-translation review (coordinator)
+- `a1A2`: "alla discriminazione {g.di}" → "alla discriminazione contro {g.def}" (removes the reading "discrimination *by* the group"; matches the statute's "contro").
+- `a4B2`: "in modo disumano" → "in un modo improntato al disprezzo per l'essere umano" (closer to "menschenverachtend"; same construction as the French).
+- `cont_clubchat`: left as is; the German source has the same attachment ambiguity ("mit rund 30 Mitgliedern"), and the item is contested (verdict open) either way. Documented as a limitation.

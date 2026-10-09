@@ -36,11 +36,10 @@ official CP text (Fedlex, version 2026-10-01) and the French Regeste of ATF 130 
 ## Groups and characteristics (needs a decision)
 - Statutory words: race → "appartenance raciale" (the CP has no noun "race"). Religion → "religion". Sexual orientation →
   "orientation sexuelle".
-- **Ethnicity:** following the brief, the base form is "en raison de leur **ethnie**" (= Ethnie) and the synonym form
-  (`eth_roma_syn`) is "en raison de leur **appartenance ethnique**". The French statute actually says "appartenance …
-  ethnique", so in French the *synonym* form is the closer one to the statute. The synonym placebo is therefore weaker in
-  French than in German. A possible alternative is base "appartenance ethnique" and synonym "origine ethnique".
-- The other synonyms: "couleur de peau", "foi", "homosexualité".
+- **Ethnicity (revised by the coordinator after this note was first written):** the base form now uses the statutory
+  term "en raison de leur **appartenance ethnique**" and the synonym form (`eth_roma_syn`) uses "en raison de leur
+  **origine ethnique**", so the base/synonym contrast matches German. Religion likewise uses the statutory "appartenance
+  religieuse" in the base form and "foi" in the synonym forms (back-translation review, minor finding).
 - char_labels use statutory phrases (appartenance raciale/ethnique/religieuse). Because of this, the label of `rel_*` is
   "appartenance religieuse" while the scenario text says "religion" or "foi".
 - "les juifs", "les musulmans", "les hindous" are in lower case, because they name members of a religion. "Kosovo-Albaner" →

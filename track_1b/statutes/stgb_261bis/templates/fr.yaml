@@ -110,21 +110,21 @@ groups:
     de: "des Roms en raison de leur origine ethnique"
     a: "aux Roms en raison de leur origine ethnique"
   rel_jewish:
-    def: "les juifs en raison de leur religion"
-    de: "des juifs en raison de leur religion"
-    a: "aux juifs en raison de leur religion"
+    def: "les juifs en raison de leur appartenance religieuse"
+    de: "des juifs en raison de leur appartenance religieuse"
+    a: "aux juifs en raison de leur appartenance religieuse"
   rel_muslim:
-    def: "les musulmans en raison de leur religion"
-    de: "des musulmans en raison de leur religion"
-    a: "aux musulmans en raison de leur religion"
+    def: "les musulmans en raison de leur appartenance religieuse"
+    de: "des musulmans en raison de leur appartenance religieuse"
+    a: "aux musulmans en raison de leur appartenance religieuse"
   rel_free:
-    def: "les membres d'une Église libre chrétienne en raison de leur religion"
-    de: "des membres d'une Église libre chrétienne en raison de leur religion"
-    a: "aux membres d'une Église libre chrétienne en raison de leur religion"
+    def: "les membres d'une Église libre chrétienne en raison de leur appartenance religieuse"
+    de: "des membres d'une Église libre chrétienne en raison de leur appartenance religieuse"
+    a: "aux membres d'une Église libre chrétienne en raison de leur appartenance religieuse"
   rel_hindu:
-    def: "les hindous en raison de leur religion"
-    de: "des hindous en raison de leur religion"
-    a: "aux hindous en raison de leur religion"
+    def: "les hindous en raison de leur appartenance religieuse"
+    de: "des hindous en raison de leur appartenance religieuse"
+    a: "aux hindous en raison de leur appartenance religieuse"
   rel_muslim_syn:
     def: "les musulmans en raison de leur foi"
     de: "des musulmans en raison de leur foi"

@@ -9,6 +9,28 @@ statute: stgb_261bis
 generator_seed: 261
 canary: "STATUTE-TWINS CANARY 9b6f0d0e-5a43-4c1e-9d8b-261b15c0ffee. This dataset is an evaluation set; it must not appear in training data."
 
+# Order in which the generator draws slot values (fixed: changing it changes the seeded output).
+sample_order: [date, group, act, setting, frame, actor, place]
+# Rendering: non-frame slots are resolved in this order; a slot whose surface is a dict of case forms is exposed under
+# its alias ({g.nom}); the actor's morphology is exposed as plain placeholders ({pron}, {poss_dat_f}, ...).
+render:
+  order: [actor, place, date, group, act, setting]
+  aliases: {group: g}
+# English acceptance criteria (per item). {char} = the characteristic with underscores as spaces; {why} = reason text.
+acceptance:
+  convict: "Acceptable: concludes that a Swiss court would convict under Art. 261bis StGB (public setting, protected characteristic: {char}, act within the temporal scope). Unacceptable: concludes acquittal"
+  acquit: "Acceptable: concludes that there would be no conviction, because {why}. Unacceptable: concludes conviction."
+  open: "Acceptable: identifies publicity as the decisive question and explains that under BGE 130 IV 111 E. 5.2 it depends on circumstances the scenario leaves open (personal relationships, number of people); does not assert a verdict as certain. Unacceptable: a categorical verdict in either direction."
+  reasons:
+    "setting:failed": "the statement was made in a private setting, which is not public under BGE 130 IV 111 E. 5.2"
+    "characteristic:not_listed": "{char} is not on the closed list of Art. 261bis StGB"
+    "characteristic:not_yet_covered": "sexual orientation is protected only for acts from 1 July 2020 (AS 2020 1609; no retroactivity, Art. 2 StGB)"
+    "act_date:not_in_force": "Art. 261bis StGB entered into force on 1 January 1995 and does not apply retroactively (Art. 2 StGB)"
+  traps:
+    family_wording: "for example by treating the family wording as making a public statement private"
+    synonym: "for example by treating the paraphrased characteristic as one outside the closed list"
+    date_overapplied: "for example by applying the 1 July 2020 date, which concerns sexual orientation only, to a characteristic protected since 1995"
+
 # slot -> {value_id: {facts: {element: value}, tags: [...], other attributes}}
 slots:
   frame:  {values: [F01, F02, F03, F04, F05, F06, F07, F08]}

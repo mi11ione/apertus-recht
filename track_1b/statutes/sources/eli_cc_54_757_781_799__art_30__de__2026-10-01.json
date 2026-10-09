@@ -1,0 +1,22 @@
+{
+ "eli": "eli/cc/54/757_781_799",
+ "eid": "art_30",
+ "lang": "de",
+ "requested_date": "2026-10-09",
+ "applicability_date": "2026-10-01",
+ "url": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/54/757_781_799/20261001/de/xml/fedlex-data-admin-ch-eli-cc-54-757_781_799-20261001-de-xml.xml",
+ "xml_sha256": "6a83a4d0fe4d6bb4d012750eb5e23141aaff8a1e81c33b7508efdac6299d7b76",
+ "paragraphs": [
+  "Ist eine Tat nur auf Antrag strafbar, so kann jede Person, die durch sie verletzt worden ist, die Bestrafung des Täters beantragen.",
+  "Ist die verletzte Person handlungsunfähig, so ist ihr gesetzlicher Vertreter zum Antrag berechtigt. Steht sie unter Vormundschaft oder unter umfassender Beistandschaft, so steht das Antragsrecht auch der Erwachsenenschutzbehörde zu.",
+  "Ist die verletzte Person minderjährig oder steht sie unter umfassender Beistandschaft, so ist auch sie zum Antrag berechtigt, wenn sie urteilsfähig ist.",
+  "Stirbt die verletzte Person, ohne dass sie den Strafantrag gestellt oder auf den Strafantrag ausdrücklich verzichtet hat, so steht das Antragsrecht jedem Angehörigen zu.",
+  "Hat eine antragsberechtigte Person ausdrücklich auf den Antrag verzichtet, so ist ihr Verzicht endgültig."
+ ],
+ "text_sha256": "940e349759a14e55d1c8c788ebdb83c7058cbd8db590c73189aa76202ede5214",
+ "notes": [
+  "Fassung des zweiten Satzes gemäss Anhang Ziff. 14 des BG vom 19. Dez. 2008 (Erwachsenenschutz, Personenrecht und Kindesrecht), in Kraft seit 1. Jan. 2013 (AS 2011 725; BBl 2006 7001).",
+  "Fassung gemäss Anhang Ziff. 14 des BG vom 19. Dez. 2008 (Erwachsenenschutz, Personenrecht und Kindesrecht), in Kraft seit 1. Jan. 2013 (AS 2011 725; BBl 2006 7001)."
+ ],
+ "fetched": "2026-10-09"
+}

@@ -77,7 +77,7 @@ def build_legacy_items(d: Design) -> list[dict]:
                     slots={}, facts=facts, setting=facts["setting"], characteristic=facts["characteristic"],
                     paragraph=facts["paragraph"], act_date=facts["act_date"], text=x["text"],
                     gold_verdict=g.verdict, deciding_element=g.deciding_element, gold_reason=g.reason, label=g.label,
-                    trap=trap, acceptance_criterion=acceptance(sc), chosen=chosen, rejected=rejected,
+                    trap=trap, acceptance_criterion=acceptance(d, sc), chosen=chosen, rejected=rejected,
                     rationale=rationale(d, sc), citation=_cite(d, auth), normative_source=auth,
                     licence="CDLA-Permissive-2.0", canary=d.raw.get("canary"),
                     legacy=dict(set=set_name, item=x["item"], variant=x["variant"], spike_gold=x["gold"]),
