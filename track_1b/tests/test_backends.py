@@ -37,6 +37,20 @@ class FakeLlama:
     def reset(self):
         self.n_tokens = 0
 
+    def n_vocab(self):
+        return V
+
+    @property
+    def _ctx(self):
+        fake = self
+
+        class Ctx:
+            def get_logits(self):
+                import ctypes
+                arr = (ctypes.c_float * V)(*fake.scores[fake.n_tokens - 1])
+                return ctypes.cast(arr, ctypes.POINTER(ctypes.c_float))
+        return Ctx()
+
     def eval(self, toks):
         self.input_ids = self.input_ids[: self.n_tokens]
         for t in toks:
@@ -65,12 +79,12 @@ def test_llamacpp_forced_choice_equals_brute_force_and_reuses_prefix():
     pre = fake.tokenize(prompt.encode())
     for side, lp in (("convict", s.lp_convict), ("acquit", s.lp_acquit)):
         cont = fake.tokenize((prompt + ROW[side]).encode())[len(pre):]
-        assert abs(lp - brute(fake, pre, cont)) < 1e-9
+        assert abs(lp - brute(fake, pre, cont)) < 1e-5      # logits are float32, as in the engine
     first = fake.evals
     s2 = be.score(dict(ROW, user="Sachverhalt Y"))          # shares the template prefix
     assert s2.extra["reused"] > 0 and fake.evals - first < first
     s3 = be.score(ROW)                                       # back to the first prompt: identical scores
-    assert abs(s3.lp_convict - s.lp_convict) < 1e-12 and abs(s3.lp_acquit - s.lp_acquit) < 1e-12
+    assert abs(s3.lp_convict - s.lp_convict) < 1e-9 and abs(s3.lp_acquit - s.lp_acquit) < 1e-9
 
 
 def test_log_softmax_normalises():

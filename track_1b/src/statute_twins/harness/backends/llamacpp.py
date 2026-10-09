@@ -82,6 +82,14 @@ class LlamaCpp(Backend):
                                                      add_generation_prompt=True, enable_thinking=False,
                                                      bos_token=self.bos, eos_token=self.eos)
 
+    def last_logits(self):
+        """Logits after the last evaluated token, read from the context. (llama-cpp-python >= 0.3 no longer copies
+        logits into `Llama.scores` unless logits_all=True; reading `scores` there yields zeros.)"""
+        import numpy as np
+        n_vocab = self.llm.n_vocab()
+        ptr = self.llm._ctx.get_logits()
+        return np.ctypeslib.as_array(ptr, shape=(n_vocab,)).astype(np.float64)
+
     def tok(self, s: str) -> list[int]:
         return self.llm.tokenize(s.encode("utf-8"), add_bos=False, special=True)
 
@@ -107,14 +115,14 @@ class LlamaCpp(Backend):
         self.llm.eval(pre[lcp:])
         self._kv = list(pre)
         n = self.llm.n_tokens
-        first = self.llm.scores[n - 1]
+        first = self.last_logits()
         out = {}
         for side, ids in conts.items():
             lp = log_softmax_at(first, ids[0])
             for j in range(1, len(ids)):
                 self.llm.n_tokens = n + j - 1
                 self.llm.eval([ids[j - 1]])
-                lp += log_softmax_at(self.llm.scores[self.llm.n_tokens - 1], ids[j])
+                lp += log_softmax_at(self.last_logits(), ids[j])
             self.llm.n_tokens = n          # rewind: the next eval drops KV entries beyond n
             out[side] = lp
         return Score(out["convict"], out["acquit"], "llamacpp", self.label, self.sha256,
