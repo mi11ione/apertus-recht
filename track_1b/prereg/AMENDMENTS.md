@@ -105,3 +105,11 @@ instead of the engine stand-in. (4) **Record of earlier code changes to locked f
 same key; keys now carry the subset) and extended in A6; `heldout.py` filters framings (A6) and rungs (A8); the frozen
 `heldout.py` of the lock commit reproduces every pre-registered verdict on the current data (`statute-twins
 prereg-verify`). `prereg/CHANGES.json` maps every locked file that differs from `LOCK.json` to its amendments.
+
+## A9 (2026-10-10, 03:00): the same German scenarios in a user's voice (exploratory)
+Reviewers noted that the scenarios read like charge sheets (the dignity threshold and intent are stated in the statute's
+words), while the use case is a person asking about their own conduct. `de_lay` renders the same 660 German scenarios
+(same slots, facts and gold, same twin groups) in the first person and in everyday words, with no legal conclusions:
+"Im Januar 2024 habe ich in Aarau an einem Stand auf dem Wochenmarkt vor vielen Kundinnen und Kunden ein Weltbild
+propagiert, nach dem Muslime minderwertig sind." The group is named without its characteristic. Exploratory: not part
+of the pre-registered test (`heldout.py` runs per language; `de_lay` results are reported next to `de`).

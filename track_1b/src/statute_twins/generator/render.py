@@ -98,10 +98,11 @@ def law_block(d: Design, lang: str) -> str:
     """The pinned legal texts, verbatim, as a retrieval pipeline would paste them (prompts/<lang>.yaml: law_text)."""
     import json
     parts = []
+    src_lang = lang.split("_")[0]          # a register variant (de_lay) uses the official texts of its language
     for it in d.prompts[lang]["law_text"]["items"]:
-        rec = json.loads(d.statute.source_file(it["source"], lang).read_text(encoding="utf-8"))
+        rec = json.loads(d.statute.source_file(it["source"], src_lang).read_text(encoding="utf-8"))
         if "regeste" in rec:
-            parts.append(f"{it['label']}: {rec['regeste'][lang]}")
+            parts.append(f"{it['label']}: {rec['regeste'][src_lang]}")
             continue
         paras = rec["paragraphs"]
         body = "\n".join(f"{k} {t}" for k, t in enumerate(paras, 1)) if it.get("numbered") else "\n".join(paras)

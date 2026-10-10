@@ -22,7 +22,7 @@ REQUIRED = {
     "normative_source": list, "licence": str, "canary": str, "base_id": str,
 }
 ENUMS = {"variant": {"base", "true_flip", "placebo", "contested"}, "gold_verdict": {"convict", "acquit", "open"},
-         "label": {"settled", "contested"}, "lang": {"de", "fr", "it"}}
+         "label": {"settled", "contested"}, "lang": {"de", "fr", "it", "de_lay"}}   # de_lay: German, user voice (A9)
 
 
 def load_items(ds: Path) -> list[dict]:
@@ -117,7 +117,7 @@ def check_language(items):
     for i in items:
         l, conf = detect_lang(i["text"])
         margins.append(conf)
-        if l != i["lang"]:
+        if l != i["lang"].split("_")[0]:
             bad.append((i["id"], l, round(conf, 2)))
     return "language_id", not bad, dict(checked=len(items), mismatches=bad[:20], min_share=round(min(margins), 3))
 

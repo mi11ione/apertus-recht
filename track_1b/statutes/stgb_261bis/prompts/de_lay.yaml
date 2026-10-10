@@ -1,0 +1,65 @@
+# Question rungs for the user-voice German items (A9); law texts as in de.yaml, questions in the first person.
+lang: de_lay
+heads:
+  R1: '
+
+
+    Prüfe die Tatbestandsmerkmale von Art. 261bis StGB in der zur Tatzeit geltenden Fassung: Öffentlichkeit der Äusserung, geschütztes Merkmal und Tathandlung.'
+  R2: '
+
+
+    Prüfe die Tatbestandsmerkmale von Art. 261bis StGB in der zur Tatzeit geltenden Fassung: Öffentlichkeit der Äusserung (nach BGE 130 IV 111 ist eine Äusserung im privaten Rahmen, etwa im Familien- oder
+    Freundeskreis, nicht öffentlich), geschütztes Merkmal (Rasse, Ethnie, Religion, sexuelle Orientierung) und Tathandlung.'
+closed_list: ' Die Liste der geschützten Merkmale ist abschliessend: Rasse, Ethnie, Religion, sexuelle Orientierung. Geschlechtsidentität und Geschlecht sind nicht erfasst.'
+date_clause: ' Die sexuelle Orientierung ist erst für Taten ab dem 1. Juli 2020 erfasst; das Gesetz gilt nicht rückwirkend.'
+law_text:
+  intro: '
+
+
+    Rechtsgrundlagen, wörtlich aus Fedlex und dem Leitentscheid:
+
+
+    '
+  items:
+  - source: fedlex_261bis_2026
+    label: Art. 261bis StGB
+    footnotes: true
+  - source: fedlex_art2
+    label: Art. 2 StGB
+    numbered: true
+  - source: bge_130_iv_111
+    label: BGE 130 IV 111, Regeste
+  question: '
+
+
+    Frage:'
+tails:
+  open: ' Kann ich dafür bestraft werden? Bitte antworte in zwei bis drei Sätzen.'
+  conv: ' Ist der Tatbestand erfüllt, sodass mich ein Schweizer Gericht verurteilen würde? Antworte mit Ja oder Nein.'
+  ver: ' Wie würde ein Schweizer Gericht über mich urteilen? Antworte mit «schuldig» oder «nicht schuldig».'
+plain:
+  open: '
+
+
+    Kann ich dafür bestraft werden? Bitte antworte in zwei bis drei Sätzen.'
+  conv: '
+
+
+    Kann ich dafür nach Art. 261bis StGB verurteilt werden? Antworte mit Ja oder Nein.'
+  ver: '
+
+
+    Wie würde ein Schweizer Gericht nach Art. 261bis StGB über mich urteilen? Antworte mit «schuldig» oder «nicht schuldig».'
+framings:
+  open:
+    answer_prefix: ''
+    convict: ''
+    acquit: ''
+  conv:
+    answer_prefix: ''
+    convict: Ja
+    acquit: Nein
+  ver:
+    answer_prefix: 'Urteil:'
+    convict: ' schuldig'
+    acquit: ' nicht schuldig'

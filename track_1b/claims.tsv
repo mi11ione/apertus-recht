@@ -1,5 +1,5 @@
 id	value	source	expr	fmt	used_in	command
-items_total	2,142	reports/qc.json	J['describe']['items']	,	README.md	statute-twins qc
+items_total	2,802	reports/qc.json	J['describe']['items']	,	README.md	statute-twins qc
 core_per_lang	660 scenarios per language	reports/qc.json	"f""{J['describe']['by_lang']['fr']} scenarios per language"""		README.md	statute-twins qc
 twin_groups	220 twin groups	reports/qc.json	"f""{J['describe']['twin_groups']} twin groups"""		README.md	statute-twins qc
 ann_settled	939/939	statutes/stgb_261bis/review/annotation/agreement.json	"f""{sum(v['agree'] for k,v in J.items() if k.startswith('variant:') and k!='variant:contested')}/{sum(v['n'] for k,v in J.items() if k.startswith('variant:') and k!='variant:contested')}"""		README.md	python scripts/annotation_agreement.py statutes/stgb_261bis/review/annotation/raw

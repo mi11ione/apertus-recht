@@ -244,6 +244,9 @@ framing.*
   one-off spoken setting may not show; the free-text question asks about "Swiss law", where for these facts Art. 177
   or Art. 261 StGB rarely apply.
 - **The free-text sample is German only.**
+- **Intervals.** Accuracy intervals (Wilson) treat items as independent, but items cluster in 220 twin groups per
+  language and share templates, so they are somewhat too narrow; the held-out gains carry twin-group bootstrap
+  intervals (post hoc, `analysis/heldout_context.py`).
 
 ## Lessons Learnt and Recommendations
 

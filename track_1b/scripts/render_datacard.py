@@ -80,6 +80,8 @@ configs:
       - {{split: de, path: eval/core_de.jsonl}}
       - {{split: fr, path: eval/core_fr.jsonl}}
       - {{split: it, path: eval/core_it.jsonl}}
+  - config_name: user_voice
+    data_files: [{{split: de, path: eval/core_de_lay.jsonl}}]
   - config_name: battery162
     data_files: [{{split: de, path: eval/battery162.jsonl}}]
   - config_name: prompts
@@ -87,6 +89,7 @@ configs:
       - {{split: de, path: eval/prompts_core_de.jsonl}}
       - {{split: fr, path: eval/prompts_core_fr.jsonl}}
       - {{split: it, path: eval/prompts_core_it.jsonl}}
+      - {{split: de_user_voice, path: eval/prompts_core_de_lay.jsonl}}
       - {{split: battery162, path: eval/prompts_battery162.jsonl}}
   - config_name: prompts_free_text
     data_files:
@@ -104,9 +107,10 @@ configs:
 
 # Apertus-Recht: Art. 261bis StGB minimal-twin scenarios (DE / FR / IT)
 
-{ds['core']} scenarios ({ds['by_lang']['fr']} per language in DE, FR and IT) about the Swiss racial-discrimination offence,
-Art. 261bis StGB / CP, plus the {ds['battery162']}-item German exploration battery on which the stage and build columns
-were measured. Every scenario belongs to a **twin group**: a base case and variants that each change exactly **one
+{3 * ds['by_lang']['fr']} scenarios ({ds['by_lang']['fr']} per language in DE, FR and IT) about the Swiss racial-discrimination
+offence, Art. 261bis StGB / CP; the same {ds['by_lang']['fr']} German scenarios retold in the voice of a user asking about
+their own conduct (`user_voice`, language code `de_lay`); and the {ds['battery162']}-item German exploration battery on which
+the stage and build columns were measured. Every scenario belongs to a **twin group**: a base case and variants that each change exactly **one
 legal fact** (public ↔ private setting, protected ↔ unprotected characteristic, before ↔ after the 1 July 2020
 extension, before ↔ after entry into force in 1995) or one irrelevant detail (**placebos**: family wording of a public
 statement, a synonym of the characteristic, a date that does not matter). The **gold verdict is computed by code** from

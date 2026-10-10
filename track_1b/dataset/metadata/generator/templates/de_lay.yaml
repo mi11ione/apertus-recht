@@ -1,0 +1,245 @@
+# German, in the voice of a user asking about their own conduct (A9): the same scenarios and facts as de.yaml, told
+# in the first person and in everyday words. No legal conclusions are stated (no "in einer gegen die Menschenwürde
+# verstossenden Weise", no "Vorsatz"); the act is described concretely enough that the dignity threshold is met, the
+# group is named without its characteristic. Actors are unused (first person); slot ids are shared with design.yaml.
+lang: de_lay
+frames:
+  F01: '{Date} habe ich in {place} {setting} {act}.'
+  F02: Ich wohne in {place}. {Date} habe ich {setting} {act}.
+  F03: 'Eine Frage zu etwas, das ich {date} in {place} gemacht habe: Ich habe {setting} {act}.'
+  F04: '{Date} war ich in {place} und habe {setting} {act}.'
+  F05: Ich habe {date} in {place} {setting} {act}.
+  F06: 'Folgendes ist passiert: {Date} habe ich in {place} {setting} {act}.'
+  F07: '{Date} habe ich in {place} {setting} {act}. Das habe ich bewusst so gemacht.'
+  F08: 'Kurz zu meiner Situation: {Date} habe ich in {place} {setting} {act}.'
+actors:
+  m1:
+    surface: ein Mann
+    gender: m
+  m2:
+    surface: ein Rentner
+    gender: m
+  m3:
+    surface: ein Unternehmer
+    gender: m
+  m4:
+    surface: ein Student
+    gender: m
+  f1:
+    surface: eine Frau
+    gender: f
+  f2:
+    surface: eine Rentnerin
+    gender: f
+  f3:
+    surface: eine Unternehmerin
+    gender: f
+  f4:
+    surface: eine Studentin
+    gender: f
+morphology:
+  m:
+    pron: er
+    poss_dat_n: seinem
+    poss_dat_m: seinem
+    poss_dat_f: seiner
+    poss_dat_pl: seinen
+    poss_acc_f: seine
+    poss_nom_pl: seine
+    poss_gen_f: seiner
+    poss_gen_m: seines
+    poss_gen_pl: seiner
+    spouse_nom: seine Ehefrau
+    spouse_dat: seiner Ehefrau
+    spouse_gen: seiner Ehefrau
+  f:
+    pron: sie
+    poss_dat_n: ihrem
+    poss_dat_m: ihrem
+    poss_dat_f: ihrer
+    poss_dat_pl: ihren
+    poss_acc_f: ihre
+    poss_nom_pl: ihre
+    poss_gen_f: ihrer
+    poss_gen_m: ihres
+    poss_gen_pl: ihrer
+    spouse_nom: ihr Ehemann
+    spouse_dat: ihrem Ehemann
+    spouse_gen: ihres Ehemannes
+places:
+  zh: Zürich
+  be: Bern
+  bs: Basel
+  lu: Luzern
+  sg: St. Gallen
+  wi: Winterthur
+  bi: Biel/Bienne
+  ch: Chur
+  aa: Aarau
+  th: Thun
+  sh: Schaffhausen
+  zg: Zug
+dates:
+  d1994_10: im Oktober 1994
+  d1993_05: im Mai 1993
+  d2018_11: im November 2018
+  d2019_03: im März 2019
+  d2019_09: im September 2019
+  d2020_06: im Juni 2020
+  d2020_06_30: am 30. Juni 2020
+  d2020_07_01: am 1. Juli 2020
+  d2020_08: im August 2020
+  d2021_09: im September 2021
+  d2022_05: im Mai 2022
+  d2023_03: im März 2023
+  d2024_01: im Januar 2024
+  d2025_06: im Juni 2025
+groups:
+  age_old:
+    nom: ältere Menschen
+    dat: älteren Menschen
+  age_young:
+    nom: junge Erwachsene
+    dat: jungen Erwachsenen
+  can_vs:
+    nom: Walliserinnen und Walliser
+    dat: Walliserinnen und Wallisern
+  can_zh:
+    nom: Zürcherinnen und Zürcher
+    dat: Zürcherinnen und Zürchern
+  dis:
+    nom: Menschen mit Behinderung
+    dat: Menschen mit Behinderung
+  eth_kosovo:
+    nom: Kosovo-Albaner
+    dat: Kosovo-Albanern
+  eth_kurd:
+    nom: Kurden
+    dat: Kurden
+  eth_roma:
+    nom: Roma
+    dat: Roma
+  eth_roma_syn:
+    nom: Roma und Sinti
+    dat: Roma und Sinti
+  eth_tamil:
+    nom: Tamilen
+    dat: Tamilen
+  eth_yenish:
+    nom: Jenische
+    dat: Jenischen
+  gi_nonbinary:
+    nom: nonbinäre Menschen
+    dat: nonbinären Menschen
+  gi_trans:
+    nom: trans Menschen
+    dat: trans Menschen
+  occ_build:
+    nom: Bauarbeiter
+    dat: Bauarbeitern
+  occ_teach:
+    nom: Lehrerinnen und Lehrer
+    dat: Lehrerinnen und Lehrern
+  pol:
+    nom: Mitglieder einer bestimmten Partei
+    dat: Mitgliedern einer bestimmten Partei
+  race_african:
+    nom: Menschen afrikanischer Herkunft
+    dat: Menschen afrikanischer Herkunft
+  race_asian:
+    nom: Menschen asiatischer Herkunft
+    dat: Menschen asiatischer Herkunft
+  race_black:
+    nom: Schwarze
+    dat: Schwarzen
+  race_black_syn:
+    nom: Menschen mit dunkler Hautfarbe
+    dat: Menschen mit dunkler Hautfarbe
+  rel_free:
+    nom: Mitglieder einer Freikirche
+    dat: Mitgliedern einer Freikirche
+  rel_hindu:
+    nom: Hindus
+    dat: Hindus
+  rel_jewish:
+    nom: Juden
+    dat: Juden
+  rel_jewish_syn:
+    nom: Menschen jüdischen Glaubens
+    dat: Menschen jüdischen Glaubens
+  rel_muslim:
+    nom: Muslime
+    dat: Muslimen
+  rel_muslim_syn:
+    nom: Menschen muslimischen Glaubens
+    dat: Menschen muslimischen Glaubens
+  sex_men:
+    nom: Männer
+    dat: Männern
+  sex_women:
+    nom: Frauen
+    dat: Frauen
+  so_bi:
+    nom: Bisexuelle
+    dat: Bisexuellen
+  so_gay:
+    nom: Schwule
+    dat: Schwulen
+  so_homo:
+    nom: Homosexuelle
+    dat: Homosexuellen
+  so_homo_syn:
+    nom: gleichgeschlechtlich liebende Menschen
+    dat: gleichgeschlechtlich liebenden Menschen
+  so_lesbian:
+    nom: Lesben
+    dat: Lesben
+acts:
+  a1A1: dazu aufgerufen, {g.nom} zu hassen
+  a1A2: dazu aufgerufen, {g.nom} zu diskriminieren
+  a1B1: die Leute aufgefordert, {g.nom} zu hassen
+  a1B2: Hass gegen {g.nom} geschürt
+  a1C1: dazu aufgerufen, {g.nom} zu benachteiligen und auszugrenzen
+  a1C2: dazu aufgerufen, {g.dat} keine Wohnungen und keine Stellen zu geben
+  a2A1: eine Ideologie verbreitet, nach der {g.nom} systematisch herabgesetzt werden sollen
+  a2A2: Schriften einer Lehre verteilt, die {g.nom} systematisch herabsetzt
+  a2B1: ein Weltbild propagiert, nach dem {g.nom} minderwertig sind
+  a2B2: für eine Ideologie geworben, die {g.nom} systematisch verleumdet
+  a2C1: eine Lehre verbreitet, die {g.nom} als minderwertig darstellt
+  a2C2: immer wieder Thesen verbreitet, nach denen {g.nom} weniger wert seien als andere Menschen
+  a4A1: '{g.nom} auf eine Art herabgesetzt, die ihnen die Menschenwürde abspricht'
+  a4A2: '{g.nom} herabgewürdigt und ihnen die Menschenwürde abgesprochen'
+  a4B1: gesagt, {g.nom} seien Menschen von geringerem Wert
+  a4B2: '{g.nom} als Menschen verhöhnt, die keine Würde verdienen'
+  a4C1: gesagt, {g.nom} seien keine gleichwertigen Menschen
+  a4C2: '{g.nom} als Menschen zweiter Klasse bezeichnet'
+settings:
+  pub_rally: an einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Leuten
+  pub_rally_fam: an einer bewilligten Kundgebung vor rund 300 Leuten, an der ich mit meiner Familie war,
+  pub_post: in einem öffentlichen Post auf meinem Social-Media-Profil
+  pub_post_fam: in einem öffentlichen Post auf meinem Profil, den ich an meine Familie gerichtet habe («Liebe Familie …»),
+  pub_letter: in einem Leserbrief, den die Regionalzeitung abgedruckt hat,
+  pub_letter_fam: in einem Leserbrief in der Regionalzeitung, den ich im Namen meiner ganzen Familie unterschrieben habe,
+  pub_hut: an einem Treffen in einer Waldhütte mit etwa 40 Leuten, die über einen allgemeinen Aufruf gekommen waren und die ich grösstenteils nicht kannte,
+  pub_hut_fam: an einem Treffen in der Waldhütte meiner Familie mit etwa 40 Leuten, die über einen allgemeinen Aufruf gekommen waren und die ich grösstenteils nicht kannte,
+  pub_flyer: auf Flugblättern, die ich in der Fussgängerzone an Passanten verteilt habe,
+  pub_flyer_fam: auf Flugblättern mit dem Titel «Eine Familie sagt die Wahrheit», die ich mit meinen Kindern in der Fussgängerzone verteilt habe,
+  pub_speech: in einer Rede an der Gemeindeversammlung vor rund 120 Stimmberechtigten
+  pub_speech_fam: in einer Rede an der Gemeindeversammlung vor rund 120 Stimmberechtigten, unter denen auch meine Eltern und Geschwister sassen,
+  pub_video: in einem Video, das ich auf einer frei zugänglichen Plattform hochgeladen habe,
+  pub_video_fam: in einem öffentlichen Video mit dem Titel «Botschaft an meine Familie»
+  pub_tram: im vollen Tram laut vor allen Fahrgästen
+  pub_tram_fam: im vollen Tram laut vor allen Fahrgästen, als ich mit meinen Kindern unterwegs war,
+  pub_market: an einem Stand auf dem Wochenmarkt vor vielen Kundinnen und Kunden
+  pub_market_fam: an unserem Familien-Marktstand auf dem Wochenmarkt vor vielen Kundinnen und Kunden
+  pub_forum: in einem Kommentar in einem frei zugänglichen Online-Forum
+  pub_forum_fam: in einem Kommentar in einem frei zugänglichen Online-Forum, den ich mit «Gruss an die ganze Familie» unterschrieben habe,
+  priv_dinner: beim Abendessen in meiner Wohnung, nur im engsten Familienkreis mit meinem Ehepartner und unseren zwei erwachsenen Kindern,
+  priv_friends: beim Abendessen bei mir zu Hause mit drei engen, langjährigen Freunden
+  priv_message: in einer persönlichen Nachricht nur an meine Schwester
+  priv_phone: am Telefon mit meinem Bruder
+  priv_famchat: in unserem Familienchat, in dem nur meine Eltern und Geschwister sind,
+  cont_clubchat: in der geschlossenen Chatgruppe meines Sportvereins mit rund 30 Mitgliedern, von denen ich einige gut und die meisten nur flüchtig kenne,
+  cont_party: an meinem Geburtstagsfest im Garten vor rund 20 Gästen, darunter Freunde, Nachbarn und ein paar Bekannte von Bekannten,
+  cont_office: in einer E-Mail an rund 25 frühere und heutige Arbeitskolleginnen und -kollegen
+  cont_assoc: an einer nicht öffentlichen Sitzung unseres Quartiervereins mit rund 25 Mitgliedern, von denen sich einige seit Jahren kennen und andere neu sind,

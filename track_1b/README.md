@@ -39,7 +39,7 @@ make run                                 # Docker, CPU, no model, no key: ~25 s
 pip install -e . && statute-twins selfcheck
 ```
 
-1. **Gold re-derivation.** Regenerates all 2,142 items, gold labels and prompts from `statutes/stgb_261bis/` and compares
+1. **Gold re-derivation.** Regenerates all 2,802 items, gold labels and prompts from `statutes/stgb_261bis/` and compares
    every file with the released dataset by sha256.
 2. **Re-scoring.** Recomputes every result (accuracy, element read-back with bootstrap intervals, build parity, stage
    trace, held-out test) from the stored model responses and compares it with `results/results.json`.

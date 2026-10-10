@@ -11,6 +11,8 @@ configs:
       - {split: de, path: eval/core_de.jsonl}
       - {split: fr, path: eval/core_fr.jsonl}
       - {split: it, path: eval/core_it.jsonl}
+  - config_name: user_voice
+    data_files: [{split: de, path: eval/core_de_lay.jsonl}]
   - config_name: battery162
     data_files: [{split: de, path: eval/battery162.jsonl}]
   - config_name: prompts
@@ -18,6 +20,7 @@ configs:
       - {split: de, path: eval/prompts_core_de.jsonl}
       - {split: fr, path: eval/prompts_core_fr.jsonl}
       - {split: it, path: eval/prompts_core_it.jsonl}
+      - {split: de_user_voice, path: eval/prompts_core_de_lay.jsonl}
       - {split: battery162, path: eval/prompts_battery162.jsonl}
   - config_name: prompts_free_text
     data_files:
@@ -35,9 +38,10 @@ configs:
 
 # Apertus-Recht: Art. 261bis StGB minimal-twin scenarios (DE / FR / IT)
 
-1980 scenarios (660 per language in DE, FR and IT) about the Swiss racial-discrimination offence,
-Art. 261bis StGB / CP, plus the 162-item German exploration battery on which the stage and build columns
-were measured. Every scenario belongs to a **twin group**: a base case and variants that each change exactly **one
+1980 scenarios (660 per language in DE, FR and IT) about the Swiss racial-discrimination
+offence, Art. 261bis StGB / CP; the same 660 German scenarios retold in the voice of a user asking about
+their own conduct (`user_voice`, language code `de_lay`); and the 162-item German exploration battery on which
+the stage and build columns were measured. Every scenario belongs to a **twin group**: a base case and variants that each change exactly **one
 legal fact** (public ↔ private setting, protected ↔ unprotected characteristic, before ↔ after the 1 July 2020
 extension, before ↔ after entry into force in 1995) or one irrelevant detail (**placebos**: family wording of a public
 statement, a synonym of the characteristic, a date that does not matter). The **gold verdict is computed by code** from
@@ -53,9 +57,11 @@ the pinned statute text and BGE 130 IV 111 E. 5.2, never written by hand.
 ## Uses
 ### Direct Use
 Evaluating whether a language model applies the Swiss law in force when a user asks a local legal-information
-assistant whether a statement is punishable under Art. 261bis. The model answers each scenario at five prompt rungs
-(R0: plain question; R1: elements named; R2: + publicity rule of BGE 130 IV 111 and the list; R3: + "the list is
-closed"; R4: + the 1 July 2020 date clause) in two answer framings (Ja/Nein; "Urteil: schuldig / nicht schuldig"). The
+assistant whether a statement is punishable under Art. 261bis. The model answers each scenario at six prompt rungs
+(R0: plain question; R1: elements named; R2: + a one-sentence paraphrase of BGE 130 IV 111 and the list; R3: + "the
+list is closed"; R4: + "sexual orientation only from 1 July 2020"; R5: the verbatim Fedlex text of Art. 261bis and
+Art. 2 StGB with Fedlex's footnote and the Regeste of BGE 130 IV 111) in two answer framings (Ja/Nein; "Urteil:
+schuldig / nicht schuldig", and the French and Italian equivalents). The
 twins read back **which element** a model gets wrong, not only how often. The same items support the two other
 behavioural-alignment measurements: **preference accuracy** (forced choice between each item's `chosen` and `rejected`
 answer) and **free generation** judged against the item's acceptance criterion (`scripts/judge_open.py` in the
@@ -72,7 +78,9 @@ text; acts are described abstractly in the statute's vocabulary.
 - **Localisation:** each language is set where it is spoken: German items in German-speaking towns, French items in
   Romandie (Lausanne, Genève, Sion, …), Italian items in Ticino and Italian Graubünden (Lugano, Bellinzona, Poschiavo,
   …), with each language's official legal terms and citation forms (StGB / CP, BGE / ATF / DTF, AS / RO / RU).
-- **Prompt rungs** model the retrieval levels of an assistant (no law in context → statute and leading case pasted in).
+- **Prompt rungs** model the retrieval levels of an assistant: R0 no law; R1–R4 the elements, a one-sentence paraphrase
+  of BGE 130 IV 111, the closed list and the 2020 date as rules; R5 the verbatim Fedlex text of Art. 261bis (with
+  Fedlex's footnote) and Art. 2 StGB plus the Regeste of BGE 130 IV 111, as a retrieval pipeline would paste them.
 - **Acceptance criteria, chosen / rejected answers, settled / contested labels and a normative source** are given for
   every item (Track 1B behavioural-alignment requirements).
 
@@ -180,7 +188,7 @@ Art. 2 StGB, the Regeste of BGE 130 IV 111; no rule summary): 939/939 settled it
 code gold, κ against gold 1.000. All labels: [`review/`](review/).
 **Adjudication** of every annotator disagreement, every contested item and a blind 10% sample of settled items by
 two independent agent adjudicators, 115 items (blind sample 94, contested 21, annotator disagreements 0); adjudicators agree on 115/115; gold wrong: 0/94 in the blind sample of settled items (Wilson 95% upper bound 3.9%), 0/21 contested items.
-**Court validation** of the gold engine against real decisions: 326 decisions triaged (stratum A: 150, stratum B: 176); 58 in scope (55 convictions, 3 acquittals); engine agrees with the court in 58/58 (Wilson 95% 0.94-1.00); 24 out of scope (unmodelled grounds), 50 unextractable, 194 excluded; every tuple extracted twice by independent agents, conflicts settled by a third (amendment A4).
+**Court validation** of the gold engine against real decisions: 326 decisions triaged (stratum A: 150, stratum B: 176); 58 in scope (55 convictions, 3 acquittals); engine agrees with the court in 58/58 (Wilson 95% 0.94-1.00; an engine that always convicts would agree in 55/58; acquittals 3/3, Wilson 0.44-1.00); 24 out of scope (unmodelled grounds), 50 unextractable, 194 excluded; every tuple extracted twice by independent agents, conflicts settled by a third (amendment A4).
 #### Annotator Details
 All annotation, adjudication and court-tuple extraction was done by Claude agents (Anthropic), declared as AI, working
 blind (opaque ids, no access to code or gold). No human labels: every label in this release can be regenerated by
@@ -204,10 +212,10 @@ Score with both framings and read the element table, not a single accuracy; repo
 alongside results, since 4-bit conversions changed verdicts in our measurements.
 
 ## Model responses in this release
-17 runs (`responses/<run>.jsonl` with `<run>.meta.json`): 8b-bf16-DPO, 8b-bf16-RLVR, 8b-bf16-blend-RLVR-DPO-a0.25, 8b-bf16-blend-RLVR-DPO-a0.5, 8b-bf16-blend-RLVR-DPO-a0.75, 8b-gguf-q4_k_m, 8b-gguf-q4_k_m-cpu-core, 8b-gguf-q8_0, 8b-mlx4-DPO, 8b-mlx4-RLVR, 8b-mlx4-SFT, 8b-mlx4-base-completion, 8b-mlx4-final, publicai-70b-fc, publicai-70b-fc-core, publicai-70b-gen, qwen3-8b-mlx4.
+16 runs (`responses/<run>.jsonl` with `<run>.meta.json`): 8b-bf16-DPO, 8b-bf16-RLVR, 8b-bf16-blend-RLVR-DPO-a0.25, 8b-bf16-blend-RLVR-DPO-a0.5, 8b-bf16-blend-RLVR-DPO-a0.75, 8b-gguf-q4_k_m, 8b-gguf-q4_k_m-cpu-core, 8b-gguf-q8_0, 8b-mlx4-DPO, 8b-mlx4-RLVR, 8b-mlx4-SFT, 8b-mlx4-base-completion, 8b-mlx4-final, publicai-70b-fc, publicai-70b-gen, qwen3-8b-mlx4.
 
 ## Changelog
-- 1.0.0 (2026-10): first release. Generator 1.0.0, seed 261. Files and hashes: `MANIFEST.json` (89 files).
+- 1.0.0 (2026-10): first release. Generator 1.0.0, seed 261. Files and hashes: `MANIFEST.json` (94 files).
   Pre-registration ([`docs/PREREG.md`](docs/PREREG.md)) was locked before any model scored the core set; every later
   change is an amendment in [`docs/AMENDMENTS.md`](docs/AMENDMENTS.md):
   A1 design moved into YAML, output byte-identical; A2 FR/IT surface fixes from back-translation; A3 one contested

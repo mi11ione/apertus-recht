@@ -85,3 +85,31 @@ in the item's language (ATF/DTF, RO/RU, CP). The reviewer also questioned whethe
 1 July 2020 that may still be online later is settled; we keep the view that the offence is complete on publication
 and report the accuracies without those 10 items per language (`scripts/sensitivity.py`, `reports/sensitivity.json`).
 (The archive moved from `dataset/archive/` to `archive/` at the repository level on 2026-10-10 so that it can never be uploaded with the dataset.)
+
+## A8 (2026-10-10, 02:50, after judge review round 2; the pre-registered test and its verdicts are unchanged)
+(1) **R5, verbatim law.** Reviewers pointed out that R1–R4 state the law as rules written by us (a one-sentence
+paraphrase of BGE 130 IV 111, the closed list, the 2020 date) and that no rung contains the law itself. R5 adds the
+pinned Fedlex texts of Art. 261bis (with Fedlex's own footnote) and Art. 2 StGB verbatim and the Regeste of BGE 130 IV
+111, as a retrieval pipeline would paste them (`prompts/<lang>.yaml: law_text`, `render.law_block`). R5 is exploratory:
+`heldout.py` now restricts the pre-registered test to the pre-registered rungs R0, R3, R4 (`PREREG_RUNGS`), as it already
+did to the pre-registered framings (A6). (2) **Length-matched preference pairs.** The A6 pairs compared a long `chosen`
+with a short `rejected` answer, so a summed log-probability measured length. Each settled item now also has
+`rejected_minimal`: the chosen answer mirrored, same wording and length, with the verdict and the deciding legal claim
+negated; preference prompts use it (`answers/<lang>.yaml: minimal`). The A6 preference runs were discarded unanalysed.
+(3) **Legal precision from a criminal-law review:** non-retroactivity cited as Art. 1 and 2 StGB and acquittals scoped
+to Art. 261bis in the reference answers; the contested items' acceptance criterion accepts a reasoned leaning under
+BGE 130 IV 111 (two of the four contested settings lean public); the court validation reports the always-convict
+baseline (55/58), acquittals separately (3/3) and records unlisted characteristics as such ("unlisted:foreigners")
+instead of the engine stand-in. (4) **Record of earlier code changes to locked files:** `results.py` was fixed on
+2026-10-09 23:43 (commit 2c1dfaa, before any core-set result was analysed: legacy pairs overwrote core edits under the
+same key; keys now carry the subset) and extended in A6; `heldout.py` filters framings (A6) and rungs (A8); the frozen
+`heldout.py` of the lock commit reproduces every pre-registered verdict on the current data (`statute-twins
+prereg-verify`). `prereg/CHANGES.json` maps every locked file that differs from `LOCK.json` to its amendments.
+
+## A9 (2026-10-10, 03:00): the same German scenarios in a user's voice (exploratory)
+Reviewers noted that the scenarios read like charge sheets (the dignity threshold and intent are stated in the statute's
+words), while the use case is a person asking about their own conduct. `de_lay` renders the same 660 German scenarios
+(same slots, facts and gold, same twin groups) in the first person and in everyday words, with no legal conclusions:
+"Im Januar 2024 habe ich in Aarau an einem Stand auf dem Wochenmarkt vor vielen Kundinnen und Kunden ein Weltbild
+propagiert, nach dem Muslime minderwertig sind." The group is named without its characteristic. Exploratory: not part
+of the pre-registered test (`heldout.py` runs per language; `de_lay` results are reported next to `de`).

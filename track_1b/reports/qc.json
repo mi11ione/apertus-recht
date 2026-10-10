@@ -3,13 +3,13 @@
  "gates": {
   "schema": {
    "passed": true,
-   "items": 2142,
+   "items": 2802,
    "problems": [],
    "n_problems": 0
   },
   "gold_recomputed": {
    "passed": true,
-   "checked": 2142,
+   "checked": 2802,
    "mismatches": [],
    "n_mismatches": 0
   },
@@ -27,7 +27,7 @@
   },
   "language_id": {
    "passed": true,
-   "checked": 2142,
+   "checked": 2802,
    "mismatches": [],
    "min_share": 0.591
   },
@@ -36,9 +36,9 @@
    "hits": [],
    "n_hits": 0,
    "scanned": {
-    "items": 2142,
-    "responses": 18962,
-    "metadata": 2142
+    "items": 2802,
+    "responses": 20222,
+    "metadata": 2802
    }
   },
   "canary": {
@@ -55,11 +55,12 @@
   }
  },
  "describe": {
-  "items": 2142,
-  "core": 1980,
+  "items": 2802,
+  "core": 2640,
   "battery162": 162,
   "by_lang": {
    "de": 822,
+   "de_lay": 660,
    "fr": 660,
    "it": 660
   },
@@ -133,6 +134,28 @@
     "mean_words": 44.2,
     "min_words": 32,
     "max_words": 75,
+    "slot_values_used": {
+     "act": 18,
+     "actor": 8,
+     "date": 14,
+     "frame": 8,
+     "group": 33,
+     "place": 12,
+     "setting": 29
+    },
+    "wordings_per_paragraph_characteristic_cell": {
+     "min": 1,
+     "median": 5
+    }
+   },
+   "de_lay": {
+    "items": 660,
+    "distinct_1": 0.0174,
+    "distinct_2": 0.0601,
+    "distinct_3": 0.1106,
+    "mean_words": 30.0,
+    "min_words": 18,
+    "max_words": 52,
     "slot_values_used": {
      "act": 18,
      "actor": 8,
