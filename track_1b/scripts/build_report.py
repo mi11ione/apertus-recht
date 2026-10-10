@@ -64,7 +64,7 @@ hr{border:0;border-top:.4pt solid #000;margin:3mm 0}
 """
 
 
-MODELS = [("publicai-70b-fc-core", "70B", "de"), ("publicai-70b-fc-lay", "70B, user voice", "de_lay"),
+MODELS = [("publicai-70b-fc-core", "70B", "de"), ("publicai-70b-fc-lay", "70B, first person", "de_lay"),
           ("publicai-70b-fc-core-fr", "70B", "fr"), ("publicai-70b-fc-core-it", "70B", "it"),
           ("8b-gguf-q4_k_m-cpu-core", "8B Q4_K_M", "de")]
 RUNGS = ("R0", "R3", "R4", "R5")

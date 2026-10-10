@@ -265,7 +265,7 @@ RUNG_SERIES = [("publicai-70b-fc-core", "de", "70B DE", INK, "s", "-", True),
                ("publicai-70b-fc-core-fr", "fr", "70B FR", INK, "^", "-", True),
                ("publicai-70b-fc-core-it", "it", "70B IT", INK, "o", "-", True),
                ("8b-gguf-q4_k_m-cpu-core", "de", "8B DE", INK2, "D", "--", False),
-               ("publicai-70b-fc-lay", "de_lay", "70B DE, user voice", INK2, "s", ":", False)]
+               ("publicai-70b-fc-lay", "de_lay", "70B DE, first person", INK2, "s", ":", False)]
 RUNG_X = ("R0", "R3", "R4", "R5")
 
 

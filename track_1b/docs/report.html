@@ -39,8 +39,8 @@ threshold are stipulated, so the set tests how a model applies the elements, not
 Each verdict is computed by code from pinned Fedlex texts and agrees with 57 of 57 Swiss court rulings we could
 code (mostly convictions: an engine that always convicts would score 55). Without the law, Apertus v1.5 70B convicts
 all but at most one of the 215 lawful German scenarios and, in free text, calls 73 of 75 lawful scenarios punishable. Rules spelled out in plain sentences make it apply the publicity rule, but not the closed list
-of protected groups or the date the article took effect. Pasting the verbatim law undoes even that. A second statute
-fails in another shape. One command re-derives every label and number.</p>
+of protected groups or the date the article took effect. Pasting the verbatim law undoes even that. On a second statute
+(Art. 179ter), its answer without the law follows the wording of the question, not the facts. One command re-derives every label and number.</p>
 <p><strong>Track:</strong> Apertus Readiness · Track 1B (Swiss Voices, behavioural alignment) · <strong>Event:</strong> Online · <strong>Team:</strong> 444<br />
 <strong>Demo:</strong> https://apertus-recht.mi11ion.io (every scenario, its gold and Apertus's answers) · <code>make run</code> (Docker, CPU, no key)</p>
 <hr />
@@ -86,7 +86,7 @@ element-by-element derivation. The 660 German scenarios are also retold in the f
 </tr>
 <tr>
 <td>Rung</td>
-<td>how much law the prompt carries. <strong>R0</strong> no law · <strong>R3</strong> rules spelled out (the elements, a one-sentence paraphrase of BGE 130 IV 111, the closed list) · <strong>R4</strong> R3 plus one sentence on the 2020 extension · <strong>R5</strong> verbatim law (Fedlex text of Art. 261bis and Art. 2 StGB, the Regeste) · <strong>R6</strong> R5 with an instruction to check each element</td>
+<td>how much law the prompt carries. <strong>R0</strong> no law · <strong>R3</strong> rules spelled out (the elements, a one-sentence paraphrase of BGE 130 IV 111, the closed list, and that gender identity and sex are not covered) · <strong>R4</strong> R3 plus one sentence on the 2020 extension · <strong>R5</strong> verbatim law (Fedlex text of Art. 261bis and Art. 2 StGB, the Regeste) · <strong>R6</strong> R5 with an instruction to check each element</td>
 </tr>
 <tr>
 <td>Framing</td>
@@ -94,7 +94,7 @@ element-by-element derivation. The 660 German scenarios are also retold in the f
 </tr>
 <tr>
 <td>Misapplied (red)</td>
-<td>the model convicts a variant the law acquits, while it convicts the unchanged base (95% intervals)</td>
+<td>the model convicts a variant the law acquits, while it convicts the unchanged base (95% intervals); for a placebo, a change that should not matter, it stops convicting</td>
 </tr>
 <tr>
 <td>Read-back</td>
@@ -269,9 +269,8 @@ and predicts the third; it passes if it beats the statute by at least 0.15 in ev
 <p><strong>Runs.</strong> The 70B on Public AI (vLLM, temperature 0) in three languages at R0 to R5; the 8B public Q4_K_M GGUF
 (sha256 <code>a037df8d…</code>) on CPU CI runners, German R0 to R5; preference on 645 settled items per language; free text on
 720 answers per language; Art. 179ter (120 items); the 162-item battery for training stages. Every row records the
-served model and a request hash. Public AI's name <code>apertus-v1.5-8b</code> currently serves the 70B: its greedy output is
-identical to the <code>-70b</code> name on 760 of 792 prompts, it runs on 16 GPUs (tensor parallel 8, pipeline 2), and it scores
-84% on 250 MMLU items against 71% for Public AI's v1 8B route (<code>docs/builds.md</code>); every hosted number is the 70B.</p>
+served model and a request hash; every hosted number is the 70B (Public AI's <code>apertus-v1.5-8b</code> name serves it: same
+output as <code>-70b</code> on 760 of 792 prompts, a 16-GPU deployment, MMLU 84% vs 71%; <code>docs/builds.md</code>).</p>
 <h2>Results</h2>
 <p><strong>Without the law, the 70B convicts nearly everything.</strong> At R0 the recall of acquittals is at most 0.01 in every
 language and framing (Table 2; Figure 2 shows every model by rung). Table 1 shows what this means for one twin pair. The model is not blind to the facts: its scores still rank punishable above lawful cases (AUC 0.72–0.77).
@@ -307,7 +306,7 @@ punishable under Swiss law") is misleading for all three judges.</figcaption></f
 <td>0.50 / 0.40</td>
 </tr>
 <tr>
-<td>70B, user voice</td>
+<td>70B, first person</td>
 <td>DE</td>
 <td>0.50 / –</td>
 <td>0.74 / –</td>
@@ -350,7 +349,8 @@ rung, Ja/Nein: the rules spelled out move every model; the verbatim law undoes i
 run at R0 and R3 only.</figcaption></figure>
 <p><strong>With the rules spelled out (R3), publicity is applied; the closed list and the date are not.</strong> Figure 3 is the
 read-back itself: the law each model applies, element by element (the pre-registered rule reports it per element
-because the held-out test below fails). It shows every model and language; for the German 70B:</p>
+because the pre-registered held-out test fails: at R3 and R4 the read-back beats the statute in every cell, but not
+by the 0.15 required; see the end of this section). It shows every model and language; for the German 70B:</p>
 <ul>
 <li><strong>Private settings</strong> are acquitted. Every private variant names family or friends, the words of the paraphrase, so
   this shows uptake of a stated example more than application of BGE 130 IV 111.</li>
@@ -382,49 +382,49 @@ framing; open: it applies the law in force; dash: the base itself is not convict
 <tr>
 <th>Control</th>
 <th>Result</th>
-<th>Rules out</th>
+<th>What it shows</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Question asked the other way ("would a court acquit?"), no law</td>
 <td>Of 215 lawful scenarios, 0 are acquitted, in every language.</td>
-<td>a bias towards "yes"</td>
+<td>not a bias towards "yes"</td>
 </tr>
 <tr>
 <td>The same, rules spelled out</td>
 <td>German: the model now also "acquits" punishable cases (balanced accuracy 0.38). Averaged over both directions, 73 of 215 lawful scenarios are acquitted, among them 45 of 55 private settings.</td>
-<td>nothing: part of the R3 gain is answer format</td>
+<td>part of the R3 gain is answer format</td>
 </tr>
 <tr>
 <td>The same in Italian</td>
 <td>Of 215 lawful scenarios, none acquitted: every case is convicted.</td>
-<td>nothing: the answer follows the question</td>
+<td>the answer follows the question</td>
 </tr>
 <tr>
-<td>What in the verbatim law hurts (75 lawful German scenarios, one sample)</td>
+<td>What in the verbatim law hurts (75 lawful German scenarios, a stable sample of 80 twin groups)</td>
 <td>Acquitted with the rules alone: 37 of 75; with the rules after the verbatim law: 11 of 75; with the rules after unrelated legal text of the same length: 36 of 75.</td>
-<td>prompt length; it is the law's own text</td>
+<td>not prompt length: the law's own text</td>
 </tr>
 <tr>
 <td>Verbatim law plus an instruction to check each element (R6)</td>
 <td>Of 215 lawful German scenarios, 23 are acquitted.</td>
-<td>a missing instruction in R5</td>
+<td>not a missing instruction</td>
 </tr>
 <tr>
 <td>Free text in French and Italian</td>
 <td>Of 75 lawful scenarios, misleading answers: French 75 without the law, 75 with it; Italian 75 and 66.</td>
-<td>a German-only effect</td>
+<td>not a German-only effect</td>
 </tr>
 <tr>
 <td>The same German scenarios told in the first person</td>
 <td>Of 215 lawful scenarios, 2 acquitted without the law; balanced accuracy 0.74 with the rules.</td>
-<td>an artefact of legal register</td>
+<td>not an artefact of legal register</td>
 </tr>
 <tr>
 <td>A second statute, Art. 179ter (120 German scenarios)</td>
 <td>Without the law: "Nein" to all 120 when asked Ja/Nein, "schuldig" to 117 when asked for the verdict. With its elements and the complaint rule: balanced accuracy 0.76.</td>
-<td>an effect of one article</td>
+<td>not specific to one article</td>
 </tr>
 </tbody>
 </table><figcaption>Table 3. Controls (A13–A15; per-element detail in <code>reports/controls_a13.json</code>). Art. 179ter: even with its rules

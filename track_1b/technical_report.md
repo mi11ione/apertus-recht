@@ -6,8 +6,8 @@ threshold are stipulated, so the set tests how a model applies the elements, not
 Each verdict is computed by code from pinned Fedlex texts and agrees with ⟨court_ofk⟩ Swiss court rulings we could
 code (mostly convictions: an engine that always convicts would score 55). Without the law, Apertus v1.5 70B convicts
 all but at most one of the 215 lawful German scenarios and, in free text, calls ⟨open_r0_mislead⟩ of 75 lawful scenarios punishable. Rules spelled out in plain sentences make it apply the publicity rule, but not the closed list
-of protected groups or the date the article took effect. Pasting the verbatim law undoes even that. A second statute
-fails in another shape. One command re-derives every label and number.
+of protected groups or the date the article took effect. Pasting the verbatim law undoes even that. On a second statute
+(Art. 179ter), its answer without the law follows the wording of the question, not the facts. One command re-derives every label and number.
 
 **Track:** Apertus Readiness · Track 1B (Swiss Voices, behavioural alignment) · **Event:** Online · **Team:** 444  
 **Demo:** https://apertus-recht.mi11ion.io (every scenario, its gold and Apertus's answers) · `make run` (Docker, CPU, no key)
@@ -50,9 +50,9 @@ element-by-element derivation. The 660 German scenarios are also retold in the f
 | Term | Meaning |
 |---|---|
 | Twin | a variant that changes exactly one fact of its base. A *true flip* changes the verdict; a *placebo* does not. |
-| Rung | how much law the prompt carries. **R0** no law · **R3** rules spelled out (the elements, a one-sentence paraphrase of BGE 130 IV 111, the closed list) · **R4** R3 plus one sentence on the 2020 extension · **R5** verbatim law (Fedlex text of Art. 261bis and Art. 2 StGB, the Regeste) · **R6** R5 with an instruction to check each element |
+| Rung | how much law the prompt carries. **R0** no law · **R3** rules spelled out (the elements, a one-sentence paraphrase of BGE 130 IV 111, the closed list, and that gender identity and sex are not covered) · **R4** R3 plus one sentence on the 2020 extension · **R5** verbatim law (Fedlex text of Art. 261bis and Art. 2 StGB, the Regeste) · **R6** R5 with an instruction to check each element |
 | Framing | how the verdict is asked: Ja/Nein, or the verdict word ("Urteil: schuldig / nicht schuldig") |
-| Misapplied (red) | the model convicts a variant the law acquits, while it convicts the unchanged base (95% intervals) |
+| Misapplied (red) | the model convicts a variant the law acquits, while it convicts the unchanged base (95% intervals); for a placebo, a change that should not matter, it stops convicting |
 | Read-back | the law the model applies, element by element, read off the twins |
 
 | Family (groups per language) | One-fact change of the base | Tests |
@@ -149,9 +149,8 @@ and predicts the third; it passes if it beats the statute by at least 0.15 in ev
 **Runs.** The 70B on Public AI (vLLM, temperature 0) in three languages at R0 to R5; the 8B public Q4_K_M GGUF
 (sha256 `a037df8d…`) on CPU CI runners, German R0 to R5; preference on 645 settled items per language; free text on
 720 answers per language; Art. 179ter (120 items); the 162-item battery for training stages. Every row records the
-served model and a request hash. Public AI's name `apertus-v1.5-8b` currently serves the 70B: its greedy output is
-identical to the `-70b` name on 760 of 792 prompts, it runs on 16 GPUs (tensor parallel 8, pipeline 2), and it scores
-84% on 250 MMLU items against 71% for Public AI's v1 8B route (`docs/builds.md`); every hosted number is the 70B.
+served model and a request hash; every hosted number is the 70B (Public AI's `apertus-v1.5-8b` name serves it: same
+output as `-70b` on 760 of 792 prompts, a 16-GPU deployment, MMLU 84% vs 71%; `docs/builds.md`).
 
 ## Results
 
@@ -183,7 +182,8 @@ run at R0 and R3 only.*
 
 **With the rules spelled out (R3), publicity is applied; the closed list and the date are not.** Figure 3 is the
 read-back itself: the law each model applies, element by element (the pre-registered rule reports it per element
-because the held-out test below fails). It shows every model and language; for the German 70B:
+because the pre-registered held-out test fails: at R3 and R4 the read-back beats the statute in every cell, but not
+by the 0.15 required; see the end of this section). It shows every model and language; for the German 70B:
 - **Private settings** are acquitted. Every private variant names family or friends, the words of the paraphrase, so
   this shows uptake of a stated example more than application of BGE 130 IV 111.
 - **Canton, disability and political opinion** stay red: convicted although the prompt lists the four protected
@@ -213,16 +213,16 @@ scenario the statute punishes (above the rule) or a detail that changes nothing 
 model. Filled square: the model applies a law that is not in force (both framings, 95% intervals); half-filled: in one
 framing; open: it applies the law in force; dash: the base itself is not convicted, so the row cannot be read.*
 
-| Control | Result | Rules out |
+| Control | Result | What it shows |
 |---|---|---|
-| Question asked the other way ("would a court acquit?"), no law | Of 215 lawful scenarios, ⟨rev_r0⟩ are acquitted, in every language. | a bias towards "yes" |
-| The same, rules spelled out | German: the model now also "acquits" punishable cases (balanced accuracy ⟨r3_rev_bal⟩). Averaged over both directions, ⟨r3_avg⟩ of 215 lawful scenarios are acquitted, among them ⟨r3_avg_set⟩ of 55 private settings. | nothing: part of the R3 gain is answer format |
-| The same in Italian | Of 215 lawful scenarios, none acquitted: every case is convicted. | nothing: the answer follows the question |
-| What in the verbatim law hurts (75 lawful German scenarios, one sample) | Acquitted with the rules alone: ⟨r3_same⟩ of 75; with the rules after the verbatim law: ⟨r5a_same⟩; with the rules after unrelated legal text of the same length: ⟨r5e_same⟩. | prompt length; it is the law's own text |
-| Verbatim law plus an instruction to check each element (R6) | Of 215 lawful German scenarios, ⟨r6_acq⟩ are acquitted. | a missing instruction in R5 |
-| Free text in French and Italian | Of 75 lawful scenarios, misleading answers: French ⟨ft_fr_r0⟩ without the law, ⟨ft_fr_r5⟩ with it; Italian ⟨ft_it_r0⟩ and ⟨ft_it_r5⟩. | a German-only effect |
-| The same German scenarios told in the first person | Of 215 lawful scenarios, ⟨lay_acq⟩ acquitted without the law; balanced accuracy ⟨lay_r3_bal⟩ with the rules. | an artefact of legal register |
-| A second statute, Art. 179ter (120 German scenarios) | Without the law: "Nein" to all ⟨r179_r0_nein⟩ when asked Ja/Nein, "schuldig" to ⟨r179_r0_ver⟩ when asked for the verdict. With its elements and the complaint rule: balanced accuracy ⟨r179_r2⟩. | an effect of one article |
+| Question asked the other way ("would a court acquit?"), no law | Of 215 lawful scenarios, ⟨rev_r0⟩ are acquitted, in every language. | not a bias towards "yes" |
+| The same, rules spelled out | German: the model now also "acquits" punishable cases (balanced accuracy ⟨r3_rev_bal⟩). Averaged over both directions, ⟨r3_avg⟩ of 215 lawful scenarios are acquitted, among them ⟨r3_avg_set⟩ of 55 private settings. | part of the R3 gain is answer format |
+| The same in Italian | Of 215 lawful scenarios, none acquitted: every case is convicted. | the answer follows the question |
+| What in the verbatim law hurts (75 lawful German scenarios, a stable sample of 80 twin groups) | Acquitted with the rules alone: ⟨r3_same⟩ of 75; with the rules after the verbatim law: ⟨r5a_same⟩; with the rules after unrelated legal text of the same length: ⟨r5e_same⟩. | not prompt length: the law's own text |
+| Verbatim law plus an instruction to check each element (R6) | Of 215 lawful German scenarios, ⟨r6_acq⟩ are acquitted. | not a missing instruction |
+| Free text in French and Italian | Of 75 lawful scenarios, misleading answers: French ⟨ft_fr_r0⟩ without the law, ⟨ft_fr_r5⟩ with it; Italian ⟨ft_it_r0⟩ and ⟨ft_it_r5⟩. | not a German-only effect |
+| The same German scenarios told in the first person | Of 215 lawful scenarios, ⟨lay_acq⟩ acquitted without the law; balanced accuracy ⟨lay_r3_bal⟩ with the rules. | not an artefact of legal register |
+| A second statute, Art. 179ter (120 German scenarios) | Without the law: "Nein" to all ⟨r179_r0_nein⟩ when asked Ja/Nein, "schuldig" to ⟨r179_r0_ver⟩ when asked for the verdict. With its elements and the complaint rule: balanced accuracy ⟨r179_r2⟩. | not specific to one article |
 
 *Table 3. Controls (A13–A15; per-element detail in `reports/controls_a13.json`). Art. 179ter: even with its rules
 stated, a public debate and an outsider (whose act falls under Art. 179bis) are still convicted.*
