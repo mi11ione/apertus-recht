@@ -5,10 +5,33 @@ from a file. Fails (exit 1) if any input is missing or the rendered card contain
 """
 import json
 import re
+import shutil
 import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "src"))
+from statute_twins.dataset import manifest, run_of  # noqa: E402
+
+# review records shipped with the dataset (dataset/<dest>), so the card's claims can be checked from the HF repo alone
+RECORDS = {
+    "docs/annotation-guidelines.md": "docs/annotation-guidelines.md",
+    "docs/consent-template.md": "docs/consent-template.md",
+    "prereg/PREREG.md": "docs/PREREG.md",
+    "prereg/AMENDMENTS.md": "docs/AMENDMENTS.md",
+    "prereg/PREREG_court.md": "docs/PREREG_court.md",
+    "statutes/stgb_261bis/review/annotation/labels.jsonl": "review/annotation_labels.jsonl",
+    "statutes/stgb_261bis/review/annotation/agreement.json": "review/annotation_agreement.json",
+    "reports/annotation_lawonly.json": "review/annotation_lawonly.json",
+    "statutes/stgb_261bis/review/adjudication/adj_A.json": "review/adjudication_A.json",
+    "statutes/stgb_261bis/review/adjudication/adj_B.json": "review/adjudication_B.json",
+    "reports/adjudication.json": "review/adjudication.json",
+    "statutes/stgb_261bis/review/court/tuples.jsonl": "review/court_tuples_A.jsonl",
+    "statutes/stgb_261bis/review/court/tuples_B.jsonl": "review/court_tuples_B.jsonl",
+    "reports/court_validation.json": "review/court_validation.json",
+    "reports/contamination.json": "review/contamination.json",
+    "reports/qc.json": "review/qc.json",
+}
 REPO_URL = "https://github.com/mi11ione/apertus-recht"
 HF_URL = "https://huggingface.co/datasets/<team>/apertus-recht"
 
@@ -29,7 +52,15 @@ def main() -> int:
     cv = J("reports/court_validation.json")
     adj = J("reports/adjudication.json")
     man = J("dataset/MANIFEST.json")
-    runs = sorted(p.stem for p in (ROOT / "dataset/responses").glob("*.jsonl"))
+    # released runs are the ones in the manifest; a run still being written stays out of the card and the manifest
+    runs = sorted({run_of(Path(f).name) for f in man["files"] if f.startswith("responses/") and f.endswith(".jsonl")})
+    unreleased = {run_of(p.name) for p in (ROOT / "dataset/responses").iterdir()} - set(runs)
+    for src, dst in RECORDS.items():
+        q = ROOT / "dataset" / dst
+        q.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(ROOT / src, q)
+    man = manifest(ROOT / "dataset", unreleased)
+    lo = J("reports/annotation_lawonly.json")
     a = ag["all"]
     settled = {k: v for k, v in ag.items() if k.startswith("variant:") and k != "variant:contested"}
     n_settled = sum(v["n"] for v in settled.values())
@@ -149,9 +180,10 @@ cities, groups are described by their characteristic.
 The team owns the generated text and releases it under CDLA-Permissive-2.0. No personal data and no people: there are
 no data subjects, and no human annotators or reviewers took part (all labelling steps are reproducible agent runs).
 Anyone who extends the set with human reviewers or human-written scenarios uses the consent and AI-use form in
-`docs/consent-template.md` (pseudonymised reviewers, signed forms kept by the maintainers, withdrawal before each
-release). **AI permissions:** generated with AI assistance (declared); may be used to evaluate and
-to train AI systems under the licence; the canary string asks crawlers to exclude it from training corpora.
+[`docs/consent-template.md`](docs/consent-template.md) (pseudonymised reviewers, signed forms kept by the maintainers, withdrawal before each
+release). **AI permissions:** generated with AI assistance (declared). The licence permits any use, training included;
+the set is built for evaluation, so we ask that a model trained on it (for instance on the chosen / rejected pairs) is
+not evaluated on it, and the canary string in every item lets corpus builders exclude it from pre-training data.
 #### Data Processing and Quality Control
 Automated gates (`statute-twins qc`, all passing for this release): schema; **gold recomputed** from the facts for every
 item; twin invariants (each variant differs from its base in exactly one slot; placebos keep and true flips change the
@@ -177,19 +209,21 @@ domain under URG Art. 5; listed per item in `metadata/items.jsonl` (`licence_com
 #### Annotation Process
 Gold labels are computed, not annotated. Annotation checks them: {a['n']} items (all {div['de']['items']} German items and
 a stratified sample in FR and IT) were labelled blind (opaque ids, no access to the code or the gold) by six Claude
-agents following `docs/annotation-guidelines.md` (in the repository). Agreement with the code gold on settled items:
+agents following [`docs/annotation-guidelines.md`](docs/annotation-guidelines.md). Agreement with the code gold on settled items:
 {k_settled}/{n_settled}; deciding element on acquittals: {a['deciding_element_agree']}/{a['deciding_element_n']}; Cohen's κ
 (3 classes, all items) {a['kappa']:.3f}. In the first round 7 of 21 contested items were labelled with a verdict and one
 contested setting was read as clearly private by 5/5 annotators; that setting and an anachronism the annotators found
 (acts in 1993/94 posted online) were fixed before any model result was analysed (pre-registration amendment A3) and the
-changed items re-annotated.
+changed items re-annotated. A second blind pass with new opaque ids gave the annotators **only the law** (statute texts,
+Art. 2 StGB, the Regeste of BGE 130 IV 111; no rule summary): {lo['lawonly_vs_gold_settled']} settled items agree with the
+code gold, κ against gold {lo['kappa_lawonly_vs_gold']:.3f}. All labels: [`review/`](review/).
 **Adjudication** of every annotator disagreement, every contested item and a blind 10% sample of settled items by
 {adj['summary']}.
 **Court validation** of the gold engine against real decisions: {cv['summary']}.
 #### Annotator Details
 All annotation, adjudication and court-tuple extraction was done by Claude agents (Anthropic), declared as AI, working
 blind (opaque ids, no access to code or gold). No human labels: every label in this release can be regenerated by
-anyone with the same instructions (`docs/annotation-guidelines.md` and the scripts in the repository). The agents share a
+anyone with the same instructions ([`docs/annotation-guidelines.md`](docs/annotation-guidelines.md) and the scripts in the repository). The agents share a
 model family with the generator's author, so their agreement rules out reading errors, not a shared misconception of the
 law; the statute tests against the official text and the court validation check the law itself.
 
@@ -213,6 +247,15 @@ alongside results, since 4-bit conversions changed verdicts in our measurements.
 
 ## Changelog
 - 1.0.0 (2026-10): first release. Generator 1.0.0, seed 261. Files and hashes: `MANIFEST.json` ({len(man['files'])} files).
+  Pre-registration ([`docs/PREREG.md`](docs/PREREG.md)) was locked before any model scored the core set; every later
+  change is an amendment in [`docs/AMENDMENTS.md`](docs/AMENDMENTS.md):
+  A1 design moved into YAML, output byte-identical; A2 FR/IT surface fixes from back-translation; A3 one contested
+  setting and an anachronism (online acts in 1993/94) fixed after blind annotation, before any result was analysed;
+  A4 agent verification (double extraction, two adjudicators) instead of a human reviewer; A5 four wording fixes found
+  in review after the German results had been analysed, all affected prompts re-scored, the pre-A5 responses kept in
+  the Git repository (`dataset/archive/`) so the effect of the fix is visible.
+  Reference answers are item-specific (setting, characteristic, paragraph and date of each scenario; 333 distinct
+  `chosen` per language); free-text prompts (`eval/prompts_open_*.jsonl`) score the same items without a forced choice.
 
 ## Dataset Card Contact
 Via the Git repository's issue tracker: {REPO_URL}.

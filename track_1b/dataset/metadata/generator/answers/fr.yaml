@@ -1,25 +1,80 @@
-# Reference answers in French (translated from answers/de.yaml; same keys). `{char_label}` is filled from char_labels,
-# `{date}` with the date surface from templates/fr.yaml (e.g. "en mars 2019", "le 30 juin 2020").
+# Reference answers in French (same keys and structure as answers/de.yaml; see its header). `{date}` is the date surface
+# from templates/fr.yaml (e.g. "en mars 2019", "le 30 juin 2020").
 lang: fr
 char_labels: {race: appartenance raciale, ethnicity: appartenance ethnique, religion: appartenance religieuse,
               sexual_orientation: orientation sexuelle, gender_identity: identité de genre, sex: sexe,
               canton: appartenance cantonale, occupation: profession, age: âge, disability: handicap,
               political_opinion: opinions politiques}
+labels:
+  paragraph:
+    abs1: "en tant qu'incitation à la haine ou à la discrimination (al. 1)"
+    abs2: "en tant que propagation d'une idéologie visant à rabaisser systématiquement (al. 2)"
+    abs4: "en tant qu'abaissement portant atteinte à la dignité humaine (al. 4)"
+slot_labels:
+  setting:
+    pub_rally: "une manifestation autorisée sur une place publique devant quelque 300 personnes"
+    pub_rally_fam: "une manifestation autorisée devant quelque 300 personnes, même vécue comme une « sortie en famille »"
+    pub_post: "une publication accessible au public sur les réseaux sociaux"
+    pub_post_fam: "une publication accessible au public sur les réseaux sociaux, même adressée à la famille"
+    pub_letter: "un courrier des lecteurs publié dans un journal régional"
+    pub_letter_fam: "un courrier des lecteurs publié dans un journal régional, même signé au nom de la famille"
+    pub_hut: "une réunion de quelque 40 personnes invitées par un appel général et en majorité inconnues"
+    pub_hut_fam: "une réunion de quelque 40 personnes invitées par un appel général, même tenue dans le refuge forestier de la famille"
+    pub_flyer: "des tracts distribués dans une rue piétonne animée"
+    pub_flyer_fam: "des tracts distribués dans une rue piétonne animée, même avec l'aide des enfants"
+    pub_speech: "un discours lors d'une assemblée communale devant quelque 120 citoyens"
+    pub_speech_fam: "un discours lors d'une assemblée communale devant quelque 120 citoyens, même en présence de proches"
+    pub_video: "une vidéo sur une plateforme librement accessible"
+    pub_video_fam: "une vidéo sur une plateforme librement accessible, même intitulée message à la famille"
+    pub_tram: "des propos tenus à voix haute devant tous les passagers d'un tram bondé"
+    pub_tram_fam: "des propos tenus à voix haute devant tous les passagers d'un tram bondé, même en présence de ses enfants"
+    pub_market: "des propos tenus à un stand de marché devant une nombreuse clientèle"
+    pub_market_fam: "des propos tenus devant une nombreuse clientèle, même à un stand de marché familial"
+    pub_forum: "un commentaire dans un forum en ligne librement accessible"
+    pub_forum_fam: "un commentaire dans un forum en ligne librement accessible, même signé d'un salut à la famille"
+    priv_dinner: "un repas du soir dans le cercle familial le plus restreint"
+    priv_friends: "un repas avec trois amis proches de longue date"
+    priv_message: "un message personnel adressé uniquement à la sœur"
+    priv_phone: "une conversation téléphonique avec le frère"
+    priv_famchat: "une discussion de famille en ligne réservée aux parents et aux frères et sœurs"
+    cont_clubchat: "un groupe de discussion fermé d'un club sportif d'une trentaine de membres, connus pour la plupart superficiellement"
+    cont_party: "une fête d'anniversaire d'une vingtaine d'invités, dont des connaissances de connaissances"
+    cont_office: "un courriel adressé à quelque 25 collègues de travail, anciens et actuels"
+    cont_assoc: "une séance non publique d'une association d'environ 25 membres, certains connus depuis longtemps, d'autres récents"
 chosen:
-  convict: "Oui. Les propos ont été tenus publiquement, visent un groupe en raison d'un critère protégé ({char_label}) et entrent dans le champ d'application temporel de l'art. 261bis CP ; l'infraction est réalisée."
-  "setting:failed": "Non. Les propos ont été tenus dans un cadre privé et n'étaient donc pas publics selon l'ATF 130 IV 111 consid. 5.2 ; l'art. 261bis CP exige que l'acte ait été commis publiquement."
-  "characteristic:not_listed": "Non. Le critère « {char_label} » ne fait pas partie de la liste exhaustive de l'art. 261bis CP (appartenance raciale, ethnique ou religieuse, orientation sexuelle)."
-  "characteristic:not_yet_covered": "Non. L'orientation sexuelle n'est protégée que pour les actes commis à partir du 1er juillet 2020 ; un acte commis {date} n'est pas visé, car selon l'art. 2 CP la loi ne s'applique pas rétroactivement."
+  convict: "Oui. Les propos ont été tenus publiquement au sens de l'ATF 130 IV 111 ({setting_label}) ; ils visent un groupe en raison d'un critère protégé ({char_label}) et réalisent l'art. 261bis CP {paragraph_label}. L'acte commis {date} entre dans le champ d'application temporel."
+  "setting:failed": "Non. {Setting_label} est un cadre privé marqué par des relations personnelles ; selon l'ATF 130 IV 111 consid. 5.2, il manque le caractère public qu'exige l'art. 261bis CP."
+  "characteristic:not_listed": "Non. Le critère « {char_label} » ne fait pas partie de la liste exhaustive de l'art. 261bis CP (appartenance raciale, ethnique ou religieuse, orientation sexuelle) ; les propos ne tombent pas sous cette disposition, même tenus publiquement."
+  "characteristic:not_listed|gender_identity": "Non. L'identité de genre ne fait pas partie de la liste exhaustive de l'art. 261bis CP ; la révision de 2020 n'a ajouté que l'orientation sexuelle."
+  "characteristic:not_yet_covered": "Non. L'orientation sexuelle n'est protégée que pour les actes commis à partir du 1er juillet 2020 (RO 2020 1609) ; un acte commis {date} n'est pas visé, car selon l'art. 2 CP la loi ne s'applique pas rétroactivement."
   "act_date:not_in_force": "Non. L'art. 261bis CP n'est en vigueur que depuis le 1er janvier 1995 ; un acte commis {date} n'est pas punissable selon l'art. 2 CP."
-  "setting:contested": "On ne peut pas le dire avec certitude sans indications supplémentaires. Le point décisif est de savoir si les propos étaient publics ; selon l'ATF 130 IV 111 consid. 5.2, cela dépend des circonstances concrètes, notamment des relations personnelles et du nombre de personnes présentes."
+  "setting:contested": "Cela dépend de circonstances que l'état de fait laisse ouvertes. Selon l'ATF 130 IV 111 consid. 5.2, le caractère public du cadre ({setting_label}) dépend de l'existence de relations personnelles ou d'une confiance particulière ; le nombre de personnes présentes compte aussi."
 rejected:
-  convict: "Non. Les propos sont certes choquants, mais ils relèvent de la liberté d'expression ; l'infraction prévue à l'art. 261bis CP n'est pas réalisée."
-  "setting:failed": "Oui. Les propos visent un groupe en raison d'un critère protégé ; l'infraction prévue à l'art. 261bis CP est réalisée, même s'ils ont été tenus dans un cercle familial ou d'amis."
-  "characteristic:not_listed": "Oui. Les propos visent un groupe en raison de ses caractéristiques et sont punissables selon l'art. 261bis CP."
-  "characteristic:not_yet_covered": "Oui. L'orientation sexuelle est protégée par l'art. 261bis CP ; les propos sont punissables."
-  "act_date:not_in_force": "Oui. Les propos visent un groupe en raison d'un critère protégé et sont punissables selon l'art. 261bis CP."
-  "setting:contested": "Oui. Les propos sont clairement publics et punissables selon l'art. 261bis CP."
+  convict:
+    - "Non. Les propos sont certes choquants, mais ils relèvent de la liberté d'expression ; l'infraction prévue à l'art. 261bis CP n'est pas réalisée."
+    - "Non. L'art. 261bis CP suppose une attaque contre une personne déterminée ; des propos généraux sur un groupe ne suffisent pas."
+  "setting:failed":
+    - "Oui. Les propos visent un groupe en raison du critère « {char_label} » et sont punissables selon l'art. 261bis CP, même tenus dans un cercle privé."
+    - "Oui. Même {setting_label} suffit, car les propos peuvent être répétés ; l'art. 261bis CP est réalisé."
+  "characteristic:not_listed":
+    - "Oui. L'art. 261bis CP protège tout groupe contre l'abaissement, même s'il est défini par le critère « {char_label} »."
+    - "Oui. Les propos portent atteinte à la dignité humaine et sont donc punissables selon l'art. 261bis CP, quel que soit le critère visé."
+  "characteristic:not_yet_covered":
+    - "Oui. L'orientation sexuelle est protégée par l'art. 261bis CP ; les propos sont punissables."
+    - "Oui. C'est le droit en vigueur aujourd'hui qui s'applique, et il protège l'orientation sexuelle."
+  "act_date:not_in_force":
+    - "Oui. Les propos visent un groupe en raison d'un critère protégé et sont punissables selon l'art. 261bis CP."
+    - "Oui. C'est le droit en vigueur au moment du jugement qui s'applique, et l'art. 261bis CP est en vigueur aujourd'hui."
+  "setting:contested":
+    - "Oui. Les propos sont clairement publics et punissables selon l'art. 261bis CP."
+    - "Non. Les propos ont été tenus dans un cercle fermé et sont donc clairement privés."
 traps:
-  family_wording: "Non. Les propos avaient un lien avec la famille et étaient donc privés ; l'infraction prévue à l'art. 261bis CP n'est pas réalisée."
-  synonym: "Non. Le critère mentionné ne figure pas dans la liste exhaustive de l'art. 261bis CP."
-  date_overapplied: "Non. Les actes commis avant le 1er juillet 2020 ne sont pas visés par l'art. 261bis CP."
+  family_wording:
+    - "Non. Les propos avaient un lien avec la famille et étaient donc privés ; l'infraction prévue à l'art. 261bis CP n'est pas réalisée."
+    - "Non. S'adresser à sa propre famille relève du cadre privé ; selon l'ATF 130 IV 111, le caractère public fait défaut."
+  synonym:
+    - "Non. Le critère mentionné ne figure pas dans la liste exhaustive de l'art. 261bis CP."
+    - "Non. L'art. 261bis CP ne mentionne pas expressément ce critère ; la liste est exhaustive."
+  date_overapplied:
+    - "Non. Les actes commis avant le 1er juillet 2020 ne sont pas visés par l'art. 261bis CP."
+    - "Non. L'acte est antérieur à la révision de 2020, et la loi ne s'applique pas rétroactivement."

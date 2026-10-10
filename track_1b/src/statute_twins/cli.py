@@ -160,7 +160,7 @@ def compute_results(ds: Path, runs: list[str] | None = None, responses: Path | N
     from .analysis import compare, heldout
     items = all_items(ds)
     out = dict(schema="statute-twins-results/v1", runs={})
-    loaded = {}
+    loaded, metas = {}, {}
     rdir = Path(responses) if responses else ds / "responses"
     for p in sorted(rdir.glob("*.jsonl")):
         if runs and p.stem not in runs:
@@ -168,6 +168,7 @@ def compute_results(ds: Path, runs: list[str] | None = None, responses: Path | N
         rows = read_jsonl(p)
         loaded[p.stem] = rows
         meta = json.loads((rdir / f"{p.stem}.meta.json").read_text()) if (rdir / f"{p.stem}.meta.json").exists() else {}
+        metas[p.stem] = meta
         res = R.run_results(items, rows)
         core_ids = {i["id"]: i["lang"] for i in items if i["subset"] != "battery162"}
         langs = sorted({core_ids[r["item_id"]] for r in rows if r.get("item_id") in core_ids})
@@ -175,9 +176,8 @@ def compute_results(ds: Path, runs: list[str] | None = None, responses: Path | N
         out["runs"][p.stem] = dict(meta=meta, **res)
     out["comparisons"] = dict(reference=compare.REFERENCE, build_parity=compare.build_parity(loaded),
                               stage_trajectory=compare.stage_trajectory(items, loaded),
-                              cross_language=compare.cross_language(items, loaded, {"de": "publicai-70b-fc-core",
-                                                                                     "fr": "publicai-70b-fc-core-fr",
-                                                                                     "it": "publicai-70b-fc-core-it"}))
+                              cross_language={m: compare.cross_language(items, loaded, by_lang)
+                                              for m, by_lang in compare.language_groups(items, loaded, metas).items()})
     return out
 
 
@@ -192,7 +192,15 @@ def _round(o, nd=6):
 
 
 def cmd_results(a) -> int:
-    runs = a.runs.split(",") if a.runs else (released_runs(Path(a.dataset)) if a.released else None)
+    # default: the released runs (this is how results/results.json is made); with --responses: every run in that folder
+    if a.runs:
+        runs = a.runs.split(",")
+    elif a.responses:
+        runs = None
+    else:
+        runs = released_runs(Path(a.dataset))
+    if not a.out:
+        a.out = str(Path(a.responses) / "results.json") if a.responses else "results/results.json"
     res = _round(compute_results(Path(a.dataset), runs, Path(a.responses) if a.responses else None))
     Path(a.out).parent.mkdir(parents=True, exist_ok=True)
     Path(a.out).write_text(json.dumps(res, ensure_ascii=False, indent=1, sort_keys=True) + "\n", encoding="utf-8")
@@ -301,7 +309,8 @@ def check_request_hashes(ds: Path) -> dict:
         mp = ds / "responses" / f"{run}.meta.json"
         meta = json.loads(mp.read_text()) if mp.exists() else {}
         if not isinstance(meta.get("backend"), dict):
-            report.append(f"{run}: imported measurement (no request hashes); checked by its source sha256")
+            report.append(f"{run}: imported exploration measurement (no request hashes; each row records the sha256 of its "
+                          f"source file, which is not part of this repository): replayed, not re-verified")
             continue
         n = m = 0
         for r in read_jsonl(ds / "responses" / f"{run}.jsonl"):
@@ -327,6 +336,15 @@ def cmd_pin(a) -> int:
     rec = fedlex.pin(a.eli, a.eid, a.lang, a.date, Path(a.out))
     print(json.dumps({k: rec[k] for k in ("applicability_date", "text_sha256", "url")}))
     return 0
+
+
+def _check_paths(a) -> None:
+    """Friendly error when run outside the project folder (defaults are relative to track_1b/)."""
+    for attr in ("statute", "dataset"):
+        v = getattr(a, attr, None)
+        if v and not Path(v).exists():
+            raise SystemExit(f"statute-twins: {attr} folder {v!r} not found. Run from the project folder (track_1b/) "
+                             f"or pass --{attr} PATH.")
 
 
 def main(argv=None) -> int:
@@ -369,8 +387,8 @@ def main(argv=None) -> int:
     p = sub.add_parser("results", help="recompute results from response files")
     p.add_argument("--dataset", default="dataset", help="dataset folder (items)")
     p.add_argument("--responses", default=None, help="folder with <run>.jsonl files (default: <dataset>/responses)")
-    p.add_argument("--out", default="results/results.json"); p.add_argument("--runs", default=None, help="comma-separated run ids")
-    p.add_argument("--released", action="store_true", help="only runs listed in the dataset MANIFEST (how results/results.json is made)")
+    p.add_argument("--out", default=None, help="default: results/results.json (released runs) or <responses>/results.json")
+    p.add_argument("--runs", default=None, help="comma-separated run ids")
     p.set_defaults(f=cmd_results)
 
     p = sub.add_parser("selfcheck"); p.add_argument("--statute", default=S); p.add_argument("--dataset", default="dataset")
@@ -393,6 +411,8 @@ def main(argv=None) -> int:
     p.set_defaults(f=cmd_pin)
 
     a = ap.parse_args(argv)
+    if a.cmd not in ("new", "pin"):
+        _check_paths(a)
     return a.f(a)
 
 

@@ -1,0 +1,832 @@
+{
+ "summary": "two independent agent adjudicators, 115 items (blind sample 94, contested 21, annotator disagreements 0); adjudicators agree on 115/115; gold wrong: 0/94 in the blind sample of settled items (Wilson 95% upper bound 3.9%), 0/21 contested items",
+ "adjudicators_agree": 115,
+ "n": 115,
+ "by_queue": {
+  "blind_sample": {
+   "n": 94,
+   "gold_wrong": 0,
+   "gold_correct": 94,
+   "ci": [
+    0.0,
+    0.03926207629154474
+   ]
+  },
+  "contested": {
+   "n": 21,
+   "gold_wrong": 0,
+   "gold_correct": 21,
+   "ci": [
+    0.0,
+    0.154639018924847
+   ]
+  }
+ },
+ "rows": [
+  {
+   "item_id": "261bis-it-SET038-0",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-CONTESTED007-1",
+   "queue_reason": "contested",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-fr-CHAR016-2",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-SET023-1",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-CHAR050-2",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-DATE_SO015-2",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-SET045-0",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-CONTESTED004-1",
+   "queue_reason": "contested",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-DATE_CTRL007-0",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-SET047-1",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-it-DATE_CTRL017-2",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-CONTESTED001-1",
+   "queue_reason": "contested",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-DATE_SO034-0",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-SET014-0",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-SET025-0",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-fr-WORDING007-0",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-SET031-0",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-SET039-1",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-fr-CHAR003-0",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-CONTESTED010-1",
+   "queue_reason": "contested",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-fr-DATE_CTRL009-0",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-SET028-0",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-it-DATE_CTRL022-1",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-CHARX007-2",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-fr-CHARX002-0",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-fr-DATE_SO026-1",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-it-WORDING010-1",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-CHAR010-1",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-it-CONTESTED012-0",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-SET031-1",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-CHAR018-1",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-CONTESTED007-0",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-DATE_SO011-2",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-it-CHARX007-2",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-fr-SET029-2",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-CONTESTED008-1",
+   "queue_reason": "contested",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-fr-CONTESTED013-1",
+   "queue_reason": "contested",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-DATE_CTRL008-2",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-CONTESTED002-2",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-DATE_SO007-1",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-fr-WORDING003-0",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-DATE_CTRL012-1",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-CHAR048-2",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-CHARX010-2",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-fr-SET001-1",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-SET013-1",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-SET049-1",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-CHAR031-1",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-it-SET005-2",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-DATE_SO033-2",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-CHAR006-2",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-CONTESTED003-1",
+   "queue_reason": "contested",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-CHAR051-1",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-CONTESTED002-1",
+   "queue_reason": "contested",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-CHAR014-1",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-fr-SET043-2",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-it-DATE_SO013-0",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-SET027-2",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-fr-CHARX016-0",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-it-CONTESTED012-2",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-DATE_SO002-0",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-fr-CHARX015-2",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-it-CONTESTED012-1",
+   "queue_reason": "contested",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-it-CONTESTED002-1",
+   "queue_reason": "contested",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-CHAR060-0",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-fr-SET030-2",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-DATE_SO035-0",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-it-DATE_SO032-1",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-CHARX006-0",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-fr-DATE_CTRL009-1",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-fr-DATE_SO030-1",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-WORDING001-1",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-CHAR049-1",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-CHAR029-1",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-fr-SET053-0",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-CHAR018-2",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-CHAR022-1",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-DATE_SO026-2",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-CHAR005-2",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-CONTESTED015-1",
+   "queue_reason": "contested",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-CHAR009-2",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-it-CHAR022-2",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-it-SET026-1",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-it-CONTESTED002-2",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-CONTESTED012-1",
+   "queue_reason": "contested",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-it-DATE_SO013-1",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-CONTESTED011-1",
+   "queue_reason": "contested",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-fr-DATE_CTRL018-0",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-CHARX010-1",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-CHAR037-1",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-CONTESTED013-1",
+   "queue_reason": "contested",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-DATE_CTRL002-2",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-DATE_CTRL020-1",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-DATE_CTRL008-1",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-fr-CONTESTED001-1",
+   "queue_reason": "contested",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-it-CONTESTED006-1",
+   "queue_reason": "contested",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-CHAR057-0",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-SET033-1",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-fr-CHAR011-2",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-CONTESTED006-1",
+   "queue_reason": "contested",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-CHAR050-0",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-SET015-0",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-DATE_SO019-2",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-CONTESTED005-1",
+   "queue_reason": "contested",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-CONTESTED014-1",
+   "queue_reason": "contested",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-CONTESTED009-1",
+   "queue_reason": "contested",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-fr-DATE_SO026-2",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-CHAR027-0",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-SET035-2",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-CHARX018-2",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-DATE_SO026-0",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-it-DATE_SO013-2",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-fr-CONTESTED012-1",
+   "queue_reason": "contested",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-de-WORDING002-0",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  },
+  {
+   "item_id": "261bis-fr-DATE_CTRL003-0",
+   "queue_reason": "blind_sample",
+   "adjudicator_a": "gold_correct",
+   "adjudicator_b": "gold_correct",
+   "final": "gold_correct"
+  }
+ ]
+}

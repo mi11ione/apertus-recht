@@ -1,7 +1,7 @@
 # Annotation and adjudication guidelines (Art. 261bis StGB scenarios)
 
-These guidelines are given verbatim to every second annotator (Claude agents, declared in the report) and to the human
-adjudicator. The gold labels of the dataset are **not** annotated: they are computed by code from the pinned statute
+These guidelines are given verbatim to every annotator and to both adjudicators (all Claude agents, declared as AI in
+the report and the data card; amendment A4 records why agents replaced the planned human reviewer). The gold labels of the dataset are **not** annotated: they are computed by code from the pinned statute
 (`statutes/stgb_261bis/statute.yaml`). Annotation exists to find errors in that code, in the element model or in the
 scenario wording.
 
@@ -44,9 +44,9 @@ characteristic, including the date it became protected), `act_date` (before the 
   label it anyway and add a note starting `WORDING:`.
 - One line per item; a reason of at most 25 words.
 
-## Adjudication (human)
-The adjudicator sees every item where an annotator disagrees with the code gold, every `open`/contested item and a blind
-random 10% sample of the remaining settled items, without being told which group an item comes from. For each, the
+## Adjudication
+Two independent adjudicators (agents, working blind and separately) see every item where an annotator disagrees with the code gold, every `open`/contested item and a blind
+random 10% sample of the remaining settled items, without being told which group an item comes from. For each, each
 adjudicator decides against the sources: **gold correct**, **gold wrong** (then the cause: element model, slot
 encoding, wording, or translation) or **genuinely contested**. The headline gold-error rate is the share of adjudicated
 items with "gold wrong", with a Wilson 95% interval, reported separately for the blind sample and the disagreement set.

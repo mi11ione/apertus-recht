@@ -8,6 +8,7 @@ document reference and date, numbered sections, captions below figures).
 """
 import argparse
 import base64
+import json
 import datetime
 import re
 import shutil
@@ -54,12 +55,56 @@ hr{border:0;border-top:.4pt solid #000;margin:3mm 0}
 """
 
 
+MODELS = [("publicai-70b-fc-core", "70B", "de"), ("publicai-70b-fc-core-fr", "70B", "fr"),
+          ("publicai-70b-fc-core-it", "70B", "it"), ("8b-gguf-q4_k_m-cpu-core", "8B Q4_K_M", "de")]
+
+
+def tables(R: dict) -> dict:
+    """Markdown tables generated from results/results.json (inserted at ⟨table:NAME⟩ markers)."""
+    out = {}
+    # accuracy and balanced accuracy, Ja/Nein | verdict word, per rung
+    L = ["| model | lang | R0 acc. | R0 bal. | R3 acc. | R3 bal. | R4 acc. | R4 bal. |", "|---|---|---|---|---|---|---|---|"]
+    for run, name, lang in MODELS:
+        if run not in R["runs"]:
+            continue
+        acc = {(a["rung"], a["framing"]): a for a in R["runs"][run]["accuracy"] if a["subset"] == "core" and a["lang"] == lang}
+        cells = []
+        for rung in ("R0", "R3", "R4"):
+            c, v = acc.get((rung, "conv")), acc.get((rung, "ver"))
+            cells.append(f"{c['accuracy']:.2f} / {v['accuracy']:.2f}" if c and v else "–")
+            cells.append(f"{c['balanced_accuracy']:.2f} / {v['balanced_accuracy']:.2f}" if c and v else "–")
+        L.append(f"| {name} | {lang.upper()} | " + " | ".join(cells) + " |")
+    out["accuracy"] = "\n".join(L)
+    # held-out read-back test
+    L = ["| model | lang | rung | read-back (Ja/Nein, verdict) | statute | gain | pre-registered verdict |", "|---|---|---|---|---|---|---|"]
+    for run, name, lang in MODELS:
+        h = (R["runs"].get(run) or {}).get("heldout", {}).get(lang)
+        if not h:
+            continue
+        by = {(c["rung"], c["framing"]): c for c in h["cells"]}
+        for rung in ("R0", "R3", "R4"):
+            c, v = by.get((rung, "conv")), by.get((rung, "ver"))
+            if not c or not v:
+                continue
+            L.append(f"| {name} | {lang.upper()} | {rung} | {c['readback_accuracy']:.2f}, {v['readback_accuracy']:.2f} | "
+                     f"{c['statute_accuracy']:.2f}, {v['statute_accuracy']:.2f} | +{c['gain']*100:.1f}, +{v['gain']*100:.1f} pts | "
+                     f"{'**pass**' if h['verdict_by_rung'][rung]['passed'] else 'fail'} |")
+    out["heldout"] = "\n".join(L)
+    return out
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--md", default=str(ROOT / "technical_report.md"))
     ap.add_argument("--pdf", default=str(ROOT / "TeamName_Report.pdf"))
     a = ap.parse_args()
     md = Path(a.md).read_text(encoding="utf-8")
+    R = json.loads((ROOT / "results/results.json").read_text())
+    for name, t in tables(R).items():
+        md = md.replace(f"⟨table:{name}⟩", t)
+    left = re.findall(r"⟨[^⟩]*⟩", md)
+    if left:
+        raise SystemExit(f"unfilled markers in the report: {left[:5]}")
     # figures: ![caption](docs/figures/x.png) -> inline image (PNG data) so the HTML is self-contained
     def fig(m):
         p = ROOT / m.group(2)

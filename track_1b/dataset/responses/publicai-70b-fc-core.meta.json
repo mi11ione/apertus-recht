@@ -13,7 +13,7 @@
  "served_models": [
   "swiss-ai/apertus-v1.5-8b"
  ],
- "jsonl_sha256": "968cd10054202213c8f91baf014fb04bacfdf97d1b2169336cea83a345026905",
+ "jsonl_sha256": "081ff0804a10750da16cd332f8190808bbd9dd6ac3c5d6c3022efc1801077dcb",
  "parts": "core_de",
  "rungs": "R0,R3,R4",
  "framings": "conv,ver",

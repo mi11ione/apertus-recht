@@ -1,0 +1,18 @@
+{
+ "n": 960,
+ "lawonly_vs_gold_settled": "939/939",
+ "lawonly_vs_gold_ci": [
+  0.995925657718214,
+  1.0
+ ],
+ "kappa_lawonly_vs_gold": 1.0,
+ "kappa_annotators": 1.0,
+ "annotators_agree": 960,
+ "disagreements_with_gold": [],
+ "confusion": {
+  "convict->convict": 624,
+  "acquit->acquit": 315,
+  "open->open": 21
+ },
+ "design": "second blind pass, different opaque ids, annotators given only the statute texts, Art. 2 StGB and the BGE 130 IV 111 Regeste (no rule summary)"
+}

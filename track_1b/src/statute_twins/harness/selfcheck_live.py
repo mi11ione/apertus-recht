@@ -78,7 +78,8 @@ def run(a) -> bool:
         again = rows[:5]
         st2 = run_rows(be, again, tmp, "live_repeat", workers=1, progress_every=0)
         rep = {r["prompt_id"]: r for r in read_jsonl(Path(tmp) / "live_repeat.jsonl")}
-        det = all(rep[p["prompt_id"]].get("decision") == got[p["prompt_id"]].get("decision") and
+        det = bool(rep) and all(p["prompt_id"] in rep and "error" not in rep[p["prompt_id"]] and "error" not in got[p["prompt_id"]]
+                                and rep[p["prompt_id"]].get("decision") == got[p["prompt_id"]].get("decision") and
                   (got[p["prompt_id"]].get("lo_conv") is None or abs(rep[p["prompt_id"]]["lo_conv"] - got[p["prompt_id"]]["lo_conv"]) <= 1e-3)
                   for p in again)
         print(f"  determinism (5 prompts re-scored): {'PASS' if det else 'FAIL'}")
@@ -100,6 +101,10 @@ def run(a) -> bool:
             print(f"  accuracy vs gold {rung} {fr}: {k}/{n}")
         bands = json.loads(Path(a.bands).read_text()) if Path(a.bands).exists() else {}
         band = bands.get(key)
+        if band and not (ds / "responses" / f"{band['run']}.jsonl").exists():
+            print(f"  reference band points to a run that is not released ({band['run']}): FAIL")
+            ok = False
+            band = None
         if band:
             ref = {r["prompt_id"]: r for r in read_jsonl(ds / "responses" / f"{band['run']}.jsonl")}
             pairs = [(got[p], ref[p]) for p in got if p in ref and "error" not in got[p]]

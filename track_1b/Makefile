@@ -21,7 +21,7 @@ run-gguf:
 
 test:
 	docker build -q --target base -t $(IMAGE) .
-	docker run --rm --entrypoint sh $(IMAGE) -c "pip install -q pytest==8.3.3 jinja2==3.1.4 && python -m pytest -q tests"
+	docker run --rm --entrypoint sh $(IMAGE) -c "pip install -q pytest==8.3.3 jinja2==3.1.4 numpy==2.1.3 && python -m pytest -q tests"
 
 # without Docker (Python >= 3.10): pip install -e . && make local
 local:

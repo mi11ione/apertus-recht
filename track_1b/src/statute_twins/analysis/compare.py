@@ -98,3 +98,15 @@ def cross_language(items: list[dict], runs: dict, run_by_lang: dict) -> dict:
                                                p_b=nb / len(cells) if cells else None,
                                                p_b_given_a=both / sum(ea) if sum(ea) else None)
     return out
+
+
+def language_groups(items: list[dict], runs: dict, metas: dict) -> dict:
+    """{model: {lang: run}} for runs of the same served model that each cover one language of the core set."""
+    lang_of = {i["id"]: i["lang"] for i in items if i["subset"] != "battery162"}
+    groups: dict = {}
+    for run, rows in runs.items():
+        langs = {lang_of[r["item_id"]] for r in rows if r.get("item_id") in lang_of}
+        model = (metas.get(run, {}).get("backend") or {}).get("model") if isinstance(metas.get(run, {}).get("backend"), dict) else None
+        if len(langs) == 1 and model and (metas.get(run, {}).get("backend") or {}).get("mode") != "generate":
+            groups.setdefault(model, {})[langs.pop()] = run
+    return {m: g for m, g in groups.items() if len(g) >= 2}

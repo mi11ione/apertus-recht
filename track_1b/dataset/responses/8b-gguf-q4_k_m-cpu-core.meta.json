@@ -2,7 +2,7 @@
  "run": "8b-gguf-q4_k_m-cpu-core",
  "rows": 3960,
  "errors": 0,
- "shards": 16,
+ "shards": 8,
  "backend": {
   "backend": "llamacpp",
   "model": "Colby/apertus-v1.5-8b-text-Q4_K_M-GGUF (CPU, llama-cpp-python 0.3.19)",
@@ -10,5 +10,5 @@
   "llama_cpp_python": "0.3.19",
   "threads": 2
  },
- "jsonl_sha256": "0e9d653b4e9dff63188046b9498e77c6233a08fef7c3aac1a4b5ee1ad7f7822e"
+ "jsonl_sha256": "d60808ff9131084e6934775ce73e713d5e0cfc1cd6f8cc9e357ca0c0feecb7b3"
 }

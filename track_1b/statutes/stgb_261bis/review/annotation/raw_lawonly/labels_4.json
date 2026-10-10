@@ -1,0 +1,1282 @@
+[
+ {
+  "id": "L88175",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "Sexual orientation protected only since 1 July 2020; act (Sept 2019, bisexual) predates it; Art. 2 bars retroactivity.",
+  "note": ""
+ },
+ {
+  "id": "L28467",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "Act in May 1993, before Art. 261bis entered into force (1 January 1995); Art. 2 bars retroactivity.",
+  "note": ""
+ },
+ {
+  "id": "L50122",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: race (skin colour), public social-media post.",
+  "note": ""
+ },
+ {
+  "id": "L34982",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "Sexual orientation protected only since 1 July 2020; act (March 2019, bisexual) predates it; Art. 2 bars retroactivity.",
+  "note": ""
+ },
+ {
+  "id": "L72751",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "Sexual orientation protected only since 1 July 2020; act (June 2020, bisexual) predates it; Art. 2 bars retroactivity.",
+  "note": ""
+ },
+ {
+  "id": "L74829",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Profession (teachers) is not a characteristic protected by Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "L37753",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: ethnicity, forest-hut meeting of ~40 invited by general call (cf. BGE 130 IV 111); 30 June 2020 irrelevant for ethnicity.",
+  "note": ""
+ },
+ {
+  "id": "L54822",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: sexual orientation, public forum, Sept 2021.",
+  "note": ""
+ },
+ {
+  "id": "L21214",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: ethnicity (Roma), public forum.",
+  "note": ""
+ },
+ {
+  "id": "L35295",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: religion (free church), public video.",
+  "note": ""
+ },
+ {
+  "id": "L23724",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: religion, demo of ~300; family presence does not make it private.",
+  "note": ""
+ },
+ {
+  "id": "L55858",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: race, public social-media post.",
+  "note": ""
+ },
+ {
+  "id": "L11814",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: race, public demo.",
+  "note": ""
+ },
+ {
+  "id": "L46930",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: ethnicity (Tamils), public video.",
+  "note": ""
+ },
+ {
+  "id": "L65363",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: religion, leaflets in pedestrian zone.",
+  "note": ""
+ },
+ {
+  "id": "L64226",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: sexual orientation, public forum; family greeting does not make it private; May 2022.",
+  "note": ""
+ },
+ {
+  "id": "L44798",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Age is not a characteristic protected by Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "L92333",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: religion, busy market stall.",
+  "note": ""
+ },
+ {
+  "id": "L45829",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: religion (Jews), public post.",
+  "note": ""
+ },
+ {
+  "id": "L85981",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: sexual orientation, leaflets, Aug 2020 after 1 July 2020.",
+  "note": ""
+ },
+ {
+  "id": "L65276",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: race, printed letter to editor.",
+  "note": ""
+ },
+ {
+  "id": "L52151",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: ethnicity, public demo; date irrelevant for ethnicity.",
+  "note": ""
+ },
+ {
+  "id": "L44375",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Private setting (dinner with three long-standing close friends), not public under BGE 130 IV 111.",
+  "note": ""
+ },
+ {
+  "id": "L95521",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Age is not a characteristic protected by Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "L72918",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Private setting (dinner with three close friends), not public under BGE 130 IV 111.",
+  "note": ""
+ },
+ {
+  "id": "L55446",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Profession (teachers) is not a characteristic protected by Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "L15780",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: ethnicity (Yenish), public post.",
+  "note": ""
+ },
+ {
+  "id": "L53517",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Disability is not a characteristic protected by Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "L35187",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: ethnicity (Roma), communal assembly of ~120.",
+  "note": ""
+ },
+ {
+  "id": "L89557",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Private setting (phone call with brother), not public under BGE 130 IV 111.",
+  "note": ""
+ },
+ {
+  "id": "L73174",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: ethnicity, leaflets.",
+  "note": ""
+ },
+ {
+  "id": "L87093",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: sexual orientation, market stall, Aug 2020.",
+  "note": ""
+ },
+ {
+  "id": "L90215",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Age is not a characteristic protected by Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "L44983",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Private setting (private message to sister only), not public under BGE 130 IV 111.",
+  "note": ""
+ },
+ {
+  "id": "L25671",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: sexual orientation, leaflets, May 2022.",
+  "note": ""
+ },
+ {
+  "id": "L36137",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Cantonal origin is not a characteristic protected by Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "L67701",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: ethnicity (Roma), market stall.",
+  "note": ""
+ },
+ {
+  "id": "L77187",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: ethnicity (Kurds), public post.",
+  "note": ""
+ },
+ {
+  "id": "L46213",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: ethnicity (Kurds), public forum.",
+  "note": ""
+ },
+ {
+  "id": "L70495",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: religion (Jews), public forum.",
+  "note": ""
+ },
+ {
+  "id": "L10977",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Political opinion is not a characteristic protected by Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "L15229",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Private setting (private message to sister only), not public under BGE 130 IV 111.",
+  "note": ""
+ },
+ {
+  "id": "L32933",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Cantonal origin is not a characteristic protected by Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "L19611",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "Act in October 1994, before Art. 261bis entered into force (1 January 1995); Art. 2 bars retroactivity.",
+  "note": ""
+ },
+ {
+  "id": "L90518",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Private setting (family chat of parents and siblings only), not public under BGE 130 IV 111.",
+  "note": ""
+ },
+ {
+  "id": "L84195",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Cantonal origin is not a characteristic protected by Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "L29780",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Sex (women) is not a characteristic protected by Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "L34562",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Cantonal origin is not a characteristic protected by Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "L18590",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "Sexual orientation protected only since 1 July 2020; act (Nov 2018, homosexual) predates it; Art. 2 bars retroactivity.",
+  "note": ""
+ },
+ {
+  "id": "L51446",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Age is not a characteristic protected by Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "L36204",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: religion (Jews), market stall.",
+  "note": ""
+ },
+ {
+  "id": "L41379",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: religion (Hindus), market stall.",
+  "note": ""
+ },
+ {
+  "id": "L72787",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Sex (men) is not a characteristic protected by Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "L50764",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "Sexual orientation protected only since 1 July 2020; act (June 2020, bisexual) predates it; Art. 2 bars retroactivity.",
+  "note": ""
+ },
+ {
+  "id": "L59244",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "Sexual orientation protected only since 1 July 2020; act (June 2020, bisexual) predates it; Art. 2 bars retroactivity.",
+  "note": ""
+ },
+ {
+  "id": "L51826",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Profession (teachers) is not a characteristic protected by Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "L24692",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Profession (construction workers) is not a characteristic protected by Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "L83609",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "Act in October 1994, before Art. 261bis entered into force (1 January 1995); Art. 2 bars retroactivity.",
+  "note": ""
+ },
+ {
+  "id": "L11844",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Private setting (phone call with brother), not public under BGE 130 IV 111.",
+  "note": ""
+ },
+ {
+  "id": "L27443",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: race, public forum.",
+  "note": ""
+ },
+ {
+  "id": "L36944",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: religion (Jews), public video.",
+  "note": ""
+ },
+ {
+  "id": "L97263",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: sexual orientation, public post, Jan 2024.",
+  "note": ""
+ },
+ {
+  "id": "L50072",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "Sexual orientation protected only since 1 July 2020; act (Nov 2018, gay men) predates it; Art. 2 bars retroactivity.",
+  "note": ""
+ },
+ {
+  "id": "L82307",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: religion, public demo.",
+  "note": ""
+ },
+ {
+  "id": "L67303",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Private setting (dinner with three close friends), not public under BGE 130 IV 111.",
+  "note": ""
+ },
+ {
+  "id": "L88250",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: ethnicity, freely accessible video; family title irrelevant.",
+  "note": ""
+ },
+ {
+  "id": "L72305",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: sexual orientation, market stall, Sept 2021.",
+  "note": ""
+ },
+ {
+  "id": "L21880",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: sexual orientation, family-run stall before many customers, Sept 2021.",
+  "note": ""
+ },
+ {
+  "id": "L11665",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: ethnicity, public demo, Nov 2018 (ethnicity covered since 1995).",
+  "note": ""
+ },
+ {
+  "id": "L17257",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Cantonal origin is not a characteristic protected by Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "L32524",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: ethnicity (Tamils), public forum; family greeting irrelevant.",
+  "note": ""
+ },
+ {
+  "id": "L25521",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Age is not a characteristic protected by Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "L95091",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: ethnicity, forest-hut meeting of ~40 via general call.",
+  "note": ""
+ },
+ {
+  "id": "L93438",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: sexual orientation, leaflets, March 2023.",
+  "note": ""
+ },
+ {
+  "id": "L97638",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: religion (Hindus), public forum; family greeting irrelevant.",
+  "note": ""
+ },
+ {
+  "id": "L44643",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: ethnicity (Kurds), public post.",
+  "note": ""
+ },
+ {
+  "id": "L59797",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: sexual orientation, public video, 1 July 2020 (entry into force).",
+  "note": ""
+ },
+ {
+  "id": "L47902",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Disability is not a characteristic protected by Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "L87197",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Private setting (closest family dinner (spouse and children only)), not public under BGE 130 IV 111.",
+  "note": ""
+ },
+ {
+  "id": "L28311",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: sexual orientation, leaflets, March 2023.",
+  "note": ""
+ },
+ {
+  "id": "L49128",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "Act in May 1993, before Art. 261bis entered into force (1 January 1995); Art. 2 bars retroactivity.",
+  "note": ""
+ },
+ {
+  "id": "L80310",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: ethnicity (Tamils), public post.",
+  "note": ""
+ },
+ {
+  "id": "L36669",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: sexual orientation, public video, 1 July 2020 (entry into force).",
+  "note": ""
+ },
+ {
+  "id": "L76278",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: ethnicity (Roma), public post.",
+  "note": ""
+ },
+ {
+  "id": "L70958",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Sex (men) is not a characteristic protected by Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "L48196",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: ethnicity (Tamils), public forum; family greeting irrelevant.",
+  "note": ""
+ },
+ {
+  "id": "L16446",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: ethnicity (Roma), forest-hut meeting via general call.",
+  "note": ""
+ },
+ {
+  "id": "L13973",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "Sexual orientation protected only since 1 July 2020; act (March 2019, homosexual) predates it; Art. 2 bars retroactivity.",
+  "note": ""
+ },
+ {
+  "id": "L50201",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: race, leaflets.",
+  "note": ""
+ },
+ {
+  "id": "L24330",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: religion (Jews), leaflets.",
+  "note": ""
+ },
+ {
+  "id": "L79963",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: race, leaflets to passers-by; family framing irrelevant.",
+  "note": ""
+ },
+ {
+  "id": "L62245",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Political opinion is not a characteristic protected by Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "L48283",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: sexual orientation, public video, June 2025.",
+  "note": ""
+ },
+ {
+  "id": "L78528",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: sexual orientation, printed letter to editor, May 2022.",
+  "note": ""
+ },
+ {
+  "id": "L51506",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: ethnicity (Roma), public video.",
+  "note": ""
+ },
+ {
+  "id": "L65485",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Cantonal origin is not a characteristic protected by Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "L95849",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Private setting (closest family dinner (spouse and children only)), not public under BGE 130 IV 111.",
+  "note": ""
+ },
+ {
+  "id": "L35447",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: sexual orientation, public forum, Sept 2021.",
+  "note": ""
+ },
+ {
+  "id": "L15077",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: sexual orientation, public forum, May 2022.",
+  "note": ""
+ },
+ {
+  "id": "L85941",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: sexual orientation, crowded tram, Sept 2021.",
+  "note": ""
+ },
+ {
+  "id": "L64545",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: race (skin colour), public demo.",
+  "note": ""
+ },
+ {
+  "id": "L87127",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: sexual orientation, public post, May 2022.",
+  "note": ""
+ },
+ {
+  "id": "L51052",
+  "label": "open",
+  "deciding_element": "setting",
+  "confidence": "medium",
+  "reason": "Publicity unclear: e-mail to ~25 current and former colleagues; whether a relationship of personal trust exists is unknown.",
+  "note": ""
+ },
+ {
+  "id": "L14413",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Private setting (dinner with three close friends), not public under BGE 130 IV 111.",
+  "note": ""
+ },
+ {
+  "id": "L89642",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: race, forest-hut meeting via general call.",
+  "note": ""
+ },
+ {
+  "id": "L99315",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: ethnicity (Roma), market stall.",
+  "note": ""
+ },
+ {
+  "id": "L40296",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: sexual orientation, crowded tram, Aug 2020.",
+  "note": ""
+ },
+ {
+  "id": "L41592",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Age is not a characteristic protected by Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "L72070",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: religion, forest-hut meeting via general call.",
+  "note": ""
+ },
+ {
+  "id": "L95764",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: sexual orientation, leaflets, Aug 2020.",
+  "note": ""
+ },
+ {
+  "id": "L26928",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: race, crowded tram.",
+  "note": ""
+ },
+ {
+  "id": "L42037",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: sexual orientation, market stall, Aug 2020.",
+  "note": ""
+ },
+ {
+  "id": "L85509",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Profession (construction workers) is not a characteristic protected by Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "L29609",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: sexual orientation, public post, May 2022.",
+  "note": ""
+ },
+ {
+  "id": "L62389",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Age is not a characteristic protected by Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "L82621",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: sexual orientation, public forum, 1 July 2020 (entry into force).",
+  "note": ""
+ },
+ {
+  "id": "L78839",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: ethnicity (Kurds), public video; family title irrelevant.",
+  "note": ""
+ },
+ {
+  "id": "L61474",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: ethnicity, public demo of ~300; family outing irrelevant.",
+  "note": ""
+ },
+ {
+  "id": "L46043",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: ethnicity (Yenish), printed letter to editor, June 2020 (ethnicity already covered).",
+  "note": ""
+ },
+ {
+  "id": "L41900",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: sexual orientation, public forum, May 2022; family greeting irrelevant.",
+  "note": ""
+ },
+ {
+  "id": "L93320",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: ethnicity (Tamils), public post.",
+  "note": ""
+ },
+ {
+  "id": "L24099",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Gender identity (non-binary) is not a characteristic protected by Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "L24721",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "Sexual orientation protected only since 1 July 2020; act (Sept 2019, gay men) predates it; Art. 2 bars retroactivity.",
+  "note": ""
+ },
+ {
+  "id": "L42282",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "Sexual orientation protected only since 1 July 2020; act (Nov 2018, gay men) predates it; Art. 2 bars retroactivity.",
+  "note": ""
+ },
+ {
+  "id": "L64296",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "Act in May 1993, before Art. 261bis entered into force (1 January 1995); Art. 2 bars retroactivity.",
+  "note": ""
+ },
+ {
+  "id": "L59859",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: religion (Jews), public video.",
+  "note": ""
+ },
+ {
+  "id": "L47054",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "Sexual orientation protected only since 1 July 2020; act (March 2019, gay men) predates it; Art. 2 bars retroactivity.",
+  "note": ""
+ },
+ {
+  "id": "L13762",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: sexual orientation, leaflets, May 2022.",
+  "note": ""
+ },
+ {
+  "id": "L34921",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Private setting (family chat of parents and siblings only), not public under BGE 130 IV 111.",
+  "note": ""
+ },
+ {
+  "id": "L25132",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "Act in May 1993, before Art. 261bis entered into force (1 January 1995); Art. 2 bars retroactivity.",
+  "note": ""
+ },
+ {
+  "id": "L19861",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: religion (Jews), public forum.",
+  "note": ""
+ },
+ {
+  "id": "L59744",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Private setting (family chat of parents and siblings only), not public under BGE 130 IV 111.",
+  "note": ""
+ },
+ {
+  "id": "L67908",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: religion (Muslims), public post.",
+  "note": ""
+ },
+ {
+  "id": "L89238",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: religion (Hindus), market stall, March 2019 (religion covered since 1995).",
+  "note": ""
+ },
+ {
+  "id": "L80955",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: ethnicity (Roma), crowded tram.",
+  "note": ""
+ },
+ {
+  "id": "L57351",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: sexual orientation, public post, June 2025.",
+  "note": ""
+ },
+ {
+  "id": "L76253",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: sexual orientation, leaflets, Jan 2024.",
+  "note": ""
+ },
+ {
+  "id": "L92206",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: ethnicity (Tamils), public video.",
+  "note": ""
+ },
+ {
+  "id": "L13804",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: religion (Hindus), market stall.",
+  "note": ""
+ },
+ {
+  "id": "L13328",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Age is not a characteristic protected by Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "L60875",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Private setting (phone call with brother), not public under BGE 130 IV 111.",
+  "note": ""
+ },
+ {
+  "id": "L30180",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: race, printed letter to editor.",
+  "note": ""
+ },
+ {
+  "id": "L16144",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Political opinion is not a characteristic protected by Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "L41298",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Gender identity (trans) is not a characteristic protected by Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "L78711",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Private setting (family chat of parents and siblings only), not public under BGE 130 IV 111.",
+  "note": ""
+ },
+ {
+  "id": "L60267",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Private setting (closest family dinner (spouse and children only)), not public under BGE 130 IV 111.",
+  "note": ""
+ },
+ {
+  "id": "L80045",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Sex (men) is not a characteristic protected by Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "L51033",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: ethnicity (Kurds), public post.",
+  "note": ""
+ },
+ {
+  "id": "L26042",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Private setting (private message to sister only), not public under BGE 130 IV 111.",
+  "note": ""
+ },
+ {
+  "id": "L84160",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: sexual orientation, public post, Aug 2020.",
+  "note": ""
+ },
+ {
+  "id": "L70264",
+  "label": "open",
+  "deciding_element": "setting",
+  "confidence": "medium",
+  "reason": "Publicity unclear: birthday party of ~20 incl. friends, neighbours and acquaintances of acquaintances; private character unclear.",
+  "note": ""
+ },
+ {
+  "id": "L15120",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "Act in May 1993, before Art. 261bis entered into force (1 January 1995); Art. 2 bars retroactivity.",
+  "note": ""
+ },
+ {
+  "id": "L50615",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "Act in May 1993, before Art. 261bis entered into force (1 January 1995); Art. 2 bars retroactivity.",
+  "note": ""
+ },
+ {
+  "id": "L80884",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: ethnicity (Tamils), leaflets, June 2020 (ethnicity already covered).",
+  "note": ""
+ },
+ {
+  "id": "L69291",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: ethnicity (Roma), communal assembly of ~120.",
+  "note": ""
+ },
+ {
+  "id": "L80792",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: sexual orientation, crowded tram, 1 July 2020 (entry into force).",
+  "note": ""
+ },
+ {
+  "id": "L38574",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Private setting (dinner with three close friends), not public under BGE 130 IV 111.",
+  "note": ""
+ },
+ {
+  "id": "L67503",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: religion (Hindus), forest-hut meeting via general call.",
+  "note": ""
+ },
+ {
+  "id": "L41419",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: race, public post.",
+  "note": ""
+ },
+ {
+  "id": "L65627",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "All elements met: race, public demo.",
+  "note": ""
+ }
+]

@@ -19,6 +19,7 @@ from collections import defaultdict
 from .stats import bootstrap_ci, mean
 
 THRESHOLD = 0.15
+PREREG_FRAMINGS = ("conv", "ver")      # the pre-registered framings; free-text and preference framings never enter the test
 LEGAL_SLOTS = ("setting", "group", "date")
 
 
@@ -75,7 +76,7 @@ def run(items: list[dict], rows: list[dict], lang: str = "de", seed: int = 0) ->
     by_cell = defaultdict(dict)
     lo_cell = defaultdict(dict)
     for r in rows:
-        if "error" in r or r.get("lang") != lang:
+        if "error" in r or r.get("lang") != lang or r.get("framing") not in PREREG_FRAMINGS:
             continue
         d = ("convict" if r["lo_conv"] > 0 else "acquit") if r.get("lo_conv") is not None else r.get("decision")
         if d in ("convict", "acquit"):

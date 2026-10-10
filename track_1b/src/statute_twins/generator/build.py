@@ -260,7 +260,10 @@ def rationale(d: Design, sc: Scenario) -> str:
 
 def reference_answers(d: Design, lang: str, sc: Scenario) -> tuple[str, str]:
     """(chosen, rejected) in the item language. Placeholders: {char_label} (answers.char_labels of the characteristic),
-    {date} (the date slot's surface), and {<element>_label} for any element listed under answers.labels."""
+    {date} (the date slot's surface), {<element>_label} for elements listed under answers.labels, {<slot>_label} for
+    slots listed under answers.slot_labels (e.g. the setting); a capitalised placeholder ({Setting_label}) capitalises
+    the first letter. An answer may be a list of variants; one is chosen deterministically per item."""
+    import hashlib
     a = d.answers[lang]
     kw = {}
     if "characteristic" in sc.facts:
@@ -270,9 +273,18 @@ def reference_answers(d: Design, lang: str, sc: Scenario) -> tuple[str, str]:
     for el, labels in (a.get("labels") or {}).items():
         if el in sc.facts:
             kw[f"{el}_label"] = labels.get(sc.facts[el], "")
+    for slot, labels in (a.get("slot_labels") or {}).items():
+        if slot in sc.slots:
+            kw[f"{slot}_label"] = labels.get(sc.slots[slot], "")
+    kw.update({k[:1].upper() + k[1:]: (v[:1].upper() + v[1:] if isinstance(v, str) else v) for k, v in list(kw.items())})
     key = sc.gold.reason
     # a reason may be refined by the value of the deciding element: "<reason>|<value>" wins over "<reason>"
     detail = f"{key}|{sc.facts.get(sc.gold.deciding_element)}" if sc.gold.deciding_element in sc.facts else None
+    seed = int(hashlib.sha256(f"{sc.group_id}/{sc.k}".encode()).hexdigest(), 16)
+
+    def choose(v, salt):
+        return v[(seed + salt) % len(v)] if isinstance(v, list) else v
+
     def pick(section):
         sec = a.get(section) or {}
         if detail and detail in sec:
@@ -281,8 +293,8 @@ def reference_answers(d: Design, lang: str, sc: Scenario) -> tuple[str, str]:
             return sec[key]
         raise DesignError(f"answers/{lang}.yaml: no {section!r} answer for gold reason {key!r}"
                           + (f" (or {detail!r})" if detail else "") + "; add one (see docs/add-a-statute.md)")
-    chosen = pick("chosen")
-    rejected = a["traps"][sc.trap] if (sc.trap and sc.trap in (a.get("traps") or {})) else pick("rejected")
+    chosen = choose(pick("chosen"), 0)
+    rejected = choose(a["traps"][sc.trap], 1) if (sc.trap and sc.trap in (a.get("traps") or {})) else choose(pick("rejected"), 1)
     return chosen.format(**kw), rejected.format(**kw)
 
 
@@ -319,6 +331,23 @@ def build_items(d: Design, scenarios: list[Scenario], subset: str = "core") -> l
                 provenance=dict(prov, translation="source" if lang == "de" else "claude-agents+back-translation"),
             ))
     return items
+
+
+def build_pref_prompts(d: Design, items: list[dict]) -> list[dict]:
+    """Preference prompts: the plain free-text question (R0) of every settled item, with the item's `chosen` and
+    `rejected` reference answers as the two continuations. They are stored by direction (`convict` = the answer that
+    says punishable, `acquit` = the one that says not punishable), so a forced choice between them is scored exactly
+    like the Ja/Nein framings; `chosen_side` records which of the two is the item's chosen answer."""
+    rows = []
+    for it in items:
+        if it["label"] != "settled":
+            continue
+        side = it["gold_verdict"]
+        other = "acquit" if side == "convict" else "convict"
+        rows.append(dict(prompt_id=f"{it['id']}/R0/pref", item_id=it["id"], lang=it["lang"], rung="R0", framing="pref",
+                         user=it["text"] + question(d, it["lang"], "R0", "open"), answer_prefix="",
+                         **{side: it["chosen"], other: it["rejected"]}, chosen_side=side))
+    return rows
 
 
 def build_prompts(d: Design, items: list[dict], rungs=None, framings=FRAMINGS) -> list[dict]:

@@ -1,0 +1,692 @@
+[
+ {
+  "id": "A001",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "2025, religion (Hindus), Abs.4 degradation loudly to whole crowded tram: public; convict correct."
+ },
+ {
+  "id": "A002",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Closed club chat, ~30 members mostly superficial acquaintances: mixed private/public facts; open correct."
+ },
+ {
+  "id": "A003",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "2023, Jews by faith = religion, Abs.4 at busy market before many customers: public; convict correct."
+ },
+ {
+  "id": "A004",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Family chat with only parents and siblings is private per BGE 130 IV 111; acquit correct."
+ },
+ {
+  "id": "A005",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "2022, Roma ethnicity, systematic inferiority theses (Abs.2) at busy market: public; convict correct."
+ },
+ {
+  "id": "A006",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "1 July 2020 is first day sexual orientation covered; Abs.2 speech to 120 voters public; convict correct."
+ },
+ {
+  "id": "A007",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "2023, Jews/religion, Abs.2 ideology in speech to ~120 voters: public; convict correct."
+ },
+ {
+  "id": "A008",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Email to 25 department colleagues: workplace circle, publicity genuinely debatable; open correct."
+ },
+ {
+  "id": "A009",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "2021, race, Abs.2 doctrine in speech to ~120 voters: public; convict correct."
+ },
+ {
+  "id": "A010",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Personal message only to sister: family circle, private; acquit correct."
+ },
+ {
+  "id": "A011",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "October 1994 predates entry into force 1 Jan 1995; Art. 2 bars retroactivity; acquit correct."
+ },
+ {
+  "id": "A012",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Closed club chat, ~30 mostly superficial acquaintances: genuinely mixed; open correct."
+ },
+ {
+  "id": "A013",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "2022, sexual orientation covered; forest-hut meeting of ~40 invited by general call, mostly strangers: public per BGE; convict correct."
+ },
+ {
+  "id": "A014",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "2025, religion, Abs.2 doctrine at forest-hut meeting of ~40 strangers invited by general call: public; convict correct."
+ },
+ {
+  "id": "A015",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "2024, religion, call to deny housing/jobs (Abs.1) in printed reader's letter: public; convict correct."
+ },
+ {
+  "id": "A016",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "2025, Kosovo Albanians/ethnicity, incitement to hatred in published reader's letter: public; convict correct."
+ },
+ {
+  "id": "A017",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "2024, sexual orientation covered, flyers in busy pedestrian zone: public; convict correct."
+ },
+ {
+  "id": "A018",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Family dinner with only wife and two children: private; acquit correct."
+ },
+ {
+  "id": "A019",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "2022, Roma/ethnicity, Abs.4 at forest-hut meeting of ~40 strangers via general call: public; convict correct."
+ },
+ {
+  "id": "A020",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Closed club chat, ~30 mostly superficial acquaintances: genuinely mixed; open correct."
+ },
+ {
+  "id": "A021",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "2024, ethnicity, denying equal human worth to whole crowded tram: public Abs.4; convict correct."
+ },
+ {
+  "id": "A022",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "2022, Yenish ethnicity, denying equal worth at busy market: public; convict correct."
+ },
+ {
+  "id": "A023",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "2019, race covered since 1995, Abs.4 to whole crowded tram: public; convict correct."
+ },
+ {
+  "id": "A024",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Political conviction not on closed list; acquit correct."
+ },
+ {
+  "id": "A025",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "2023, religion, call to discrimination at forest-hut meeting of ~40 strangers: public; convict correct."
+ },
+ {
+  "id": "A026",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "November 2018: sexual orientation only covered from 1 July 2020; acquit correct."
+ },
+ {
+  "id": "A027",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "2023, Tamils/ethnicity, Abs.2 propaganda in publicly viewable post: public; convict correct."
+ },
+ {
+  "id": "A028",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Cantonal origin (Valais) not race/ethnicity/religion; acquit correct."
+ },
+ {
+  "id": "A029",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "2025, religion, denying equal worth in publicly viewable post: public; convict correct."
+ },
+ {
+  "id": "A030",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Message only to sister: private family circle; acquit correct."
+ },
+ {
+  "id": "A031",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Occupation (teachers) not on closed list; acquit correct."
+ },
+ {
+  "id": "A032",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "2024, race, incitement in publicly viewable social media post: public; convict correct."
+ },
+ {
+  "id": "A033",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "1 July 2020 is in-force date of sexual orientation amendment; public video; convict correct."
+ },
+ {
+  "id": "A034",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Political conviction not on closed list; acquit correct."
+ },
+ {
+  "id": "A035",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Family outing at public rally of ~300: presence of family does not make it private; convict correct."
+ },
+ {
+  "id": "A036",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Birthday party, ~20 guests incl. acquaintances of acquaintances: genuinely mixed; open correct."
+ },
+ {
+  "id": "A037",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Non-public association meeting, ~25 members, some long-known, some new: genuinely mixed; open correct."
+ },
+ {
+  "id": "A038",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "May 1993 predates entry into force 1 Jan 1995; no retroactivity; acquit correct."
+ },
+ {
+  "id": "A039",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Publicly accessible forum; family sign-off does not make it private; religion; convict correct."
+ },
+ {
+  "id": "A040",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "September 2019: sexual orientation not yet covered; acquit correct."
+ },
+ {
+  "id": "A041",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Christian free church = religion; public video incitement 2025; convict correct."
+ },
+ {
+  "id": "A042",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "2018, religion (free church) covered since 1995; Abs.4 speech to ~120 voters public; convict correct."
+ },
+ {
+  "id": "A043",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Muslims by faith = religion; public post 2025; convict correct."
+ },
+ {
+  "id": "A044",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Sex/gender not on closed list; acquit correct."
+ },
+ {
+  "id": "A045",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Family chat with only parents and siblings: private; acquit correct."
+ },
+ {
+  "id": "A046",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Phone call with brother: private family circle; acquit correct."
+ },
+ {
+  "id": "A047",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Dinner with three long-standing close friends: private; acquit correct."
+ },
+ {
+  "id": "A048",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Political conviction not on closed list; acquit correct."
+ },
+ {
+  "id": "A049",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Addressing whole crowded tram; children's presence irrelevant; race Abs.2; convict correct."
+ },
+ {
+  "id": "A050",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "1 July 2020 in-force date for sexual orientation; speech to ~120 voters public; convict correct."
+ },
+ {
+  "id": "A051",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "2023, Roma ethnicity, call to discrimination in open forum: public; convict correct."
+ },
+ {
+  "id": "A052",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Non-public association meeting, ~25 mixed acquaintances: genuinely mixed; open correct."
+ },
+ {
+  "id": "A053",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Gender identity not on closed list (only sexual orientation added); acquit correct."
+ },
+ {
+  "id": "A054",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Birthday party, ~20 guests incl. acquaintances of acquaintances: genuinely mixed; open correct."
+ },
+ {
+  "id": "A055",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Occupation (construction workers) not on closed list; acquit correct."
+ },
+ {
+  "id": "A056",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Publicly viewable post, family address does not make it private; ethnicity Abs.4; convict correct."
+ },
+ {
+  "id": "A057",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "2024, sexual orientation covered, rally of ~300 public; convict correct."
+ },
+ {
+  "id": "A058",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Speech to ~120 voters; family presence irrelevant; race incitement; convict correct."
+ },
+ {
+  "id": "A059",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "2023, bisexual persons/sexual orientation, flyers in busy zone: public Abs.4; convict correct."
+ },
+ {
+  "id": "A060",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Publicly viewable post addressed to family is still public; religion Abs.4; convict correct."
+ },
+ {
+  "id": "A061",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "2021, after 1 July 2020; call to deny housing/jobs to lesbians in printed letter: public; convict correct."
+ },
+ {
+  "id": "A062",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Sex not on closed list; acquit correct."
+ },
+ {
+  "id": "A063",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Non-public association meeting, ~25 mixed acquaintances: genuinely mixed; open correct."
+ },
+ {
+  "id": "A064",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Birthday party with friends, neighbours and acquaintances of acquaintances: mixed; open correct."
+ },
+ {
+  "id": "A065",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "2024, Jews/religion, advocating disadvantage and exclusion at busy market: Abs.1 public; convict correct."
+ },
+ {
+  "id": "A066",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Flyers in busy pedestrian zone; family framing irrelevant; religion Abs.2; convict correct."
+ },
+ {
+  "id": "A067",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "2024, sexual orientation covered, Abs.4 in printed reader's letter: public; convict correct."
+ },
+ {
+  "id": "A068",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "30 June 2020, one day before sexual orientation covered; Art. 2 no retroactivity; acquit correct."
+ },
+ {
+  "id": "A069",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "2022, race, incitement at busy market: public; convict correct."
+ },
+ {
+  "id": "A070",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "2019, ethnicity covered since 1995, crowded tram public; convict correct."
+ },
+ {
+  "id": "A071",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "September 2019: sexual orientation not yet covered; acquit correct."
+ },
+ {
+  "id": "A072",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "2024, Kurds/ethnicity, systematic inferiority theses in public post: Abs.2; convict correct."
+ },
+ {
+  "id": "A073",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Cantonal origin (Zurich) not on closed list; acquit correct."
+ },
+ {
+  "id": "A074",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Gender identity not on closed list; acquit correct."
+ },
+ {
+  "id": "A075",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "2022, sexual orientation covered, advocating exclusion in open forum: public; convict correct."
+ },
+ {
+  "id": "A076",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "2021, Muslims/religion, Abs.2 doctrine in open forum: public; convict correct."
+ },
+ {
+  "id": "A077",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Gender identity (trans persons) not on closed list; acquit correct."
+ },
+ {
+  "id": "A078",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "August 2020, after amendment; flyers in busy zone; Abs.2; convict correct."
+ },
+ {
+  "id": "A079",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "2024, Jews by faith = religion, Abs.4 speech to ~120 voters; convict correct."
+ },
+ {
+  "id": "A080",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Email to 25 department colleagues: publicity genuinely debatable; open correct."
+ },
+ {
+  "id": "A081",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "2021, Muslims/religion, Abs.2 flyers in busy zone: public; convict correct."
+ },
+ {
+  "id": "A082",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Skin colour = race; rally of ~300 public; convict correct."
+ },
+ {
+  "id": "A083",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Dinner with three long-standing close friends: private; acquit correct."
+ },
+ {
+  "id": "A084",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Publicly accessible forum; family sign-off irrelevant; religion Abs.2; convict correct."
+ },
+ {
+  "id": "A085",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Non-public association meeting, ~25 mixed acquaintances: genuinely mixed; open correct."
+ },
+ {
+  "id": "A086",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "November 2018: sexual orientation not yet covered; acquit correct."
+ },
+ {
+  "id": "A087",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Email to 25 department colleagues: publicity genuinely debatable; open correct."
+ },
+ {
+  "id": "A088",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "2025, Tamils/ethnicity, Abs.4 at rally of ~300: public; convict correct."
+ },
+ {
+  "id": "A089",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Cantonal origin not on closed list; acquit correct."
+ },
+ {
+  "id": "A090",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Political conviction not on closed list; acquit correct."
+ },
+ {
+  "id": "A091",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Non-public association meeting, ~25 mixed acquaintances: genuinely mixed; open correct."
+ },
+ {
+  "id": "A092",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "October 1994 predates entry into force; no retroactivity; acquit correct."
+ },
+ {
+  "id": "A093",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "2019, ethnicity covered since 1995; printed reader's letter public; convict correct."
+ },
+ {
+  "id": "A094",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "2019, ethnicity; call to deny housing/jobs via flyers in busy zone; convict correct."
+ },
+ {
+  "id": "A095",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Closed club chat, ~30 mostly superficial acquaintances: genuinely mixed; open correct."
+ },
+ {
+  "id": "A096",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Email to 25 department colleagues: publicity genuinely debatable; open correct."
+ },
+ {
+  "id": "A097",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "2022, race, Abs.2 ideology on flyers in busy zone: public; convict correct."
+ },
+ {
+  "id": "A098",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Family dinner with only wife and children: private; acquit correct."
+ },
+ {
+  "id": "A099",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "2025, Roma/ethnicity, systematic theses in speech to ~120 voters: public; convict correct."
+ },
+ {
+  "id": "A100",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Email to 25 department colleagues: publicity genuinely debatable; open correct."
+ },
+ {
+  "id": "A101",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "2022, Roma/ethnicity, systematic theses at busy market: public; convict correct."
+ },
+ {
+  "id": "A102",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "2021, Yenish/ethnicity, Abs.4 in public post; convict correct."
+ },
+ {
+  "id": "A103",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "1 July 2020 in-force date; crowded tram public; sexual orientation Abs.4; convict correct."
+ },
+ {
+  "id": "A104",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Non-public association meeting, ~25 mixed acquaintances: genuinely mixed; open correct."
+ },
+ {
+  "id": "A105",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Closed club chat, ~30 mostly superficial acquaintances: genuinely mixed; open correct."
+ },
+ {
+  "id": "A106",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Birthday party with friends, neighbours, acquaintances of acquaintances: mixed; open correct."
+ },
+ {
+  "id": "A107",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "August 2020, after amendment; flyers in busy zone; Abs.2; convict correct."
+ },
+ {
+  "id": "A108",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "2024, Muslims/religion, Abs.2 worldview at busy market: public; convict correct."
+ },
+ {
+  "id": "A109",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "~40 mostly strangers via general call: public despite family hut and relatives present; convict correct."
+ },
+ {
+  "id": "A110",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Gender identity not on closed list; acquit correct."
+ },
+ {
+  "id": "A111",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "2022, sexual orientation covered; flyers in busy zone; convict correct."
+ },
+ {
+  "id": "A112",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "August 2020, after amendment; rally of ~300 public; convict correct."
+ },
+ {
+  "id": "A113",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "Non-public association meeting, ~25 mixed acquaintances: genuinely mixed; open correct."
+ },
+ {
+  "id": "A114",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "2022, Hindus/religion, Abs.2 doctrine in open forum: public; convict correct."
+ },
+ {
+  "id": "A115",
+  "decision": "gold_correct",
+  "cause": null,
+  "reason": "2025, Hindus/religion, call to discrimination at busy market: public; convict correct."
+ }
+]

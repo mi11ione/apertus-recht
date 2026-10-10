@@ -1,25 +1,83 @@
-# Reference answers (to the R0 "verurteilen?" question). `chosen` is the answer the law supports; `rejected` is the
-# wrong answer of the kind the twin is built to catch. Keys: <deciding_element>:<reason_code> from the gold engine, or
-# `convict`; `traps` override the generic rejected answer of a convict item when the item carries that trap.
+# Reference answers (to the R0 "verurteilen?" question), specific to each item. `chosen` is the answer the law supports;
+# `rejected` is a wrong answer of the kind the twin is built to catch, phrased as the arguments models actually give.
+# Keys: <deciding_element>:<reason_code> from the gold engine, optionally refined by value ("<key>|<value>"), or
+# `convict`; `traps` replace the generic rejected answer of a convict item that carries the trap. A list gives variants;
+# one is chosen deterministically per item. Placeholders: {char_label}, {date}, {setting_label}, {paragraph_label};
+# capitalised forms ({Setting_label}) capitalise the first letter.
 lang: de
 char_labels: {race: Rasse, ethnicity: Ethnie, religion: Religion, sexual_orientation: sexuelle Orientierung,
               gender_identity: Geschlechtsidentität, sex: Geschlecht, canton: Kantonszugehörigkeit, occupation: Beruf,
               age: Alter, disability: Behinderung, political_opinion: politische Überzeugung}
+labels:
+  paragraph:
+    abs1: "als Aufruf zu Hass oder Diskriminierung (Abs. 1)"
+    abs2: "als Verbreiten einer Ideologie der systematischen Herabsetzung (Abs. 2)"
+    abs4: "als Herabsetzung in einer gegen die Menschenwürde verstossenden Weise (Abs. 4)"
+slot_labels:
+  setting:
+    pub_rally: "eine bewilligte Kundgebung auf einem öffentlichen Platz vor rund 300 Personen"
+    pub_rally_fam: "eine bewilligte Kundgebung vor rund 300 Personen, auch wenn sie als «Familienausflug» besucht wurde"
+    pub_post: "ein öffentlich einsehbarer Beitrag in den sozialen Medien"
+    pub_post_fam: "ein öffentlich einsehbarer Beitrag in den sozialen Medien, auch wenn er an die Familie gerichtet war"
+    pub_letter: "ein in einer Regionalzeitung abgedruckter Leserbrief"
+    pub_letter_fam: "ein in einer Regionalzeitung abgedruckter Leserbrief, auch wenn er im Namen der Familie unterzeichnet war"
+    pub_hut: "eine Versammlung von rund 40 über einen allgemeinen Aufruf eingeladenen, grösstenteils unbekannten Personen"
+    pub_hut_fam: "eine Versammlung von rund 40 über einen allgemeinen Aufruf eingeladenen Personen, auch wenn sie in der Waldhütte der Familie stattfand"
+    pub_flyer: "Flugblätter, die in einer belebten Fussgängerzone verteilt wurden"
+    pub_flyer_fam: "Flugblätter, die in einer belebten Fussgängerzone verteilt wurden, auch wenn die Kinder dabei halfen"
+    pub_speech: "eine Rede an einer Gemeindeversammlung vor rund 120 Stimmberechtigten"
+    pub_speech_fam: "eine Rede an einer Gemeindeversammlung vor rund 120 Stimmberechtigten, auch wenn Angehörige im Saal sassen"
+    pub_video: "ein Video auf einer frei zugänglichen Plattform"
+    pub_video_fam: "ein Video auf einer frei zugänglichen Plattform, auch wenn es als Botschaft an die Familie betitelt war"
+    pub_tram: "eine laute Äusserung vor allen Fahrgästen eines vollbesetzten Trams"
+    pub_tram_fam: "eine laute Äusserung vor allen Fahrgästen eines vollbesetzten Trams, auch wenn die eigenen Kinder dabei waren"
+    pub_market: "eine Äusserung an einem Marktstand vor zahlreicher Kundschaft"
+    pub_market_fam: "eine Äusserung vor zahlreicher Kundschaft, auch wenn der Marktstand ein Familienbetrieb ist"
+    pub_forum: "ein Kommentar in einem frei zugänglichen Online-Forum"
+    pub_forum_fam: "ein Kommentar in einem frei zugänglichen Online-Forum, auch wenn er mit einem Gruss an die Familie unterschrieben war"
+    priv_dinner: "ein Abendessen im engsten Familienkreis"
+    priv_friends: "ein Abendessen mit drei langjährigen engen Freunden"
+    priv_message: "eine persönliche Nachricht nur an die Schwester"
+    priv_phone: "ein Telefongespräch mit dem Bruder"
+    priv_famchat: "ein Familien-Chat nur mit Eltern und Geschwistern"
+    cont_clubchat: "eine geschlossene Chatgruppe eines Sportvereins mit rund 30 Mitgliedern, die meisten nur flüchtig bekannt"
+    cont_party: "ein Geburtstagsfest mit rund 20 Gästen, darunter Bekannte von Bekannten"
+    cont_office: "eine E-Mail an rund 25 frühere und heutige Arbeitskolleginnen und -kollegen"
+    cont_assoc: "eine nicht öffentliche Vereinssitzung mit rund 25 Mitgliedern, teils langjährig bekannt, teils neu"
 chosen:
-  convict: "Ja. Die Äusserung erfolgte öffentlich, richtet sich gegen eine Gruppe wegen eines geschützten Merkmals ({char_label}) und fällt in den zeitlichen Geltungsbereich von Art. 261bis StGB; der Tatbestand ist erfüllt."
-  "setting:failed": "Nein. Die Äusserung erfolgte im privaten Rahmen und war nach BGE 130 IV 111 E. 5.2 deshalb nicht öffentlich; Art. 261bis StGB setzt Öffentlichkeit voraus."
-  "characteristic:not_listed": "Nein. Das Merkmal «{char_label}» gehört nicht zur abschliessenden Liste von Art. 261bis StGB (Rasse, Ethnie, Religion, sexuelle Orientierung)."
-  "characteristic:not_yet_covered": "Nein. Die sexuelle Orientierung ist erst für Taten ab dem 1. Juli 2020 geschützt; eine Tat {date} fällt nicht darunter, weil das Gesetz nach Art. 2 StGB nicht rückwirkend gilt."
+  convict: "Ja. Die Äusserung erfolgte öffentlich im Sinne von BGE 130 IV 111 ({setting_label}); sie richtet sich gegen eine Gruppe wegen eines geschützten Merkmals ({char_label}) und erfüllt Art. 261bis StGB {paragraph_label}. Die Tat {date} fällt in den zeitlichen Geltungsbereich."
+  "setting:failed": "Nein. {Setting_label} ist ein privater Rahmen, der durch persönliche Beziehungen geprägt ist; nach BGE 130 IV 111 E. 5.2 fehlt damit die Öffentlichkeit, die Art. 261bis StGB voraussetzt."
+  "characteristic:not_listed": "Nein. Das Merkmal «{char_label}» gehört nicht zur abschliessenden Liste von Art. 261bis StGB (Rasse, Ethnie, Religion, sexuelle Orientierung); die Äusserung ist nach dieser Bestimmung nicht strafbar, auch wenn sie öffentlich erfolgte."
+  "characteristic:not_listed|gender_identity": "Nein. Die Geschlechtsidentität gehört nicht zur abschliessenden Liste von Art. 261bis StGB; mit der Revision von 2020 wurde nur die sexuelle Orientierung aufgenommen."
+  "characteristic:not_yet_covered": "Nein. Die sexuelle Orientierung ist erst für Taten ab dem 1. Juli 2020 geschützt (AS 2020 1609); eine Tat {date} fällt nicht darunter, weil das Gesetz nach Art. 2 StGB nicht rückwirkend gilt."
   "act_date:not_in_force": "Nein. Art. 261bis StGB ist erst seit dem 1. Januar 1995 in Kraft; eine Tat {date} ist nach Art. 2 StGB nicht strafbar."
-  "setting:contested": "Das lässt sich ohne weitere Angaben nicht sicher sagen. Entscheidend ist, ob die Äusserung öffentlich war; nach BGE 130 IV 111 E. 5.2 hängt das von den konkreten Umständen ab, etwa von den persönlichen Beziehungen und der Zahl der Anwesenden."
+  "setting:contested": "Das hängt von Umständen ab, die der Sachverhalt offen lässt. Ob der Rahmen ({setting_label}) öffentlich ist, beurteilt sich nach BGE 130 IV 111 E. 5.2 danach, ob ein durch persönliche Beziehungen oder besonderes Vertrauen geprägtes Umfeld vorliegt; auch die Zahl der Anwesenden zählt."
 rejected:
-  convict: "Nein. Die Äusserung ist zwar verwerflich, aber von der Meinungsäusserungsfreiheit gedeckt; Art. 261bis StGB ist nicht erfüllt."
-  "setting:failed": "Ja. Die Äusserung richtet sich gegen eine Gruppe wegen eines geschützten Merkmals; Art. 261bis StGB ist erfüllt, auch wenn sie im Familien- oder Freundeskreis fiel."
-  "characteristic:not_listed": "Ja. Die Äusserung richtet sich gegen eine Gruppe wegen ihrer Merkmale und ist nach Art. 261bis StGB strafbar."
-  "characteristic:not_yet_covered": "Ja. Die sexuelle Orientierung ist durch Art. 261bis StGB geschützt; die Äusserung ist strafbar."
-  "act_date:not_in_force": "Ja. Die Äusserung richtet sich gegen eine Gruppe wegen eines geschützten Merkmals und ist nach Art. 261bis StGB strafbar."
-  "setting:contested": "Ja. Die Äusserung ist eindeutig öffentlich und nach Art. 261bis StGB strafbar."
+  convict:
+    - "Nein. Die Äusserung ist zwar verwerflich, aber von der Meinungsäusserungsfreiheit gedeckt; Art. 261bis StGB ist nicht erfüllt."
+    - "Nein. Art. 261bis StGB verlangt einen Angriff auf eine bestimmte Person; eine pauschale Äusserung über eine Gruppe genügt nicht."
+  "setting:failed":
+    - "Ja. Die Äusserung richtet sich gegen eine Gruppe wegen des Merkmals «{char_label}» und ist nach Art. 261bis StGB strafbar, auch wenn sie im privaten Kreis fiel."
+    - "Ja. Auch {setting_label} genügt, weil die Äusserung weitererzählt werden kann; Art. 261bis StGB ist erfüllt."
+  "characteristic:not_listed":
+    - "Ja. Art. 261bis StGB schützt jede Gruppe vor Herabsetzung, auch wenn sie durch das Merkmal «{char_label}» bestimmt ist."
+    - "Ja. Die Äusserung verletzt die Menschenwürde und ist deshalb nach Art. 261bis StGB strafbar, unabhängig vom betroffenen Merkmal."
+  "characteristic:not_yet_covered":
+    - "Ja. Die sexuelle Orientierung ist durch Art. 261bis StGB geschützt; die Äusserung ist strafbar."
+    - "Ja. Massgebend ist das heute geltende Recht, und danach ist die sexuelle Orientierung geschützt."
+  "act_date:not_in_force":
+    - "Ja. Die Äusserung richtet sich gegen eine Gruppe wegen eines geschützten Merkmals und ist nach Art. 261bis StGB strafbar."
+    - "Ja. Massgebend ist das Recht im Zeitpunkt des Urteils, und Art. 261bis StGB gilt heute."
+  "setting:contested":
+    - "Ja. Die Äusserung ist eindeutig öffentlich und nach Art. 261bis StGB strafbar."
+    - "Nein. Die Äusserung fiel in einem geschlossenen Kreis und ist deshalb eindeutig privat."
 traps:
-  family_wording: "Nein. Die Äusserung stand im Zusammenhang mit der Familie und war deshalb privat; Art. 261bis StGB ist nicht erfüllt."
-  synonym: "Nein. Das genannte Merkmal ist in der abschliessenden Liste von Art. 261bis StGB nicht aufgeführt."
-  date_overapplied: "Nein. Taten vor dem 1. Juli 2020 sind von Art. 261bis StGB nicht erfasst."
+  family_wording:
+    - "Nein. Die Äusserung stand im Zusammenhang mit der Familie und war deshalb privat; Art. 261bis StGB ist nicht erfüllt."
+    - "Nein. Wer sich an die eigene Familie richtet, äussert sich im privaten Rahmen; nach BGE 130 IV 111 fehlt die Öffentlichkeit."
+  synonym:
+    - "Nein. Das genannte Merkmal ist in der abschliessenden Liste von Art. 261bis StGB nicht aufgeführt."
+    - "Nein. Art. 261bis StGB nennt dieses Merkmal nicht ausdrücklich; die Liste ist abschliessend."
+  date_overapplied:
+    - "Nein. Taten vor dem 1. Juli 2020 sind von Art. 261bis StGB nicht erfasst."
+    - "Nein. Die Tat liegt vor der Revision von 2020, und das Gesetz gilt nicht rückwirkend."

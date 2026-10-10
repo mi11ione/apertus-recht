@@ -77,6 +77,8 @@ def write_eval(statute_dir: Path, out: Path, reviews: dict | None = None) -> dic
         if name != "battery162" and all("open" in (d.prompts[l].get("framings") or {}) for l in d.langs):
             # free-text questions (generate + judge), kept in their own file so forced-choice prompt files never change
             _jsonl(out / "eval" / f"prompts_open_{name}.jsonl", build.build_prompts(d, rows, rungs=["R0", "R3"], framings=["open"]))
+            # forced choice between each settled item's chosen and rejected reference answer (preference accuracy)
+            _jsonl(out / "eval" / f"prompts_pref_{name}.jsonl", build.build_pref_prompts(d, rows))
     _jsonl(out / "metadata" / "items.jsonl", [item_metadata(d, i, reviews) for rows in parts.values() for i in rows])
     srcs = {k: dict(v, licence=SOURCE_LICENCES.get(v.get("kind"), "public domain")) for k, v in d.statute.sources.items()}
     (out / "metadata").mkdir(parents=True, exist_ok=True)
@@ -113,7 +115,7 @@ def manifest(out: Path, exclude_runs: set | None = None) -> dict:
     """sha256 of every released file; `exclude_runs` leaves out response runs still being written."""
     out = Path(out)
     files = {}
-    for sub in ("eval", "metadata", "responses"):
+    for sub in ("eval", "metadata", "responses", "docs", "review"):
         for p in sorted((out / sub).rglob("*")):
             if p.is_file() and not (exclude_runs and run_of(p.name) in exclude_runs):
                 files[str(p.relative_to(out))] = _sha(p)

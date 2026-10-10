@@ -33,12 +33,15 @@ def main():
     run(sys.executable, "-m", "statute_twins.cli", "verify")
     run(sys.executable, "-m", "statute_twins.cli", "qc", "--out", "reports/qc.json")
     run(sys.executable, "scripts/render_datacard.py")
+    import json
     from huggingface_hub import HfApi
+    # exactly the files in the manifest (released runs only) plus the card and the manifest itself
+    allow = sorted(json.loads((ROOT / "dataset/MANIFEST.json").read_text())["files"]) + ["README.md", "MANIFEST.json"]
     api = HfApi()
     api.create_repo(a.repo, repo_type="dataset", private=a.private, exist_ok=True)
     api.upload_folder(repo_id=a.repo, repo_type="dataset", folder_path=str(ROOT / "dataset"),
                       commit_message="Apertus-Recht v1.0: Art. 261bis minimal-twin set, responses, metadata",
-                      ignore_patterns=["archive/*"])
+                      allow_patterns=allow)
     print(f"published https://huggingface.co/datasets/{a.repo}")
 
 

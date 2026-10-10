@@ -64,7 +64,9 @@ def build_legacy_items(d: Design) -> list[dict]:
                 else:
                     role = "placebo" if g.verdict == bg.verdict else "true_flip"
                 trap = "family_wording" if (x["variant"] == "placebo" and g.verdict == "convict") else None
-                sc = Scenario(f"B{set_name}-{gid}", f"LEGACY_{set_name.upper()}", k, {"date": date}, facts, g, role,
+                # the legacy settings are the template settings of the same name (rally, post, letter, hut, flyer)
+                setting_slot = "priv_dinner" if x["variant"] == "true" else (f"pub_{x['setting']}_fam" if x["variant"] == "placebo" else f"pub_{x['setting']}")
+                sc = Scenario(f"B{set_name}-{gid}", f"LEGACY_{set_name.upper()}", k, {"date": date, "setting": setting_slot}, facts, g, role,
                               None if role == "base" else {"true": "setting", "placebo": "setting", "group": "group",
                                                           "time": "date"}[x["variant"]], trap)
                 chosen, rejected = reference_answers(d, "de", sc)

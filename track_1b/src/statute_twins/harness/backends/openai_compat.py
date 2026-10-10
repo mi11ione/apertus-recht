@@ -110,7 +110,10 @@ class OpenAICompat(Backend):
         self.max_tokens_generate = max_tokens_generate
 
     def describe(self) -> dict:
-        return dict(backend=self.name, base_url=self.base_url, model=self.model, mode=self.mode, seed=self.seed)
+        d = dict(backend=self.name, base_url=self.base_url, model=self.model, mode=self.mode, seed=self.seed)
+        if self.mode == "generate":
+            d["max_tokens"] = self.max_tokens_generate     # generation length changes the answer, so it is part of the key
+        return d
 
     # -------------------------------------------------------------------------------------------------------- utils
     def _check(self, resp: dict) -> tuple[str | None, str | None]:
@@ -207,7 +210,9 @@ def gateway_transport(tag: str, cap_usd: float, gw_path: str | None = None):
     `make run`; judges use http_transport with their own LLM_BASE_URL."""
     import importlib.util
     import sys
-    path = gw_path or os.environ.get("STATUTE_TWINS_GATEWAY", os.path.expanduser("~/Desktop/hackapertus/gateway/gw.py"))
+    path = gw_path or os.environ.get("STATUTE_TWINS_GATEWAY")
+    if not path:
+        raise SystemExit("--backend gateway needs STATUTE_TWINS_GATEWAY=/path/to/gw.py (the team's cost-capped gateway)")
     spec = importlib.util.spec_from_file_location("gw", path)
     gw = importlib.util.module_from_spec(spec)
     sys.modules["gw"] = gw

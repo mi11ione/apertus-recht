@@ -1,0 +1,1282 @@
+[
+ {
+  "id": "L70714",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public social media post spreading ideology degrading lesbians for sexual orientation; March 2023, after 1 July 2020 extension.",
+  "note": ""
+ },
+ {
+  "id": "L87055",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Leaflets in busy pedestrian zone degrading bisexual people against human dignity; March 2023, sexual orientation covered.",
+  "note": ""
+ },
+ {
+  "id": "L59154",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Freely accessible video degrading Jews for religion against human dignity; public, protected characteristic.",
+  "note": ""
+ },
+ {
+  "id": "L77100",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Speech at municipal assembly of ~120 voters inciting hatred of Jews; family presence does not make it private.",
+  "note": ""
+ },
+ {
+  "id": "L29820",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Forest-hut meeting of ~40 generally invited, mostly unknown people is public (BGE 130 IV 111); ideology against religious group.",
+  "note": ""
+ },
+ {
+  "id": "L84804",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public post calling lesbians second-class humans in August 2020, after sexual orientation was added.",
+  "note": ""
+ },
+ {
+  "id": "L62374",
+  "label": "open",
+  "deciding_element": "setting",
+  "confidence": "medium",
+  "reason": "Email to ~25 former and current colleagues; whether a private circle of personal trust depends on unstated relationships.",
+  "note": ""
+ },
+ {
+  "id": "L99678",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Published letter to the editor vilifying Kosovo Albanians for ethnicity in a contemptuous manner.",
+  "note": ""
+ },
+ {
+  "id": "L71748",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public rally of ~300 people, degradation of Tamils for ethnicity against human dignity.",
+  "note": ""
+ },
+ {
+  "id": "L98976",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Disability is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "L46096",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Personal message only to his sister is a private family setting, not public.",
+  "note": ""
+ },
+ {
+  "id": "L88217",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public post vilifying Yenish people for ethnicity in contemptuous manner; September 2021.",
+  "note": ""
+ },
+ {
+  "id": "L95314",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Cantonal affiliation (Zurich residents) is not race, ethnicity, religion or sexual orientation.",
+  "note": ""
+ },
+ {
+  "id": "L87669",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Published letter to the editor inciting hatred of Asians for race; signing for family does not make it private.",
+  "note": ""
+ },
+ {
+  "id": "L99060",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Age is not a protected characteristic under Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "L30676",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Forest-hut meeting of ~40 generally invited people is public; incited hatred of Muslims for their faith.",
+  "note": ""
+ },
+ {
+  "id": "L23089",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Gender identity (non-binary) is not covered; only sexual orientation was added in 2020.",
+  "note": ""
+ },
+ {
+  "id": "L47583",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Market stand before many customers, incitement to hatred against Yenish for ethnicity.",
+  "note": ""
+ },
+ {
+  "id": "L34930",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public video disseminating doctrine systematically degrading homosexuals; March 2023.",
+  "note": ""
+ },
+ {
+  "id": "L80054",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Leaflets propagating worldview that Black people are inferior due to race; public ideology dissemination.",
+  "note": ""
+ },
+ {
+  "id": "L88437",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Rally of ~300 people presenting Jews as inferior for their faith; degradation against human dignity.",
+  "note": ""
+ },
+ {
+  "id": "L18854",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public forest-hut meeting, denying gay men equal human worth; August 2020, after extension.",
+  "note": ""
+ },
+ {
+  "id": "L55171",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public video calling gay men second-class humans for sexual orientation; June 2025.",
+  "note": ""
+ },
+ {
+  "id": "L19253",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Rally of ~300 people calling for discrimination against Muslims for religion.",
+  "note": ""
+ },
+ {
+  "id": "L50098",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Profession (construction workers) is not a protected characteristic.",
+  "note": ""
+ },
+ {
+  "id": "L57631",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Rally of ~300 people is public despite attending as family outing; Tamils denied equal worth.",
+  "note": ""
+ },
+ {
+  "id": "L36700",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public forest-hut meeting of ~40 generally invited people; incited hatred of Muslims for faith.",
+  "note": ""
+ },
+ {
+  "id": "L92624",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Leaflets in pedestrian zone vilifying Black people for race in contemptuous manner.",
+  "note": ""
+ },
+ {
+  "id": "L62953",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Published letter to the editor calling to hate Jews for their faith.",
+  "note": ""
+ },
+ {
+  "id": "L57113",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Municipal assembly speech spreading doctrine degrading free-church members for religion.",
+  "note": ""
+ },
+ {
+  "id": "L35453",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Market stand before many customers is public even though family-run; degraded Yenish for ethnicity.",
+  "note": ""
+ },
+ {
+  "id": "L82133",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Age (young adults) is not a protected characteristic.",
+  "note": ""
+ },
+ {
+  "id": "L48321",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Published letter spreading doctrine discrediting people of African origin for race; race covered since 1995.",
+  "note": ""
+ },
+ {
+  "id": "L51312",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Profession is not a protected characteristic.",
+  "note": ""
+ },
+ {
+  "id": "L35568",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Leaflets calling homosexuals second-class humans; March 2023, sexual orientation covered.",
+  "note": ""
+ },
+ {
+  "id": "L89828",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Leaflets in pedestrian zone inciting hatred of lesbians; family framing does not negate publicity.",
+  "note": ""
+ },
+ {
+  "id": "L70759",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Dinner with three close long-time friends at home is private.",
+  "note": ""
+ },
+ {
+  "id": "L92091",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "30 June 2020 is before sexual orientation was added on 1 July 2020; no retroactivity.",
+  "note": ""
+ },
+ {
+  "id": "L80272",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Loud address to all passengers in full tram presenting Hindus as inferior for religion.",
+  "note": ""
+ },
+ {
+  "id": "L64920",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Published letter degrading Roma for ethnicity against human dignity.",
+  "note": ""
+ },
+ {
+  "id": "L54235",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Gender identity (trans persons) is not covered by Art. 261bis.",
+  "note": ""
+ },
+ {
+  "id": "L27781",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Age is not a protected characteristic.",
+  "note": ""
+ },
+ {
+  "id": "L68971",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public forest-hut meeting of ~40 generally invited people; incited hatred of Muslims for religion.",
+  "note": ""
+ },
+ {
+  "id": "L82325",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "May 1993 precedes entry into force of Art. 261bis on 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "L51006",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "November 2018: sexual orientation not yet protected; added only from 1 July 2020.",
+  "note": ""
+ },
+ {
+  "id": "L51089",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Leaflets denying Roma equal human worth for ethnicity; public.",
+  "note": ""
+ },
+ {
+  "id": "L23903",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public forest-hut meeting; spread doctrine systematically presenting Hindus as inferior.",
+  "note": ""
+ },
+ {
+  "id": "L76899",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public post vilifying homosexuals for homosexuality (sexual orientation); May 2022.",
+  "note": ""
+ },
+ {
+  "id": "L45604",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Published letter denying Kosovo Albanians equal human worth for ethnicity.",
+  "note": ""
+ },
+ {
+  "id": "L30243",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Published letter promoting ideology to systematically defame Muslims for religion.",
+  "note": ""
+ },
+ {
+  "id": "L84122",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Family chat with only parents and siblings is a private setting.",
+  "note": ""
+ },
+ {
+  "id": "L34075",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Freely accessible online forum comment spreading doctrine presenting Hindus as inferior.",
+  "note": ""
+ },
+ {
+  "id": "L75493",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Freely accessible forum is public despite family sign-off; doctrine degrading Asians for race.",
+  "note": ""
+ },
+ {
+  "id": "L42369",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "1 July 2020 is the day the sexual-orientation extension entered into force; public rally.",
+  "note": ""
+ },
+ {
+  "id": "L14715",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Loud address to full tram inciting hatred of Roma for ethnicity.",
+  "note": ""
+ },
+ {
+  "id": "L14706",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public post propagating worldview that Kurds are inferior for ethnicity.",
+  "note": ""
+ },
+ {
+  "id": "L81954",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Open online forum comment spreading doctrine presenting Black people as inferior for race.",
+  "note": ""
+ },
+ {
+  "id": "L38885",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Municipal assembly speech systematically spreading theses that Roma are worth less.",
+  "note": ""
+ },
+ {
+  "id": "L30222",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public video calling Roma second-class humans for ethnicity.",
+  "note": ""
+ },
+ {
+  "id": "L75986",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Family chat with only parents and siblings is private.",
+  "note": ""
+ },
+ {
+  "id": "L12817",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Leaflets inciting hatred of Asians for race; race protected in 2018 version.",
+  "note": ""
+ },
+ {
+  "id": "L53243",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Rally of ~300 people spreading theses that Tamils are worth less for ethnicity.",
+  "note": ""
+ },
+ {
+  "id": "L39909",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Market stand before many customers devaluing Yenish against human dignity.",
+  "note": ""
+ },
+ {
+  "id": "L36350",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Sex/gender (men) is not a protected characteristic.",
+  "note": ""
+ },
+ {
+  "id": "L93101",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Full tram, addressed to all, spreading doctrine degrading homosexuals; March 2023.",
+  "note": ""
+ },
+ {
+  "id": "L43223",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Market stand before many customers spreading theses that Roma are worth less.",
+  "note": ""
+ },
+ {
+  "id": "L96443",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Open online forum, theses that homosexuals are worth less; September 2021, covered.",
+  "note": ""
+ },
+ {
+  "id": "L66202",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Market stand before many customers vilifying Jews for their faith contemptuously.",
+  "note": ""
+ },
+ {
+  "id": "L38199",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "October 1994 precedes entry into force of Art. 261bis on 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "L13099",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public post spreading doctrine systematically degrading Asians for race.",
+  "note": ""
+ },
+ {
+  "id": "L70372",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "November 2018: sexual orientation not protected before 1 July 2020.",
+  "note": ""
+ },
+ {
+  "id": "L84495",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Leaflets propagating worldview that Muslims are inferior for religion.",
+  "note": ""
+ },
+ {
+  "id": "L29175",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Municipal assembly speech calling to hate people of African origin for race.",
+  "note": ""
+ },
+ {
+  "id": "L51630",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Family chat with only parents and siblings is private.",
+  "note": ""
+ },
+ {
+  "id": "L90447",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "medium",
+  "reason": "~40 participants invited by general call, mostly unknown; family hut and presence do not make it private.",
+  "note": ""
+ },
+ {
+  "id": "L26236",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Dinner with three close long-time friends at home is private.",
+  "note": ""
+ },
+ {
+  "id": "L93362",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Sex (women) is not a protected characteristic.",
+  "note": ""
+ },
+ {
+  "id": "L77987",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Gender identity (non-binary) is not covered.",
+  "note": ""
+ },
+ {
+  "id": "L84823",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Disability is not a protected characteristic.",
+  "note": ""
+ },
+ {
+  "id": "L28198",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Rally of ~300 people calling to hate Tamils for ethnicity.",
+  "note": ""
+ },
+ {
+  "id": "L61592",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "1 July 2020 is the entry-into-force day of the sexual-orientation extension; public speech.",
+  "note": ""
+ },
+ {
+  "id": "L20899",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Freely accessible video is public despite family title; calls to hate Kosovo Albanians.",
+  "note": ""
+ },
+ {
+  "id": "L86336",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Age (elderly) is not a protected characteristic.",
+  "note": ""
+ },
+ {
+  "id": "L17759",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public post spreading doctrine presenting Black people as inferior; skin colour falls under race.",
+  "note": ""
+ },
+ {
+  "id": "L23073",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "September 2019: sexual orientation not protected before 1 July 2020.",
+  "note": ""
+ },
+ {
+  "id": "L55066",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Cantonal affiliation is not a protected characteristic.",
+  "note": ""
+ },
+ {
+  "id": "L25968",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public forest-hut meeting, theses that Asians are worth less for race; race covered in 2019.",
+  "note": ""
+ },
+ {
+  "id": "L33385",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Phone conversation with his brother is private.",
+  "note": ""
+ },
+ {
+  "id": "L87636",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Market stand before many customers inciting discrimination against bisexuals; September 2021.",
+  "note": ""
+ },
+ {
+  "id": "L27255",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Full tram addressed to all passengers is public despite children; inferiority worldview on race.",
+  "note": ""
+ },
+ {
+  "id": "L81485",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public forest-hut meeting inciting discrimination against Hindus for religion.",
+  "note": ""
+ },
+ {
+  "id": "L44225",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Municipal assembly speech inciting hatred of Muslims for religion.",
+  "note": ""
+ },
+ {
+  "id": "L92892",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Rally of ~300 people, theses that lesbians are worth less; March 2023.",
+  "note": ""
+ },
+ {
+  "id": "L41730",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public post degrading Roma for ethnicity against human dignity.",
+  "note": ""
+ },
+ {
+  "id": "L69363",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public video advocating disadvantaging free-church members for religion.",
+  "note": ""
+ },
+ {
+  "id": "L38506",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Published letter spreading doctrine degrading gay men; family signature irrelevant.",
+  "note": ""
+ },
+ {
+  "id": "L96086",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public forest-hut meeting vilifying gay men contemptuously; June 2025.",
+  "note": ""
+ },
+ {
+  "id": "L29116",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "May 1993 precedes entry into force of Art. 261bis on 1 January 1995.",
+  "note": ""
+ },
+ {
+  "id": "L79145",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Leaflets discrediting Black people for race in a manner violating dignity.",
+  "note": ""
+ },
+ {
+  "id": "L26637",
+  "label": "open",
+  "deciding_element": "setting",
+  "confidence": "medium",
+  "reason": "Birthday party with ~20 guests incl. acquaintances of acquaintances; private character depends on unstated relationships.",
+  "note": ""
+ },
+ {
+  "id": "L60884",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "September 2019: sexual orientation not protected before 1 July 2020.",
+  "note": ""
+ },
+ {
+  "id": "L33227",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Full tram, vilifying Kosovo Albanians for ethnicity; ethnicity covered in 2019.",
+  "note": ""
+ },
+ {
+  "id": "L34450",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Full tram, degrading Muslims for faith against human dignity.",
+  "note": ""
+ },
+ {
+  "id": "L73782",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Published letter inciting denial of housing and jobs to Jews: public incitement to discrimination.",
+  "note": ""
+ },
+ {
+  "id": "L28635",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public post inciting discrimination against people of African origin for race.",
+  "note": ""
+ },
+ {
+  "id": "L24614",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Rally of ~300, inciting hatred of homosexuals; August 2020, after extension.",
+  "note": ""
+ },
+ {
+  "id": "L87567",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Dinner in closest family circle only with husband and adult children is private.",
+  "note": ""
+ },
+ {
+  "id": "L70764",
+  "label": "open",
+  "deciding_element": "setting",
+  "confidence": "medium",
+  "reason": "Closed sports-club chat of ~30, mostly superficial acquaintances; trust relationship unclear from facts.",
+  "note": ""
+ },
+ {
+  "id": "L45955",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Gender identity (non-binary) is not covered.",
+  "note": ""
+ },
+ {
+  "id": "L74761",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Full tram inciting hatred of Black people for race.",
+  "note": ""
+ },
+ {
+  "id": "L45462",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public video spreading doctrine degrading gay men; June 2025.",
+  "note": ""
+ },
+ {
+  "id": "L57804",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Freely accessible video is public despite family title; incites hatred of gay men.",
+  "note": ""
+ },
+ {
+  "id": "L53230",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Leaflets propagating worldview that lesbians are inferior; January 2024.",
+  "note": ""
+ },
+ {
+  "id": "L31397",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Gender identity (non-binary) is not covered.",
+  "note": ""
+ },
+ {
+  "id": "L23146",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Market stand degrading homosexuals against human dignity; January 2024.",
+  "note": ""
+ },
+ {
+  "id": "L42588",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Published letter urging denial of housing and jobs to Jews for faith: incitement to discrimination.",
+  "note": ""
+ },
+ {
+  "id": "L45886",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Rally of ~300 is public despite family outing; calls for discrimination of Muslims.",
+  "note": ""
+ },
+ {
+  "id": "L31206",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Dinner in closest family circle with only husband and children is private.",
+  "note": ""
+ },
+ {
+  "id": "L51297",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Dinner with three close long-time friends at home is private.",
+  "note": ""
+ },
+ {
+  "id": "L24618",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Published letter degrading Roma for ethnic affiliation against human dignity.",
+  "note": ""
+ },
+ {
+  "id": "L51184",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Leaflets inciting hatred of Asians for race.",
+  "note": ""
+ },
+ {
+  "id": "L51490",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "November 2018: sexual orientation not protected before 1 July 2020.",
+  "note": ""
+ },
+ {
+  "id": "L47730",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public post calling for discrimination of people of African origin for race.",
+  "note": ""
+ },
+ {
+  "id": "L38338",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public forest-hut meeting inciting hatred of homosexuals; June 2025.",
+  "note": ""
+ },
+ {
+  "id": "L39686",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "30 June 2020 is one day before sexual orientation became protected; no retroactivity.",
+  "note": ""
+ },
+ {
+  "id": "L27108",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Publicly viewable post is public though addressed to family; incites hatred on race.",
+  "note": ""
+ },
+ {
+  "id": "L50678",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Leaflets in pedestrian zone propagating racial inferiority; family framing irrelevant.",
+  "note": ""
+ },
+ {
+  "id": "L86439",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public post spreading doctrine degrading bisexuals; June 2025.",
+  "note": ""
+ },
+ {
+  "id": "L88269",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Published letter degrading lesbians against human dignity; January 2024.",
+  "note": ""
+ },
+ {
+  "id": "L49228",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public video spreading theses that free-church members are worth less for religion.",
+  "note": ""
+ },
+ {
+  "id": "L19328",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Municipal assembly speech spreading doctrine that Kurds are inferior.",
+  "note": ""
+ },
+ {
+  "id": "L71180",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Freely accessible forum is public despite family sign-off; Asians called inferior for race.",
+  "note": ""
+ },
+ {
+  "id": "L43583",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Published letter vilifying Kosovo Albanians contemptuously for ethnicity.",
+  "note": ""
+ },
+ {
+  "id": "L39814",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Rally of ~300 denying Black people equal human worth for race.",
+  "note": ""
+ },
+ {
+  "id": "L83699",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "1 July 2020 is entry-into-force day of extension; published letter degrading lesbians.",
+  "note": ""
+ },
+ {
+  "id": "L11647",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Sex (men) is not a protected characteristic.",
+  "note": ""
+ },
+ {
+  "id": "L26979",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "September 2019: sexual orientation not protected before 1 July 2020.",
+  "note": ""
+ },
+ {
+  "id": "L95873",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public video inciting hatred of bisexuals; May 2022.",
+  "note": ""
+ },
+ {
+  "id": "L15325",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Cantonal affiliation is not a protected characteristic.",
+  "note": ""
+ },
+ {
+  "id": "L48471",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Cantonal affiliation (Valais) is not a protected characteristic.",
+  "note": ""
+ },
+ {
+  "id": "L98825",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public forest-hut meeting spreading doctrine that Hindus are inferior.",
+  "note": ""
+ },
+ {
+  "id": "L92430",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Gender identity (trans persons) is not covered.",
+  "note": ""
+ },
+ {
+  "id": "L97379",
+  "label": "acquit",
+  "deciding_element": "act_date",
+  "confidence": "high",
+  "reason": "30 June 2020 precedes the 1 July 2020 extension to sexual orientation.",
+  "note": ""
+ },
+ {
+  "id": "L73834",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Rally of ~300 inciting hatred of homosexuals; January 2024.",
+  "note": ""
+ },
+ {
+  "id": "L78175",
+  "label": "open",
+  "deciding_element": "setting",
+  "confidence": "medium",
+  "reason": "Non-public neighbourhood association meeting of ~25, mixed long-standing and new members; private character unclear.",
+  "note": ""
+ },
+ {
+  "id": "L65330",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Dinner in closest family circle is private.",
+  "note": ""
+ },
+ {
+  "id": "L45007",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Age (elderly) is not a protected characteristic.",
+  "note": ""
+ },
+ {
+  "id": "L38205",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Sex (women) is not a protected characteristic.",
+  "note": ""
+ },
+ {
+  "id": "L51424",
+  "label": "acquit",
+  "deciding_element": "setting",
+  "confidence": "high",
+  "reason": "Dinner in closest family circle with only spouse and adult children is private.",
+  "note": ""
+ },
+ {
+  "id": "L64873",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Market stand before many customers is public though family-run; Yenish denied equal worth.",
+  "note": ""
+ },
+ {
+  "id": "L25892",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Political conviction is not a protected characteristic.",
+  "note": ""
+ },
+ {
+  "id": "L73539",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Public post denying Muslims equal human worth for religion.",
+  "note": ""
+ },
+ {
+  "id": "L46788",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Full tram advocating disadvantaging Hindus for religion.",
+  "note": ""
+ },
+ {
+  "id": "L43866",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Municipal assembly speech spreading theses that Roma are worth less.",
+  "note": ""
+ },
+ {
+  "id": "L17030",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Cantonal affiliation is not a protected characteristic.",
+  "note": ""
+ },
+ {
+  "id": "L75994",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Full tram addressed to all is public despite children; Hindus called inferior.",
+  "note": ""
+ },
+ {
+  "id": "L38504",
+  "label": "open",
+  "deciding_element": "setting",
+  "confidence": "medium",
+  "reason": "Non-public neighbourhood association meeting of ~25 with mixed familiarity; private character unclear.",
+  "note": ""
+ },
+ {
+  "id": "L95571",
+  "label": "acquit",
+  "deciding_element": "characteristic",
+  "confidence": "high",
+  "reason": "Profession is not a protected characteristic.",
+  "note": ""
+ },
+ {
+  "id": "L21755",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Municipal assembly speech inciting hatred of Jews for religion.",
+  "note": ""
+ },
+ {
+  "id": "L51565",
+  "label": "convict",
+  "deciding_element": "none",
+  "confidence": "high",
+  "reason": "Municipal assembly speech calling to hate Jews for religion.",
+  "note": ""
+ }
+]

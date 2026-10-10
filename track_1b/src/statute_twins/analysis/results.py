@@ -58,11 +58,9 @@ def accuracy(items: list[dict], rows: list[dict], by=("subset", "lang", "rung", 
         key = tuple((k, r.get(k, i.get(k))) for k in by)
         c = cells[key]
         d = decision(r)
-        if d not in ("convict", "acquit"):
-            c["unparsed"] += 1
-            c["n"] += 1
-            continue
+        # an unparsed answer counts in every denominator and is never correct
         c["n"] += 1
+        c["unparsed"] += d not in ("convict", "acquit")
         ok = d == i["gold_verdict"]
         c["correct"] += ok
         if i["gold_verdict"] == "convict":
@@ -94,6 +92,44 @@ def contested_lean(items: list[dict], rows: list[dict]) -> list[dict]:
         c[0] += d == "convict"
         c[1] += 1
     return [dict(lang=k[0], rung=k[1], framing=k[2], convicted=v[0], n=v[1]) for k, v in sorted(cells.items())]
+
+
+def _ntok(r: dict, side: str):
+    x = r.get("extra") or {}
+    if "tokens" in x:
+        return len(x["tokens"][side])
+    if "ntok" in x:
+        return x["ntok"][side]
+    return None
+
+
+def preference(items: list[dict], rows: list[dict]) -> list[dict]:
+    """Preference accuracy on the `pref` framing: does the model give its item's chosen answer a higher log-probability
+    than the rejected one? Reported for the summed log-probability (the forced choice) and per token (length-normalised,
+    since chosen answers are longer), by language and by the reason the statute gives (gold reason; `convict`)."""
+    it = {i["id"]: i for i in items}
+    cells = defaultdict(lambda: dict(n=0, sum_ok=0, tok_ok=0, tok_n=0))
+    for r in rows:
+        if r.get("framing") != "pref" or "error" in r or r.get("lp_convict") is None:
+            continue
+        i = it.get(r["item_id"])
+        if i is None or i["label"] != "settled":
+            continue
+        chosen = i["gold_verdict"]
+        other = "acquit" if chosen == "convict" else "convict"
+        lp = {"convict": r["lp_convict"], "acquit": r["lp_acquit"]}
+        for key in ((i["lang"], "all"), (i["lang"], i.get("gold_reason") or "convict")):
+            c = cells[key]
+            c["n"] += 1
+            c["sum_ok"] += lp[chosen] > lp[other]
+            n_c, n_o = _ntok(r, chosen), _ntok(r, other)
+            if n_c and n_o:
+                c["tok_n"] += 1
+                c["tok_ok"] += lp[chosen] / n_c > lp[other] / n_o
+    return [dict(lang=k[0], reason=k[1], n=c["n"], accuracy=c["sum_ok"] / c["n"], accuracy_ci=wilson(c["sum_ok"], c["n"]),
+                 per_token_n=c["tok_n"], per_token_accuracy=(c["tok_ok"] / c["tok_n"]) if c["tok_n"] else float("nan"),
+                 per_token_ci=wilson(c["tok_ok"], c["tok_n"]))
+            for k, c in sorted(cells.items())]
 
 
 # ------------------------------------------------------------------------------------------------------ edits
@@ -213,7 +249,8 @@ def run_results(items: list[dict], rows: list[dict], seed: int = 0) -> dict:
     e = edits(items, rows, pairs, seed=seed)
     return dict(
         rows=len(rows), errors=sum("error" in r for r in rows),
-        accuracy=accuracy(items, rows),
+        accuracy=accuracy(items, [r for r in rows if r.get("framing") != "pref"]),
+        preference=preference(items, rows),
         accuracy_by_family=accuracy(items, sub, by=("lang", "family", "variant", "rung", "framing")) if sub else [],
         contested=contested_lean(items, rows),
         edits=e, colours=colours(e),
