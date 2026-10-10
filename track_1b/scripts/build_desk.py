@@ -66,7 +66,7 @@ def judges():
         for p in sorted(d.glob(f"judge_{who}_*.json")):
             for x in json.loads(p.read_text()):
                 if x["id"] in ids:
-                    out[ids[x["id"]]][who] = dict(p=bool(x.get("pass")), v=x.get("verdict_expressed"), n=x.get("note", ""))
+                    out[ids[x["id"]]][who] = dict(p=bool(x.get("pass")), r=bool(x.get("reason_ok")), v=x.get("verdict_expressed"), n=x.get("note", ""))
     return out
 
 
@@ -252,6 +252,11 @@ details[open] summary::before{content:"− "}
 .kv dt{font:13px Mono,monospace;color:var(--ink2)}
 .kv dd{margin:0}
 .empty{color:var(--ink2);padding:24px 0}
+.finding{border-top:1px solid var(--hair);padding:12px 0;max-width:820px}
+.finding .fe{font-size:19px;margin:0 0 2px}
+.finding .fl{color:var(--ink2);margin:0 0 6px}
+.finding a{font:13px Mono,monospace}
+.finding b{color:var(--red);font-weight:500}
 .key{font:12px Mono,monospace;color:var(--ink3)}
 @media (max-width:820px){body{height:auto}main{grid-template-columns:minmax(0,1fr);flex:none}.verdict{grid-template-columns:1fr}.bar{padding:10px 16px}header{padding:10px 16px}#count,#list button{padding-left:16px;padding-right:16px}.bar input{width:100%}#side{border-right:0;border-bottom:1px solid var(--rule)}#list{max-height:42vh}#case{padding:16px}.text{font-size:18px}.twins a{grid-template-columns:1fr auto}.twins a .i{display:none}header nav{margin-left:0}}
 </style>
@@ -283,11 +288,21 @@ details[open] summary::before{content:"− "}
 <script>
 const LANGS = __LANGS__, COURT = __COURT__, REWORDED = __REWORDED__;
 const FAM = {SET:"setting (public / private)", CHAR:"characteristic", CHARX:"characteristic, unlisted", DATE_SO:"date, sexual orientation", DATE_CTRL:"date, other groups", CONTESTED:"contested setting", WORDING:"wording"};
-const RUNG = {R0:"no law", R3:"rules", R4:"+ 2020 sentence", R5:"law text", R6:"law text + check"};
+const RUNG = {R0:"asked normally, no law", R3:"rules spelled out", R4:"+ the 2020 sentence", R5:"law text pasted in", R6:"law text + check instruction"};
+const VAR = {base:"base case", true_flip:"one legal fact changed", placebo:"a detail changed, the law's answer did not", contested:"facts left open (contested)"};
+const SAYS = d => d === "convict" ? "punishable" : d === "acquit" ? "not punishable" : d;
+const SYN = [[/whats ?app|telegram|signal|messenger|sms|chat/i, "chat"], [/facebook|instagram|tiktok|twitter|social/i, "social"], [/youtube|video|vid[eé]o/i, "video"], [/e-?mail|courriel/i, "mail"], [/dinner|abendessen|repas|cena/i, "abendessen|repas|cena"]];
+const FINDINGS = [
+  {en:"A dinner with family or close friends is not public, so it is not punishable under Art. 261bis.", de:"Ein Abendessen im Familien- oder Freundeskreis ist nicht öffentlich.", fr:"Un repas en famille ou entre amis proches n'est pas public.", it:"Una cena in famiglia o tra amici stretti non è pubblica.", pick: i => i.r === "setting:failed", rungs: ["R0","R3"]},
+  {en:"A canton, an occupation, age, sex, gender identity, disability or a political opinion is not on the closed list.", de:"Kanton, Beruf, Alter, Geschlecht, Behinderung oder politische Überzeugung sind nicht geschützt.", fr:"Le canton, la profession, l'âge, le sexe, le handicap ou les opinions politiques ne sont pas protégés.", it:"Cantone, professione, età, sesso, disabilità o convinzioni politiche non sono protetti.", pick: i => i.r === "characteristic:not_listed", rungs: ["R0","R3"]},
+  {en:"Sexual orientation is protected only for acts from 1 July 2020.", de:"Die sexuelle Orientierung ist erst seit dem 1. Juli 2020 geschützt.", fr:"L'orientation sexuelle n'est protégée que depuis le 1er juillet 2020.", it:"L'orientamento sessuale è protetto solo dal 1° luglio 2020.", pick: i => i.r === "characteristic:not_yet_covered", rungs: ["R0","R3"]},
+  {en:"Acts before 1 January 1995 are not covered: the article did not exist yet.", de:"Vor dem 1. Januar 1995 gab es den Artikel noch nicht.", fr:"Avant le 1er janvier 1995, l'article n'existait pas.", it:"Prima del 1° gennaio 1995 l'articolo non esisteva.", pick: i => i.r === "act_date:not_in_force", rungs: ["R0","R3"]},
+  {en:"Pasting the law itself (the Fedlex text and the leading case) does not fix any of this.", de:"Den Gesetzestext einzufügen, hilft nicht.", fr:"Coller le texte de loi n'y change rien.", it:"Incollare il testo di legge non cambia nulla.", pick: i => i.g === "acquit", rungs: ["R5"]},
+];
 const LAW = {acquit:"not punishable", convict:"punishable", open:"depends on facts left open"};
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-let tab = "items", lang = LANGS[0][0], data = {}, view = [], cur = null;
+let tab = "items", lang = LANGS[0][0], data = {}, view = [], cur = null, pin = null;
 async function load(l) { if (!data[l]) data[l] = await (await fetch(`data/items_${l}.json`)).json(); return data[l]; }
 const said = (it, r) => { const m = (it.m70B || {})[r + "c"]; return m ? (m[0] === "c" ? "convict" : "acquit") : null; };
 const wrong = (it, r) => { const s = said(it, r); return s && it.g !== "open" && s !== it.g; };
@@ -305,27 +320,29 @@ async function refresh() {
   const fs = $("fam"), keep = fs.value, fams = [...new Set(items.map(i => i.f))];
   fs.innerHTML = '<option value="">all</option>' + fams.map(f => `<option value="${f}"${f === keep ? " selected" : ""}>${FAM[f] || f}</option>`).join("");
   const sh = $("show").value, q = $("q").value.trim().toLowerCase(), f = fs.value;
-  view = items.filter(i => (!f || i.f === f) && (!q || i.t.toLowerCase().includes(q) || i.id.toLowerCase().includes(q)) &&
+  const syn = q && SYN.find(([re]) => re.test(q)), rx = syn ? new RegExp(syn[1], "i") : null;
+  view = items.filter(i => (!pin || pin.pick(i)) && (!f || i.f === f) && (!q || i.t.toLowerCase().includes(q) || i.id.toLowerCase().includes(q) || i.d.toLowerCase().includes(q) || (rx && rx.test(i.t))) &&
     (!sh || (sh === "any" ? ["R0","R3","R4","R5"].some(r => wrong(i, r)) : sh === "acq" ? i.g === "acquit" : sh === "open" ? i.g === "open" : wrong(i, sh))));
-  $("n").textContent = `${view.length} of ${items.length}`;
-  $("list").innerHTML = view.map((i, k) => `<button data-k="${k}"><span class="d">${esc(i.d)}</span><span class="g">${LAW[i.g].split(" ")[0] === "not" ? "not punishable" : i.g === "open" ? "open" : "punishable"}</span><span class="id">${esc(i.id.replace("261bis-", ""))}</span><span>${strip(i)}</span></button>`).join("");
+  $("n").innerHTML = `${view.length} of ${items.length}` + (pin ? ` · <a href="#" id="unpin">${esc(pin.en.split(",")[0].split(":")[0])} ×</a>` : "");
+  if (pin) $("unpin").onclick = e => { e.preventDefault(); pin = null; cur = null; refresh(); };
+  $("list").innerHTML = view.map((i, k) => `<button data-k="${k}"><span class="d">${esc(i.d)}</span><span class="g">${i.g === "open" ? "open" : LAW[i.g]}</span><span class="id">${esc(i.id.replace("261bis-", ""))}</span><span>${strip(i)}</span></button>`).join("");
   $("list").querySelectorAll("button").forEach(b => b.onclick = () => show(view[+b.dataset.k]));
-  if (!cur || !view.find(i => i.id === cur.id)) show(view[0], false); else mark(true);
+  if (!cur || !view.find(i => i.id === cur.id)) { if (pin || $("show").value || $("fam").value || q) show(view[0], false); else home(); } else mark(true);
 }
-function mark(scroll) { $("list").querySelectorAll("button").forEach(b => { const on = view[+b.dataset.k].id === cur.id; b.setAttribute("aria-current", on); if (on && scroll) b.scrollIntoView({block: "nearest"}); }); }
+function mark(scroll) { $("list").querySelectorAll("button").forEach(b => { const on = !!cur && view[+b.dataset.k].id === cur.id; b.setAttribute("aria-current", on); if (on && scroll) b.scrollIntoView({block: "nearest"}); }); }
 const lab = l => [l === "convict" ? "c" : l === "acquit" ? "a" : l, null];
-function dec(x, gold) { if (!x) return "–"; const d = x[0] === "c" ? "convict" : x[0] === "a" ? "acquit" : x; const b = gold !== "open" && d !== gold; return `<span class="${b ? "bad" : ""}">${d}</span>${x[1] != null ? ` <span class="small">${x[1] > 0 ? "+" : ""}${x[1]}</span>` : ""}`; }
+function dec(x, gold) { if (!x) return "–"; const d = x[0] === "c" ? "convict" : x[0] === "a" ? "acquit" : x[0]; const b = gold !== "open" && d !== gold; return `<span class="${b ? "bad" : ""}">${SAYS(d)}</span>${x[1] != null ? ` <span class="small">${x[1] > 0 ? "+" : ""}${x[1]}</span>` : ""}`; }
 function show(it, scroll = true) {
   cur = it;
   if (!it) { $("case").innerHTML = '<p class="empty">Nothing matches. Clear a filter.</p>'; return; }
   mark(scroll); history.replaceState(null, "", "#" + it.id);
   const all = data[lang], base = all.find(i => i.id === it.b), sib = all.filter(i => i.tw === it.tw);
-  let h = `<p class="crumb">${esc(it.id)} · ${esc(FAM[it.f] || it.f)} · ${esc(it.v.replace("_", " "))}</p>`;
+  let h = `<p class="crumb"><a href="#" id="home">overview</a> · ${esc(it.id)} · ${esc(FAM[it.f] || it.f)} · ${esc(VAR[it.v] || it.v)}</p>`;
   h += `<p class="text">${base && base.id !== it.id ? diff(base.t, it.t) : esc(it.t)}</p>`;
   if (base && base.id !== it.id) h += `<p class="small">Underlined: what differs from its base case.</p>`;
-  h += `<dl class="verdict"><dt>the law</dt><dd><b>${esc(LAW[it.g])}</b>${it.r ? ` <span class="small mono">· ${esc(it.r)}</span>` : ""}</dd>`;
-  if (it.m70B) h += `<dt>Apertus 70B</dt><dd><span class="rungs">${["R0","R3","R4","R5","R6"].filter(r => it.m70B[r + "c"]).map(r => `<span class="${wrong(it, r) ? "bad" : ""}"><b>${r}</b>${RUNG[r]}: ${said(it, r) === "convict" ? "convicts" : "acquits"}</span>`).join("")}</span></dd>`;
-  h += `</dl><p class="small">R0 no law in the prompt · R3 the rules in plain sentences · R4 plus a sentence on the 2020 extension · R5 the verbatim Fedlex text and the leading case · R6 R5 plus an instruction to check the elements. Ja/Nein answers; pink = differs from the law.</p>`;
+  h += `<dl class="verdict"><dt>the law</dt><dd><b>${esc(LAW[it.g])}</b> under Art. 261bis${it.r ? ` <span class="small mono">· ${esc(it.r)}</span>` : ""}<br><span class="small">Other offences (e.g. insult, Art. 177) are not examined. The case is a summary: intent and the dignity threshold are taken as met.</span></dd>`;
+  if (it.m70B) h += `<dt>Apertus 70B</dt><dd><span class="rungs">${["R0","R3","R4","R5","R6"].filter(r => it.m70B[r + "c"]).map(r => `<span class="${wrong(it, r) ? "bad" : ""}"><b>${r}</b>${RUNG[r]}: ${SAYS(said(it, r))}</span>`).join("")}</span></dd>`;
+  h += `</dl><p class="small">R0 is a normal question with no law in it, the case that matters for the public. Higher rungs paste law into the prompt. Pink = differs from the law.</p>`;
   if (sib.length > 1) h += `<h2>Its twins: the same case with one fact changed</h2><div class="twins">` + sib.map(s => `<a href="#${esc(s.id)}" data-id="${esc(s.id)}" class="${s.id === it.id ? "me" : ""}"><span class="i">${esc(s.id.replace("261bis-", ""))}</span><span>${esc(s.d)}</span><span class="g">${esc(LAW[s.g])} ${strip(s)}</span></a>`).join("") + "</div>";
   h += `<h2>Why: the element-by-element derivation</h2><p class="mono small">${esc(it.ra)}</p>`;
   for (const name of ["70B", "8B"]) {
@@ -333,12 +350,27 @@ function show(it, scroll = true) {
     const rs = ["R0","R3","R4","R5","R6"].filter(r => m[r + "c"] || m[r + "v"]);
     h += `<h2>Apertus ${name}, forced choice</h2><table class="m"><tr><th></th><th>prompt</th><th>Ja / Nein</th><th>verdict word</th></tr>` + rs.map(r => `<tr><td>${r}</td><td>${RUNG[r]}</td><td>${dec(m[r + "c"], it.g)}</td><td>${dec(m[r + "v"], it.g)}</td></tr>`).join("") + `</table><p class="small">Numbers: log-odds of conviction (above zero = convicts).</p>`;
   }
-  if (it.ft) h += `<h2>Apertus 70B in its own words</h2>` + it.ft.map(x => { const J = Object.entries(x.j), bad = J.length && J.filter(([k, v]) => !v.p).length > J.length / 2; return `<div class="q ${bad ? "bad" : ""}"><div class="small mono">${x.rung} · ${RUNG[x.rung]}${J.length ? " · judges " + J.map(([k, v]) => `${k} ${v.p ? "pass" : "fail"}`).join(", ") : ""}</div>${esc(x.text)}</div>`; }).join("");
+  if (it.ft) h += `<h2>Apertus 70B in its own words</h2>` + it.ft.map(x => { const J = Object.entries(x.j), bad = J.length && J.filter(([k, v]) => !v.p).length > J.length / 2; const reasonBad = !bad && J.length && J.filter(([k, v]) => v.p && v.r === false).length > J.length / 2; return `<div class="q ${bad ? "bad" : ""}"><div class="small mono">${x.rung} · ${RUNG[x.rung]}${J.length ? " · judges: " + (bad ? "wrong verdict" : reasonBad ? "verdict right, reasoning flawed" : "acceptable") + " (" + J.map(([k, v]) => `${k} ${v.p ? "pass" : "fail"}`).join(", ") + ")" : ""}</div>${esc(x.text)}</div>`; }).join("");
   h += `<details><summary>Reference answers</summary><dl class="kv"><dt>chosen</dt><dd>${esc(it.ch)}</dd><dt>rejected</dt><dd>${esc(it.rj)}</dd>${it.rm ? `<dt>mirror</dt><dd>${esc(it.rm)}${it.pf != null ? ` <span class="small mono">· 70B prefers ${it.pf ? "the chosen answer" : "the mirror"}</span>` : ""}</dd>` : ""}<dt>criterion</dt><dd class="small">${esc(it.ac)}</dd></dl></details>`;
   if (it.an || it.lo || it.ad) h += `<details><summary>Review records (blind)</summary>${REWORDED[lang] ? `<p class="small">Annotated on the wording before amendment ${REWORDED[lang]}; no fact or gold changed since.</p>` : ""}<table class="m"><tr><th>pass</th><th>label</th><th>element</th><th>reason</th></tr>` + (it.an || []).map(a => `<tr><td>annotation ${a.round}</td><td>${dec(lab(a.label), it.g)}</td><td>${esc(a.el)}</td><td style="font-family:Sans">${esc(a.reason)}</td></tr>`).join("") + (it.lo ? `<tr><td>law only</td><td>${dec(lab(it.lo.label), it.g)}</td><td>${esc(it.lo.el)}</td><td style="font-family:Sans">${esc(it.lo.reason)}</td></tr>` : "") + (it.ad || []).map(a => `<tr><td>adjudicator ${a.who}</td><td>${esc(a.decision.replace("_", " "))}</td><td></td><td style="font-family:Sans">${esc(a.reason)}</td></tr>`).join("") + `</table></details>`;
   h += `<details><summary>Sources</summary><p class="small">${it.ci.map(esc).join("<br>")}</p></details>`;
   $("case").innerHTML = h; $("case").scrollTop = 0;
+  $("home").onclick = e => { e.preventDefault(); pin = null; refresh().then(home); };
   $("case").querySelectorAll("a[data-id]").forEach(a => a.onclick = e => { e.preventDefault(); const t = all.find(i => i.id === a.dataset.id); if (!view.includes(t)) { $("show").value = ""; $("fam").value = ""; $("q").value = ""; refresh().then(() => show(t)); } else show(t); });
+}
+function home() {
+  cur = null; mark(false); history.replaceState(null, "", location.pathname);
+  const items = data[lang], L = lang.split("_")[0];
+  let h = `<p class="intro">Every case here is a short scenario under Art. 261bis StGB (racial discrimination), with the verdict the law gives, computed from the official text and the leading case BGE 130 IV 111, and what Apertus, Switzerland's open model, answered. Each case has twins that change exactly one legal fact. Cases are summaries: intent and the dignity threshold are taken as met; other offences are not examined.</p><h2>What Apertus gets wrong, in plain words</h2>`;
+  for (const F of FINDINGS) {
+    const picked = items.filter(i => F.pick(i));
+    if (!picked.length) continue;
+    const parts = F.rungs.map(r => { const w = picked.filter(i => wrong(i, r)).length, n = picked.filter(i => said(i, r)).length; return n ? `${RUNG[r]}: wrong on <b>${w}</b> of ${n}` : ""; }).filter(Boolean).join(" · ");
+    h += `<div class="finding"><p class="fe">${esc(F.en)}</p>${F[L] && L !== "en" ? `<p class="fl">${esc(F[L])}</p>` : ""}<p class="small mono">Apertus 70B — ${parts}</p><a href="#" data-k="${FINDINGS.indexOf(F)}">show these ${picked.length} cases</a></div>`;
+  }
+  h += `<p class="small">Pick a case on the left, or a finding above. Arrow keys move through the list.</p>`;
+  $("case").innerHTML = h; $("case").scrollTop = 0;
+  $("case").querySelectorAll("a[data-k]").forEach(a => a.onclick = e => { e.preventDefault(); pin = FINDINGS[+a.dataset.k]; cur = null; $("show").value = ""; $("fam").value = ""; $("q").value = ""; refresh().then(() => show(view[0])); });
 }
 function court() {
   $("n").textContent = `${COURT.rows.length} decisions triaged`;
@@ -371,7 +403,7 @@ document.addEventListener("keydown", e => {
   if (l) { lang = l; $("langs").querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x.dataset.l === l)); }
   await refresh();
   const it = h && data[lang].find(i => i.id === h);
-  if (it) show(it); else $("case").insertAdjacentHTML("afterbegin", `<p class="intro">Each scenario is one case under Art. 261bis StGB. Its twins change exactly one legal fact; the law's verdict is computed from the pinned statute text and BGE 130 IV 111. Pick a scenario on the left, or show only those where Apertus is wrong. Arrow keys move through the list.</p>`);
+  if (it) show(it); else home();
 })();
 </script>
 </body>
