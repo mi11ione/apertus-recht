@@ -417,9 +417,14 @@ framing; open: it applies the law in force; dash: the base itself is not convict
 <td>not a German-only effect</td>
 </tr>
 <tr>
-<td>The same German scenarios told in the first person</td>
-<td>Of 215 lawful scenarios, 2 acquitted without the law; balanced accuracy 0.74 with the rules.</td>
+<td>The same scenarios told in the first person, all three languages</td>
+<td>Of 215 lawful scenarios, acquitted without the law: German 2, French 4, Italian 0. With the rules: 119, 136, 143 (charge sheet: 107, 120, 97).</td>
 <td>not an artefact of legal register</td>
+</tr>
+<tr>
+<td>The same scenarios rewritten as natural text, facts verified blind by two model families</td>
+<td>Of 117 lawful scenarios (three languages, Ja/Nein): 3 acquitted without the law, 47 with the rules; the templated originals: 2 and 44.</td>
+<td>not an artefact of templated wording</td>
 </tr>
 <tr>
 <td>A second statute, Art. 179ter (120 German scenarios)</td>
@@ -427,7 +432,7 @@ framing; open: it applies the law in force; dash: the base itself is not convict
 <td>not specific to one article</td>
 </tr>
 </tbody>
-</table><figcaption>Table 3. Controls (A13–A15; per-element detail in <code>reports/controls_a13.json</code>). Art. 179ter: even with its rules
+</table><figcaption>Table 3. Controls (A13–A16; per-element detail in <code>reports/controls_a13.json</code>). Art. 179ter: even with its rules
 stated, a public debate and an outsider (whose act falls under Art. 179bis) are still convicted.</figcaption></figure>
 <p><strong>Recognising the law is not applying it.</strong> Shown an item's correct answer and its mirror, the 70B picks the correct
 one (German 0.98; Table 4), most cleanly in the closed-list and date columns, although its own verdicts

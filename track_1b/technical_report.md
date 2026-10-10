@@ -221,10 +221,11 @@ framing; open: it applies the law in force; dash: the base itself is not convict
 | What in the verbatim law hurts (75 lawful German scenarios, a stable sample of 80 twin groups) | Acquitted with the rules alone: ⟨r3_same⟩ of 75; with the rules after the verbatim law: ⟨r5a_same⟩; with the rules after unrelated legal text of the same length: ⟨r5e_same⟩. | not prompt length: the law's own text |
 | Verbatim law plus an instruction to check each element (R6) | Of 215 lawful German scenarios, ⟨r6_acq⟩ are acquitted. | not a missing instruction |
 | Free text in French and Italian | Of 75 lawful scenarios, misleading answers: French ⟨ft_fr_r0⟩ without the law, ⟨ft_fr_r5⟩ with it; Italian ⟨ft_it_r0⟩ and ⟨ft_it_r5⟩. | not a German-only effect |
-| The same German scenarios told in the first person | Of 215 lawful scenarios, ⟨lay_acq⟩ acquitted without the law; balanced accuracy ⟨lay_r3_bal⟩ with the rules. | not an artefact of legal register |
+| The same scenarios told in the first person, all three languages | Of 215 lawful scenarios, acquitted without the law: German ⟨lay_acq⟩, French ⟨layfr_r0⟩, Italian ⟨layit_r0⟩. With the rules: ⟨lay_r3⟩, ⟨layfr_r3⟩, ⟨layit_r3⟩ (charge sheet: 107, 120, 97). | not an artefact of legal register |
+| The same scenarios rewritten as natural text, facts verified blind by two model families | Of ⟨para_acq_n⟩ lawful scenarios (three languages, Ja/Nein): ⟨para_r0⟩ acquitted without the law, ⟨para_r3⟩ with the rules; the templated originals: ⟨orig_r0⟩ and ⟨orig_r3⟩. | not an artefact of templated wording |
 | A second statute, Art. 179ter (120 German scenarios) | Without the law: "Nein" to all ⟨r179_r0_nein⟩ when asked Ja/Nein, "schuldig" to ⟨r179_r0_ver⟩ when asked for the verdict. With its elements and the complaint rule: balanced accuracy ⟨r179_r2⟩. | not specific to one article |
 
-*Table 3. Controls (A13–A15; per-element detail in `reports/controls_a13.json`). Art. 179ter: even with its rules
+*Table 3. Controls (A13–A16; per-element detail in `reports/controls_a13.json`). Art. 179ter: even with its rules
 stated, a public debate and an outsider (whose act falls under Art. 179bis) are still convicted.*
 
 **Recognising the law is not applying it.** Shown an item's correct answer and its mirror, the 70B picks the correct

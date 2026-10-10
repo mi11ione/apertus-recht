@@ -327,6 +327,13 @@ def cmd_selfcheck(a) -> int:
                                capture_output=True, text=True)
             print("  " + (r.stdout.strip().splitlines() or ["?"])[-1])
             ok &= r.returncode == 0
+    if Path("dataset/paraphrase/eval").exists() and Path("scripts/paraphrase.py").exists():
+        import subprocess
+        print("== step 2g: natural paraphrases: blind verification and scores re-derived from the stored files (A16)")
+        for step in ("check", "report"):
+            r = subprocess.run([sys.executable, "scripts/paraphrase.py", step, "--check"], capture_output=True, text=True)
+            print("  " + ((r.stdout.strip().splitlines() or [r.stderr.strip()[-200:]])[-1]))
+            ok &= r.returncode == 0
     if Path("reports/qc.json").exists():
         # the published QC report must be what the gates give on the released dataset now (counts drift otherwise)
         from . import statute as _statute

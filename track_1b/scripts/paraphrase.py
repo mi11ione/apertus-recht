@@ -81,6 +81,19 @@ def plain(iid):
     return parts[0] + "-" + parts[2]
 
 
+CHECK = "--check" in sys.argv
+DIFFS = []
+
+
+def _emit(path: Path, text: str):
+    """Write a file, or with --check compare it with the released one (selfcheck re-derives the split)."""
+    if CHECK:
+        if not path.exists() or path.read_text(encoding="utf-8") != text:
+            DIFFS.append(str(path.relative_to(ROOT)))
+        return
+    path.write_text(text, encoding="utf-8")
+
+
 def sample():
     de = [i for i in items("de") if i["label"] == "settled"]
     groups = collections.defaultdict(set)
@@ -213,7 +226,8 @@ def check():
         keep_all[lang] = kept
         rep["by_lang"][lang] = dict(written=len(ids), kept=len(kept), dropped=dropped,
                                     kept_by_gold=dict(collections.Counter(its[i]["gold_verdict"] for _, i in kept)))
-        print(lang, f"kept {len(kept)} of {len(ids)}")
+        if not CHECK:
+            print(lang, f"kept {len(kept)} of {len(ids)}")
     # the kept paraphrases become items of their own (id <item>-P), with the original's gold, facts and provenance
     from statute_twins.generator import build, design
     dz = design.load(ROOT / "statutes/stgb_261bis")
@@ -228,14 +242,10 @@ def check():
             i.update(id=iid + "-P", text=written[pid]["text"], subset="paraphrase", paraphrase_of=iid,
                      genre=written[pid]["genre"], paraphrase_id=pid)
             rows.append(i)
-        with open(OUT / "eval" / f"paraphrase_{lang}.jsonl", "w", encoding="utf-8") as f:
-            for r in rows:
-                f.write(json.dumps(r, ensure_ascii=False) + "\n")
+        _emit(OUT / "eval" / f"paraphrase_{lang}.jsonl", "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows))
         prompts = build.build_prompts(dz, rows, rungs=["R0", "R3", "R5"], framings=["conv", "ver"])
-        with open(OUT / "eval" / f"prompts_paraphrase_{lang}.jsonl", "w", encoding="utf-8") as f:
-            for r in prompts:
-                f.write(json.dumps(r, ensure_ascii=False) + "\n")
-    (ROOT / "reports/paraphrase_verification.json").write_text(json.dumps(rep, indent=1, ensure_ascii=False) + "\n")
+        _emit(OUT / "eval" / f"prompts_paraphrase_{lang}.jsonl", "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in prompts))
+    _emit(ROOT / "reports/paraphrase_verification.json", json.dumps(rep, indent=1, ensure_ascii=False) + "\n")
 
 
 def report():
@@ -269,8 +279,8 @@ def report():
                         c[f"{which}_{g}_ok"] += d == g
                 if c:
                     out["cells"].append(dict(lang=lang, rung=rung, framing=fr, **dict(sorted(c.items()))))
-    (ROOT / "reports/paraphrase.json").write_text(json.dumps(out, indent=1) + "\n")
-    for c in out["cells"]:
+    _emit(ROOT / "reports/paraphrase.json", json.dumps(out, indent=1) + "\n")
+    for c in ([] if CHECK else out["cells"]):
         print(c["lang"], c["rung"], c["framing"], "acquit para", c.get("para_acquit_ok"), "/", c.get("para_acquit_n"),
               "orig", c.get("orig_acquit_ok"), "/", c.get("orig_acquit_n"), "| convict para", c.get("para_convict_ok"),
               "/", c.get("para_convict_n"))
@@ -280,3 +290,6 @@ if __name__ == "__main__":
     cmd = sys.argv[1]
     {"sample": sample, "extract-packets": extract_packets, "check": check, "report": report}.get(
         cmd, lambda: extract(sys.argv[2]))()
+    if CHECK:
+        print("paraphrase split: " + ("re-derived identically" if not DIFFS else "DIFFERS: " + ", ".join(DIFFS)))
+        sys.exit(1 if DIFFS else 0)

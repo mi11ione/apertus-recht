@@ -44,6 +44,17 @@ def main():
     m2 = ROOT / "dataset/stgb_179ter/MANIFEST.json"
     if m2.exists():
         allow += sorted(f"stgb_179ter/{f}" for f in json.loads(m2.read_text())["files"]) + ["stgb_179ter/MANIFEST.json"]
+    # the natural-paraphrase split (A16): verified items, prompts and responses; scanned for personal data first
+    para = ROOT / "dataset/paraphrase"
+    if para.exists():
+        sys.path.insert(0, str(ROOT / "src"))
+        from statute_twins.qc.checks import check_pii
+        rows = [json.loads(l) for f in sorted(para.glob("eval/paraphrase_*.jsonl")) for l in f.read_text().splitlines()]
+        resp = [json.loads(l) for f in sorted(para.glob("responses/*.jsonl")) for l in f.read_text().splitlines()]
+        name, ok, info = check_pii(rows, resp)
+        if not ok:
+            sys.exit(f"paraphrase split: personal data found: {info['hits'][:5]}")
+        allow += sorted(str(f.relative_to(ROOT / "dataset")) for f in para.rglob("*") if f.is_file())
     api = HfApi()
     api.create_repo(a.repo, repo_type="dataset", private=a.private, exist_ok=True)
     api.upload_folder(repo_id=a.repo, repo_type="dataset", folder_path=str(ROOT / "dataset"),

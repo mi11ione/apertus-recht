@@ -45,6 +45,11 @@ configs:
       - {split: it_user_voice, path: eval/prompts_pref_core_it_lay.jsonl}
   - config_name: metadata
     data_files: [{split: items, path: metadata/items.jsonl}]
+  - config_name: natural_paraphrases
+    data_files:
+      - {split: de, path: paraphrase/eval/paraphrase_de.jsonl}
+      - {split: fr, path: paraphrase/eval/paraphrase_fr.jsonl}
+      - {split: it, path: paraphrase/eval/paraphrase_it.jsonl}
   - config_name: stgb_179ter
     data_files: [{split: de, path: stgb_179ter/eval/core_de.jsonl}]
   - config_name: stgb_179ter_prompts
@@ -126,6 +131,15 @@ behavioural-alignment measurements: **preference accuracy** (forced choice betwe
 answer) and **free generation** judged against the item's acceptance criterion (`scripts/judge_open.py` in the
 repository: two blind Claude judges, a judge of another model family (Qwen), a deterministic parser, every judgement
 hash-bound to the answer it judged, and a seeded 20% sample laid out for a human check, not yet filled).
+### Natural paraphrases (A16)
+To test whether the findings depend on the templated wording, a stable sample of 40 twin groups (the same in DE, FR and
+IT; 120 items per language) was rewritten in everyday genres (news brief, witness account, police journal entry,
+forum post, social worker's note, letter to the editor) with the legal facts locked. Every paraphrase was read blind by
+a Claude agent and by Qwen-SEA-LION-v4-32B; it is kept only if the gold computed from each reader's extraction equals
+the item's gold (verdict and deciding element) and the date, act, severity and intent match: 334
+of 360 kept (`paraphrase/eval/paraphrase_<lang>.jsonl`, each with `paraphrase_of`, `genre` and the original's gold;
+prompts and the 70B's responses alongside; verification in the repository, `reports/paraphrase_verification.json`).
+The 70B behaves on them as on the templated originals (`reports/paraphrase.json`). Exploratory, not pre-registered.
 ### Out-of-Scope Use
 Not legal advice and not a model of every element of the offence: intent is fixed, the Abs. 4 dignity threshold is
 written to be met, Abs. 3 and 5 are not covered, so the items measure how a model applies the elements, not whether

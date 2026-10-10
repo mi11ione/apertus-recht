@@ -246,3 +246,18 @@ element on 281 of 286 agreed acquittals. All 29 disagreements convict a case the
 orientation before 1 July 2020, 5 acts before 1995, 3 canton, 2 gender identity), the errors Apertus makes; none
 points to a gold error. Raw labels in `review/annotation/raw_model/qwen.json`, agreement in
 `reports/annotation_model_qwen.json`.
+
+## A16 (2026-10-11, after judge round 8): natural text and the user voice in every language (exploratory)
+(1) **First-person retellings in French and Italian** (`fr_lay`, `it_lay`; templates, prompts and answers mirror
+`de_lay`, localised from fr.yaml / it.yaml, acts described in everyday words): same slots, facts and gold as the core
+items. The 70B (Ja/Nein) recognises 4 and 0 of 215 acquittals without the law and 136 and 143 with the rules
+spelled out (charge sheet: 120 and 97); German first person 2 and 119. No core item or prompt changed.
+(2) **Natural paraphrases** (`scripts/paraphrase.py`, `dataset/paraphrase/`): a stable sample of 40 twin groups (the
+same in all three languages; settled items; families SET 10, CHAR 10, CHARX 3, DATE_SO 9, DATE_CTRL 8), 120 items per
+language, rewritten by Claude writer agents in six everyday genres with the legal facts locked; each paraphrase read
+blind by a Claude agent and by Qwen-SEA-LION-v4-32B, and kept only if the gold computed from what each reader
+extracted equals the item's gold (verdict and deciding element) and the date, act kind, severity and intent match:
+334 of 360 kept (every drop is the Qwen reader classing the act as degradation rather than incitement or ideology).
+The 70B on the kept paraphrases (R0, R3, R5, both framings) behaves as on their templated originals: Ja/Nein, of 117
+lawful scenarios, 3 acquitted without the law (templated 2) and 47 with the rules (templated 44).
+`selfcheck` step 2g re-derives the verification and the scores. Not pre-registered.

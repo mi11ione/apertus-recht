@@ -39,6 +39,11 @@ R4: plus a sentence on the 1 July 2020 extension; R5: the verbatim Fedlex text a
   "acquits" half the punishable cases too, so part of that gain is answer-format, not law. Pasting the verbatim law
   after the plain rules cancels most of their effect; no single sentence of it is to blame, and it is not the length:
   legal text of the same length that does not apply leaves the rules' effect intact (36 against 37 of 75; A13, A15).
+- **Not the template, not the register.** Rewritten as natural text (a news brief, a witness account, a forum post),
+  with every legal fact verified blind by two model families, the scenarios give the same picture: 3 of 117 lawful
+  ones acquitted without the law, 47 with the rules, against 2 and 44 for the templated originals. Told in a person's
+  own words, in German, French and Italian, it is the same again without the law (0 to 4 of 215), and the rules
+  then work somewhat better than on the charge sheet.
 - **Not only this article.** A second statute in the same five-file format, Art. 179ter StGB (recording a non-public
   conversation, with a complaint deadline), fails in another shape: without the law the 70B answers "Nein" to all 120
   cases when asked Ja/Nein and "schuldig" to 117 when asked for a verdict, so it reads no element at all; with the
