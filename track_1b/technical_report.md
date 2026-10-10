@@ -5,7 +5,7 @@ German, French and Italian minimal-twin scenarios under Art. 261bis StGB. Intent
 stipulated, so the set tests how a model applies the elements, not whether it predicts a conviction. Each verdict is
 computed by code from pinned Fedlex texts and BGE 130 IV 111, and agrees with all 58 Swiss court rulings we could code
 on the modelled elements (53 distinct cases, mostly convictions). A harness re-derives every label and number from a
-clean checkout. Asked without the law, Apertus v1.5 70B convicts every scenario we wrote (balanced accuracy 0.50). In
+clean checkout. Asked without the law, Apertus v1.5 70B convicts every German scenario we wrote (balanced accuracy 0.50). In
 free text it calls ⟨open_r0_mislead⟩ of 75 non-punishable scenarios punishable, each time under Art. 261bis. With the
 verbatim Fedlex text and the Regeste of the leading case pasted in, it still convicts everything in German; only
 rules spelled out in plain sentences make it apply the publicity rule. It still convicts for a canton, a disability
@@ -153,7 +153,7 @@ German answers; the 162-item battery for training stages. Every row records the 
 
 ## Results
 
-**Without the law, the 70B convicts everything** (R0: recall of convictions 1.00, of acquittals 0.00, in every
+**Without the law, the 70B convicts everything** (R0: recall of convictions 1.00, of acquittals at most 0.01, in every
 language and framing). It is not blind to the facts: its conviction scores still rank punishable above non-punishable
 cases (AUC ⟨auc_r0⟩), but the threshold sits so far on the convicting side that no case falls below it. Free text agrees with the forced choice. The judges failed ⟨open_r0_mislead⟩ of 75 R0 answers to
 acquittal items as misleading, every one of them naming Art. 261bis as the basis, and every one of the 14
@@ -184,7 +184,7 @@ For the German 70B:
 - **Acts from 1993/94**, before the article entered into force (1 Jan 1995), are convicted at every rung. No rung states the 1995 date, and
   Fedlex's own footnote omits it, so this is a gap in what the model knows.
 - **R5** pastes the law itself, as a retrieval pipeline would: the Fedlex text of Art. 261bis and Art. 2 StGB with
-  Fedlex's footnote, and the Regeste of BGE 130 IV 111. The 70B convicts everything again, exactly as with no law at
+  Fedlex's footnote, and the Regeste of BGE 130 IV 111. The German 70B convicts everything again, exactly as with no law at
   all (acquittals recognised: ⟨r5_acq_conv⟩ of 215 with Ja/Nein, ⟨r5_acq_ver⟩ with the verdict word). The verbatim text enumerates the four characteristics and the
   Regeste states the publicity rule, yet they help less than our one-sentence paraphrases. The scores move, the
   decisions do not: the private setting lowers the conviction score by 6.6 nats from 14.7. R5 also lacks R3's

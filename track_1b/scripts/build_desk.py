@@ -34,6 +34,15 @@ def jl(p):
     return [json.loads(l) for l in p.read_text(encoding="utf-8").splitlines() if l.strip()] if p.exists() else []
 
 
+OPEN_RUNS = {"de": "publicai-70b-open", "fr": "publicai-70b-open-fr", "it": "publicai-70b-open-it"}
+
+
+def exact_prompts(lang):
+    """The exact user message of the R0 Ja/Nein prompt per item (what the model was sent, word for word)."""
+    p = ROOT / "dataset/eval" / f"prompts_core_{lang}.jsonl"
+    return {r["item_id"]: r["user"] for r in jl(p) if r["rung"] == "R0" and r["framing"] == "conv"} if p.exists() else {}
+
+
 def responses(run):
     return jl(ROOT / "dataset/responses" / f"{run}.jsonl")
 
@@ -116,21 +125,23 @@ def build_lang(lang, items, ann, lawonly, adj, jd):
                 m[r["item_id"]][f"{r['rung']}{r['framing'][0]}"] = [(decision(r) or "?")[0], round(r["lo_conv"], 1) if r.get("lo_conv") is not None else None]
             models[name] = m
     ft = collections.defaultdict(list)
-    if lang == "de":
-        for r in responses("publicai-70b-open"):
+    orun = OPEN_RUNS.get(lang)
+    if orun and (ROOT / "dataset/responses" / f"{orun}.jsonl").exists():
+        for r in responses(orun):
             ft[r["item_id"]].append(dict(rung=r["rung"], text=(r.get("text") or "").strip(), j=jd.get(r["prompt_id"], {})))
     pref = {}
     if lang in PREF:
         for r in responses(PREF[lang]):
             if "error" not in r and r.get("lp_convict") is not None:
                 pref[r["item_id"]] = r["lp_convict"] > r["lp_acquit"]
+    p0 = exact_prompts(lang)
     out = []
     for i in sorted(mine, key=lambda x: x["id"]):
         rec = dict(id=i["id"], f=i["family"], v=i["variant"], g=i["gold_verdict"], r=i.get("gold_reason"), t=i["text"],
                    d=describe(i), b=i.get("base_id"),
                    tw=i["twin_group"], ra=i["rationale"], ci=i.get("citation", []), ac=i["acceptance_criterion"],
                    ch=i["chosen"], rj=i["rejected"], rm=i.get("rejected_minimal"), lab=i["label"], tr=i.get("trap"),
-                   sp=i.get("split"))
+                   sp=i.get("split"), p0=p0.get(i["id"]))
         for name, m in models.items():
             if i["id"] in m:
                 rec["m" + name] = m[i["id"]]
@@ -299,6 +310,8 @@ const LANGS = __LANGS__, COURT = __COURT__, REWORDED = __REWORDED__;
 const FAM = {SET:"setting (public / private)", CHAR:"characteristic", CHARX:"characteristic, unlisted", DATE_SO:"date, sexual orientation", DATE_CTRL:"date, other groups", CONTESTED:"contested setting", WORDING:"wording"};
 const RUNG = {R0:"asked normally, no law", R3:"rules spelled out", R4:"+ the 2020 sentence", R5:"law text pasted in", R6:"law text + check instruction"};
 const VAR = {base:"base case", true_flip:"one legal fact changed", placebo:"a detail changed, the law's answer did not", contested:"facts left open (contested)"};
+const YN = {de: "Ja / Nein", de_lay: "Ja / Nein", fr: "Oui / Non", it: "Sì / No"};
+const VW = {de: "schuldig / nicht schuldig", de_lay: "schuldig / nicht schuldig", fr: "condamnation / acquittement", it: "condanna / proscioglimento"};
 const SAYS = d => d === "convict" ? "punishable" : d === "acquit" ? "not punishable" : d;
 const SYN = [[/whats ?app|telegram|signal|messenger|sms|chat/i, "chat"], [/facebook|instagram|tiktok|twitter|social/i, "social"], [/youtube|video|vid[eé]o/i, "video"], [/e-?mail|courriel/i, "mail"], [/dinner|abendessen|repas|cena/i, "abendessen|repas|cena"]];
 const FINDINGS = [
@@ -357,8 +370,10 @@ function show(it, scroll = true) {
   for (const name of ["70B", "8B"]) {
     const m = it["m" + name]; if (!m) continue;
     const rs = ["R0","R3","R4","R5","R6"].filter(r => m[r + "c"] || m[r + "v"]);
-    h += `<h2>Apertus ${name}, forced choice</h2><table class="m"><tr><th></th><th>prompt</th><th>Ja / Nein</th><th>verdict word</th></tr>` + rs.map(r => `<tr><td>${r}</td><td>${RUNG[r]}</td><td>${dec(m[r + "c"], it.g)}</td><td>${dec(m[r + "v"], it.g)}</td></tr>`).join("") + `</table><p class="small">Numbers: log-odds of conviction (above zero = convicts).</p>`;
+    h += `<h2>Apertus ${name}, forced choice</h2><table class="m"><tr><th></th><th>prompt</th><th>${YN[lang] || "Ja / Nein"}</th><th>${VW[lang] || "verdict word"}</th></tr>` + rs.map(r => `<tr><td>${r}</td><td>${RUNG[r]}</td><td>${dec(m[r + "c"], it.g)}</td><td>${dec(m[r + "v"], it.g)}</td></tr>`).join("") + `</table><p class="small">Numbers: log-odds of conviction (above zero = convicts).</p>`;
   }
+  if (it.p0) h += `<details><summary>Exact prompt sent (R0, ${YN[lang] || "Ja / Nein"})</summary><p class="q">${esc(it.p0)}</p></details>`;
+  if (!it.ft && lang !== "de" && lang !== "de_lay") h += `<p class="small">Free-text answers were collected in German only.</p>`;
   if (it.ft) h += `<h2>Apertus 70B in its own words</h2>` + it.ft.map(x => { const J = Object.entries(x.j), bad = J.length && J.filter(([k, v]) => !v.p).length > J.length / 2; const reasonBad = !bad && J.length && J.filter(([k, v]) => v.p && v.r === false).length > J.length / 2; return `<div class="q ${bad ? "bad" : ""}"><div class="small mono">${x.rung} · ${RUNG[x.rung]}${J.length ? " · judges: " + (bad ? "wrong verdict" : reasonBad ? "verdict right, reasoning flawed" : "acceptable") + " (" + J.map(([k, v]) => `${k} ${v.p ? "pass" : "fail"}`).join(", ") + ")" : ""}</div>${esc(x.text)}</div>`; }).join("");
   h += `<details><summary>Reference answers</summary><dl class="kv"><dt>chosen</dt><dd>${esc(it.ch)}</dd><dt>rejected</dt><dd>${esc(it.rj)}</dd>${it.rm ? `<dt>mirror</dt><dd>${esc(it.rm)}${it.pf != null ? ` <span class="small mono">· 70B prefers ${it.pf ? "the chosen answer" : "the mirror"}</span>` : ""}</dd>` : ""}<dt>criterion</dt><dd class="small">${esc(it.ac)}</dd></dl></details>`;
   if (it.an || it.lo || it.ad) h += `<details><summary>Review records (blind)</summary>${REWORDED[lang] ? `<p class="small">Annotated on the wording before amendment ${REWORDED[lang]}; no fact or gold changed since.</p>` : ""}<table class="m"><tr><th>pass</th><th>label</th><th>element</th><th>reason</th></tr>` + (it.an || []).map(a => `<tr><td>annotation ${a.round}</td><td>${dec(lab(a.label), it.g)}</td><td>${esc(a.el)}</td><td style="font-family:Sans">${esc(a.reason)}</td></tr>`).join("") + (it.lo ? `<tr><td>law only</td><td>${dec(lab(it.lo.label), it.g)}</td><td>${esc(it.lo.el)}</td><td style="font-family:Sans">${esc(it.lo.reason)}</td></tr>` : "") + (it.ad || []).map(a => `<tr><td>adjudicator ${a.who}</td><td>${esc(a.decision.replace("_", " "))}</td><td></td><td style="font-family:Sans">${esc(a.reason)}</td></tr>`).join("") + `</table></details>`;
@@ -370,7 +385,7 @@ function show(it, scroll = true) {
 function home() {
   cur = null; mark(false); history.replaceState(null, "", location.pathname);
   const items = data[lang], L = lang.split("_")[0];
-  let h = `<p class="intro">Every case here is a short scenario under Art. 261bis StGB (racial discrimination), with the verdict the law gives, computed from the official text and the leading case BGE 130 IV 111, and what Apertus, Switzerland's open model, answered. Each case has twins that change exactly one legal fact. Cases are summaries: intent and the dignity threshold are taken as met; other offences are not examined. This is a research dataset, not legal advice: for your own situation, ask a lawyer or a counselling service.</p><h2>What Apertus gets wrong, in plain words</h2>`;
+  let h = `<p class="intro">Every case here is a short scenario under Art. 261bis StGB / CP (racial discrimination), with the verdict the law gives, computed from the official text and the leading case BGE 130 IV 111, and what Apertus, Switzerland's open model, answered. Each case has twins that change exactly one legal fact. Cases are summaries: intent and the dignity threshold are taken as met; other offences are not examined. This is a research dataset, not legal advice: for your own situation, ask a lawyer or a counselling service. <span class="small">Apertus 70B: scored through Public AI, whose endpoint name <span class="mono">apertus-v1.5-8b</span> serves the 70B (same output as the <span class="mono">-70b</span> name on 760 of 792 prompts, a 16-GPU deployment; the free text ran under the <span class="mono">-70b</span> name). A forced-choice answer compares how likely the model finds each answer word; it is not text the model wrote. Art. 261bis StGB = art. 261bis CP.</span></p><h2>What Apertus gets wrong, in plain words</h2>`;
   for (const F of FINDINGS) {
     const picked = items.filter(i => F.pick(i));
     if (!picked.length) continue;

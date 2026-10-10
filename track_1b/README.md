@@ -16,8 +16,8 @@ Fedlex text and the leading case's Regeste instead. Light red: in one framing; g
 
 ## What we found
 
-- **No law in the prompt: everything is punishable.** The 70B convicts every scenario we wrote, in German, French and
-  Italian (balanced accuracy 0.50). Asked in free text, it calls 73 of 75 scenarios punishable
+- **No law in the prompt: everything is punishable.** The 70B convicts every scenario we wrote in German, and all but
+  2 (French) and 1 (Italian) of 215 non-punishable ones (balanced accuracy 0.50). Asked in free text, it calls 73 of 75 scenarios punishable
   that are not punishable under Art. 261bis, each time naming that article. Two Claude judges agree on nearly every
   answer; a judge of another model family, on its own, counts 72 of 75. Retold as a first-person paraphrase instead of a
   charge sheet, the same scenarios fare no better: 2 of 215 acquittals without the law, and the same element profile with the rules

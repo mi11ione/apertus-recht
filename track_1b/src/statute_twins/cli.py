@@ -109,6 +109,12 @@ def cmd_eval(a) -> int:
     from .harness import run
     ds = Path(a.dataset)
     rows = _prompt_rows(ds, a.parts.split(","), a.rungs.split(","), a.framings.split(","), a.sample)
+    if a.same_groups_as:
+        # the twin groups of an earlier (sampled) run, in this language: the same scenarios across languages
+        import re
+        plain = lambda iid: re.sub(r"^(\w+)-[a-z_]+-", r"\1-", iid.rsplit("-", 1)[0])
+        ref = {plain(r["item_id"]) for r in _load_jsonl(ds / "responses" / f"{a.same_groups_as}.jsonl")}
+        rows = [r for r in rows if plain(r["item_id"]) in ref]
     if a.shard:
         import hashlib
         k, n = (int(x) for x in a.shard.split("/"))
@@ -515,6 +521,7 @@ def main(argv=None) -> int:
     p.add_argument("--rungs", default="R0,R3", help="comma-separated rungs R0..R4")
     p.add_argument("--framings", default="conv,ver", help="conv (Ja/Nein) and/or ver (verdict word)")
     p.add_argument("--sample", type=int, default=None, help="about N items, sampled as whole twin groups (stable)")
+    p.add_argument("--same-groups-as", default=None, help="keep only the twin groups of this released run (any language)")
     p.add_argument("--limit", type=int, default=None)
     p.add_argument("--shard", default=None, help="k/n: score only items whose sha256(id) mod n == k")
     p.add_argument("--model", default=os.environ.get("LLM_NAME")); p.add_argument("--base-url", default=os.environ.get("LLM_BASE_URL"))

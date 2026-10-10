@@ -7,49 +7,51 @@ Spoken text of `apertus-recht-demo.mp4`, one line per sentence (one audio file e
 - Someone tells an assistant what they said at a family dinner.
 - Apertus 70B, Switzerland's open model, answers: yes.
   - `q_answer` = Ja — dataset/responses/publicai-70b-fc-lay.jsonl, prompt_id 261bis-de_lay-SET002-1/R0/conv, field decision (= 'convict', the prompt's convict token 'Ja')
-- It is one of 2,802 scenarios we built.
+- Under Swiss law, that answer is wrong. It is one of 2,802 cases we built to find out why.
   - `n_total` = 2802 — line counts of dataset/eval/core_de, core_de_lay, core_fr, core_it and battery162 (660 + 660 + 660 + 660 + 162)
 
 ## 2. The law sorts them
 
-- For each one, the verdict is computed from the law in force.
+- For each one, code computes the verdict from the law in force.
 - In German, the law convicts in 430 and acquits in 215.
   - `n_conv / n_acq` = 430 / 215 — gold_verdict of the settled items in dataset/eval/core_de.jsonl
 
 ## 3. A twin
 
-- Each case has a twin that differs in one legal fact.
-- At a family dinner the law acquits; at a public meeting it convicts.
+- Every case has a twin, one legal fact apart.
+- At a family dinner, the law acquits. At a public meeting, it convicts.
 
 ## 4. The experiment
 
-- Of the 215 cases the law acquits, how many does Apertus acquit?
+- So: of the 215 cases the law acquits, how many does Apertus acquit?
   - `n_acq` = 215 — gold_verdict of the settled items in dataset/eval/core_de.jsonl
 - With no law in the prompt: none.
   - `n0` = 0 — dataset/responses/publicai-70b-fc-core.jsonl, rung R0, framing conv: items with decision acquit among the gold-acquit items of dataset/eval/core_de.jsonl
-- With the rules in plain sentences: 107.
+- Ask it the other way round, would a court acquit, and it still convicts every one.
+  - `rev_r0` = 0 — reports/controls_a13.json, German R0, framing rev ("Würde ein Schweizer Gericht die Person freisprechen?"): 0 of 215 acquittal items acquitted
+- Spell the rules out in plain sentences: 107.
   - `n3` = 107 — dataset/responses/publicai-70b-fc-core.jsonl, rung R3, framing conv: items with decision acquit among the gold-acquit items of dataset/eval/core_de.jsonl
-- The rest it still convicts: a canton, a disability, a political opinion, an act before the law existed.
+- The rest it still convicts: a canton, a disability, a political opinion, an act from before 1995.
   - `cl_canton` = 13 of 16 — rung R3, framing conv, gold-acquit items whose deciding element is “canton”: convicted / all
   - `cl_disability` = 8 of 9 — rung R3, framing conv, gold-acquit items whose deciding element is “disability”: convicted / all
   - `cl_political_opinion` = 8 of 8 — rung R3, framing conv, gold-acquit items whose deciding element is “political opinion”: convicted / all
   - `cl_before` = 25 of 25 — rung R3, framing conv, gold-acquit items whose deciding element is “before 1995”: convicted / all
 - Add one sentence on the 2020 extension for sexual orientation, and it convicts none of 35 punishable cases.
   - `so_k / so_n` = 0 / 35 — dataset/responses/publicai-70b-fc-core.jsonl, rung R4, framing ver (verdict words), DATE_SO base items (gold convict): convicted / all
-- Then the law itself, pasted from Fedlex with the leading case, as a retrieval system would.
-- Zero again.
+- Now paste in the law itself, from Fedlex, with the leading case.
+- Zero. Again.
   - `n5` = 0 — dataset/responses/publicai-70b-fc-core.jsonl, rung R5, framing conv: items with decision acquit among the gold-acquit items of dataset/eval/core_de.jsonl
 
 ## 5. Everywhere
 
-- The same in French, Italian, everyday German, and the smaller 8B model.
+- Same story in French, Italian, first-person German, and the smaller 8B model.
   - `multi` = see source — per-item decisions (framing conv) on the gold-acquit items: German (publicai-70b-fc-core): R0 0, R3 107, R5 0 of 215; French (publicai-70b-fc-core-fr): R0 2, R3 120, R5 12 of 215; Italian (publicai-70b-fc-core-it): R0 1, R3 97, R5 43 of 215; everyday German (publicai-70b-fc-lay): R0 2, R3 119 of 215; Apertus 8B (8b-gguf-q4_k_m-cpu-core): R0 15, R3 122, R5 13 of 215
-- The rules help; the pasted law takes most of it back.
+- The rules help. The pasted law takes most of it back.
 
 ## 6. Re-derivable
 
-- Every cell here re-derives from the statute with one command.
-- The dataset and the harness are open.
+- Every cell you saw re-derives from the statute with one command.
+- The dataset and the harness are open: run your own model, and see which law it applies.
 
 ## On screen
 
