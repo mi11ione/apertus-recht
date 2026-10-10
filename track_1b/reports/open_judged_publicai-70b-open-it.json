@@ -8,7 +8,60 @@
   "verdict_expressed": 0.911,
   "misleads": 0.993
  },
- "independent_judge": null,
+ "independent_judge": {
+  "judge": "Qwen-SEA-LION-v4-32B-IT (another model family, via Public AI)",
+  "judged": 720,
+  "agree_with_consensus": 703,
+  "n": 716,
+  "ci": [
+   0.9691853210932823,
+   0.9893590799619404
+  ],
+  "kappa": 0.956,
+  "on_20pct_sample": {
+   "agree": 140,
+   "n": 143,
+   "note": "sampled answers on which the two Claude judges agree"
+  },
+  "by_gold": {
+   "convict": {
+    "n": 471,
+    "agree": 468,
+    "consensus_pass": 468,
+    "judge_c_pass": 465,
+    "kappa": 0.664
+   },
+   "acquit": {
+    "n": 225,
+    "agree": 219,
+    "consensus_pass": 37,
+    "judge_c_pass": 43,
+    "kappa": 0.909
+   },
+   "open": {
+    "n": 20,
+    "agree": 16,
+    "consensus_pass": 0,
+    "judge_c_pass": 4,
+    "kappa": 0.0
+   },
+   "acquit_or_open": {
+    "n": 245,
+    "agree": 235,
+    "consensus_pass": 37,
+    "judge_c_pass": 47,
+    "kappa": 0.857
+   }
+  },
+  "acquit_misleads_by_rung": {
+   "R0|misleads": 75,
+   "R0|n": 75,
+   "R3|misleads": 42,
+   "R3|n": 75,
+   "R5|misleads": 65,
+   "R5|n": 75
+  }
+ },
  "misleading_answers_cite": {
   "R0": {
    "n": 75,

@@ -192,3 +192,20 @@ R5 7/74 and 15/78 and R3 39/74 and 30/78 on the same items. No single sentence e
 itself cancels most of what the plain rules achieve, and Art. 1 StGB does not restore the closed list.
 (3) Three French `rev` rows hit rate-limit errors (HTTP 429) and were re-run. Italian R3 `rev` was not run (dropped to
 free the gateway for the French and Italian free text; R0 already settles the agreement-bias question).
+
+## A14 (2026-10-10, 16:30, after judge round 4): free text in French and Italian; a second statute (exploratory)
+(1) **Free text in French and Italian.** The same 80 twin groups as the German sample (`statute-twins eval
+--same-groups-as publicai-70b-open`), R0, R3 and R5, greedy, 220 tokens, the 70B under its `-70b` name; 720 answers
+per language. Judged like German: two blind Claude judges per answer (packets of 240, one agent per packet, scratch
+files kept apart after one agent reported stray lines from another agent in a shared scratch file, which it deleted
+unread; its packet agrees with the other judge on 238/240), the Qwen judge through the gateway (now with parallel
+requests, `JUDGE_WORKERS`), and the deterministic parser. Judge folders `review/open_judge_fr`, `open_judge_it`;
+`selfcheck` re-aggregates every language. The article check of the misleading answers is now case- and
+language-insensitive ("art.", "articolo"); German counts are unchanged.
+(2) **Art. 179ter StGB as a second released statute** (`statutes/stgb_179ter`, `dataset/stgb_179ter`): 120 German items
+in five families (conversation public, participant vs. outsider, medium, consent, complaint within three months,
+Art. 30/31 StGB). Before any scoring a legal-reviewer agent checked every item: all gold verdicts correct for
+"conviction under Art. 179ter"; framing and wording fixed (questions limited to Art. 179ter because an outsider falls
+under Art. 179bis; "Polizeirapport" instead of an indictment without complaint; no "Täter" before a verdict; a rent
+talk in the landlord's flat instead of a business call, Art. 179quinquies). Scored for the 70B at R0, R1 (elements)
+and R2 (+ the complaint rule), both framings; `selfcheck` re-derives and re-scores it. Not pre-registered.

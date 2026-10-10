@@ -70,6 +70,8 @@ configs:
       - {split: publicai_70b_fc_lay, path: responses/publicai-70b-fc-lay.jsonl}
       - {split: publicai_70b_gen, path: responses/publicai-70b-gen.jsonl}
       - {split: publicai_70b_open, path: responses/publicai-70b-open.jsonl}
+      - {split: publicai_70b_open_fr, path: responses/publicai-70b-open-fr.jsonl}
+      - {split: publicai_70b_open_it, path: responses/publicai-70b-open-it.jsonl}
       - {split: publicai_70b_pref, path: responses/publicai-70b-pref.jsonl}
       - {split: publicai_70b_pref_fr, path: responses/publicai-70b-pref-fr.jsonl}
       - {split: publicai_70b_pref_it, path: responses/publicai-70b-pref-it.jsonl}
@@ -135,7 +137,7 @@ text; acts are described abstractly in the statute's vocabulary.
 ## Dataset Structure
 `eval/core_<lang>.jsonl` (one row per scenario), `eval/battery162.jsonl`, `eval/prompts_core_*.jsonl` (one row per
 scenario × rung × framing: the exact user message, the assistant prefix and the two candidate answers),
-`eval/prompts_open_core_*.jsonl` (free-text question at R0 and R3, for generation and judging against the acceptance
+`eval/prompts_open_core_*.jsonl` (free-text question at R0, R3 and R5, for generation and judging against the acceptance
 criterion), `eval/prompts_pref_core_*.jsonl` (settled items: the item's `chosen` and `rejected` answers as the two
 candidates, stored by direction, with `chosen_side`; preference accuracy), `metadata/items.jsonl`,
 `metadata/sources.json`, `metadata/generator/` (the YAML the items were generated from), `responses/` (model responses,
@@ -315,10 +317,10 @@ Score with both framings and read the element table, not a single accuracy; repo
 alongside results, since 4-bit conversions changed verdicts in our measurements.
 
 ## Model responses in this release
-31 runs (`responses/<run>.jsonl` with `<run>.meta.json`): 8b-bf16-DPO, 8b-bf16-RLVR, 8b-bf16-blend-RLVR-DPO-a0.25, 8b-bf16-blend-RLVR-DPO-a0.5, 8b-bf16-blend-RLVR-DPO-a0.75, 8b-gguf-q4_k_m, 8b-gguf-q4_k_m-cpu-core, 8b-gguf-q4_k_m-cpu-pref, 8b-gguf-q8_0, 8b-mlx4-DPO, 8b-mlx4-RLVR, 8b-mlx4-SFT, 8b-mlx4-base-completion, 8b-mlx4-final, publicai-70b-ctrl-de, publicai-70b-ctrl-fr, publicai-70b-ctrl-it, publicai-70b-fc, publicai-70b-fc-core, publicai-70b-fc-core-fr, publicai-70b-fc-core-it, publicai-70b-fc-lay, publicai-70b-gen, publicai-70b-open, publicai-70b-pref, publicai-70b-pref-fr, publicai-70b-pref-it, publicai-70b-r5x-de, publicai-70b-r6-fr, publicai-70b-r6-it, qwen3-8b-mlx4.
+33 runs (`responses/<run>.jsonl` with `<run>.meta.json`): 8b-bf16-DPO, 8b-bf16-RLVR, 8b-bf16-blend-RLVR-DPO-a0.25, 8b-bf16-blend-RLVR-DPO-a0.5, 8b-bf16-blend-RLVR-DPO-a0.75, 8b-gguf-q4_k_m, 8b-gguf-q4_k_m-cpu-core, 8b-gguf-q4_k_m-cpu-pref, 8b-gguf-q8_0, 8b-mlx4-DPO, 8b-mlx4-RLVR, 8b-mlx4-SFT, 8b-mlx4-base-completion, 8b-mlx4-final, publicai-70b-ctrl-de, publicai-70b-ctrl-fr, publicai-70b-ctrl-it, publicai-70b-fc, publicai-70b-fc-core, publicai-70b-fc-core-fr, publicai-70b-fc-core-it, publicai-70b-fc-lay, publicai-70b-gen, publicai-70b-open, publicai-70b-open-fr, publicai-70b-open-it, publicai-70b-pref, publicai-70b-pref-fr, publicai-70b-pref-it, publicai-70b-r5x-de, publicai-70b-r6-fr, publicai-70b-r6-it, qwen3-8b-mlx4.
 
 ## Changelog
-- 1.0.0 (2026-10): first release. Generator 1.0.0, seed 261. Files and hashes: `MANIFEST.json` (145 files).
+- 1.0.0 (2026-10): first release. Generator 1.0.0, seed 261. Files and hashes: `MANIFEST.json` (176 files).
   Pre-registration ([`docs/PREREG.md`](docs/PREREG.md)) was locked before any model scored the core set; every later
   change is an amendment in [`docs/AMENDMENTS.md`](docs/AMENDMENTS.md):
   A1 design moved into YAML, output byte-identical; A2 FR/IT surface fixes from back-translation; A3 one contested
@@ -334,7 +336,10 @@ alongside results, since 4-bit conversions changed verdicts in our measurements.
   the court-validation baseline; A9 the German scenarios as a first-person paraphrase (`de_lay`); A10 R6, the control
   for R5; A11 German localisation (bus, public information evening), free text with the verbatim law, a Qwen judge;
   A12 post hoc: court validation per distinct case, paired score differences, judge agreement per gold class,
-  judgements bound to answers, provenance repairs (frozen held-out code shipped, lock commit after the history rewrite).
+  judgements bound to answers, provenance repairs (frozen held-out code shipped, lock commit after the history rewrite);
+  A13 controls: the question asked in the acquittal direction (`rev`; not agreement bias) and the R5 factorial
+  (`prompts_ctrl_core_*`, `review/controls_a13.json`); A14 free text in French and Italian (same 80 twin groups, same
+  three judges) and Art. 179ter as a second released statute (`stgb_179ter` configs).
 
 ## Citation
 ```bibtex

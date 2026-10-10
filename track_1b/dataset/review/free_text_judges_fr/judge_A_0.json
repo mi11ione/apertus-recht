@@ -1,0 +1,1922 @@
+[
+ {
+  "id": "J00000",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "Age not on closed list; answer wrongly convicts."
+ },
+ {
+  "id": "J00001",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct conviction on ethnicity; slightly hedged wording."
+ },
+ {
+  "id": "J00002",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": false,
+  "misleads": false,
+  "note": "Right outcome but cites LHand and nonexistent racism law instead of 261bis."
+ },
+ {
+  "id": "J00003",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Leans conviction via public post and sexual orientation; hedged, muddled privacy remark."
+ },
+ {
+  "id": "J00004",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public video, sexual orientation, after July 2020."
+ },
+ {
+  "id": "J00005",
+  "verdict_expressed": "not_punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correctly: age not a protected characteristic."
+ },
+ {
+  "id": "J00006",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct conviction; publicity and orientation identified; date in force."
+ },
+ {
+  "id": "J00007",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct conviction; public meeting, sexual orientation."
+ },
+ {
+  "id": "J00008",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public bus, religion protected."
+ },
+ {
+  "id": "J00009",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: market public, sexual orientation."
+ },
+ {
+  "id": "J00010",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "June 2020 predates orientation protection; answer ignores date."
+ },
+ {
+  "id": "J00011",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "Sex not on closed list; answer wrongly convicts."
+ },
+ {
+  "id": "J00012",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct conviction on race."
+ },
+ {
+  "id": "J00013",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": false,
+  "misleads": false,
+  "note": "Right outcome but claims orientation covered only by analogy; wrong reasoning."
+ },
+ {
+  "id": "J00014",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "2018 act predates orientation protection; answer wrongly convicts."
+ },
+ {
+  "id": "J00015",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public video, ethnicity."
+ },
+ {
+  "id": "J00016",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct conviction on ethnicity."
+ },
+ {
+  "id": "J00017",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: race protected since 1995."
+ },
+ {
+  "id": "J00018",
+  "verdict_expressed": "not_punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: family chat private."
+ },
+ {
+  "id": "J00019",
+  "verdict_expressed": "not_punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: message to sister private."
+ },
+ {
+  "id": "J00020",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public video, sexual orientation protected."
+ },
+ {
+  "id": "J00021",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public post, race."
+ },
+ {
+  "id": "J00022",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public forum, sexual orientation."
+ },
+ {
+  "id": "J00023",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "Message only to sister is private; answer wrongly convicts."
+ },
+ {
+  "id": "J00024",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public market, ethnicity."
+ },
+ {
+  "id": "J00025",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: publicly viewable post, race; family wording not decisive."
+ },
+ {
+  "id": "J00026",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "Gender identity not protected; answer falsely claims it is."
+ },
+ {
+  "id": "J00027",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public post, ethnicity."
+ },
+ {
+  "id": "J00028",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "Political opinion not protected; answer wrongly convicts."
+ },
+ {
+  "id": "J00029",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public meeting, sexual orientation, 2025."
+ },
+ {
+  "id": "J00030",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: ethnicity protected in 2018, public market."
+ },
+ {
+  "id": "J00031",
+  "verdict_expressed": "not_punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: narrow family dinner is private."
+ },
+ {
+  "id": "J00032",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public leaflets despite family title."
+ },
+ {
+  "id": "J00033",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct conviction on race; publicity not discussed."
+ },
+ {
+  "id": "J00034",
+  "verdict_expressed": "not_punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "Open-invite 40-person meeting is public; answer wrongly calls it private."
+ },
+ {
+  "id": "J00035",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct conviction on religion."
+ },
+ {
+  "id": "J00036",
+  "verdict_expressed": "not_punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: phone call with brother private."
+ },
+ {
+  "id": "J00037",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public meeting, religion."
+ },
+ {
+  "id": "J00038",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public market, orientation, after July 2020."
+ },
+ {
+  "id": "J00039",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": false,
+  "misleads": false,
+  "note": "Right outcome; wrongly says orientation covered only in some cases by extension."
+ },
+ {
+  "id": "J00040",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public post, ethnicity."
+ },
+ {
+  "id": "J00041",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public leaflets, religion."
+ },
+ {
+  "id": "J00042",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public post, ethnicity."
+ },
+ {
+  "id": "J00043",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "Political opinion not protected; answer mislabels it racial discrimination."
+ },
+ {
+  "id": "J00044",
+  "verdict_expressed": "not_punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: age not on closed list."
+ },
+ {
+  "id": "J00045",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct conviction; skin colour treated as race."
+ },
+ {
+  "id": "J00046",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public forum, sexual orientation."
+ },
+ {
+  "id": "J00047",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": false,
+  "misleads": false,
+  "note": "Right outcome (hedged); wrongly says intent irrelevant; ethnicity protected since 1995."
+ },
+ {
+  "id": "J00048",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": false,
+  "misleads": false,
+  "note": "Leans conviction but claims orientation covered only by analogy."
+ },
+ {
+  "id": "J00049",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: 1 July 2020 within scope, public video."
+ },
+ {
+  "id": "J00050",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "Disability not protected; cites LHand as criminal basis wrongly."
+ },
+ {
+  "id": "J00051",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct conviction on race."
+ },
+ {
+  "id": "J00052",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public market, ethnicity."
+ },
+ {
+  "id": "J00053",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public demonstration, ethnicity."
+ },
+ {
+  "id": "J00054",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public bus, religion."
+ },
+ {
+  "id": "J00055",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": false,
+  "misleads": false,
+  "note": "Right outcome; wrongly says orientation covered by analogy."
+ },
+ {
+  "id": "J00056",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: 40-person meeting public, religion."
+ },
+ {
+  "id": "J00057",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public video despite family title."
+ },
+ {
+  "id": "J00058",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: newspaper public, ethnicity."
+ },
+ {
+  "id": "J00059",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "Message to sister private; answer says punishable."
+ },
+ {
+  "id": "J00060",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "Political opinion not protected; answer wrongly convicts."
+ },
+ {
+  "id": "J00061",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public bus, ethnicity."
+ },
+ {
+  "id": "J00062",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "Political opinion not protected; answer wrongly convicts."
+ },
+ {
+  "id": "J00063",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": false,
+  "misleads": false,
+  "note": "Right outcome but cites LHand for sexual orientation."
+ },
+ {
+  "id": "J00064",
+  "verdict_expressed": "not_punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: occupation not on closed list."
+ },
+ {
+  "id": "J00065",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "2018 act predates orientation protection (July 2020); answer ignores date."
+ },
+ {
+  "id": "J00066",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "Dinner with close friends private; answer ignores publicity."
+ },
+ {
+  "id": "J00067",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "March 2019 predates orientation protection; answer ignores date."
+ },
+ {
+  "id": "J00068",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public demonstration, ethnicity."
+ },
+ {
+  "id": "J00069",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": false,
+  "misleads": false,
+  "note": "Right outcome but cites a nonexistent anti-discrimination law, not 261bis."
+ },
+ {
+  "id": "J00070",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public meeting, orientation, 2025."
+ },
+ {
+  "id": "J00071",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "Age not protected; answer wrongly convicts."
+ },
+ {
+  "id": "J00072",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": false,
+  "note": "Open publicity question; asserts conviction as certain without addressing publicity."
+ },
+ {
+  "id": "J00073",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public post, race."
+ },
+ {
+  "id": "J00074",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: ethnicity protected in 2019, public market."
+ },
+ {
+  "id": "J00075",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public bus, religion."
+ },
+ {
+  "id": "J00076",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public leaflets, race."
+ },
+ {
+  "id": "J00077",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "October 1994 predates entry into force 1995; answer ignores date."
+ },
+ {
+  "id": "J00078",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "Dinner with three close friends private; answer misstates publicity."
+ },
+ {
+  "id": "J00079",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "Occupation not protected; answer wrongly convicts."
+ },
+ {
+  "id": "J00080",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "May 1993 predates 261bis entry into force (1995); answer ignores date."
+ },
+ {
+  "id": "J00081",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public market despite family business, orientation."
+ },
+ {
+  "id": "J00082",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public forum, religion."
+ },
+ {
+  "id": "J00083",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public demonstration despite family outing, ethnicity."
+ },
+ {
+  "id": "J00084",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public forum despite family sign-off, ethnicity."
+ },
+ {
+  "id": "J00085",
+  "verdict_expressed": "not_punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: occupation not on closed list."
+ },
+ {
+  "id": "J00086",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public video, ethnicity."
+ },
+ {
+  "id": "J00087",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: 1 July 2020 within scope, public leaflets."
+ },
+ {
+  "id": "J00088",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "Phone call with brother private; answer ignores publicity."
+ },
+ {
+  "id": "J00089",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public demonstration despite family outing."
+ },
+ {
+  "id": "J00090",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public leaflets, orientation."
+ },
+ {
+  "id": "J00091",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public meeting, religion."
+ },
+ {
+  "id": "J00092",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: ethnicity protected in 2018, public demonstration."
+ },
+ {
+  "id": "J00093",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "October 1994 predates entry into force 1995; answer ignores date."
+ },
+ {
+  "id": "J00094",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct conviction; says publicity aggravates rather than constitutes, minor."
+ },
+ {
+  "id": "J00095",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public market, orientation, August 2020."
+ },
+ {
+  "id": "J00096",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public demonstration, race."
+ },
+ {
+  "id": "J00097",
+  "verdict_expressed": "not_punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "Open-invite 40-person meeting is public; answer wrongly calls it private."
+ },
+ {
+  "id": "J00098",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public video, orientation."
+ },
+ {
+  "id": "J00099",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct conviction on orientation; publicity not discussed."
+ },
+ {
+  "id": "J00100",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public market, orientation."
+ },
+ {
+  "id": "J00101",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "Canton not on closed list; answer wrongly convicts."
+ },
+ {
+  "id": "J00102",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public demonstration, orientation."
+ },
+ {
+  "id": "J00103",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public forum, religion."
+ },
+ {
+  "id": "J00104",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "Narrow family dinner private; answer says private remarks can be punishable."
+ },
+ {
+  "id": "J00105",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct conviction on orientation; publicity not discussed."
+ },
+ {
+  "id": "J00106",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public demonstration, orientation, August 2020."
+ },
+ {
+  "id": "J00107",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public meeting, religion."
+ },
+ {
+  "id": "J00108",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public video, ethnicity."
+ },
+ {
+  "id": "J00109",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "Occupation not protected; cites LHand/LEg wrongly."
+ },
+ {
+  "id": "J00110",
+  "verdict_expressed": "not_punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: occupation not on closed list."
+ },
+ {
+  "id": "J00111",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "Political opinion not protected; answer wrongly convicts."
+ },
+ {
+  "id": "J00112",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "Sex not on closed list; answer wrongly convicts."
+ },
+ {
+  "id": "J00113",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "October 1994 predates entry into force 1995; answer ignores date."
+ },
+ {
+  "id": "J00114",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public video, ethnicity."
+ },
+ {
+  "id": "J00115",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "Occupation not protected; answer falsely includes profession."
+ },
+ {
+  "id": "J00116",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": false,
+  "misleads": false,
+  "note": "Right outcome but claims orientation covered by analogy."
+ },
+ {
+  "id": "J00117",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "30 June 2020 is one day before orientation protection; answer misses date."
+ },
+ {
+  "id": "J00118",
+  "verdict_expressed": "not_punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: dinner with friends private; extra doubtful point on systematic aim."
+ },
+ {
+  "id": "J00119",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct conviction on ethnicity; publicity not discussed."
+ },
+ {
+  "id": "J00120",
+  "verdict_expressed": "not_punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: sex not on closed list."
+ },
+ {
+  "id": "J00121",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public post, orientation."
+ },
+ {
+  "id": "J00122",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public video, orientation."
+ },
+ {
+  "id": "J00123",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: newspaper letter, religion."
+ },
+ {
+  "id": "J00124",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "Age not protected; answer wrongly convicts."
+ },
+ {
+  "id": "J00125",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "October 1994 predates entry into force 1995; answer ignores date."
+ },
+ {
+  "id": "J00126",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public market, orientation, 2021."
+ },
+ {
+  "id": "J00127",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: skin colour is race; public leaflets."
+ },
+ {
+  "id": "J00128",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public meeting, orientation."
+ },
+ {
+  "id": "J00129",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "Gender identity not protected; answer conflates with sexual orientation."
+ },
+ {
+  "id": "J00130",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "Message only to sister private; answer wrongly calls it public."
+ },
+ {
+  "id": "J00131",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "May 1993 predates entry into force 1995; answer ignores date."
+ },
+ {
+  "id": "J00132",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: race protected before July 2020."
+ },
+ {
+  "id": "J00133",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "June 2020 predates orientation protection; answer ignores date."
+ },
+ {
+  "id": "J00134",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": false,
+  "misleads": false,
+  "note": "Right outcome but cites LHand and public-peace generally, not 261bis."
+ },
+ {
+  "id": "J00135",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public meeting, religion."
+ },
+ {
+  "id": "J00136",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: open-invite meeting public, religion."
+ },
+ {
+  "id": "J00137",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "September 2019 predates orientation protection; answer ignores date."
+ },
+ {
+  "id": "J00138",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public bus, religion."
+ },
+ {
+  "id": "J00139",
+  "verdict_expressed": "not_punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: age not on closed list."
+ },
+ {
+  "id": "J00140",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public video despite family title, religion."
+ },
+ {
+  "id": "J00141",
+  "verdict_expressed": "not_punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: phone call with brother private."
+ },
+ {
+  "id": "J00142",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: ethnicity protected in 2018, public market."
+ },
+ {
+  "id": "J00143",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct conviction; mislabels orientation as racial/ethnic hate, minor."
+ },
+ {
+  "id": "J00144",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "Family-only chat is private; answer wrongly treats it as public."
+ },
+ {
+  "id": "J00145",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public forum, orientation."
+ },
+ {
+  "id": "J00146",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: race protected 2019, public meeting."
+ },
+ {
+  "id": "J00147",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: 1 July 2020 in scope, public video."
+ },
+ {
+  "id": "J00148",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public market, religion."
+ },
+ {
+  "id": "J00149",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public video, orientation."
+ },
+ {
+  "id": "J00150",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public forum, ethnicity."
+ },
+ {
+  "id": "J00151",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public demonstration, orientation, 2023."
+ },
+ {
+  "id": "J00152",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public forum, orientation."
+ },
+ {
+  "id": "J00153",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: August 2020 in scope, public demonstration."
+ },
+ {
+  "id": "J00154",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: race protected 2019, public meeting."
+ },
+ {
+  "id": "J00155",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "Occupation not protected; answer wrongly convicts."
+ },
+ {
+  "id": "J00156",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": false,
+  "misleads": false,
+  "note": "Right outcome but cites nonexistent anti-racism law instead of 261bis."
+ },
+ {
+  "id": "J00157",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "Disability not protected; answer lists criteria yet convicts."
+ },
+ {
+  "id": "J00158",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct conviction on orientation; publicity not discussed."
+ },
+ {
+  "id": "J00159",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: 1 July 2020 in scope, public forum."
+ },
+ {
+  "id": "J00160",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct conviction on orientation; publicity not discussed."
+ },
+ {
+  "id": "J00161",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "October 1994 predates entry into force 1995; answer ignores date."
+ },
+ {
+  "id": "J00162",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct conviction on ethnicity."
+ },
+ {
+  "id": "J00163",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public video, religion."
+ },
+ {
+  "id": "J00164",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "2018 act predates orientation protection; answer ignores date."
+ },
+ {
+  "id": "J00165",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public bus, religion."
+ },
+ {
+  "id": "J00166",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public post, orientation."
+ },
+ {
+  "id": "J00167",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: faith equals religious affiliation; public bus."
+ },
+ {
+  "id": "J00168",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct conviction on orientation; public demonstration."
+ },
+ {
+  "id": "J00169",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct conviction; public post despite family address, religion."
+ },
+ {
+  "id": "J00170",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public meeting, religion."
+ },
+ {
+  "id": "J00171",
+  "verdict_expressed": "none",
+  "pass": false,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Self-contradictory: opens 'punishable under 261bis', ends disability not covered."
+ },
+ {
+  "id": "J00172",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct conviction on religion; publicity not discussed."
+ },
+ {
+  "id": "J00173",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public video, orientation."
+ },
+ {
+  "id": "J00174",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "June 2020 predates orientation protection; answer ignores date."
+ },
+ {
+  "id": "J00175",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: skin colour is race; public leaflets."
+ },
+ {
+  "id": "J00176",
+  "verdict_expressed": "not_punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "Open-invite 40-person meeting public; answer wrongly calls it private."
+ },
+ {
+  "id": "J00177",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public demonstration, ethnicity."
+ },
+ {
+  "id": "J00178",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "Canton not protected; answer wrongly convicts."
+ },
+ {
+  "id": "J00179",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "Phone call with brother private; answer wrongly calls it public."
+ },
+ {
+  "id": "J00180",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public forum, orientation."
+ },
+ {
+  "id": "J00181",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "Phone call with brother private; answer still says punishable."
+ },
+ {
+  "id": "J00182",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "Age not protected; answer suggests prosecution possible."
+ },
+ {
+  "id": "J00183",
+  "verdict_expressed": "not_punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: sex not on closed list."
+ },
+ {
+  "id": "J00184",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": false,
+  "note": "Open publicity question (30-member closed group); certain verdict, publicity not analysed."
+ },
+ {
+  "id": "J00185",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct conviction on ethnicity; family title not decisive."
+ },
+ {
+  "id": "J00186",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public meeting, ethnicity."
+ },
+ {
+  "id": "J00187",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public post, orientation."
+ },
+ {
+  "id": "J00188",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": false,
+  "misleads": false,
+  "note": "Right outcome but cites LHand and Al-Qaida law, not 261bis."
+ },
+ {
+  "id": "J00189",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public post, ethnic origin."
+ },
+ {
+  "id": "J00190",
+  "verdict_expressed": "not_punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: family-only chat private."
+ },
+ {
+  "id": "J00191",
+  "verdict_expressed": "not_punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "300-person public demonstration is public; family outing irrelevant."
+ },
+ {
+  "id": "J00192",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "2018 act predates orientation protection; answer uses analogy."
+ },
+ {
+  "id": "J00193",
+  "verdict_expressed": "not_punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: family-only chat private."
+ },
+ {
+  "id": "J00194",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "Sex not on closed list; answer wrongly convicts."
+ },
+ {
+  "id": "J00195",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": false,
+  "note": "Open item; asserts email to colleagues public as certain without trust/relationship analysis."
+ },
+ {
+  "id": "J00196",
+  "verdict_expressed": "not_punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: narrow family dinner private."
+ },
+ {
+  "id": "J00197",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct conviction; public market despite family stand."
+ },
+ {
+  "id": "J00198",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "Sex not protected; cites LHand and defamation wrongly."
+ },
+ {
+  "id": "J00199",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "Phone call with brother private; answer ignores publicity."
+ },
+ {
+  "id": "J00200",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: ethnicity protected 2019, newspaper public."
+ },
+ {
+  "id": "J00201",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "Gender identity not protected; answer wrongly claims coverage."
+ },
+ {
+  "id": "J00202",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct conviction on orientation; public forum."
+ },
+ {
+  "id": "J00203",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public post despite family address, ethnicity."
+ },
+ {
+  "id": "J00204",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "Occupation not protected; answer suggests sanctions possible."
+ },
+ {
+  "id": "J00205",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public leaflets despite family title, religion."
+ },
+ {
+  "id": "J00206",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "Sex not on closed list; answer wrongly convicts."
+ },
+ {
+  "id": "J00207",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public video, ethnicity."
+ },
+ {
+  "id": "J00208",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "Gender identity not protected; answer conflates with sexual orientation."
+ },
+ {
+  "id": "J00209",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: religion protected before July 2020; public bus."
+ },
+ {
+  "id": "J00210",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "May 1993 predates entry into force 1995; answer ignores date."
+ },
+ {
+  "id": "J00211",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public post, race."
+ },
+ {
+  "id": "J00212",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: race protected 2018, public leaflets."
+ },
+ {
+  "id": "J00213",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public market despite family stand, orientation."
+ },
+ {
+  "id": "J00214",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: 1 July 2020 in scope, public video."
+ },
+ {
+  "id": "J00215",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: newspaper public, religion."
+ },
+ {
+  "id": "J00216",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "Claims 261bis in force May 1993; it entered into force 1995."
+ },
+ {
+  "id": "J00217",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: 1 July 2020 in scope, public meeting."
+ },
+ {
+  "id": "J00218",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: religion protected before July 2020; public bus."
+ },
+ {
+  "id": "J00219",
+  "verdict_expressed": "not_punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: gender identity not on closed list."
+ },
+ {
+  "id": "J00220",
+  "verdict_expressed": "not_punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: age not on closed list."
+ },
+ {
+  "id": "J00221",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "March 2019 predates orientation protection; answer ignores date."
+ },
+ {
+  "id": "J00222",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: newspaper public, orientation."
+ },
+ {
+  "id": "J00223",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "Occupation not protected; invents professional-group coverage."
+ },
+ {
+  "id": "J00224",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public market despite family stand, ethnicity."
+ },
+ {
+  "id": "J00225",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public meeting, orientation, 2025."
+ },
+ {
+  "id": "J00226",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public market despite family stand, ethnicity."
+ },
+ {
+  "id": "J00227",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: faith is religion; public meeting."
+ },
+ {
+  "id": "J00228",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: newspaper public, orientation."
+ },
+ {
+  "id": "J00229",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: August 2020 in scope, newspaper public."
+ },
+ {
+  "id": "J00230",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "Age not protected; answer wrongly convicts."
+ },
+ {
+  "id": "J00231",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "Political opinion not protected; answer invokes defamation to assert punishability."
+ },
+ {
+  "id": "J00232",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "2018 act predates orientation protection; answer ignores date."
+ },
+ {
+  "id": "J00233",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: skin colour is race; public demonstration."
+ },
+ {
+  "id": "J00234",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": false,
+  "note": "Open item (25-member association); certain verdict, no publicity analysis."
+ },
+ {
+  "id": "J00235",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct conviction on race; family title not decisive."
+ },
+ {
+  "id": "J00236",
+  "verdict_expressed": "punishable",
+  "pass": false,
+  "reason_ok": false,
+  "misleads": true,
+  "note": "Message only to sister private; answer still says punishable."
+ },
+ {
+  "id": "J00237",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public meeting, ethnicity."
+ },
+ {
+  "id": "J00238",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public forum, ethnicity."
+ },
+ {
+  "id": "J00239",
+  "verdict_expressed": "punishable",
+  "pass": true,
+  "reason_ok": true,
+  "misleads": false,
+  "note": "Correct: public demonstration, race."
+ }
+]

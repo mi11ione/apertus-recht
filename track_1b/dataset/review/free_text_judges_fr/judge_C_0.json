@@ -1,0 +1,1922 @@
+[
+{
+"id": "J00000",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Age not on closed list; answer misleads by suggesting punishability."
+},
+{
+"id": "J00001",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies punishable act under Art. 261bis StGB."
+},
+{
+"id": "J00002",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Cites wrong laws; Art. 261bis StGB is the relevant provision."
+},
+{
+"id": "J00003",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public nature and protected characteristic."
+},
+{
+"id": "J00004",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public act and protected characteristic."
+},
+{
+"id": "J00005",
+"verdict_expressed": "not_punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies age is not a protected criterion."
+},
+{
+"id": "J00006",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting, protected characteristic, and temporal scope."
+},
+{
+"id": "J00007",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting and protected characteristic."
+},
+{
+"id": "J00008",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting, protected characteristic, and intent."
+},
+{
+"id": "J00009",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting and protected characteristic."
+},
+{
+"id": "J00010",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Answer ignores the retroactivity issue; misleads by affirming punishability."
+},
+{
+"id": "J00011",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Incorrectly applies Art. 261bis to sex-based discrimination."
+},
+{
+"id": "J00012",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies punishable act under Art. 261bis StGB."
+},
+{
+"id": "J00013",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies punishable act under Art. 261bis StGB."
+},
+{
+"id": "J00014",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Incorrectly applies 261bis to 2018 act; ignores retroactivity rule."
+},
+{
+"id": "J00015",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting, protected characteristic, and intent."
+},
+{
+"id": "J00016",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies punishable act under Art. 261bis StGB."
+},
+{
+"id": "J00017",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies punishable act under Art. 261bis StGB."
+},
+{
+"id": "J00018",
+"verdict_expressed": "not_punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly applies BGE 130 IV 111 on private setting and public character."
+},
+{
+"id": "J00019",
+"verdict_expressed": "not_punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly applies BGE 130 IV 111 on private setting and public character."
+},
+{
+"id": "J00020",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting, protected characteristic, and intent."
+},
+{
+"id": "J00021",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public act and protected characteristic."
+},
+{
+"id": "J00022",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public forum and protected characteristic."
+},
+{
+"id": "J00023",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Answer ignores the public setting requirement of Art. 261bis StGB."
+},
+{
+"id": "J00024",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Public act, ethnic group, within temporal scope."
+},
+{
+"id": "J00025",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting, race, and temporal scope."
+},
+{
+"id": "J00026",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Gender identity not on closed list; answer misleads."
+},
+{
+"id": "J00027",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting, protected characteristic, and intent."
+},
+{
+"id": "J00028",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Wrongly concludes punishable; ignores closed list in Art. 261bis StGB."
+},
+{
+"id": "J00029",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "All elements of Art. 261bis StGB are correctly identified and applied."
+},
+{
+"id": "J00030",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies ethnicity and public setting as key elements."
+},
+{
+"id": "J00031",
+"verdict_expressed": "not_punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly applies BGE 130 IV 111 on private setting and public requirement."
+},
+{
+"id": "J00032",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public act and protected characteristic."
+},
+{
+"id": "J00033",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies punishable act under Art. 261bis StGB."
+},
+{
+"id": "J00034",
+"verdict_expressed": "not_punishable",
+"pass": false,
+"reason_ok": true,
+"misleads": true,
+"note": "Incorrectly concludes acquittal due to private setting."
+},
+{
+"id": "J00035",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies punishable act under Art. 261bis StGB."
+},
+{
+"id": "J00036",
+"verdict_expressed": "not_punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly applies BGE 130 IV 111 on private vs. public speech."
+},
+{
+"id": "J00037",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies religion as a protected characteristic and public context."
+},
+{
+"id": "J00038",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public act and protected characteristic."
+},
+{
+"id": "J00039",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies punishable act under Art. 261bis StGB."
+},
+{
+"id": "J00040",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public act and protected characteristic."
+},
+{
+"id": "J00041",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting and protected characteristic."
+},
+{
+"id": "J00042",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting, protected characteristic, and intent."
+},
+{
+"id": "J00043",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Answer incorrectly applies Art. 261bis to political opinions, which are not covered."
+},
+{
+"id": "J00044",
+"verdict_expressed": "not_punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies age is not a protected criterion."
+},
+{
+"id": "J00045",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies punishable act under Art. 261bis StGB."
+},
+{
+"id": "J00046",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting, protected characteristic, and incitement."
+},
+{
+"id": "J00047",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies punishable act under Art. 261bis StGB."
+},
+{
+"id": "J00048",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies punishable act under Art. 261bis StGB."
+},
+{
+"id": "J00049",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies protected characteristic and public setting."
+},
+{
+"id": "J00050",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Cites LHand, not Art. 261bis StGB; disability not on closed list."
+},
+{
+"id": "J00051",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies punishable act under Art. 261bis StGB."
+},
+{
+"id": "J00052",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting and protected characteristic."
+},
+{
+"id": "J00053",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting, protected characteristic, and intent."
+},
+{
+"id": "J00054",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting, protected characteristic, and intent."
+},
+{
+"id": "J00055",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies punishable act under Art. 261bis StGB."
+},
+{
+"id": "J00056",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting and protected characteristic."
+},
+{
+"id": "J00057",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public character, protected characteristic, and intent."
+},
+{
+"id": "J00058",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting, protected characteristic, and intent."
+},
+{
+"id": "J00059",
+"verdict_expressed": "depends",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Answer incorrectly assumes punishability and misstates the publicness criterion."
+},
+{
+"id": "J00060",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Error: political opinion not covered by Art. 261bis StGB."
+},
+{
+"id": "J00061",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting and protected characteristic."
+},
+{
+"id": "J00062",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Wrongly concludes punishable; political opinion not on closed list."
+},
+{
+"id": "J00063",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies punishable act under Art. 261bis StGB."
+},
+{
+"id": "J00064",
+"verdict_expressed": "not_punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies profession is not a protected characteristic."
+},
+{
+"id": "J00065",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Answer ignores the retroactivity issue; statute applies only from 1 July 2020."
+},
+{
+"id": "J00066",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Answer ignores the public setting requirement of Art. 261bis StGB."
+},
+{
+"id": "J00067",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": true,
+"misleads": true,
+"note": "Answer incorrectly assumes retroactive application of sexual orientation protection."
+},
+{
+"id": "J00068",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting, protected characteristic, and intent."
+},
+{
+"id": "J00069",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies punishable act under Art. 261bis StGB."
+},
+{
+"id": "J00070",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting, protected characteristic, and temporal scope."
+},
+{
+"id": "J00071",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Age not on closed list; answer misleads by claiming punishability."
+},
+{
+"id": "J00072",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Answer fails to address the decisive publicity criterion."
+},
+{
+"id": "J00073",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting, protected characteristic, and intent."
+},
+{
+"id": "J00074",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting and protected characteristic."
+},
+{
+"id": "J00075",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting and protected characteristic."
+},
+{
+"id": "J00076",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public act and protected characteristic."
+},
+{
+"id": "J00077",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Answer ignores the retroactivity issue; statute not in force in 1994."
+},
+{
+"id": "J00078",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Wrongly asserts publicity; private setting per BGE 130 IV 111 E. 5.2."
+},
+{
+"id": "J00079",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Wrongly includes profession in the protected characteristics."
+},
+{
+"id": "J00080",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Answer ignores the retroactivity issue; law applies only from 1995."
+},
+{
+"id": "J00081",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting and protected characteristic."
+},
+{
+"id": "J00082",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting, protected characteristic, and intent."
+},
+{
+"id": "J00083",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting and protected characteristic."
+},
+{
+"id": "J00084",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting, protected characteristic, and intent."
+},
+{
+"id": "J00085",
+"verdict_expressed": "not_punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies the closed list and public character."
+},
+{
+"id": "J00086",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies all elements: public, protected characteristic, degrading, intentional."
+},
+{
+"id": "J00087",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting and protected characteristic."
+},
+{
+"id": "J00088",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Answer ignores the public setting requirement of BGE 130 IV 111."
+},
+{
+"id": "J00089",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting and protected characteristic."
+},
+{
+"id": "J00090",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public act and protected characteristic."
+},
+{
+"id": "J00091",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting, protected characteristic, and temporal scope."
+},
+{
+"id": "J00092",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting, protected characteristic, and intent."
+},
+{
+"id": "J00093",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": true,
+"misleads": true,
+"note": "Answer ignores the retroactivity issue; statute not in force in 1994."
+},
+{
+"id": "J00094",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies ethnicity, public setting, and temporal scope."
+},
+{
+"id": "J00095",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting and protected characteristic."
+},
+{
+"id": "J00096",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting, protected characteristic, and intent."
+},
+{
+"id": "J00097",
+"verdict_expressed": "not_punishable",
+"pass": false,
+"reason_ok": true,
+"misleads": true,
+"note": "Incorrectly concludes acquittal; public setting required."
+},
+{
+"id": "J00098",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting and protected characteristic."
+},
+{
+"id": "J00099",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies punishable act under Art. 261bis StGB."
+},
+{
+"id": "J00100",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting, protected characteristic, and intent."
+},
+{
+"id": "J00101",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Wrongly concludes punishable; canton not on closed list."
+},
+{
+"id": "J00102",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting and protected characteristic."
+},
+{
+"id": "J00103",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public act and protected characteristic."
+},
+{
+"id": "J00104",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Incorrectly concludes punishable; ignores private setting criterion."
+},
+{
+"id": "J00105",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies punishable act under Art. 261bis StGB."
+},
+{
+"id": "J00106",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting, protected characteristic, and intent."
+},
+{
+"id": "J00107",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting, protected characteristic, and temporal scope."
+},
+{
+"id": "J00108",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting and protected characteristic."
+},
+{
+"id": "J00109",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Wrongly claims punishable under Art. 261bis; profession not on closed list."
+},
+{
+"id": "J00110",
+"verdict_expressed": "not_punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies lack of protected characteristic."
+},
+{
+"id": "J00111",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Answer incorrectly applies Art. 261bis to political opinion."
+},
+{
+"id": "J00112",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Incorrectly applies Art. 261bis to sex discrimination."
+},
+{
+"id": "J00113",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Answer ignores the retroactivity issue; statute not in force in 1994."
+},
+{
+"id": "J00114",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public act, protected characteristic, and dignity violation."
+},
+{
+"id": "J00115",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Profession not on closed list; answer misleads by implying occupation is covered."
+},
+{
+"id": "J00116",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies punishable act under Art. 261bis StGB."
+},
+{
+"id": "J00117",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Answer fails to consider the retroactivity issue under Art. 2 StGB."
+},
+{
+"id": "J00118",
+"verdict_expressed": "not_punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly applies BGE 130 IV 111 on private setting and protected criteria."
+},
+{
+"id": "J00119",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies punishable act under Art. 261bis StGB."
+},
+{
+"id": "J00120",
+"verdict_expressed": "not_punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies sex is not a protected criterion."
+},
+{
+"id": "J00121",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public act and protected characteristic."
+},
+{
+"id": "J00122",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public act and protected characteristic."
+},
+{
+"id": "J00123",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies punishable act under Art. 261bis StGB."
+},
+{
+"id": "J00124",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Age not on closed list; answer misleads by suggesting punishability."
+},
+{
+"id": "J00125",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": true,
+"misleads": true,
+"note": "Answer misses retroactivity issue; misleads by affirming punishability."
+},
+{
+"id": "J00126",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting and protected characteristic."
+},
+{
+"id": "J00127",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies race as protected and public context."
+},
+{
+"id": "J00128",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting and protected characteristic."
+},
+{
+"id": "J00129",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Gender identity not covered by Art. 261bis StGB's closed list."
+},
+{
+"id": "J00130",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Answer incorrectly denies private setting; misapplies BGE 130 IV 111."
+},
+{
+"id": "J00131",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Answer ignores the retroactivity issue; Art. 261bis StGB applies only from 1995."
+},
+{
+"id": "J00132",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies punishable act under Art. 261bis StGB."
+},
+{
+"id": "J00133",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Answer incorrectly applies Art. 261bis to sexual orientation; ignores retroactivity issue."
+},
+{
+"id": "J00134",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies punishable act under Art. 261bis StGB."
+},
+{
+"id": "J00135",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies all elements: public setting, protected characteristic, intentional act."
+},
+{
+"id": "J00136",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public act and protected characteristic."
+},
+{
+"id": "J00137",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Answer ignores retroactivity; Art. 261bis StGB applies only from 1 July 2020."
+},
+{
+"id": "J00138",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Public act, protected characteristic (religion), within temporal scope."
+},
+{
+"id": "J00139",
+"verdict_expressed": "not_punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies age is not a protected criterion."
+},
+{
+"id": "J00140",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public act and protected characteristic."
+},
+{
+"id": "J00141",
+"verdict_expressed": "not_punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly applies BGE 130 IV 111 on private vs. public speech."
+},
+{
+"id": "J00142",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting and protected characteristic."
+},
+{
+"id": "J00143",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies punishable act under Art. 261bis StGB."
+},
+{
+"id": "J00144",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Answer incorrectly assumes publicity; private family group is not public under BGE 130 IV 111."
+},
+{
+"id": "J00145",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies all elements: public, protected characteristic, degrading speech."
+},
+{
+"id": "J00146",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting and protected characteristic."
+},
+{
+"id": "J00147",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public diffusion and protected characteristic."
+},
+{
+"id": "J00148",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting, protected characteristic, and denigration."
+},
+{
+"id": "J00149",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public act and protected characteristic."
+},
+{
+"id": "J00150",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting, protected characteristic, and intent."
+},
+{
+"id": "J00151",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting and protected characteristic."
+},
+{
+"id": "J00152",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies protected characteristic and public setting."
+},
+{
+"id": "J00153",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies publicity, protected characteristic, and temporal scope."
+},
+{
+"id": "J00154",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Public act, protected characteristic, within temporal scope."
+},
+{
+"id": "J00155",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Profession not on closed list; answer misleads on punishability."
+},
+{
+"id": "J00156",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies punishable act under Art. 261bis StGB."
+},
+{
+"id": "J00157",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Error: disability not in closed list of Art. 261bis StGB."
+},
+{
+"id": "J00158",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies punishable act under Art. 261bis StGB."
+},
+{
+"id": "J00159",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Answer correctly identifies all elements of Art. 261bis StGB."
+},
+{
+"id": "J00160",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies punishable act under Art. 261bis StGB."
+},
+{
+"id": "J00161",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": true,
+"misleads": true,
+"note": "Answer ignores the retroactivity issue; statute not applicable to 1994 act."
+},
+{
+"id": "J00162",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies punishable act under Art. 261bis StGB."
+},
+{
+"id": "J00163",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public act and protected characteristic."
+},
+{
+"id": "J00164",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Answer incorrectly applies Art. 261bis to 2018 act; sexual orientation protected only from 2020."
+},
+{
+"id": "J00165",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies publicity, protected characteristic, and temporal scope."
+},
+{
+"id": "J00166",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies all elements: public, protected characteristic, intent."
+},
+{
+"id": "J00167",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting and protected characteristic."
+},
+{
+"id": "J00168",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies punishable act under Art. 261bis StGB."
+},
+{
+"id": "J00169",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting, protected characteristic, and temporal scope."
+},
+{
+"id": "J00170",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting, protected characteristic, and intent."
+},
+{
+"id": "J00171",
+"verdict_expressed": "not_punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies disability is not a protected criterion."
+},
+{
+"id": "J00172",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies punishable act under Art. 261bis StGB."
+},
+{
+"id": "J00173",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public act and protected characteristic."
+},
+{
+"id": "J00174",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": true,
+"misleads": true,
+"note": "Answer misses retroactivity; sexual orientation protection started 1 July 2020."
+},
+{
+"id": "J00175",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public act, protected characteristic, and temporal scope."
+},
+{
+"id": "J00176",
+"verdict_expressed": "not_punishable",
+"pass": false,
+"reason_ok": true,
+"misleads": true,
+"note": "Incorrectly concludes acquittal; public character was present."
+},
+{
+"id": "J00177",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting, protected characteristic, and intentional act."
+},
+{
+"id": "J00178",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Canton not on closed list; answer misleads on punishable."
+},
+{
+"id": "J00179",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Erreur sur le caractère public; la conversation téléphonique est privée."
+},
+{
+"id": "J00180",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies punishable act under Art. 261bis StGB."
+},
+{
+"id": "J00181",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Answer incorrectly assumes public character; private conversation with family not public."
+},
+{
+"id": "J00182",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Answer incorrectly includes age in the protected list of Art. 261bis StGB."
+},
+{
+"id": "J00183",
+"verdict_expressed": "not_punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies sex is not a protected criterion under Art. 261bis."
+},
+{
+"id": "J00184",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Answer fails to address the publicity requirement; concludes certainty without analysis."
+},
+{
+"id": "J00185",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies punishable act under Art. 261bis StGB."
+},
+{
+"id": "J00186",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting, protected characteristic, and intent."
+},
+{
+"id": "J00187",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting, protected characteristic, and intent."
+},
+{
+"id": "J00188",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Cites wrong laws; fails to mention Art. 261bis StGB."
+},
+{
+"id": "J00189",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies punishable act under Art. 261bis StGB."
+},
+{
+"id": "J00190",
+"verdict_expressed": "not_punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly applies BGE 130 IV 111 on private setting and public character."
+},
+{
+"id": "J00191",
+"verdict_expressed": "not_punishable",
+"pass": false,
+"reason_ok": true,
+"misleads": true,
+"note": "Incorrectly concludes acquittal based on family context."
+},
+{
+"id": "J00192",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Answer incorrectly applies Art. 261bis to sexual orientation pre-2020."
+},
+{
+"id": "J00193",
+"verdict_expressed": "not_punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly applies BGE 130 IV 111 on private setting."
+},
+{
+"id": "J00194",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Incorrectly applies Art. 261bis to sex-based discrimination."
+},
+{
+"id": "J00195",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": true,
+"misleads": true,
+"note": "Affirme la punissabilité sans évaluer le caractère public selon les critères de BGE 130 IV 111."
+},
+{
+"id": "J00196",
+"verdict_expressed": "not_punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly applies BGE 130 IV 111 on private setting."
+},
+{
+"id": "J00197",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies punishable act under Art. 261bis StGB."
+},
+{
+"id": "J00198",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Méconnaît la liste fermée des caractéristiques protégées par l'Art. 261bis StGB."
+},
+{
+"id": "J00199",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Answer ignores the public setting requirement of BGE 130 IV 111."
+},
+{
+"id": "J00200",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public act and protected characteristic."
+},
+{
+"id": "J00201",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Incorrectly applies Art. 261bis to gender identity, which is not covered."
+},
+{
+"id": "J00202",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies punishable act under Art. 261bis StGB."
+},
+{
+"id": "J00203",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public character and protected group."
+},
+{
+"id": "J00204",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Occupation not on closed list; answer misleads on punishability."
+},
+{
+"id": "J00205",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting, protected characteristic, and intent."
+},
+{
+"id": "J00206",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Erreur sur la liste fermée: le sexe n'est pas protégé par l'art. 261bis StGB."
+},
+{
+"id": "J00207",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public act and protected characteristic."
+},
+{
+"id": "J00208",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Answer incorrectly includes gender identity in the protected characteristics."
+},
+{
+"id": "J00209",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies punishable act under Art. 261bis StGB."
+},
+{
+"id": "J00210",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": true,
+"misleads": true,
+"note": "Answer ignores the retroactivity issue; statute not in force in 1993."
+},
+{
+"id": "J00211",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public act and protected characteristic."
+},
+{
+"id": "J00212",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public act and protected characteristic."
+},
+{
+"id": "J00213",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting, protected characteristic, and intent."
+},
+{
+"id": "J00214",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public character and protected characteristic."
+},
+{
+"id": "J00215",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting and protected characteristic."
+},
+{
+"id": "J00216",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": true,
+"misleads": true,
+"note": "Answer ignores the retroactivity issue; statute not in force in 1993."
+},
+{
+"id": "J00217",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting, protected characteristic, and intent."
+},
+{
+"id": "J00218",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting, protected characteristic, and intent."
+},
+{
+"id": "J00219",
+"verdict_expressed": "not_punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies the closed list of protected criteria."
+},
+{
+"id": "J00220",
+"verdict_expressed": "not_punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies age is not a protected criterion."
+},
+{
+"id": "J00221",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Answer is incorrect; sexual orientation protection began 1 July 2020."
+},
+{
+"id": "J00222",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting and protected characteristic."
+},
+{
+"id": "J00223",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Profession not on closed list; answer misleads by implying it is."
+},
+{
+"id": "J00224",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting and protected characteristic."
+},
+{
+"id": "J00225",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting, protected characteristic, and temporal scope."
+},
+{
+"id": "J00226",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Public setting and protected characteristic (ethnicity) correctly identified."
+},
+{
+"id": "J00227",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting, protected characteristic, and temporal scope."
+},
+{
+"id": "J00228",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public act and protected characteristic."
+},
+{
+"id": "J00229",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public act and protected characteristic."
+},
+{
+"id": "J00230",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Error: age not on closed list in Art. 261bis StGB."
+},
+{
+"id": "J00231",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Wrongly applies art. 173/177 StGB instead of 261bis StGB."
+},
+{
+"id": "J00232",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Answer ignores the 2020 retroactivity rule; misleads on punishability."
+},
+{
+"id": "J00233",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting and protected characteristic."
+},
+{
+"id": "J00234",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Answer ignores the decisive publicity requirement and misapplies the law."
+},
+{
+"id": "J00235",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies punishable act under Art. 261bis StGB."
+},
+{
+"id": "J00236",
+"verdict_expressed": "punishable",
+"pass": false,
+"reason_ok": false,
+"misleads": true,
+"note": "Answer incorrectly assumes publicity; private message to sister is not public."
+},
+{
+"id": "J00237",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting and protected characteristic."
+},
+{
+"id": "J00238",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public act and protected characteristic."
+},
+{
+"id": "J00239",
+"verdict_expressed": "punishable",
+"pass": true,
+"reason_ok": true,
+"misleads": false,
+"note": "Correctly identifies public setting and protected characteristic."
+}
+]

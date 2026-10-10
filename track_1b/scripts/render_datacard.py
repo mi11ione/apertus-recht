@@ -32,6 +32,11 @@ RECORDS = {
     "reports/contamination.json": "review/contamination.json",
     "reports/qc.json": "review/qc.json",
     "reports/open_judged_publicai-70b-open.json": "review/free_text_judged.json",
+    "reports/open_judged_publicai-70b-open-fr.json": "review/free_text_judged_fr.json",
+    "reports/open_judged_publicai-70b-open-it.json": "review/free_text_judged_it.json",
+    "reports/open_judge_human_sample_publicai-70b-open-fr.tsv": "review/free_text_20pct_sample_fr.tsv",
+    "reports/open_judge_human_sample_publicai-70b-open-it.tsv": "review/free_text_20pct_sample_it.tsv",
+    "reports/controls_a13.json": "review/controls_a13.json",
     "reports/open_judge_human_sample_publicai-70b-open.tsv": "review/free_text_20pct_sample.tsv",
     "reports/sensitivity.json": "review/sensitivity.json",
 }
@@ -99,8 +104,11 @@ def main() -> int:
     # released runs are the ones in the manifest; a run still being written stays out of the card and the manifest
     runs = sorted({run_of(Path(f).name) for f in man["files"] if f.startswith("responses/") and f.endswith(".jsonl")})
     unreleased = {run_of(p.name) for p in (ROOT / "dataset/responses").iterdir()} - set(runs)
-    for p in sorted((ROOT / "statutes/stgb_261bis/review/open_judge").glob("*.json")):
-        RECORDS[str(p.relative_to(ROOT))] = f"review/free_text_judges/{p.name}"
+    for d in sorted((ROOT / "statutes/stgb_261bis/review").glob("open_judge*")):
+        # one folder per language: open_judge (German, kept at its released path), open_judge_fr, open_judge_it
+        sub = "free_text_judges" + d.name.removeprefix("open_judge")
+        for p in sorted(d.glob("*.json")):
+            RECORDS[str(p.relative_to(ROOT))] = f"review/{sub}/{p.name}"
     for src, dst in RECORDS.items():
         q = ROOT / "dataset" / dst
         q.parent.mkdir(parents=True, exist_ok=True)
@@ -219,7 +227,7 @@ text; acts are described abstractly in the statute's vocabulary.
 ## Dataset Structure
 `eval/core_<lang>.jsonl` (one row per scenario), `eval/battery162.jsonl`, `eval/prompts_core_*.jsonl` (one row per
 scenario × rung × framing: the exact user message, the assistant prefix and the two candidate answers),
-`eval/prompts_open_core_*.jsonl` (free-text question at R0 and R3, for generation and judging against the acceptance
+`eval/prompts_open_core_*.jsonl` (free-text question at R0, R3 and R5, for generation and judging against the acceptance
 criterion), `eval/prompts_pref_core_*.jsonl` (settled items: the item's `chosen` and `rejected` answers as the two
 candidates, stored by direction, with `chosen_side`; preference accuracy), `metadata/items.jsonl`,
 `metadata/sources.json`, `metadata/generator/` (the YAML the items were generated from), `responses/` (model responses,
@@ -403,7 +411,10 @@ alongside results, since 4-bit conversions changed verdicts in our measurements.
   the court-validation baseline; A9 the German scenarios as a first-person paraphrase (`de_lay`); A10 R6, the control
   for R5; A11 German localisation (bus, public information evening), free text with the verbatim law, a Qwen judge;
   A12 post hoc: court validation per distinct case, paired score differences, judge agreement per gold class,
-  judgements bound to answers, provenance repairs (frozen held-out code shipped, lock commit after the history rewrite).
+  judgements bound to answers, provenance repairs (frozen held-out code shipped, lock commit after the history rewrite);
+  A13 controls: the question asked in the acquittal direction (`rev`; not agreement bias) and the R5 factorial
+  (`prompts_ctrl_core_*`, `review/controls_a13.json`); A14 free text in French and Italian (same 80 twin groups, same
+  three judges) and Art. 179ter as a second released statute (`stgb_179ter` configs).
 
 ## Citation
 ```bibtex
