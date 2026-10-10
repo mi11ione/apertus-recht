@@ -143,6 +143,7 @@ SYN_ROWS = [
 ]
 SYN_BLOCKS = [("publicai-70b-fc-core", "de", "70B · Deutsch"), ("publicai-70b-fc-core-fr", "fr", "70B · Français"),
               ("publicai-70b-fc-core-it", "it", "70B · Italiano"), ("8b-gguf-q4_k_m-cpu-core", "de", "8B Q4_K_M · Deutsch")]
+RUNGS_ALL = ("R0", "R3", "R4", "R5")
 RUNGS3 = ("R0", "R3", "R4")
 
 
@@ -161,19 +162,25 @@ def fig_synopse(R, out, blocks=SYN_BLOCKS):
     blocks = [b for b in blocks if b[0] in R["runs"]]
     rows = [r for r in SYN_ROWS if any(e["edit"] == r[0] and e.get("subset") == "core"
                                        for b in blocks for e in R["runs"][b[0]]["edits"])]
-    cols = [(b, rung) for b in blocks for rung in RUNGS3]
+    # each block shows the rungs its run has (R5, the verbatim law, was run in German only)
+    def rungs_of(b):
+        have = {e["rung"] for e in R["runs"][b[0]]["edits"] if e.get("subset") == "core" and e["lang"] == b[1]}
+        return [r for r in RUNGS_ALL if r in have]
+    cols = [(b, rung) for b in blocks for rung in rungs_of(b)]
     fig, ax = plt.subplots(figsize=(7.3, 0.22 * len(rows) + 0.6))
     ax.set_axis_off()
     x0, cw, gap = 3.55, 0.47, 0.12
     tint = {"red": "#f6c5cb", "amber": "#fbe3e6", "ok": PAPER, "unreadable": "#e6e6e3"}
     xs = []
+    block_index = {b: k for k, b in enumerate(dict.fromkeys(b for b, _ in cols))}
     for j, (b, rung) in enumerate(cols):
-        xx = x0 + j * cw + (j // 3) * gap
+        xx = x0 + j * cw + block_index[b] * gap
         xs.append(xx)
         ax.text(xx + cw / 2, -0.55, rung, ha="center", fontfamily=MONO, fontsize=6.2, color=INK2)
         if rung == "R0":
             ax.text(xx, -1.35, b[2], fontsize=6.9, color=INK, fontweight="semibold")
-            ax.plot([xx, xx + 3 * cw - 0.04], [-1.05, -1.05], color=INK, lw=0.5)
+            nb = sum(1 for bb, _ in cols if bb == b)
+            ax.plot([xx, xx + nb * cw - 0.04], [-1.05, -1.05], color=INK, lw=0.5)
     ax.text(0, -1.35, "One fact changed", fontsize=7.2, fontweight="semibold")
     ax.text(2.85, -1.35, "Law", fontsize=7.2, fontweight="semibold")
     right = xs[-1] + cw

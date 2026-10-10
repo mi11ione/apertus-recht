@@ -5,7 +5,8 @@ German, French and Italian minimal-twin scenarios under Art. 261bis StGB. Each v
 Fedlex texts and BGE 130 IV 111, and agrees with every in-scope Swiss court ruling we could code (55 convictions, 3 acquittals). A harness re-derives every
 label and number from a clean checkout. Asked without the law, Apertus v1.5 70B convicts every scenario we wrote
 (balanced accuracy 0.50). In free text it tells ⟨open_r0_mislead⟩ of 75 users whose conduct is not punishable under Art. 261bis that it
-is. With the rules spelled out in the prompt, it applies the publicity rule. It still convicts for a canton, a disability or a
+is. With the verbatim Fedlex text and the Regeste of the leading case pasted in, it still convicts everything; only rules
+spelled out in plain sentences make it apply the publicity rule. It still convicts for a canton, a disability or a
 political opinion, and for acts committed before the law existed. Told when sexual orientation became protected, it
 stops protecting it.
 
@@ -139,11 +140,12 @@ reviewers. Every item carries a canary string.
 ## Evaluation
 
 **Three measurements, one item set.**
-- *Forced choice* (all items, R0/R3/R4, two framings): the summed log-probability of the convict continuation minus the
+- *Forced choice* (all items, R0/R3/R4 and, in German, R5; two framings): the summed log-probability of the convict continuation minus the
   acquit one. On vLLM this is exact (prefilled answer, prompt log-probabilities); in llama.cpp it is read from the
   logits.
-- *Preference accuracy* (settled items, R0): the same exact scoring between each item's `chosen` and `rejected` answer.
-  We report it per token, because chosen answers are longer, and summed.
+- *Preference accuracy* (settled items, R0): the same exact scoring between each item's `chosen` answer and its
+  length-matched mirror, the same sentence with the verdict and the deciding legal claim negated (median length ratio
+  1.0; a first design with a shorter `rejected` answer measured length and was discarded before analysis, A8).
 - *Free text* (a fixed sample of 240 German items, R0 and R3, greedy, 220 tokens): every answer is judged against its
   acceptance criterion by two independent Claude judges, blind to model, rung and family.
 
@@ -157,8 +159,9 @@ elements named; the publicity rule added) are released for finer retrieval studi
 
 | Run | Model and build | Where | Scope |
 |---|---|---|---|
-| `publicai-70b-fc-core(-fr,-it)` | Apertus v1.5 70B | Public AI (vLLM), temperature 0 | 660 items × R0/R3/R4 × 2 framings × 3 languages: 11,880 decisions |
-| `8b-gguf-q4_k_m-cpu-core` | Apertus v1.5 8B, public Q4_K_M GGUF (sha256 `a037df8d…`) | llama-cpp-python 0.3.19, CPU CI runners | German: 3,960 decisions |
+| `publicai-70b-fc-core(-fr,-it)` | Apertus v1.5 70B | Public AI (vLLM), temperature 0 | 660 items × R0/R3/R4 × 2 framings × 3 languages, + R5 in German: 13,200 decisions |
+| `publicai-70b-fc-lay` | 70B, German user voice | as above | 660 items × R0, Ja/Nein |
+| `8b-gguf-q4_k_m-cpu-core` | Apertus v1.5 8B, public Q4_K_M GGUF (sha256 `a037df8d…`) | llama-cpp-python 0.3.19, CPU CI runners | German, R0/R3/R4/R5: 5,280 decisions |
 | `*-pref` | both of the above | as above | 645 settled items per language at R0 |
 | `publicai-70b-open` | 70B, free text | Public AI, greedy | 480 answers, 960 judgements |
 | `8b-bf16-*`, `8b-gguf-*`, `8b-mlx4-*` | post-training stages, weight blends, builds | exploration phase | 162-item German battery |
@@ -173,8 +176,8 @@ with the computed gold (466/466), and that verdict matches a deterministic parse
 
 ⟨table:accuracy⟩
 
-*Table 1. Forced-choice accuracy and balanced accuracy, Ja/Nein / verdict framing. 70B: Public AI; 8B: public Q4_K_M
-GGUF on CPU.*
+*Table 1. Balanced accuracy (mean of the recall of convictions and of acquittals; 0.50 = no discrimination), Ja/Nein /
+verdict framing, and the recall of acquittals at R3. R5 (verbatim law) and the user voice were run in German only.*
 
 **With the rules spelled out, publicity is applied but the list and the date are not.** Figure 1 shows the read-back.
 For the German 70B:
@@ -185,7 +188,16 @@ For the German 70B:
   before that date, but also convicts only 3 of 35 punishable cases from 2021–25 (8B: 13 of 35). The clause does not
   teach the date; it takes the characteristic off the list. Recall of convictions falls to 0.74 (grey cells in
   Figure 1).
-- **Acts before 1995**, when the article did not exist, are convicted at every rung.
+- **Acts before 1995**, when the article did not exist, are convicted at every rung. No rung states the 1995 date, and
+  Fedlex's own footnote omits it, so this is a gap in what the model knows.
+- **R5** pastes the law itself, as a retrieval pipeline would: the Fedlex text of Art. 261bis and Art. 2 StGB with
+  Fedlex's footnote, and the Regeste of BGE 130 IV 111. The 70B convicts everything again, exactly as with no law at
+  all (acquittals recognised: ⟨r5_acq_conv⟩ of 215 with Ja/Nein, ⟨r5_acq_ver⟩ with the verdict word). The verbatim law states the closed list and the publicity rule,
+  yet helps less than our one-sentence paraphrases.
+
+**Not an artefact of legal register.** The same German scenarios told in a person's own words ("Im Januar 2024 habe
+ich in Aarau an einem Stand auf dem Wochenmarkt … ein Weltbild propagiert, nach dem Muslime minderwertig sind") give
+the same result at R0: ⟨lay_acq⟩ of 215 acquittals recognised.
 
 French and Italian show the same profile (Table 1; per-language Synopse in the repository).
 
@@ -199,8 +211,8 @@ the unchanged reference is not convicted either, so the element cannot be read.*
 ⟨table:preference⟩
 
 *Table 2. Preference accuracy: share of settled items where the model gives the item's `chosen` answer a higher
-log-probability than the `rejected` one (per token; summed in the repository). Free text: share of answers that meet
-the acceptance criterion (two judges, 240 German items).*
+log-probability than its length-matched mirror. Free text: answers that meet the acceptance criterion (both judges
+agree; 240 German items, R0 and R3). Columns: the element that decides the item.*
 
 **Pre-registered held-out test.** At R0 the test passes, but trivially: a model that convicts everything is predicted
 perfectly by a read-back that marks every element satisfied, and the gain (+33 points) equals the share of acquittal
@@ -253,13 +265,15 @@ framing.*
 **For Apertus users.**
 - Do not ask about Art. 261bis without the law in context. With none, Apertus convicts every case we wrote, and its
   prose explains why.
-- Spell out the publicity rule and it is applied. Still check characteristics against the
+- Do not count on retrieval: the pasted statute and leading case changed nothing. State the rule the case turns on
+  in a plain sentence; the publicity rule is then applied. Still check characteristics against the
   closed list yourself, and state the date of the act.
 - Prefer the Q8_0 GGUF or the served model to 4-bit MLX conversions.
 
 **For Apertus developers.**
 - The 8B exploration points at the DPO step for the canton conviction (6 items; worth testing at scale).
-- The leading case is in the training data. The model still does not apply it without being told.
+- The leading case is in the training data, and pasting its Regeste with the statute does not change a single verdict.
+  The model reads plain rules but not the law as written; long-context legal reading is a training target.
 - Twin items give a target that can be measured element by element before and after a fix. The `chosen` / `rejected`
   pairs are in the format preference training uses, so keep them out of training if you evaluate on them.
 
@@ -281,7 +295,7 @@ exits non-zero on any mismatch.
 - **Traceability:** every number in this report maps to a results file and the command that produced it in
   `claims.tsv`, which CI checks on every push.
 - **Seeds:** generator 261; bootstrap seed 0, 2,000 resamples.
-- **Pre-registration:** `prereg/LOCK.json`, before any model saw the core set. Amendments A1–A7, with their timing
+- **Pre-registration:** `prereg/LOCK.json`, before any model saw the core set. Amendments A1–A9, with their timing
   relative to the analysis, are in `prereg/AMENDMENTS.md`.
 
 ## License

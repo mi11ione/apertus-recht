@@ -76,7 +76,8 @@ def accuracy(items: list[dict], rows: list[dict], by=("subset", "lang", "rung", 
         rec_a = c["tn"] / c["neg"] if c["neg"] else float("nan")
         bal = mean([x for x in (rec_c, rec_a) if x == x]) if c["n"] else float("nan")
         out.append(dict(dict(key), n=c["n"], correct=c["correct"], accuracy=acc, accuracy_ci=wilson(c["correct"], c["n"]),
-                        recall_convict=rec_c, recall_acquit=rec_a, balanced_accuracy=bal, unparsed=c["unparsed"]))
+                        recall_convict=rec_c, recall_acquit=rec_a, balanced_accuracy=bal, unparsed=c["unparsed"],
+                        acquit_correct=c["tn"], acquit_n=c["neg"], convict_correct=c["tp"], convict_n=c["pos"]))
     return out
 
 

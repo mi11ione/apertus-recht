@@ -56,30 +56,33 @@ hr{border:0;border-top:.4pt solid #000;margin:3mm 0}
 """
 
 
-MODELS = [("publicai-70b-fc-core", "70B", "de"), ("publicai-70b-fc-core-fr", "70B", "fr"),
-          ("publicai-70b-fc-core-it", "70B", "it"), ("8b-gguf-q4_k_m-cpu-core", "8B Q4_K_M", "de")]
-
-
+MODELS = [("publicai-70b-fc-core", "70B", "de"), ("publicai-70b-fc-lay", "70B, user voice", "de_lay"),
+          ("publicai-70b-fc-core-fr", "70B", "fr"), ("publicai-70b-fc-core-it", "70B", "it"),
+          ("8b-gguf-q4_k_m-cpu-core", "8B Q4_K_M", "de")]
+RUNGS = ("R0", "R3", "R4", "R5")
 PREF = [("publicai-70b-pref", "70B", "de"), ("publicai-70b-pref-fr", "70B", "fr"), ("publicai-70b-pref-it", "70B", "it"),
         ("8b-gguf-q4_k_m-cpu-pref", "8B Q4_K_M", "de")]
 OPEN = [("publicai-70b-open", "70B")]
 
 
+def _pair(c, v, key):
+    f = lambda x: f"{x[key]:.2f}" if x else "–"
+    return "–" if not c and not v else f"{f(c)} / {f(v)}"
+
+
 def tables(R: dict) -> dict:
     """Markdown tables generated from results/results.json (inserted at ⟨table:NAME⟩ markers)."""
     out = {}
-    # accuracy and balanced accuracy, Ja/Nein | verdict word, per rung
-    L = ["| model | lang | R0 acc. | R0 bal. | R3 acc. | R3 bal. | R4 acc. | R4 bal. |", "|---|---|---|---|---|---|---|---|"]
+    # balanced accuracy (and recall of acquittals), Ja/Nein / verdict framing, per rung
+    L = ["| model | lang | " + " | ".join(f"{r} bal. acc." for r in RUNGS) + " | R3 acquit recall |",
+         "|---|---|" + "---|" * (len(RUNGS) + 1)]
     for run, name, lang in MODELS:
         if run not in R["runs"]:
             continue
         acc = {(a["rung"], a["framing"]): a for a in R["runs"][run]["accuracy"] if a["subset"] == "core" and a["lang"] == lang}
-        cells = []
-        for rung in ("R0", "R3", "R4"):
-            c, v = acc.get((rung, "conv")), acc.get((rung, "ver"))
-            cells.append(f"{c['accuracy']:.2f} / {v['accuracy']:.2f}" if c and v else "–")
-            cells.append(f"{c['balanced_accuracy']:.2f} / {v['balanced_accuracy']:.2f}" if c and v else "–")
-        L.append(f"| {name} | {lang.upper()} | " + " | ".join(cells) + " |")
+        cells = [_pair(acc.get((rung, "conv")), acc.get((rung, "ver")), "balanced_accuracy") for rung in RUNGS]
+        cells.append(_pair(acc.get(("R3", "conv")), acc.get(("R3", "ver")), "recall_acquit"))
+        L.append(f"| {name} | {lang.split('_')[0].upper()} | " + " | ".join(cells) + " |")
     out["accuracy"] = "\n".join(L)
     # held-out read-back test
     L = ["| model | lang | rung | read-back (Ja/Nein, verdict) | statute | gain | pre-registered verdict |", "|---|---|---|---|---|---|---|"]
@@ -105,7 +108,7 @@ def tables(R: dict) -> dict:
         if (lang, "all") not in pr:
             continue
         L.append(f"| preference | {name} | {lang.upper()} | " +
-                 " | ".join(f"{pr[(lang, k)]['per_token_accuracy']:.2f}" if (lang, k) in pr else "–" for k, _ in cols) + " |")
+                 " | ".join(f"{pr[(lang, k)]['accuracy']:.2f}" if (lang, k) in pr else "–" for k, _ in cols) + " |")
     for run, name in OPEN:
         p = ROOT / "reports" / f"open_judged_{run}.json"
         if not p.exists():

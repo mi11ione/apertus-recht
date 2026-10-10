@@ -3,7 +3,7 @@
 **Which racial-discrimination law does Apertus apply?** Not the one in force. Asked whether a statement is punishable
 under Art. 261bis StGB, Apertus v1.5 convicts for words said only at a family dinner, for insults against a canton or a
 profession, and for acts committed before the law existed. Rules spelled out in the prompt fix some
-elements and leave others standing; the verbatim law text, as a retrieval pipeline would paste it, ⟨r5_readme⟩.
+elements and leave others standing; the verbatim law text, as a retrieval pipeline would paste it, changes nothing at all.
 
 ![Synopse: the law in force next to the law Apertus applies](docs/figures/fig1_synopse.png)
 
@@ -15,10 +15,14 @@ paraphrase of BGE 130 IV 111 and the closed list; R4: plus a sentence on the 1 J
 
 - **No law in the prompt: everything is punishable.** The 70B convicts every scenario we wrote, in German, French and
   Italian (balanced accuracy ⟨r0_bal⟩). Asked in free text, it tells ⟨open_r0_mislead⟩ of 75 people whose conduct is
-  not punishable that it is. Two blind judges agree on 479 of 480 answers.
+  not punishable that it is. Two blind judges agree on 479 of 480 answers. Told in a person's own words instead of a
+  charge sheet, the same scenarios fare no better: ⟨lay_acq⟩ of 215 acquittals.
 - **Rules spelled out (R3): publicity is fixed, the closed list and the date are not.** Private settings
   are acquitted. A canton, a disability or a political opinion is still convicted, although the prompt lists the four
   protected characteristics. So is any act from 1993/94, before the article existed.
+- **The law itself does not help.** Given the verbatim Fedlex text of Art. 261bis and Art. 2 StGB and the Regeste of
+  BGE 130 IV 111, as a retrieval pipeline would paste them, the 70B convicts every scenario again: ⟨r5_acq_conv⟩ of
+  215 acquittals recognised, exactly as with no law in the prompt. Only rules spelled out in plain sentences move it.
 - **The date clause backfires.** Told that sexual orientation is protected since 1 July 2020, the 70B convicts only 3
   of 35 punishable cases from 2021–25.
 - **The pre-registered test fails where it matters, and we say so.** Fitted on two wording families, a read-back of
