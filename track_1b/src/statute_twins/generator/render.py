@@ -59,6 +59,12 @@ def render(d: Design, lang: str, slots: dict) -> str:
 
 RUNGS = ["R0", "R1", "R2", "R3", "R4", "R5", "R6"]
 FRAMINGS = ["conv", "ver"]
+# A13 (exploratory controls, written to eval/prompts_ctrl_<part>.jsonl so the released prompt files stay unchanged):
+# R5a = R3's question block after the verbatim law; R5b = R5 without the Regeste's closing example (consid. 6, a
+# closed meeting where publicity was affirmed); R5c = R5 with R1's element-check instruction after the law instead of
+# the "Frage:" label (R6 puts it before the law); R5d = R5 with Art. 1 StGB (no penalty without law) before Art. 2.
+# Framing `rev` asks for an acquittal ("yes" = acquit).
+CONTROL_RUNGS = ["R5a", "R5b", "R5c", "R5d"]
 
 
 def rung_names(d: Design, lang: str) -> list[str]:
@@ -95,18 +101,41 @@ def question(d: Design, lang: str, rung: str, framing: str) -> str:
         # control for R5: the same verbatim law, preceded by the element-check instruction of R1 (A10)
         lt = p["law_text"]
         return p["heads"]["R1"] + lt["intro"] + law_block(d, lang) + lt["question"] + p["tails"][framing]
+    if rung == "R5a":
+        return p["law_text"]["intro"] + law_block(d, lang) + head + p["closed_list"] + p["tails"][framing]
+    if rung == "R5b":
+        lt = p["law_text"]
+        return lt["intro"] + law_block(d, lang, exemplar=False) + lt["question"] + p["tails"][framing]
+    if rung == "R5c":
+        return p["law_text"]["intro"] + law_block(d, lang) + p["heads"]["R1"] + p["tails"][framing]
+    if rung == "R5d":
+        lt = p["law_text"]
+        return lt["intro"] + law_block(d, lang, art1=True) + lt["question"] + p["tails"][framing]
     raise ValueError(rung)
 
 
-def law_block(d: Design, lang: str) -> str:
-    """The pinned legal texts, verbatim, as a retrieval pipeline would paste them (prompts/<lang>.yaml: law_text)."""
+def drop_exemplar(regeste: str) -> str:
+    """The Regeste without its closing sentence (the decided case: publicity affirmed, consid. 6)."""
+    head, _, last = regeste.rstrip().rpartition("). ")
+    if not head or "6)" not in last:
+        raise ValueError("Regeste does not end with the consid. 6 example")
+    return head + ")."
+
+
+def law_block(d: Design, lang: str, exemplar: bool = True, art1: bool = False) -> str:
+    """The pinned legal texts, verbatim, as a retrieval pipeline would paste them (prompts/<lang>.yaml: law_text).
+    exemplar=False drops the Regeste's closing example sentence (control R5b, A13); art1=True puts Art. 1 StGB
+    before Art. 2 (control R5d, A13)."""
     import json
     parts = []
     src_lang = lang.split("_")[0]          # a register variant (de_lay) uses the official texts of its language
     for it in d.prompts[lang]["law_text"]["items"]:
+        if art1 and it["source"] == "fedlex_art2":
+            parts.append(_art1_control(d, lang))
         rec = json.loads(d.statute.source_file(it["source"], src_lang).read_text(encoding="utf-8"))
         if "regeste" in rec:
-            parts.append(f"{it['label']}: {rec['regeste'][src_lang]}")
+            reg = rec["regeste"][src_lang]
+            parts.append(f"{it['label']}: {reg if exemplar else drop_exemplar(reg)}")
             continue
         paras = rec["paragraphs"]
         body = "\n".join(f"{k} {t}" for k, t in enumerate(paras, 1)) if it.get("numbered") else "\n".join(paras)
@@ -117,6 +146,19 @@ def law_block(d: Design, lang: str) -> str:
             block += f"\n¹ {notes[0]}"
         parts.append(block)
     return "\n\n".join(parts)
+
+
+def _art1_control(d: Design, lang: str) -> str:
+    """Art. 1 StGB for control R5d: pinned in prompts/<lang>.yaml (law_text.art1_control), outside statute.yaml, because
+    no gold element cites it and the statute file's hash is recorded in every item."""
+    import hashlib
+    import json
+    spec = d.prompts[lang]["law_text"]["art1_control"]
+    rec = json.loads((d.statute.path.parent / spec["file"]).read_text(encoding="utf-8"))
+    text = "\n".join(rec["paragraphs"])
+    if hashlib.sha256(text.encode()).hexdigest() != spec["text_sha256"]:
+        raise ValueError(f"{spec['file']}: text does not match its pinned sha256")
+    return f"{spec['label']}\n{text}"
 
 
 def candidates(d: Design, lang: str, framing: str) -> dict:

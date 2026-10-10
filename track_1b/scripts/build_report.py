@@ -169,7 +169,7 @@ def main() -> None:
     fonts = "".join([font_face("Sans", "SourceSans3-Regular.ttf", 400), font_face("Sans", "SourceSans3-Semibold.ttf", 600),
                      font_face("Plex", "IBMPlexMono-Regular.ttf", 400), font_face("Plex", "IBMPlexMono-Medium.ttf", 500)])
     css = CSS.replace("__DATE__", datetime.date.today().strftime("%d.%m.%Y"))
-    doc = f"<!doctype html><html lang=en><meta charset=utf-8><style>{fonts}{css}</style><body>{html}</body></html>"
+    doc = f"<!doctype html><html lang=en><meta charset=utf-8><title>Apertus-Recht · Technical report · Team 444</title><style>{fonts}{css}</style><body>{html}</body></html>"
     out_html = ROOT / "docs" / "report.html"
     out_html.write_text(doc, encoding="utf-8")
     chrome = next((c for c in CHROME if shutil.which(c) or Path(c).exists()), None)

@@ -1,6 +1,6 @@
 {
- "lock_commit": "d9537fd",
- "note": "Every locked file whose hash differs from LOCK.json / LOCK_court.json, with the amendments that changed it (see AMENDMENTS.md). Checked by `statute-twins prereg-verify`.",
+ "lock_commit": "de35225",
+ "note": "Every locked file whose hash differs from LOCK.json / LOCK_court.json, with the amendments that changed it (see AMENDMENTS.md) and, under sha256_now, its hash after the last recorded amendment. The lock commit was d9537fd before the history rewrite of 10 Oct 2026 (assistant trailers removed); de35225 has the identical tree, and tag prereg-lock points to it. Checked by `statute-twins prereg-verify`.",
  "statutes/stgb_261bis/statute.yaml": [
   "A7",
   "A8"
@@ -16,14 +16,16 @@
  ],
  "src/statute_twins/analysis/results.py": [
   "A8 (records the 2c1dfaa fix)",
-  "A6"
+  "A6",
+  "A12 (records the additive count and AUC fields)"
  ],
  "dataset/eval/core_de.jsonl": [
   "A3",
   "A5",
   "A6",
   "A7",
-  "A8"
+  "A8",
+  "A11"
  ],
  "dataset/eval/core_fr.jsonl": [
   "A2",
@@ -44,5 +46,15 @@
  "prereg/PREREG_court.md": [
   "stratum B (LOCK_court.json: stratum_B)",
   "A4"
- ]
+ ],
+ "sha256_now": {
+  "statutes/stgb_261bis/statute.yaml": "330fdf9e83a28dda71ced2d3b0883951e608db2b84965baf1dbaca6af1a8c5ce",
+  "statutes/stgb_261bis/design.yaml": "0df7093fbb87db8b118ae41bf29d09a1febbb113fdd986a3634f6a32553bc847",
+  "src/statute_twins/analysis/heldout.py": "32837662139ab1b88c5add3fd8872adcd37e02803e061d15ffc083e7a06200e5",
+  "src/statute_twins/analysis/results.py": "6e9e22256e237b373a2c72b205d2d21e760e72acedb00e6fff232446bf7218f9",
+  "dataset/eval/core_de.jsonl": "7a1fab88633dbc98e34d83cbd5b7bb4ddd8a02f1192986b342da1b5a8895c676",
+  "dataset/eval/core_fr.jsonl": "97fb576250fe600de9f8bab20a0bc599af9765ae45fcfccae6827ac782febed8",
+  "dataset/eval/core_it.jsonl": "4dfd78254bb6e0dd7c8303dea291efbc797e40205bc418316372884ccd43c109",
+  "prereg/PREREG_court.md": "65723983e22a3d684b172af35cc7fea6e74246869fc71fde88e852b8e020634f"
+ }
 }

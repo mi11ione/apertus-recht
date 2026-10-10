@@ -4,6 +4,7 @@
       eval/core_<lang>.jsonl        generated twin items, one file per language
       eval/battery162.jsonl         the legacy battery (German, verbatim spike texts)
       eval/prompts_<part>.jsonl     every (item, rung, framing) user message with its forced-choice candidates
+      eval/prompts_ctrl_<part>.jsonl  A13 controls: the acquittal-direction question (`rev`) and rungs R5a-R5c
       metadata/items.jsonl          per-item licence, provenance and review status
       metadata/sources.json         pinned normative sources with hashes and licences
       metadata/generator/           snapshot of the statute, design, templates, prompts and answers files
@@ -79,6 +80,13 @@ def write_eval(statute_dir: Path, out: Path, reviews: dict | None = None) -> dic
             _jsonl(out / "eval" / f"prompts_open_{name}.jsonl", build.build_prompts(d, rows, rungs=["R0", "R3", "R5"], framings=["open"]))
             # forced choice between each settled item's chosen and rejected reference answer (preference accuracy)
             _jsonl(out / "eval" / f"prompts_pref_{name}.jsonl", build.build_pref_prompts(d, rows))
+        lang = rows[0]["lang"] if rows else None
+        if name != "battery162" and "rev" in (d.prompts.get(lang, {}).get("framings") or {}):
+            # A13 controls (exploratory): the question in the acquittal direction, and the R5 factorial
+            from .generator.render import CONTROL_RUNGS
+            _jsonl(out / "eval" / f"prompts_ctrl_{name}.jsonl",
+                   build.build_prompts(d, rows, rungs=["R0", "R3", "R4", "R5", "R6"], framings=["rev"])
+                   + build.build_prompts(d, rows, rungs=CONTROL_RUNGS, framings=["conv", "ver"]))
     _jsonl(out / "metadata" / "items.jsonl", [item_metadata(d, i, reviews) for rows in parts.values() for i in rows])
     srcs = {k: dict(v, licence=SOURCE_LICENCES.get(v.get("kind"), "public domain")) for k, v in d.statute.sources.items()}
     (out / "metadata").mkdir(parents=True, exist_ok=True)

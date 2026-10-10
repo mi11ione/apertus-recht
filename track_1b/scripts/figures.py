@@ -155,7 +155,10 @@ def _syn_cell(edits_run, lang, edit, rung):
     bad = [e for e in anchored if e["status"] in ("F", "broken")]
     conv = next((e for e in es if e["framing"] == "conv"), es[0])
     state = "unreadable" if not anchored else ("red" if len(bad) == len(anchored) else ("amber" if bad else "ok"))
-    return dict(state=state, k=conv["v_convicted"], n=conv["n"])
+    # post hoc (A12): the paired score difference variant - reference lies below zero in the Ja/Nein framing, i.e. the
+    # model registers the fact although its decision stays on the convicting side
+    drop = state in ("red", "amber") and conv.get("ci_diff") is not None and conv["ci_diff"][1] < 0
+    return dict(state=state, k=conv["v_convicted"], n=conv["n"], drop=drop)
 
 
 def fig_synopse(R, out, blocks=SYN_BLOCKS):
@@ -196,18 +199,57 @@ def fig_synopse(R, out, blocks=SYN_BLOCKS):
                 ax.text(xx + cw / 2, y, "·", ha="center", va="center", color=GREY)
                 continue
             ax.add_patch(plt.Rectangle((xx + 0.015, y - 0.42), cw - 0.03, 0.84, facecolor=tint[c["state"]], edgecolor="none"))
-            ax.text(xx + cw / 2, y, f"{c['k']}/{c['n']}", ha="center", va="center", fontfamily=MONO, fontsize=5.6,
-                    color=RED if c["state"] == "red" else INK)
+            ax.text(xx + cw / 2, y, f"{c['k']}/{c['n']}" + ("↓" if c["drop"] else ""), ha="center", va="center",
+                    fontfamily=MONO, fontsize=5.6 if not c["drop"] else 5.2, color=RED if c["state"] == "red" else INK)
     ax.set_xlim(-0.05, right + 0.05)
     ax.set_ylim(len(rows) - 0.45, -1.75)
     fig.subplots_adjust(left=0.01, right=0.99, top=0.98, bottom=0.02)
     save(fig, out, "fig1_synopse")
 
 
+# ------------------------------------------------------------------------------------------- rungs (chart)
+RUNG_SERIES = [("publicai-70b-fc-core", "de", "70B DE", INK, "s", "-", True),
+               ("publicai-70b-fc-core-fr", "fr", "70B FR", INK, "^", "-", True),
+               ("publicai-70b-fc-core-it", "it", "70B IT", INK, "o", "-", True),
+               ("8b-gguf-q4_k_m-cpu-core", "de", "8B DE", INK2, "D", "--", False),
+               ("publicai-70b-fc-lay", "de_lay", "70B DE, user voice", INK2, "s", ":", False)]
+RUNG_X = ("R0", "R3", "R4", "R5")
+
+
+def fig_rungs(R, out, framing="conv"):
+    """Two small multiples on one rung axis: share of acquittals recognised and of convictions kept (Ja/Nein)."""
+    fig, axes = plt.subplots(1, 2, figsize=(7.3, 1.75), sharex=True)
+    panels = (("acquit", "Acquittals recognised (of 215)"), ("convict", "Convictions kept (of 430)"))
+    for ax, (side, title) in zip(axes, panels):
+        for run, lang, label, col, mk, ls, filled in RUNG_SERIES:
+            if run not in R["runs"]:
+                continue
+            acc = {a["rung"]: a for a in R["runs"][run]["accuracy"]
+                   if a.get("subset") == "core" and a["lang"] == lang and a["framing"] == framing}
+            xs = [k for k, r in enumerate(RUNG_X) if r in acc]
+            ys = [acc[RUNG_X[k]][f"{side}_correct"] / acc[RUNG_X[k]][f"{side}_n"] for k in xs]
+            ax.plot(xs, ys, color=col, lw=1.0, ls=ls, marker=mk, ms=4.2, mfc=col if filled else PAPER, mec=col, mew=0.9,
+                    zorder=3, label=label)
+        ax.set_xticks(range(len(RUNG_X)), RUNG_X)
+        ax.set_xlim(-0.25, len(RUNG_X) - 0.75)
+        ax.set_ylim(-0.03, 1.03)
+        ax.set_yticks([0, 0.5, 1], ["0", "0.5", "1"])
+        for t in ax.get_xticklabels() + ax.get_yticklabels():
+            t.set_fontfamily(MONO)
+        ax.axhline(1.0, color=LINE, lw=0.5, zorder=1)
+        ax.set_title(title, fontsize=7.6, pad=4)
+    h, l = axes[0].get_legend_handles_labels()
+    fig.legend(h, l, loc="upper left", ncol=len(l), bbox_to_anchor=(0.04, 1.02), handlelength=2.6, columnspacing=1.6,
+               fontsize=7.0)
+    fig.subplots_adjust(left=0.05, right=0.99, wspace=0.14, top=0.78, bottom=0.12)
+    save(fig, out, "fig2_rungs")
+
+
 def main(results: str, out: str):
     R = json.loads(Path(results).read_text())
     out = Path(out)
     fig_synopse(R, out)
+    fig_rungs(R, out)
     fig_stage(R, out)
     fig_builds(R, out)
     print("figures written to", out)

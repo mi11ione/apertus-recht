@@ -60,6 +60,14 @@ def cmd_qc(a) -> int:
         Path(a.out).write_text(json.dumps(rep, ensure_ascii=False, indent=1, default=str) + "\n", encoding="utf-8")
     for name, g in rep["gates"].items():
         print(("PASS " if g["passed"] else "FAIL ") + name)
+        if name == "sources" and not g["passed"]:
+            # a scaffold fails here by design until its law is pinned: unpinned text must not reach a release
+            d = g
+            for k in ("todo", "unpinned", "hash_problems"):
+                if d.get(k):
+                    print(f"     {k}: {', '.join(map(str, d[k]))}")
+            print("     pin each statute text with `statute-twins pin --eli ... --eid ... --lang ... --date ...` and "
+                  "replace the TODO fields (docs/add-a-statute.md)")
     return 0 if rep["passed"] else 1
 
 
@@ -260,14 +268,19 @@ def cmd_selfcheck(a) -> int:
             print("  FAIL", p)
     print("  PASS" if not probs else f"  FAIL ({len(probs)} problems)")
     print("== step 2: re-score the stored responses and compare with the published results")
-    stored = json.loads(Path(a.results).read_text())
-    fresh = _round(compute_results(Path(a.dataset), released_runs(Path(a.dataset))))
-    diffs = _compare(stored, json.loads(json.dumps(fresh)), a.tol)
-    if diffs:
-        ok = False
-        for d in diffs[:20]:
-            print("  FAIL", d)
-    print("  PASS" if not diffs else f"  FAIL ({len(diffs)} differences)")
+    if not Path(a.results).exists():
+        # a new statute before its first model run: nothing published to compare yet
+        print(f"  no published results at {a.results} yet (score a model with `statute-twins eval`, then "
+              "`statute-twins results`); skipped")
+    else:
+        stored = json.loads(Path(a.results).read_text())
+        fresh = _round(compute_results(Path(a.dataset), released_runs(Path(a.dataset))))
+        diffs = _compare(stored, json.loads(json.dumps(fresh)), a.tol)
+        if diffs:
+            ok = False
+            for d in diffs[:20]:
+                print("  FAIL", d)
+        print("  PASS" if not diffs else f"  FAIL ({len(diffs)} differences)")
     print("== step 2b: every stored response belongs to the current prompt (request hash recomputed)")
     stale = check_request_hashes(Path(a.dataset))
     for line in stale["report"]:
@@ -275,19 +288,20 @@ def cmd_selfcheck(a) -> int:
     if stale["mismatches"]:
         ok = False
     print("  PASS" if not stale["mismatches"] else f"  FAIL ({stale['mismatches']} responses do not match their prompt)")
-    print("== step 2c: pre-registration (locked files, amendments, frozen held-out code)")
-    pok, plines = prereg_verify(Path("."), Path(a.dataset))
-    for line in plines:
-        print("  " + line)
-    ok &= pok
-    print("  PASS" if pok else "  FAIL")
+    if Path("prereg/CHANGES.json").exists():
+        print("== step 2c: pre-registration (locked files, amendments, frozen held-out code)")
+        pok, plines = prereg_verify(Path("."), Path(a.dataset))
+        for line in plines:
+            print("  " + line)
+        ok &= pok
+        print("  PASS" if pok else "  FAIL")
     jdir = Path("statutes/stgb_261bis/review/open_judge")
-    if jdir.exists() and Path("scripts/judge_open.py").exists():
+    if jdir.exists():
         import subprocess
         print("== step 2d: free-text judgements re-aggregated from the stored judge files")
         for rep in sorted(Path("reports").glob("open_judged_*.json")):
             run_id = rep.stem.removeprefix("open_judged_")
-            r = subprocess.run([sys.executable, "scripts/judge_open.py", "aggregate", run_id, str(jdir), "--check"],
+            r = subprocess.run([sys.executable, "-m", "statute_twins.judging", "aggregate", run_id, str(jdir), "--check"],
                                capture_output=True, text=True)
             print("  " + (r.stdout.strip().splitlines() or ["?"])[-1])
             ok &= r.returncode == 0
@@ -368,8 +382,9 @@ def check_request_hashes(ds: Path) -> dict:
 
 def prereg_verify(root: Path, ds: Path) -> tuple[bool, list[str]]:
     """Locked files against LOCK.json / LOCK_court.json: every difference must be explained by an amendment
-    (prereg/CHANGES.json). With the Git history available, the frozen heldout.py of the lock commit is re-run on the
-    released runs and must give the same pre-registered verdicts as the current code."""
+    (prereg/CHANGES.json), and the file must still have the hash recorded with its last amendment. The frozen
+    heldout.py of the lock (prereg/frozen/, hash-checked against LOCK.json and, with Git history, the lock commit) is
+    re-run on the released runs and must give the same pre-registered verdicts as the current code."""
     import hashlib
     import importlib.util
     import subprocess
@@ -382,21 +397,36 @@ def prereg_verify(root: Path, ds: Path) -> tuple[bool, list[str]]:
             cur = hashlib.sha256((root / f).read_bytes()).hexdigest() if (root / f).exists() else None
             if cur in (h, later.get(f)):
                 lines.append(f"{lock_name} {f}: unchanged")
-            elif f in changes:
+            elif f in changes and changes.get("sha256_now", {}).get(f) == cur:
                 lines.append(f"{lock_name} {f}: changed by {', '.join(changes[f])}")
+            elif f in changes:
+                ok = False
+                lines.append(f"{lock_name} {f}: CHANGED AFTER ITS LAST RECORDED AMENDMENT ({', '.join(changes[f])})")
             else:
                 ok = False
                 lines.append(f"{lock_name} {f}: CHANGED WITHOUT AN AMENDMENT")
+    # the frozen held-out code ships in prereg/frozen/ so the check runs without Git history (e.g. in Docker); its
+    # hash must equal the one locked in LOCK.json, and where the history exists it must equal the lock commit's file
+    hf = "src/statute_twins/analysis/heldout.py"
+    fp = root / "prereg/frozen/heldout.py"
+    src = fp.read_text() if fp.exists() else ""
+    want = json.loads((root / "prereg/LOCK.json").read_text())["files"][hf]
+    if hashlib.sha256(src.encode()).hexdigest() != want:
+        lines.append("prereg/frozen/heldout.py: MISSING OR NOT THE LOCKED FILE (sha256 differs from LOCK.json)")
+        return False, lines
+    lines.append(f"prereg/frozen/heldout.py: sha256 = LOCK.json ({want[:12]}…)")
     try:
-        src = subprocess.run(["git", "show", f"{changes['lock_commit']}:track_1b/src/statute_twins/analysis/heldout.py"],
+        git = subprocess.run(["git", "show", f"{changes['lock_commit']}:track_1b/{hf}"],
                              cwd=root, capture_output=True, text=True, check=True).stdout
+        same = git == src
+        ok &= same
+        lines.append(f"lock commit {changes['lock_commit']}: heldout.py " + ("= prereg/frozen" if same else "DIFFERS"))
     except Exception:
-        lines.append("frozen held-out code: Git history not available here (skipped)")
-        return ok, lines
+        lines.append(f"lock commit {changes['lock_commit']}: Git history not available here (frozen copy used)")
     from .analysis import heldout
     spec = importlib.util.spec_from_loader("statute_twins.analysis._heldout_frozen", loader=None)
     frozen = importlib.util.module_from_spec(spec)
-    exec(compile(src, "heldout.py@" + changes["lock_commit"], "exec"), frozen.__dict__)
+    exec(compile(src, "prereg/frozen/heldout.py", "exec"), frozen.__dict__)
     items = all_items(ds)
     for run in released_runs(ds) or []:
         rows = [r for r in _load_jsonl(ds / "responses" / f"{run}.jsonl")
@@ -409,13 +439,21 @@ def prereg_verify(root: Path, ds: Path) -> tuple[bool, list[str]]:
                 continue
             same = {k: v["passed"] for k, v in a.items()} == {k: v["passed"] for k, v in b.items()}
             ok &= same
-            lines.append(f"frozen heldout.py ({changes['lock_commit']}) on {run} {lang}: "
+            lines.append(f"frozen heldout.py on {run} {lang}: "
                          + ", ".join(f"{k} {'pass' if v['passed'] else 'fail'}" for k, v in sorted(a.items()))
                          + (" = current" if same else " DIFFERS from current"))
     return ok, lines
 
 
 def cmd_prereg_verify(a) -> int:
+    if a.record:
+        # after writing an amendment: record the current hash of every changed locked file in prereg/CHANGES.json
+        import hashlib
+        cp = Path("prereg/CHANGES.json")
+        changes = json.loads(cp.read_text())
+        changes["sha256_now"] = {f: hashlib.sha256(Path(f).read_bytes()).hexdigest()
+                                 for f in changes if f not in ("lock_commit", "note", "sha256_now") and Path(f).exists()}
+        cp.write_text(json.dumps(changes, indent=1, ensure_ascii=False) + "\n")
     ok, lines = prereg_verify(Path("."), Path(a.dataset))
     for l in lines:
         print(" ", l)
@@ -425,14 +463,11 @@ def cmd_prereg_verify(a) -> int:
 
 def cmd_judge(a) -> int:
     """Free-text judging (the track's second metric) from the CLI: packets with opaque ids, a model judge on any
-    OpenAI-compatible endpoint (LLM_* variables), aggregation with the parser check. Wraps scripts/judge_open.py."""
-    import subprocess
-    script = Path("scripts/judge_open.py")
-    if not script.exists():
-        raise SystemExit("statute-twins judge runs from track_1b/ (needs scripts/judge_open.py)")
+    OpenAI-compatible endpoint (LLM_* variables), aggregation with the parser check (statute_twins.judging)."""
+    from .judging import main
     args = {"packets": ["packets", a.run, a.work], "judge": ["judge", a.who, a.work],
             "aggregate": ["aggregate", a.run, a.work], "human": ["human", a.run]}[a.step]
-    return subprocess.run([sys.executable, str(script), *args]).returncode
+    return main(args)
 
 
 def cmd_new(a) -> int:
@@ -520,7 +555,9 @@ def main(argv=None) -> int:
     p.add_argument("step", choices=["packets", "judge", "aggregate", "human"]); p.add_argument("--run", default="publicai-70b-open")
     p.add_argument("--work", default="judge_work"); p.add_argument("--who", default="A"); p.set_defaults(f=cmd_judge)
     p = sub.add_parser("prereg-verify", help="locked files vs LOCK.json, amendments, frozen held-out code")
-    p.add_argument("--dataset", default="dataset"); p.set_defaults(f=cmd_prereg_verify)
+    p.add_argument("--dataset", default="dataset")
+    p.add_argument("--record", action="store_true", help="record the current hashes of amended locked files")
+    p.set_defaults(f=cmd_prereg_verify)
     p = sub.add_parser("new"); p.add_argument("statute_id"); p.add_argument("--dir", default="statutes"); p.set_defaults(f=cmd_new)
     p = sub.add_parser("pin"); p.add_argument("--eli", required=True); p.add_argument("--eid", required=True)
     p.add_argument("--lang", default="de"); p.add_argument("--date", required=True); p.add_argument("--out", default="statutes/sources")

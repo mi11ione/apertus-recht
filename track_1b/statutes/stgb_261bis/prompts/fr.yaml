@@ -15,15 +15,21 @@ law_text:
     - {source: fedlex_art2, label: "Art. 2 CP", numbered: true}
     - {source: bge_130_iv_111, label: "ATF 130 IV 111, regeste"}
   question: "\n\nQuestion :"
+  # control R5d (A13): Art. 1 StGB pasted before Art. 2; Fedlex eli/cc/54/757_781_799, version 2026-10-01, pinned with
+  # `statute-twins pin --eid art_1`; the text hash is checked when the prompt is rendered
+  art1_control: {file: ../sources/eli_cc_54_757_781_799__art_1__fr__2026-10-01.json, label: "Art. 1 CP", text_sha256: 22a29a52b9c7c005cf9e5ba54b421b4ce34d70fe7d9dd520b4588e533dfcf45c}
 tails:
   open: " Est-ce punissable selon le droit suisse ? Répondez en deux ou trois phrases."
   conv: " L'infraction est-elle réalisée, de sorte qu'un tribunal suisse condamnerait la personne ? Répondez par Oui ou par Non."
   ver: " Quel est le jugement d'un tribunal suisse ? Répondez par « condamnation » ou « acquittement »."
+  rev: " Un tribunal suisse acquitterait-il la personne ? Répondez par Oui ou par Non."   # A13 (exploratory): the question asked in the acquittal direction
 plain:
   open: "\n\nQuestion : Est-ce punissable selon le droit suisse ? Répondez en deux ou trois phrases."
   conv: "\n\nQuestion : Un tribunal suisse condamnerait-il cette personne en vertu de l'art. 261bis CP ? Répondez par Oui ou par Non."
   ver: "\n\nQuel est le jugement d'un tribunal suisse en application de l'art. 261bis CP ? Répondez par « condamnation » ou « acquittement »."
+  rev: "\n\nQuestion : Un tribunal suisse acquitterait-il cette personne de l'accusation fondée sur l'art. 261bis CP ? Répondez par Oui ou par Non."
 framings:
   open: {answer_prefix: "", convict: "", acquit: ""}   # free text, judged against the acceptance criterion
   conv: {answer_prefix: "", convict: "Oui", acquit: "Non"}
   ver:  {answer_prefix: "Jugement :", convict: " condamnation", acquit: " acquittement"}
+  rev:  {answer_prefix: "", convict: "Non", acquit: "Oui"}   # A13: "yes" means acquit, so agreement bias favours acquittal

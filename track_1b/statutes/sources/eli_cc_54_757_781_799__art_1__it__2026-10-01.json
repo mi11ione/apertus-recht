@@ -1,0 +1,15 @@
+{
+ "eli": "eli/cc/54/757_781_799",
+ "eid": "art_1",
+ "lang": "it",
+ "requested_date": "2026-10-09",
+ "applicability_date": "2026-10-01",
+ "url": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/54/757_781_799/20261001/it/xml/fedlex-data-admin-ch-eli-cc-54-757_781_799-20261001-it-xml.xml",
+ "xml_sha256": "32620945e02cb5ccacf1429d4aef1d19c7ebc3338b83aa4522013bd8f3469b6b",
+ "paragraphs": [
+  "Una pena o misura può essere inflitta soltanto per un fatto per cui la legge commina espressamente una pena."
+ ],
+ "text_sha256": "4394abab526c69e39cad598ab995326c8409cb9701e5fc63b45874017b081563",
+ "notes": [],
+ "fetched": "2026-10-10"
+}

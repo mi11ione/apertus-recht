@@ -133,12 +133,44 @@ def main(*paths: str) -> None:
                f"{status['out_of_scope']} out of scope (unmodelled grounds), "
                f"{status['unextractable']} unextractable, {status['excluded']} excluded; every tuple extracted twice by "
                f"independent agents, conflicts settled by a third (amendment A4)")
+    # POST HOC (A12, after a legal review): count cases, not decision instances; drop a conviction later annulled under
+    # Art. 10 ECHR; report genocide denial (Abs. 4, second half) apart from incitement and degradation.
+    groups = [{"bge_BGE_149_IV_170", "bger_6B_777_2022"}, {"bger_6B_627_2015", "zh_obergericht_SB140436"},
+              {"bger_6B_350_2019", "vd_findinfo_Jug___2019___36", "vd_gerichte_PE16.006073"}]
+    superseded = {"bger_6B_398_2007": "Perinçek: ECtHR (Grand Chamber, 2015) found a violation of Art. 10 ECHR; "
+                                      "the Federal Court revised the judgment (6F_6/2016)"}
+    notes = {t["decision_id"]: (t.get("notes") or "").lower() for t in tuples}
+    denial_kw = ("leugn", "négation", "negazion", "genocid", "génocide", "holocaust", "shoah", "völkermord")
+    case_of = {}
+    for g in groups:
+        for d in g:
+            case_of[d] = sorted(g)[0]
+    cases = {}
+    for r in ins:
+        if r["decision_id"] in superseded:
+            continue
+        c = case_of.get(r["decision_id"], r["decision_id"])
+        cases.setdefault(c, []).append(r)
+    agree_cases = sum(all(x["agree"] for x in v) for v in cases.values())
+    acq = [c for c, v in cases.items() if v[0]["court_verdict"] == "acquit"]
+    denial = [c for c, v in cases.items() if any(k in notes.get(x["decision_id"], "") for x in v for k in denial_kw)]
+    lo_c, hi_c = wilson(agree_cases, len(cases))
+    case_level = dict(note="post hoc (A12): distinct cases; one superseded conviction excluded", cases=len(cases),
+                      agree=agree_cases, ci=[lo_c, hi_c], acquittal_cases=len(acq),
+                      acquittals_before_bge_130=[c for c in acq if any(x.get("before_bge_130_iv_111") for x in cases[c])],
+                      genocide_denial_cases=len(denial), incitement_or_degradation_cases=len(cases) - len(denial),
+                      genocide_denial_instances=sum(any(k in notes.get(r["decision_id"], "") for k in denial_kw) for r in ins),
+                      acquittals={c: ("predates BGE 130 IV 111" if any(x.get("before_bge_130_iv_111") for x in cases[c]) else
+                                      "clean" if cases[c][0].get("acquittal_ground", "").split(":")[0] == cases[c][0]["engine_reason"].split(":")[0]
+                                      else f"same outcome, other ground (court: {cases[c][0].get('acquittal_ground')}; "
+                                           f"engine: {cases[c][0]['engine_reason']})") for c in acq},
+                      merged_instances=sum(len(g) for g in groups) - len(groups), superseded=superseded)
     pool = json.loads((ROOT / "statutes/stgb_261bis/review/court/pool.json").read_text()) if (ROOT / "statutes/stgb_261bis/review/court/pool.json").exists() else {}
     rep = dict(summary=summary, pool=pool, strata=strata, pooled=pooled, posthoc_act_date_bound=posthoc, counts=dict(status), in_scope=len(ins), agree=k, agreement_ci=[lo, hi],
                verified=len(ver), verified_agree=kv,
                confusion={f"court {a} / engine {b}": n for (a, b), n in sorted(collections.Counter((r["court_verdict"], r["engine"]) for r in ins).items())},
                by_ground=dict(collections.Counter(r.get("acquittal_ground") for r in ins if r["court_verdict"] == "acquit")),
-               disagreements=[r for r in ins if not r["agree"]], rows=rows)
+               disagreements=[r for r in ins if not r["agree"]], case_level=case_level, rows=rows)
     (ROOT / "reports").mkdir(exist_ok=True)
     (ROOT / "reports/court_validation.json").write_text(json.dumps(rep, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
     print(summary)

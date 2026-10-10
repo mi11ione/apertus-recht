@@ -1,0 +1,15 @@
+{
+ "eli": "eli/cc/54/757_781_799",
+ "eid": "art_1",
+ "lang": "de",
+ "requested_date": "2026-10-09",
+ "applicability_date": "2026-10-01",
+ "url": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/54/757_781_799/20261001/de/xml/fedlex-data-admin-ch-eli-cc-54-757_781_799-20261001-de-xml.xml",
+ "xml_sha256": "6a83a4d0fe4d6bb4d012750eb5e23141aaff8a1e81c33b7508efdac6299d7b76",
+ "paragraphs": [
+  "Eine Strafe oder Massnahme darf nur wegen einer Tat verhängt werden, die das Gesetz ausdrücklich unter Strafe stellt."
+ ],
+ "text_sha256": "21e2c73557e2edcfd03a5461e3fec14448b172605becdf0a156717ec5051dd93",
+ "notes": [],
+ "fetched": "2026-10-10"
+}

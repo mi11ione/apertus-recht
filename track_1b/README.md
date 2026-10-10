@@ -2,8 +2,10 @@
 
 **Which racial-discrimination law does Apertus apply?** Not the one in force. Asked whether a statement is punishable
 under Art. 261bis StGB, Apertus v1.5 convicts for words said only at a family dinner, for degrading statements about a canton or
-a profession, and for acts committed before the law existed. Rules spelled out in the prompt fix some
-elements and leave others standing; the verbatim law text, as a retrieval pipeline would paste it, changes nothing at all.
+a profession, and for acts before the article entered into force (1 Jan 1995). Rules spelled out in the prompt fix
+some elements and leave others standing; in German, the verbatim law text, as a retrieval pipeline would paste it,
+changes no verdict. Intent and the dignity threshold are stated in each scenario, so this measures how the model
+applies the elements, not whether it predicts a conviction.
 
 ![Synopse: the law in force next to the law Apertus applies](docs/figures/fig1_synopse.png)
 
@@ -16,16 +18,19 @@ Fedlex text and the leading case's Regeste instead. Light red: in one framing; g
 
 - **No law in the prompt: everything is punishable.** The 70B convicts every scenario we wrote, in German, French and
   Italian (balanced accuracy 0.50). Asked in free text, it calls 73 of 75 scenarios punishable
-  that are not punishable under Art. 261bis. Two Claude judges and a judge of another model family agree on nearly every answer. Told in a person's own words instead of a
+  that are not punishable under Art. 261bis, each time naming that article. Two Claude judges agree on nearly every
+  answer; a judge of another model family, on its own, counts 72 of 75. Retold as a first-person paraphrase instead of a
   charge sheet, the same scenarios fare no better: 2 of 215 acquittals without the law, and the same element profile with the rules
   spelled out.
-- **Rules spelled out (R3): publicity is fixed, the closed list and the date are not.** Private settings
-  are acquitted. A canton, a disability or a political opinion is still convicted, although the prompt lists the four
-  protected characteristics. Acts from 1993/94, before the article existed, are convicted at every rung; no rung
-  states the 1995 date, so that one is a gap in what the model knows.
+- **Rules spelled out (R3): publicity is taken up, the closed list and the date are not.** Private settings
+  are acquitted (they name family or friends, as the rule's paraphrase does). A canton, a disability or a political
+  opinion is still convicted, although the prompt lists the four protected characteristics. Acts from 1993/94, before
+  the article entered into force, are convicted at every rung; no rung states the 1995 date, so that one is a gap in
+  what the model knows.
 - **The law itself does not help.** Given the verbatim Fedlex text of Art. 261bis and Art. 2 StGB and the Regeste of
-  BGE 130 IV 111, as a retrieval pipeline would paste them, the 70B convicts every scenario again: 0 of
-  215 acquittals recognised, exactly as with no law in the prompt. In French it recognises 12 and in Italian 43, against 120 and 97 with
+  BGE 130 IV 111, as a retrieval pipeline would paste them, the German 70B convicts every scenario again: 0 of
+  215 acquittals recognised, exactly as with no law in the prompt. Its scores do register the facts (a private
+  setting lowers the conviction score), but never below the threshold. In French it recognises 12 and in Italian 43, against 120 and 97 with
   the rules spelled out; in free text it calls every one of 75 non-punishable scenarios punishable. Only rules spelled out in plain sentences move it.
 - **The date sentence backfires.** One sentence saying that sexual orientation is protected since 1 July 2020 makes the
   70B stop convicting punishable cases from 2021–25: with the verdict word it convicts 0 of 35 in German, 1 in French,
@@ -90,8 +95,11 @@ Exact forced choice on vLLM endpoints, first-token log-probabilities elsewhere, 
   every contested item and a blind sample of settled ones: 115/115 gold correct.
 - **Against Swiss courts.** 326 decisions from `voilaj/swiss-caselaw`, each coded twice by independent agents with a
   third on conflicts, under a pre-registered rule: the engine agrees with the court in 58/58 rulings on the elements it
-  models (Wilson 95% 0.94–1.00). That checks the conviction side well and the acquittal side weakly: an engine that
-  always convicts would score 55/58, and only 3 rulings acquit on a modelled ground (all 3 agree). The other rulings turn on
+  models (Wilson 95% 0.94–1.00). Counted per distinct case, with repeat instances merged and the Perinçek conviction
+  left out (revised after the ECtHR found a violation of Art. 10 ECHR), it is 53/53, 6 of them genocide denial (post
+  hoc, A12). That checks the conviction side well and the acquittal side weakly: an engine that always convicts would
+  score 55/58, and of the 3 acquittals on a modelled ground one is clean, one agrees on another ground and one predates
+  BGE 130 IV 111. The other rulings turn on
   what the model deliberately leaves out (the dignity threshold, intent, freedom of expression), which maps where the
   next iteration should go.
 - **Against the training data.** 0 of 35,241 item 13-grams occur in the 1,069,365 decisions of `voilaj/swiss-caselaw`
@@ -121,8 +129,10 @@ contamination, court validation, adjudication) · `prereg/` · `tests/` · `docs
 ## Declarations
 
 Built by the team with Claude Code agents (Anthropic): code, German templates, French and Italian translations, blind
-back-translations, annotations, adjudications and court-tuple extractions are agent work, each step reproducible from
-the instructions in this repository; no step depends on a human label. Maturity: proof of concept for the method,
+back-translations, annotations, adjudications, court-tuple extractions and the two free-text judges (Claude Opus 5.5)
+are agent work, each step reproducible from the instructions in this repository; no step depends on a human label.
+The pre-registration had planned a team member as reviewer for court tuples and adjudication; amendment A4 replaced
+that with independent agents, and both results are reported. Maturity: proof of concept for the method,
 release quality for the dataset and harness. Apertus 70B was queried only through Public AI; new 8B runs ran on CPU CI
 runners (`.github/workflows/gguf-8b.yml`).
 

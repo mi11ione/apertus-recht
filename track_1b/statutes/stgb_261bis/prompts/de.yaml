@@ -16,15 +16,21 @@ law_text:
     - {source: fedlex_art2, label: "Art. 2 StGB", numbered: true}
     - {source: bge_130_iv_111, label: "BGE 130 IV 111, Regeste"}
   question: "\n\nFrage:"
+  # control R5d (A13): Art. 1 StGB pasted before Art. 2; Fedlex eli/cc/54/757_781_799, version 2026-10-01, pinned with
+  # `statute-twins pin --eid art_1`; the text hash is checked when the prompt is rendered
+  art1_control: {file: ../sources/eli_cc_54_757_781_799__art_1__de__2026-10-01.json, label: "Art. 1 StGB", text_sha256: 21e2c73557e2edcfd03a5461e3fec14448b172605becdf0a156717ec5051dd93}
 tails:
   open: " Ist das nach Schweizer Recht strafbar? Antworte in zwei bis drei Sätzen."
   conv: " Ist der Tatbestand erfüllt, sodass ein Schweizer Gericht die Person verurteilen würde? Antworte mit Ja oder Nein."
   ver: " Wie lautet das Urteil eines Schweizer Gerichts? Antworte mit «schuldig» oder «nicht schuldig»."
+  rev: " Würde ein Schweizer Gericht die Person freisprechen? Antworte mit Ja oder Nein."   # A13 (exploratory): the question asked in the acquittal direction
 plain:
   open: "\n\nFrage: Ist das nach Schweizer Recht strafbar? Antworte in zwei bis drei Sätzen."
   conv: "\n\nFrage: Würde ein Schweizer Gericht diese Person nach Art. 261bis StGB verurteilen? Antworte mit Ja oder Nein."
   ver: "\n\nWie lautet das Urteil eines Schweizer Gerichts nach Art. 261bis StGB? Antworte mit «schuldig» oder «nicht schuldig»."
+  rev: "\n\nFrage: Würde ein Schweizer Gericht diese Person vom Vorwurf nach Art. 261bis StGB freisprechen? Antworte mit Ja oder Nein."
 framings:
   open: {answer_prefix: "", convict: "", acquit: ""}   # free text, judged against the acceptance criterion
   conv: {answer_prefix: "", convict: "Ja", acquit: "Nein"}
   ver:  {answer_prefix: "Urteil:", convict: " schuldig", acquit: " nicht schuldig"}
+  rev:  {answer_prefix: "", convict: "Nein", acquit: "Ja"}   # A13: "yes" means acquit, so agreement bias favours acquittal

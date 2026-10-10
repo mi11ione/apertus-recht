@@ -1377,6 +1377,31 @@
   "characteristic": 1
  },
  "disagreements": [],
+ "case_level": {
+  "note": "post hoc (A12): distinct cases; one superseded conviction excluded",
+  "cases": 53,
+  "agree": 53,
+  "ci": [
+   0.932418011423458,
+   0.9999999999999999
+  ],
+  "acquittal_cases": 3,
+  "acquittals_before_bge_130": [
+   "bge_126 IV 176"
+  ],
+  "genocide_denial_cases": 6,
+  "incitement_or_degradation_cases": 47,
+  "genocide_denial_instances": 10,
+  "acquittals": {
+   "zh_obergericht_SB230225": "same outcome, other ground (court: setting; engine: characteristic:not_listed)",
+   "bge_126 IV 176": "predates BGE 130 IV 111",
+   "zh_bezirksgericht_buelach_GG210066": "clean"
+  },
+  "merged_instances": 4,
+  "superseded": {
+   "bger_6B_398_2007": "Perinçek: ECtHR (Grand Chamber, 2015) found a violation of Art. 10 ECHR; the Federal Court revised the judgment (6F_6/2016)"
+  }
+ },
  "rows": [
   {
    "decision_id": "ag_strafgericht_SBK.2023.114",

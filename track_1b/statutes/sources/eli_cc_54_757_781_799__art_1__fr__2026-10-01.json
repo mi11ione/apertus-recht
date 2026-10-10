@@ -1,0 +1,15 @@
+{
+ "eli": "eli/cc/54/757_781_799",
+ "eid": "art_1",
+ "lang": "fr",
+ "requested_date": "2026-10-09",
+ "applicability_date": "2026-10-01",
+ "url": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/54/757_781_799/20261001/fr/xml/fedlex-data-admin-ch-eli-cc-54-757_781_799-20261001-fr-xml.xml",
+ "xml_sha256": "4e3ed9f45332b85f99bde2dc46631aac27cafd297ba306436cfabfab83ee8d1a",
+ "paragraphs": [
+  "Une peine ou une mesure ne peuvent être prononcées qu’en raison d’un acte expressément réprimé par la loi."
+ ],
+ "text_sha256": "22a29a52b9c7c005cf9e5ba54b421b4ce34d70fe7d9dd520b4588e533dfcf45c",
+ "notes": [],
+ "fetched": "2026-10-10"
+}

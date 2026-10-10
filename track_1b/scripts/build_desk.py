@@ -167,7 +167,16 @@ def court():
         if x["id"] not in seen:
             seen.add(x["id"])
             uniq.append(x)
-    return dict(summary=cv["summary"], rows=uniq)
+    cl = cv.get("case_level") or {}
+    for x in uniq:
+        if x["id"] in cl.get("superseded", {}):
+            x["why"] = "superseded: " + cl["superseded"][x["id"]]
+    summary = cv["summary"]
+    if cl:
+        summary += (f". Counted per distinct case (repeat instances merged, one superseded conviction left out; post hoc): "
+                    f"{cl['agree']}/{cl['cases']}, {cl['genocide_denial_cases']} of them genocide denial; acquittals: "
+                    + "; ".join(f"{k} {v}" for k, v in cl.get("acquittals", {}).items()))
+    return dict(summary=summary, rows=uniq)
 
 
 PAGE = r"""<!doctype html>
@@ -264,7 +273,7 @@ details[open] summary::before{content:"− "}
 <body>
 <header>
 <h1>Apertus-Recht · Gold register</h1>
-<span class="sub">Every Art. 261bis StGB scenario, the verdict the law gives, and what Apertus answered</span>
+<span class="sub">Every Art. 261bis StGB scenario, the verdict the law gives, and what Apertus answered · research data, not legal advice</span>
 <nav><a href="__REPORT__">Report</a><a href="__VIDEO__">Video</a><a href="__REPO__">Code</a><a href="__DATASET__">Dataset</a></nav>
 </header>
 <div class="bar">
@@ -361,7 +370,7 @@ function show(it, scroll = true) {
 function home() {
   cur = null; mark(false); history.replaceState(null, "", location.pathname);
   const items = data[lang], L = lang.split("_")[0];
-  let h = `<p class="intro">Every case here is a short scenario under Art. 261bis StGB (racial discrimination), with the verdict the law gives, computed from the official text and the leading case BGE 130 IV 111, and what Apertus, Switzerland's open model, answered. Each case has twins that change exactly one legal fact. Cases are summaries: intent and the dignity threshold are taken as met; other offences are not examined.</p><h2>What Apertus gets wrong, in plain words</h2>`;
+  let h = `<p class="intro">Every case here is a short scenario under Art. 261bis StGB (racial discrimination), with the verdict the law gives, computed from the official text and the leading case BGE 130 IV 111, and what Apertus, Switzerland's open model, answered. Each case has twins that change exactly one legal fact. Cases are summaries: intent and the dignity threshold are taken as met; other offences are not examined. This is a research dataset, not legal advice: for your own situation, ask a lawyer or a counselling service.</p><h2>What Apertus gets wrong, in plain words</h2>`;
   for (const F of FINDINGS) {
     const picked = items.filter(i => F.pick(i));
     if (!picked.length) continue;
