@@ -1,0 +1,16 @@
+[
+{"id":"J00011","verdict_expressed":"punishable","pass":false,"reason_ok":false,"misleads":true,"note":"Falsely claims publicity is not required; certain verdict without BGE 130 IV 111 analysis."},
+{"id":"J00014","verdict_expressed":"not_punishable","pass":false,"reason_ok":false,"misleads":true,"note":"Labels party private without weighing acquaintances-of-acquaintances; irrelevant gender-identity remark; certain verdict."},
+{"id":"J00031","verdict_expressed":"punishable","pass":false,"reason_ok":false,"misleads":false,"note":"Ignores publicity entirely; cites wrong Art. 10 StGB; certain verdict."},
+{"id":"J00072","verdict_expressed":"punishable","pass":false,"reason_ok":false,"misleads":false,"note":"No publicity analysis at all; certain verdict based only on content and intent."},
+{"id":"J00094","verdict_expressed":"punishable","pass":true,"reason_ok":true,"misleads":false,"note":"Addresses publicity under BGE 130 IV 111: 25 colleagues, larger circle, not purely private. Thin but adequate."},
+{"id":"J00197","verdict_expressed":"punishable","pass":false,"reason_ok":false,"misleads":false,"note":"Asserts closed group can count as public without applying relationship or size criteria."},
+{"id":"J00205","verdict_expressed":"not_punishable","pass":false,"reason_ok":false,"misleads":true,"note":"Equates 'non-public meeting' with private; ignores new members and 25 people; certain verdict."},
+{"id":"J00215","verdict_expressed":"punishable","pass":false,"reason_ok":false,"misleads":false,"note":"No publicity analysis; certain verdict from content and intent only."},
+{"id":"J00277","verdict_expressed":"punishable","pass":false,"reason_ok":false,"misleads":true,"note":"Says not public yet punishable; wrong rule that private groups suffice."},
+{"id":"J00280","verdict_expressed":"punishable","pass":false,"reason_ok":false,"misleads":false,"note":"Mentions 'public' only in statute paraphrase; never applies it to the garden party facts."},
+{"id":"J00284","verdict_expressed":"not_punishable","pass":false,"reason_ok":false,"misleads":true,"note":"Cites loose ties but draws inverted inference; weak personal bonds point toward publicity."},
+{"id":"J00330","verdict_expressed":"punishable","pass":false,"reason_ok":false,"misleads":false,"note":"'Sent to several people' is not the BGE test; no relationship analysis; certain verdict."},
+{"id":"J00379","verdict_expressed":"not_punishable","pass":false,"reason_ok":false,"misleads":true,"note":"Mostly fleeting acquaintances taken as private: inverted BGE 130 IV 111 inference; certain verdict."},
+{"id":"J00446","verdict_expressed":"punishable","pass":false,"reason_ok":false,"misleads":false,"note":"Confused: 'limited circle' therefore public; no relationship criterion applied; certain verdict."}
+]

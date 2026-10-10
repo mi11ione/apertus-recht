@@ -50,8 +50,19 @@ def classify(t: dict, st) -> dict:
     g = gold(st, facts)
     court = "convict" if t["outcome"] == "convicted" else "acquit"
     agree = g.verdict == court
+    shown = dict(facts, characteristic=f"unlisted:{t['characteristic'].split(':', 1)[-1]}") if "characteristic_substituted" in out else facts
+    # does the element the court acquitted on also fail in the engine? (the engine reports the first failing element)
+    ground = t.get("acquittal_ground")
+    ground_fails = None
+    if court == "acquit":
+        ground_fails = {"setting": facts["setting"] != "public",
+                        "characteristic": g.reason.startswith("characteristic"),
+                        "act_date": g.reason.startswith(("act_date", "characteristic:not_yet"))}.get(ground)
+    # BGE 130 IV 111 (2004) changed the publicity test; an earlier acquittal on publicity applied the old test
+    old_test = court == "acquit" and ground == "setting" and (t.get("date") or "9999") < "2004"
     return dict(out, status="in_scope", engine=g.verdict, engine_reason=g.reason, court_verdict=court, agree=agree,
-                acquittal_ground=t.get("acquittal_ground"), facts=facts)
+                acquittal_ground=ground, ground_fails_in_engine=ground_fails, before_bge_130_iv_111=old_test, facts=shown,
+                engine_input=facts if shown is not facts else None)
 
 
 def summarise(rows, label):
@@ -60,7 +71,15 @@ def summarise(rows, label):
     status = collections.Counter(r["status"] for r in rows)
     lo, hi = wilson(k, len(ins))
     conf = collections.Counter((r["court_verdict"], r["engine"]) for r in ins)
-    return dict(label=label, decisions=len(rows), in_scope=len(ins), agree=k, ci=[lo, hi], counts=dict(status),
+    acq = [r for r in ins if r["court_verdict"] == "acquit"]
+    con = [r for r in ins if r["court_verdict"] == "convict"]
+    ka, kc = sum(r["agree"] for r in acq), sum(r["agree"] for r in con)
+    by_class = dict(convictions=dict(agree=kc, n=len(con), ci=list(wilson(kc, len(con)))),
+                    acquittals=dict(agree=ka, n=len(acq), ci=list(wilson(ka, len(acq))),
+                                    ground_fails_in_engine=sum(bool(r.get("ground_fails_in_engine")) for r in acq),
+                                    before_bge_130_iv_111=[r["decision_id"] for r in acq if r.get("before_bge_130_iv_111")]),
+                    always_convict_baseline=f"{len(con)}/{len(ins)}")
+    return dict(label=label, decisions=len(rows), in_scope=len(ins), agree=k, ci=[lo, hi], counts=dict(status), by_class=by_class,
                 court_convict=sum(r["court_verdict"] == "convict" for r in ins),
                 court_acquit=sum(r["court_verdict"] == "acquit" for r in ins),
                 confusion={f"court {a} / engine {b}": n for (a, b), n in sorted(conf.items())})
@@ -108,7 +127,10 @@ def main(*paths: str) -> None:
     lo, hi = wilson(k, len(ins))
     summary = (f"{len(tuples)} decisions triaged ({', '.join(f'stratum {k_}: {v_['decisions']}' for k_, v_ in strata.items())}); "
                f"{len(ins)} in scope ({pooled['court_convict']} convictions, {pooled['court_acquit']} acquittals); engine agrees with the court in {k}/{len(ins)} "
-               f"(Wilson 95% {lo:.2f}-{hi:.2f}); {status['out_of_scope']} out of scope (unmodelled grounds), "
+               f"(Wilson 95% {lo:.2f}-{hi:.2f}; an engine that always convicts would agree in {pooled['by_class']['always_convict_baseline']}; "
+               f"acquittals {pooled['by_class']['acquittals']['agree']}/{pooled['by_class']['acquittals']['n']}, Wilson "
+               f"{pooled['by_class']['acquittals']['ci'][0]:.2f}-{pooled['by_class']['acquittals']['ci'][1]:.2f}); "
+               f"{status['out_of_scope']} out of scope (unmodelled grounds), "
                f"{status['unextractable']} unextractable, {status['excluded']} excluded; every tuple extracted twice by "
                f"independent agents, conflicts settled by a third (amendment A4)")
     pool = json.loads((ROOT / "statutes/stgb_261bis/review/court/pool.json").read_text()) if (ROOT / "statutes/stgb_261bis/review/court/pool.json").exists() else {}

@@ -122,9 +122,11 @@ the pinned statute text and BGE 130 IV 111 E. 5.2, never written by hand.
 ## Uses
 ### Direct Use
 Evaluating whether a language model applies the Swiss law in force when a user asks a local legal-information
-assistant whether a statement is punishable under Art. 261bis. The model answers each scenario at five prompt rungs
-(R0: plain question; R1: elements named; R2: + publicity rule of BGE 130 IV 111 and the list; R3: + "the list is
-closed"; R4: + the 1 July 2020 date clause) in two answer framings (Ja/Nein; "Urteil: schuldig / nicht schuldig"). The
+assistant whether a statement is punishable under Art. 261bis. The model answers each scenario at six prompt rungs
+(R0: plain question; R1: elements named; R2: + a one-sentence paraphrase of BGE 130 IV 111 and the list; R3: + "the
+list is closed"; R4: + "sexual orientation only from 1 July 2020"; R5: the verbatim Fedlex text of Art. 261bis and
+Art. 2 StGB with Fedlex's footnote and the Regeste of BGE 130 IV 111) in two answer framings (Ja/Nein; "Urteil:
+schuldig / nicht schuldig", and the French and Italian equivalents). The
 twins read back **which element** a model gets wrong, not only how often. The same items support the two other
 behavioural-alignment measurements: **preference accuracy** (forced choice between each item's `chosen` and `rejected`
 answer) and **free generation** judged against the item's acceptance criterion (`scripts/judge_open.py` in the
@@ -141,7 +143,9 @@ text; acts are described abstractly in the statute's vocabulary.
 - **Localisation:** each language is set where it is spoken: German items in German-speaking towns, French items in
   Romandie (Lausanne, Genève, Sion, …), Italian items in Ticino and Italian Graubünden (Lugano, Bellinzona, Poschiavo,
   …), with each language's official legal terms and citation forms (StGB / CP, BGE / ATF / DTF, AS / RO / RU).
-- **Prompt rungs** model the retrieval levels of an assistant (no law in context → statute and leading case pasted in).
+- **Prompt rungs** model the retrieval levels of an assistant: R0 no law; R1–R4 the elements, a one-sentence paraphrase
+  of BGE 130 IV 111, the closed list and the 2020 date as rules; R5 the verbatim Fedlex text of Art. 261bis (with
+  Fedlex's footnote) and Art. 2 StGB plus the Regeste of BGE 130 IV 111, as a retrieval pipeline would paste them.
 - **Acceptance criteria, chosen / rejected answers, settled / contested labels and a normative source** are given for
   every item (Track 1B behavioural-alignment requirements).
 

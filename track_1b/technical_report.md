@@ -2,10 +2,10 @@
 
 People ask chat assistants whether something said at dinner, in a chat or at a rally is punishable. We release 1,980
 German, French and Italian minimal-twin scenarios under Art. 261bis StGB. Each verdict is computed by code from pinned
-Fedlex texts and BGE 130 IV 111 and agrees with ⟨court_agree⟩ in-scope Swiss court rulings. A harness re-derives every
+Fedlex texts and BGE 130 IV 111, and agrees with every in-scope Swiss court ruling we could code (55 convictions, 3 acquittals). A harness re-derives every
 label and number from a clean checkout. Asked without the law, Apertus v1.5 70B convicts every scenario we wrote
-(balanced accuracy 0.50). In free text it tells ⟨open_r0_mislead⟩ of 75 users whose conduct is not punishable that it
-is. With the statute pasted in, it applies the publicity rule. It still convicts for a canton, a disability or a
+(balanced accuracy 0.50). In free text it tells ⟨open_r0_mislead⟩ of 75 users whose conduct is not punishable under Art. 261bis that it
+is. With the rules spelled out in the prompt, it applies the publicity rule. It still convicts for a canton, a disability or a
 political opinion, and for acts committed before the law existed. Told when sexual orientation became protected, it
 stops protecting it.
 
@@ -38,7 +38,8 @@ region. Whether a statement is punishable turns on three elements a layperson ca
 
 A wrong answer misinforms people about their own speech in either direction. The user community is Swiss residents
 asking a local assistant in German, French or Italian, with or without the law in its context. Apertus-v1.5-8B was
-downloaded ⟨hf_downloads⟩ times in the 30 days before 9 October 2026. Its training data include `voilaj/swiss-caselaw`,
+downloaded ⟨hf_downloads⟩ times in the 30 days before 9 October 2026. The article itself was adopted by referendum
+in 1994 (54.6% yes) and extended to sexual orientation by referendum in 2020 (63.1% yes). Its training data include `voilaj/swiss-caselaw`,
 which contains BGE 130 IV 111 verbatim, plus 147 decisions citing it. The dataset asks not "how often is the model
 right" but **which law it applies**, element by element.
 
@@ -50,7 +51,8 @@ Per language: 660 scenarios in 220 twin groups (220 base, 215 true flips, 210 pl
 - an item-specific `chosen` answer and a `rejected` answer of the kind models give;
 - a settled or contested label;
 - the normative source and the element-by-element derivation;
-- prompts at five rungs (R0 no law → R4 statute, leading case, closed list and date clause) in two forced-choice
+- prompts at six rungs (R0 no law; R1–R4 the elements, a one-sentence paraphrase of BGE 130 IV 111, the closed list,
+  the 2020 date; R5 the verbatim Fedlex text of Art. 261bis and Art. 2 with Fedlex's footnote, and the Regeste) in two forced-choice
   framings (Ja/Nein; "Urteil: schuldig / nicht schuldig");
 - a free-text question and a chosen-versus-rejected preference prompt.
 
@@ -77,7 +79,7 @@ element by element, in the three official languages (comparison with sources in 
 | TALD (2026) | ZH | statute version cited in judgments | no | which version applies | from judgments |
 | OpenExempt (2026) | EN | solver over expert encodings | single-factor suites | one deadline rule | no |
 | Multilingual HateCheck | DE, FR, IT, … | by construction | templated contrasts | no (not legal) | no |
-| **Apertus-Recht** | **DE, FR, IT** | **code from pinned Fedlex texts and BGE** | **yes, with placebos** | **1 Jan 1995, 1 Jul 2020, Art. 2 StGB** | **58/58** |
+| **Apertus-Recht** | **DE, FR, IT** | **code from pinned Fedlex texts and BGE** | **yes, with placebos** | **1 Jan 1995, 1 Jul 2020, Art. 2 StGB** | **58/58 (3 acquittals)** |
 
 ## Data Collection Method
 
@@ -111,8 +113,11 @@ the wording. All review was done by Claude agents working blind on opaque ids, w
 - **Adjudication:** two independent adjudicators covered every disagreement, every contested item and a blind 10%
   sample. Gold was wrong in 0/94 sampled items (Wilson upper bound 3.9%).
 - **Court validation:** we triaged ⟨court_triaged⟩ citing Art. 261bis. Each was extracted twice
-  (κ 0.83–0.98) and conflicts went to a third agent. The engine agrees with the court in ⟨court_agree⟩ in-scope
-  decisions (Wilson 95% ⟨court_ci⟩), 55 convictions and 3 acquittals, under a pre-registered rule.
+  (κ 0.83–0.98) and conflicts went to a third agent. Under a pre-registered rule the engine agrees with the court in
+  ⟨court_agree⟩ in-scope decisions. That is a weak test of the acquittal rules: an engine that always convicts would
+  score 55/58, and the 3 acquittals (Wilson 95% 0.44–1.00) agree on the verdict and on a failing element, one of them
+  decided under the publicity test that BGE 130 IV 111 replaced. Its value is the other direction: of the rulings
+  that acquit, most turn on grounds no twin varies (dignity threshold, intent, freedom of expression).
 
 ## Dataset Details
 
@@ -171,9 +176,9 @@ with the computed gold (466/466), and that verdict matches a deterministic parse
 *Table 1. Forced-choice accuracy and balanced accuracy, Ja/Nein / verdict framing. 70B: Public AI; 8B: public Q4_K_M
 GGUF on CPU.*
 
-**With the law in the prompt, publicity is applied but the list and the date are not.** Figure 1 shows the read-back.
+**With the rules spelled out, publicity is applied but the list and the date are not.** Figure 1 shows the read-back.
 For the German 70B:
-- **R3** (statute, BGE rule, "the list is closed"): private settings are acquitted. Canton, disability and political
+- **R3** (the elements, a one-sentence paraphrase of BGE 130 IV 111, the list and "the list is closed"): private settings are acquitted. Canton, disability and political
   opinion stay red, convicted although the prompt lists the four protected characteristics.
 - **Gender identity** is applied once the prompt names it as excluded.
 - **R4** adds the sentence "sexual orientation is protected since 1 July 2020". The 70B then acquits the cases
@@ -231,14 +236,21 @@ framing.*
   the mutation tests and the 58 court decisions test the law itself. The track's 20% human check of the judges is
   laid out as a file and a script (`scripts/judge_open.py human`) for a reviewer to fill. Until then every judgement
   is checked against code instead.
-- **Contested items are few** (15 per language), and the free-text sample is German only.
+- **Contested items are few** (15 per language). A practitioner may read two of the four contested settings (an
+  e-mail to 25 colleagues, a club chat of 30 members) as leaning public after BGE 130 IV 111; their criterion therefore
+  accepts a reasoned leaning, and only a verdict stated as certain without the publicity criteria fails.
+- **What a court would also say.** Acquittals are acquittals under Art. 261bis: a 1993/94 act would today be
+  time-barred and the proceedings dropped; Abs. 2 "verbreiten" requires recruiting intent (BGE 140 IV 67), which a
+  one-off spoken setting may not show; the free-text question asks about "Swiss law", where for these facts Art. 177
+  or Art. 261 StGB rarely apply.
+- **The free-text sample is German only.**
 
 ## Lessons Learnt and Recommendations
 
 **For Apertus users.**
 - Do not ask about Art. 261bis without the law in context. With none, Apertus convicts every case we wrote, and its
   prose explains why.
-- Paste the statute and BGE 130 IV 111, and it applies the publicity rule. Still check characteristics against the
+- Spell out the publicity rule and it is applied. Still check characteristics against the
   closed list yourself, and state the date of the act.
 - Prefer the Q8_0 GGUF or the served model to 4-bit MLX conversions.
 

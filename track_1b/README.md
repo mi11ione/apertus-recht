@@ -2,21 +2,21 @@
 
 **Which racial-discrimination law does Apertus apply?** Not the one in force. Asked whether a statement is punishable
 under Art. 261bis StGB, Apertus v1.5 convicts for words said only at a family dinner, for insults against a canton or a
-profession, and for acts committed before the law existed. Pasting the statute and the leading case into the prompt
-fixes some elements and leaves others standing.
+profession, and for acts committed before the law existed. Rules spelled out in the prompt fix some
+elements and leave others standing; the verbatim law text, as a retrieval pipeline would paste it, ⟨r5_readme⟩.
 
 ![Synopse: the law in force next to the law Apertus applies](docs/figures/fig1_synopse.png)
 
 *Each row changes one legal fact of a scenario the law punishes. Cells: variants the model convicts (k/n). Red: the
-model applies a law that is not in force, in every readable framing. R0: no law in the prompt; R3: statute, leading
-case and closed list pasted in; R4: plus the 1 July 2020 clause.*
+model applies a law that is not in force, in every readable framing. R0: no law in the prompt; R3: the elements, a one-sentence
+paraphrase of BGE 130 IV 111 and the closed list; R4: plus a sentence on the 1 July 2020 extension.*
 
 ## What we found
 
 - **No law in the prompt: everything is punishable.** The 70B convicts every scenario we wrote, in German, French and
   Italian (balanced accuracy ⟨r0_bal⟩). Asked in free text, it tells ⟨open_r0_mislead⟩ of 75 people whose conduct is
   not punishable that it is. Two blind judges agree on 479 of 480 answers.
-- **Statute and leading case pasted in: publicity is fixed, the closed list and the date are not.** Private settings
+- **Rules spelled out (R3): publicity is fixed, the closed list and the date are not.** Private settings
   are acquitted. A canton, a disability or a political opinion is still convicted, although the prompt lists the four
   protected characteristics. So is any act from 1993/94, before the article existed.
 - **The date clause backfires.** Told that sexual orientation is protected since 1 July 2020, the 70B convicts only 3
@@ -67,7 +67,7 @@ Exact forced choice on vLLM endpoints, first-token log-probabilities elsewhere, 
 | Twins | each variant changes exactly one fact of its base: public ↔ private setting; protected ↔ unprotected characteristic; sexual orientation before ↔ after 1 Jul 2020; before ↔ after entry into force (1995); placebos that change nothing legally (family wording of a public statement, a synonym of the characteristic, a date that does not matter) |
 | Gold | `convict` / `acquit` / `open` with the deciding element, computed by `src/statute_twins/gold/engine.py` from an element model that cites Fedlex texts pinned by sha256 and BGE 130 IV 111 |
 | Per item | acceptance criterion, chosen / rejected answers, settled / contested label, normative source, element-by-element derivation, licence |
-| Prompts | 5 rungs (no law → statute, leading case, closed list and date clause in the prompt) × 2 framings (Ja/Nein; "Urteil: schuldig / nicht schuldig") |
+| Prompts | 6 rungs (R0 no law; R1–R4 the elements, a paraphrase of BGE 130 IV 111, the closed list, the 2020 date; R5 the verbatim Fedlex text and Regeste) × 2 framings (Ja/Nein; "Urteil: schuldig / nicht schuldig") |
 | Responses | ⟨n_runs⟩ files: the 70B on Public AI (DE/FR/IT), the 8B public GGUF on CPU, bf16 training stages and weight blends, MLX 4-bit builds, Qwen3-8B ([`docs/builds.md`](docs/builds.md)) |
 
 ## How we know the gold is right
@@ -80,7 +80,8 @@ Exact forced choice on vLLM endpoints, first-token log-probabilities elsewhere, 
   every contested item and a blind sample of settled ones: 115/115 gold correct.
 - **Against Swiss courts.** 326 decisions from `voilaj/swiss-caselaw`, each coded twice by independent agents with a
   third on conflicts, under a pre-registered rule: the engine agrees with the court in 58/58 rulings on the elements it
-  models (Wilson 95% 0.94–1.00), including every acquittal on publicity or characteristic. The other rulings turn on
+  models (Wilson 95% 0.94–1.00). That checks the conviction side well and the acquittal side weakly: an engine that
+  always convicts would score 55/58, and only 3 rulings acquit on a modelled ground (all 3 agree). The other rulings turn on
   what the model deliberately leaves out (the dignity threshold, intent, freedom of expression), which maps where the
   next iteration should go.
 - **Against the training data.** 0 of 35,241 item 13-grams occur in the 1,069,365 decisions of `voilaj/swiss-caselaw`

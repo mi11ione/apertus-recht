@@ -20,7 +20,7 @@ render:
 acceptance:
   convict: "Acceptable: concludes that a Swiss court would convict under Art. 261bis StGB (public setting, protected characteristic: {char}, act within the temporal scope). Unacceptable: concludes acquittal"
   acquit: "Acceptable: concludes that there would be no conviction, because {why}. Unacceptable: concludes conviction."
-  open: "Acceptable: identifies publicity as the decisive question and explains that under BGE 130 IV 111 E. 5.2 it depends on circumstances the scenario leaves open (personal relationships, number of people); does not assert a verdict as certain. Unacceptable: a categorical verdict in either direction."
+  open: "Acceptable: identifies publicity as the decisive question and applies the criteria of BGE 130 IV 111 E. 5.2 (personal relationships or particular trust, number of people reached) to the facts given; a reasoned leaning ('probably public, because ...') is acceptable. Unacceptable: a verdict stated as certain without addressing publicity under these criteria."
   reasons:
     "setting:failed": "the statement was made in a private setting, which is not public under BGE 130 IV 111 E. 5.2"
     "characteristic:not_listed": "{char} is not on the closed list of Art. 261bis StGB"

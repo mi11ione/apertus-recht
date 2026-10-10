@@ -10,6 +10,10 @@ RUN pip install --no-deps . && pip install "pyyaml==6.0.2"
 COPY statutes ./statutes
 COPY dataset ./dataset
 COPY results ./results
+COPY reports ./reports
+COPY prereg ./prereg
+COPY scripts ./scripts
+COPY claims.tsv README.md technical_report.md ./
 COPY tests ./tests
 ENTRYPOINT ["statute-twins"]
 CMD ["selfcheck"]

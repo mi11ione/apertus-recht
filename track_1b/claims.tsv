@@ -18,5 +18,5 @@ hf_downloads	698,641	reports/hf_downloads.json	J['models']['swiss-ai/Apertus-v1.
 sens_max	1.3	reports/sensitivity.json	100*J['max_abs_diff']	.1f	technical_report.md	python scripts/sensitivity.py
 open_judges_agree	479 of 480	reports/open_judged_publicai-70b-open.json	f"{J['judges_agree_on_pass']} of {J['judged']}"		README.md,technical_report.md	python scripts/judge_open.py aggregate publicai-70b-open <work_dir>
 open_kappa	0.995	reports/open_judged_publicai-70b-open.json	J['kappa']['pass']	.3f	technical_report.md	python scripts/judge_open.py aggregate publicai-70b-open <work_dir>
-open_code_check	466/466	reports/open_judged_publicai-70b-open.json	f"{J['code_check']['pass_matches_code_gold']}/{sum(J['code_check'].values())}"		technical_report.md	python scripts/judge_open.py aggregate publicai-70b-open <work_dir>
+open_code_check	466/466	reports/open_judged_publicai-70b-open.json	f"{J['judge_consistency']['pass_matches_code_gold']}/{sum(J['judge_consistency'].values())}"		technical_report.md	python scripts/judge_open.py aggregate publicai-70b-open <work_dir>
 usd	USD 1.02	reports/spend.json	J['usd_text']		README.md,technical_report.md	python scripts/spend.py

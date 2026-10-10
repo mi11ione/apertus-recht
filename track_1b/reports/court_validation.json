@@ -1,5 +1,5 @@
 {
- "summary": "326 decisions triaged (stratum A: 150, stratum B: 176); 58 in scope (55 convictions, 3 acquittals); engine agrees with the court in 58/58 (Wilson 95% 0.94-1.00); 24 out of scope (unmodelled grounds), 50 unextractable, 194 excluded; every tuple extracted twice by independent agents, conflicts settled by a third (amendment A4)",
+ "summary": "326 decisions triaged (stratum A: 150, stratum B: 176); 58 in scope (55 convictions, 3 acquittals); engine agrees with the court in 58/58 (Wilson 95% 0.94-1.00; an engine that always convicts would agree in 55/58; acquittals 3/3, Wilson 0.44-1.00); 24 out of scope (unmodelled grounds), 50 unextractable, 194 excluded; every tuple extracted twice by independent agents, conflicts settled by a third (amendment A4)",
  "pool": {
   "pool": 754,
   "pool_citing_bge": 130,
@@ -1228,6 +1228,27 @@
     "unextractable": 27,
     "out_of_scope": 8
    },
+   "by_class": {
+    "convictions": {
+     "agree": 29,
+     "n": 29,
+     "ci": [
+      0.8830302015002593,
+      1.0
+     ]
+    },
+    "acquittals": {
+     "agree": 1,
+     "n": 1,
+     "ci": [
+      0.20654931437723745,
+      1.0
+     ],
+     "ground_fails_in_engine": 1,
+     "before_bge_130_iv_111": []
+    },
+    "always_convict_baseline": "29/30"
+   },
    "court_convict": 29,
    "court_acquit": 1,
    "confusion": {
@@ -1249,6 +1270,29 @@
     "out_of_scope": 16,
     "in_scope": 28,
     "unextractable": 23
+   },
+   "by_class": {
+    "convictions": {
+     "agree": 26,
+     "n": 26,
+     "ci": [
+      0.8712710781407846,
+      1.0
+     ]
+    },
+    "acquittals": {
+     "agree": 2,
+     "n": 2,
+     "ci": [
+      0.34238022750665303,
+      1.0
+     ],
+     "ground_fails_in_engine": 2,
+     "before_bge_130_iv_111": [
+      "bge_126 IV 176"
+     ]
+    },
+    "always_convict_baseline": "26/28"
    },
    "court_convict": 26,
    "court_acquit": 2,
@@ -1272,6 +1316,29 @@
    "in_scope": 58,
    "unextractable": 50,
    "out_of_scope": 24
+  },
+  "by_class": {
+   "convictions": {
+    "agree": 55,
+    "n": 55,
+    "ci": [
+     0.9347150988829137,
+     1.0
+    ]
+   },
+   "acquittals": {
+    "agree": 3,
+    "n": 3,
+    "ci": [
+     0.4385029682449546,
+     1.0
+    ],
+    "ground_fails_in_engine": 3,
+    "before_bge_130_iv_111": [
+     "bge_126 IV 176"
+    ]
+   },
+   "always_convict_baseline": "55/58"
   },
   "court_convict": 55,
   "court_acquit": 3,
@@ -1343,12 +1410,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "2021-08-14",
     "characteristic": "ethnicity",
     "paragraph": "abs4",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "A"
   },
   {
@@ -1423,12 +1493,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "2011-08-19",
     "characteristic": "ethnicity",
     "paragraph": "abs1",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "A"
   },
   {
@@ -1443,12 +1516,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "2012-09-10",
     "characteristic": "ethnicity",
     "paragraph": "abs4",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "A"
   },
   {
@@ -1513,12 +1589,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "1995-07-01",
     "characteristic": "religion",
     "paragraph": "abs1",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "A"
   },
   {
@@ -1583,12 +1662,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "2019-07-01",
     "characteristic": "religion",
     "paragraph": "abs4",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "A"
   },
   {
@@ -1623,12 +1705,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "2023-06-14",
     "characteristic": "sexual_orientation",
     "paragraph": "abs1",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "A"
   },
   {
@@ -1643,12 +1728,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "2007-08-05",
     "characteristic": "religion",
     "paragraph": "abs4",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "A"
   },
   {
@@ -1673,12 +1761,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "2017-06-02",
     "characteristic": "religion",
     "paragraph": "abs4",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "A"
   },
   {
@@ -1713,12 +1804,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "2015-07-01",
     "characteristic": "religion",
     "paragraph": "abs4",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "A"
   },
   {
@@ -1743,12 +1837,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "2012-06-23",
     "characteristic": "religion",
     "paragraph": "abs4",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "A"
   },
   {
@@ -1763,12 +1860,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "2018-02-21",
     "characteristic": "ethnicity",
     "paragraph": "abs1",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "A"
   },
   {
@@ -1793,12 +1893,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "2013-07-01",
     "characteristic": "religion",
     "paragraph": "abs4",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "A"
   },
   {
@@ -1823,12 +1926,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "2019-01-04",
     "characteristic": "religion",
     "paragraph": "abs4",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "A"
   },
   {
@@ -1903,12 +2009,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "2021-07-01",
     "characteristic": "ethnicity",
     "paragraph": "abs4",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "A"
   },
   {
@@ -2133,12 +2242,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "2019-06-28",
     "characteristic": "religion",
     "paragraph": "abs4",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "A"
   },
   {
@@ -2173,12 +2285,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "2013-12-30",
     "characteristic": "religion",
     "paragraph": "abs4",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "A"
   },
   {
@@ -2213,12 +2328,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "2011-07-01",
     "characteristic": "religion",
     "paragraph": "abs1",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "A"
   },
   {
@@ -2233,12 +2351,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "2010-07-01",
     "characteristic": "religion",
     "paragraph": "abs4",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "A"
   },
   {
@@ -2343,12 +2464,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "2021-07-01",
     "characteristic": "race",
     "paragraph": "abs4",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "A"
   },
   {
@@ -2383,12 +2507,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "2019-07-01",
     "characteristic": "religion",
     "paragraph": "abs4",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "A"
   },
   {
@@ -2413,12 +2540,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "2022-07-01",
     "characteristic": "race",
     "paragraph": "abs4",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "A"
   },
   {
@@ -2433,12 +2563,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "2013-07-01",
     "characteristic": "religion",
     "paragraph": "abs4",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "A"
   },
   {
@@ -2483,12 +2616,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "2010-01-26",
     "characteristic": "religion",
     "paragraph": "abs1",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "A"
   },
   {
@@ -2503,12 +2639,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "2011-07-01",
     "characteristic": "religion",
     "paragraph": "abs1",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "A"
   },
   {
@@ -2533,12 +2672,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "2015-11-20",
     "characteristic": "ethnicity",
     "paragraph": "abs4",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "A"
   },
   {
@@ -2553,12 +2695,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "2015-10-30",
     "characteristic": "race",
     "paragraph": "abs4",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "A"
   },
   {
@@ -2573,12 +2718,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "2015-10-30",
     "characteristic": "race",
     "paragraph": "abs4",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "A"
   },
   {
@@ -2643,12 +2791,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "2021-09-04",
     "characteristic": "race",
     "paragraph": "abs4",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "A"
   },
   {
@@ -3063,12 +3214,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "2012-07-01",
     "characteristic": "religion",
     "paragraph": "abs4",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "A"
   },
   {
@@ -3094,7 +3248,15 @@
    "court_verdict": "acquit",
    "agree": true,
    "acquittal_ground": "setting",
+   "ground_fails_in_engine": true,
+   "before_bge_130_iv_111": false,
    "facts": {
+    "act_date": "2021-06-30",
+    "characteristic": "unlisted:foreigners",
+    "paragraph": "abs4",
+    "setting": "private"
+   },
+   "engine_input": {
     "act_date": "2021-06-30",
     "characteristic": "gender_identity",
     "paragraph": "abs4",
@@ -3194,12 +3356,15 @@
    "court_verdict": "acquit",
    "agree": true,
    "acquittal_ground": "setting",
+   "ground_fails_in_engine": true,
+   "before_bge_130_iv_111": true,
    "facts": {
     "act_date": "1995-07-01",
     "characteristic": "religion",
     "paragraph": "abs2",
     "setting": "private"
    },
+   "engine_input": null,
    "stratum": "B"
   },
   {
@@ -3314,12 +3479,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "2011-08-19",
     "characteristic": "ethnicity",
     "paragraph": "abs1",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "B"
   },
   {
@@ -3334,12 +3502,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "2013-07-01",
     "characteristic": "religion",
     "paragraph": "abs4",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "B"
   },
   {
@@ -3434,12 +3605,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "2011-06-17",
     "characteristic": "religion",
     "paragraph": "abs1",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "B"
   },
   {
@@ -3454,12 +3628,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "2010-07-01",
     "characteristic": "religion",
     "paragraph": "abs1",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "B"
   },
   {
@@ -3474,12 +3651,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "2017-07-01",
     "characteristic": "religion",
     "paragraph": "abs4",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "B"
   },
   {
@@ -3524,12 +3704,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "2015-01-07",
     "characteristic": "religion",
     "paragraph": "abs1",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "B"
   },
   {
@@ -3554,12 +3737,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "2005-05-07",
     "characteristic": "ethnicity",
     "paragraph": "abs4",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "B"
   },
   {
@@ -3634,12 +3820,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "2011-08-19",
     "characteristic": "ethnicity",
     "paragraph": "abs1",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "B"
   },
   {
@@ -3654,12 +3843,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "2014-08-22",
     "characteristic": "religion",
     "paragraph": "abs1",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "B"
   },
   {
@@ -3714,12 +3906,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "1995-10-02",
     "characteristic": "religion",
     "paragraph": "abs4",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "B"
   },
   {
@@ -3824,12 +4019,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "1999-07-01",
     "characteristic": "religion",
     "paragraph": "abs4",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "B"
   },
   {
@@ -3844,12 +4042,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "2010-07-01",
     "characteristic": "religion",
     "paragraph": "abs4",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "B"
   },
   {
@@ -4084,12 +4285,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "2023-07-01",
     "characteristic": "sexual_orientation",
     "paragraph": "abs1",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "B"
   },
   {
@@ -4114,12 +4318,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "2024-05-12",
     "characteristic": "sexual_orientation",
     "paragraph": "abs4",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "B"
   },
   {
@@ -4294,12 +4501,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "2024-07-01",
     "characteristic": "race",
     "paragraph": "abs4",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "B"
   },
   {
@@ -4324,12 +4534,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "2024-11-22",
     "characteristic": "race",
     "paragraph": "abs4",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "B"
   },
   {
@@ -4344,12 +4557,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "2019-01-04",
     "characteristic": "religion",
     "paragraph": "abs4",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "B"
   },
   {
@@ -4454,12 +4670,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "2024-11-22",
     "characteristic": "race",
     "paragraph": "abs4",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "B"
   },
   {
@@ -4574,12 +4793,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "1997-09-06",
     "characteristic": "ethnicity",
     "paragraph": "abs4",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "B"
   },
   {
@@ -4694,12 +4916,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "2015-01-07",
     "characteristic": "religion",
     "paragraph": "abs1",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "B"
   },
   {
@@ -4714,12 +4939,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "2015-07-01",
     "characteristic": "religion",
     "paragraph": "abs4",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "B"
   },
   {
@@ -4804,12 +5032,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "2015-01-07",
     "characteristic": "religion",
     "paragraph": "abs1",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "B"
   },
   {
@@ -4834,12 +5065,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "2015-07-01",
     "characteristic": "religion",
     "paragraph": "abs4",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "B"
   },
   {
@@ -4904,12 +5138,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "2023-04-17",
     "characteristic": "ethnicity",
     "paragraph": "abs4",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "B"
   },
   {
@@ -4954,12 +5191,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "2014-08-22",
     "characteristic": "religion",
     "paragraph": "abs1",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "B"
   },
   {
@@ -4974,12 +5214,15 @@
    "court_verdict": "convict",
    "agree": true,
    "acquittal_ground": null,
+   "ground_fails_in_engine": null,
+   "before_bge_130_iv_111": false,
    "facts": {
     "act_date": "2022-07-01",
     "characteristic": "race",
     "paragraph": "abs1",
     "setting": "public"
    },
+   "engine_input": null,
    "stratum": "B"
   },
   {
@@ -5015,7 +5258,15 @@
    "court_verdict": "acquit",
    "agree": true,
    "acquittal_ground": "characteristic",
+   "ground_fails_in_engine": true,
+   "before_bge_130_iv_111": false,
    "facts": {
+    "act_date": "2020-02-20",
+    "characteristic": "unlisted:migrants",
+    "paragraph": "abs4",
+    "setting": "public"
+   },
+   "engine_input": {
     "act_date": "2020-02-20",
     "characteristic": "gender_identity",
     "paragraph": "abs4",

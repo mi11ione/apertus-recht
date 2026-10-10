@@ -20,6 +20,7 @@ from .stats import bootstrap_ci, mean
 
 THRESHOLD = 0.15
 PREREG_FRAMINGS = ("conv", "ver")      # the pre-registered framings; free-text and preference framings never enter the test
+PREREG_RUNGS = ("R0", "R3", "R4")      # the pre-registered rungs; R5 (verbatim law, amendment A8) is reported separately
 LEGAL_SLOTS = ("setting", "group", "date")
 
 
@@ -76,7 +77,7 @@ def run(items: list[dict], rows: list[dict], lang: str = "de", seed: int = 0) ->
     by_cell = defaultdict(dict)
     lo_cell = defaultdict(dict)
     for r in rows:
-        if "error" in r or r.get("lang") != lang or r.get("framing") not in PREREG_FRAMINGS:
+        if "error" in r or r.get("lang") != lang or r.get("framing") not in PREREG_FRAMINGS or r.get("rung") not in PREREG_RUNGS:
             continue
         d = ("convict" if r["lo_conv"] > 0 else "acquit") if r.get("lo_conv") is not None else r.get("decision")
         if d in ("convict", "acquit"):

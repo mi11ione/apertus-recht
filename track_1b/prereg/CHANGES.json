@@ -1,0 +1,48 @@
+{
+ "lock_commit": "d9537fd",
+ "note": "Every locked file whose hash differs from LOCK.json / LOCK_court.json, with the amendments that changed it (see AMENDMENTS.md). Checked by `statute-twins prereg-verify`.",
+ "statutes/stgb_261bis/statute.yaml": [
+  "A7",
+  "A8"
+ ],
+ "statutes/stgb_261bis/design.yaml": [
+  "A1",
+  "A3",
+  "A8"
+ ],
+ "src/statute_twins/analysis/heldout.py": [
+  "A6",
+  "A8"
+ ],
+ "src/statute_twins/analysis/results.py": [
+  "A8 (records the 2c1dfaa fix)",
+  "A6"
+ ],
+ "dataset/eval/core_de.jsonl": [
+  "A3",
+  "A5",
+  "A6",
+  "A7",
+  "A8"
+ ],
+ "dataset/eval/core_fr.jsonl": [
+  "A2",
+  "A3",
+  "A5",
+  "A6",
+  "A7",
+  "A8"
+ ],
+ "dataset/eval/core_it.jsonl": [
+  "A2",
+  "A3",
+  "A5",
+  "A6",
+  "A7",
+  "A8"
+ ],
+ "prereg/PREREG_court.md": [
+  "stratum B (LOCK_court.json: stratum_B)",
+  "A4"
+ ]
+}
