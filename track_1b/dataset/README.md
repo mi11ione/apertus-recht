@@ -27,13 +27,42 @@ configs:
       - {split: de, path: eval/prompts_open_core_de.jsonl}
       - {split: fr, path: eval/prompts_open_core_fr.jsonl}
       - {split: it, path: eval/prompts_open_core_it.jsonl}
+      - {split: de_user_voice, path: eval/prompts_open_core_de_lay.jsonl}
   - config_name: prompts_preference
     data_files:
       - {split: de, path: eval/prompts_pref_core_de.jsonl}
       - {split: fr, path: eval/prompts_pref_core_fr.jsonl}
       - {split: it, path: eval/prompts_pref_core_it.jsonl}
+      - {split: de_user_voice, path: eval/prompts_pref_core_de_lay.jsonl}
   - config_name: metadata
     data_files: [{split: items, path: metadata/items.jsonl}]
+  - config_name: responses
+    data_files:
+      - {split: 8b_bf16_DPO, path: responses/8b-bf16-DPO.jsonl}
+      - {split: 8b_bf16_RLVR, path: responses/8b-bf16-RLVR.jsonl}
+      - {split: 8b_bf16_blend_RLVR_DPO_a0_25, path: responses/8b-bf16-blend-RLVR-DPO-a0.25.jsonl}
+      - {split: 8b_bf16_blend_RLVR_DPO_a0_5, path: responses/8b-bf16-blend-RLVR-DPO-a0.5.jsonl}
+      - {split: 8b_bf16_blend_RLVR_DPO_a0_75, path: responses/8b-bf16-blend-RLVR-DPO-a0.75.jsonl}
+      - {split: 8b_gguf_q4_k_m, path: responses/8b-gguf-q4_k_m.jsonl}
+      - {split: 8b_gguf_q4_k_m_cpu_core, path: responses/8b-gguf-q4_k_m-cpu-core.jsonl}
+      - {split: 8b_gguf_q8_0, path: responses/8b-gguf-q8_0.jsonl}
+      - {split: 8b_mlx4_DPO, path: responses/8b-mlx4-DPO.jsonl}
+      - {split: 8b_mlx4_RLVR, path: responses/8b-mlx4-RLVR.jsonl}
+      - {split: 8b_mlx4_SFT, path: responses/8b-mlx4-SFT.jsonl}
+      - {split: 8b_mlx4_base_completion, path: responses/8b-mlx4-base-completion.jsonl}
+      - {split: 8b_mlx4_final, path: responses/8b-mlx4-final.jsonl}
+      - {split: publicai_70b_fc, path: responses/publicai-70b-fc.jsonl}
+      - {split: publicai_70b_fc_core, path: responses/publicai-70b-fc-core.jsonl}
+      - {split: publicai_70b_fc_core_fr, path: responses/publicai-70b-fc-core-fr.jsonl}
+      - {split: publicai_70b_fc_core_it, path: responses/publicai-70b-fc-core-it.jsonl}
+      - {split: publicai_70b_fc_lay, path: responses/publicai-70b-fc-lay.jsonl}
+      - {split: publicai_70b_gen, path: responses/publicai-70b-gen.jsonl}
+      - {split: publicai_70b_open, path: responses/publicai-70b-open.jsonl}
+      - {split: publicai_70b_pref, path: responses/publicai-70b-pref.jsonl}
+      - {split: publicai_70b_pref_fr, path: responses/publicai-70b-pref-fr.jsonl}
+      - {split: publicai_70b_pref_it, path: responses/publicai-70b-pref-it.jsonl}
+      - {split: qwen3_8b_mlx4, path: responses/qwen3-8b-mlx4.jsonl}
+
 ---
 
 # Apertus-Recht: Art. 261bis StGB minimal-twin scenarios (DE / FR / IT)
@@ -95,7 +124,11 @@ one file per model build), `MANIFEST.json` (sha256 of every file).
 
 Main fields: `id`, `lang`, `twin_group`, `family`, `variant` (base / true_flip / placebo / contested), `changed_slot`,
 `base_id`, `slots` (template ids), `facts` (the legal facts), `text`, `gold_verdict` (convict / acquit / open),
-`deciding_element`, `gold_reason`, `label` (settled / contested), `trap`, `acceptance_criterion`, `chosen`, `rejected`,
+`deciding_element`, `gold_reason`, `label` (settled / contested), `trap`, `acceptance_criterion`, `chosen` (the
+answer the law supports, specific to the item), `rejected` (a wrong answer phrased as models argue, for preference
+data), `rejected_minimal` (settled items: the chosen answer mirrored, same wording and length, verdict and deciding
+claim negated; the preference prompts use this one, because a shorter `rejected` lets a likelihood comparison measure
+length),
 `rationale` (the element-by-element derivation), `citation`, `normative_source`, `split` (fit / heldout wording family),
 `licence`, `canary`.
 
@@ -226,7 +259,9 @@ alongside results, since 4-bit conversions changed verdicts in our measurements.
   characteristic, paragraph and date of each scenario; 333 distinct `chosen` per language), the free-text and
   preference prompts, and unparsed answers counted in every recall denominator; A7 French and Italian localisation
   (places in Romandie and Ticino, intent formula, verdict nouns, citation forms), before any French or Italian result
-  was analysed, with both languages re-scored in full.
+  was analysed, with both languages re-scored in full; A8 R5 (the verbatim law), length-matched preference pairs
+  (`rejected_minimal`), Art. 1 and 2 StGB in the answers, a contested criterion that accepts a reasoned leaning, and
+  the court-validation baseline; A9 the German scenarios in a user's voice (`de_lay`); A10 R6, the control for R5.
 
 ## Citation
 ```bibtex
@@ -245,10 +280,12 @@ alongside results, since 4-bit conversions changed verdicts in our measurements.
   without facts the scenario leaves open (gold `open`). Assigned by the gold engine, not by hand.
 - **Deciding element, gold reason:** the element of Art. 261bis that decides an acquittal (`setting:failed`,
   `characteristic:not_listed`, `characteristic:not_yet_covered`, `act_date:not_in_force`).
-- **Rung R0–R4:** how much law the prompt contains: R0 none; R1 the elements named; R2 + the publicity rule of
-  BGE 130 IV 111 and the list; R3 + "the list is closed"; R4 + "sexual orientation since 1 July 2020".
-- **Framing:** `conv` (Ja/Nein), `ver` ("Urteil:" schuldig / nicht schuldig), `open` (free text), `pref` (chosen vs
-  rejected answer).
+- **Rung R0–R6:** how much law the prompt contains: R0 none; R1 the elements named; R2 + a one-sentence paraphrase of
+  BGE 130 IV 111 and the list; R3 + "the list is closed"; R4 + "sexual orientation since 1 July 2020"; R5 the verbatim
+  Fedlex text of Art. 261bis and Art. 2 StGB with Fedlex's footnote and the Regeste of BGE 130 IV 111; R6 = R5 with
+  R1's instruction to check the elements (control).
+- **Framing:** `conv` (Ja/Nein), `ver` ("Urteil:" schuldig / nicht schuldig; FR condamnation / acquittement, IT
+  condanna / proscioglimento), `open` (free text), `pref` (chosen vs rejected_minimal).
 - **Read-back status:** F the model convicts where the statute acquits (element *in force* in the model); a applied;
   u unreadable (the unchanged reference is not convicted either); ? undecided. Red: F in every readable framing.
 - **Wording family A/B/C:** three sets of act wordings; A and B fit the read-back, C is held out.

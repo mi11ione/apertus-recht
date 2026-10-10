@@ -8,17 +8,17 @@
   "seed": null
  },
  "params": {},
- "rows": 5280,
+ "rows": 5940,
  "errors": 0,
  "served_models": [
   "swiss-ai/apertus-v1.5-8b"
  ],
- "jsonl_sha256": "f032a3b1c6c0d0e113e0029dcb736fc31d56e6000cad8ed865d12d1082323dae",
+ "jsonl_sha256": "a728c759f35cc417582f74e76c51293484bca5b65e0f570dfcb2cd0b933fb994",
  "parts": "core_de",
- "rungs": "R0,R3,R4,R5",
- "framings": "conv,ver",
+ "rungs": "R0,R3,R4,R5 (conv, ver), R6 (conv)",
+ "framings": "conv",
  "sample": null,
  "label": "Apertus v1.5 70B via Public AI (name swiss-ai/apertus-v1.5-8b), exact forced choice",
  "model": "swiss-ai/apertus-v1.5-8b",
- "note": "R0/R3/R4 scored first (A5 re-score of changed prompts), R5 added after amendment A8"
+ "note": "R0/R3/R4: A5 re-score; R5: A8; R6 (Ja/Nein only): A10"
 }

@@ -1,8 +1,8 @@
 # Apertus-Recht
 
 **Which racial-discrimination law does Apertus apply?** Not the one in force. Asked whether a statement is punishable
-under Art. 261bis StGB, Apertus v1.5 convicts for words said only at a family dinner, for insults against a canton or a
-profession, and for acts committed before the law existed. Rules spelled out in the prompt fix some
+under Art. 261bis StGB, Apertus v1.5 convicts for words said only at a family dinner, for degrading statements about a canton or
+a profession, and for acts committed before the law existed. Rules spelled out in the prompt fix some
 elements and leave others standing; the verbatim law text, as a retrieval pipeline would paste it, changes nothing at all.
 
 ![Synopse: the law in force next to the law Apertus applies](docs/figures/fig1_synopse.png)
@@ -15,24 +15,27 @@ Fedlex text and the leading case's Regeste instead (German). Light red: in one f
 ## What we found
 
 - **No law in the prompt: everything is punishable.** The 70B convicts every scenario we wrote, in German, French and
-  Italian (balanced accuracy 0.50). Asked in free text, it tells 74 of 75 people whose conduct is
-  not punishable that it is. Two blind judges agree on 479 of 480 answers. Told in a person's own words instead of a
-  charge sheet, the same scenarios fare no better: 2 of 215 acquittals.
+  Italian (balanced accuracy 0.50). Asked in free text, it calls 74 of 75 scenarios punishable
+  that are not punishable under Art. 261bis. Two blind judges agree on 479 of 480 answers. Told in a person's own words instead of a
+  charge sheet, the same scenarios fare no better: 2 of 215 acquittals without the law, and the same element profile with the rules
+  spelled out.
 - **Rules spelled out (R3): publicity is fixed, the closed list and the date are not.** Private settings
   are acquitted. A canton, a disability or a political opinion is still convicted, although the prompt lists the four
-  protected characteristics. So is any act from 1993/94, before the article existed.
+  protected characteristics. Acts from 1993/94, before the article existed, are convicted at every rung; no rung
+  states the 1995 date, so that one is a gap in what the model knows.
 - **The law itself does not help.** Given the verbatim Fedlex text of Art. 261bis and Art. 2 StGB and the Regeste of
   BGE 130 IV 111, as a retrieval pipeline would paste them, the 70B convicts every scenario again: 0 of
   215 acquittals recognised, exactly as with no law in the prompt. Only rules spelled out in plain sentences move it.
-- **The date clause backfires.** Told that sexual orientation is protected since 1 July 2020, the 70B stops convicting
-  punishable cases from 2021–25: with the verdict word it convicts 0 of 35 in German, 1 in French, 5 in Italian.
+- **The date sentence backfires.** One sentence saying that sexual orientation is protected since 1 July 2020 makes the
+  70B stop convicting punishable cases from 2021–25: with the verdict word it convicts 0 of 35 in German, 1 in French,
+  5 in Italian (with Ja/Nein, Italian holds up: 29 of 35).
 - **The pre-registered test fails where it matters, and we say so.** Fitted on two wording families, a read-back of
   the law the model applies beats the statute at predicting the third, but with the rules in the prompt not by the
   pre-registered 15 points in every framing (at R0 it passes trivially: the model convicts everything).
 - **A lead on where it comes from.** In the 8B at full precision, the DPO step cuts correct acquittals under stated
   rules from 185 to 146 of 220 while keeping every conviction; a 4-bit MLX conversion changes 100 of 648 verdicts, the
   public Q8_0 GGUF 10.
-- **It cost USD 1.84** of Public AI calls to score the 70B in three languages, and the 8B ran on free CI runners.
+- **It cost USD 2.00** of Public AI calls to score the 70B in three languages, and the 8B ran on free CI runners.
 
 Hack Apertus 2026 · Track 1B (Swiss Voices, behavioural alignment) · team 444 · report [`444_Report.pdf`](444_Report.pdf)
 · dataset: [`dataset/`](dataset/) (the Hugging Face release, with its card)

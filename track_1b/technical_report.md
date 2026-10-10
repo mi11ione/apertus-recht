@@ -2,13 +2,13 @@
 
 People ask chat assistants whether something said at dinner, in a chat or at a rally is punishable. We release 1,980
 German, French and Italian minimal-twin scenarios under Art. 261bis StGB. Each verdict is computed by code from pinned
-Fedlex texts and BGE 130 IV 111, and agrees with every in-scope Swiss court ruling we could code (55 convictions, 3 acquittals). A harness re-derives every
+Fedlex texts and BGE 130 IV 111, and agrees with the 58 Swiss court rulings we could code on the modelled elements (55 convictions,
+3 acquittals; a check of the rules' conjunction, not of how courts classify facts). A harness re-derives every
 label and number from a clean checkout. Asked without the law, Apertus v1.5 70B convicts every scenario we wrote
-(balanced accuracy 0.50). In free text it tells ⟨open_r0_mislead⟩ of 75 users whose conduct is not punishable under Art. 261bis that it
-is. With the verbatim Fedlex text and the Regeste of the leading case pasted in, it still convicts everything; only rules
+(balanced accuracy 0.50). In free text it calls ⟨open_r0_mislead⟩ of 75 scenarios punishable that are not punishable under Art. 261bis. With the verbatim Fedlex text and the Regeste of the leading case pasted in, it still convicts everything; only rules
 spelled out in plain sentences make it apply the publicity rule. It still convicts for a canton, a disability or a
-political opinion, and for acts committed before the law existed. Told when sexual orientation became protected, it
-stops protecting it.
+political opinion, and for acts committed before the law existed. One sentence on when sexual orientation became
+protected makes it stop convicting such cases in German and French.
 
 **Track:** Apertus Readiness · Track 1B (Swiss Voices, behavioural alignment) · **Event:** Online · **Team:** 444  
 **Demo:** `make run` in the repository (Docker, CPU, no key, ~25 s); dataset on Hugging Face (link in the form notes)
@@ -147,9 +147,9 @@ reviewers. Every item carries a canary string.
 
 **The read-back** pairs every true flip (variant V) with its base (reference Ref, which the statute convicts) and
 takes 95% item-bootstrap intervals of the mean log-odds of conviction. A framing is *readable* (anchored) for that pair
-set when the interval of Ref lies above zero, i.e. the model convicts the reference at all. An element is *in force*
+set when the interval of Ref lies above zero, i.e. the model convicts the reference at all. An element is *misapplied*
 when V's interval also lies above zero (the model convicts where the law acquits), *applied* when it lies below. It is
-**red** when in force in every readable framing. The pre-registered test fits this read-back on wording families A and
+**red** when misapplied in every readable framing. The pre-registered test fits this read-back on wording families A and
 B and predicts family C; it passes if it beats the statute by at least 0.15 in every readable framing. R1 and R2 (the
 elements named; the publicity rule added) are released for finer retrieval studies; we score R0, R3 and R4.
 
@@ -187,12 +187,16 @@ For the German 70B:
   Fedlex's own footnote omits it, so this is a gap in what the model knows.
 - **R5** pastes the law itself, as a retrieval pipeline would: the Fedlex text of Art. 261bis and Art. 2 StGB with
   Fedlex's footnote, and the Regeste of BGE 130 IV 111. The 70B convicts everything again, exactly as with no law at
-  all (acquittals recognised: ⟨r5_acq_conv⟩ of 215 with Ja/Nein, ⟨r5_acq_ver⟩ with the verdict word). The verbatim law states the closed list and the publicity rule,
-  yet helps less than our one-sentence paraphrases (forced choice only; free text was not run at R5).
+  all (acquittals recognised: ⟨r5_acq_conv⟩ of 215 with Ja/Nein, ⟨r5_acq_ver⟩ with the verdict word). The verbatim text enumerates the four characteristics and the
+  Regeste states the publicity rule, yet they help less than our one-sentence paraphrases. R5 also lacks R3's
+  instruction to check the elements; a control with that instruction added (R6, Ja/Nein) recognises ⟨r6_acq⟩ of 215
+  acquittals, against 108 at R3. Forced choice only; free text was not run with the verbatim law.
 
 **Not an artefact of legal register.** The same German scenarios told in a person's own words ("Im Januar 2024 habe
 ich in Aarau an einem Stand auf dem Wochenmarkt … ein Weltbild propagiert, nach dem Muslime minderwertig sind") give
-the same result at R0: ⟨lay_acq⟩ of 215 acquittals recognised.
+the same profile: ⟨lay_acq⟩ of 215 acquittals at R0; at R3 balanced accuracy ⟨lay_r3_bal⟩ (charge-sheet form 0.74), with
+private settings acquitted, the closed list half applied and the dates not at all (Ja/Nein; the prompt still names
+the article).
 
 Italian shows the same profile. In French the closed list holds better at R3 (canton 12/16, disability 6/9 convicted),
 and R5 was run in German only.
@@ -211,10 +215,10 @@ log-probability than its length-matched mirror. Free text: answers that meet the
 agree; 240 German items, R0 and R3). Columns: the element that decides the item.*
 
 **Recognising the law is not applying it.** Shown an item's correct answer and its mirror, the 70B prefers the correct
-one for nearly every German item (share ⟨pref_de_all⟩), including the acquittals it convicts when asked for a verdict.
-On the same facts the share is ⟨pref_fr_all⟩ in French, ⟨pref_fr_convict⟩ on French convictions. Preference over long answers therefore
-depends on their wording; we read the applied law from forced choice and free text, and report preference as what the
-model can recognise.
+one for nearly every German item (share ⟨pref_de_all⟩). The clean evidence is in the closed-list and date columns,
+where both answers make a legal claim of the same form: there it picks the right one for nearly all items in all
+three languages, although its own verdicts convict those cases. For conviction and setting items the mirror
+contradicts the stated facts, so those columns also measure consistency; there French drops to ⟨pref_fr_convict⟩.
 
 **Pre-registered held-out test.** At R0 the test passes, but trivially: a model that convicts everything is predicted
 perfectly by a read-back that marks every element satisfied, and the gain (+33 points) equals the share of acquittal
@@ -254,10 +258,9 @@ framing.*
 - **Contested items are few** (15 per language; the free-text sample is German only). A practitioner may read two of the four contested settings (an
   e-mail to 25 colleagues, a club chat of 30 members) as leaning public after BGE 130 IV 111; their criterion therefore
   accepts a reasoned leaning, and only a verdict stated as certain without the publicity criteria fails.
-- **What a court would also say.** Acquittals are acquittals under Art. 261bis: a 1993/94 act would today be
-  time-barred and the proceedings dropped; Abs. 2 "verbreiten" requires recruiting intent (BGE 140 IV 67), which a
-  one-off spoken setting may not show; the free-text question asks about "Swiss law", where for these facts Art. 177
-  or Art. 261 StGB rarely apply.
+- **What a court would also say.** Acquittals are under Art. 261bis only: a 1993/94 act is today time-barred; Abs. 2
+  "verbreiten" needs recruiting intent (BGE 140 IV 67), which a one-off or private setting may lack; Art. 177 or 261
+  rarely apply to these facts. German items keep trams in towns without trams. No gold label changes.
 - **Intervals.** Accuracy intervals (Wilson) treat items as independent, but items cluster in 220 twin groups per
   language and share templates, so they are somewhat too narrow; the held-out gains carry twin-group bootstrap
   intervals (post hoc, `analysis/heldout_context.py`).
@@ -282,23 +285,17 @@ framing.*
 - Twin items give a target that can be measured element by element before and after a fix. The `chosen` / `rejected`
   pairs are in the format preference training uses, so keep them out of training if you evaluate on them.
 
-**For dataset builders.** Computed gold turns a legal benchmark into software: the statute model is tested against
-the official text, mutations of the law flip exactly the items they should, and a new statute is five YAML files.
-Blind persona review still found defects no gate caught, such as a frame that dated the recording instead of the act.
-We fixed them, re-scored, and recorded when in the pre-registration. The next iteration should add the elements courts
-argue about (the dignity threshold, coded speech, political debate) as contested items written with practitioners.
+**For dataset builders.** Computed gold turns a legal benchmark into software (tested against the official text,
+mutation-tested, a new statute is five YAML files), but blind persona review still found what no gate caught. Next:
+the elements courts argue about (dignity threshold, coded speech, political debate), written with practitioners.
 
 ## Reproducibility
 
-`make run` (Docker, CPU, no key, no model) regenerates the dataset from the YAML and checks every file by sha256. It
-recomputes every result from the stored responses, checks every stored request hash against the current prompt, and
-exits non-zero on any mismatch.
-- **Live checks:** `LLM_*` variables or `make run-gguf` also score a live slice against the published reference band.
-- **Traceability:** the tables are generated from `results/results.json`, and the headline numbers in the text are
-  filled from `claims.tsv` (value, source file, expression, command), which `make run` and CI re-check.
-- **Seeds:** generator 261; bootstrap seed 0, 2,000 resamples.
-- **Pre-registration:** `prereg/LOCK.json`, before any model saw the core set. Amendments A1–A9, with their timing
-  relative to the analysis, are in `prereg/AMENDMENTS.md`.
+`make run` (Docker, CPU, no key, no model) regenerates the dataset from the YAML (sha256 per file), recomputes every
+result from the stored responses, checks every request hash against its prompt, re-aggregates the judges, checks the
+pre-registration (`prereg-verify`: locked files, amendments A1–A10, the frozen held-out code) and the `claims.tsv`
+numbers, and exits non-zero on any mismatch. `LLM_*` variables or `make run-gguf` add a live slice against the
+published reference band. Seeds: generator 261, bootstrap 0 (2,000 resamples).
 
 ## License
 

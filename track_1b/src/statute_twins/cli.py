@@ -293,7 +293,7 @@ def cmd_selfcheck(a) -> int:
             ok &= r.returncode == 0
     if Path("claims.tsv").exists() and Path("scripts/check_claims.py").exists():
         import subprocess
-        print("== step 2e: every number in the README and the report maps to a results file (claims.tsv)")
+        print("== step 2e: the headline numbers in the README and the report map to a results file (claims.tsv)")
         r = subprocess.run([sys.executable, "scripts/check_claims.py"], capture_output=True, text=True)
         for line in r.stdout.strip().splitlines()[-4:]:
             print("  " + line)
@@ -423,6 +423,18 @@ def cmd_prereg_verify(a) -> int:
     return 0 if ok else 1
 
 
+def cmd_judge(a) -> int:
+    """Free-text judging (the track's second metric) from the CLI: packets with opaque ids, a model judge on any
+    OpenAI-compatible endpoint (LLM_* variables), aggregation with the parser check. Wraps scripts/judge_open.py."""
+    import subprocess
+    script = Path("scripts/judge_open.py")
+    if not script.exists():
+        raise SystemExit("statute-twins judge runs from track_1b/ (needs scripts/judge_open.py)")
+    args = {"packets": ["packets", a.run, a.work], "judge": ["judge", a.who, a.work],
+            "aggregate": ["aggregate", a.run, a.work], "human": ["human", a.run]}[a.step]
+    return subprocess.run([sys.executable, str(script), *args]).returncode
+
+
 def cmd_new(a) -> int:
     from .scaffold import scaffold
     p = scaffold(a.statute_id, Path(a.dir))
@@ -504,6 +516,9 @@ def main(argv=None) -> int:
     p = sub.add_parser("preview", help="print a few generated twin groups as readable text")
     p.add_argument("--statute", default=S); p.add_argument("--lang", default=None); p.add_argument("--groups", type=int, default=3)
     p.set_defaults(f=cmd_preview)
+    p = sub.add_parser("judge", help="free-text judging: packets -> judge (A, B) -> aggregate")
+    p.add_argument("step", choices=["packets", "judge", "aggregate", "human"]); p.add_argument("--run", default="publicai-70b-open")
+    p.add_argument("--work", default="judge_work"); p.add_argument("--who", default="A"); p.set_defaults(f=cmd_judge)
     p = sub.add_parser("prereg-verify", help="locked files vs LOCK.json, amendments, frozen held-out code")
     p.add_argument("--dataset", default="dataset"); p.set_defaults(f=cmd_prereg_verify)
     p = sub.add_parser("new"); p.add_argument("statute_id"); p.add_argument("--dir", default="statutes"); p.set_defaults(f=cmd_new)

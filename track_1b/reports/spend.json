@@ -25,11 +25,17 @@
    "completion_tokens": 2640,
    "usd": 0.241
   },
-  "1b-lay-70b": {
+  "1b-core-70b-r6": {
    "requests": 1320,
-   "prompt_tokens": 183206,
+   "prompt_tokens": 1263856,
    "completion_tokens": 1320,
-   "usd": 0.019
+   "usd": 0.127
+  },
+  "1b-lay-70b": {
+   "requests": 2640,
+   "prompt_tokens": 543292,
+   "completion_tokens": 2640,
+   "usd": 0.055
   },
   "1b-open-70b": {
    "requests": 509,
@@ -81,8 +87,8 @@
   }
  },
  "total": {
-  "requests": 52063,
-  "usd": 1.84
+  "requests": 54703,
+  "usd": 2.0
  },
- "usd_text": "USD 1.84"
+ "usd_text": "USD 2.00"
 }

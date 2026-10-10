@@ -21773,6 +21773,28 @@
      "rung": "R5",
      "subset": "core",
      "unparsed": 0
+    },
+    {
+     "accuracy": 0.702326,
+     "accuracy_ci": [
+      0.665925,
+      0.73633
+     ],
+     "acquit_correct": 23,
+     "acquit_n": 215,
+     "auc": 0.823337,
+     "balanced_accuracy": 0.553488,
+     "convict_correct": 430,
+     "convict_n": 430,
+     "correct": 453,
+     "framing": "conv",
+     "lang": "de",
+     "n": 645,
+     "recall_acquit": 0.106977,
+     "recall_convict": 1.0,
+     "rung": "R6",
+     "subset": "core",
+     "unparsed": 0
     }
    ],
    "accuracy_by_family": [
@@ -21979,6 +22001,29 @@
      "n": 60,
      "recall_acquit": null,
      "recall_convict": 1.0,
+     "rung": "R6",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.939828,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 60,
+     "convict_n": 60,
+     "correct": 60,
+     "family": "CHAR",
+     "framing": "conv",
+     "lang": "de",
+     "n": 60,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
      "rung": "R0",
      "unparsed": 0,
      "variant": "placebo"
@@ -22141,6 +22186,29 @@
      "recall_acquit": null,
      "recall_convict": 1.0,
      "rung": "R5",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.939828,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 60,
+     "convict_n": 60,
+     "correct": 60,
+     "family": "CHAR",
+     "framing": "conv",
+     "lang": "de",
+     "n": 60,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R6",
      "unparsed": 0,
      "variant": "placebo"
     },
@@ -22329,6 +22397,29 @@
      "variant": "true_flip"
     },
     {
+     "accuracy": 0.0,
+     "accuracy_ci": [
+      0.0,
+      0.060172
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 60,
+     "auc": null,
+     "balanced_accuracy": 0.0,
+     "convict_correct": 0,
+     "convict_n": 0,
+     "correct": 0,
+     "family": "CHAR",
+     "framing": "conv",
+     "lang": "de",
+     "n": 60,
+     "recall_acquit": 0.0,
+     "recall_convict": null,
+     "rung": "R6",
+     "unparsed": 0,
+     "variant": "true_flip"
+    },
+    {
      "accuracy": 1.0,
      "accuracy_ci": [
       0.838875,
@@ -22509,6 +22600,29 @@
      "recall_acquit": null,
      "recall_convict": 1.0,
      "rung": "R5",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.838875,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 20,
+     "convict_n": 20,
+     "correct": 20,
+     "family": "CHARX",
+     "framing": "conv",
+     "lang": "de",
+     "n": 20,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R6",
      "unparsed": 0,
      "variant": "base"
     },
@@ -22697,6 +22811,29 @@
      "variant": "true_flip"
     },
     {
+     "accuracy": 0.0,
+     "accuracy_ci": [
+      0.0,
+      0.087622
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 40,
+     "auc": null,
+     "balanced_accuracy": 0.0,
+     "convict_correct": 0,
+     "convict_n": 0,
+     "correct": 0,
+     "family": "CHARX",
+     "framing": "conv",
+     "lang": "de",
+     "n": 40,
+     "recall_acquit": 0.0,
+     "recall_convict": null,
+     "rung": "R6",
+     "unparsed": 0,
+     "variant": "true_flip"
+    },
+    {
      "accuracy": 1.0,
      "accuracy_ci": [
       0.796117,
@@ -22877,6 +23014,29 @@
      "recall_acquit": null,
      "recall_convict": 1.0,
      "rung": "R5",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.796117,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 15,
+     "convict_n": 15,
+     "correct": 15,
+     "family": "CONTESTED",
+     "framing": "conv",
+     "lang": "de",
+     "n": 15,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R6",
      "unparsed": 0,
      "variant": "base"
     },
@@ -23067,6 +23227,29 @@
     {
      "accuracy": 1.0,
      "accuracy_ci": [
+      0.796117,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 15,
+     "convict_n": 15,
+     "correct": 15,
+     "family": "CONTESTED",
+     "framing": "conv",
+     "lang": "de",
+     "n": 15,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R6",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
       0.866808,
       1.0
      ],
@@ -23267,6 +23450,29 @@
      "n": 25,
      "recall_acquit": null,
      "recall_convict": 1.0,
+     "rung": "R6",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.866808,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 25,
+     "convict_n": 25,
+     "correct": 25,
+     "family": "DATE_CTRL",
+     "framing": "conv",
+     "lang": "de",
+     "n": 25,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
      "rung": "R0",
      "unparsed": 0,
      "variant": "placebo"
@@ -23433,6 +23639,29 @@
      "variant": "placebo"
     },
     {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.866808,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 25,
+     "convict_n": 25,
+     "correct": 25,
+     "family": "DATE_CTRL",
+     "framing": "conv",
+     "lang": "de",
+     "n": 25,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R6",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
      "accuracy": 0.0,
      "accuracy_ci": [
       0.0,
@@ -23613,6 +23842,29 @@
      "recall_acquit": 0.0,
      "recall_convict": null,
      "rung": "R5",
+     "unparsed": 0,
+     "variant": "true_flip"
+    },
+    {
+     "accuracy": 0.0,
+     "accuracy_ci": [
+      0.0,
+      0.133192
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 25,
+     "auc": null,
+     "balanced_accuracy": 0.0,
+     "convict_correct": 0,
+     "convict_n": 0,
+     "correct": 0,
+     "family": "DATE_CTRL",
+     "framing": "conv",
+     "lang": "de",
+     "n": 25,
+     "recall_acquit": 0.0,
+     "recall_convict": null,
+     "rung": "R6",
      "unparsed": 0,
      "variant": "true_flip"
     },
@@ -23819,6 +24071,29 @@
      "n": 35,
      "recall_acquit": null,
      "recall_convict": 1.0,
+     "rung": "R6",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.901099,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 35,
+     "convict_n": 35,
+     "correct": 35,
+     "family": "DATE_SO",
+     "framing": "conv",
+     "lang": "de",
+     "n": 35,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
      "rung": "R0",
      "unparsed": 0,
      "variant": "placebo"
@@ -23985,6 +24260,29 @@
      "variant": "placebo"
     },
     {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.901099,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 35,
+     "convict_n": 35,
+     "correct": 35,
+     "family": "DATE_SO",
+     "framing": "conv",
+     "lang": "de",
+     "n": 35,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R6",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
      "accuracy": 0.0,
      "accuracy_ci": [
       0.0,
@@ -24165,6 +24463,29 @@
      "recall_acquit": 0.0,
      "recall_convict": null,
      "rung": "R5",
+     "unparsed": 0,
+     "variant": "true_flip"
+    },
+    {
+     "accuracy": 0.0,
+     "accuracy_ci": [
+      0.0,
+      0.098901
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 35,
+     "auc": null,
+     "balanced_accuracy": 0.0,
+     "convict_correct": 0,
+     "convict_n": 0,
+     "correct": 0,
+     "family": "DATE_SO",
+     "framing": "conv",
+     "lang": "de",
+     "n": 35,
+     "recall_acquit": 0.0,
+     "recall_convict": null,
+     "rung": "R6",
      "unparsed": 0,
      "variant": "true_flip"
     },
@@ -24371,6 +24692,29 @@
      "n": 55,
      "recall_acquit": null,
      "recall_convict": 1.0,
+     "rung": "R6",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.934715,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 55,
+     "convict_n": 55,
+     "correct": 55,
+     "family": "SET",
+     "framing": "conv",
+     "lang": "de",
+     "n": 55,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
      "rung": "R0",
      "unparsed": 0,
      "variant": "placebo"
@@ -24533,6 +24877,29 @@
      "recall_acquit": null,
      "recall_convict": 1.0,
      "rung": "R5",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.934715,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 55,
+     "convict_n": 55,
+     "correct": 55,
+     "family": "SET",
+     "framing": "conv",
+     "lang": "de",
+     "n": 55,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R6",
      "unparsed": 0,
      "variant": "placebo"
     },
@@ -24721,6 +25088,29 @@
      "variant": "true_flip"
     },
     {
+     "accuracy": 0.418182,
+     "accuracy_ci": [
+      0.297378,
+      0.549669
+     ],
+     "acquit_correct": 23,
+     "acquit_n": 55,
+     "auc": null,
+     "balanced_accuracy": 0.418182,
+     "convict_correct": 0,
+     "convict_n": 0,
+     "correct": 23,
+     "family": "SET",
+     "framing": "conv",
+     "lang": "de",
+     "n": 55,
+     "recall_acquit": 0.418182,
+     "recall_convict": null,
+     "rung": "R6",
+     "unparsed": 0,
+     "variant": "true_flip"
+    },
+    {
      "accuracy": 1.0,
      "accuracy_ci": [
       0.722467,
@@ -24907,6 +25297,29 @@
     {
      "accuracy": 1.0,
      "accuracy_ci": [
+      0.722467,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 10,
+     "convict_n": 10,
+     "correct": 10,
+     "family": "WORDING",
+     "framing": "conv",
+     "lang": "de",
+     "n": 10,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R6",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
       0.838875,
       1.0
      ],
@@ -25085,6 +25498,29 @@
      "recall_acquit": null,
      "recall_convict": 1.0,
      "rung": "R5",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.838875,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 20,
+     "convict_n": 20,
+     "correct": 20,
+     "family": "WORDING",
+     "framing": "conv",
+     "lang": "de",
+     "n": 20,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R6",
      "unparsed": 0,
      "variant": "placebo"
     }
@@ -25136,6 +25572,16 @@
     },
     {
      "cells": {
+      "conv": "F"
+     },
+     "colour": "red",
+     "edit": "act_date:not_in_force",
+     "lang": "de",
+     "rung": "R6",
+     "subset": "core"
+    },
+    {
+     "cells": {
       "conv": "F",
       "ver": "F"
      },
@@ -25176,6 +25622,16 @@
      "edit": "characteristic:not_listed|age",
      "lang": "de",
      "rung": "R5",
+     "subset": "core"
+    },
+    {
+     "cells": {
+      "conv": "F"
+     },
+     "colour": "red",
+     "edit": "characteristic:not_listed|age",
+     "lang": "de",
+     "rung": "R6",
      "subset": "core"
     },
     {
@@ -25224,6 +25680,16 @@
     },
     {
      "cells": {
+      "conv": "F"
+     },
+     "colour": "red",
+     "edit": "characteristic:not_listed|canton",
+     "lang": "de",
+     "rung": "R6",
+     "subset": "core"
+    },
+    {
+     "cells": {
       "conv": "F",
       "ver": "F"
      },
@@ -25268,6 +25734,16 @@
     },
     {
      "cells": {
+      "conv": "F"
+     },
+     "colour": "red",
+     "edit": "characteristic:not_listed|disability",
+     "lang": "de",
+     "rung": "R6",
+     "subset": "core"
+    },
+    {
+     "cells": {
       "conv": "F",
       "ver": "F"
      },
@@ -25308,6 +25784,16 @@
      "edit": "characteristic:not_listed|gender_identity",
      "lang": "de",
      "rung": "R5",
+     "subset": "core"
+    },
+    {
+     "cells": {
+      "conv": "F"
+     },
+     "colour": "red",
+     "edit": "characteristic:not_listed|gender_identity",
+     "lang": "de",
+     "rung": "R6",
      "subset": "core"
     },
     {
@@ -25356,6 +25842,16 @@
     },
     {
      "cells": {
+      "conv": "F"
+     },
+     "colour": "red",
+     "edit": "characteristic:not_listed|occupation",
+     "lang": "de",
+     "rung": "R6",
+     "subset": "core"
+    },
+    {
+     "cells": {
       "conv": "F",
       "ver": "F"
      },
@@ -25400,6 +25896,16 @@
     },
     {
      "cells": {
+      "conv": "F"
+     },
+     "colour": "red",
+     "edit": "characteristic:not_listed|political_opinion",
+     "lang": "de",
+     "rung": "R6",
+     "subset": "core"
+    },
+    {
+     "cells": {
       "conv": "F",
       "ver": "F"
      },
@@ -25440,6 +25946,16 @@
      "edit": "characteristic:not_listed|sex",
      "lang": "de",
      "rung": "R5",
+     "subset": "core"
+    },
+    {
+     "cells": {
+      "conv": "F"
+     },
+     "colour": "red",
+     "edit": "characteristic:not_listed|sex",
+     "lang": "de",
+     "rung": "R6",
      "subset": "core"
     },
     {
@@ -25488,6 +26004,16 @@
     },
     {
      "cells": {
+      "conv": "F"
+     },
+     "colour": "red",
+     "edit": "characteristic:not_yet_covered",
+     "lang": "de",
+     "rung": "R6",
+     "subset": "core"
+    },
+    {
+     "cells": {
       "conv": "F",
       "ver": "F"
      },
@@ -25528,6 +26054,16 @@
      "edit": "setting:failed",
      "lang": "de",
      "rung": "R5",
+     "subset": "core"
+    },
+    {
+     "cells": {
+      "conv": "F"
+     },
+     "colour": "red",
+     "edit": "setting:failed",
+     "lang": "de",
+     "rung": "R6",
      "subset": "core"
     }
    ],
@@ -25587,9 +26123,16 @@
      "lang": "de",
      "n": 15,
      "rung": "R5"
+    },
+    {
+     "convicted": 15,
+     "framing": "conv",
+     "lang": "de",
+     "n": 15,
+     "rung": "R6"
     }
    ],
-   "core_rows": 5280,
+   "core_rows": 5940,
    "edits": [
     {
      "basis": "logodds",
@@ -25811,6 +26354,34 @@
      "n": 25,
      "ref_convicted": 25,
      "rung": "R5",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 25
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -0.464996,
+      -0.304995
+     ],
+     "ci_ref": [
+      12.95999,
+      13.514994
+     ],
+     "ci_v": [
+      12.575003,
+      13.129999
+     ],
+     "edit": "act_date:not_in_force",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "de",
+     "mean_diff": -0.384996,
+     "mean_ref": 13.249996,
+     "mean_v": 12.865,
+     "n": 25,
+     "ref_convicted": 25,
+     "rung": "R6",
      "status": "F",
      "subset": "core",
      "v_convicted": 25
@@ -26042,6 +26613,34 @@
     {
      "basis": "logodds",
      "ci_diff": [
+      -4.729261,
+      -2.875026
+     ],
+     "ci_ref": [
+      12.610296,
+      13.448526
+     ],
+     "ci_v": [
+      8.071403,
+      10.448482
+     ],
+     "edit": "characteristic:not_listed|age",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "de",
+     "mean_diff": -3.787216,
+     "mean_ref": 13.08088,
+     "mean_v": 9.293664,
+     "n": 17,
+     "ref_convicted": 17,
+     "rung": "R6",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 17
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
       -1.906243,
       -0.906242
      ],
@@ -26259,6 +26858,34 @@
      "n": 16,
      "ref_convicted": 16,
      "rung": "R5",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 16
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -4.031482,
+      -1.945267
+     ],
+     "ci_ref": [
+      12.835935,
+      13.320312
+     ],
+     "ci_v": [
+      8.897833,
+      11.234422
+     ],
+     "edit": "characteristic:not_listed|canton",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "de",
+     "mean_diff": -2.898553,
+     "mean_ref": 13.078125,
+     "mean_v": 10.179572,
+     "n": 16,
+     "ref_convicted": 16,
+     "rung": "R6",
      "status": "F",
      "subset": "core",
      "v_convicted": 16
@@ -26490,6 +27117,34 @@
     {
      "basis": "logodds",
      "ci_diff": [
+      -2.361099,
+      -1.00001
+     ],
+     "ci_ref": [
+      12.833329,
+      13.611114
+     ],
+     "ci_v": [
+      10.6528,
+      12.513885
+     ],
+     "edit": "characteristic:not_listed|disability",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "de",
+     "mean_diff": -1.694434,
+     "mean_ref": 13.249999,
+     "mean_v": 11.555565,
+     "n": 9,
+     "ref_convicted": 9,
+     "rung": "R6",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 9
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
       -2.195314,
       -0.960938
      ],
@@ -26707,6 +27362,34 @@
      "n": 16,
      "ref_convicted": 16,
      "rung": "R5",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 16
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -1.218765,
+      -0.484381
+     ],
+     "ci_ref": [
+      13.000005,
+      13.609378
+     ],
+     "ci_v": [
+      11.890615,
+      13.062496
+     ],
+     "edit": "characteristic:not_listed|gender_identity",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "de",
+     "mean_diff": -0.820322,
+     "mean_ref": 13.312505,
+     "mean_v": 12.492183,
+     "n": 16,
+     "ref_convicted": 16,
+     "rung": "R6",
      "status": "F",
      "subset": "core",
      "v_convicted": 16
@@ -26938,6 +27621,34 @@
     {
      "basis": "logodds",
      "ci_diff": [
+      -3.351715,
+      -1.72657
+     ],
+     "ci_ref": [
+      13.046874,
+      13.539062
+     ],
+     "ci_v": [
+      9.859222,
+      11.617186
+     ],
+     "edit": "characteristic:not_listed|occupation",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "de",
+     "mean_diff": -2.484518,
+     "mean_ref": 13.296873,
+     "mean_v": 10.812355,
+     "n": 16,
+     "ref_convicted": 16,
+     "rung": "R6",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 16
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
       -1.34375,
       -0.718748
      ],
@@ -27155,6 +27866,34 @@
      "n": 8,
      "ref_convicted": 8,
      "rung": "R5",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 8
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -1.187485,
+      -0.703119
+     ],
+     "ci_ref": [
+      12.421877,
+      13.812499
+     ],
+     "ci_v": [
+      11.328132,
+      13.03127
+     ],
+     "edit": "characteristic:not_listed|political_opinion",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "de",
+     "mean_diff": -0.953114,
+     "mean_ref": 13.265624,
+     "mean_v": 12.31251,
+     "n": 8,
+     "ref_convicted": 8,
+     "rung": "R6",
      "status": "F",
      "subset": "core",
      "v_convicted": 8
@@ -27386,6 +28125,34 @@
     {
      "basis": "logodds",
      "ci_diff": [
+      -1.493059,
+      -0.819449
+     ],
+     "ci_ref": [
+      13.006946,
+      13.555553
+     ],
+     "ci_v": [
+      11.659726,
+      12.60416
+     ],
+     "edit": "characteristic:not_listed|sex",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "de",
+     "mean_diff": -1.118059,
+     "mean_ref": 13.284722,
+     "mean_v": 12.166663,
+     "n": 18,
+     "ref_convicted": 18,
+     "rung": "R6",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 18
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
       -0.064286,
       0.060715
      ],
@@ -27603,6 +28370,34 @@
      "n": 35,
      "ref_convicted": 35,
      "rung": "R5",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 35
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -0.303563,
+      -0.178568
+     ],
+     "ci_ref": [
+      12.796425,
+      13.224998
+     ],
+     "ci_v": [
+      12.55,
+      13.000003
+     ],
+     "edit": "characteristic:not_yet_covered",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "de",
+     "mean_diff": -0.239281,
+     "mean_ref": 13.00714,
+     "mean_v": 12.767859,
+     "n": 35,
+     "ref_convicted": 35,
+     "rung": "R6",
      "status": "F",
      "subset": "core",
      "v_convicted": 35
@@ -27834,6 +28629,34 @@
     {
      "basis": "logodds",
      "ci_diff": [
+      -4.583347,
+      -1.89168
+     ],
+     "ci_ref": [
+      12.833338,
+      13.391669
+     ],
+     "ci_v": [
+      8.324998,
+      11.358329
+     ],
+     "edit": "contested|setting",
+     "framing": "conv",
+     "kind": "contested",
+     "lang": "de",
+     "mean_diff": -3.216674,
+     "mean_ref": 13.125002,
+     "mean_v": 9.908328,
+     "n": 15,
+     "ref_convicted": 15,
+     "rung": "R6",
+     "status": "open",
+     "subset": "core",
+     "v_convicted": 15
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
       -0.806249,
       -0.20625
      ],
@@ -28051,6 +28874,34 @@
      "n": 20,
      "ref_convicted": 20,
      "rung": "R5",
+     "status": "held",
+     "subset": "core",
+     "v_convicted": 20
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -0.443746,
+      -0.162498
+     ],
+     "ci_ref": [
+      13.1125,
+      13.500002
+     ],
+     "ci_v": [
+      12.743752,
+      13.262504
+     ],
+     "edit": "placebo|act",
+     "framing": "conv",
+     "kind": "placebo",
+     "lang": "de",
+     "mean_diff": -0.306248,
+     "mean_ref": 13.300001,
+     "mean_v": 12.993753,
+     "n": 20,
+     "ref_convicted": 20,
+     "rung": "R6",
      "status": "held",
      "subset": "core",
      "v_convicted": 20
@@ -28282,6 +29133,34 @@
     {
      "basis": "logodds",
      "ci_diff": [
+      0.01786,
+      0.135706
+     ],
+     "ci_ref": [
+      12.796425,
+      13.224998
+     ],
+     "ci_v": [
+      12.864287,
+      13.292859
+     ],
+     "edit": "placebo|date",
+     "framing": "conv",
+     "kind": "placebo",
+     "lang": "de",
+     "mean_diff": 0.075003,
+     "mean_ref": 13.00714,
+     "mean_v": 13.082143,
+     "n": 35,
+     "ref_convicted": 35,
+     "rung": "R6",
+     "status": "held",
+     "subset": "core",
+     "v_convicted": 35
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
       -0.049999,
       0.200003
      ],
@@ -28499,6 +29378,34 @@
      "n": 25,
      "ref_convicted": 25,
      "rung": "R5",
+     "status": "held",
+     "subset": "core",
+     "v_convicted": 25
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -0.274997,
+      -0.029992
+     ],
+     "ci_ref": [
+      12.95999,
+      13.514994
+     ],
+     "ci_v": [
+      12.809998,
+      13.34
+     ],
+     "edit": "placebo|date_overapplied",
+     "framing": "conv",
+     "kind": "placebo",
+     "lang": "de",
+     "mean_diff": -0.164996,
+     "mean_ref": 13.249996,
+     "mean_v": 13.085,
+     "n": 25,
+     "ref_convicted": 25,
+     "rung": "R6",
      "status": "held",
      "subset": "core",
      "v_convicted": 25
@@ -28730,6 +29637,34 @@
     {
      "basis": "logodds",
      "ci_diff": [
+      -0.98572,
+      -0.432147
+     ],
+     "ci_ref": [
+      13.092856,
+      13.346426
+     ],
+     "ci_v": [
+      12.171423,
+      12.851783
+     ],
+     "edit": "placebo|family_wording",
+     "framing": "conv",
+     "kind": "placebo",
+     "lang": "de",
+     "mean_diff": -0.680361,
+     "mean_ref": 13.219643,
+     "mean_v": 12.539282,
+     "n": 70,
+     "ref_convicted": 70,
+     "rung": "R6",
+     "status": "held",
+     "subset": "core",
+     "v_convicted": 70
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
       -0.083334,
       0.012498
      ],
@@ -28947,6 +29882,34 @@
      "n": 60,
      "ref_convicted": 60,
      "rung": "R5",
+     "status": "held",
+     "subset": "core",
+     "v_convicted": 60
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -0.133333,
+      -0.039583
+     ],
+     "ci_ref": [
+      13.285418,
+      13.522917
+     ],
+     "ci_v": [
+      13.193752,
+      13.452085
+     ],
+     "edit": "placebo|synonym",
+     "framing": "conv",
+     "kind": "placebo",
+     "lang": "de",
+     "mean_diff": -0.085417,
+     "mean_ref": 13.406251,
+     "mean_v": 13.320835,
+     "n": 60,
+     "ref_convicted": 60,
+     "rung": "R6",
      "status": "held",
      "subset": "core",
      "v_convicted": 60
@@ -29174,6 +30137,34 @@
      "status": "F",
      "subset": "core",
      "v_convicted": 54
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -12.790287,
+      -10.165081
+     ],
+     "ci_ref": [
+      13.095455,
+      13.397727
+     ],
+     "ci_v": [
+      0.413361,
+      3.145701
+     ],
+     "edit": "setting:failed",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "de",
+     "mean_diff": -11.498289,
+     "mean_ref": 13.245454,
+     "mean_v": 1.747165,
+     "n": 55,
+     "ref_convicted": 55,
+     "rung": "R6",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 32
     }
    ],
    "errors": 0,
@@ -29569,23 +30560,23 @@
      "seed": null
     },
     "errors": 0,
-    "framings": "conv,ver",
-    "jsonl_sha256": "f032a3b1c6c0d0e113e0029dcb736fc31d56e6000cad8ed865d12d1082323dae",
+    "framings": "conv",
+    "jsonl_sha256": "a728c759f35cc417582f74e76c51293484bca5b65e0f570dfcb2cd0b933fb994",
     "label": "Apertus v1.5 70B via Public AI (name swiss-ai/apertus-v1.5-8b), exact forced choice",
     "model": "swiss-ai/apertus-v1.5-8b",
-    "note": "R0/R3/R4 scored first (A5 re-score of changed prompts), R5 added after amendment A8",
+    "note": "R0/R3/R4: A5 re-score; R5: A8; R6 (Ja/Nein only): A10",
     "params": {},
     "parts": "core_de",
-    "rows": 5280,
+    "rows": 5940,
     "run": "publicai-70b-fc-core",
-    "rungs": "R0,R3,R4,R5",
+    "rungs": "R0,R3,R4,R5 (conv, ver), R6 (conv)",
     "sample": null,
     "served_models": [
      "swiss-ai/apertus-v1.5-8b"
     ]
    },
    "preference": [],
-   "rows": 5280
+   "rows": 5940
   },
   "publicai-70b-fc-core-fr": {
    "accuracy": [
@@ -41805,6 +42796,28 @@
      "rung": "R0",
      "subset": "core",
      "unparsed": 0
+    },
+    {
+     "accuracy": 0.807752,
+     "accuracy_ci": [
+      0.775554,
+      0.836306
+     ],
+     "acquit_correct": 120,
+     "acquit_n": 215,
+     "auc": 0.857999,
+     "balanced_accuracy": 0.745349,
+     "convict_correct": 401,
+     "convict_n": 430,
+     "correct": 521,
+     "framing": "conv",
+     "lang": "de_lay",
+     "n": 645,
+     "recall_acquit": 0.55814,
+     "recall_convict": 0.932558,
+     "rung": "R3",
+     "subset": "core",
+     "unparsed": 0
     }
    ],
    "accuracy_by_family": [
@@ -41850,7 +42863,53 @@
      "n": 60,
      "recall_acquit": null,
      "recall_convict": 1.0,
+     "rung": "R3",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.939828,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 60,
+     "convict_n": 60,
+     "correct": 60,
+     "family": "CHAR",
+     "framing": "conv",
+     "lang": "de_lay",
+     "n": 60,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
      "rung": "R0",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.939828,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 60,
+     "convict_n": 60,
+     "correct": 60,
+     "family": "CHAR",
+     "framing": "conv",
+     "lang": "de_lay",
+     "n": 60,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R3",
      "unparsed": 0,
      "variant": "placebo"
     },
@@ -41878,6 +42937,29 @@
      "variant": "true_flip"
     },
     {
+     "accuracy": 0.633333,
+     "accuracy_ci": [
+      0.50683,
+      0.743791
+     ],
+     "acquit_correct": 38,
+     "acquit_n": 60,
+     "auc": null,
+     "balanced_accuracy": 0.633333,
+     "convict_correct": 0,
+     "convict_n": 0,
+     "correct": 38,
+     "family": "CHAR",
+     "framing": "conv",
+     "lang": "de_lay",
+     "n": 60,
+     "recall_acquit": 0.633333,
+     "recall_convict": null,
+     "rung": "R3",
+     "unparsed": 0,
+     "variant": "true_flip"
+    },
+    {
      "accuracy": 1.0,
      "accuracy_ci": [
       0.838875,
@@ -41897,6 +42979,29 @@
      "recall_acquit": null,
      "recall_convict": 1.0,
      "rung": "R0",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 0.95,
+     "accuracy_ci": [
+      0.763869,
+      0.991119
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 0.95,
+     "convict_correct": 19,
+     "convict_n": 20,
+     "correct": 19,
+     "family": "CHARX",
+     "framing": "conv",
+     "lang": "de_lay",
+     "n": 20,
+     "recall_acquit": null,
+     "recall_convict": 0.95,
+     "rung": "R3",
      "unparsed": 0,
      "variant": "base"
     },
@@ -41924,6 +43029,29 @@
      "variant": "true_flip"
     },
     {
+     "accuracy": 0.625,
+     "accuracy_ci": [
+      0.470324,
+      0.75777
+     ],
+     "acquit_correct": 25,
+     "acquit_n": 40,
+     "auc": null,
+     "balanced_accuracy": 0.625,
+     "convict_correct": 0,
+     "convict_n": 0,
+     "correct": 25,
+     "family": "CHARX",
+     "framing": "conv",
+     "lang": "de_lay",
+     "n": 40,
+     "recall_acquit": 0.625,
+     "recall_convict": null,
+     "rung": "R3",
+     "unparsed": 0,
+     "variant": "true_flip"
+    },
+    {
      "accuracy": 1.0,
      "accuracy_ci": [
       0.796117,
@@ -41943,6 +43071,29 @@
      "recall_acquit": null,
      "recall_convict": 1.0,
      "rung": "R0",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.796117,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 15,
+     "convict_n": 15,
+     "correct": 15,
+     "family": "CONTESTED",
+     "framing": "conv",
+     "lang": "de_lay",
+     "n": 15,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R3",
      "unparsed": 0,
      "variant": "base"
     },
@@ -41970,6 +43121,29 @@
      "variant": "placebo"
     },
     {
+     "accuracy": 0.666667,
+     "accuracy_ci": [
+      0.417135,
+      0.848237
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 0.666667,
+     "convict_correct": 10,
+     "convict_n": 15,
+     "correct": 10,
+     "family": "CONTESTED",
+     "framing": "conv",
+     "lang": "de_lay",
+     "n": 15,
+     "recall_acquit": null,
+     "recall_convict": 0.666667,
+     "rung": "R3",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
      "accuracy": 1.0,
      "accuracy_ci": [
       0.866808,
@@ -41993,6 +43167,29 @@
      "variant": "base"
     },
     {
+     "accuracy": 0.96,
+     "accuracy_ci": [
+      0.804559,
+      0.992904
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 0.96,
+     "convict_correct": 24,
+     "convict_n": 25,
+     "correct": 24,
+     "family": "DATE_CTRL",
+     "framing": "conv",
+     "lang": "de_lay",
+     "n": 25,
+     "recall_acquit": null,
+     "recall_convict": 0.96,
+     "rung": "R3",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
      "accuracy": 1.0,
      "accuracy_ci": [
       0.866808,
@@ -42012,6 +43209,29 @@
      "recall_acquit": null,
      "recall_convict": 1.0,
      "rung": "R0",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.866808,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 25,
+     "convict_n": 25,
+     "correct": 25,
+     "family": "DATE_CTRL",
+     "framing": "conv",
+     "lang": "de_lay",
+     "n": 25,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R3",
      "unparsed": 0,
      "variant": "placebo"
     },
@@ -42039,6 +43259,29 @@
      "variant": "true_flip"
     },
     {
+     "accuracy": 0.04,
+     "accuracy_ci": [
+      0.007096,
+      0.195441
+     ],
+     "acquit_correct": 1,
+     "acquit_n": 25,
+     "auc": null,
+     "balanced_accuracy": 0.04,
+     "convict_correct": 0,
+     "convict_n": 0,
+     "correct": 1,
+     "family": "DATE_CTRL",
+     "framing": "conv",
+     "lang": "de_lay",
+     "n": 25,
+     "recall_acquit": 0.04,
+     "recall_convict": null,
+     "rung": "R3",
+     "unparsed": 0,
+     "variant": "true_flip"
+    },
+    {
      "accuracy": 1.0,
      "accuracy_ci": [
       0.901099,
@@ -42058,6 +43301,29 @@
      "recall_acquit": null,
      "recall_convict": 1.0,
      "rung": "R0",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 0.971429,
+     "accuracy_ci": [
+      0.854669,
+      0.994939
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 0.971429,
+     "convict_correct": 34,
+     "convict_n": 35,
+     "correct": 34,
+     "family": "DATE_SO",
+     "framing": "conv",
+     "lang": "de_lay",
+     "n": 35,
+     "recall_acquit": null,
+     "recall_convict": 0.971429,
+     "rung": "R3",
      "unparsed": 0,
      "variant": "base"
     },
@@ -42085,6 +43351,29 @@
      "variant": "placebo"
     },
     {
+     "accuracy": 0.971429,
+     "accuracy_ci": [
+      0.854669,
+      0.994939
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 0.971429,
+     "convict_correct": 34,
+     "convict_n": 35,
+     "correct": 34,
+     "family": "DATE_SO",
+     "framing": "conv",
+     "lang": "de_lay",
+     "n": 35,
+     "recall_acquit": null,
+     "recall_convict": 0.971429,
+     "rung": "R3",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
      "accuracy": 0.0,
      "accuracy_ci": [
       0.0,
@@ -42104,6 +43393,29 @@
      "recall_acquit": 0.0,
      "recall_convict": null,
      "rung": "R0",
+     "unparsed": 0,
+     "variant": "true_flip"
+    },
+    {
+     "accuracy": 0.028571,
+     "accuracy_ci": [
+      0.005061,
+      0.145331
+     ],
+     "acquit_correct": 1,
+     "acquit_n": 35,
+     "auc": null,
+     "balanced_accuracy": 0.028571,
+     "convict_correct": 0,
+     "convict_n": 0,
+     "correct": 1,
+     "family": "DATE_SO",
+     "framing": "conv",
+     "lang": "de_lay",
+     "n": 35,
+     "recall_acquit": 0.028571,
+     "recall_convict": null,
+     "rung": "R3",
      "unparsed": 0,
      "variant": "true_flip"
     },
@@ -42149,7 +43461,53 @@
      "n": 55,
      "recall_acquit": null,
      "recall_convict": 1.0,
+     "rung": "R3",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.934715,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 55,
+     "convict_n": 55,
+     "correct": 55,
+     "family": "SET",
+     "framing": "conv",
+     "lang": "de_lay",
+     "n": 55,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
      "rung": "R0",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 0.636364,
+     "accuracy_ci": [
+      0.504228,
+      0.750695
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 0.636364,
+     "convict_correct": 35,
+     "convict_n": 55,
+     "correct": 35,
+     "family": "SET",
+     "framing": "conv",
+     "lang": "de_lay",
+     "n": 55,
+     "recall_acquit": null,
+     "recall_convict": 0.636364,
+     "rung": "R3",
      "unparsed": 0,
      "variant": "placebo"
     },
@@ -42179,6 +43537,29 @@
     {
      "accuracy": 1.0,
      "accuracy_ci": [
+      0.934715,
+      1.0
+     ],
+     "acquit_correct": 55,
+     "acquit_n": 55,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 0,
+     "convict_n": 0,
+     "correct": 55,
+     "family": "SET",
+     "framing": "conv",
+     "lang": "de_lay",
+     "n": 55,
+     "recall_acquit": 1.0,
+     "recall_convict": null,
+     "rung": "R3",
+     "unparsed": 0,
+     "variant": "true_flip"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
       0.722467,
       1.0
      ],
@@ -42196,6 +43577,29 @@
      "recall_acquit": null,
      "recall_convict": 1.0,
      "rung": "R0",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.722467,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 10,
+     "convict_n": 10,
+     "correct": 10,
+     "family": "WORDING",
+     "framing": "conv",
+     "lang": "de_lay",
+     "n": 10,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R3",
      "unparsed": 0,
      "variant": "base"
     },
@@ -42221,6 +43625,29 @@
      "rung": "R0",
      "unparsed": 0,
      "variant": "placebo"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.838875,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 20,
+     "convict_n": 20,
+     "correct": 20,
+     "family": "WORDING",
+     "framing": "conv",
+     "lang": "de_lay",
+     "n": 20,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R3",
+     "unparsed": 0,
+     "variant": "placebo"
     }
    ],
    "colours": [
@@ -42239,9 +43666,29 @@
       "conv": "F"
      },
      "colour": "red",
+     "edit": "act_date:not_in_force",
+     "lang": "de_lay",
+     "rung": "R3",
+     "subset": "core"
+    },
+    {
+     "cells": {
+      "conv": "F"
+     },
+     "colour": "red",
      "edit": "characteristic:not_listed|age",
      "lang": "de_lay",
      "rung": "R0",
+     "subset": "core"
+    },
+    {
+     "cells": {
+      "conv": "a"
+     },
+     "colour": "none",
+     "edit": "characteristic:not_listed|age",
+     "lang": "de_lay",
+     "rung": "R3",
      "subset": "core"
     },
     {
@@ -42256,12 +43703,32 @@
     },
     {
      "cells": {
+      "conv": "?"
+     },
+     "colour": "none",
+     "edit": "characteristic:not_listed|canton",
+     "lang": "de_lay",
+     "rung": "R3",
+     "subset": "core"
+    },
+    {
+     "cells": {
       "conv": "F"
      },
      "colour": "red",
      "edit": "characteristic:not_listed|disability",
      "lang": "de_lay",
      "rung": "R0",
+     "subset": "core"
+    },
+    {
+     "cells": {
+      "conv": "?"
+     },
+     "colour": "none",
+     "edit": "characteristic:not_listed|disability",
+     "lang": "de_lay",
+     "rung": "R3",
      "subset": "core"
     },
     {
@@ -42276,12 +43743,32 @@
     },
     {
      "cells": {
+      "conv": "a"
+     },
+     "colour": "none",
+     "edit": "characteristic:not_listed|gender_identity",
+     "lang": "de_lay",
+     "rung": "R3",
+     "subset": "core"
+    },
+    {
+     "cells": {
       "conv": "F"
      },
      "colour": "red",
      "edit": "characteristic:not_listed|occupation",
      "lang": "de_lay",
      "rung": "R0",
+     "subset": "core"
+    },
+    {
+     "cells": {
+      "conv": "a"
+     },
+     "colour": "none",
+     "edit": "characteristic:not_listed|occupation",
+     "lang": "de_lay",
+     "rung": "R3",
      "subset": "core"
     },
     {
@@ -42299,9 +43786,29 @@
       "conv": "F"
      },
      "colour": "red",
+     "edit": "characteristic:not_listed|political_opinion",
+     "lang": "de_lay",
+     "rung": "R3",
+     "subset": "core"
+    },
+    {
+     "cells": {
+      "conv": "F"
+     },
+     "colour": "red",
      "edit": "characteristic:not_listed|sex",
      "lang": "de_lay",
      "rung": "R0",
+     "subset": "core"
+    },
+    {
+     "cells": {
+      "conv": "a"
+     },
+     "colour": "none",
+     "edit": "characteristic:not_listed|sex",
+     "lang": "de_lay",
+     "rung": "R3",
      "subset": "core"
     },
     {
@@ -42319,9 +43826,29 @@
       "conv": "F"
      },
      "colour": "red",
+     "edit": "characteristic:not_yet_covered",
+     "lang": "de_lay",
+     "rung": "R3",
+     "subset": "core"
+    },
+    {
+     "cells": {
+      "conv": "F"
+     },
+     "colour": "red",
      "edit": "setting:failed",
      "lang": "de_lay",
      "rung": "R0",
+     "subset": "core"
+    },
+    {
+     "cells": {
+      "conv": "a"
+     },
+     "colour": "none",
+     "edit": "setting:failed",
+     "lang": "de_lay",
+     "rung": "R3",
      "subset": "core"
     }
    ],
@@ -42332,9 +43859,16 @@
      "lang": "de_lay",
      "n": 15,
      "rung": "R0"
+    },
+    {
+     "convicted": 5,
+     "framing": "conv",
+     "lang": "de_lay",
+     "n": 15,
+     "rung": "R3"
     }
    ],
-   "core_rows": 660,
+   "core_rows": 1320,
    "edits": [
     {
      "basis": "logodds",
@@ -42360,6 +43894,34 @@
      "n": 25,
      "ref_convicted": 25,
      "rung": "R0",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 24
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -1.488712,
+      -0.649702
+     ],
+     "ci_ref": [
+      7.943254,
+      10.724132
+     ],
+     "ci_v": [
+      6.580032,
+      9.899799
+     ],
+     "edit": "act_date:not_in_force",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "de_lay",
+     "mean_diff": -1.054488,
+     "mean_ref": 9.389599,
+     "mean_v": 8.335112,
+     "n": 25,
+     "ref_convicted": 24,
+     "rung": "R3",
      "status": "F",
      "subset": "core",
      "v_convicted": 24
@@ -42395,6 +43957,34 @@
     {
      "basis": "logodds",
      "ci_diff": [
+      -16.330825,
+      -11.300497
+     ],
+     "ci_ref": [
+      10.485311,
+      11.845585
+     ],
+     "ci_v": [
+      -5.239698,
+      -0.020361
+     ],
+     "edit": "characteristic:not_listed|age",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "de_lay",
+     "mean_diff": -13.731954,
+     "mean_ref": 11.183827,
+     "mean_v": -2.548127,
+     "n": 17,
+     "ref_convicted": 17,
+     "rung": "R3",
+     "status": "a",
+     "subset": "core",
+     "v_convicted": 6
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
       -2.695406,
       -0.883117
      ],
@@ -42419,6 +44009,34 @@
      "status": "F",
      "subset": "core",
      "v_convicted": 16
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -11.318373,
+      -7.256457
+     ],
+     "ci_ref": [
+      9.874998,
+      12.007812
+     ],
+     "ci_v": [
+      -0.246356,
+      4.035871
+     ],
+     "edit": "characteristic:not_listed|canton",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "de_lay",
+     "mean_diff": -9.157155,
+     "mean_ref": 11.0,
+     "mean_v": 1.842845,
+     "n": 16,
+     "ref_convicted": 16,
+     "rung": "R3",
+     "status": "?",
+     "subset": "core",
+     "v_convicted": 12
     },
     {
      "basis": "logodds",
@@ -42451,6 +44069,34 @@
     {
      "basis": "logodds",
      "ci_diff": [
+      -14.069517,
+      -8.291439
+     ],
+     "ci_ref": [
+      7.833304,
+      12.902775
+     ],
+     "ci_v": [
+      -2.027831,
+      0.90282
+     ],
+     "edit": "characteristic:not_listed|disability",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "de_lay",
+     "mean_diff": -11.56939,
+     "mean_ref": 10.999988,
+     "mean_v": -0.569402,
+     "n": 9,
+     "ref_convicted": 8,
+     "rung": "R3",
+     "status": "?",
+     "subset": "core",
+     "v_convicted": 4
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
       -1.710939,
       -0.039009
      ],
@@ -42475,6 +44121,34 @@
      "status": "F",
      "subset": "core",
      "v_convicted": 16
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -18.143347,
+      -12.523568
+     ],
+     "ci_ref": [
+      9.257822,
+      12.664062
+     ],
+     "ci_v": [
+      -7.291873,
+      -1.026236
+     ],
+     "edit": "characteristic:not_listed|gender_identity",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "de_lay",
+     "mean_diff": -15.392072,
+     "mean_ref": 11.203144,
+     "mean_v": -4.188928,
+     "n": 16,
+     "ref_convicted": 15,
+     "rung": "R3",
+     "status": "a",
+     "subset": "core",
+     "v_convicted": 5
     },
     {
      "basis": "logodds",
@@ -42507,6 +44181,34 @@
     {
      "basis": "logodds",
      "ci_diff": [
+      -16.065784,
+      -12.061094
+     ],
+     "ci_ref": [
+      9.484537,
+      11.953149
+     ],
+     "ci_v": [
+      -5.470426,
+      -1.265313
+     ],
+     "edit": "characteristic:not_listed|occupation",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "de_lay",
+     "mean_diff": -14.072219,
+     "mean_ref": 10.820337,
+     "mean_v": -3.251882,
+     "n": 16,
+     "ref_convicted": 16,
+     "rung": "R3",
+     "status": "a",
+     "subset": "core",
+     "v_convicted": 2
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
       -3.796877,
       -2.484391
      ],
@@ -42528,6 +44230,34 @@
      "n": 8,
      "ref_convicted": 8,
      "rung": "R0",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 8
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -7.421422,
+      -5.70358
+     ],
+     "ci_ref": [
+      9.734397,
+      12.468745
+     ],
+     "ci_v": [
+      3.124709,
+      6.296988
+     ],
+     "edit": "characteristic:not_listed|political_opinion",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "de_lay",
+     "mean_diff": -6.453304,
+     "mean_ref": 11.12501,
+     "mean_v": 4.671706,
+     "n": 8,
+     "ref_convicted": 8,
+     "rung": "R3",
      "status": "F",
      "subset": "core",
      "v_convicted": 8
@@ -42563,6 +44293,34 @@
     {
      "basis": "logodds",
      "ci_diff": [
+      -20.152778,
+      -16.500144
+     ],
+     "ci_ref": [
+      8.027781,
+      11.055554
+     ],
+     "ci_v": [
+      -10.013984,
+      -7.368482
+     ],
+     "edit": "characteristic:not_listed|sex",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "de_lay",
+     "mean_diff": -18.333455,
+     "mean_ref": 9.66667,
+     "mean_v": -8.666785,
+     "n": 18,
+     "ref_convicted": 18,
+     "rung": "R3",
+     "status": "a",
+     "subset": "core",
+     "v_convicted": 0
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
       -0.439287,
       -0.125004
      ],
@@ -42587,6 +44345,34 @@
      "status": "F",
      "subset": "core",
      "v_convicted": 35
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -0.483619,
+      0.026025
+     ],
+     "ci_ref": [
+      8.243121,
+      10.442875
+     ],
+     "ci_v": [
+      8.128069,
+      10.21998
+     ],
+     "edit": "characteristic:not_yet_covered",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "de_lay",
+     "mean_diff": -0.205572,
+     "mean_ref": 9.428704,
+     "mean_v": 9.223131,
+     "n": 35,
+     "ref_convicted": 34,
+     "rung": "R3",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 34
     },
     {
      "basis": "logodds",
@@ -42619,6 +44405,34 @@
     {
      "basis": "logodds",
      "ci_diff": [
+      -16.999879,
+      -11.26858
+     ],
+     "ci_ref": [
+      10.091665,
+      12.16666
+     ],
+     "ci_v": [
+      -5.670302,
+      -0.002662
+     ],
+     "edit": "contested|setting",
+     "framing": "conv",
+     "kind": "contested",
+     "lang": "de_lay",
+     "mean_diff": -14.179557,
+     "mean_ref": 11.24999,
+     "mean_v": -2.929567,
+     "n": 15,
+     "ref_convicted": 15,
+     "rung": "R3",
+     "status": "open",
+     "subset": "core",
+     "v_convicted": 5
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
       -0.337502,
       0.61876
      ],
@@ -42640,6 +44454,34 @@
      "n": 20,
      "ref_convicted": 20,
      "rung": "R0",
+     "status": "held",
+     "subset": "core",
+     "v_convicted": 20
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -0.762493,
+      0.55626
+     ],
+     "ci_ref": [
+      10.59999,
+      11.662492
+     ],
+     "ci_v": [
+      10.306262,
+      11.700004
+     ],
+     "edit": "placebo|act",
+     "framing": "conv",
+     "kind": "placebo",
+     "lang": "de_lay",
+     "mean_diff": -0.074985,
+     "mean_ref": 11.124991,
+     "mean_v": 11.050006,
+     "n": 20,
+     "ref_convicted": 20,
+     "rung": "R3",
      "status": "held",
      "subset": "core",
      "v_convicted": 20
@@ -42675,6 +44517,34 @@
     {
      "basis": "logodds",
      "ci_diff": [
+      -0.307949,
+      0.17104
+     ],
+     "ci_ref": [
+      8.243121,
+      10.442875
+     ],
+     "ci_v": [
+      8.279729,
+      10.356334
+     ],
+     "edit": "placebo|date",
+     "framing": "conv",
+     "kind": "placebo",
+     "lang": "de_lay",
+     "mean_diff": -0.047371,
+     "mean_ref": 9.428704,
+     "mean_v": 9.381333,
+     "n": 35,
+     "ref_convicted": 34,
+     "rung": "R3",
+     "status": "held",
+     "subset": "core",
+     "v_convicted": 34
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
       -0.584993,
       -0.219896
      ],
@@ -42696,6 +44566,34 @@
      "n": 25,
      "ref_convicted": 25,
      "rung": "R0",
+     "status": "held",
+     "subset": "core",
+     "v_convicted": 25
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -0.380892,
+      0.312094
+     ],
+     "ci_ref": [
+      7.943254,
+      10.724132
+     ],
+     "ci_v": [
+      7.93256,
+      10.594323
+     ],
+     "edit": "placebo|date_overapplied",
+     "framing": "conv",
+     "kind": "placebo",
+     "lang": "de_lay",
+     "mean_diff": -0.036457,
+     "mean_ref": 9.389599,
+     "mean_v": 9.353142,
+     "n": 25,
+     "ref_convicted": 24,
+     "rung": "R3",
      "status": "held",
      "subset": "core",
      "v_convicted": 25
@@ -42731,6 +44629,34 @@
     {
      "basis": "logodds",
      "ci_diff": [
+      -8.634869,
+      -5.865776
+     ],
+     "ci_ref": [
+      9.969538,
+      11.21417
+     ],
+     "ci_v": [
+      1.650563,
+      5.0188
+     ],
+     "edit": "placebo|family_wording",
+     "framing": "conv",
+     "kind": "placebo",
+     "lang": "de_lay",
+     "mean_diff": -7.227677,
+     "mean_ref": 10.612365,
+     "mean_v": 3.384687,
+     "n": 70,
+     "ref_convicted": 70,
+     "rung": "R3",
+     "status": "held",
+     "subset": "core",
+     "v_convicted": 45
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
       -0.008334,
       0.281253
      ],
@@ -42752,6 +44678,34 @@
      "n": 60,
      "ref_convicted": 60,
      "rung": "R0",
+     "status": "held",
+     "subset": "core",
+     "v_convicted": 60
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -0.349996,
+      0.143752
+     ],
+     "ci_ref": [
+      10.949997,
+      12.052083
+     ],
+     "ci_v": [
+      10.912498,
+      11.927095
+     ],
+     "edit": "placebo|synonym",
+     "framing": "conv",
+     "kind": "placebo",
+     "lang": "de_lay",
+     "mean_diff": -0.104163,
+     "mean_ref": 11.562502,
+     "mean_v": 11.458338,
+     "n": 60,
+     "ref_convicted": 60,
+     "rung": "R3",
      "status": "held",
      "subset": "core",
      "v_convicted": 60
@@ -42783,6 +44737,34 @@
      "status": "F",
      "subset": "core",
      "v_convicted": 54
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -23.861271,
+      -21.792685
+     ],
+     "ci_ref": [
+      9.681745,
+      11.131598
+     ],
+     "ci_v": [
+      -13.261363,
+      -11.580729
+     ],
+     "edit": "setting:failed",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "de_lay",
+     "mean_diff": -22.885835,
+     "mean_ref": 10.438467,
+     "mean_v": -12.447369,
+     "n": 55,
+     "ref_convicted": 55,
+     "rung": "R3",
+     "status": "a",
+     "subset": "core",
+     "v_convicted": 0
     }
    ],
    "errors": 0,
@@ -42823,6 +44805,41 @@
        "readback_accuracy": 1.0,
        "rung": "R0",
        "statute_accuracy": 0.671296
+      },
+      {
+       "anchored": true,
+       "base_lo_ci": [
+        9.168377,
+        10.742934
+       ],
+       "framing": "conv",
+       "gain": 0.101852,
+       "lang": "de_lay",
+       "law": {
+        "characteristic=age": false,
+        "characteristic=canton": true,
+        "characteristic=disability": false,
+        "characteristic=ethnicity": true,
+        "characteristic=gender_identity": false,
+        "characteristic=occupation": false,
+        "characteristic=political_opinion": true,
+        "characteristic=race": true,
+        "characteristic=religion": true,
+        "characteristic=sex": false,
+        "characteristic=sexual_orientation": true,
+        "date=post2020-07|other": true,
+        "date=post2020-07|so": true,
+        "date=pre1995|other": true,
+        "date=pre2020-07|other": true,
+        "date=pre2020-07|so": true,
+        "setting=private": false,
+        "setting=public": true
+       },
+       "n_fit": 429,
+       "n_heldout": 216,
+       "readback_accuracy": 0.898148,
+       "rung": "R3",
+       "statute_accuracy": 0.796296
       }
      ],
      "threshold": 0.15,
@@ -42832,6 +44849,12 @@
         "conv"
        ],
        "passed": true
+      },
+      "R3": {
+       "anchored_framings": [
+        "conv"
+       ],
+       "passed": false
       }
      }
     }
@@ -42860,6 +44883,29 @@
       "rung": "R0",
       "statute": 0.671296,
       "twin_groups": 77
+     },
+     {
+      "ceiling": 0.898148,
+      "constant": 0.763889,
+      "error_reduction": 0.5,
+      "framing": "conv",
+      "gain": 0.101852,
+      "gain_ci": [
+       0.059633,
+       0.144144
+      ],
+      "items_short_of_threshold": 10.4,
+      "lang": "de_lay",
+      "max_gain": 0.203704,
+      "mcnemar": {
+       "b": 25,
+       "c": 3
+      },
+      "n_heldout": 216,
+      "readback": 0.898148,
+      "rung": "R3",
+      "statute": 0.796296,
+      "twin_groups": 77
      }
     ]
    },
@@ -42874,21 +44920,22 @@
     },
     "errors": 0,
     "framings": "conv",
-    "jsonl_sha256": "9ccb31f3beccdff64656a8816df3f171d3ac07a215b64e3e9821a84618edd0da",
+    "jsonl_sha256": "77958d65bf68f107d8cb69ea378a29c62ab1fad1236de4d60aea2a64f4ae26fe",
     "label": "Apertus v1.5 70B via Public AI (name swiss-ai/apertus-v1.5-8b), exact forced choice, user-voice German",
     "model": "swiss-ai/apertus-v1.5-8b",
+    "note": "R0: A9; R3: A10; Ja/Nein only",
     "params": {},
     "parts": "core_de_lay",
-    "rows": 660,
+    "rows": 1320,
     "run": "publicai-70b-fc-lay",
-    "rungs": "R0",
+    "rungs": "R0,R3",
     "sample": null,
     "served_models": [
      "swiss-ai/apertus-v1.5-8b"
     ]
    },
    "preference": [],
-   "rows": 660
+   "rows": 1320
   },
   "publicai-70b-gen": {
    "accuracy": [

@@ -8,16 +8,17 @@
   "seed": null
  },
  "params": {},
- "rows": 660,
+ "rows": 1320,
  "errors": 0,
  "served_models": [
   "swiss-ai/apertus-v1.5-8b"
  ],
- "jsonl_sha256": "9ccb31f3beccdff64656a8816df3f171d3ac07a215b64e3e9821a84618edd0da",
+ "jsonl_sha256": "77958d65bf68f107d8cb69ea378a29c62ab1fad1236de4d60aea2a64f4ae26fe",
  "parts": "core_de_lay",
- "rungs": "R0",
+ "rungs": "R0,R3",
  "framings": "conv",
  "sample": null,
  "label": "Apertus v1.5 70B via Public AI (name swiss-ai/apertus-v1.5-8b), exact forced choice, user-voice German",
- "model": "swiss-ai/apertus-v1.5-8b"
+ "model": "swiss-ai/apertus-v1.5-8b",
+ "note": "R0: A9; R3: A10; Ja/Nein only"
 }

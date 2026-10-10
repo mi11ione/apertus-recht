@@ -57,7 +57,7 @@ def render(d: Design, lang: str, slots: dict) -> str:
     return re.sub(r"\s+", " ", text).strip()
 
 
-RUNGS = ["R0", "R1", "R2", "R3", "R4", "R5"]
+RUNGS = ["R0", "R1", "R2", "R3", "R4", "R5", "R6"]
 FRAMINGS = ["conv", "ver"]
 
 
@@ -91,6 +91,10 @@ def question(d: Design, lang: str, rung: str, framing: str) -> str:
     if rung == "R5":
         lt = p["law_text"]
         return lt["intro"] + law_block(d, lang) + lt["question"] + p["tails"][framing]
+    if rung == "R6":
+        # control for R5: the same verbatim law, preceded by the element-check instruction of R1 (A10)
+        lt = p["law_text"]
+        return p["heads"]["R1"] + lt["intro"] + law_block(d, lang) + lt["question"] + p["tails"][framing]
     raise ValueError(rung)
 
 

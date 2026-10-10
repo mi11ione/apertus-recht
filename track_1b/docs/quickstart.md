@@ -30,6 +30,11 @@ model applies against the statute), and every wrong decision with its scenario, 
 For all models at once: `statute-twins results --responses runs --out runs/results.json` (add `--dataset` if your
 prompts come from another dataset folder; a run that matches no item is reported, not silently empty).
 
+Free text (the track's second metric): generate with `--framings open --mode generate`, then
+`statute-twins judge packets --run my-model --work jw`, `statute-twins judge judge --who A --work jw` (and `--who B`;
+any OpenAI-compatible judge model via `LLM_*`), `statute-twins judge aggregate --run my-model --work jw`. The aggregate
+reports the judges' agreement and checks their reading against a deterministic parser on every settled answer.
+
 `eval` checks the endpoint with one request before the run and stops with the error if it is missing or unreachable.
 Sample size: the read-back needs at least 5 pairs per element and rung to be readable; `--sample 240` gives that for
 most elements of the German core set, the full set (660 items) for all. Rows with fewer pairs say "too few pairs".

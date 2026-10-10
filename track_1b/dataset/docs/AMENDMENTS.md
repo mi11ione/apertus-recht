@@ -113,3 +113,9 @@ words), while the use case is a person asking about their own conduct. `de_lay` 
 "Im Januar 2024 habe ich in Aarau an einem Stand auf dem Wochenmarkt vor vielen Kundinnen und Kunden ein Weltbild
 propagiert, nach dem Muslime minderwertig sind." The group is named without its characteristic. Exploratory: not part
 of the pre-registered test (`heldout.py` runs per language; `de_lay` results are reported next to `de`).
+
+## A10 (2026-10-10, 06:40, after judge and dogfood round 3): R6, a control for R5; the user voice at R3
+A legal reviewer pointed out that R5 differs from R3 in two ways: it adds the verbatim law and drops R3's instruction
+to check the elements. R6 is R5 with R1's instruction ("Prüfe die Tatbestandsmerkmale … in der zur Tatzeit geltenden
+Fassung") put back, scored for the German 70B with Ja/Nein. The user-voice German items (A9) are also scored at R3, so
+the register comparison is not limited to R0, where the model convicts everything. Both exploratory.

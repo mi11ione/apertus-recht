@@ -285,6 +285,14 @@
     "accuracy": 0.6682170542635659,
     "accuracy_without": 0.6787401574803149,
     "diff": 0.010523103216748986
+   },
+   {
+    "lang": "de",
+    "rung": "R6",
+    "framing": "conv",
+    "accuracy": 0.7023255813953488,
+    "accuracy_without": 0.7133858267716535,
+    "diff": 0.011060245376304678
    }
   ],
   "publicai-70b-fc-lay": [
@@ -295,6 +303,14 @@
     "accuracy": 0.6697674418604651,
     "accuracy_without": 0.6803149606299213,
     "diff": 0.010547518769456143
+   },
+   {
+    "lang": "de_lay",
+    "rung": "R3",
+    "framing": "conv",
+    "accuracy": 0.8077519379844961,
+    "accuracy_without": 0.8204724409448819,
+    "diff": 0.012720502960385849
    }
   ],
   "publicai-70b-fc": [],
