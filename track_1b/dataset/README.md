@@ -45,6 +45,7 @@ configs:
       - {split: 8b_bf16_blend_RLVR_DPO_a0_75, path: responses/8b-bf16-blend-RLVR-DPO-a0.75.jsonl}
       - {split: 8b_gguf_q4_k_m, path: responses/8b-gguf-q4_k_m.jsonl}
       - {split: 8b_gguf_q4_k_m_cpu_core, path: responses/8b-gguf-q4_k_m-cpu-core.jsonl}
+      - {split: 8b_gguf_q4_k_m_cpu_pref, path: responses/8b-gguf-q4_k_m-cpu-pref.jsonl}
       - {split: 8b_gguf_q8_0, path: responses/8b-gguf-q8_0.jsonl}
       - {split: 8b_mlx4_DPO, path: responses/8b-mlx4-DPO.jsonl}
       - {split: 8b_mlx4_RLVR, path: responses/8b-mlx4-RLVR.jsonl}
@@ -148,7 +149,7 @@ Per language: 220 base, 215 true flips, 210 placebos,
 Paragraphs: abs1 220, abs2 218, abs4 222. Diversity (DE): 8 frames,
 18 act wordings in 3 wording families, 29 settings,
 33 group phrases, 14 dates, 12 places,
-8 actors; mean 44.2 words; distinct-2 0.0522, distinct-3 0.099 (templated by design).
+8 actors; mean 44.4 words; distinct-2 0.0516, distinct-3 0.0981 (templated by design).
 
 ## Dataset Creation
 ### Curation Rationale
@@ -245,10 +246,10 @@ Score with both framings and read the element table, not a single accuracy; repo
 alongside results, since 4-bit conversions changed verdicts in our measurements.
 
 ## Model responses in this release
-24 runs (`responses/<run>.jsonl` with `<run>.meta.json`): 8b-bf16-DPO, 8b-bf16-RLVR, 8b-bf16-blend-RLVR-DPO-a0.25, 8b-bf16-blend-RLVR-DPO-a0.5, 8b-bf16-blend-RLVR-DPO-a0.75, 8b-gguf-q4_k_m, 8b-gguf-q4_k_m-cpu-core, 8b-gguf-q8_0, 8b-mlx4-DPO, 8b-mlx4-RLVR, 8b-mlx4-SFT, 8b-mlx4-base-completion, 8b-mlx4-final, publicai-70b-fc, publicai-70b-fc-core, publicai-70b-fc-core-fr, publicai-70b-fc-core-it, publicai-70b-fc-lay, publicai-70b-gen, publicai-70b-open, publicai-70b-pref, publicai-70b-pref-fr, publicai-70b-pref-it, qwen3-8b-mlx4.
+25 runs (`responses/<run>.jsonl` with `<run>.meta.json`): 8b-bf16-DPO, 8b-bf16-RLVR, 8b-bf16-blend-RLVR-DPO-a0.25, 8b-bf16-blend-RLVR-DPO-a0.5, 8b-bf16-blend-RLVR-DPO-a0.75, 8b-gguf-q4_k_m, 8b-gguf-q4_k_m-cpu-core, 8b-gguf-q4_k_m-cpu-pref, 8b-gguf-q8_0, 8b-mlx4-DPO, 8b-mlx4-RLVR, 8b-mlx4-SFT, 8b-mlx4-base-completion, 8b-mlx4-final, publicai-70b-fc, publicai-70b-fc-core, publicai-70b-fc-core-fr, publicai-70b-fc-core-it, publicai-70b-fc-lay, publicai-70b-gen, publicai-70b-open, publicai-70b-pref, publicai-70b-pref-fr, publicai-70b-pref-it, qwen3-8b-mlx4.
 
 ## Changelog
-- 1.0.0 (2026-10): first release. Generator 1.0.0, seed 261. Files and hashes: `MANIFEST.json` (110 files).
+- 1.0.0 (2026-10): first release. Generator 1.0.0, seed 261. Files and hashes: `MANIFEST.json` (129 files).
   Pre-registration ([`docs/PREREG.md`](docs/PREREG.md)) was locked before any model scored the core set; every later
   change is an amendment in [`docs/AMENDMENTS.md`](docs/AMENDMENTS.md):
   A1 design moved into YAML, output byte-identical; A2 FR/IT surface fixes from back-translation; A3 one contested

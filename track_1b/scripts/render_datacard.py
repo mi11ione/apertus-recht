@@ -31,6 +31,9 @@ RECORDS = {
     "reports/court_validation.json": "review/court_validation.json",
     "reports/contamination.json": "review/contamination.json",
     "reports/qc.json": "review/qc.json",
+    "reports/open_judged_publicai-70b-open.json": "review/free_text_judged.json",
+    "reports/open_judge_human_sample_publicai-70b-open.tsv": "review/free_text_20pct_sample.tsv",
+    "reports/sensitivity.json": "review/sensitivity.json",
 }
 REPO_URL = "https://github.com/mi11ione/apertus-recht"
 HF_URL = "https://huggingface.co/datasets/<team>/apertus-recht"
@@ -55,6 +58,8 @@ def main() -> int:
     # released runs are the ones in the manifest; a run still being written stays out of the card and the manifest
     runs = sorted({run_of(Path(f).name) for f in man["files"] if f.startswith("responses/") and f.endswith(".jsonl")})
     unreleased = {run_of(p.name) for p in (ROOT / "dataset/responses").iterdir()} - set(runs)
+    for p in sorted((ROOT / "statutes/stgb_261bis/review/open_judge").glob("*.json")):
+        RECORDS[str(p.relative_to(ROOT))] = f"review/free_text_judges/{p.name}"
     for src, dst in RECORDS.items():
         q = ROOT / "dataset" / dst
         q.parent.mkdir(parents=True, exist_ok=True)

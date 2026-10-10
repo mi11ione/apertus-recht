@@ -10,13 +10,13 @@ elements and leave others standing; the verbatim law text, as a retrieval pipeli
 *Each row changes one legal fact of a scenario the law punishes. Cells: variants the model convicts (k/n). Red: the
 model applies a law that is not in force, in every readable framing. R0: no law in the prompt; R3: the elements, a one-sentence
 paraphrase of BGE 130 IV 111 and the closed list; R4: plus a sentence on the 1 July 2020 extension; R5: the verbatim
-Fedlex text and the leading case's Regeste instead (German). Light red: in one framing; grey: not readable.*
+Fedlex text and the leading case's Regeste instead. Light red: in one framing; grey: not readable.*
 
 ## What we found
 
 - **No law in the prompt: everything is punishable.** The 70B convicts every scenario we wrote, in German, French and
-  Italian (balanced accuracy 0.50). Asked in free text, it calls 74 of 75 scenarios punishable
-  that are not punishable under Art. 261bis. Two blind judges agree on 479 of 480 answers. Told in a person's own words instead of a
+  Italian (balanced accuracy 0.50). Asked in free text, it calls 73 of 75 scenarios punishable
+  that are not punishable under Art. 261bis. Two Claude judges and a judge of another model family agree on nearly every answer. Told in a person's own words instead of a
   charge sheet, the same scenarios fare no better: 2 of 215 acquittals without the law, and the same element profile with the rules
   spelled out.
 - **Rules spelled out (R3): publicity is fixed, the closed list and the date are not.** Private settings
@@ -25,7 +25,8 @@ Fedlex text and the leading case's Regeste instead (German). Light red: in one f
   states the 1995 date, so that one is a gap in what the model knows.
 - **The law itself does not help.** Given the verbatim Fedlex text of Art. 261bis and Art. 2 StGB and the Regeste of
   BGE 130 IV 111, as a retrieval pipeline would paste them, the 70B convicts every scenario again: 0 of
-  215 acquittals recognised, exactly as with no law in the prompt. Only rules spelled out in plain sentences move it.
+  215 acquittals recognised, exactly as with no law in the prompt. In French it recognises 12 and in Italian 43, against 120 and 97 with
+  the rules spelled out; in free text it calls every one of 75 non-punishable scenarios punishable. Only rules spelled out in plain sentences move it.
 - **The date sentence backfires.** One sentence saying that sexual orientation is protected since 1 July 2020 makes the
   70B stop convicting punishable cases from 2021–25: with the verdict word it convicts 0 of 35 in German, 1 in French,
   5 in Italian (with Ja/Nein, Italian holds up: 29 of 35).
@@ -75,8 +76,8 @@ Exact forced choice on vLLM endpoints, first-token log-probabilities elsewhere, 
 | Twins | each variant changes exactly one fact of its base: public ↔ private setting; protected ↔ unprotected characteristic; sexual orientation before ↔ after 1 Jul 2020; before ↔ after entry into force (1995); placebos that change nothing legally (family wording of a public statement, a synonym of the characteristic, a date that does not matter) |
 | Gold | `convict` / `acquit` / `open` with the deciding element, computed by `src/statute_twins/gold/engine.py` from an element model that cites Fedlex texts pinned by sha256 and BGE 130 IV 111 |
 | Per item | acceptance criterion, chosen / rejected answers, settled / contested label, normative source, element-by-element derivation, licence |
-| Prompts | 6 rungs (R0 no law; R1–R4 the elements, a paraphrase of BGE 130 IV 111, the closed list, the 2020 date; R5 the verbatim Fedlex text and Regeste) × 2 framings (Ja/Nein; "Urteil: schuldig / nicht schuldig") |
-| Responses | 24 files: the 70B on Public AI (DE/FR/IT), the 8B public GGUF on CPU, bf16 training stages and weight blends, MLX 4-bit builds, Qwen3-8B ([`docs/builds.md`](docs/builds.md)) |
+| Prompts | 7 rungs (R0 no law; R1–R4 the elements, a paraphrase of BGE 130 IV 111, the closed list, the 2020 date; R5 the verbatim Fedlex text and Regeste; R6 R5 with the element check) × 2 framings (Ja/Nein; "Urteil: schuldig / nicht schuldig") |
+| Responses | 25 files: the 70B on Public AI (DE/FR/IT), the 8B public GGUF on CPU, bf16 training stages and weight blends, MLX 4-bit builds, Qwen3-8B ([`docs/builds.md`](docs/builds.md)) |
 
 ## How we know the gold is right
 

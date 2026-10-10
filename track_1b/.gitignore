@@ -30,3 +30,4 @@ build/
 reports/*.tmp
 *.egg-info/
 runs/
+site/

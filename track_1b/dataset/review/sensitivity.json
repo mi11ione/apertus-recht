@@ -1,0 +1,353 @@
+{
+ "flagged": [
+  "261bis-de-DATE_SO005-1",
+  "261bis-de-DATE_SO006-1",
+  "261bis-de-DATE_SO007-1",
+  "261bis-de-DATE_SO011-1",
+  "261bis-de-DATE_SO017-1",
+  "261bis-de-DATE_SO018-1",
+  "261bis-de-DATE_SO024-1",
+  "261bis-de-DATE_SO027-1",
+  "261bis-de-DATE_SO030-1",
+  "261bis-de-DATE_SO032-1",
+  "261bis-de_lay-DATE_SO005-1",
+  "261bis-de_lay-DATE_SO006-1",
+  "261bis-de_lay-DATE_SO007-1",
+  "261bis-de_lay-DATE_SO011-1",
+  "261bis-de_lay-DATE_SO017-1",
+  "261bis-de_lay-DATE_SO018-1",
+  "261bis-de_lay-DATE_SO024-1",
+  "261bis-de_lay-DATE_SO027-1",
+  "261bis-de_lay-DATE_SO030-1",
+  "261bis-de_lay-DATE_SO032-1",
+  "261bis-fr-DATE_SO005-1",
+  "261bis-fr-DATE_SO006-1",
+  "261bis-fr-DATE_SO007-1",
+  "261bis-fr-DATE_SO011-1",
+  "261bis-fr-DATE_SO017-1",
+  "261bis-fr-DATE_SO018-1",
+  "261bis-fr-DATE_SO024-1",
+  "261bis-fr-DATE_SO027-1",
+  "261bis-fr-DATE_SO030-1",
+  "261bis-fr-DATE_SO032-1",
+  "261bis-it-DATE_SO005-1",
+  "261bis-it-DATE_SO006-1",
+  "261bis-it-DATE_SO007-1",
+  "261bis-it-DATE_SO011-1",
+  "261bis-it-DATE_SO017-1",
+  "261bis-it-DATE_SO018-1",
+  "261bis-it-DATE_SO024-1",
+  "261bis-it-DATE_SO027-1",
+  "261bis-it-DATE_SO030-1",
+  "261bis-it-DATE_SO032-1"
+ ],
+ "n_flagged": 40,
+ "runs": {
+  "8b-bf16-DPO": [],
+  "8b-bf16-RLVR": [],
+  "8b-bf16-blend-RLVR-DPO-a0.25": [],
+  "8b-bf16-blend-RLVR-DPO-a0.5": [],
+  "8b-bf16-blend-RLVR-DPO-a0.75": [],
+  "8b-gguf-q4_k_m-cpu-core": [
+   {
+    "lang": "de",
+    "rung": "R0",
+    "framing": "conv",
+    "accuracy": 0.6666666666666666,
+    "accuracy_without": 0.6755905511811023,
+    "diff": 0.00892388451443571
+   },
+   {
+    "lang": "de",
+    "rung": "R0",
+    "framing": "ver",
+    "accuracy": 0.6682170542635659,
+    "accuracy_without": 0.6787401574803149,
+    "diff": 0.010523103216748986
+   },
+   {
+    "lang": "de",
+    "rung": "R3",
+    "framing": "conv",
+    "accuracy": 0.8496124031007752,
+    "accuracy_without": 0.862992125984252,
+    "diff": 0.013379722883476775
+   },
+   {
+    "lang": "de",
+    "rung": "R3",
+    "framing": "ver",
+    "accuracy": 0.8062015503875969,
+    "accuracy_without": 0.8188976377952756,
+    "diff": 0.012696087407678691
+   },
+   {
+    "lang": "de",
+    "rung": "R4",
+    "framing": "conv",
+    "accuracy": 0.7643410852713178,
+    "accuracy_without": 0.7606299212598425,
+    "diff": -0.0037111640114753097
+   },
+   {
+    "lang": "de",
+    "rung": "R4",
+    "framing": "ver",
+    "accuracy": 0.7844961240310078,
+    "accuracy_without": 0.7858267716535433,
+    "diff": 0.0013306476225355413
+   },
+   {
+    "lang": "de",
+    "rung": "R5",
+    "framing": "conv",
+    "accuracy": 0.6868217054263566,
+    "accuracy_without": 0.6976377952755906,
+    "diff": 0.01081608984923399
+   },
+   {
+    "lang": "de",
+    "rung": "R5",
+    "framing": "ver",
+    "accuracy": 0.6728682170542636,
+    "accuracy_without": 0.6834645669291338,
+    "diff": 0.010596349874870237
+   }
+  ],
+  "8b-gguf-q4_k_m": [],
+  "8b-gguf-q8_0": [],
+  "8b-mlx4-DPO": [],
+  "8b-mlx4-RLVR": [],
+  "8b-mlx4-SFT": [],
+  "8b-mlx4-base-completion": [],
+  "8b-mlx4-final": [],
+  "publicai-70b-fc-core-fr": [
+   {
+    "lang": "fr",
+    "rung": "R0",
+    "framing": "conv",
+    "accuracy": 0.6697674418604651,
+    "accuracy_without": 0.6803149606299213,
+    "diff": 0.010547518769456143
+   },
+   {
+    "lang": "fr",
+    "rung": "R0",
+    "framing": "ver",
+    "accuracy": 0.6697674418604651,
+    "accuracy_without": 0.6803149606299213,
+    "diff": 0.010547518769456143
+   },
+   {
+    "lang": "fr",
+    "rung": "R3",
+    "framing": "conv",
+    "accuracy": 0.8248062015503876,
+    "accuracy_without": 0.8377952755905512,
+    "diff": 0.012989074040163584
+   },
+   {
+    "lang": "fr",
+    "rung": "R3",
+    "framing": "ver",
+    "accuracy": 0.875968992248062,
+    "accuracy_without": 0.889763779527559,
+    "diff": 0.013794787279497012
+   },
+   {
+    "lang": "fr",
+    "rung": "R4",
+    "framing": "conv",
+    "accuracy": 0.7937984496124031,
+    "accuracy_without": 0.7905511811023622,
+    "diff": -0.0032472685100408683
+   },
+   {
+    "lang": "fr",
+    "rung": "R4",
+    "framing": "ver",
+    "accuracy": 0.7255813953488373,
+    "accuracy_without": 0.721259842519685,
+    "diff": -0.004321552829152253
+   },
+   {
+    "lang": "fr",
+    "rung": "R5",
+    "framing": "conv",
+    "accuracy": 0.6852713178294574,
+    "accuracy_without": 0.6960629921259842,
+    "diff": 0.010791674296526832
+   },
+   {
+    "lang": "fr",
+    "rung": "R5",
+    "framing": "ver",
+    "accuracy": 0.6697674418604651,
+    "accuracy_without": 0.6803149606299213,
+    "diff": 0.010547518769456143
+   }
+  ],
+  "publicai-70b-fc-core-it": [
+   {
+    "lang": "it",
+    "rung": "R0",
+    "framing": "conv",
+    "accuracy": 0.6682170542635659,
+    "accuracy_without": 0.6787401574803149,
+    "diff": 0.010523103216748986
+   },
+   {
+    "lang": "it",
+    "rung": "R0",
+    "framing": "ver",
+    "accuracy": 0.6666666666666666,
+    "accuracy_without": 0.6771653543307087,
+    "diff": 0.01049868766404205
+   },
+   {
+    "lang": "it",
+    "rung": "R3",
+    "framing": "conv",
+    "accuracy": 0.8,
+    "accuracy_without": 0.8125984251968504,
+    "diff": 0.012598425196850394
+   },
+   {
+    "lang": "it",
+    "rung": "R3",
+    "framing": "ver",
+    "accuracy": 0.7953488372093023,
+    "accuracy_without": 0.8078740157480315,
+    "diff": 0.012525178538729254
+   },
+   {
+    "lang": "it",
+    "rung": "R4",
+    "framing": "conv",
+    "accuracy": 0.8589147286821706,
+    "accuracy_without": 0.8566929133858268,
+    "diff": -0.0022218152963437987
+   },
+   {
+    "lang": "it",
+    "rung": "R4",
+    "framing": "ver",
+    "accuracy": 0.7472868217054264,
+    "accuracy_without": 0.7433070866141732,
+    "diff": -0.003979735091253156
+   },
+   {
+    "lang": "it",
+    "rung": "R5",
+    "framing": "conv",
+    "accuracy": 0.7317829457364341,
+    "accuracy_without": 0.7433070866141732,
+    "diff": 0.01152414087773912
+   },
+   {
+    "lang": "it",
+    "rung": "R5",
+    "framing": "ver",
+    "accuracy": 0.7209302325581395,
+    "accuracy_without": 0.7322834645669292,
+    "diff": 0.011353232008789682
+   }
+  ],
+  "publicai-70b-fc-core": [
+   {
+    "lang": "de",
+    "rung": "R0",
+    "framing": "conv",
+    "accuracy": 0.6666666666666666,
+    "accuracy_without": 0.6771653543307087,
+    "diff": 0.01049868766404205
+   },
+   {
+    "lang": "de",
+    "rung": "R0",
+    "framing": "ver",
+    "accuracy": 0.6682170542635659,
+    "accuracy_without": 0.6787401574803149,
+    "diff": 0.010523103216748986
+   },
+   {
+    "lang": "de",
+    "rung": "R3",
+    "framing": "conv",
+    "accuracy": 0.8170542635658915,
+    "accuracy_without": 0.8299212598425196,
+    "diff": 0.012866996276628129
+   },
+   {
+    "lang": "de",
+    "rung": "R3",
+    "framing": "ver",
+    "accuracy": 0.7984496124031008,
+    "accuracy_without": 0.8110236220472441,
+    "diff": 0.012574009644143347
+   },
+   {
+    "lang": "de",
+    "rung": "R4",
+    "framing": "conv",
+    "accuracy": 0.7364341085271318,
+    "accuracy_without": 0.7322834645669292,
+    "diff": -0.0041506439602025935
+   },
+   {
+    "lang": "de",
+    "rung": "R4",
+    "framing": "ver",
+    "accuracy": 0.7364341085271318,
+    "accuracy_without": 0.7322834645669292,
+    "diff": -0.0041506439602025935
+   },
+   {
+    "lang": "de",
+    "rung": "R5",
+    "framing": "conv",
+    "accuracy": 0.6666666666666666,
+    "accuracy_without": 0.6771653543307087,
+    "diff": 0.01049868766404205
+   },
+   {
+    "lang": "de",
+    "rung": "R5",
+    "framing": "ver",
+    "accuracy": 0.6682170542635659,
+    "accuracy_without": 0.6787401574803149,
+    "diff": 0.010523103216748986
+   },
+   {
+    "lang": "de",
+    "rung": "R6",
+    "framing": "conv",
+    "accuracy": 0.7023255813953488,
+    "accuracy_without": 0.7133858267716535,
+    "diff": 0.011060245376304678
+   }
+  ],
+  "publicai-70b-fc-lay": [
+   {
+    "lang": "de_lay",
+    "rung": "R0",
+    "framing": "conv",
+    "accuracy": 0.6697674418604651,
+    "accuracy_without": 0.6803149606299213,
+    "diff": 0.010547518769456143
+   },
+   {
+    "lang": "de_lay",
+    "rung": "R3",
+    "framing": "conv",
+    "accuracy": 0.8062015503875969,
+    "accuracy_without": 0.8188976377952756,
+    "diff": 0.012696087407678691
+   }
+  ],
+  "publicai-70b-fc": [],
+  "publicai-70b-gen": [],
+  "qwen3-8b-mlx4": []
+ },
+ "max_abs_diff": 0.013794787279497012
+}

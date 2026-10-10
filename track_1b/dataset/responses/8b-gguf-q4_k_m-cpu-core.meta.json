@@ -8,9 +8,8 @@
   "model": "Colby/apertus-v1.5-8b-text-Q4_K_M-GGUF (CPU, llama-cpp-python 0.3.19)",
   "sha256": "a037df8d87ff6caacee794ee85f55342f2152e0d359b7389033300c3bee5f299",
   "llama_cpp_python": "0.3.19",
-  "threads": 2
+  "threads": 4
  },
- "jsonl_sha256": "2f5a07c2b56988627fe1d19127e818af8094a15b524316dff7593d46d1ec2513",
- "rungs": "R0,R3,R4,R5",
- "note": "R0/R3/R4: CI run 38004065140 (A5 re-score); R5: CI run 38011003848 (A8)"
+ "jsonl_sha256": "415284bba13f8a73f70c886553320a263a1dd4f96f2fbce7a4cc894ccc23f0f4",
+ "rungs": "R0,R3,R4,R5"
 }

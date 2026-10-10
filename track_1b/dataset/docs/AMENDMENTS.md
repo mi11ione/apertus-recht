@@ -119,3 +119,12 @@ A legal reviewer pointed out that R5 differs from R3 in two ways: it adds the ve
 to check the elements. R6 is R5 with R1's instruction ("Prüfe die Tatbestandsmerkmale … in der zur Tatzeit geltenden
 Fassung") put back, scored for the German 70B with Ja/Nein. The user-voice German items (A9) are also scored at R3, so
 the register comparison is not limited to R0, where the model convicts everything. Both exploratory.
+
+## A11 (2026-10-10, 08:50, after judge round 3): German localisation, free text with the verbatim law, a second judge
+Reviewers found German items with a tram in towns that have none (only Zürich, Bern and Basel of the twelve do) and a
+communal assembly in cities with a parliament, the same defects A7 fixed in French and Italian. `templates/de.yaml`,
+`de_lay.yaml` and the German answers now use a bus and a public information evening of the commune (120 people);
+both stay public, no fact or gold label changes. The 115 affected German items are re-scored for every model (changed
+prompts only; the pre-fix responses are in `archive/*.before-A11.jsonl`). The free-text framing gains R5 (the same
+240-item sample with the verbatim law), and every free-text answer is also judged by a judge of another model family
+(Qwen-SEA-LION-v4-32B via Public AI) next to the two Claude judges.

@@ -19,11 +19,9 @@ protected makes it stop convicting such cases in German and French.
 
 - **Model:** Apertus v1.5 70B; Apertus v1.5 8B (public Q4_K_M GGUF; exploration phase: SFT, RLVR, DPO and final stages,
   bf16 weight blends, Q8_0 and MLX 4-bit builds).
-- **How it is used:** evaluation (forced choice, preference pairs, free text with two blind LLM judges).
-- **Where it runs:** the 70B on the Public AI endpoint through a cost-capped gateway. The endpoint name
-  `apertus-v1.5-8b` serves the 70B: its greedy output is byte-identical to the `-70b` name in 760/792 cells, and it
-  scores 84.4% vs 70.8% on 250 MMLU items against the v1 8B route (`docs/builds.md`). The 8B GGUF runs on CPU in GitHub
-  Actions.
+- **How it is used:** evaluation (forced choice, preference pairs, free text with three blind LLM judges, two Claude and one Qwen).
+- **Where it runs:** the 70B on Public AI via a cost-capped gateway (the endpoint name `apertus-v1.5-8b` serves the
+  70B: byte-identical output to `-70b` in 760/792 cells, `docs/builds.md`); the 8B GGUF on CPU in GitHub Actions.
 - **Links:** code https://github.com/mi11ione/apertus-recht · dataset on Hugging Face (URL in the form notes).
 
 ----
@@ -87,18 +85,13 @@ and of Art. 2 StGB (DE/FR/IT, sha256 of the text), the amendment footnotes (AS 1
 of BGE 130 IV 111. The engine, not the author, labels each variant a true flip, a placebo or contested. The generator refuses to build if
 the label disagrees with the design.
 
-**Design choices.** *Placebos* catch surface heuristics; *rungs* model the retrieval levels of an assistant; *two
-framings* are used because a framing is readable only if it convicts the protected reference; acts are described in
-the statute's own vocabulary (no slurs, no names); the 15 contested items per language leave the facts BGE 130 IV 111
-makes decisive genuinely mixed, so their gold is `open` and their criterion asks for a hedged answer.
+**Design choices.** Placebos catch surface heuristics; rungs model an assistant's retrieval levels; two framings, since
+a framing is readable only if it convicts the protected reference; statute vocabulary, no slurs or names; 15 contested
+items per language leave BGE 130 IV 111's decisive facts mixed (gold `open`, hedged answer expected).
 
-**Translation and localisation.** Claude agents translated the templates into French and Italian with the official
-CP terms, and separate agents back-translated them blind (legal facts: 0 critical findings, 3 minor, all fixed). A
-review by a French- and Italian-speaking lawyer persona then found what back-translation cannot: the cases read as
-German cases in translation. Fixed before any French or Italian result was analysed (amendment A7): French items are set in Romandie, Italian ones
-in Ticino and Italian Graubünden; intent reads "avec conscience et volonté" / "consapevolmente e volontariamente"; the
-verdict words are "condamnation / acquittement" and "condanna / proscioglimento"; citations take each language's Swiss
-form (art. 261bis al. 1 CP, ATF / DTF … consid. 5.2).
+**Translation and localisation.** FR/IT by Claude agents with the official CP terms, blind back-translation (0
+critical findings), then a lawyer-persona review that localised what back-translation cannot see (A7): Romandie and
+Ticino places, "avec conscience et volonté", "condamnation / acquittement", Swiss citation forms.
 
 **Verification without human labels.** Gold is computed, so review looks for errors in the code, the element model or
 the wording. All review was done by Claude agents working blind on opaque ids, without access to code or gold.
@@ -109,12 +102,9 @@ the wording. All review was done by Claude agents working blind on opaque ids, w
   (A5). All were fixed, the affected prompts re-scored, and the pre-fix responses archived.
 - **Adjudication:** two independent adjudicators covered every disagreement, every contested item and a blind 10%
   sample. Gold was wrong in 0/94 sampled items (Wilson upper bound 3.9%).
-- **Court validation:** we triaged ⟨court_triaged⟩ citing Art. 261bis. Each was extracted twice
-  (κ 0.83–0.98) and conflicts went to a third agent. Under a pre-registered rule the engine agrees with the court in
-  ⟨court_agree⟩ in-scope decisions. That is a weak test of the acquittal rules: an engine that always convicts would
-  score 55/58, and the 3 acquittals (Wilson 95% 0.44–1.00) agree on the verdict and on a failing element, one of them
-  decided under the publicity test that BGE 130 IV 111 replaced. Its value is the other direction: of the rulings
-  that acquit, most turn on grounds no twin varies (dignity threshold, intent, freedom of expression).
+- **Court validation:** ⟨court_triaged⟩ citing Art. 261bis triaged, each extracted twice (κ 0.83–0.98, a third
+  agent on conflicts): the engine agrees with ⟨court_agree⟩ in-scope rulings, a strong test of the conviction rules
+  and a thin one of the acquittal rules (an always-convict engine scores 55/58; 3 acquittals, all agree).
 
 ## Dataset Details
 
@@ -163,14 +153,15 @@ exploration battery (162 items) for training stages and builds. Every row record
 **Without the law, the 70B convicts everything** (R0: recall of convictions 1.00, of acquittals 0.00, in every
 language and framing). It is not blind to the facts: its conviction scores still rank punishable above non-punishable
 cases (AUC ⟨auc_r0⟩), but the threshold sits so far on the convicting side that no case falls below it. Free text agrees with the forced choice. The judges failed ⟨open_r0_mislead⟩ of 75 R0 answers to
-acquittal items as misleading, and every one of the 14 contested-item answers gave a flat verdict. The judges agreed on
-479 of 480 pass decisions (κ 0.995), and a deterministic parser of each answer's verdict agrees with their reading in
-464 of 466 settled answers, so the judges are needed only for the hedged and contested ones.
+acquittal items as misleading, and every one of the 14 contested-item answers gave a flat verdict. The two Claude judges agree on
+⟨open_judges_agree⟩ pass decisions (κ ⟨open_kappa⟩); a judge from another model family (Qwen-SEA-LION-v4-32B) agrees with
+their consensus on ⟨judgec_agree⟩ (⟨judgec_sample⟩ on the 20% sample the track asks to check), and a deterministic
+parser of each answer's verdict agrees with the judges' reading on ⟨parser_agree⟩ settled answers.
 
 ⟨table:accuracy⟩
 
 *Table 1. Balanced accuracy (mean of the recall of convictions and of acquittals; 0.50 = no discrimination), Ja/Nein /
-verdict framing, and the recall of acquittals at R3. R5 (verbatim law) and the user voice were run in German only.*
+verdict framing, and the recall of acquittals at R3. The user voice was run in German only, at R0 and R3.*
 
 **With the rules spelled out, publicity is applied but the list and the date are not.** Figure 1 shows the read-back.
 For the German 70B:
@@ -190,7 +181,9 @@ For the German 70B:
   all (acquittals recognised: ⟨r5_acq_conv⟩ of 215 with Ja/Nein, ⟨r5_acq_ver⟩ with the verdict word). The verbatim text enumerates the four characteristics and the
   Regeste states the publicity rule, yet they help less than our one-sentence paraphrases. R5 also lacks R3's
   instruction to check the elements; a control with that instruction added (R6, Ja/Nein) recognises ⟨r6_acq⟩ of 215
-  acquittals, against 108 at R3. Forced choice only; free text was not run with the verbatim law.
+  acquittals, against 107 at R3. In free text with the verbatim law, ⟨open_r5_mislead⟩ of 75 answers to non-punishable
+  scenarios say they are punishable. In French and Italian the verbatim law recognises ⟨r5_fr⟩ and ⟨r5_it⟩ of 215 acquittals
+  with Ja/Nein, against 120 and 97 with the rules spelled out.
 
 **Not an artefact of legal register.** The same German scenarios told in a person's own words ("Im Januar 2024 habe
 ich in Aarau an einem Stand auf dem Wochenmarkt … ein Weltbild propagiert, nach dem Muslime minderwertig sind") give
@@ -198,8 +191,7 @@ the same profile: ⟨lay_acq⟩ of 215 acquittals at R0; at R3 balanced accuracy
 private settings acquitted, the closed list half applied and the dates not at all (Ja/Nein; the prompt still names
 the article).
 
-Italian shows the same profile. In French the closed list holds better at R3 (canton 12/16, disability 6/9 convicted),
-and R5 was run in German only.
+Italian shows the same profile. In French the closed list holds better at R3 (canton 12/16, disability 6/9 convicted).
 
 ![](docs/figures/fig1_synopse.png)
 
@@ -212,13 +204,11 @@ the unchanged reference is not convicted either, so the element cannot be read.*
 
 *Table 2. Preference accuracy: share of settled items where the model gives the item's `chosen` answer a higher
 log-probability than its length-matched mirror. Free text: answers that meet the acceptance criterion (both judges
-agree; 240 German items, R0 and R3). Columns: the element that decides the item.*
+agree; 240 German items). Columns: the element that decides the item.*
 
-**Recognising the law is not applying it.** Shown an item's correct answer and its mirror, the 70B prefers the correct
-one for nearly every German item (share ⟨pref_de_all⟩). The clean evidence is in the closed-list and date columns,
-where both answers make a legal claim of the same form: there it picks the right one for nearly all items in all
-three languages, although its own verdicts convict those cases. For conviction and setting items the mirror
-contradicts the stated facts, so those columns also measure consistency; there French drops to ⟨pref_fr_convict⟩.
+**Recognising the law is not applying it.** Shown an item's correct answer and its mirror, the 70B picks the correct
+one (German share ⟨pref_de_all⟩), most cleanly in the closed-list and date columns, where both answers make a legal
+claim of the same form, although its own verdicts convict those cases. Elsewhere the mirror contradicts the facts.
 
 **Pre-registered held-out test.** At R0 the test passes, but trivially: a model that convicts everything is predicted
 perfectly by a read-back that marks every element satisfied, and the gain (+33 points) equals the share of acquittal
@@ -233,10 +223,8 @@ trivially for every model). Pass: gain ≥ 0.15 in every anchored
 framing.*
 
 **Post-training and builds** (exploration battery, 8B):
-- At full precision, the step from RLVR to DPO costs acquittals once the rules are stated: at R3, correct acquittals
-  fall from ⟨stage_rlvr⟩ to ⟨stage_dpo⟩ of 220 (both framings), while convictions stay at 104/104. Without the law
-  both stages convict almost everything, so DPO amplifies a prior that RLVR already has. Exact weight blends between
-  the two checkpoints move smoothly between them (canton items: 0/6 → 6/6).
+- At full precision, RLVR → DPO cuts correct acquittals under stated rules from ⟨stage_rlvr⟩ to ⟨stage_dpo⟩ of 220
+  (R3, both framings) while keeping 104/104 convictions; weight blends move smoothly between the two.
 - The public Q8_0 GGUF agrees with bf16 on 638 of 648 decisions, the Q4_K_M on 622 and our MLX 4-bit conversion on 548.
 
 ## Dataset Limitations
@@ -255,12 +243,11 @@ framing.*
   instructions in the repository, so anyone can audit or repeat them; no private human judgment sits in the gold.
   Shared misconceptions of one model family are checked from outside it: the gold against the official text,
   mutation tests and 58 court decisions; the free-text judges by a judge of another model family (Qwen) and a
-  deterministic parser (⟨judgec_line⟩).
+  deterministic parser.
 - **Contested items are few** (15 per language). Two of the four contested settings (an e-mail to 25 colleagues, a club
   chat of 30) lean public after BGE 130 IV 111, so their criterion accepts a reasoned leaning; only a certain verdict
   without the publicity criteria fails.
-- **Intervals.** Wilson intervals treat items as independent although they cluster in 220 twin groups; the held-out
-  gains carry twin-group bootstrap intervals (post hoc, `analysis/heldout_context.py`).
+- **Intervals** treat items as independent; the held-out gains carry twin-group bootstrap intervals (post hoc).
 
 ## Lessons Learnt and Recommendations
 
@@ -273,24 +260,16 @@ framing.*
 - Prefer the Q8_0 GGUF or the served model to 4-bit MLX conversions.
 
 **For Apertus developers.**
-- In the 8B, DPO costs acquittals under stated rules (⟨stage_rlvr⟩ → ⟨stage_dpo⟩ of 220 at R3); preference pairs that
-  reward condemning discrimination are a plausible cause worth checking. The model also obeys exclusions it is told
-  (gender identity) but does not apply "the list is closed" to traits nobody named: an instruction-following target
-  that needs no legal data.
-- The leading case is in the training data, and pasting its Regeste with the statute does not change a single verdict.
-  The model reads plain rules but not the law as written; long-context legal reading is a training target.
-- Twin items give a target that can be measured element by element before and after a fix. The `chosen` / `rejected`
-  pairs are in the format preference training uses, so keep them out of training if you evaluate on them.
-
-**For dataset builders.** Computed gold turns a legal benchmark into software (tested against the official text,
-mutation-tested, a new statute is five YAML files), but blind persona review still found what no gate caught. Next:
-the elements courts argue about (dignity threshold, coded speech, political debate), written with practitioners.
+- DPO costs acquittals under stated rules (8B: ⟨stage_rlvr⟩ → ⟨stage_dpo⟩ of 220 at R3): check preference pairs that reward
+  condemning discrimination. The model obeys exclusions it is told but not "the list is closed", and it reads plain
+  rules but not the law as written: instruction-following and long-context legal reading are training targets.
+- Keep the `chosen` / `rejected` pairs out of training if you evaluate on them.
 
 ## Reproducibility
 
 `make run` (Docker, CPU, no key, no model) regenerates the dataset from the YAML (sha256 per file), recomputes every
 result from the stored responses, checks every request hash against its prompt, re-aggregates the judges, checks the
-pre-registration (`prereg-verify`: locked files, amendments A1–A10, the frozen held-out code) and the `claims.tsv`
+pre-registration (`prereg-verify`: locked files, amendments A1–A11, the frozen held-out code) and the `claims.tsv`
 numbers, and exits non-zero on any mismatch. `LLM_*` variables or `make run-gguf` add a live slice against the
 published reference band. Seeds: generator 261, bootstrap 0 (2,000 resamples).
 

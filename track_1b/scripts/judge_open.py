@@ -82,7 +82,13 @@ def aggregate(run: str, work: Path):
     for who in ("A", "B"):
         for p in sorted(work.glob(f"judge_{who}_*.json")):
             for x in json.loads(p.read_text()):
-                J.setdefault(x["id"], {})[who] = x
+                if x["id"] in ids:          # ids of answers that were regenerated later are retired
+                    J.setdefault(x["id"], {})[who] = x
+    C = {}
+    for p in sorted(work.glob("judge_C_*.json")):
+        for x in json.loads(p.read_text()):
+            if x["id"] in ids:
+                C[x["id"]] = x
     both = {k: v for k, v in J.items() if "A" in v and "B" in v}
     kap = {f: round(cohen_kappa([str(v["A"][f]) for v in both.values()], [str(v["B"][f]) for v in both.values()]), 3)
            for f in ("pass", "verdict_expressed", "misleads")} if both else {}
@@ -142,7 +148,18 @@ def aggregate(run: str, work: Path):
                                 items[r["item_id"]]["acceptance_criterion"], str(bool((J[oid].get("A") or J[oid]["B"])["pass"])), ""]) + "\n")
     table = {"|".join(k): dict(passed=c[0], n=c[1], pass_rate=c[0] / c[1], ci=wilson(c[0], c[1]), misleads=c[2])
              for k, c in sorted(cells.items())}
+    cons = {k: v["A"]["pass"] for k, v in both.items() if v["A"]["pass"] == v["B"]["pass"] and k in C}
+    third = None
+    if cons:
+        kc = sum(bool(C[k]["pass"]) == bool(p_) for k, p_ in cons.items())
+        sample_ids = set(sample)
+        ks = [k for k in cons if k in sample_ids]
+        third = dict(judge=os.environ.get("JUDGE_C_NAME", "Qwen-SEA-LION-v4-32B-IT (another model family, via Public AI)"),
+                     judged=len(C), agree_with_consensus=kc, n=len(cons), ci=wilson(kc, len(cons)),
+                     kappa=round(cohen_kappa([str(bool(C[k]["pass"])) for k in cons], [str(bool(p_)) for p_ in cons.values()]), 3),
+                     on_20pct_sample=dict(agree=sum(bool(C[k]["pass"]) == bool(cons[k]) for k in ks), n=len(ks)))
     rep = dict(run=run, judged=len(J), double_judged=len(both), judges_agree_on_pass=agree_pass, kappa=kap,
+               independent_judge=third,
                parser_vs_judge=dict(parser), judge_consistency=dict(code),
                parser_vs_gold={k: dict(correct=v[0], n=v[1], ci=wilson(v[0], v[1])) for k, v in sorted(parsed.items())},
                judge_only=dict(judge_only), disputed=disputed, human_sample=dict(file=str(hs.relative_to(ROOT)), n=len(sample),

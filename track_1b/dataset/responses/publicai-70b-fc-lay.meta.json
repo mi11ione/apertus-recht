@@ -13,12 +13,11 @@
  "served_models": [
   "swiss-ai/apertus-v1.5-8b"
  ],
- "jsonl_sha256": "77958d65bf68f107d8cb69ea378a29c62ab1fad1236de4d60aea2a64f4ae26fe",
+ "jsonl_sha256": "9579d20a21bf96ea7b46ed465f1f790b1454e1693ea78a44041002dfe8252492",
  "parts": "core_de_lay",
- "rungs": "R0,R3",
+ "rungs": "R0,R3 (conv)",
  "framings": "conv",
  "sample": null,
  "label": "Apertus v1.5 70B via Public AI (name swiss-ai/apertus-v1.5-8b), exact forced choice, user-voice German",
- "model": "swiss-ai/apertus-v1.5-8b",
- "note": "R0: A9; R3: A10; Ja/Nein only"
+ "model": "swiss-ai/apertus-v1.5-8b"
 }

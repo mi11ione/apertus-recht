@@ -37,7 +37,7 @@
    "n_hits": 0,
    "scanned": {
     "items": 2802,
-    "responses": 32595,
+    "responses": 36120,
     "metadata": 2802
    }
   },
@@ -128,10 +128,10 @@
   "diversity": {
    "de": {
     "items": 660,
-    "distinct_1": 0.0155,
-    "distinct_2": 0.0522,
-    "distinct_3": 0.099,
-    "mean_words": 44.2,
+    "distinct_1": 0.0153,
+    "distinct_2": 0.0516,
+    "distinct_3": 0.0981,
+    "mean_words": 44.4,
     "min_words": 32,
     "max_words": 75,
     "slot_values_used": {
@@ -150,10 +150,10 @@
    },
    "de_lay": {
     "items": 660,
-    "distinct_1": 0.0174,
-    "distinct_2": 0.0601,
-    "distinct_3": 0.1106,
-    "mean_words": 30.0,
+    "distinct_1": 0.0171,
+    "distinct_2": 0.0591,
+    "distinct_3": 0.1093,
+    "mean_words": 30.3,
     "min_words": 18,
     "max_words": 52,
     "slot_values_used": {

@@ -114,7 +114,7 @@ def tables(R: dict) -> dict:
         if not p.exists():
             continue
         cells = json.loads(p.read_text())["cells"]
-        for rung in ("R0", "R3"):
+        for rung in ("R0", "R3", "R5"):
             def cell(k):
                 c = cells.get("all" if k == "all" else f"rung_reason|{rung}|{k}") if k != "all" else cells.get(f"rung|{rung}")
                 return f"{c['passed']}/{c['n']}" if c else "–"

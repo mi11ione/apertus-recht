@@ -9,14 +9,14 @@
   "max_tokens": 220
  },
  "params": {},
- "rows": 480,
+ "rows": 720,
  "errors": 0,
  "served_models": [
   "swiss-ai/apertus-v1.5-70b"
  ],
- "jsonl_sha256": "2d798f00dc6d1a6d8f93cb96b0d054d02a92f691b8fc77e590fb94c773b38d23",
+ "jsonl_sha256": "045029217e35fd3badf1a9e2200735597e08107c68a3b667daf1348e18428562",
  "parts": "open_core_de",
- "rungs": "R0,R3",
+ "rungs": "R0,R3,R5 (open, 240-item sample)",
  "framings": "open",
  "sample": 240,
  "label": "Apertus v1.5 70B via Public AI (name swiss-ai/apertus-v1.5-70b), free text, greedy",

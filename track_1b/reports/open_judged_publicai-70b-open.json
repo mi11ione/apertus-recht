@@ -1,27 +1,42 @@
 {
  "run": "publicai-70b-open",
- "judged": 480,
- "double_judged": 480,
- "judges_agree_on_pass": 479,
+ "judged": 720,
+ "double_judged": 720,
+ "judges_agree_on_pass": 718,
  "kappa": {
-  "pass": 0.995,
-  "verdict_expressed": 0.991,
-  "misleads": 0.989
+  "pass": 0.993,
+  "verdict_expressed": 0.992,
+  "misleads": 0.993
+ },
+ "independent_judge": {
+  "judge": "Qwen-SEA-LION-v4-32B-IT (another model family, via Public AI)",
+  "judged": 720,
+  "agree_with_consensus": 694,
+  "n": 718,
+  "ci": [
+   0.9507452313008631,
+   0.9774364238434812
+  ],
+  "kappa": 0.918,
+  "on_20pct_sample": {
+   "agree": 139,
+   "n": 143
+  }
  },
  "parser_vs_judge": {
-  "agree": 464,
+  "agree": 698,
   "disagree": 2
  },
  "judge_consistency": {
-  "pass_matches_code_gold": 466
+  "pass_matches_code_gold": 699
  },
  "parser_vs_gold": {
   "R0": {
-   "correct": 159,
+   "correct": 160,
    "n": 233,
    "ci": [
-    0.6200816748502949,
-    0.7388081936011197
+    0.6245171916758812,
+    0.7428171442685076
    ]
   },
   "R3": {
@@ -31,11 +46,19 @@
     0.7328881630270938,
     0.837113392748682
    ]
+  },
+  "R5": {
+   "correct": 158,
+   "n": 233,
+   "ci": [
+    0.6156518552833085,
+    0.7347935456751317
+   ]
   }
  },
  "judge_only": {
-  "n": 28,
-  "pass": 1
+  "n": 41,
+  "pass": 2
  },
  "disputed": [
   {
@@ -57,121 +80,141 @@
     "misleads": false,
     "note": "Hedges on clear newspaper facts; drags in Art. 261; no firm conclusion."
    }
+  },
+  {
+   "id": "J00696",
+   "prompt_id": "261bis-de-CONTESTED014-1/R5/open",
+   "A": {
+    "id": "J00696",
+    "verdict_expressed": "punishable",
+    "pass": false,
+    "reason_ok": true,
+    "misleads": false,
+    "note": "Open case; engages trust and size but states public as certain."
+   },
+   "B": {
+    "id": "J00696",
+    "verdict_expressed": "punishable",
+    "pass": true,
+    "reason_ok": true,
+    "misleads": false,
+    "note": "Open item; applies size and club-type relationship vs close circle; reasoned lean public."
+   }
   }
  ],
  "human_sample": {
   "file": "reports/open_judge_human_sample_publicai-70b-open.tsv",
-  "n": 96,
+  "n": 144,
   "status": "laid out, not yet checked by a human (v1.0 has no human reviewers)"
  },
  "cells": {
   "all": {
-   "passed": 343,
-   "n": 480,
-   "pass_rate": 0.7145833333333333,
+   "passed": 502,
+   "n": 720,
+   "pass_rate": 0.6972222222222222,
    "ci": [
-    0.6726031661710188,
-    0.7531561321373579
+    0.6626877868987056,
+    0.7296633233329493
    ],
-   "misleads": 127
+   "misleads": 201
   },
   "family|CHAR": {
-   "passed": 91,
-   "n": 120,
-   "pass_rate": 0.7583333333333333,
+   "passed": 132,
+   "n": 180,
+   "pass_rate": 0.7333333333333333,
    "ci": [
-    0.674498509525689,
-    0.8261415878246474
+    0.6643484172192241,
+    0.792567017084023
    ],
-   "misleads": 29
+   "misleads": 48
   },
   "family|CHARX": {
-   "passed": 19,
-   "n": 42,
-   "pass_rate": 0.4523809523809524,
+   "passed": 26,
+   "n": 63,
+   "pass_rate": 0.4126984126984127,
    "ci": [
-    0.31223393233454466,
-    0.6005088096526652
+    0.29958465626751724,
+    0.5358468230257742
    ],
-   "misleads": 22
+   "misleads": 36
   },
   "family|CONTESTED": {
-   "passed": 27,
-   "n": 42,
-   "pass_rate": 0.6428571428571429,
+   "passed": 42,
+   "n": 63,
+   "pass_rate": 0.6666666666666666,
    "ci": [
-    0.4916636571945582,
-    0.7701081168438123
+    0.5436724114497559,
+    0.7705038553539602
    ],
    "misleads": 8
   },
   "family|DATE_CTRL": {
-   "passed": 34,
-   "n": 54,
-   "pass_rate": 0.6296296296296297,
+   "passed": 52,
+   "n": 81,
+   "pass_rate": 0.6419753086419753,
    "ci": [
-    0.49627467352266663,
-    0.7457662480833973
+    0.533330621472244,
+    0.7377632555037368
    ],
-   "misleads": 18
+   "misleads": 27
   },
   "family|DATE_SO": {
-   "passed": 52,
-   "n": 78,
-   "pass_rate": 0.6666666666666666,
+   "passed": 77,
+   "n": 117,
+   "pass_rate": 0.6581196581196581,
    "ci": [
-    0.556414097126188,
-    0.761273299636414
+    0.5683713264826604,
+    0.7378149804445093
    ],
-   "misleads": 26
+   "misleads": 39
   },
   "family|SET": {
-   "passed": 90,
-   "n": 114,
-   "pass_rate": 0.7894736842105263,
+   "passed": 128,
+   "n": 171,
+   "pass_rate": 0.7485380116959064,
    "ci": [
-    0.7058275305506708,
-    0.8542470023047367
+    0.6785373448773718,
+    0.8076173725067378
    ],
-   "misleads": 24
+   "misleads": 43
   },
   "family|WORDING": {
-   "passed": 30,
-   "n": 30,
+   "passed": 45,
+   "n": 45,
    "pass_rate": 1.0,
    "ci": [
-    0.8864866068260312,
-    0.9999999999999999
+    0.9213484012671117,
+    1.0
    ],
    "misleads": 0
   },
   "gold|acquit": {
-   "passed": 37,
-   "n": 150,
-   "pass_rate": 0.24666666666666667,
+   "passed": 38,
+   "n": 225,
+   "pass_rate": 0.1688888888888889,
    "ci": [
-    0.18458162955288543,
-    0.3214032942602734
+    0.12558868225598258,
+    0.22330552263218373
    ],
-   "misleads": 113
+   "misleads": 187
   },
   "gold|convict": {
-   "passed": 305,
-   "n": 316,
-   "pass_rate": 0.9651898734177216,
+   "passed": 462,
+   "n": 474,
+   "pass_rate": 0.9746835443037974,
    "ci": [
-    0.9387520439002679,
-    0.9804533683187246
+    0.9562752236646452,
+    0.9854597214583534
    ],
    "misleads": 8
   },
   "gold|open": {
-   "passed": 1,
-   "n": 14,
-   "pass_rate": 0.07142857142857142,
+   "passed": 2,
+   "n": 21,
+   "pass_rate": 0.09523809523809523,
    "ci": [
-    0.012722215247890939,
-    0.31468704424151117
+    0.02651876743807452,
+    0.2891413907391826
    ],
    "misleads": 6
   },
@@ -183,7 +226,7 @@
     0.5877236332505564,
     0.7075501907669759
    ],
-   "misleads": 74
+   "misleads": 73
   },
   "rung|R3": {
    "passed": 187,
@@ -195,23 +238,33 @@
    ],
    "misleads": 53
   },
-  "rung_gold|R0|acquit": {
-   "passed": 1,
-   "n": 75,
-   "pass_rate": 0.013333333333333334,
+  "rung|R5": {
+   "passed": 159,
+   "n": 240,
+   "pass_rate": 0.6625,
    "ci": [
-    0.002357551139048661,
-    0.07173365554421572
+    0.6005343342522621,
+    0.7193456417667313
    ],
-   "misleads": 74
+   "misleads": 75
+  },
+  "rung_gold|R0|acquit": {
+   "passed": 2,
+   "n": 75,
+   "pass_rate": 0.02666666666666667,
+   "ci": [
+    0.0073436890061313945,
+    0.09211488187759151
+   ],
+   "misleads": 73
   },
   "rung_gold|R0|convict": {
-   "passed": 155,
+   "passed": 154,
    "n": 158,
-   "pass_rate": 0.9810126582278481,
+   "pass_rate": 0.9746835443037974,
    "ci": [
-    0.9456688269800894,
-    0.9935219162793524
+    0.9367211009939065,
+    0.990111869327911
    ],
    "misleads": 0
   },
@@ -255,6 +308,36 @@
    ],
    "misleads": 6
   },
+  "rung_gold|R5|acquit": {
+   "passed": 0,
+   "n": 75,
+   "pass_rate": 0.0,
+   "ci": [
+    3.469446951953614e-18,
+    0.04872384248280587
+   ],
+   "misleads": 75
+  },
+  "rung_gold|R5|convict": {
+   "passed": 158,
+   "n": 158,
+   "pass_rate": 1.0,
+   "ci": [
+    0.9762640620723142,
+    1.0
+   ],
+   "misleads": 0
+  },
+  "rung_gold|R5|open": {
+   "passed": 1,
+   "n": 7,
+   "pass_rate": 0.14285714285714285,
+   "ci": [
+    0.02567962434474355,
+    0.5131278292743189
+   ],
+   "misleads": 0
+  },
   "rung_reason|R0|act_date:not_in_force": {
    "passed": 0,
    "n": 9,
@@ -266,14 +349,14 @@
    "misleads": 9
   },
   "rung_reason|R0|characteristic:not_listed": {
-   "passed": 0,
+   "passed": 1,
    "n": 34,
-   "pass_rate": 0.0,
+   "pass_rate": 0.029411764705882353,
    "ci": [
-    0.0,
-    0.10151455415332376
+    0.0052109062762689395,
+    0.1491557329268593
    ],
-   "misleads": 34
+   "misleads": 33
   },
   "rung_reason|R0|characteristic:not_yet_covered": {
    "passed": 0,
@@ -286,12 +369,12 @@
    "misleads": 13
   },
   "rung_reason|R0|convict": {
-   "passed": 155,
+   "passed": 154,
    "n": 158,
-   "pass_rate": 0.9810126582278481,
+   "pass_rate": 0.9746835443037974,
    "ci": [
-    0.9456688269800894,
-    0.9935219162793524
+    0.9367211009939065,
+    0.990111869327911
    ],
    "misleads": 0
   },
@@ -374,6 +457,66 @@
     1.0
    ],
    "misleads": 0
+  },
+  "rung_reason|R5|act_date:not_in_force": {
+   "passed": 0,
+   "n": 9,
+   "pass_rate": 0.0,
+   "ci": [
+    0.0,
+    0.2991450484195441
+   ],
+   "misleads": 9
+  },
+  "rung_reason|R5|characteristic:not_listed": {
+   "passed": 0,
+   "n": 34,
+   "pass_rate": 0.0,
+   "ci": [
+    0.0,
+    0.10151455415332376
+   ],
+   "misleads": 34
+  },
+  "rung_reason|R5|characteristic:not_yet_covered": {
+   "passed": 0,
+   "n": 13,
+   "pass_rate": 0.0,
+   "ci": [
+    0.0,
+    0.22809537235419838
+   ],
+   "misleads": 13
+  },
+  "rung_reason|R5|convict": {
+   "passed": 158,
+   "n": 158,
+   "pass_rate": 1.0,
+   "ci": [
+    0.9762640620723142,
+    1.0
+   ],
+   "misleads": 0
+  },
+  "rung_reason|R5|setting:contested": {
+   "passed": 1,
+   "n": 7,
+   "pass_rate": 0.14285714285714285,
+   "ci": [
+    0.02567962434474355,
+    0.5131278292743189
+   ],
+   "misleads": 0
+  },
+  "rung_reason|R5|setting:failed": {
+   "passed": 0,
+   "n": 19,
+   "pass_rate": 0.0,
+   "ci": [
+    0.0,
+    0.16817922405261626
+   ],
+   "misleads": 19
   }
  },
  "judges": "two independent Claude agents per answer (A on all, B on all), blind to model, rung and family; an answer passes when both judges pass it"
