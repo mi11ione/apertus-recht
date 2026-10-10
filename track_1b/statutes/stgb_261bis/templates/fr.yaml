@@ -16,13 +16,13 @@ lang: fr
 
 frames:
   F01: "Faits : {Date}, {actor} s'est exprimé{e} comme suit à {place} : {setting}, {act}. {Pron} a agi intentionnellement."
-  F02: "Faits : {Date}, l'incident suivant, impliquant {actor}, s'est produit à {place} : {setting}, {act}. {Pron} a agi intentionnellement."
+  F02: "Faits : D'après le rapport de police, {date}, à {place}, {actor} s'est exprimé{e} comme suit : {setting}, {act}. {Pron} a agi intentionnellement."
   F03: "Faits : {Actor} domicilié{e} à {place} se voit reprocher ce qui suit : {setting}, {act}, et ce {date}. {Pron} a agi intentionnellement."
   F04: "Faits : À {place}, {date}, {actor} s'est exprimé{e} comme suit : {setting}, {act}. L'intention n'est pas contestée."
   F05: "Faits : {Date}, {actor} se trouvait à {place}. {Setting}, {act}. {Pron} a agi intentionnellement."
-  F06: "Faits : {Actor} vit à {place}. {Date}, il s'est passé ce qui suit : {setting}, {act}. {Pron} savait ce qu'{pron} faisait et le voulait."
+  F06: "Faits : {Date}, {actor} domicilié{e} à {place} s'est exprimé{e} comme suit : {setting}, {act}. {Pron} a agi avec conscience et volonté."
   F07: "Faits : Selon l'acte d'accusation, {date}, à {place}, {actor} s'est exprimé{e} comme suit : {setting}, {act}. {Pron} a agi intentionnellement."
-  F08: "Faits : {Date}, à {place}, s'est produit l'incident suivant, impliquant {actor} : {setting}, {act}. Il est établi qu'{pron} a agi intentionnellement."
+  F08: "Faits : {Date}, à {place}, {actor} s'est exprimé{e} comme suit : {setting}, {act}. Il est établi qu'{pron} a agi intentionnellement."
 
 actors:
   m1: {surface: "un homme", gender: m}
@@ -39,18 +39,18 @@ morphology:
   f: {pron: elle, e: "e", spouse: "son mari"}
 
 places:
-  zh: Zurich
-  be: Berne
-  bs: Bâle
-  lu: Lucerne
-  sg: Saint-Gall
-  wi: Winterthour
+  zh: Lausanne
+  be: Genève
+  bs: Fribourg
+  lu: Neuchâtel
+  sg: Sion
+  wi: Yverdon-les-Bains
   bi: Bienne
-  ch: Coire
-  aa: Aarau
-  th: Thoune
-  sh: Schaffhouse
-  zg: Zoug
+  ch: Delémont
+  aa: Vevey
+  th: Montreux
+  sh: La Chaux-de-Fonds
+  zg: Nyon
 
 dates:
   d1994_10: "en octobre 1994"
@@ -118,9 +118,9 @@ groups:
     de: "des musulmans en raison de leur appartenance religieuse"
     a: "aux musulmans en raison de leur appartenance religieuse"
   rel_free:
-    def: "les membres d'une Église libre chrétienne en raison de leur appartenance religieuse"
-    de: "des membres d'une Église libre chrétienne en raison de leur appartenance religieuse"
-    a: "aux membres d'une Église libre chrétienne en raison de leur appartenance religieuse"
+    def: "les membres d'une Église évangélique libre en raison de leur appartenance religieuse"
+    de: "des membres d'une Église évangélique libre en raison de leur appartenance religieuse"
+    a: "aux membres d'une Église évangélique libre en raison de leur appartenance religieuse"
   rel_hindu:
     def: "les hindous en raison de leur appartenance religieuse"
     de: "des hindous en raison de leur appartenance religieuse"
@@ -138,9 +138,9 @@ groups:
     de: "des personnes homosexuelles en raison de leur orientation sexuelle"
     a: "aux personnes homosexuelles en raison de leur orientation sexuelle"
   so_lesbian:
-    def: "les femmes lesbiennes en raison de leur orientation sexuelle"
-    de: "des femmes lesbiennes en raison de leur orientation sexuelle"
-    a: "aux femmes lesbiennes en raison de leur orientation sexuelle"
+    def: "les lesbiennes en raison de leur orientation sexuelle"
+    de: "des lesbiennes en raison de leur orientation sexuelle"
+    a: "aux lesbiennes en raison de leur orientation sexuelle"
   so_bi:
     def: "les personnes bisexuelles en raison de leur orientation sexuelle"
     de: "des personnes bisexuelles en raison de leur orientation sexuelle"
@@ -221,8 +221,8 @@ acts:
   a4A1: "{pron} a abaissé d'une façon qui porte atteinte à la dignité humaine {g.def}"
   a4A2: "{pron} a dévalorisé {g.def} d'une manière contraire à la dignité humaine"
   a4B1: "{pron} a présenté comme des êtres humains de moindre valeur {g.def}"
-  a4B2: "{pron} a vilipendé {g.def} d'une manière empreinte de mépris pour l'être humain"
-  a4C1: "{pron} a nié l'égale valeur humaine {g.de}"
+  a4B2: "{pron} a dénigré {g.def} en leur déniant toute dignité humaine"
+  a4C1: "{pron} a nié la dignité humaine {g.de}"
   a4C2: "{pron} a qualifié d'êtres humains de seconde zone {g.def}"
 
 settings:
@@ -237,12 +237,12 @@ settings:
   pub_hut_fam:    "lors d'une réunion dans un refuge forestier de sa famille devant environ 40 participants, qui avaient été invités par un appel général et dont {pron} ne connaissait pas personnellement la plupart, {spouse} et ses enfants étant également présents"
   pub_flyer:      "sur des tracts qu'{pron} a distribués aux passants dans une zone piétonne animée"
   pub_flyer_fam:  "sur des tracts qu'{pron} a distribués avec ses enfants aux passants dans une zone piétonne animée et qu'{pron} a intitulés « Une famille dit la vérité »"
-  pub_speech:     "dans un discours prononcé lors d'une assemblée communale devant environ 120 ayants droit au vote"
-  pub_speech_fam: "dans un discours prononcé lors d'une assemblée communale devant environ 120 ayants droit au vote, parmi lesquels se trouvaient aussi ses parents et ses frères et sœurs"
+  pub_speech:     "dans un discours prononcé lors d'une séance publique d'information de la commune devant environ 120 personnes"
+  pub_speech_fam: "dans un discours prononcé lors d'une séance publique d'information de la commune devant environ 120 personnes, parmi lesquelles se trouvaient aussi ses parents et ses frères et sœurs"
   pub_video:      "dans une vidéo qu'{pron} a publiée sur une plateforme vidéo librement accessible"
   pub_video_fam:  "dans une vidéo qu'{pron} a publiée sur une plateforme vidéo librement accessible et qu'{pron} a intitulée « Message à ma famille »"
-  pub_tram:       "dans un tram bondé, à haute voix et en s'adressant à tous les passagers"
-  pub_tram_fam:   "dans un tram bondé, à haute voix et en s'adressant à tous les passagers, alors qu'{pron} se déplaçait avec ses enfants"
+  pub_tram:       "dans un bus bondé, à haute voix et en s'adressant à tous les passagers"
+  pub_tram_fam:   "dans un bus bondé, à haute voix et en s'adressant à tous les passagers, alors qu'{pron} se déplaçait avec ses enfants"
   pub_market:     "à un stand sur un marché hebdomadaire très fréquenté, devant une nombreuse clientèle"
   pub_market_fam: "au stand qu'{pron} tient en entreprise familiale avec ses frères et sœurs sur un marché hebdomadaire très fréquenté, devant une nombreuse clientèle"
   pub_forum:      "dans un commentaire publié sur un forum en ligne librement accessible"
@@ -254,7 +254,7 @@ settings:
   priv_phone:     "lors d'une conversation téléphonique avec son frère"
   priv_famchat:   "dans un groupe de discussion familial dont seuls ses parents et ses frères et sœurs sont membres"
   # contested: the facts that ATF 130 IV 111 consid. 5.2 makes decisive (relationships, number of people) are mixed
-  cont_clubchat:  "dans un groupe de discussion fermé réunissant environ 30 membres de son club sportif, dont {pron} connaissait bien quelques-uns et la plupart seulement superficiellement"
+  cont_clubchat:  "dans un groupe de discussion fermé réunissant environ 30 membres de son club sportif, dont {pron} connaissait quelques-uns personnellement et la plupart seulement de loin"
   cont_party:     "lors d'une fête d'anniversaire dans son jardin, devant environ 20 invités, parmi lesquels des amis, des voisins et quelques connaissances de connaissances"
   cont_office:    "dans un courriel adressé à quelque 25 collègues de travail, anciens et actuels"
   cont_assoc:     "lors d'une séance non publique d'une association de quartier comptant environ 25 membres, dont certains se connaissent depuis des années et d'autres n'ont adhéré que récemment"

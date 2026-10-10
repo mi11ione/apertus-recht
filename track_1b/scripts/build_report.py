@@ -13,6 +13,7 @@ import datetime
 import re
 import shutil
 import subprocess
+import sys
 from pathlib import Path
 
 import markdown
@@ -59,6 +60,11 @@ MODELS = [("publicai-70b-fc-core", "70B", "de"), ("publicai-70b-fc-core-fr", "70
           ("publicai-70b-fc-core-it", "70B", "it"), ("8b-gguf-q4_k_m-cpu-core", "8B Q4_K_M", "de")]
 
 
+PREF = [("publicai-70b-pref", "70B", "de"), ("publicai-70b-pref-fr", "70B", "fr"), ("publicai-70b-pref-it", "70B", "it"),
+        ("8b-gguf-q4_k_m-cpu-pref", "8B Q4_K_M", "de")]
+OPEN = [("publicai-70b-open", "70B")]
+
+
 def tables(R: dict) -> dict:
     """Markdown tables generated from results/results.json (inserted at ⟨table:NAME⟩ markers)."""
     out = {}
@@ -90,6 +96,27 @@ def tables(R: dict) -> dict:
                      f"{c['statute_accuracy']:.2f}, {v['statute_accuracy']:.2f} | +{c['gain']*100:.1f}, +{v['gain']*100:.1f} pts | "
                      f"{'**pass**' if h['verdict_by_rung'][rung]['passed'] else 'fail'} |")
     out["heldout"] = "\n".join(L)
+    # preference accuracy (per token) and free-text pass rate, by the element that decides the item
+    cols = [("all", "all"), ("convict", "convict"), ("setting:failed", "private"), ("characteristic:not_listed", "not listed"),
+            ("characteristic:not_yet_covered", "SO < 2020"), ("act_date:not_in_force", "< 1995")]
+    L = ["| measure | model | lang | " + " | ".join(c[1] for c in cols) + " |", "|---|---|---|" + "---|" * len(cols)]
+    for run, name, lang in PREF:
+        pr = {(p["lang"], p["reason"]): p for p in (R["runs"].get(run) or {}).get("preference", [])}
+        if (lang, "all") not in pr:
+            continue
+        L.append(f"| preference | {name} | {lang.upper()} | " +
+                 " | ".join(f"{pr[(lang, k)]['per_token_accuracy']:.2f}" if (lang, k) in pr else "–" for k, _ in cols) + " |")
+    for run, name in OPEN:
+        p = ROOT / "reports" / f"open_judged_{run}.json"
+        if not p.exists():
+            continue
+        cells = json.loads(p.read_text())["cells"]
+        for rung in ("R0", "R3"):
+            def cell(k):
+                c = cells.get("all" if k == "all" else f"rung_reason|{rung}|{k}") if k != "all" else cells.get(f"rung|{rung}")
+                return f"{c['passed']}/{c['n']}" if c else "–"
+            L.append(f"| free text {rung} | {name} | DE | " + " | ".join(cell(k) for k, _ in cols) + " |")
+    out["preference"] = "\n".join(L)
     return out
 
 
@@ -102,6 +129,11 @@ def main() -> None:
     R = json.loads((ROOT / "results/results.json").read_text())
     for name, t in tables(R).items():
         md = md.replace(f"⟨table:{name}⟩", t)
+    # inline numbers: ⟨claim_id⟩ is filled from claims.tsv (the same expressions CI checks)
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from check_claims import claim_values
+    for c in claim_values():
+        md = md.replace(f"⟨{c['id']}⟩", c["got"])
     left = re.findall(r"⟨[^⟩]*⟩", md)
     if left:
         raise SystemExit(f"unfilled markers in the report: {left[:5]}")

@@ -205,10 +205,12 @@ def build_scenarios(d: Design, seed: int | None = None) -> list[Scenario]:
 
 # ------------------------------------------------------------------------------------------------ items
 
-def _cite(d: Design, keys) -> list[str]:
+def _cite(d: Design, keys, lang: str | None = None) -> list[str]:
+    """Citations of the sources, in the item's language where the statute file gives one (`cite_lang`)."""
     out = []
     for k in keys:
-        c = d.statute.sources[k].get("cite") or d.statute.sources[k].get("ref") or k
+        src = d.statute.sources[k]
+        c = (src.get("cite_lang") or {}).get(lang) or src.get("cite") or src.get("ref") or k
         if c not in out:
             out.append(c)
     return out
@@ -326,7 +328,7 @@ def build_items(d: Design, scenarios: list[Scenario], subset: str = "core") -> l
                 gold_verdict=sc.gold.verdict, deciding_element=sc.gold.deciding_element, gold_reason=sc.gold.reason,
                 label=sc.gold.label, trap=sc.trap,
                 acceptance_criterion=acceptance(d, sc), chosen=chosen, rejected=rejected,
-                rationale=rationale(d, sc), citation=_cite(d, auth), normative_source=auth,
+                rationale=rationale(d, sc), citation=_cite(d, auth, lang), normative_source=auth,
                 licence="CDLA-Permissive-2.0", canary=d.raw.get("canary"),
                 provenance=dict(prov, translation="source" if lang == "de" else "claude-agents+back-translation"),
             ))

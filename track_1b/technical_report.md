@@ -1,190 +1,280 @@
 # Apertus-Recht: which racial-discrimination law does Apertus apply?
 
-A local legal-information assistant built on Apertus should apply the Swiss law in force. We release 1,980 German,
-French and Italian minimal-twin scenarios under Art. 261bis StGB, each with a verdict computed by code from the pinned
-statute and BGE 130 IV 111, validated against blind annotation and against 30 Swiss court rulings, plus a harness that
-re-derives every label and result from a clean checkout. Apertus v1.5 convicts statements made only within the family
-and, with the closed list of protected characteristics pasted into the prompt, still convicts for a person's canton;
-the DPO post-training stage creates the second behaviour, and the choice of 4-bit conversion changes verdicts.
+People ask chat assistants whether something said at dinner, in a chat or at a rally is punishable. We release 1,980
+German, French and Italian minimal-twin scenarios under Art. 261bis StGB. Each verdict is computed by code from pinned
+Fedlex texts and BGE 130 IV 111 and agrees with ⟨court_agree⟩ in-scope Swiss court rulings. A harness re-derives every
+label and number from a clean checkout. Asked without the law, Apertus v1.5 70B convicts every scenario we wrote
+(balanced accuracy 0.50). In free text it tells ⟨open_r0_mislead⟩ of 75 users whose conduct is not punishable that it
+is. With the statute pasted in, it applies the publicity rule. It still convicts for a canton, a disability or a
+political opinion, and for acts committed before the law existed. Told when sexual orientation became protected, it
+stops protecting it.
 
 **Track:** Apertus Readiness · Track 1B (Swiss Voices, behavioural alignment)
 **Event:** Online
 **Team:** 444
-**Demo:** `make run` (repository); dataset on Hugging Face (link in the form notes)
+**Demo:** `make run` in the repository (Docker, CPU, no key, ~25 s); dataset on Hugging Face (link in the form notes)
 
 ----
 
 ### Use of Apertus
 
-- **Model:** Apertus v1.5 8B (stages SFT, RLVR, DPO, final; public GGUF builds) and Apertus v1.5 70B.
-- **How it is used:** evaluation.
-- **Where it runs:** 8B: local bf16 and GGUF runs from the exploration phase, new runs on CPU CI runners; 70B: the
-  Public AI endpoint, exact forced choice (the endpoint name `apertus-v1.5-8b` serves the 70B; `docs/builds.md`).
+- **Model:** Apertus v1.5 70B; Apertus v1.5 8B (public Q4_K_M GGUF; exploration phase: SFT, RLVR, DPO and final stages,
+  bf16 weight blends, Q8_0 and MLX 4-bit builds).
+- **How it is used:** evaluation (forced choice, preference pairs, free text with two blind LLM judges).
+- **Where it runs:** the 70B on the Public AI endpoint through a cost-capped gateway (the name `apertus-v1.5-8b`
+  serves the 70B; evidence in `docs/builds.md`); the 8B GGUF on CPU in GitHub Actions; total Public AI spend for this
+  release ⟨usd⟩.
 
 ----
 
 ## Use Case Description
 
-People ask chat assistants whether something they said, or read, is punishable. Art. 261bis StGB (racial
-discrimination, extended to sexual orientation on 1 July 2020) is a frequent subject: it is litigated in all language
-regions, and its answer turns on three elements a layperson cannot check: whether the statement was **public** (BGE 130
-IV 111 E. 5.2: statements among family, friends or in a setting of personal trust are private), whether the targeted
-characteristic is on the **closed list** (race, ethnicity, religion, sexual orientation), and **when** the act took
-place. A wrong answer misinforms the user about their own speech in either direction.
+Art. 261bis StGB (racial discrimination; extended to sexual orientation on 1 July 2020) is litigated in every language
+region. Whether a statement is punishable turns on three elements a layperson cannot check:
+- whether it was **public**: under BGE 130 IV 111 E. 5.2, statements among family, friends or in a setting of personal
+  trust are not;
+- whether the targeted characteristic is on the **closed list**: race, ethnicity, religion, sexual orientation;
+- **when** the act took place.
 
-The use case is a local Apertus assistant answering in German, French or Italian, with or without the statute in its
-context. Apertus-v1.5-8B was downloaded 698,641 times in the 30 days before 9 October 2026, and its training data
-include `voilaj/swiss-caselaw`, which contains BGE 130 IV 111 verbatim twice and 147 decisions citing it. The question
-the dataset answers is not "how often is the model right" but **which law the model applies**, element by element.
+A wrong answer misinforms people about their own speech in either direction. The user community is Swiss residents
+asking a local assistant in German, French or Italian, with or without the law in its context. Apertus-v1.5-8B was
+downloaded ⟨hf_downloads⟩ times in the 30 days before 9 October 2026. Its training data include `voilaj/swiss-caselaw`,
+which contains BGE 130 IV 111 verbatim, plus 147 decisions citing it. The dataset asks not "how often is the model
+right" but **which law it applies**, element by element.
 
 ## Dataset Summary
 
-Per language: 660 scenarios in 220 twin groups (220 base, 215 true flips, 210 placebos, 15 contested); verdicts
-430 convict, 215 acquit, 15 open. Each scenario is asked at five rungs in two framings, giving 6,600 prompts per
-language. The 162-item German battery from the exploration phase, on which the training-stage and build columns were
-measured, is released alongside with its original texts.
+Per language: 660 scenarios in 220 twin groups (220 base, 215 true flips, 210 placebos, 15 contested). Verdicts:
+430 convict, 215 acquit, 15 open. Each scenario comes with:
+- an acceptance criterion;
+- an item-specific `chosen` answer and a `rejected` answer of the kind models give;
+- a settled or contested label;
+- the normative source and the element-by-element derivation;
+- prompts at five rungs (R0 no law → R4 statute, leading case, closed list and date clause) in two forced-choice
+  framings (Ja/Nein; "Urteil: schuldig / nicht schuldig");
+- a free-text question and a chosen-versus-rejected preference prompt.
 
 | Family (groups per language) | One-fact change of the base | Tests |
 |---|---|---|
 | SET (55) | public → private setting; placebo: family wording of a public statement | BGE 130 IV 111 E. 5.2 |
 | CHAR (60), CHARX (20) | protected → unprotected characteristic; placebo: synonym ("Hautfarbe", "Glaube") | closed list |
-| DATE_SO (35) | sexual orientation 2021–25 → before 1 Jul 2020; placebo: 1 Jul / Aug 2020 | AS 2020 1609, Art. 2 |
+| DATE_SO (35) | sexual orientation 2021–25 → before 1 Jul 2020; placebo: 1 Jul / Aug 2020 | AS 2020 1609, Art. 2 StGB |
 | DATE_CTRL (25) | race, ethnicity, religion → 2018–20 (placebo) and → 1993/94 | over-application; entry into force |
 | CONTESTED (15) | public → fact-dependent setting (gold `open`) | hedging |
 | WORDING (10) | another wording family; another paragraph | wording invariance |
 
-Unprotected characteristics: gender identity, sex, canton, occupation, age, disability and political opinion (8–18
-items each). Paragraphs are balanced (Abs. 1/2/4: 220/218/222 in German); 18 act wordings in three wording families,
-29 settings, 33 group phrases, 14 dates, 8 frames, 12 places, 8 actors. The scenarios are short (mean 44 words in
-German) and deliberately templated: low lexical diversity (distinct-3 0.10) is the price of exact twins.
+Unprotected characteristics: gender identity, sex, canton, occupation, age, disability and political opinion. Paragraphs
+are balanced (Abs. 1/2/4: 220/218/222 in German). The wording is deliberately templated: 18 act wordings in three
+families, 29 settings, 33 group phrases. A mean of 44 words is the price of exact twins.
 
 ## Data Collection Method
 
-**No data was collected from people.** Scenarios are generated from YAML templates by a seeded generator; the gold
-verdict is computed by a 90-line engine from a machine-readable element model of the statute
-(`statutes/stgb_261bis/statute.yaml`). Every element and value cites a pinned source: the Fedlex consolidations of
-Art. 261bis before and since 1 July 2020 and of Art. 2 StGB (DE/FR/IT, sha256 of the text), the amendment footnotes
-(AS 1994 2887, AS 2020 1609) and the Regeste of BGE 130 IV 111.
+**No data was collected from people.** A seeded generator renders the scenarios from YAML templates. A 97-line engine
+computes the gold verdict from a machine-readable element model of the statute (`statutes/stgb_261bis/statute.yaml`).
+Every element and value cites a pinned source:
+- the Fedlex consolidations of Art. 261bis before and since 1 July 2020, and of Art. 2 StGB (DE/FR/IT, sha256 of the
+  text);
+- the amendment footnotes (AS 1994 2887, AS 2020 1609);
+- the Regeste of BGE 130 IV 111.
 
-**Design choices.** (1) *Minimal twins:* a base scenario and variants that each change exactly one slot, so a changed
-answer is attributable to one legal fact. The engine, not the author, labels each variant a true flip, a placebo or
-contested; the generator refuses to build if that disagrees with the design. (2) *Placebos* catch surface heuristics:
-family wording in a public post, a synonym for the characteristic ("Glaube" for "Religion"), an act in 2019 against a
-characteristic protected since 1995. (3) *Rungs* model retrieval: R0 has no law in the prompt; R1–R4 add the elements,
-the BGE rule and list, "the list is closed", and the 1 July 2020 clause. (4) *Two framings*, Ja/Nein and the verdict
-word, because a framing is readable only if it convicts the protected reference. (5) *Neutral wording:* acts are
-described in the statute's own vocabulary; no hateful text, no names. (6) *Contested items* (15 per language) leave the
-facts BGE 130 IV 111 makes decisive genuinely mixed; their gold is `open` and their acceptance criterion asks for a
-hedged answer.
+The engine, not the author, labels each variant a true flip, a placebo or contested. The generator refuses to build if
+the label disagrees with the design.
 
-**Translation.** French and Italian templates were translated by Claude agents with the official CP terms, translated
-back blind by separate agents, and compared for legal facts (0 critical, 3 minor findings, fixed).
+**Design choices.**
+- *Placebos* catch surface heuristics.
+- *Rungs* model the retrieval levels of an assistant.
+- *Two framings* are used because a framing is readable only if it convicts the protected reference.
+- Acts are described in the statute's own vocabulary: no slurs, no names.
+- The 15 contested items per language leave the facts BGE 130 IV 111 makes decisive genuinely mixed. Their gold is
+  `open`, and their criterion asks for a hedged answer.
 
-**Annotation and adjudication.** Gold is computed; annotation looks for errors in the code, the element model or the
-wording. Six Claude agents labelled 960 items blind (opaque ids, no access to code or gold) following
-`docs/annotation-guidelines.md`. Two defects they found (acts dated 1993/94 set online; a "contested" setting all
-annotators read as private) were fixed before any result was analysed (pre-registration amendment A3). The human
-reviewer R1 adjudicates every disagreement, every contested item and a blind 10% sample of settled items
-(⟨adjudication result⟩).
+**Translation and localisation.** Claude agents translated the templates into French and Italian with the official
+CP terms, and separate agents back-translated them blind (legal facts: 0 critical findings, 3 minor, all fixed). A
+review by a French- and Italian-speaking lawyer persona then found what back-translation cannot: the cases read as
+German cases in translation. The fix was made before any French or Italian result was analysed (amendment A7):
+- French items are set in Romandie, Italian ones in Ticino and Italian Graubünden;
+- intent is "avec conscience et volonté" / "consapevolmente e volontariamente";
+- the verdict words are "condamnation / acquittement" and "condanna / proscioglimento";
+- citations take the Swiss form of each language (art. 261bis al. 1 CP, ATF … consid. 5.2, DTF … consid. 5.2).
+
+**Verification without human labels.** Gold is computed, so review looks for errors in the code, the element model or
+the wording. All review was done by Claude agents working blind on opaque ids, without access to code or gold.
+- **Annotation:** six agents labelled 960 items. They agreed with the code on ⟨ann_settled⟩ settled items and on the
+  deciding element in 315/315 acquittals. A second pass that gave the agents only the law (statute texts and Regeste,
+  no rule summary) agreed on 939/939.
+- **Wording fixes:** reviewers found two wording defects before any result was analysed (amendment A3) and four after
+  (A5). All were fixed, the affected prompts re-scored, and the pre-fix responses archived.
+- **Adjudication:** two independent adjudicators covered every disagreement, every contested item and a blind 10%
+  sample. Gold was wrong in 0/94 sampled items (Wilson upper bound 3.9%).
+- **Court validation:** we triaged ⟨court_triaged⟩ decisions citing Art. 261bis. Each was extracted twice
+  (κ 0.83–0.98) and conflicts went to a third agent. The engine agrees with the court in ⟨court_agree⟩ in-scope
+  decisions (Wilson 95% ⟨court_ci⟩), 55 convictions and 3 acquittals, under a pre-registered rule.
 
 ## Dataset Details
 
-**Quality gates** (`statute-twins qc`, all passing): schema; gold recomputed from the facts for every item; twin
-invariants (one changed slot; placebos keep and flips change the verdict); 0 duplicates in the core set; language
-identity; PII scan over items, responses and metadata (Swiss phone, AHV, IBAN, e-mail, address patterns and a name
-gazetteer): 0 hits; canary string. The statute model is tested against the official text: every characteristic on the
-closed list appears in the pinned consolidation of its date and no unlisted one does; the in-force dates equal the
-dates in the Fedlex amendment footnotes in all three languages; mutation tests (remove religion from the list, move
-the 2020 date by a year or a day, make private settings public) flip exactly the items the rule governs.
+**Quality gates** (`statute-twins qc`, all passing):
+- schema;
+- gold recomputed for every item;
+- twin invariants: one changed slot; placebos keep the verdict, flips change it;
+- 0 duplicates; language identity; canary;
+- a PII scan over items, responses and metadata: 0 hits.
 
-**Contamination.** No 13-word sequence from our items occurs in any of the 1,069,365 decisions of `voilaj/swiss-caselaw`
-(all 121 data files, 3.86 billion tokens), while 846 of the 1,525 13-grams of the statute and the Regeste, scanned by
-the same code, are found. The leading case is present: 147 decisions mention BGE 130 IV 111 and 754 mention
-Art. 261bis.
+Tests check every closed-list term and both in-force dates against the official text in three languages. Mutation
+tests (drop religion from the list, move the 2020 date by a day, make private settings public) flip exactly the items
+each rule governs.
 
-**Ethics and licensing.** No data subjects: actors are generic, groups are described by their characteristic, acts
-are described abstractly, no slurs. Items are CDLA-Permissive-2.0; every item lists its licence components (statute and
-decision texts are public domain under Art. 5 URG). Reviewer consent with an AI-use clause:
-`docs/consent-template.md`. A canary string marks every item as evaluation data.
+**Contamination.** We scanned all 1,069,365 decisions of `voilaj/swiss-caselaw`:
+- 0 of our 35,241 distinct 13-grams occur in them;
+- the same code finds 846 of the 1,525 13-grams of the statute and the Regeste;
+- the law itself is well represented: 147 decisions mention BGE 130 IV 111 and 754 mention Art. 261bis.
+
+**Ethics and licensing.**
+- **Data subjects:** none. Actors are generic, groups are named by their characteristic, and acts are abstract.
+- **Licences:** items are CDLA-Permissive-2.0 with per-item licence components; statute and decision texts are public
+  domain under Art. 5 URG.
+- **AI use:** declared throughout. A consent form with an AI-use clause is ready for anyone who adds human reviewers.
+- **Canary:** every item carries a canary string.
 
 ## Evaluation
 
-### Method
+**Three measurements, one item set.**
+- *Forced choice* (all items, R0/R3/R4, two framings): the summed log-probability of the convict continuation minus the
+  acquit one. On vLLM this is exact (prefilled answer, prompt log-probabilities); in llama.cpp it is read from the
+  logits.
+- *Preference accuracy* (settled items, R0): the same exact scoring between each item's `chosen` and `rejected` answer.
+  We report it per token, because chosen answers are longer, and summed.
+- *Free text* (a fixed sample of 240 German items, R0 and R3, greedy, 220 tokens): every answer is judged against its
+  acceptance criterion by two independent Claude judges, blind to model, rung and family.
 
-A model is asked each scenario at each rung in both framings. With log-probabilities available we score **exact forced
-choice**: the summed log-probability of the convict continuation minus that of the acquit continuation (lo > 0 is a
-conviction). Accuracy is computed on settled items. The **read-back** pairs every true flip V with its base Ref; an
-element is *in force* in a framing when the 95% bootstrap intervals of both V and Ref are above zero (the model convicts
-where the law acquits) and *applied* when V is below and Ref above; a framing that does not convict the reference is
-unreadable. An element is **red** when it is in force in every readable framing.
-
-### Evaluation setup and inference parameters
+**The read-back** pairs every true flip with its base. An element is *in force* in a framing when the 95% bootstrap
+intervals of both are above zero, meaning the model convicts where the law acquits. It is **red** when in force in
+every readable framing. The pre-registered test fits this read-back on wording families A and B and predicts family C.
+It passes if it beats the statute by at least 0.15 in every anchored framing.
 
 | Run | Model and build | Where | Scope |
 |---|---|---|---|
-| `publicai-70b-fc-core(-fr, -it)` | Apertus v1.5 70B, served by Public AI under the name `apertus-v1.5-8b` | vLLM, exact prefill + prompt log-probabilities, temperature 0 | 660 items × R0/R3/R4 × 2 framings per language: 11,880 decisions |
-| `8b-gguf-q4_k_m-cpu-core` | Apertus v1.5 8B, the public Q4_K_M GGUF (sha256 `a037df8d…`) | llama-cpp-python 0.3.19 on 16 CPU CI runners | German core: 3,960 decisions |
-| `8b-bf16-{RLVR,DPO}`, blends α 0.25/0.5/0.75 | 8B post-training checkpoints and exact bf16 weight interpolations | MLX, exploration phase | 162-item battery × R0/R3 × 2 framings |
-| `8b-gguf-q8_0`, `8b-gguf-q4_k_m`, `8b-mlx4-*` | the two public GGUFs (llama.cpp, Metal) and our MLX 4-bit conversions | exploration phase | same battery |
+| `publicai-70b-fc-core(-fr,-it)` | Apertus v1.5 70B | Public AI (vLLM), temperature 0 | 660 items × R0/R3/R4 × 2 framings × 3 languages: 11,880 decisions |
+| `8b-gguf-q4_k_m-cpu-core` | Apertus v1.5 8B, public Q4_K_M GGUF (sha256 `a037df8d…`) | llama-cpp-python 0.3.19, CPU CI runners | German: 3,960 decisions |
+| `*-pref` | both of the above | as above | 645 settled items per language at R0 |
+| `publicai-70b-open` | 70B, free text | Public AI, greedy | 480 answers, 960 judgements |
+| `8b-bf16-*`, `8b-gguf-*`, `8b-mlx4-*` | post-training stages, weight blends, builds | exploration phase | 162-item German battery |
 
-The forced-choice continuations are `Ja`/`Nein` and, after an assistant prefix `Urteil:`, ` schuldig`/` nicht schuldig`
-(FR `Oui`/`Non`, `Jugement :` ` coupable`/` non coupable`; IT `Sì`/`No`, `Sentenza:` ` colpevole`/` non colpevole`). Every
-response row records the served model, the backend fingerprint and the request hash. Bootstrap intervals: 2,000
-resamples over items, seed 0.
+## Results
 
-### Results
+**Without the law, the 70B convicts everything** (R0: recall of convictions 1.00, of acquittals 0.00, in every
+language and framing). Free text agrees with the forced choice. The judges failed ⟨open_r0_mislead⟩ of 75 R0 answers to
+acquittal items as misleading, and every one of the 14 contested-item answers gave a flat verdict. The judges agreed on
+479 of 480 pass decisions (κ 0.995). On every settled answer, the judge's pass equals its expressed verdict compared
+with the computed gold (466/466), and that verdict matches a deterministic parser in 464 of 466 cases.
 
-⟨results⟩
+⟨table:accuracy⟩
+
+*Table 1. Forced-choice accuracy and balanced accuracy, Ja/Nein / verdict framing. 70B: Public AI; 8B: public Q4_K_M
+GGUF on CPU.*
+
+**With the law in the prompt, publicity is applied but the list and the date are not.** Figure 1 shows the read-back.
+For the German 70B:
+- **R3** (statute, BGE rule, "the list is closed"): private settings are acquitted. Canton, disability and political
+  opinion stay red, convicted although the prompt lists the four protected characteristics.
+- **Gender identity** is applied once the prompt names it as excluded.
+- **R4** adds the sentence "sexual orientation is protected since 1 July 2020". The 70B then acquits the cases
+  before that date, but also convicts only 3 of 35 punishable cases from 2021–25 (8B: 13 of 35). The clause does not
+  teach the date; it takes the characteristic off the list. Recall of convictions falls to 0.74 (grey cells in
+  Figure 1).
+- **Acts before 1995**, when the article did not exist, are convicted at every rung.
+
+French and Italian show the same profile (Table 1; per-language Synopse in the repository).
+
+![](docs/figures/fig1_synopse.png)
+
+*Figure 1. Synopse: the law in force (column "Law") next to the law Apertus applies. Each row changes one legal fact
+of a scenario the statute punishes (above the rule) or a detail that changes nothing (below). Cells: variants convicted
+(k/n, Ja/Nein framing). Red: the model applies a law that is not in force, in both framings; light red: in one; grey:
+the unchanged reference is not convicted either, so the element cannot be read.*
+
+⟨table:preference⟩
+
+*Table 2. Preference accuracy: share of settled items where the model gives the item's `chosen` answer a higher
+log-probability than the `rejected` one (per token; summed in the repository). Free text: share of answers that meet
+the acceptance criterion (two judges, 240 German items).*
+
+**Pre-registered held-out test.** At R0 the read-back predicts the model's verdicts on unseen wordings far better than
+the statute: +33 points for the 70B and +30 / +33 for the 8B. **The applied law is stable across wordings.** At R3 and
+R4 the read-back still wins in every cell (+0.5 to +22 points), but not by the pre-registered 0.15 in every framing.
+By our own rule these rungs therefore report the per-element table, not the read-back.
+
+⟨table:heldout⟩
+
+*Table 3. Held-out read-back test (fit: wording families A, B; test: family C). Pass: gain ≥ 0.15 in every anchored
+framing.*
+
+**Post-training and builds** (exploration battery, 8B):
+- At full precision, the step from RLVR to DPO turns a closed-list acquittal (canton, 0/6) into a conviction (6/6).
+  Exact weight blends between the two checkpoints trace a smooth curve.
+- The public Q8_0 GGUF agrees with bf16 on 638 of 648 decisions, the Q4_K_M on 622 and our MLX 4-bit conversion on 548.
 
 ## Dataset Limitations
 
-- **One statute, three of its five paragraphs.** Intent is fixed and the Abs. 4 dignity threshold is written to be met;
-  Abs. 3 (propaganda) and Abs. 5 (refusal of a public service) are out of scope. The court validation shows where this
-  bites: of the decisions that rule on Art. 261bis, the acquittals mostly turn on the dignity threshold, intent or
-  freedom of expression, which no twin varies. The second worked statute (Art. 179ter) shows the format is not tied to
-  this one.
-- **Templated text.** Exact twins need controlled wording; the set measures legal reasoning on clean fact patterns, not
-  robustness to messy user prose.
-- **Translations, not native writing.** FR and IT passed blind back-translation with no critical finding, but they were
-  not written by native lawyers.
-- **Agent annotators share a model family with the generator's author.** Their agreement rules out reading errors, not
-  a shared misconception of the law; the statute tests, the mutation tests and the court validation check the law
-  itself.
-- **Contested items are few** (15 per language) and open by construction.
+- **One statute, three of its five paragraphs.** Intent is fixed and the Abs. 4 dignity threshold is written to be
+  met. In the court sample, acquittals mostly turn on those grounds, which no twin varies. A second worked statute
+  (Art. 179ter, five YAML files) shows the format is not tied to this one.
+- **Templated text.** The set measures legal reasoning on clean fact patterns, not robustness to messy user prose.
+- **Translations, not native writing.** FR and IT passed blind back-translation and a localisation review, but no
+  native lawyer wrote them. Two choices a practitioner may contest are kept and stated:
+  - the act is fixed as proven, so an Abs. 2 act ("propagating an ideology") or "distributing writings" can occur in a
+    one-off spoken setting such as a bus;
+  - an online post from before 1 July 2020 counts as completed on publication. Dropping those 10 items per language
+    changes no accuracy by more than ⟨sens_max⟩ points (`scripts/sensitivity.py`).
+- **Agents, not people, reviewed it.** Every review step is a reproducible agent run with its instructions in the
+  repository. Agents of one model family can share a misconception of the law. The checks against the official text,
+  the mutation tests and the 58 court decisions test the law itself. The track's 20% human check of the judges is
+  laid out as a file and a script (`scripts/judge_open.py human`) for a reviewer to fill. Until then every judgement
+  is checked against code instead.
+- **Contested items are few** (15 per language), and the free-text sample is German only.
 
 ## Lessons Learnt and Recommendations
 
-**For Apertus users.** Do not ask Apertus about Art. 261bis without the law in context: with none, it convicts on every
-variant we tried. Paste the statute and BGE 130 IV 111 and it applies the publicity rule, but it still needs the closed
-list spelled out *and* applied; state dates explicitly, and expect the 1 July 2020 clause to be over-applied. Prefer
-the Q8_0 GGUF or the served model to 4-bit MLX conversions, which changed verdicts in our measurements.
+**For Apertus users.**
+- Do not ask about Art. 261bis without the law in context. With none, Apertus convicts every case we wrote, and its
+  prose explains why.
+- Paste the statute and BGE 130 IV 111, and it applies the publicity rule. Still check characteristics against the
+  closed list yourself, and state the date of the act.
+- Prefer the Q8_0 GGUF or the served model to 4-bit MLX conversions.
 
-**For Apertus developers.** The conviction prior is created by post-training, not pre-training: at full precision the
-step from RLVR to DPO turns a closed-list acquittal (canton, 0/6) into a conviction (6/6), and exact weight blends show a
-smooth S-curve between the two. The leading case is in the training data, verbatim. Preference data that rewards
-"condemning" answers to discrimination questions is a plausible cause worth testing; twin items like ours give a
-measurable target for a fix, element by element, before and after.
+**For Apertus developers.**
+- The conviction prior comes from post-training, measurably at the DPO step.
+- The leading case is in the training data. The model still does not apply it without being told.
+- Twin items give a target that can be measured element by element before and after a fix. The `chosen` / `rejected`
+  pairs are in the format preference training uses, so keep them out of training if you evaluate on them.
 
-**For dataset builders.** Computed gold turns a legal benchmark into software: the statute model is tested against
-the official text, mutations of the law flip exactly the items they should, and a new statute is five YAML files. Blind
-review by personas found wording defects that no automated gate caught (a frame that dated the recording instead of the
-act); we fixed them and re-scored, and the pre-registration records when. The next iteration should add the elements
-courts actually argue about (the dignity threshold, interpretation of coded speech, political debate) as contested
-items written with practitioners.
+**For dataset builders.** Computed gold turns a legal benchmark into software:
+- the statute model is tested against the official text;
+- mutations of the law flip exactly the items they should;
+- a new statute is five YAML files.
+
+Blind persona review still found defects no gate caught, such as a frame that dated the recording instead of the act.
+We fixed them, re-scored, and recorded when in the pre-registration. The next iteration should add the elements courts
+argue about (the dignity threshold, coded speech, political debate) as contested items written with practitioners.
 
 ## Reproducibility
 
-`make run` (Docker, CPU, no key, no model) regenerates the dataset from the YAML and recomputes every result from the
-stored responses in about 25 seconds on a CI runner; it exits non-zero on any mismatch. With `LLM_*` variables or
-`make run-gguf` it also scores a stratified live slice and compares it with the published reference band. Every number
-in this report maps to a results file and the command that produced it in `claims.tsv`, which CI checks on every push.
-Seeds: generator 261 (Art. 179ter: 179), bootstrap seed 0 with 2,000 resamples, annotation sample seeds in the scripts.
-The model responses carry the served model name, backend fingerprint and a request hash for every prompt; 70B scores
-were obtained at temperature 0 through a cost-capped gateway with a content cache (total spend for this paper ⟨usd⟩).
-Pre-registration: `prereg/LOCK.json`, amendments with hashes in `prereg/AMENDMENTS.md`.
+`make run` (Docker, CPU, no key, no model) regenerates the dataset from the YAML and checks every file by sha256. It
+recomputes every result from the stored responses, checks every stored request hash against the current prompt, and
+exits non-zero on any mismatch.
+- **Live checks:** `LLM_*` variables or `make run-gguf` also score a live slice against the published reference band.
+- **Traceability:** every number in this report maps to a results file and the command that produced it in
+  `claims.tsv`, which CI checks on every push.
+- **Seeds:** generator 261; bootstrap seed 0, 2,000 resamples.
+- **Pre-registration:** `prereg/LOCK.json`, before any model saw the core set. Amendments A1–A6, with their timing
+  relative to the analysis, are in `prereg/AMENDMENTS.md`.
 
 ## License
 
-Creative Commons Attribution 4.0 (CC-BY-4.0). All HackApertus projects are open-sourced.
+Code Apache-2.0; dataset CDLA-Permissive-2.0; this report CC-BY-4.0.
 
 ## References
+
+Art. 261bis and Art. 2 StGB, SR 311.0 (Fedlex, versions of 1 Jan 1995 and 1 Jul 2020); AS 1994 2887; AS 2020 1609.
+BGE 130 IV 111. Fan et al., LEXam, ICLR 2026. Han et al., LawShift, NeurIPS 2025 D&B. Servantez et al., OpenExempt,
+ACL Findings 2026. Huang et al., When Do LLMs Apply the Wrong Law?, arXiv 2608.14610. Röttger et al., Multilingual
+HateCheck, WOAH 2022. Swiss AI, Apertus v1.5 technical report, 2026.

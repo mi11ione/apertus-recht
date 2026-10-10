@@ -10,9 +10,9 @@ char_labels: {race: Rasse, ethnicity: Ethnie, religion: Religion, sexual_orienta
               age: Alter, disability: Behinderung, political_opinion: politische Überzeugung}
 labels:
   paragraph:
-    abs1: "als Aufruf zu Hass oder Diskriminierung (Abs. 1)"
-    abs2: "als Verbreiten einer Ideologie der systematischen Herabsetzung (Abs. 2)"
-    abs4: "als Herabsetzung in einer gegen die Menschenwürde verstossenden Weise (Abs. 4)"
+    abs1: "Abs. 1 StGB (Aufruf zu Hass oder Diskriminierung)"
+    abs2: "Abs. 2 StGB (Verbreiten einer Ideologie der systematischen Herabsetzung)"
+    abs4: "Abs. 4 StGB (Herabsetzung in einer gegen die Menschenwürde verstossenden Weise)"
 slot_labels:
   setting:
     pub_rally: "eine bewilligte Kundgebung auf einem öffentlichen Platz vor rund 300 Personen"
@@ -45,13 +45,13 @@ slot_labels:
     cont_office: "eine E-Mail an rund 25 frühere und heutige Arbeitskolleginnen und -kollegen"
     cont_assoc: "eine nicht öffentliche Vereinssitzung mit rund 25 Mitgliedern, teils langjährig bekannt, teils neu"
 chosen:
-  convict: "Ja. Die Äusserung erfolgte öffentlich im Sinne von BGE 130 IV 111 ({setting_label}); sie richtet sich gegen eine Gruppe wegen eines geschützten Merkmals ({char_label}) und erfüllt Art. 261bis StGB {paragraph_label}. Die Tat {date} fällt in den zeitlichen Geltungsbereich."
+  convict: "Ja. Die Äusserung erfolgte öffentlich im Sinne von BGE 130 IV 111 E. 5.2 ({setting_label}); sie richtet sich gegen eine Gruppe wegen eines geschützten Merkmals ({char_label}) und erfüllt den Tatbestand von Art. 261bis {paragraph_label}. Die Tat {date} fällt in den zeitlichen Geltungsbereich."
   "setting:failed": "Nein. {Setting_label} ist ein privater Rahmen, der durch persönliche Beziehungen geprägt ist; nach BGE 130 IV 111 E. 5.2 fehlt damit die Öffentlichkeit, die Art. 261bis StGB voraussetzt."
   "characteristic:not_listed": "Nein. Das Merkmal «{char_label}» gehört nicht zur abschliessenden Liste von Art. 261bis StGB (Rasse, Ethnie, Religion, sexuelle Orientierung); die Äusserung ist nach dieser Bestimmung nicht strafbar, auch wenn sie öffentlich erfolgte."
   "characteristic:not_listed|gender_identity": "Nein. Die Geschlechtsidentität gehört nicht zur abschliessenden Liste von Art. 261bis StGB; mit der Revision von 2020 wurde nur die sexuelle Orientierung aufgenommen."
   "characteristic:not_yet_covered": "Nein. Die sexuelle Orientierung ist erst für Taten ab dem 1. Juli 2020 geschützt (AS 2020 1609); eine Tat {date} fällt nicht darunter, weil das Gesetz nach Art. 2 StGB nicht rückwirkend gilt."
   "act_date:not_in_force": "Nein. Art. 261bis StGB ist erst seit dem 1. Januar 1995 in Kraft; eine Tat {date} ist nach Art. 2 StGB nicht strafbar."
-  "setting:contested": "Das hängt von Umständen ab, die der Sachverhalt offen lässt. Ob der Rahmen ({setting_label}) öffentlich ist, beurteilt sich nach BGE 130 IV 111 E. 5.2 danach, ob ein durch persönliche Beziehungen oder besonderes Vertrauen geprägtes Umfeld vorliegt; auch die Zahl der Anwesenden zählt."
+  "setting:contested": "Das hängt von Umständen ab, die der Sachverhalt offen lässt. Ob der Rahmen ({setting_label}) öffentlich ist, beurteilt sich nach BGE 130 IV 111 E. 5.2 danach, ob ein durch persönliche Beziehungen oder besonderes Vertrauen geprägtes Umfeld vorliegt; auch die Zahl der erreichten Personen zählt."
 rejected:
   convict:
     - "Nein. Die Äusserung ist zwar verwerflich, aber von der Meinungsäusserungsfreiheit gedeckt; Art. 261bis StGB ist nicht erfüllt."

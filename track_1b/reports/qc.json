@@ -37,7 +37,7 @@
    "n_hits": 0,
    "scanned": {
     "items": 2142,
-    "responses": 26780,
+    "responses": 26472,
     "metadata": 2142
    }
   },
@@ -143,12 +143,12 @@
    },
    "fr": {
     "items": 660,
-    "distinct_1": 0.0136,
-    "distinct_2": 0.0322,
-    "distinct_3": 0.0578,
+    "distinct_1": 0.013,
+    "distinct_2": 0.0302,
+    "distinct_3": 0.0542,
     "mean_words": 54.5,
-    "min_words": 39,
-    "max_words": 83,
+    "min_words": 38,
+    "max_words": 82,
     "slot_values_used": {
      "act": 18,
      "actor": 8,
@@ -165,12 +165,12 @@
    },
    "it": {
     "items": 660,
-    "distinct_1": 0.014,
-    "distinct_2": 0.0338,
-    "distinct_3": 0.0623,
-    "mean_words": 50.4,
+    "distinct_1": 0.0133,
+    "distinct_2": 0.0326,
+    "distinct_3": 0.061,
+    "mean_words": 49.3,
     "min_words": 35,
-    "max_words": 82,
+    "max_words": 78,
     "slot_values_used": {
      "act": 18,
      "actor": 8,

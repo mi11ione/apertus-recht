@@ -19,6 +19,16 @@ configs:
       - {split: fr, path: eval/prompts_core_fr.jsonl}
       - {split: it, path: eval/prompts_core_it.jsonl}
       - {split: battery162, path: eval/prompts_battery162.jsonl}
+  - config_name: prompts_free_text
+    data_files:
+      - {split: de, path: eval/prompts_open_core_de.jsonl}
+      - {split: fr, path: eval/prompts_open_core_fr.jsonl}
+      - {split: it, path: eval/prompts_open_core_it.jsonl}
+  - config_name: prompts_preference
+    data_files:
+      - {split: de, path: eval/prompts_pref_core_de.jsonl}
+      - {split: fr, path: eval/prompts_pref_core_fr.jsonl}
+      - {split: it, path: eval/prompts_pref_core_it.jsonl}
   - config_name: metadata
     data_files: [{split: items, path: metadata/items.jsonl}]
 ---
@@ -46,7 +56,10 @@ Evaluating whether a language model applies the Swiss law in force when a user a
 assistant whether a statement is punishable under Art. 261bis. The model answers each scenario at five prompt rungs
 (R0: plain question; R1: elements named; R2: + publicity rule of BGE 130 IV 111 and the list; R3: + "the list is
 closed"; R4: + the 1 July 2020 date clause) in two answer framings (Ja/Nein; "Urteil: schuldig / nicht schuldig"). The
-twins read back **which element** a model gets wrong, not only how often.
+twins read back **which element** a model gets wrong, not only how often. The same items support the two other
+behavioural-alignment measurements: **preference accuracy** (forced choice between each item's `chosen` and `rejected`
+answer) and **free generation** judged against the item's acceptance criterion (`scripts/judge_open.py` in the
+repository: two blind LLM judges, a code check on every judgement, and a 20% sample laid out for a human check).
 ### Out-of-Scope Use
 Not legal advice and not a model of every element of the offence: intent is fixed, the Abs. 4 dignity threshold is
 written to be met, Abs. 3 and 5 are not covered. Not a training set (canary string in every item). Contains no hateful
@@ -61,8 +74,11 @@ text; acts are described abstractly in the statute's vocabulary.
   every item (Track 1B behavioural-alignment requirements).
 
 ## Dataset Structure
-`eval/core_<lang>.jsonl` (one row per scenario), `eval/battery162.jsonl`, `eval/prompts_*.jsonl` (one row per scenario
-× rung × framing: the exact user message, the assistant prefix and the two candidate answers), `metadata/items.jsonl`,
+`eval/core_<lang>.jsonl` (one row per scenario), `eval/battery162.jsonl`, `eval/prompts_core_*.jsonl` (one row per
+scenario × rung × framing: the exact user message, the assistant prefix and the two candidate answers),
+`eval/prompts_open_core_*.jsonl` (free-text question at R0 and R3, for generation and judging against the acceptance
+criterion), `eval/prompts_pref_core_*.jsonl` (settled items: the item's `chosen` and `rejected` answers as the two
+candidates, stored by direction, with `chosen_side`; preference accuracy), `metadata/items.jsonl`,
 `metadata/sources.json`, `metadata/generator/` (the YAML the items were generated from), `responses/` (model responses,
 one file per model build), `MANIFEST.json` (sha256 of every file).
 
@@ -174,10 +190,10 @@ Score with both framings and read the element table, not a single accuracy; repo
 alongside results, since 4-bit conversions changed verdicts in our measurements.
 
 ## Model responses in this release
-15 runs (`responses/<run>.jsonl` with `<run>.meta.json`): 8b-bf16-DPO, 8b-bf16-RLVR, 8b-bf16-blend-RLVR-DPO-a0.25, 8b-bf16-blend-RLVR-DPO-a0.5, 8b-bf16-blend-RLVR-DPO-a0.75, 8b-gguf-q4_k_m, 8b-gguf-q8_0, 8b-mlx4-DPO, 8b-mlx4-RLVR, 8b-mlx4-SFT, 8b-mlx4-base-completion, 8b-mlx4-final, publicai-70b-fc, publicai-70b-gen, qwen3-8b-mlx4.
+16 runs (`responses/<run>.jsonl` with `<run>.meta.json`): 8b-bf16-DPO, 8b-bf16-RLVR, 8b-bf16-blend-RLVR-DPO-a0.25, 8b-bf16-blend-RLVR-DPO-a0.5, 8b-bf16-blend-RLVR-DPO-a0.75, 8b-gguf-q4_k_m, 8b-gguf-q4_k_m-cpu-core, 8b-gguf-q8_0, 8b-mlx4-DPO, 8b-mlx4-RLVR, 8b-mlx4-SFT, 8b-mlx4-base-completion, 8b-mlx4-final, publicai-70b-fc, publicai-70b-gen, qwen3-8b-mlx4.
 
 ## Changelog
-- 1.0.0 (2026-10): first release. Generator 1.0.0, seed 261. Files and hashes: `MANIFEST.json` (82 files).
+- 1.0.0 (2026-10): first release. Generator 1.0.0, seed 261. Files and hashes: `MANIFEST.json` (87 files).
   Pre-registration ([`docs/PREREG.md`](docs/PREREG.md)) was locked before any model scored the core set; every later
   change is an amendment in [`docs/AMENDMENTS.md`](docs/AMENDMENTS.md):
   A1 design moved into YAML, output byte-identical; A2 FR/IT surface fixes from back-translation; A3 one contested
@@ -187,6 +203,34 @@ alongside results, since 4-bit conversions changed verdicts in our measurements.
   the Git repository (`dataset/archive/`) so the effect of the fix is visible.
   Reference answers are item-specific (setting, characteristic, paragraph and date of each scenario; 333 distinct
   `chosen` per language); free-text prompts (`eval/prompts_open_*.jsonl`) score the same items without a forced choice.
+
+## Citation
+```bibtex
+@misc{apertus_recht_2026,
+  title  = {Apertus-Recht: Art. 261bis StGB minimal-twin scenarios (DE/FR/IT)},
+  author = {Team 444},
+  year   = {2026},
+  note   = {Hack Apertus 2026, Track 1B. Dataset version 1.0.0},
+  url    = {https://github.com/mi11ione/apertus-recht}
+}
+```
+
+## Glossary
+- **Twin group:** a base scenario and its variants; each variant changes exactly one slot of the base.
+- **True flip / placebo / contested:** the statute decides the variant differently from the base / the same / not
+  without facts the scenario leaves open (gold `open`). Assigned by the gold engine, not by hand.
+- **Deciding element, gold reason:** the element of Art. 261bis that decides an acquittal (`setting:failed`,
+  `characteristic:not_listed`, `characteristic:not_yet_covered`, `act_date:not_in_force`).
+- **Rung R0–R4:** how much law the prompt contains: R0 none; R1 the elements named; R2 + the publicity rule of
+  BGE 130 IV 111 and the list; R3 + "the list is closed"; R4 + "sexual orientation since 1 July 2020".
+- **Framing:** `conv` (Ja/Nein), `ver` ("Urteil:" schuldig / nicht schuldig), `open` (free text), `pref` (chosen vs
+  rejected answer).
+- **Read-back status:** F the model convicts where the statute acquits (element *in force* in the model); a applied;
+  u unreadable (the unchanged reference is not convicted either); ? undecided. Red: F in every readable framing.
+- **Wording family A/B/C:** three sets of act wordings; A and B fit the read-back, C is held out.
+
+## Dataset Card Authors
+Team 444 (Hack Apertus 2026), with Claude Code agents as declared above.
 
 ## Dataset Card Contact
 Via the Git repository's issue tracker: https://github.com/mi11ione/apertus-recht.

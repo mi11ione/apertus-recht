@@ -6,9 +6,9 @@ char_labels: {race: razza, ethnicity: etnia, religion: religione, sexual_orienta
               age: età, disability: disabilità, political_opinion: convinzioni politiche}
 labels:
   paragraph:
-    abs1: "in quanto incitamento all'odio o alla discriminazione (cpv. 1)"
-    abs2: "in quanto propagazione di un'ideologia volta a discreditare sistematicamente (cpv. 2)"
-    abs4: "in quanto discredito lesivo della dignità umana (cpv. 4)"
+    abs1: "cpv. 1 CP (incitamento all'odio o alla discriminazione)"
+    abs2: "cpv. 2 CP (propagazione di un'ideologia volta a discreditare sistematicamente)"
+    abs4: "cpv. 4 CP (discredito lesivo della dignità umana)"
 slot_labels:
   setting:
     pub_rally: "una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone"
@@ -21,12 +21,12 @@ slot_labels:
     pub_hut_fam: "una riunione di circa 40 persone invitate tramite un appello generale, anche se tenuta nel rifugio forestale della famiglia"
     pub_flyer: "volantini distribuiti in una zona pedonale molto frequentata"
     pub_flyer_fam: "volantini distribuiti in una zona pedonale molto frequentata, anche se con l'aiuto dei figli"
-    pub_speech: "un discorso durante un'assemblea comunale davanti a circa 120 aventi diritto di voto"
-    pub_speech_fam: "un discorso durante un'assemblea comunale davanti a circa 120 aventi diritto di voto, anche se in sala sedevano dei familiari"
+    pub_speech: "un discorso durante una serata informativa pubblica del Comune davanti a circa 120 persone"
+    pub_speech_fam: "un discorso durante una serata informativa pubblica del Comune davanti a circa 120 persone, anche se in sala sedevano dei familiari"
     pub_video: "un video su una piattaforma liberamente accessibile"
     pub_video_fam: "un video su una piattaforma liberamente accessibile, anche se intitolato come messaggio alla famiglia"
-    pub_tram: "un'esternazione ad alta voce davanti a tutti i passeggeri di un tram gremito"
-    pub_tram_fam: "un'esternazione ad alta voce davanti a tutti i passeggeri di un tram gremito, anche se erano presenti i propri figli"
+    pub_tram: "un'esternazione ad alta voce davanti a tutti i passeggeri di un autobus gremito"
+    pub_tram_fam: "un'esternazione ad alta voce davanti a tutti i passeggeri di un autobus gremito, anche se erano presenti i propri figli"
     pub_market: "un'esternazione presso una bancarella davanti a numerosi clienti"
     pub_market_fam: "un'esternazione davanti a numerosi clienti, anche se la bancarella è un'azienda famigliare"
     pub_forum: "un commento in un forum online liberamente accessibile"
@@ -41,13 +41,13 @@ slot_labels:
     cont_office: "un'e-mail a circa 25 colleghi di lavoro, attuali ed ex"
     cont_assoc: "una seduta non pubblica di un'associazione con circa 25 membri, alcuni conosciuti da anni, altri nuovi"
 chosen:
-  convict: "Sì. L'esternazione è avvenuta pubblicamente ai sensi della DTF 130 IV 111 ({setting_label}); è diretta contro un gruppo a causa di una caratteristica protetta ({char_label}) e adempie l'art. 261bis CP {paragraph_label}. Il fatto commesso {date} rientra nel campo d'applicazione temporale."
+  convict: "Sì. L'esternazione è avvenuta pubblicamente ai sensi della DTF 130 IV 111 consid. 5.2 ({setting_label}); è diretta contro un gruppo a causa di una caratteristica protetta ({char_label}) e adempie la fattispecie dell'art. 261bis {paragraph_label}. Il fatto commesso {date} rientra nel campo d'applicazione temporale."
   "setting:failed": "No. Il contesto ({setting_label}) è privato e caratterizzato da relazioni personali; secondo la DTF 130 IV 111 consid. 5.2 manca quindi il carattere pubblico che l'art. 261bis CP presuppone."
   "characteristic:not_listed": "No. La caratteristica «{char_label}» non figura nell'elenco esaustivo dell'art. 261bis CP (razza, etnia, religione, orientamento sessuale); l'esternazione non è punibile secondo questa disposizione, anche se è avvenuta pubblicamente."
   "characteristic:not_listed|gender_identity": "No. L'identità di genere non figura nell'elenco esaustivo dell'art. 261bis CP; con la revisione del 2020 è stato aggiunto soltanto l'orientamento sessuale."
   "characteristic:not_yet_covered": "No. L'orientamento sessuale è protetto soltanto per i fatti commessi a partire dal 1° luglio 2020 (RU 2020 1609); un atto commesso {date} non vi rientra, poiché secondo l'art. 2 CP la legge non ha effetto retroattivo."
   "act_date:not_in_force": "No. L'art. 261bis CP è in vigore soltanto dal 1° gennaio 1995; un atto commesso {date} non è punibile secondo l'art. 2 CP."
-  "setting:contested": "Dipende da circostanze che la fattispecie lascia aperte. Secondo la DTF 130 IV 111 consid. 5.2, il carattere pubblico del contesto ({setting_label}) dipende dall'esistenza di relazioni personali o di un particolare rapporto di fiducia; conta anche il numero delle persone presenti."
+  "setting:contested": "Dipende da circostanze che lo stato di fatto lascia aperte. Secondo la DTF 130 IV 111 consid. 5.2, il carattere pubblico del contesto ({setting_label}) dipende dall'esistenza di relazioni personali o di un particolare rapporto di fiducia; conta anche il numero delle persone raggiunte."
 rejected:
   convict:
     - "No. Le affermazioni sono riprovevoli, ma rientrano nella libertà di espressione; il reato di cui all'art. 261bis CP non è realizzato."

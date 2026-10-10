@@ -65,3 +65,22 @@ acceptance criterion by two independent agents (`scripts/judge_open.py`). (3) `a
 answer in the class recall denominators as well (before, only in the accuracy denominator); no released run has an
 unparsed row, so no published number changes. Hand-computed unit tests for these functions are in
 `tests/test_scoring.py`.
+
+## A7 (2026-10-10, 02:35, before any French or Italian result entered the report): FR/IT localisation from review
+A French- and Italian-speaking lawyer persona (dogfood round 2) found that the FR/IT scenarios read as German cases in
+translation: every place was a German-speaking town (trams in Thun, communal assemblies in cities with a parliament),
+the intent formula of frame F06 was a calque ("savait ce qu'elle faisait et le voulait"), two act phrasings were
+calques of German (a4B2, a4C1) and one had German word order (IT a2C2), openings were stilted, and the verdict framing
+"coupable / non coupable" is not Swiss usage. Fixed in `templates/{fr,it}.yaml` and `prompts/{fr,it}.yaml`:
+places in Romandie and in Ticino / Italian Graubünden; bus instead of tram and a public information evening of the
+commune instead of the communal assembly (same facts in all three languages: public, ~120 people); intent "avec
+conscience et volonté" / "consapevolmente e volontariamente"; police-report openings; ver framing with nouns
+that do not agree with the actor's gender ("Jugement : condamnation / acquittement", "Sentenza: condanna /
+proscioglimento"); "a nié / ha negato la dignità umana" for a4C1; formal register in Italian. A second read by the
+same reviewer caught that the FR/IT reference answers still named the old settings; fixed before scoring. No slot, fact, gold label or German prompt changes.
+Every FR and IT prompt changes and both languages are re-scored in full; the responses to the A5 texts are kept in
+`dataset/archive/`. Reference answers in all three languages now cite paragraphs in Swiss form ("Art. 261bis Abs. 1
+StGB", "art. 261bis al. 1 CP", "art. 261bis cpv. 1 CP") and BGE 130 IV 111 E. 5.2 throughout; the `citation` field is
+in the item's language (ATF/DTF, RO/RU, CP). The reviewer also questioned whether an act published online before
+1 July 2020 that may still be online later is settled; we keep the view that the offence is complete on publication
+and report the accuracies without those 10 items per language (`scripts/sensitivity.py`, `reports/sensitivity.json`).

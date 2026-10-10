@@ -18,22 +18,30 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def main() -> int:
-    p = ROOT / "claims.tsv"
-    rows = list(csv.DictReader(p.open(encoding="utf-8"), delimiter="\t"))
-    bad = 0
+def claim_values() -> list[dict]:
+    """Every claim with `got`, the value its expression gives from its source file."""
+    rows = list(csv.DictReader((ROOT / "claims.tsv").open(encoding="utf-8"), delimiter="\t"))
     cache = {}
     for r in rows:
         src = ROOT / r["source"]
         if src not in cache:
             cache[src] = json.loads(src.read_text(encoding="utf-8"))
         got = eval(r["expr"], {"J": cache[src], "len": len, "sum": sum, "round": round, "min": min, "max": max})
-        s = format(got, r["fmt"]) if r["fmt"] else str(got)
-        if s != r["value"]:
-            print(f"FAIL {r['id']}: claims.tsv says {r['value']!r}, {r['source']} gives {s!r}")
+        r["got"] = format(got, r["fmt"]) if r["fmt"] else str(got)
+    return rows
+
+
+def main() -> int:
+    rows = claim_values()
+    bad = 0
+    for r in rows:
+        if r["got"] != r["value"]:
+            print(f"FAIL {r['id']}: claims.tsv says {r['value']!r}, {r['source']} gives {r['got']!r}")
             bad += 1
         for doc in filter(None, (x.strip() for x in r["used_in"].split(","))):
-            if r["value"] not in (ROOT / doc).read_text(encoding="utf-8"):
+            text = (ROOT / doc).read_text(encoding="utf-8")
+            # a document contains the claim verbatim or as a marker that scripts/build_report.py fills from this file
+            if r["value"] not in text and f"⟨{r['id']}⟩" not in text:
                 print(f"FAIL {r['id']}: {doc} no longer contains {r['value']!r}")
                 bad += 1
     print(f"{len(rows)} claims checked, {bad} failures")

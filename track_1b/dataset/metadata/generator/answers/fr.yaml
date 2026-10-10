@@ -7,9 +7,9 @@ char_labels: {race: appartenance raciale, ethnicity: appartenance ethnique, reli
               political_opinion: opinions politiques}
 labels:
   paragraph:
-    abs1: "en tant qu'incitation à la haine ou à la discrimination (al. 1)"
-    abs2: "en tant que propagation d'une idéologie visant à rabaisser systématiquement (al. 2)"
-    abs4: "en tant qu'abaissement portant atteinte à la dignité humaine (al. 4)"
+    abs1: "al. 1 CP (incitation à la haine ou à la discrimination)"
+    abs2: "al. 2 CP (propagation d'une idéologie visant à rabaisser systématiquement)"
+    abs4: "al. 4 CP (abaissement qui porte atteinte à la dignité humaine)"
 slot_labels:
   setting:
     pub_rally: "une manifestation autorisée sur une place publique devant quelque 300 personnes"
@@ -22,12 +22,12 @@ slot_labels:
     pub_hut_fam: "une réunion de quelque 40 personnes invitées par un appel général, même tenue dans le refuge forestier de la famille"
     pub_flyer: "des tracts distribués dans une rue piétonne animée"
     pub_flyer_fam: "des tracts distribués dans une rue piétonne animée, même avec l'aide des enfants"
-    pub_speech: "un discours lors d'une assemblée communale devant quelque 120 citoyens"
-    pub_speech_fam: "un discours lors d'une assemblée communale devant quelque 120 citoyens, même en présence de proches"
+    pub_speech: "un discours lors d'une séance publique d'information de la commune devant quelque 120 personnes"
+    pub_speech_fam: "un discours lors d'une séance publique d'information de la commune devant quelque 120 personnes, même en présence de proches"
     pub_video: "une vidéo sur une plateforme librement accessible"
     pub_video_fam: "une vidéo sur une plateforme librement accessible, même intitulée message à la famille"
-    pub_tram: "des propos tenus à voix haute devant tous les passagers d'un tram bondé"
-    pub_tram_fam: "des propos tenus à voix haute devant tous les passagers d'un tram bondé, même en présence de ses enfants"
+    pub_tram: "des propos tenus à voix haute devant tous les passagers d'un bus bondé"
+    pub_tram_fam: "des propos tenus à voix haute devant tous les passagers d'un bus bondé, même en présence de ses enfants"
     pub_market: "des propos tenus à un stand de marché devant une nombreuse clientèle"
     pub_market_fam: "des propos tenus devant une nombreuse clientèle, même à un stand de marché familial"
     pub_forum: "un commentaire dans un forum en ligne librement accessible"
@@ -42,13 +42,13 @@ slot_labels:
     cont_office: "un courriel adressé à quelque 25 collègues de travail, anciens et actuels"
     cont_assoc: "une séance non publique d'une association d'environ 25 membres, certains connus depuis longtemps, d'autres récents"
 chosen:
-  convict: "Oui. Les propos ont été tenus publiquement au sens de l'ATF 130 IV 111 ({setting_label}) ; ils visent un groupe en raison d'un critère protégé ({char_label}) et réalisent l'art. 261bis CP {paragraph_label}. L'acte commis {date} entre dans le champ d'application temporel."
+  convict: "Oui. Les propos ont été tenus publiquement au sens de l'ATF 130 IV 111 consid. 5.2 ({setting_label}) ; ils visent un groupe en raison d'un critère protégé ({char_label}) et réalisent l'infraction de l'art. 261bis {paragraph_label}. L'acte commis {date} entre dans le champ d'application temporel."
   "setting:failed": "Non. {Setting_label} est un cadre privé marqué par des relations personnelles ; selon l'ATF 130 IV 111 consid. 5.2, il manque le caractère public qu'exige l'art. 261bis CP."
   "characteristic:not_listed": "Non. Le critère « {char_label} » ne fait pas partie de la liste exhaustive de l'art. 261bis CP (appartenance raciale, ethnique ou religieuse, orientation sexuelle) ; les propos ne tombent pas sous cette disposition, même tenus publiquement."
   "characteristic:not_listed|gender_identity": "Non. L'identité de genre ne fait pas partie de la liste exhaustive de l'art. 261bis CP ; la révision de 2020 n'a ajouté que l'orientation sexuelle."
   "characteristic:not_yet_covered": "Non. L'orientation sexuelle n'est protégée que pour les actes commis à partir du 1er juillet 2020 (RO 2020 1609) ; un acte commis {date} n'est pas visé, car selon l'art. 2 CP la loi ne s'applique pas rétroactivement."
   "act_date:not_in_force": "Non. L'art. 261bis CP n'est en vigueur que depuis le 1er janvier 1995 ; un acte commis {date} n'est pas punissable selon l'art. 2 CP."
-  "setting:contested": "Cela dépend de circonstances que l'état de fait laisse ouvertes. Selon l'ATF 130 IV 111 consid. 5.2, le caractère public du cadre ({setting_label}) dépend de l'existence de relations personnelles ou d'une confiance particulière ; le nombre de personnes présentes compte aussi."
+  "setting:contested": "Cela dépend de circonstances que l'état de fait laisse ouvertes. Selon l'ATF 130 IV 111 consid. 5.2, le caractère public du cadre ({setting_label}) dépend de l'existence de relations personnelles ou d'une confiance particulière ; le nombre de personnes atteintes compte aussi."
 rejected:
   convict:
     - "Non. Les propos sont certes choquants, mais ils relèvent de la liberté d'expression ; l'infraction prévue à l'art. 261bis CP n'est pas réalisée."

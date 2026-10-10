@@ -1,0 +1,52 @@
+{
+ "source": "gateway ledger, tags 1b-*",
+ "by_tag": {
+  "1b-core-70b": {
+   "requests": 8968,
+   "prompt_tokens": 2427346,
+   "completion_tokens": 8968,
+   "usd": 0.244
+  },
+  "1b-core-70b-fr": {
+   "requests": 8968,
+   "prompt_tokens": 2470441,
+   "completion_tokens": 8968,
+   "usd": 0.249
+  },
+  "1b-core-70b-it": {
+   "requests": 8466,
+   "prompt_tokens": 2490655,
+   "completion_tokens": 8466,
+   "usd": 0.251
+  },
+  "1b-open-70b": {
+   "requests": 509,
+   "prompt_tokens": 116159,
+   "completion_tokens": 49551,
+   "usd": 0.24
+  },
+  "1b-pref-70b": {
+   "requests": 137,
+   "prompt_tokens": 30216,
+   "completion_tokens": 137,
+   "usd": 0.003
+  },
+  "1b-probe": {
+   "requests": 1,
+   "prompt_tokens": 69,
+   "completion_tokens": 2,
+   "usd": 0.0
+  },
+  "1b-smoke": {
+   "requests": 8,
+   "prompt_tokens": 1790,
+   "completion_tokens": 8,
+   "usd": 0.0
+  }
+ },
+ "total": {
+  "requests": 27057,
+  "usd": 0.99
+ },
+ "usd_text": "USD 0.99"
+}

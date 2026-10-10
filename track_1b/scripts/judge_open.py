@@ -93,7 +93,8 @@ def aggregate(run: str, work: Path):
         r = rows[pid]
         i = items[r["item_id"]]
         for key in (("all",), ("rung", r["rung"]), ("gold", i["gold_verdict"]), ("family", i["family"]),
-                    ("rung_gold", f"{r['rung']}|{i['gold_verdict']}")):
+                    ("rung_gold", f"{r['rung']}|{i['gold_verdict']}"),
+                    ("rung_reason", f"{r['rung']}|{i.get('gold_reason') or 'convict'}")):
             c = cells[key]
             c[0] += bool(j["pass"])
             c[1] += 1

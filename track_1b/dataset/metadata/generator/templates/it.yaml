@@ -20,13 +20,13 @@ rewrite:
 
 frames:
   F01: "Fatti: {Date} {actor} si è {espresso} a {place} come segue: {setting}, {act}. Ha agito intenzionalmente."
-  F02: "Fatti: {Date} a {place} si è verificato il seguente episodio, che ha visto {coinvolto} {actor}: {setting}, {act}. Ha agito intenzionalmente."
-  F03: "Fatti: {Actor} di {place} è {accusato} di quanto segue: {setting}, {act}, e precisamente {date}. Ha agito intenzionalmente."
+  F02: "Fatti: Secondo il rapporto di polizia, {date} a {place} {actor} si è {espresso} come segue: {setting}, {act}. Ha agito intenzionalmente."
+  F03: "Fatti: {Actor} di {place} è {accusato} dei fatti seguenti, avvenuti {date}: {setting}, {act}. Ha agito intenzionalmente."
   F04: "Fatti: A {place} {actor} si è {espresso} {date} come segue: {setting}, {act}. L'intenzione non è contestata."
   F05: "Fatti: {Date} {actor} si trovava a {place}. {Setting}, {act}. Ha agito intenzionalmente."
-  F06: "Fatti: {Actor} vive a {place}. {Date} è accaduto quanto segue: {setting}, {act}. Sapeva ciò che stava facendo e voleva farlo."
+  F06: "Fatti: {Date} {actor} residente a {place} si è {espresso} come segue: {setting}, {act}. Ha agito consapevolmente e volontariamente."
   F07: "Fatti: Secondo l'atto d'accusa, {date} {actor} si è {espresso} a {place} come segue: {setting}, {act}. Ha agito intenzionalmente."
-  F08: "Fatti: {Date} a {place} si è verificato un episodio in cui era {coinvolto} {actor}: {setting}, {act}. È accertato che ha agito intenzionalmente."
+  F08: "Fatti: È accertato che {date} a {place} {actor} si è {espresso} come segue: {setting}, {act}. Ha agito intenzionalmente."
 
 actors:
   m1: {surface: "un uomo", gender: m}
@@ -43,18 +43,18 @@ morphology:
   f: {espresso: espressa, coinvolto: coinvolta, accusato: accusata, spouse: "suo marito"}
 
 places:
-  zh: Zurigo
-  be: Berna
-  bs: Basilea
-  lu: Lucerna
-  sg: San Gallo
-  wi: Winterthur
-  bi: Bienne
-  ch: Coira
-  aa: Aarau
-  th: Thun
-  sh: Sciaffusa
-  zg: Zugo
+  zh: Lugano
+  be: Bellinzona
+  bs: Locarno
+  lu: Mendrisio
+  sg: Chiasso
+  wi: Biasca
+  bi: Ascona
+  ch: Roveredo
+  aa: Giubiasco
+  th: Minusio
+  sh: Massagno
+  zg: Poschiavo
 
 dates:
   d1994_10: "nell'ottobre 1994"
@@ -85,12 +85,12 @@ groups:
   eth_roma_syn:    {def: "i membri della comunità rom a causa della loro appartenenza etnica", di: "dei membri della comunità rom a causa della loro appartenenza etnica", a: "ai membri della comunità rom a causa della loro appartenenza etnica"}
   rel_jewish:      {def: "gli ebrei a causa della loro religione", di: "degli ebrei a causa della loro religione", a: "agli ebrei a causa della loro religione"}
   rel_muslim:      {def: "i musulmani a causa della loro religione", di: "dei musulmani a causa della loro religione", a: "ai musulmani a causa della loro religione"}
-  rel_free:        {def: "i membri di una chiesa cristiana libera a causa della loro religione", di: "dei membri di una chiesa cristiana libera a causa della loro religione", a: "ai membri di una chiesa cristiana libera a causa della loro religione"}
+  rel_free:        {def: "i membri di una Chiesa evangelica libera a causa della loro religione", di: "dei membri di una Chiesa evangelica libera a causa della loro religione", a: "ai membri di una Chiesa evangelica libera a causa della loro religione"}
   rel_hindu:       {def: "gli indù a causa della loro religione", di: "degli indù a causa della loro religione", a: "agli indù a causa della loro religione"}
   rel_muslim_syn:  {def: "i musulmani a causa della loro fede", di: "dei musulmani a causa della loro fede", a: "ai musulmani a causa della loro fede"}
   rel_jewish_syn:  {def: "gli ebrei a causa della loro fede", di: "degli ebrei a causa della loro fede", a: "agli ebrei a causa della loro fede"}
   so_homo:         {def: "le persone omosessuali a causa del loro orientamento sessuale", di: "delle persone omosessuali a causa del loro orientamento sessuale", a: "alle persone omosessuali a causa del loro orientamento sessuale"}
-  so_lesbian:      {def: "le donne lesbiche a causa del loro orientamento sessuale", di: "delle donne lesbiche a causa del loro orientamento sessuale", a: "alle donne lesbiche a causa del loro orientamento sessuale"}
+  so_lesbian:      {def: "le lesbiche a causa del loro orientamento sessuale", di: "delle lesbiche a causa del loro orientamento sessuale", a: "alle lesbiche a causa del loro orientamento sessuale"}
   so_bi:           {def: "le persone bisessuali a causa del loro orientamento sessuale", di: "delle persone bisessuali a causa del loro orientamento sessuale", a: "alle persone bisessuali a causa del loro orientamento sessuale"}
   so_gay:          {def: "gli uomini gay a causa del loro orientamento sessuale", di: "degli uomini gay a causa del loro orientamento sessuale", a: "agli uomini gay a causa del loro orientamento sessuale"}
   so_homo_syn:     {def: "le persone omosessuali a causa della loro omosessualità", di: "delle persone omosessuali a causa della loro omosessualità", a: "alle persone omosessuali a causa della loro omosessualità"}
@@ -121,13 +121,13 @@ acts:
   a2B1: "ha propagandato una visione del mondo secondo cui sono da considerare inferiori {g.def}"
   a2B2: "ha fatto propaganda per un'ideologia che mira a calunniare sistematicamente {g.def}"
   a2C1: "ha diffuso una dottrina che presenta sistematicamente come inferiori {g.def}"
-  a2C2: "ha diffuso sistematicamente tesi secondo cui varrebbero meno degli altri esseri umani {g.def}"
+  a2C2: "ha diffuso sistematicamente tesi secondo cui {g.def} varrebbero meno degli altri esseri umani"
   # cpv. 4 prima parte (discredita o discrimina in modo lesivo della dignità umana)
   a4A1: "ha discreditato in modo lesivo della dignità umana {g.def}"
   a4A2: "ha denigrato {g.def} in un modo che lede la dignità umana"
   a4B1: "ha descritto come esseri umani di minor valore {g.def}"
-  a4B2: "ha vilipeso, con disprezzo per l'essere umano, {g.def}"
-  a4C1: "ha negato il pari valore in quanto esseri umani {g.a}"
+  a4B2: "ha disprezzato {g.def} negando loro ogni dignità umana"
+  a4C1: "ha negato la dignità umana {g.di}"
   a4C2: "ha definito esseri umani di seconda categoria {g.def}"
 
 settings:
@@ -142,12 +142,12 @@ settings:
   pub_hut_fam:    "durante una riunione in un rifugio forestale della sua famiglia davanti a circa 40 partecipanti, che erano stati invitati tramite un appello generale e che per la maggior parte non conosceva personalmente, alla presenza anche di {spouse} e dei suoi figli"
   pub_flyer:      "mediante volantini che ha distribuito ai passanti in una zona pedonale molto frequentata"
   pub_flyer_fam:  "mediante volantini che, insieme ai suoi figli, ha distribuito ai passanti in una zona pedonale molto frequentata e che ha intitolato «Una famiglia dice la verità»"
-  pub_speech:     "in un discorso tenuto durante un'assemblea comunale davanti a circa 120 aventi diritto di voto"
-  pub_speech_fam: "in un discorso tenuto durante un'assemblea comunale davanti a circa 120 aventi diritto di voto, tra i quali sedevano anche i suoi genitori e i suoi fratelli"
+  pub_speech:     "in un discorso tenuto durante una serata informativa pubblica del Comune davanti a circa 120 persone"
+  pub_speech_fam: "in un discorso tenuto durante una serata informativa pubblica del Comune davanti a circa 120 persone, tra le quali sedevano anche i suoi genitori e i suoi fratelli"
   pub_video:      "in un video che ha pubblicato su una piattaforma video liberamente accessibile"
   pub_video_fam:  "in un video che ha pubblicato su una piattaforma video liberamente accessibile e che ha intitolato «Messaggio alla mia famiglia»"
-  pub_tram:       "in un tram gremito, ad alta voce e rivolgendosi a tutti i passeggeri"
-  pub_tram_fam:   "in un tram gremito, ad alta voce e rivolgendosi a tutti i passeggeri, mentre era in giro con i suoi figli"
+  pub_tram:       "in un autobus gremito, ad alta voce e rivolgendosi a tutti i passeggeri"
+  pub_tram_fam:   "in un autobus gremito, ad alta voce e rivolgendosi a tutti i passeggeri, mentre era in giro con i suoi figli"
   pub_market:     "presso una bancarella in un mercato settimanale molto frequentato, davanti a numerosi clienti"
   pub_market_fam: "presso la bancarella che gestisce come azienda famigliare insieme ai suoi fratelli in un mercato settimanale molto frequentato, davanti a numerosi clienti"
   pub_forum:      "in un commento in un forum online liberamente accessibile"
@@ -159,7 +159,7 @@ settings:
   priv_phone:     "in una conversazione telefonica con suo fratello"
   priv_famchat:   "in una chat di famiglia di cui fanno parte soltanto i suoi genitori e i suoi fratelli"
   # contested: the facts that DTF 130 IV 111 consid. 5.2 makes decisive (relationships, number of people) are mixed
-  cont_clubchat:  "in una chat di gruppo chiusa della sua società sportiva con circa 30 membri, di cui conosceva bene alcuni e la maggior parte solo superficialmente"
+  cont_clubchat:  "in una chat di gruppo chiusa della sua società sportiva con circa 30 membri, di cui conosceva personalmente alcuni e la maggior parte solo di vista"
   cont_party:     "durante una festa di compleanno nel suo giardino davanti a circa 20 ospiti, tra cui amici, vicini e alcuni conoscenti di conoscenti"
   cont_office:    "in un'e-mail a circa 25 colleghi di lavoro, attuali ed ex"
   cont_assoc:     "durante una seduta non pubblica di un'associazione di quartiere con circa 25 membri, alcuni dei quali si conoscono da anni mentre altri vi hanno aderito solo di recente"

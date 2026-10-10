@@ -1,6 +1,10 @@
 {
  "as_1994_2887": {
   "cite": "AS 1994 2887 (in force 1 Jan 1995)",
+  "cite_lang": {
+   "fr": "RO 1994 2887 (en vigueur depuis le 1.1.1995)",
+   "it": "RU 1994 2887 (in vigore dal 1.1.1995)"
+  },
   "evidence_in": "fedlex_261bis_2020",
   "evidence_text": {
    "de": "in Kraft seit 1. Jan. 1995",
@@ -14,6 +18,10 @@
  },
  "as_2020_1609": {
   "cite": "AS 2020 1609 (in force 1 Jul 2020)",
+  "cite_lang": {
+   "fr": "RO 2020 1609 (en vigueur depuis le 1.7.2020)",
+   "it": "RU 2020 1609 (in vigore dal 1.7.2020)"
+  },
   "evidence_in": "fedlex_261bis_2026",
   "evidence_text": {
    "de": "in Kraft seit 1. Juli 2020",
@@ -27,6 +35,10 @@
  },
  "bge_130_iv_111": {
   "cite": "BGE 130 IV 111 E. 5.2",
+  "cite_lang": {
+   "fr": "ATF 130 IV 111 consid. 5.2",
+   "it": "DTF 130 IV 111 consid. 5.2"
+  },
   "file": "../sources/bge_130_IV_111.json",
   "holding": "Öffentlich im Sinne von Art. 261bis StGB sind Äusserungen, die nicht im privaten Rahmen erfolgen. Privat sind Äusserungen im Familien- und Freundeskreis oder sonst in einem durch persönliche Beziehungen oder besonderes Vertrauen geprägten Umfeld. Ob diese Voraussetzung erfüllt ist, hängt von den konkreten Umständen ab, wobei insoweit auch die Zahl der anwesenden Personen eine Rolle spielen kann.",
   "kind": "decision",
@@ -36,6 +48,10 @@
  "fedlex_261bis_2020": {
   "anchors": true,
   "cite": "Art. 261bis StGB, version before 1 Jul 2020 (Fedlex eli/cc/54/757_781_799, version 2020-02-01)",
+  "cite_lang": {
+   "fr": "Art. 261bis CP, teneur avant le 1.7.2020 (Fedlex eli/cc/54/757_781_799, version du 1.2.2020)",
+   "it": "Art. 261bis CP, tenore prima del 1.7.2020 (Fedlex eli/cc/54/757_781_799, versione del 1.2.2020)"
+  },
   "eli": "https://fedlex.data.admin.ch/eli/cc/54/757_781_799",
   "file": "../sources/eli_cc_54_757_781_799__art_261_bis__{lang}__2020-02-01.json",
   "kind": "statute",
@@ -50,6 +66,10 @@
  "fedlex_261bis_2026": {
   "anchors": true,
   "cite": "Art. 261bis StGB (SR 311.0; Fedlex eli/cc/54/757_781_799, version 2026-10-01)",
+  "cite_lang": {
+   "fr": "Art. 261bis CP (RS 311.0 ; Fedlex eli/cc/54/757_781_799, version du 1.10.2026)",
+   "it": "Art. 261bis CP (RS 311.0; Fedlex eli/cc/54/757_781_799, versione del 1.10.2026)"
+  },
   "eli": "https://fedlex.data.admin.ch/eli/cc/54/757_781_799",
   "file": "../sources/eli_cc_54_757_781_799__art_261_bis__{lang}__2026-10-01.json",
   "kind": "statute",
@@ -63,6 +83,10 @@
  },
  "fedlex_art2": {
   "cite": "Art. 2 StGB (Fedlex eli/cc/54/757_781_799, version 2026-10-01)",
+  "cite_lang": {
+   "fr": "Art. 2 CP (Fedlex eli/cc/54/757_781_799, version du 1.10.2026)",
+   "it": "Art. 2 CP (Fedlex eli/cc/54/757_781_799, versione del 1.10.2026)"
+  },
   "eli": "https://fedlex.data.admin.ch/eli/cc/54/757_781_799",
   "file": "../sources/eli_cc_54_757_781_799__art_2__{lang}__2026-10-01.json",
   "kind": "statute",
@@ -76,6 +100,10 @@
  },
  "pa_iv_13_407": {
   "cite": "Pa.Iv. 13.407 (legislative history)",
+  "cite_lang": {
+   "fr": "Iv.pa. 13.407 (travaux préparatoires)",
+   "it": "Iv.Pa. 13.407 (materiali legislativi)"
+  },
   "evidence": "enacted text fedlex_261bis_2026 lists \"Rasse, Ethnie, Religion oder sexuellen Orientierung\" only",
   "kind": "legislative_history",
   "licence": "public domain (URG Art. 5 para. 1 lit. b/c: official reports)",

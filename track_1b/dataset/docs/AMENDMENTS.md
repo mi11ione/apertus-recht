@@ -52,3 +52,16 @@ e-mail to "rund 25 frühere und heutige Arbeitskolleginnen und -kollegen"; FR a2
 fact or gold label changes; the item texts change for 88 DE, 123 FR and 151 IT items (880 / 1,230 / 1,510 prompts),
 which are re-scored for every model. Because this amendment follows an analysis of the DE results, the pre-amendment
 responses and results are kept unchanged in `dataset/archive/` and the report states both where they differ.
+
+## A6 (2026-10-10, 02:10): item-specific reference answers, free-text framing, unparsed answers in balanced accuracy
+(1) A review found the reference answers too uniform (20 distinct `chosen`, 9 `rejected` per language). `chosen` now
+names the item's own setting, characteristic, paragraph and date; `rejected` and the trap answers are drawn
+deterministically from two wrong answers of the kind models give (333 distinct `chosen`, 31 `rejected` per language).
+Prompts, facts, gold labels and every score are unchanged (`statute-twins verify` and the request hashes of every
+released run still match). (2) A third answer framing, `open` (free text, two to three sentences, no forced choice),
+added as an **exploratory** measurement, not part of the pre-registered test: a fixed sample of 240 German items
+(whole twin groups, the smallest sha256 hashes of the group id: `--sample 240`) at R0 and R3, generated greedily through the gateway and judged blind against each item's
+acceptance criterion by two independent agents (`scripts/judge_open.py`). (3) `accuracy()` now counts an unparsed
+answer in the class recall denominators as well (before, only in the accuracy denominator); no released run has an
+unparsed row, so no published number changes. Hand-computed unit tests for these functions are in
+`tests/test_scoring.py`.

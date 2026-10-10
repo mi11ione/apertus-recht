@@ -9,12 +9,12 @@ date_clause: " L'orientation sexuelle n'est visée que pour les actes commis à 
 tails:
   open: " Est-ce punissable selon le droit suisse ? Répondez en deux ou trois phrases."
   conv: " L'infraction est-elle réalisée, de sorte qu'un tribunal suisse condamnerait la personne ? Répondez par Oui ou par Non."
-  ver: " Quel est le jugement d'un tribunal suisse ? Répondez par « coupable » ou « non coupable »."
+  ver: " Quel est le jugement d'un tribunal suisse ? Répondez par « condamnation » ou « acquittement »."
 plain:
   open: "\n\nQuestion : Est-ce punissable selon le droit suisse ? Répondez en deux ou trois phrases."
   conv: "\n\nQuestion : Un tribunal suisse condamnerait-il cette personne en vertu de l'art. 261bis CP ? Répondez par Oui ou par Non."
-  ver: "\n\nQuel est le jugement d'un tribunal suisse en application de l'art. 261bis CP ? Répondez par « coupable » ou « non coupable »."
+  ver: "\n\nQuel est le jugement d'un tribunal suisse en application de l'art. 261bis CP ? Répondez par « condamnation » ou « acquittement »."
 framings:
   open: {answer_prefix: "", convict: "", acquit: ""}   # free text, judged against the acceptance criterion
   conv: {answer_prefix: "", convict: "Oui", acquit: "Non"}
-  ver:  {answer_prefix: "Jugement :", convict: " coupable", acquit: " non coupable"}
+  ver:  {answer_prefix: "Jugement :", convict: " condamnation", acquit: " acquittement"}

@@ -17,6 +17,7 @@ scope_note: >-
 sources:
   fedlex_261bis_2026:
     cite: "Art. 261bis StGB (SR 311.0; Fedlex eli/cc/54/757_781_799, version 2026-10-01)"
+    cite_lang: {fr: "Art. 261bis CP (RS 311.0 ; Fedlex eli/cc/54/757_781_799, version du 1.10.2026)", it: "Art. 261bis CP (RS 311.0; Fedlex eli/cc/54/757_781_799, versione del 1.10.2026)"}
     kind: statute
     file: ../sources/eli_cc_54_757_781_799__art_261_bis__{lang}__2026-10-01.json
     text_sha256:
@@ -28,6 +29,7 @@ sources:
     anchors: true   # check the closed-list anchors of `characteristic` against this text
   fedlex_261bis_2020:
     cite: "Art. 261bis StGB, version before 1 Jul 2020 (Fedlex eli/cc/54/757_781_799, version 2020-02-01)"
+    cite_lang: {fr: "Art. 261bis CP, teneur avant le 1.7.2020 (Fedlex eli/cc/54/757_781_799, version du 1.2.2020)", it: "Art. 261bis CP, tenore prima del 1.7.2020 (Fedlex eli/cc/54/757_781_799, versione del 1.2.2020)"}
     kind: statute
     file: ../sources/eli_cc_54_757_781_799__art_261_bis__{lang}__2020-02-01.json
     text_sha256:
@@ -39,6 +41,7 @@ sources:
     anchors: true
   fedlex_art2:
     cite: "Art. 2 StGB (Fedlex eli/cc/54/757_781_799, version 2026-10-01)"
+    cite_lang: {fr: "Art. 2 CP (Fedlex eli/cc/54/757_781_799, version du 1.10.2026)", it: "Art. 2 CP (Fedlex eli/cc/54/757_781_799, versione del 1.10.2026)"}
     kind: statute
     file: ../sources/eli_cc_54_757_781_799__art_2__{lang}__2026-10-01.json
     text_sha256:
@@ -49,6 +52,7 @@ sources:
     note: Art. 2 StGB, temporal scope; no retroactivity of a harsher law (lex mitior only in favour of the accused)
   as_1994_2887:
     cite: "AS 1994 2887 (in force 1 Jan 1995)"
+    cite_lang: {fr: "RO 1994 2887 (en vigueur depuis le 1.1.1995)", it: "RU 1994 2887 (in vigore dal 1.1.1995)"}
     kind: amendment
     ref: AS 1994 2887 (BG vom 18. Juni 1993)
     in_force: 1995-01-01
@@ -56,6 +60,7 @@ sources:
     evidence_text: {de: "in Kraft seit 1. Jan. 1995", fr: "en vigueur depuis le 1er janv. 1995", it: "in vigore dal 1° gen. 1995"}
   as_2020_1609:
     cite: "AS 2020 1609 (in force 1 Jul 2020)"
+    cite_lang: {fr: "RO 2020 1609 (en vigueur depuis le 1.7.2020)", it: "RU 2020 1609 (in vigore dal 1.7.2020)"}
     kind: amendment
     ref: AS 2020 1609 (BG vom 14. Dez. 2018, Diskriminierung und Aufruf zu Hass aufgrund der sexuellen Orientierung)
     in_force: 2020-07-01
@@ -63,6 +68,7 @@ sources:
     evidence_text: {de: "in Kraft seit 1. Juli 2020", fr: "en vigueur depuis le 1er juil. 2020", it: "in vigore dal 1° lug. 2020"}
   bge_130_iv_111:
     cite: "BGE 130 IV 111 E. 5.2"
+    cite_lang: {fr: "ATF 130 IV 111 consid. 5.2", it: "DTF 130 IV 111 consid. 5.2"}
     kind: decision
     file: ../sources/bge_130_IV_111.json
     ref: BGE 130 IV 111 E. 5.2 (6S.318/2003, 27 May 2004)
@@ -73,6 +79,7 @@ sources:
       insoweit auch die Zahl der anwesenden Personen eine Rolle spielen kann.
   pa_iv_13_407:
     cite: "Pa.Iv. 13.407 (legislative history)"
+    cite_lang: {fr: "Iv.pa. 13.407 (travaux préparatoires)", it: "Iv.Pa. 13.407 (materiali legislativi)"}
     kind: legislative_history
     ref: Pa.Iv. 13.407 (Reynard); the National Council's 2018 version also covered gender identity, which the Council of States removed; the enacted text (AS 2020 1609) covers sexual orientation only
     evidence: enacted text fedlex_261bis_2026 lists "Rasse, Ethnie, Religion oder sexuellen Orientierung" only

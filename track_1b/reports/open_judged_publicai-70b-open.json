@@ -210,6 +210,126 @@
     0.35433043506668743
    ],
    "misleads": 7
+  },
+  "rung_reason|R0|act_date:not_in_force": {
+   "passed": 0,
+   "n": 9,
+   "pass_rate": 0.0,
+   "ci": [
+    0.0,
+    0.2991450484195441
+   ],
+   "misleads": 9
+  },
+  "rung_reason|R0|characteristic:not_listed": {
+   "passed": 0,
+   "n": 34,
+   "pass_rate": 0.0,
+   "ci": [
+    0.0,
+    0.10151455415332376
+   ],
+   "misleads": 34
+  },
+  "rung_reason|R0|characteristic:not_yet_covered": {
+   "passed": 0,
+   "n": 13,
+   "pass_rate": 0.0,
+   "ci": [
+    0.0,
+    0.22809537235419838
+   ],
+   "misleads": 13
+  },
+  "rung_reason|R0|convict": {
+   "passed": 156,
+   "n": 158,
+   "pass_rate": 0.9873417721518988,
+   "ci": [
+    0.9550267506545783,
+    0.9965217655424877
+   ],
+   "misleads": 0
+  },
+  "rung_reason|R0|setting:contested": {
+   "passed": 0,
+   "n": 7,
+   "pass_rate": 0.0,
+   "ci": [
+    5.551115123125783e-17,
+    0.35433043506668743
+   ],
+   "misleads": 7
+  },
+  "rung_reason|R0|setting:failed": {
+   "passed": 1,
+   "n": 19,
+   "pass_rate": 0.05263157894736842,
+   "ci": [
+    0.009351994062300362,
+    0.24638731166898786
+   ],
+   "misleads": 18
+  },
+  "rung_reason|R3|act_date:not_in_force": {
+   "passed": 0,
+   "n": 9,
+   "pass_rate": 0.0,
+   "ci": [
+    0.0,
+    0.2991450484195441
+   ],
+   "misleads": 9
+  },
+  "rung_reason|R3|characteristic:not_listed": {
+   "passed": 17,
+   "n": 34,
+   "pass_rate": 0.5,
+   "ci": [
+    0.34069325645682497,
+    0.659306743543175
+   ],
+   "misleads": 17
+  },
+  "rung_reason|R3|characteristic:not_yet_covered": {
+   "passed": 0,
+   "n": 13,
+   "pass_rate": 0.0,
+   "ci": [
+    0.0,
+    0.22809537235419838
+   ],
+   "misleads": 13
+  },
+  "rung_reason|R3|convict": {
+   "passed": 150,
+   "n": 158,
+   "pass_rate": 0.9493670886075949,
+   "ci": [
+    0.9032787039549025,
+    0.9741231746164177
+   ],
+   "misleads": 8
+  },
+  "rung_reason|R3|setting:contested": {
+   "passed": 0,
+   "n": 7,
+   "pass_rate": 0.0,
+   "ci": [
+    5.551115123125783e-17,
+    0.35433043506668743
+   ],
+   "misleads": 7
+  },
+  "rung_reason|R3|setting:failed": {
+   "passed": 19,
+   "n": 19,
+   "pass_rate": 1.0,
+   "ci": [
+    0.8318207759473837,
+    1.0
+   ],
+   "misleads": 0
   }
  },
  "judges": "two independent Claude agents per answer (A on all, B on all), blind to model, rung and family"
