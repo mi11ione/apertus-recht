@@ -8,14 +8,14 @@
   "seed": null
  },
  "params": {},
- "rows": 660,
+ "rows": 1320,
  "errors": 0,
  "served_models": [
   "swiss-ai/apertus-v1.5-8b"
  ],
- "jsonl_sha256": "39a8241b80d256c58f97397a48fa5735f1c7db88dba876455fb75d875307abde",
+ "jsonl_sha256": "3009986f53260d5315b2d9d11525b958622defea64ce03197142127295d8a1c0",
  "parts": "ctrl_core_it",
- "rungs": "R0",
+ "rungs": "R0,R3",
  "framings": "rev",
  "sample": null,
  "label": "Apertus v1.5 70B via Public AI (name swiss-ai/apertus-v1.5-8b), exact forced choice, A13 polarity control",

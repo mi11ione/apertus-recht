@@ -327,6 +327,15 @@ def cmd_selfcheck(a) -> int:
                                capture_output=True, text=True)
             print("  " + (r.stdout.strip().splitlines() or ["?"])[-1])
             ok &= r.returncode == 0
+    if Path("reports/qc.json").exists():
+        # the published QC report must be what the gates give on the released dataset now (counts drift otherwise)
+        from . import statute as _statute
+        from .qc import checks as _checks
+        print("== step 2f: the published QC report equals a fresh run of every gate")
+        fresh = json.loads(json.dumps(_checks.run_all(Path(a.dataset), _statute.load(a.statute)), default=str))
+        same = fresh == json.loads(Path("reports/qc.json").read_text())
+        ok &= same
+        print("  PASS" if same else "  FAIL (reports/qc.json is stale: run `statute-twins qc --out reports/qc.json`)")
     if Path("claims.tsv").exists() and Path("scripts/check_claims.py").exists():
         import subprocess
         print("== step 2e: the headline numbers in the README and the report map to a results file (claims.tsv)")

@@ -918,6 +918,49 @@
   {
    "lang": "it",
    "rung": "R3",
+   "framing": "rev",
+   "n": 645,
+   "convict_correct": 430,
+   "convict_n": 430,
+   "acquit_correct": 0,
+   "acquit_n": 215,
+   "recall_convict": 1.0,
+   "recall_acquit": 0.0,
+   "balanced_accuracy": 0.5,
+   "auc": 0.5203461330448891,
+   "calibrated_oof": {
+    "n": 645,
+    "convict_correct": 377,
+    "convict_n": 430,
+    "acquit_correct": 38,
+    "acquit_n": 215,
+    "recall_convict": 0.8767441860465116,
+    "recall_acquit": 0.17674418604651163,
+    "balanced_accuracy": 0.5267441860465116,
+    "thresholds": [
+     2.047,
+     2.25,
+     2.224,
+     2.251,
+     1.751
+    ]
+   },
+   "acquit_by_reason": {
+    "act_date:not_in_force": "0/25",
+    "characteristic:not_listed|age": "0/17",
+    "characteristic:not_listed|canton": "0/16",
+    "characteristic:not_listed|disability": "0/9",
+    "characteristic:not_listed|gender_identity": "0/16",
+    "characteristic:not_listed|occupation": "0/16",
+    "characteristic:not_listed|political_opinion": "0/8",
+    "characteristic:not_listed|sex": "0/18",
+    "characteristic:not_yet_covered": "0/35",
+    "setting:failed": "0/55"
+   }
+  },
+  {
+   "lang": "it",
+   "rung": "R3",
    "framing": "ver",
    "n": 645,
    "convict_correct": 428,
@@ -1251,6 +1294,36 @@
     "characteristic:not_yet_covered": "0/35",
     "setting:failed": "0/55"
    }
+  },
+  {
+   "lang": "it",
+   "rung": "R3",
+   "n": 645,
+   "yes_bias_mean": 4.115374754982185,
+   "conv_rev_disagree": 108,
+   "averaged": {
+    "n": 645,
+    "convict_correct": 428,
+    "convict_n": 430,
+    "acquit_correct": 78,
+    "acquit_n": 215,
+    "recall_convict": 0.9953488372093023,
+    "recall_acquit": 0.3627906976744186,
+    "balanced_accuracy": 0.6790697674418604,
+    "auc": 0.8518442401297999
+   },
+   "averaged_by_reason": {
+    "act_date:not_in_force": "0/25",
+    "characteristic:not_listed|age": "2/17",
+    "characteristic:not_listed|canton": "0/16",
+    "characteristic:not_listed|disability": "0/9",
+    "characteristic:not_listed|gender_identity": "16/16",
+    "characteristic:not_listed|occupation": "5/16",
+    "characteristic:not_listed|political_opinion": "0/8",
+    "characteristic:not_listed|sex": "11/18",
+    "characteristic:not_yet_covered": "0/35",
+    "setting:failed": "44/55"
+   }
   }
  ],
  "factorial": [
@@ -1280,15 +1353,15 @@
     "setting:failed": "50/55"
    },
    "same_items": {
-    "n": 251,
-    "convict_correct": 164,
-    "convict_n": 170,
-    "acquit_correct": 39,
-    "acquit_n": 81,
-    "recall_convict": 0.9647058823529412,
-    "recall_acquit": 0.48148148148148145,
-    "balanced_accuracy": 0.7230936819172114,
-    "auc": 0.8702977487291212
+    "n": 233,
+    "convict_correct": 152,
+    "convict_n": 158,
+    "acquit_correct": 37,
+    "acquit_n": 75,
+    "recall_convict": 0.9620253164556962,
+    "recall_acquit": 0.49333333333333335,
+    "balanced_accuracy": 0.7276793248945148,
+    "auc": 0.8570464135021097
    }
   },
   {
@@ -1317,15 +1390,15 @@
     "setting:failed": "0/55"
    },
    "same_items": {
-    "n": 251,
-    "convict_correct": 170,
-    "convict_n": 170,
+    "n": 233,
+    "convict_correct": 158,
+    "convict_n": 158,
     "acquit_correct": 0,
-    "acquit_n": 81,
+    "acquit_n": 75,
     "recall_convict": 1.0,
     "recall_acquit": 0.0,
     "balanced_accuracy": 0.5,
-    "auc": 0.7567538126361656
+    "auc": 0.7534599156118144
    }
   },
   {
@@ -1354,15 +1427,15 @@
     "setting:failed": "1/19"
    },
    "same_items": {
-    "n": 251,
-    "convict_correct": 170,
-    "convict_n": 170,
-    "acquit_correct": 12,
-    "acquit_n": 81,
+    "n": 233,
+    "convict_correct": 158,
+    "convict_n": 158,
+    "acquit_correct": 11,
+    "acquit_n": 75,
     "recall_convict": 1.0,
-    "recall_acquit": 0.14814814814814814,
-    "balanced_accuracy": 0.5740740740740741,
-    "auc": 0.9055192447349311
+    "recall_acquit": 0.14666666666666667,
+    "balanced_accuracy": 0.5733333333333334,
+    "auc": 0.8948523206751055
    }
   },
   {
@@ -1391,15 +1464,15 @@
     "setting:failed": "1/19"
    },
    "same_items": {
-    "n": 249,
-    "convict_correct": 169,
-    "convict_n": 169,
+    "n": 233,
+    "convict_correct": 158,
+    "convict_n": 158,
     "acquit_correct": 1,
-    "acquit_n": 80,
+    "acquit_n": 75,
     "recall_convict": 1.0,
-    "recall_acquit": 0.0125,
-    "balanced_accuracy": 0.50625,
-    "auc": 0.7623150887573964
+    "recall_acquit": 0.013333333333333334,
+    "balanced_accuracy": 0.5066666666666667,
+    "auc": 0.760210970464135
    }
   },
   {
@@ -1428,15 +1501,15 @@
     "setting:failed": "3/19"
    },
    "same_items": {
-    "n": 249,
-    "convict_correct": 169,
-    "convict_n": 169,
+    "n": 233,
+    "convict_correct": 158,
+    "convict_n": 158,
     "acquit_correct": 3,
-    "acquit_n": 80,
+    "acquit_n": 75,
     "recall_convict": 1.0,
-    "recall_acquit": 0.0375,
-    "balanced_accuracy": 0.51875,
-    "auc": 0.7777366863905325
+    "recall_acquit": 0.04,
+    "balanced_accuracy": 0.52,
+    "auc": 0.7755274261603375
    }
   },
   {
@@ -1465,15 +1538,52 @@
     "setting:failed": "3/19"
    },
    "same_items": {
-    "n": 250,
-    "convict_correct": 169,
-    "convict_n": 169,
+    "n": 233,
+    "convict_correct": 158,
+    "convict_n": 158,
     "acquit_correct": 3,
-    "acquit_n": 81,
+    "acquit_n": 75,
     "recall_convict": 1.0,
-    "recall_acquit": 0.037037037037037035,
-    "balanced_accuracy": 0.5185185185185185,
-    "auc": 0.7621447877858134
+    "recall_acquit": 0.04,
+    "balanced_accuracy": 0.52,
+    "auc": 0.7567088607594936
+   }
+  },
+  {
+   "lang": "de",
+   "rung": "R5e",
+   "framing": "conv",
+   "n": 233,
+   "convict_correct": 156,
+   "convict_n": 158,
+   "acquit_correct": 36,
+   "acquit_n": 75,
+   "recall_convict": 0.9873417721518988,
+   "recall_acquit": 0.48,
+   "balanced_accuracy": 0.7336708860759493,
+   "auc": 0.8636286919831223,
+   "acquit_by_reason": {
+    "act_date:not_in_force": "0/9",
+    "characteristic:not_listed|age": "5/8",
+    "characteristic:not_listed|canton": "3/5",
+    "characteristic:not_listed|disability": "0/1",
+    "characteristic:not_listed|gender_identity": "4/4",
+    "characteristic:not_listed|occupation": "3/6",
+    "characteristic:not_listed|political_opinion": "0/4",
+    "characteristic:not_listed|sex": "6/6",
+    "characteristic:not_yet_covered": "0/13",
+    "setting:failed": "15/19"
+   },
+   "same_items": {
+    "n": 233,
+    "convict_correct": 156,
+    "convict_n": 158,
+    "acquit_correct": 36,
+    "acquit_n": 75,
+    "recall_convict": 0.9873417721518988,
+    "recall_acquit": 0.48,
+    "balanced_accuracy": 0.7336708860759493,
+    "auc": 0.8636286919831223
    }
   },
   {
@@ -1502,15 +1612,15 @@
     "setting:failed": "23/55"
    },
    "same_items": {
-    "n": 251,
-    "convict_correct": 170,
-    "convict_n": 170,
+    "n": 233,
+    "convict_correct": 158,
+    "convict_n": 158,
     "acquit_correct": 8,
-    "acquit_n": 81,
+    "acquit_n": 75,
     "recall_convict": 1.0,
-    "recall_acquit": 0.09876543209876543,
-    "balanced_accuracy": 0.5493827160493827,
-    "auc": 0.8084967320261438
+    "recall_acquit": 0.10666666666666667,
+    "balanced_accuracy": 0.5533333333333333,
+    "auc": 0.8038818565400844
    }
   },
   {
@@ -1539,15 +1649,15 @@
     "setting:failed": "1/55"
    },
    "same_items": {
-    "n": 251,
-    "convict_correct": 170,
-    "convict_n": 170,
+    "n": 233,
+    "convict_correct": 158,
+    "convict_n": 158,
     "acquit_correct": 1,
-    "acquit_n": 81,
+    "acquit_n": 75,
     "recall_convict": 1.0,
-    "recall_acquit": 0.012345679012345678,
-    "balanced_accuracy": 0.5061728395061729,
-    "auc": 0.7506172839506173
+    "recall_acquit": 0.013333333333333334,
+    "balanced_accuracy": 0.5066666666666667,
+    "auc": 0.7561181434599156
    }
   },
   {
@@ -1576,15 +1686,15 @@
     "setting:failed": "1/19"
    },
    "same_items": {
-    "n": 250,
-    "convict_correct": 169,
-    "convict_n": 169,
+    "n": 233,
+    "convict_correct": 158,
+    "convict_n": 158,
     "acquit_correct": 1,
-    "acquit_n": 81,
+    "acquit_n": 75,
     "recall_convict": 1.0,
-    "recall_acquit": 0.012345679012345678,
-    "balanced_accuracy": 0.5061728395061729,
-    "auc": 0.7730294396961064
+    "recall_acquit": 0.013333333333333334,
+    "balanced_accuracy": 0.5066666666666667,
+    "auc": 0.7640506329113924
    }
   },
   {

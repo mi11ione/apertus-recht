@@ -1,18 +1,21 @@
 {
  "files": {
-  "eval/core_de.jsonl": "b255afc7779e53d383c07e42487af3ecf45826d757395d59ac74910f85fb88cd",
-  "eval/prompts_core_de.jsonl": "c8017e18bf989d6a10e1e398a3c7b6ace327d869d24ddd0b5094ca7eabbcc278",
+  "eval/core_de.jsonl": "b672eae47c92acb7718d5b24cd67e986a35efaa774adc5554dfdb38bcec16fba",
+  "eval/prompts_core_de.jsonl": "96bc7bc2f7e767157e1f74a5656fc6f9540351520421f9809e6eadaad96e07b3",
   "metadata/generator/answers/de.yaml": "e617d32eb1ef98202e964ec0d06ea03ed3f5f904420811a831a4ba0f14e6495f",
-  "metadata/generator/design.yaml": "9bc598ea6ba52cc37997deb3fe3c7a74c22da63eba18f48f8449cc3a3c56227d",
+  "metadata/generator/design.yaml": "dbd86dc545ea3256a0b15676210396fcb05ecf3c48e793f01e7863a575108c37",
   "metadata/generator/prompts/de.yaml": "20a72f7a982852ecc29825d9dbadaa67433ea3021d09be444cb0e22590d2d57a",
+  "metadata/generator/sources/eli_cc_2010_267__art_329__de__2025-04-01.json": "2cf6b180d0d60b98fb40e685d16881665488bdb0a12f258153edc8f76ac218e0",
+  "metadata/generator/sources/eli_cc_54_757_781_799__art_179_bis__de__2026-10-01.json": "abdca06cdc2092a7e85fa7ec7479a562a27acadebfa705a04f5a66c72b7a811e",
+  "metadata/generator/sources/eli_cc_54_757_781_799__art_179_quinquies__de__2026-10-01.json": "eeb2cc1ffa59ef59b92530591790aaf9ee973a36903eb2fe83a846062eb98f39",
   "metadata/generator/sources/eli_cc_54_757_781_799__art_179_ter__de__2026-10-01.json": "edd9398f26d2883e71eec32e4171e9617a606f3882f530f863a1205210ca8e93",
   "metadata/generator/sources/eli_cc_54_757_781_799__art_30__de__2026-10-01.json": "1bb8bc3a8725d3ced7ad5e1e05be5b83752fa085610bc5ecb0263e2b516422c4",
   "metadata/generator/sources/eli_cc_54_757_781_799__art_31__de__2026-10-01.json": "3d7fdaf5b73bd6758f4ec858042c8539f277ccc865e4fc0c8b87c394b51b88ed",
-  "metadata/generator/statute.yaml": "5135c9da9231d6043b672ff811cbdb1907a57871f7b2b97475cb7bce84f3df75",
-  "metadata/generator/templates/de.yaml": "e8f9b94569b1bbf78f2b6b4248f3a4b61f88970cb84d9921d7a6bd276a6e341f",
-  "metadata/items.jsonl": "ce33add664b144ddc6ef7e23a58987a28c2e2551362d936fa538d07814fdbcec",
-  "metadata/sources.json": "3fea523b2d7535d27d8e91b14a0e4db50d631c3029ebfbb227f70557a6b643cf",
-  "responses/publicai-70b-179ter.jsonl": "9769bae26e1ab13415755c771d2099138a2e18f3866bc5dae898aabce591e092",
-  "responses/publicai-70b-179ter.meta.json": "4c5b20f1c3db4f8bcd3284269a3b1693d6f67a83d889b2c06b94f0ea9fad32f8"
+  "metadata/generator/statute.yaml": "4996c6176bca15982b85e2c054d8883da8f743c164822eefa9cd8a35a88ad702",
+  "metadata/generator/templates/de.yaml": "9c5c75f3adbe664c4b63bf0a9f0f9406ad65955f1e72c9197cc6615c4a5cf272",
+  "metadata/items.jsonl": "76a176b1f0fcc4ce72a8770f31de1122f1ff5a8b1d191f71ef1c4ad82b0aa7ba",
+  "metadata/sources.json": "945218de0bf2028977f877704591d5bc660b9fb14b6f55c7a60450fbf97ab598",
+  "responses/publicai-70b-179ter.jsonl": "d54b4b877e15cf81b17696a0b2e69adf7d5c0ef2f78ae24e322fd7653e4e993f",
+  "responses/publicai-70b-179ter.meta.json": "146eb0088bdbfcff668c356116a17f359eb2876bd8113cab5574c7da75ed6016"
  }
 }

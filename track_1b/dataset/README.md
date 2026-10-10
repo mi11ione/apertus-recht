@@ -98,7 +98,7 @@ the pinned statute text and BGE 130 IV 111 E. 5.2, never written by hand.
 - **Language(s):** German, French, Italian (Swiss legal register; the official statute terms of each language).
 - **License:** CDLA-Permissive-2.0 (all items; per-item licence components in `metadata/items.jsonl`).
 - **Git repository:** https://github.com/mi11ione/apertus-recht (generator, gold engine, harness, tests; Apache-2.0).
-- **Version:** 1.0.0 (generator 1.0.0, seed 261). Changelog at the end.
+- **Version:** 1.1.0 (generator 1.0.0, seed 261). Changelog at the end.
 
 ## Uses
 ### Direct Use
@@ -180,7 +180,9 @@ non-public conversation, the recorder is a participant (a third party falls unde
 recording, no consent, timely complaint (a procedural element 261bis does not have). 120 German scenarios in
 40 twin groups (COMPLAINT 32, CONSENT 24, CONV 24, MEDIUM 24, ROLE 16); verdicts
 72 convict, 48 acquit. Sources pinned like 261bis: the
-Fedlex texts of Art. 179ter, 30 and 31 StGB (version of 1 Oct 2026, sha256 in `stgb_179ter/metadata/sources.json`).
+Fedlex texts of Art. 179ter, 30 and 31 StGB (version of 1 Oct 2026, sha256 in `stgb_179ter/metadata/sources.json`),
+and, for the scope notes the answers make, Art. 179bis and 179quinquies StGB and Art. 329 StPO (A15). Acts are dated
+from September 2023, after the harmonised penalty ranges entered into force (1 Jul 2023).
 Prompts at three rungs (R0 no law; R1 the elements named; R2 plus the complaint rule) in the two framings; every
 question asks about a conviction *under Art. 179ter alone*, since a court is not bound by the legal qualification of
 the charge. German only, not pre-registered and not part of the held-out test: it shows that the method carries to a
@@ -189,7 +191,8 @@ asked for wording fixes, applied before any model was scored: the question restr
 instead of an indictment (no indictment of a complaint offence without a complaint), no legal conclusions in the facts
 ("Täter", "betroffen"), a rent talk in the landlord's flat instead of a phone call (business calls are exempt under
 Art. 179quinquies). Scope of the gold: it answers only "conviction under Art. 179ter". An outsider who records may be
-punishable under Art. 179bis; without a timely complaint the proceedings are discontinued (Art. 329 Abs. 4 StPO), which
+punishable under Art. 179bis; without a timely complaint the proceedings are discontinued (Art. 329 Abs. 4 StPO), so for the 16 complaint items
+the verdict framing has no correct answer and they are read in the Ja/Nein framing only; this
 is not an acquittal on the merits; justification, Art. 179quinquies and intent are assumed; a video with sound counts
 as a sound recording (only handwritten notes are tested as a medium that is not); «schuldig / nicht schuldig» are
 answer tokens, not Swiss dispositive wording. Files: `stgb_179ter/eval/`, `stgb_179ter/metadata/`,
@@ -203,8 +206,8 @@ Apertus v1.5 70B (`publicai-70b-179ter`):
 | R0 | schuldig / nicht schuldig | 3/48 | 72/72 | 0.53 |
 | R1 | Ja/Nein | 11/48 | 72/72 | 0.61 |
 | R1 | schuldig / nicht schuldig | 0/48 | 72/72 | 0.50 |
-| R2 | Ja/Nein | 33/48 | 58/72 | 0.75 |
-| R2 | schuldig / nicht schuldig | 19/48 | 72/72 | 0.70 |
+| R2 | Ja/Nein | 34/48 | 58/72 | 0.76 |
+| R2 | schuldig / nicht schuldig | 22/48 | 72/72 | 0.73 |
 
 | acquittal decided by (Ja/Nein) | R0 | R1 | R2 |
 |---|---|---|---|
@@ -212,7 +215,7 @@ Apertus v1.5 70B (`publicai-70b-179ter`):
 | consent:failed | 8/8 | 3/8 | 7/8 |
 | conversation:failed | 8/8 | 0/8 | 2/8 |
 | medium:failed | 8/8 | 8/8 | 6/8 |
-| role:failed | 8/8 | 0/8 | 2/8 |
+| role:failed | 8/8 | 0/8 | 3/8 |
 
 A framing that answers one way for every scenario reads no element: with no law (R0), Ja/Nein says "Nein" to all 120
 (all acquittals "recognised", no conviction kept), while the verdict word convicts all. Only with the complaint rule
@@ -289,11 +292,12 @@ Art. 2 StGB, the Regeste of BGE 130 IV 111; no rule summary): 939/939 settled it
 code gold, κ against gold 1.000. All labels: [`review/`](review/).
 **Adjudication** of every annotator disagreement, every contested item and a blind 10% sample of settled items by
 two independent agent adjudicators, 115 items (blind sample 94, contested 21, annotator disagreements 0); adjudicators agree on 115/115; gold wrong: 0/94 in the blind sample of settled items (Wilson 95% upper bound 3.9%), 0/21 contested items.
-**Court validation** of the gold engine against real decisions: 326 decisions triaged (stratum A: 150, stratum B: 176); 58 in scope (55 convictions, 3 acquittals); engine agrees with the court in 58/58 (Wilson 95% 0.94-1.00; an engine that always convicts would agree in 55/58; acquittals 3/3, Wilson 0.44-1.00); 24 out of scope (unmodelled grounds), 50 unextractable, 194 excluded; every tuple extracted twice by independent agents, conflicts settled by a third (amendment A4). Counted per distinct case (post hoc,
+**Court validation** of the gold engine against real decisions: 326 decisions triaged (stratum A: 150, stratum B: 176); 57 in scope (55 convictions, 2 acquittals); engine agrees with the court in 57/57 (Wilson 95% 0.94-1.00; an engine that always convicts would agree in 55/57; acquittals 2/2, Wilson 0.34-1.00); 24 out of scope (unmodelled grounds), 50 unextractable, 195 excluded; every tuple extracted twice by independent agents, conflicts settled by a third (amendment A4). Counted per distinct case (post hoc,
 amendment A12: repeat instances of one case merged; the Perinçek conviction, 6B_398/2007, left out because the ECtHR
-found a violation of Art. 10 ECHR and the Federal Court revised it, 6F_6/2016): 53/53,
-6 of them genocide denial; of the 3 acquittals
-one is clean, one agrees on the outcome on another ground, one predates BGE 130 IV 111.
+found a violation of Art. 10 ECHR and the Federal Court revised it, 6F_6/2016): 52/52,
+6 of them genocide denial; of the 2 acquittals
+one is clean and one agrees on the outcome on another ground (amendment A15 reclassified BGE 126 IV 176, a cassation
+and remand, as not an acquittal).
 #### Annotator Details
 All annotation, adjudication and court-tuple extraction was done by Claude agents (Anthropic), declared as AI, working
 blind (opaque ids, no access to code or gold). No human labels: every label in this release can be regenerated by
@@ -320,7 +324,9 @@ alongside results, since 4-bit conversions changed verdicts in our measurements.
 33 runs (`responses/<run>.jsonl` with `<run>.meta.json`): 8b-bf16-DPO, 8b-bf16-RLVR, 8b-bf16-blend-RLVR-DPO-a0.25, 8b-bf16-blend-RLVR-DPO-a0.5, 8b-bf16-blend-RLVR-DPO-a0.75, 8b-gguf-q4_k_m, 8b-gguf-q4_k_m-cpu-core, 8b-gguf-q4_k_m-cpu-pref, 8b-gguf-q8_0, 8b-mlx4-DPO, 8b-mlx4-RLVR, 8b-mlx4-SFT, 8b-mlx4-base-completion, 8b-mlx4-final, publicai-70b-ctrl-de, publicai-70b-ctrl-fr, publicai-70b-ctrl-it, publicai-70b-fc, publicai-70b-fc-core, publicai-70b-fc-core-fr, publicai-70b-fc-core-it, publicai-70b-fc-lay, publicai-70b-gen, publicai-70b-open, publicai-70b-open-fr, publicai-70b-open-it, publicai-70b-pref, publicai-70b-pref-fr, publicai-70b-pref-it, publicai-70b-r5x-de, publicai-70b-r6-fr, publicai-70b-r6-it, qwen3-8b-mlx4.
 
 ## Changelog
-- 1.0.0 (2026-10): first release. Generator 1.0.0, seed 261. Files and hashes: `MANIFEST.json` (176 files).
+- 1.1.0 (2026-10-10): amendments A12–A15 (controls, free text in French and Italian, Art. 179ter, corrections);
+  no item or gold label of 1.0.0 changed. Files and hashes: `MANIFEST.json` (176 files).
+- 1.0.0 (2026-10-10): first release. Generator 1.0.0, seed 261.
   Pre-registration ([`docs/PREREG.md`](docs/PREREG.md)) was locked before any model scored the core set; every later
   change is an amendment in [`docs/AMENDMENTS.md`](docs/AMENDMENTS.md):
   A1 design moved into YAML, output byte-identical; A2 FR/IT surface fixes from back-translation; A3 one contested

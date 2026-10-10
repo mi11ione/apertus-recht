@@ -63,8 +63,9 @@ FRAMINGS = ["conv", "ver"]
 # R5a = R3's question block after the verbatim law; R5b = R5 without the Regeste's closing example (consid. 6, a
 # closed meeting where publicity was affirmed); R5c = R5 with R1's element-check instruction after the law instead of
 # the "Frage:" label (R6 puts it before the law); R5d = R5 with Art. 1 StGB (no penalty without law) before Art. 2.
+# A15: R5e = R5a with legal text of the same length that does not bear on the case instead of the law (German only).
 # Framing `rev` asks for an acquittal ("yes" = acquit).
-CONTROL_RUNGS = ["R5a", "R5b", "R5c", "R5d"]
+CONTROL_RUNGS = ["R5a", "R5b", "R5c", "R5d", "R5e"]
 
 
 def rung_names(d: Design, lang: str) -> list[str]:
@@ -111,7 +112,29 @@ def question(d: Design, lang: str, rung: str, framing: str) -> str:
     if rung == "R5d":
         lt = p["law_text"]
         return lt["intro"] + law_block(d, lang, art1=True) + lt["question"] + p["tails"][framing]
+    if rung == "R5e":
+        return p["law_text"]["intro"] + _length_control(d, lang) + head + p["closed_list"] + p["tails"][framing]
     raise ValueError(rung)
+
+
+def control_rungs(d: Design, lang: str) -> list[str]:
+    """The A13/A15 control rungs this language defines (R5d needs Art. 1, R5e the length-control texts)."""
+    lt = d.prompts[lang].get("law_text") or {}
+    return [r for r in CONTROL_RUNGS if (r != "R5d" or "art1_control" in lt) and (r != "R5e" or "length_control" in lt)]
+
+
+def _length_control(d: Design, lang: str) -> str:
+    """Pinned legal texts of about the law block's length that do not bear on the case (control R5e, A15)."""
+    import hashlib
+    import json
+    parts = []
+    for spec in d.prompts[lang]["law_text"]["length_control"]:
+        rec = json.loads((d.statute.path.parent / spec["file"]).read_text(encoding="utf-8"))
+        text = "\n".join(rec["paragraphs"])
+        if hashlib.sha256(text.encode()).hexdigest() != spec["text_sha256"]:
+            raise ValueError(f"{spec['file']}: text does not match its pinned sha256")
+        parts.append(f"{spec['label']}\n{text}")
+    return "\n\n".join(parts)
 
 
 def drop_exemplar(regeste: str) -> str:

@@ -47,7 +47,14 @@ th{text-align:left;font-weight:500;color:#555;border-bottom:.6pt solid #000;padd
 td{border-bottom:.3pt solid #c8c8c8;padding:.8mm 2mm .8mm 0;vertical-align:top}
 td:first-child,th:first-child{font-family:'Sans';font-size:8.6pt}
 img{width:100%;display:block;margin:2mm 0 1mm;break-inside:avoid}
-figure{margin:0 0 3mm;break-inside:avoid}
+figure{margin:1mm 0 3mm;break-inside:avoid}
+figure img{margin:0 0 1mm}
+figure table{margin:0 0 1mm}
+figcaption{font-size:8.4pt;line-height:1.32;font-style:italic;color:#222}
+table.twin{font:7.6pt/1.3 'Sans'}
+table.twin td,table.twin th{font-family:'Sans'}
+table.twin td.m{font:7.9pt/1.3 'Plex';white-space:nowrap}
+table.twin b{font-weight:600;background:#f1f1ef}
 blockquote{margin:0 0 2mm;padding-left:3mm;border-left:2pt solid #dc0018}
 strong{font-weight:600}
 a{color:#000;text-decoration:none}
@@ -120,7 +127,60 @@ def tables(R: dict) -> dict:
                 return f"{c['passed']}/{c['n']}" if c else "–"
             L.append(f"| free text {rung} | {name} | DE | " + " | ".join(cell(k) for k, _ in cols) + " |")
     out["preference"] = "\n".join(L)
+    out["twin"] = twin_table()
     return out
+
+
+TWIN = "261bis-de-SET018"                     # the twin pair shown in Table 1: a rally vs. a message to the sister
+TWIN_RUN, TWIN_OPEN = "publicai-70b-fc-core", "publicai-70b-open"
+
+
+def _jl(path):
+    return [json.loads(l) for l in path.read_text(encoding="utf-8").splitlines() if l.strip()]
+
+
+def twin_table() -> str:
+    """Table 1, read from the released files: one German twin pair, the law's verdict, Apertus 70B's Ja/Nein answers at
+    R0 / R3 / R5 and the first sentence of its free-text answer at R0 with the judges' reading."""
+    import difflib
+    import html
+    items = {i["id"]: i for i in _jl(ROOT / "dataset/eval/core_de.jsonl")}
+    fc = {r["prompt_id"]: r for r in _jl(ROOT / f"dataset/responses/{TWIN_RUN}.jsonl")}
+    op = {r["prompt_id"]: r for r in _jl(ROOT / f"dataset/responses/{TWIN_OPEN}.jsonl")}
+    jdir = ROOT / "statutes/stgb_261bis/review/open_judge"
+    ids = {v: k for k, v in json.loads((jdir / "ids.json").read_text()).items()}
+    judged = {}
+    for p in jdir.glob("judge_*.json"):
+        for x in json.loads(p.read_text()):
+            judged.setdefault(x["id"], []).append(bool(x.get("misleads")))
+    base, var = items[f"{TWIN}-0"], items[f"{TWIN}-1"]
+    a, b = base["text"].removeprefix("Sachverhalt: ").split(), var["text"].removeprefix("Sachverhalt: ").split()
+    sm = difflib.SequenceMatcher(a=a, b=b)
+    ops = [o for o in sm.get_opcodes() if o[0] != "equal"]
+    # one contiguous span from the first to the last changed word (the slot that differs between the twins)
+    i1, i2, j1, j2 = min(o[1] for o in ops), max(o[2] for o in ops), min(o[3] for o in ops), max(o[4] for o in ops)
+    def marked(words, lo, hi):
+        return " ".join(filter(None, [html.escape(" ".join(words[:lo])), f"<b>{html.escape(' '.join(words[lo:hi]))}</b>",
+                                      html.escape(" ".join(words[hi:]))]))
+    base_txt = marked(a, i1, i2)
+    var_txt = "… <b>" + html.escape(" ".join(b[j1:j2])) + "</b> …"
+    rows = []
+    for it, text in ((base, base_txt), (var, var_txt)):
+        gold = it["gold_verdict"]
+        ans = []
+        for rung in ("R0", "R3", "R5"):
+            d = fc[f"{it['id']}/{rung}/conv"]["decision"]
+            word = "Ja" if d == "convict" else "Nein"
+            ans.append(f'<span class="red">{word}</span>' if d != gold else word)
+        r = op.get(f"{it['id']}/R0/open")
+        first = re.split(r"(?<=[.!?])\s", (r or {}).get("text", "").strip())[0] if r else "–"
+        votes = judged.get(ids.get(f"{it['id']}/R0/open"), [])
+        bad = votes and sum(votes) * 2 > len(votes)
+        ft = html.escape(first) + (f' <span class="red">(misleading: {sum(votes)} of {len(votes)} judges)</span>' if bad else "")
+        rows.append(f"<tr><td>{text}</td><td class=m>{'convict' if gold == 'convict' else 'acquit'}</td>"
+                    f"<td class=m>{' · '.join(ans)}</td><td>{ft}</td></tr>")
+    return ('<table class="twin"><tr><th style="width:44%">Scenario (the changed fact in bold)</th><th>Law</th>'
+            '<th>70B Ja/Nein<br>R0 · R3 · R5</th><th>70B free text, R0 (first sentence)</th></tr>' + "".join(rows) + "</table>")
 
 
 def md_lists(md: str) -> str:
@@ -166,6 +226,11 @@ def main() -> None:
         return f"![{m.group(1)}](data:image/png;base64,{base64.b64encode(p.read_bytes()).decode()})"
     md = re.sub(r"!\[([^\]]*)\]\(([^)]+\.png)\)", fig, md)
     html = markdown.markdown(md, extensions=["tables", "fenced_code", "sane_lists"])
+    # keep every figure and every captioned table together with its caption (never split across pages)
+    html = re.sub(r"<p>(<img[^>]*>)</p>\s*<p><em>(Figure.*?)</em></p>", r"<figure>\1<figcaption>\2</figcaption></figure>",
+                  html, flags=re.S)
+    html = re.sub(r"(<table[^>]*>(?:(?!<table).)*?</table>)\s*<p><em>(Table.*?)</em></p>",
+                  r"<figure>\1<figcaption>\2</figcaption></figure>", html, flags=re.S)
     fonts = "".join([font_face("Sans", "SourceSans3-Regular.ttf", 400), font_face("Sans", "SourceSans3-Semibold.ttf", 600),
                      font_face("Plex", "IBMPlexMono-Regular.ttf", 400), font_face("Plex", "IBMPlexMono-Medium.ttf", 500)])
     css = CSS.replace("__DATE__", datetime.date.today().strftime("%d.%m.%Y"))
@@ -175,8 +240,13 @@ def main() -> None:
     chrome = next((c for c in CHROME if shutil.which(c) or Path(c).exists()), None)
     if not chrome:
         raise SystemExit("no Chrome/Chromium found for PDF printing")
-    subprocess.run([chrome, "--headless=new", "--disable-gpu", "--no-pdf-header-footer", f"--print-to-pdf={a.pdf}",
-                    out_html.as_uri()], check=True, capture_output=True)
+    import time
+    t0 = time.time()
+    # headless Chrome sometimes exits non-zero on teardown after writing the PDF: judge by the file, not the exit code
+    r = subprocess.run([chrome, "--headless=new", "--disable-gpu", "--no-pdf-header-footer", f"--print-to-pdf={a.pdf}",
+                        out_html.as_uri()], capture_output=True, text=True)
+    if not Path(a.pdf).exists() or Path(a.pdf).stat().st_mtime < t0 or Path(a.pdf).stat().st_size == 0:
+        raise SystemExit(f"Chrome did not write {a.pdf} (exit {r.returncode}): {r.stderr[-400:]}")
     pages = len(re.findall(rb"/Type\s*/Page[^s]", Path(a.pdf).read_bytes()))
     print(f"{a.pdf}: {pages} pages")
     if pages > 6:

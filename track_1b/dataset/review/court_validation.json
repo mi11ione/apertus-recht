@@ -1,5 +1,5 @@
 {
- "summary": "326 decisions triaged (stratum A: 150, stratum B: 176); 58 in scope (55 convictions, 3 acquittals); engine agrees with the court in 58/58 (Wilson 95% 0.94-1.00; an engine that always convicts would agree in 55/58; acquittals 3/3, Wilson 0.44-1.00); 24 out of scope (unmodelled grounds), 50 unextractable, 194 excluded; every tuple extracted twice by independent agents, conflicts settled by a third (amendment A4)",
+ "summary": "326 decisions triaged (stratum A: 150, stratum B: 176); 57 in scope (55 convictions, 2 acquittals); engine agrees with the court in 57/57 (Wilson 95% 0.94-1.00; an engine that always convicts would agree in 55/57; acquittals 2/2, Wilson 0.34-1.00); 24 out of scope (unmodelled grounds), 50 unextractable, 195 excluded; every tuple extracted twice by independent agents, conflicts settled by a third (amendment A4)",
  "pool": {
   "pool": 754,
   "pool_citing_bge": 130,
@@ -1259,17 +1259,17 @@
   "B": {
    "label": "B",
    "decisions": 176,
-   "in_scope": 28,
-   "agree": 28,
+   "in_scope": 27,
+   "agree": 27,
    "ci": [
-    0.8793566952341543,
+    0.8754449702581328,
     0.9999999999999998
    ],
    "counts": {
-    "excluded": 109,
+    "excluded": 110,
     "out_of_scope": 16,
-    "in_scope": 28,
-    "unextractable": 23
+    "unextractable": 23,
+    "in_scope": 27
    },
    "by_class": {
     "convictions": {
@@ -1281,23 +1281,21 @@
      ]
     },
     "acquittals": {
-     "agree": 2,
-     "n": 2,
+     "agree": 1,
+     "n": 1,
      "ci": [
-      0.34238022750665303,
+      0.20654931437723745,
       1.0
      ],
-     "ground_fails_in_engine": 2,
-     "before_bge_130_iv_111": [
-      "bge_126 IV 176"
-     ]
+     "ground_fails_in_engine": 1,
+     "before_bge_130_iv_111": []
     },
-    "always_convict_baseline": "26/28"
+    "always_convict_baseline": "26/27"
    },
    "court_convict": 26,
-   "court_acquit": 2,
+   "court_acquit": 1,
    "confusion": {
-    "court acquit / engine acquit": 2,
+    "court acquit / engine acquit": 1,
     "court convict / engine convict": 26
    }
   }
@@ -1305,15 +1303,15 @@
  "pooled": {
   "label": "pooled",
   "decisions": 326,
-  "in_scope": 58,
-  "agree": 58,
+  "in_scope": 57,
+  "agree": 57,
   "ci": [
-   0.9378821442127971,
-   1.0
+   0.9368611651470209,
+   0.9999999999999998
   ],
   "counts": {
-   "excluded": 194,
-   "in_scope": 58,
+   "excluded": 195,
+   "in_scope": 57,
    "unextractable": 50,
    "out_of_scope": 24
   },
@@ -1327,23 +1325,21 @@
     ]
    },
    "acquittals": {
-    "agree": 3,
-    "n": 3,
+    "agree": 2,
+    "n": 2,
     "ci": [
-     0.4385029682449546,
+     0.34238022750665303,
      1.0
     ],
-    "ground_fails_in_engine": 3,
-    "before_bge_130_iv_111": [
-     "bge_126 IV 176"
-    ]
+    "ground_fails_in_engine": 2,
+    "before_bge_130_iv_111": []
    },
-   "always_convict_baseline": "55/58"
+   "always_convict_baseline": "55/57"
   },
   "court_convict": 55,
-  "court_acquit": 3,
+  "court_acquit": 2,
   "confusion": {
-   "court acquit / engine acquit": 3,
+   "court acquit / engine acquit": 2,
    "court convict / engine convict": 55
   }
  },
@@ -1352,49 +1348,46 @@
   "added": 26,
   "agree": 26,
   "acquittals": 1,
-  "combined": "84/84"
+  "combined": "83/83"
  },
  "counts": {
-  "excluded": 194,
-  "in_scope": 58,
+  "excluded": 195,
+  "in_scope": 57,
   "unextractable": 50,
   "out_of_scope": 24
  },
- "in_scope": 58,
- "agree": 58,
+ "in_scope": 57,
+ "agree": 57,
  "agreement_ci": [
-  0.9378821442127971,
-  1.0
+  0.9368611651470209,
+  0.9999999999999998
  ],
- "verified": 58,
- "verified_agree": 58,
+ "verified": 57,
+ "verified_agree": 57,
  "confusion": {
-  "court acquit / engine acquit": 3,
+  "court acquit / engine acquit": 2,
   "court convict / engine convict": 55
  },
  "by_ground": {
-  "setting": 2,
+  "setting": 1,
   "characteristic": 1
  },
  "disagreements": [],
  "case_level": {
   "note": "post hoc (A12): distinct cases; one superseded conviction excluded",
-  "cases": 53,
-  "agree": 53,
+  "cases": 52,
+  "agree": 52,
   "ci": [
-   0.932418011423458,
-   0.9999999999999999
+   0.9312077638761376,
+   1.0
   ],
-  "acquittal_cases": 3,
-  "acquittals_before_bge_130": [
-   "bge_126 IV 176"
-  ],
+  "acquittal_cases": 2,
+  "acquittals_before_bge_130": [],
   "genocide_denial_cases": 6,
-  "incitement_or_degradation_cases": 47,
+  "incitement_or_degradation_cases": 46,
   "genocide_denial_instances": 10,
   "acquittals": {
    "zh_obergericht_SB230225": "same outcome, other ground (court: setting; engine: characteristic:not_listed)",
-   "bge_126 IV 176": "predates BGE 130 IV 111",
    "zh_bezirksgericht_buelach_GG210066": "clean"
   },
   "merged_instances": 4,
@@ -3373,23 +3366,10 @@
    "decision_id": "bge_126 IV 176",
    "court": "bge",
    "language": "de",
-   "outcome": "acquitted",
+   "outcome": "remanded",
    "verified": "second extraction",
-   "status": "in_scope",
-   "engine": "acquit",
-   "engine_reason": "setting:failed",
-   "court_verdict": "acquit",
-   "agree": true,
-   "acquittal_ground": "setting",
-   "ground_fails_in_engine": true,
-   "before_bge_130_iv_111": true,
-   "facts": {
-    "act_date": "1995-07-01",
-    "characteristic": "religion",
-    "paragraph": "abs2",
-    "setting": "private"
-   },
-   "engine_input": null,
+   "status": "excluded",
+   "why": "remanded",
    "stratum": "B"
   },
   {
@@ -3456,7 +3436,7 @@
    "decision_id": "bge_BGE_126_IV_176",
    "court": "bge",
    "language": "de",
-   "outcome": "acquitted",
+   "outcome": "remanded",
    "verified": "second extraction",
    "status": "excluded",
    "why": "does not rule on a 261bis charge",

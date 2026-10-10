@@ -1,0 +1,20 @@
+{
+ "eli": "eli/cc/54/757_781_799",
+ "eid": "art_160",
+ "lang": "de",
+ "requested_date": "2026-10-01",
+ "applicability_date": "2026-10-01",
+ "url": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/54/757_781_799/20261001/de/xml/fedlex-data-admin-ch-eli-cc-54-757_781_799-20261001-de-xml.xml",
+ "xml_sha256": "6a83a4d0fe4d6bb4d012750eb5e23141aaff8a1e81c33b7508efdac6299d7b76",
+ "paragraphs": [
+  "Wer eine Sache, von der er weiss oder annehmen muss, dass sie ein anderer durch eine strafbare Handlung gegen das Vermögen erlangt hat, erwirbt, sich schenken lässt, zum Pfande nimmt, verheimlicht oder veräussern hilft, wird mit Freiheitsstrafe bis zu fünf Jahren oder Geldstrafe bestraft.",
+  "Der Hehler wird nach der Strafandrohung der Vortat bestraft, wenn sie milder ist.",
+  "Ist die Vortat ein Antragsdelikt, so wird die Hehlerei nur verfolgt, wenn ein Antrag auf Verfolgung der Vortat vorliegt.",
+  "Handelt der Täter gewerbsmässig, so wird er mit Freiheitsstrafe von sechs Monaten bis zu zehn Jahren bestraft."
+ ],
+ "text_sha256": "71fe6095881de647bf047c85b569f57b2998f80de634081edb4ce02f95b8fe61",
+ "notes": [
+  "Fassung gemäss Ziff. I 1 des BG vom 17. Dez. 2021 über die Harmonisierung der Strafrahmen, in Kraft seit 1. Juli 2023 (AS 2023 259; BBl 2018 2827)."
+ ],
+ "fetched": "2026-10-10"
+}

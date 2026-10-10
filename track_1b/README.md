@@ -4,7 +4,7 @@
 under Art. 261bis StGB, Apertus v1.5 convicts for words said only at a family dinner, for degrading statements about a canton or
 a profession, and for acts before the article entered into force (1 Jan 1995). Rules spelled out in the prompt fix
 some elements and leave others standing; in German, the verbatim law text, as a retrieval pipeline would paste it,
-changes no verdict. Intent and the dignity threshold are stated in each scenario, so this measures how the model
+changes no verdict. Intent and the dignity threshold are stated in the charge-sheet scenarios, so this measures how the model
 applies the elements, not whether it predicts a conviction.
 
 ![Synopse: the law in force next to the law Apertus applies](docs/figures/fig1_synopse.png)
@@ -18,7 +18,8 @@ Fedlex text and the leading case's Regeste instead. Light red: in one framing; g
 
 - **No law in the prompt: everything is punishable.** The 70B convicts every scenario we wrote in German, and all but
   2 (French) and 1 (Italian) of 215 non-punishable ones (balanced accuracy 0.50). Asked in free text, it calls 73 of 75 scenarios punishable (French and Italian: 75 of 75)
-  that are not punishable under Art. 261bis, each time naming that article. Two Claude judges agree on nearly every
+  that are not punishable under Art. 261bis; every German answer names that article, and most French and Italian ones
+  do (59 and 57; the rest invoke the anti-racism provision without its number). Two Claude judges agree on nearly every
   answer; a judge of another model family, on its own, counts 72 of 75. Retold as a first-person paraphrase instead of a
   charge sheet, the same scenarios fare no better: 2 of 215 acquittals without the law, and the same element profile with the rules
   spelled out.
@@ -35,11 +36,13 @@ Fedlex text and the leading case's Regeste instead. Light red: in one framing; g
 - **Not a yes-bias.** Asked the other way round ("Würde ein Gericht freisprechen?"), the 70B still recognises 0 of 215
   acquittals in every language. With the rules spelled out, the reversed question breaks down instead: it then
   "acquits" half the punishable cases too, so part of that gain is answer-format, not law. Pasting the verbatim law
-  after the plain rules cancels most of their effect; no single sentence of it is to blame (A13).
-- **Not only this article.** A second statute in the same five-file format, Art. 179ter StGB (secretly recording a
+  after the plain rules cancels most of their effect; no single sentence of it is to blame, and it is not the length:
+  legal text of the same length that does not apply leaves the rules' effect intact (36 against 37 of 75; A13, A15).
+- **Not only this article.** A second statute in the same five-file format, Art. 179ter StGB (recording a non-public
   conversation, with a complaint deadline), fails in another shape: without the law the 70B answers "Nein" to all 120
   cases when asked Ja/Nein and "schuldig" to 117 when asked for a verdict, so it reads no element at all; with the
-  elements and the complaint rule stated, a public debate and an outsider are still convicted.
+  elements and the complaint rule stated, a public debate is still convicted, and so is an outsider, whose act falls
+  under Art. 179bis instead.
 - **The date sentence backfires.** One sentence saying that sexual orientation is protected since 1 July 2020 makes the
   70B stop convicting punishable cases from 2021–25: with the verdict word it convicts 0 of 35 in German, 1 in French,
   5 in Italian (with Ja/Nein, Italian holds up: 29 of 35).
@@ -102,12 +105,12 @@ Exact forced choice on vLLM endpoints, first-token log-probabilities elsewhere, 
   939/939 settled items agree with the code gold, deciding element 315/315. Two independent adjudicators then reviewed
   every contested item and a blind sample of settled ones: 115/115 gold correct.
 - **Against Swiss courts.** 326 decisions from `voilaj/swiss-caselaw`, each coded twice by independent agents with a
-  third on conflicts, under a pre-registered rule: the engine agrees with the court in 58/58 rulings on the elements it
+  third on conflicts, under a pre-registered rule: the engine agrees with the court in 57/57 rulings on the elements it
   models (Wilson 95% 0.94–1.00). Counted per distinct case, with repeat instances merged and the Perinçek conviction
-  left out (revised after the ECtHR found a violation of Art. 10 ECHR), it is 53/53, 6 of them genocide denial (post
-  hoc, A12). That checks the conviction side well and the acquittal side weakly: an engine that always convicts would
-  score 55/58, and of the 3 acquittals on a modelled ground one is clean, one agrees on another ground and one predates
-  BGE 130 IV 111. The other rulings turn on
+  left out (revised after the ECtHR found a violation of Art. 10 ECHR), it is 52/52, 6 of them genocide denial (post
+  hoc, A12, A15). That checks the conviction side well and the acquittal side weakly: an engine that always convicts would
+  score 55/57, and of the 2 acquittals on a modelled ground one is clean and one agrees on another ground (a third,
+  BGE 126 IV 176, was a cassation and remand, not an acquittal; corrected in A15). The other rulings turn on
   what the model deliberately leaves out (the dignity threshold, intent, freedom of expression), which maps where the
   next iteration should go.
 - **Against the training data.** 0 of 35,241 item 13-grams occur in the 1,069,365 decisions of `voilaj/swiss-caselaw`

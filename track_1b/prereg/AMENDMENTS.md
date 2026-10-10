@@ -209,3 +209,33 @@ Art. 30/31 StGB). Before any scoring a legal-reviewer agent checked every item: 
 under Art. 179bis; "Polizeirapport" instead of an indictment without complaint; no "Täter" before a verdict; a rent
 talk in the landlord's flat instead of a business call, Art. 179quinquies). Scored for the 70B at R0, R1 (elements)
 and R2 (+ the complaint rule), both framings; `selfcheck` re-derives and re-scores it. Not pre-registered.
+
+## A15 (2026-10-10, 18:40, after judge round 5): corrections, a length control, Italian R3 polarity, checks
+(1) **Court validation, one outcome corrected.** BGE 126 IV 176 (both docket forms) was extracted as an acquittal;
+the Kassationshof set the cantonal judgment aside on the publicity element and remanded it (cassation), so it is not
+an acquittal and, under the pre-registered rule (outcome remanded), not in scope. The correction is applied from
+`review/court/corrections.jsonl` (each entry with its reason; the extracted value is kept as `extracted`), not by
+editing the tuples. In scope now: 57 rulings (55 convictions, 2 acquittals), engine agrees in 57/57 (always-convict
+baseline 55/57); per distinct case 52/52; of the 2 acquittals, one is clean and one agrees on another ground.
+(2) **R5 length control (R5e, German, Ja/Nein).** R3's rules after legal text of the same length that does not bear
+on the case (Art. 139, 144, 146, 147 and 160 StGB, pinned; 2,730 characters, as the law block) instead of the law. On
+the 75 acquittal items every sampled arm shares: R3 37, R5e 36, R5a (R3's rules after the verbatim law) 11, R5 0. The
+law's own text, not prompt length or legal register, cancels the rules. `reports/controls_a13.json` now reports every
+sampled arm on this shared item set (earlier A13 figures, 39 of 81 and 12 of 81, used R5a's items only).
+(3) **Italian R3 with the reversed question** (the run A13 dropped): the 70B convicts every case (0 of 215
+acquittals, 430 of 430 convictions); averaged over both directions, 78 of 215. German and French R3 break the other
+way (they also "acquit" punishable cases), so at R3 the answer depends on the question's polarity in every language.
+(4) **Art. 179ter, after the legal review of round 5:** acts dated September 2023 instead of May 2023 (after the
+1 July 2023 harmonisation of penalty ranges, AS 2023 259; the pinned text is the version of 1 Oct 2026); Art. 179bis,
+179quinquies StGB and Art. 329 StPO pinned because the answers cite them; the 16 complaint items are read in the
+Ja/Nein framing only (a missing or late complaint leads to discontinuation, so «nicht schuldig» is not a correct
+verdict). The 234 prompts the date change touched were re-scored (pre-change responses in
+`archive/publicai-70b-179ter.before-A15.jsonl`); R2 balanced accuracy 0.76 (was 0.75).
+(5) **Checks.** `selfcheck` step 2f fails when `reports/qc.json` differs from a fresh run of the gates; the judge
+aggregation fails when a judge folder has no `bindings.json`; the German bindings are labelled as written after the
+judgements (A12). A numeric slip in the report ("the 8B convicts 13 of 35") is corrected to 14 (Ja/Nein) and 19
+(verdict word) and now claim-checked.
+(6) **Wording** (legal review of round 5): "recording a non-public conversation without consent" instead of "secretly
+recording"; Abs. 2 limitation sentence rewritten; reference dates of the pinned Fedlex consolidations; the register's
+findings say "not yet in force" and "not covered by Art. 261bis", list gender identity in every language, and carry a
+legal notice in German, French and Italian.

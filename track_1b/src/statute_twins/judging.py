@@ -72,7 +72,8 @@ _PROMPTS = {}
 
 
 def _binding(r: dict) -> dict:
-    """What a judgement is bound to: the request hash of the prompt and the sha256 of the answer text it judged."""
+    """What a judgement is bound to: the request hash of the prompt and the sha256 of the answer text it judged. Written
+    with the packets (French, Italian); the German bindings were written afterwards from the judged answers (A12)."""
     return dict(request_sha256=r.get("request_sha256"), answer_sha256=hashlib.sha256(r.get("text", "").encode()).hexdigest())
 
 
@@ -104,9 +105,12 @@ def aggregate(run: str, work: Path):
     # a declared exception keeps a judgement whose prompt changed while the answer stayed byte-identical
     bp = work / "bindings.json"
     binding = dict(checked=0, mismatched=[], exceptions={})
-    if bp.exists():
+    if not bp.exists():
+        # every judge folder written by `packets` has bindings; a folder without them cannot be checked
+        binding["mismatched"].append("bindings.json missing")
+    else:
         for oid, b in json.loads(bp.read_text()).items():
-            if oid not in J:
+            if oid not in J or not isinstance(b, dict):      # "_note" and retired ids
                 continue
             now = _binding(rows[ids[oid]])
             binding["checked"] += 1

@@ -12,7 +12,7 @@ morphology:
   m: {pron: er, poss_dat_n: seinem, poss_dat_m: seinem}
   f: {pron: sie, poss_dat_n: ihrem, poss_dat_m: ihrem}
 dates:
-  d2023_05: "im Mai 2023"
+  d2023_09: "im September 2023"
   d2024_09: "im September 2024"
   d2025_02: "im Februar 2025"
 conversations:

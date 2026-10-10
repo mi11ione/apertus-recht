@@ -95,6 +95,15 @@ def main(*paths: str) -> None:
                 t = json.loads(l)
                 t["stratum"] = stratum
                 tuples.append(t)
+    # corrections found after extraction (each with its amendment and reason); the extracted value is kept as `extracted`
+    cpath = ROOT / "statutes/stgb_261bis/review/court/corrections.jsonl"
+    corrections = [json.loads(l) for l in cpath.read_text(encoding="utf-8").splitlines() if l.strip()] if cpath.exists() else []
+    for c in corrections:
+        for t in tuples:
+            if t["decision_id"] == c["decision_id"] and t.get(c["field"]) == c["from"]:
+                t.setdefault("extracted", {})[c["field"]] = c["from"]
+                t[c["field"]] = c["to"]
+                t["corrected_by"] = c["amendment"]
     # a decision that appears in both strata (e.g. as BGE and as docket) is counted once, in stratum A
     seen = {t["decision_id"] for t in tuples if t["stratum"] == "A"}
     tuples = [t for t in tuples if t["stratum"] == "A" or t["decision_id"] not in seen]

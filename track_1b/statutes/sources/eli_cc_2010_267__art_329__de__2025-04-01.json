@@ -1,0 +1,18 @@
+{
+ "eli": "eli/cc/2010/267",
+ "eid": "art_329",
+ "lang": "de",
+ "requested_date": "2026-10-01",
+ "applicability_date": "2025-04-01",
+ "url": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2010/267/20250401/de/xml/fedlex-data-admin-ch-eli-cc-2010-267-20250401-de-xml-4.xml",
+ "xml_sha256": "2d6437c9f55c37064483abd7aaf65bc30963cbf2e37ed2f1fdbc7dc0116b815e",
+ "paragraphs": [
+  "Ergibt sich aufgrund dieser Prüfung oder später im Verfahren, dass ein Urteil zurzeit nicht ergehen kann, so sistiert das Gericht das Verfahren. Falls erforderlich, weist es die Anklage zur Ergänzung oder Berichtigung an die Staatsanwaltschaft zurück.",
+  "Das Gericht entscheidet, ob ein sistierter Fall bei ihm hängig bleibt.",
+  "Kann ein Urteil definitiv nicht ergehen, so stellt das Gericht das Verfahren ein, nachdem es den Parteien und weiteren durch die Einstellung beschwerten Dritten das rechtliche Gehör gewährt hat. Artikel 320 ist sinngemäss anwendbar.",
+  "Soll das Verfahren nur in einzelnen Anklagepunkten eingestellt werden, so kann die Einstellung zusammen mit dem Urteil ergehen."
+ ],
+ "text_sha256": "4526c69457d104ed962a1273a1d25fda3d9a88e064faf3944851a2e6db581539",
+ "notes": [],
+ "fetched": "2026-10-10"
+}

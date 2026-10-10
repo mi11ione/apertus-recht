@@ -37,7 +37,7 @@
    "n_hits": 0,
    "scanned": {
     "items": 120,
-    "responses": 0,
+    "responses": 720,
     "metadata": 120
    }
   },
@@ -116,9 +116,9 @@
   "diversity": {
    "de": {
     "items": 120,
-    "distinct_1": 0.0151,
-    "distinct_2": 0.0234,
-    "distinct_3": 0.0302,
+    "distinct_1": 0.015,
+    "distinct_2": 0.0233,
+    "distinct_3": 0.0299,
     "mean_words": 63.3,
     "min_words": 46,
     "max_words": 71,

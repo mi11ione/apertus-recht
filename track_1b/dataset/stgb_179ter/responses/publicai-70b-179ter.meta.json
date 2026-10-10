@@ -13,8 +13,8 @@
  "served_models": [
   "swiss-ai/apertus-v1.5-8b"
  ],
- "jsonl_sha256": "9769bae26e1ab13415755c771d2099138a2e18f3866bc5dae898aabce591e092",
- "parts": "core_de (Art. 179ter StGB)",
+ "jsonl_sha256": "d54b4b877e15cf81b17696a0b2e69adf7d5c0ef2f78ae24e322fd7653e4e993f",
+ "parts": "core_de",
  "rungs": "R0,R1,R2",
  "framings": "conv,ver",
  "sample": null,

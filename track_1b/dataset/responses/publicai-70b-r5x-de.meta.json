@@ -8,16 +8,16 @@
   "seed": null
  },
  "params": {},
- "rows": 1290,
+ "rows": 1530,
  "errors": 0,
  "served_models": [
   "swiss-ai/apertus-v1.5-8b"
  ],
- "jsonl_sha256": "90bfb09f8f2fc112fdfa5ce9ddf4903fc453e0567aea86badcdbdd6199fa04c5",
- "parts": "core_de",
- "rungs": "R6",
- "framings": "ver",
+ "jsonl_sha256": "b050825ff514ff88e4ac1cfe7431e10f6f45889584c5662d31bcc7df622a5643",
+ "parts": "ctrl_core_de",
+ "rungs": "R5e",
+ "framings": "conv",
  "sample": 240,
- "label": "Apertus v1.5 70B via Public AI (name swiss-ai/apertus-v1.5-8b), exact forced choice, A13 R5 factorial",
+ "label": "Apertus v1.5 70B via Public AI (name swiss-ai/apertus-v1.5-8b), exact forced choice, A13/A15 R5 factorial",
  "model": "swiss-ai/apertus-v1.5-8b"
 }

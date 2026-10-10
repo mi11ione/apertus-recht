@@ -1,4 +1,22 @@
 {
+ "fedlex_179bis": {
+  "cite": "Art. 179bis StGB (eavesdropping and recording by an outsider)",
+  "file": "../sources/eli_cc_54_757_781_799__art_179_bis__{lang}__2026-10-01.json",
+  "kind": "statute",
+  "licence": "public domain (Swiss Copyright Act, Art. 5 para. 1 lit. a: enactments)",
+  "text_sha256": {
+   "de": "b6b4fc984fcc3709973e8ed855aadc1f82ad56ea9195c7360f38653dd25a080a"
+  }
+ },
+ "fedlex_179quinquies": {
+  "cite": "Art. 179quinquies StGB (permitted recording, e.g. business calls)",
+  "file": "../sources/eli_cc_54_757_781_799__art_179_quinquies__{lang}__2026-10-01.json",
+  "kind": "statute",
+  "licence": "public domain (Swiss Copyright Act, Art. 5 para. 1 lit. a: enactments)",
+  "text_sha256": {
+   "de": "0312c513b20e99ba8173bb2039f7771ecd135279d8e5ba79611d78a447813d45"
+  }
+ },
  "fedlex_179ter": {
   "cite": "Art. 179ter StGB (SR 311.0; Fedlex eli/cc/54/757_781_799, version 2026-10-01)",
   "file": "../sources/eli_cc_54_757_781_799__art_179_ter__{lang}__2026-10-01.json",
@@ -24,6 +42,15 @@
   "licence": "public domain (Swiss Copyright Act, Art. 5 para. 1 lit. a: enactments)",
   "text_sha256": {
    "de": "c20dbf2e84ed421d566c7f47a66a1f65b2bd1389d76a8d0cefb3cf99d1151e8d"
+  }
+ },
+ "fedlex_stpo_329": {
+  "cite": "Art. 329 StPO (SR 312.0; discontinuation where a procedural requirement such as a complaint is missing)",
+  "file": "../sources/eli_cc_2010_267__art_329__{lang}__2025-04-01.json",
+  "kind": "statute",
+  "licence": "public domain (Swiss Copyright Act, Art. 5 para. 1 lit. a: enactments)",
+  "text_sha256": {
+   "de": "4526c69457d104ed962a1273a1d25fda3d9a88e064faf3944851a2e6db581539"
   }
  }
 }

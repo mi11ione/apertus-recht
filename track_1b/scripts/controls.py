@@ -128,14 +128,16 @@ def main():
         out["polarity"].append(dict(lang=lang, rung=rung, n=len(common), yes_bias_mean=sum(bias) / len(bias),
                                     conv_rev_disagree=flips, averaged=cell_stats(items, avg),
                                     averaged_by_reason=by_reason(items, avg)))
-    for lang, rung, fr in [("de", r, "conv") for r in ("R3", "R5", "R5a", "R5b", "R5c", "R5d", "R6")] + \
+    for lang, rung, fr in [("de", r, "conv") for r in ("R3", "R5", "R5a", "R5b", "R5c", "R5d", "R5e", "R6")] + \
                           [("de", "R5", "ver"), ("de", "R6", "ver"), ("fr", "R3", "conv"), ("fr", "R5", "conv"),
                            ("fr", "R6", "conv"), ("it", "R3", "conv"), ("it", "R5", "conv"), ("it", "R6", "conv")]:
         sc = cells.get((lang, rung, fr))
         if sc:
             rec = dict(lang=lang, rung=rung, framing=fr, **cell_stats(items, sc), acquit_by_reason=by_reason(items, sc))
             # the variants ran on a sample of twin groups; every cell is also given on exactly those items
-            ref = cells.get((lang, "R5a" if lang == "de" else "R6", "conv")) or {}
+            # the items every sampled arm of this language shares (German: R5a and the length control R5e)
+            arms = [cells.get((lang, r, "conv")) for r in (("R5a", "R5e") if lang == "de" else ("R6",))]
+            ref = set.intersection(*[set(x) for x in arms if x]) if any(arms) else set()
             same = {i: v for i, v in sc.items() if i in ref}
             if same:
                 rec["same_items"] = cell_stats(items, same)

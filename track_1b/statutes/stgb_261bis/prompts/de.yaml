@@ -18,6 +18,14 @@ law_text:
   question: "\n\nFrage:"
   # control R5d (A13): Art. 1 StGB pasted before Art. 2; Fedlex eli/cc/54/757_781_799, version 2026-10-01, pinned with
   # `statute-twins pin --eid art_1`; the text hash is checked when the prompt is rendered
+  # control R5e (A15): legal text of the same length that does not bear on the case (property offences, Fedlex
+  # eli/cc/54/757_781_799, version 2026-10-01), placed where R5a has the law, followed by R3's rules
+  length_control:
+    - {file: ../sources/eli_cc_54_757_781_799__art_139__de__2026-10-01.json, label: "Art. 139 StGB", text_sha256: 519812e41d420c102893654226759f3d933466b40f1812eadcc28d8a7a47183e}
+    - {file: ../sources/eli_cc_54_757_781_799__art_144__de__2026-10-01.json, label: "Art. 144 StGB", text_sha256: b9d7db7270267929f3238ee17234a01e3192234eb455f2a11bd92dd417d765f6}
+    - {file: ../sources/eli_cc_54_757_781_799__art_146__de__2026-10-01.json, label: "Art. 146 StGB", text_sha256: 7a5491ae4eb396ba3452752ec7c238d9b2b9b1641576b6a5476ed63308dd6e51}
+    - {file: ../sources/eli_cc_54_757_781_799__art_147__de__2026-10-01.json, label: "Art. 147 StGB", text_sha256: 5600c55dce611ae72533fb84496ad77e7b90f7447d451a35fb013121b94db540}
+    - {file: ../sources/eli_cc_54_757_781_799__art_160__de__2026-10-01.json, label: "Art. 160 StGB", text_sha256: 71fe6095881de647bf047c85b569f57b2998f80de634081edb4ce02f95b8fe61}
   art1_control: {file: ../sources/eli_cc_54_757_781_799__art_1__de__2026-10-01.json, label: "Art. 1 StGB", text_sha256: 21e2c73557e2edcfd03a5461e3fec14448b172605becdf0a156717ec5051dd93}
 tails:
   open: " Ist das nach Schweizer Recht strafbar? Antworte in zwei bis drei Sätzen."

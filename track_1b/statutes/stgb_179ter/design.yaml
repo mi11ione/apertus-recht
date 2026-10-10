@@ -23,7 +23,7 @@ acceptance:
 slots:
   frame: {values: [F01, F02, F03]}
   actor: {values: [m1, f1, m2, f2]}
-  date: {values: [d2023_05, d2024_09, d2025_02]}
+  date: {values: [d2023_09, d2024_09, d2025_02]}
   conversation:
     values:
       c_salary:  {facts: {conversation: nonpublic}, tags: [nonpublic]}
