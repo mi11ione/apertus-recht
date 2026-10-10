@@ -1,6 +1,12 @@
 {
- "source": "gateway ledger, tags 1b-*",
+ "source": "gateway ledger, tags 1b-* (list prices, an upper bound)",
  "by_tag": {
+  "1b-a11-core": {
+   "requests": 134,
+   "prompt_tokens": 55039,
+   "completion_tokens": 134,
+   "usd": 0.006
+  },
   "1b-core-70b": {
    "requests": 8968,
    "prompt_tokens": 2427346,
@@ -25,11 +31,23 @@
    "completion_tokens": 2640,
    "usd": 0.241
   },
+  "1b-core-70b-r5-fr": {
+   "requests": 339,
+   "prompt_tokens": 319299,
+   "completion_tokens": 339,
+   "usd": 0.032
+  },
   "1b-core-70b-r6": {
    "requests": 1320,
    "prompt_tokens": 1263856,
    "completion_tokens": 1320,
    "usd": 0.127
+  },
+  "1b-judge-C": {
+   "requests": 2,
+   "prompt_tokens": 1610,
+   "completion_tokens": 129,
+   "usd": 0.0
   },
   "1b-lay-70b": {
    "requests": 2640,
@@ -38,10 +56,10 @@
    "usd": 0.055
   },
   "1b-open-70b": {
-   "requests": 509,
-   "prompt_tokens": 116159,
-   "completion_tokens": 49551,
-   "usd": 0.24
+   "requests": 534,
+   "prompt_tokens": 138841,
+   "completion_tokens": 52260,
+   "usd": 0.266
   },
   "1b-pref-70b": {
    "requests": 999,
@@ -87,8 +105,21 @@
   }
  },
  "total": {
-  "requests": 54703,
-  "usd": 2.0
+  "requests": 55203,
+  "usd": 2.06
  },
- "usd_text": "USD 2.00"
+ "usd_text": "USD 2.06",
+ "provider_billed": {
+  "source": "Public AI dashboard, Current Billing Period Usage (9 Oct 2026 - 1 Nov 2026), read 10.10.2026 08:32 CEST",
+  "scope": "the team's whole Public AI account (all hackathon tracks), not only this release",
+  "by_model_usd": {
+   "swiss-ai/apertus-70b-instruct": 0.34,
+   "aisingapore/Qwen-SEA-LION-v4-32B-IT": 0.07,
+   "swiss-ai/apertus-8b-instruct": 0.02,
+   "speakleash/Bielik-11B-v3.0-Instruct": 0.0
+  },
+  "total_usd": 0.43,
+  "note": "The gateway ledger (reports/spend.json) prices every request at list price without caching or provider discounts, so it is an upper bound; the provider bills less."
+ },
+ "billed_text": "USD 0.43"
 }

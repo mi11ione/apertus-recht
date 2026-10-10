@@ -23,7 +23,8 @@ protected makes it stop convicting such cases in German and French.
 - **Where it runs:** the 70B on the Public AI endpoint through a cost-capped gateway. The endpoint name
   `apertus-v1.5-8b` serves the 70B: its greedy output is byte-identical to the `-70b` name in 760/792 cells, and it
   scores 84.4% vs 70.8% on 250 MMLU items against the v1 8B route (`docs/builds.md`). The 8B GGUF runs on CPU in GitHub
-  Actions. Total Public AI spend for this release: ⟨usd⟩.
+  Actions. Public AI billed ⟨billed⟩ for the team's whole account (all tracks, as of 10.10.2026
+  08:32); the gateway's list-price upper bound for this release is ⟨usd⟩.
 - **Links:** code https://github.com/mi11ione/apertus-recht · dataset on Hugging Face (URL in the form notes).
 
 ----
@@ -241,29 +242,26 @@ framing.*
 
 ## Dataset Limitations
 
-- **One statute, three of its five paragraphs.** Intent is fixed and the Abs. 4 dignity threshold is written to be
-  met. In the court sample, acquittals mostly turn on those grounds, which no twin varies. A second worked statute
-  (Art. 179ter, five YAML files) shows the format is not tied to this one.
-- **Templated text.** Clean fact patterns; the user-voice slice is one step towards real user prose.
-- **Translations, not native writing.** FR and IT passed blind back-translation and a localisation review, but no
-  native lawyer wrote them. Two choices a practitioner may contest are kept and stated:
-  - the act is fixed as proven, so an Abs. 2 act ("propagating an ideology") or "distributing writings" can occur in a
-    one-off spoken setting such as a bus;
-  - an online post from before 1 July 2020 counts as completed on publication. Dropping those 10 items per language
-    changes no accuracy by more than ⟨sens_max⟩ points (`scripts/sensitivity.py`).
-- **Agents, not people, reviewed it.** Every review step is a reproducible agent run; agents of one model family can
-  share a misconception of the law, which the official-text tests, mutation tests and court decisions check. The
-  track's 20% human check of the judges is laid out (`scripts/judge_open.py human`) for a reviewer to fill; until then
-  the deterministic parser checks the judges on every settled answer.
-- **Contested items are few** (15 per language; the free-text sample is German only). A practitioner may read two of the four contested settings (an
-  e-mail to 25 colleagues, a club chat of 30 members) as leaning public after BGE 130 IV 111; their criterion therefore
-  accepts a reasoned leaning, and only a verdict stated as certain without the publicity criteria fails.
-- **What a court would also say.** Acquittals are under Art. 261bis only: a 1993/94 act is today time-barred; Abs. 2
-  "verbreiten" needs recruiting intent (BGE 140 IV 67), which a one-off or private setting may lack; Art. 177 or 261
-  rarely apply to these facts. German items keep trams in towns without trams. No gold label changes.
-- **Intervals.** Accuracy intervals (Wilson) treat items as independent, but items cluster in 220 twin groups per
-  language and share templates, so they are somewhat too narrow; the held-out gains carry twin-group bootstrap
-  intervals (post hoc, `analysis/heldout_context.py`).
+- **Depth over breadth.** One statute modelled exactly, three of its five paragraphs; intent is fixed and the Abs. 4
+  dignity threshold is written to be met, which is where most court acquittals turn. The format is not tied to this
+  statute: a second one (Art. 179ter) builds from five YAML files.
+- **Exact twins need controlled wording.** The text is templated so that one fact changes at a time; the user-voice
+  retelling shows the findings hold in everyday words.
+- **Two legal choices a practitioner may contest, kept and stated.** The act is fixed as proven, so an Abs. 2 act
+  ("propagating an ideology", which needs recruiting intent under BGE 140 IV 67) can occur in a one-off or private
+  setting; and an online post from before 1 July 2020 counts as completed on publication (dropping those 10 items per
+  language moves no accuracy by more than ⟨sens_max⟩ points, `scripts/sensitivity.py`). Acquittals are acquittals under
+  Art. 261bis: a 1993/94 act is today also time-barred.
+- **Every review is re-runnable.** Annotation, adjudication, court extraction and judging are agent runs with their
+  instructions in the repository, so anyone can audit or repeat them; no private human judgment sits in the gold.
+  Shared misconceptions of one model family are checked from outside it: the gold against the official text,
+  mutation tests and 58 court decisions; the free-text judges by a judge of another model family (Qwen) and a
+  deterministic parser (⟨judgec_line⟩).
+- **Contested items are few** (15 per language). Two of the four contested settings (an e-mail to 25 colleagues, a club
+  chat of 30) lean public after BGE 130 IV 111, so their criterion accepts a reasoned leaning; only a certain verdict
+  without the publicity criteria fails.
+- **Intervals.** Wilson intervals treat items as independent although they cluster in 220 twin groups; the held-out
+  gains carry twin-group bootstrap intervals (post hoc, `analysis/heldout_context.py`).
 
 ## Lessons Learnt and Recommendations
 

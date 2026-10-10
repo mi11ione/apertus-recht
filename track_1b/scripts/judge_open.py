@@ -165,11 +165,14 @@ def aggregate(run: str, work: Path):
 def judge(work: Path, who: str):
     """Judge every packet entry with any OpenAI-compatible model (LLM_BASE_URL, LLM_NAME, LLM_API_KEY), one request per
     answer, temperature 0; writes judge_<who>_<k>.json next to the packets, in the format `aggregate` reads."""
-    from statute_twins.harness.backends.openai_compat import http_transport
+    from statute_twins.harness.backends.openai_compat import gateway_transport, http_transport
     base, model = os.environ.get("LLM_BASE_URL", ""), os.environ.get("LLM_NAME", "")
-    if not base.startswith(("http://", "https://")) or not model:
+    if base == "gateway" and model:          # the team's cost-capped gateway (development); else any OpenAI-compatible URL
+        send = gateway_transport(f"1b-judge-{who}", float(os.environ.get("JUDGE_CAP_USD", "2.0")))
+    elif base.startswith(("http://", "https://")) and model:
+        send = http_transport(base, os.environ.get("LLM_API_KEY"))
+    else:
         sys.exit("judge needs LLM_BASE_URL and LLM_NAME (and LLM_API_KEY if the endpoint needs one)")
-    send = http_transport(base, os.environ.get("LLM_API_KEY"))
     instr = (work / "instructions.md").read_text()
     fmt = ('Reply with one JSON object only: {"verdict_expressed": "punishable|not_punishable|depends|none", '
            '"pass": true|false, "reason_ok": true|false, "misleads": true|false, "note": "<= 20 words"}')

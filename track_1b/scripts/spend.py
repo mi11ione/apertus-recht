@@ -26,7 +26,10 @@ for line in Path(a.ledger).read_text().splitlines():
     c["completion_tokens"] += r.get("ct", 0)
     c["usd"] += r.get("usd", 0.0)
 total = dict(requests=sum(c["requests"] for c in by.values()), usd=round(sum(c["usd"] for c in by.values()), 2))
-rep = dict(source="gateway ledger, tags 1b-*", by_tag={k: dict(v, usd=round(v["usd"], 3)) for k, v in sorted(by.items())},
-           total=total, usd_text=f"USD {total['usd']:.2f}")
+billed = json.loads((ROOT / "reports/publicai_billing.json").read_text()) if (ROOT / "reports/publicai_billing.json").exists() else None
+rep = dict(source="gateway ledger, tags 1b-* (list prices, an upper bound)",
+           by_tag={k: dict(v, usd=round(v["usd"], 3)) for k, v in sorted(by.items())},
+           total=total, usd_text=f"USD {total['usd']:.2f}", provider_billed=billed,
+           billed_text=f"USD {billed['total_usd']:.2f}" if billed else None)
 (ROOT / "reports" / "spend.json").write_text(json.dumps(rep, indent=1) + "\n")
 print(json.dumps(total))

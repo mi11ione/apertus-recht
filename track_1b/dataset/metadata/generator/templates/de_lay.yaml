@@ -224,12 +224,12 @@ settings:
   pub_hut_fam: an einem Treffen in der Waldhütte meiner Familie mit etwa 40 Leuten, die über einen allgemeinen Aufruf gekommen waren und die ich grösstenteils nicht kannte,
   pub_flyer: auf Flugblättern, die ich in der Fussgängerzone an Passanten verteilt habe,
   pub_flyer_fam: auf Flugblättern mit dem Titel «Eine Familie sagt die Wahrheit», die ich mit meinen Kindern in der Fussgängerzone verteilt habe,
-  pub_speech: in einer Rede an der Gemeindeversammlung vor rund 120 Stimmberechtigten
-  pub_speech_fam: in einer Rede an der Gemeindeversammlung vor rund 120 Stimmberechtigten, unter denen auch meine Eltern und Geschwister sassen,
+  pub_speech: in einer Rede an einem öffentlichen Informationsabend der Gemeinde vor rund 120 Leuten
+  pub_speech_fam: in einer Rede an einem öffentlichen Informationsabend der Gemeinde vor rund 120 Leuten, unter denen auch meine Eltern und Geschwister sassen,
   pub_video: in einem Video, das ich auf einer frei zugänglichen Plattform hochgeladen habe,
   pub_video_fam: in einem öffentlichen Video mit dem Titel «Botschaft an meine Familie»
-  pub_tram: im vollen Tram laut vor allen Fahrgästen
-  pub_tram_fam: im vollen Tram laut vor allen Fahrgästen, als ich mit meinen Kindern unterwegs war,
+  pub_tram: im vollen Bus laut vor allen Fahrgästen
+  pub_tram_fam: im vollen Bus laut vor allen Fahrgästen, als ich mit meinen Kindern unterwegs war,
   pub_market: an einem Stand auf dem Wochenmarkt vor vielen Kundinnen und Kunden
   pub_market_fam: an unserem Familien-Marktstand auf dem Wochenmarkt vor vielen Kundinnen und Kunden
   pub_forum: in einem Kommentar in einem frei zugänglichen Online-Forum
