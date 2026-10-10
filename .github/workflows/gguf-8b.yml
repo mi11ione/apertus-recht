@@ -69,4 +69,5 @@ jobs:
             ${{ inputs.sample && format('--sample {0}', inputs.sample) || '' }} \
             ${{ inputs.seed_from && format('--seed-from {0}', inputs.seed_from) || '' }}
       - uses: actions/upload-artifact@v4
-        with: {name: "shard-${{ matrix.shard }}", path: /tmp/out}
+        if: always()          # keep partial shard output; merge_shards.py resumes from it
+        with: {name: "shard-${{ matrix.shard }}", path: /tmp/out, if-no-files-found: ignore}
