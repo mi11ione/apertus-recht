@@ -229,30 +229,34 @@ def fig_synopse(R, out, blocks=SYN_BLOCKS):
 
 # ------------------------------------------------------------------------------------------- method (diagram)
 def fig_method(out):
-    """From pinned law to the per-element read-back, with the checks on the gold below (one row)."""
-    steps = [("Pinned law", "Fedlex · BGE"), ("Element model", "statute.yaml"),
-             ("Gold verdict", "computed by code"), ("Minimal twins", "one fact changed"),
-             ("Prompts", "R0–R6, 2 framings"), ("Apertus", "scores · free text"),
-             ("Read-back", "law per element")]
-    fig, ax = plt.subplots(figsize=(7.3, 1.05))
+    """From pinned law to the per-element read-back (one row of boxes), and below it the checks on the gold. Sized to
+    be read at A4 text width: box titles about 8.5 pt, sub-lines about 7.5 pt."""
+    steps = [("Pinned law", "Fedlex texts,\nBGE 130 IV 111"), ("Gold by code", "element model\n\u2192 verdict"),
+             ("Minimal twins", "one legal fact\nchanged"), ("Prompts", "rungs R0\u2013R6,\ntwo framings"),
+             ("Apertus", "forced choice,\nfree text"), ("Read-back", "the law it applies,\nper element")]
+    fig, ax = plt.subplots(figsize=(7.0, 1.42))
     ax.set_axis_off()
-    w, h, g = 0.128, 0.36, 0.0170
+    n, g = len(steps), 0.028
+    w = (1 - g * (n - 1)) / n
+    y0, h = 0.42, 0.53
     for k, (head, sub) in enumerate(steps):
         x = k * (w + g)
-        ax.add_patch(plt.Rectangle((x, 0.42), w, h, facecolor=PAPER, edgecolor=INK, lw=0.6))
-        ax.text(x + 0.008, 0.42 + h - 0.075, head, fontsize=7.0, fontweight="semibold", va="top", color=INK)
-        ax.text(x + 0.008, 0.42 + 0.08, sub, fontsize=6.4, va="bottom", color=INK2)
+        ax.add_patch(plt.Rectangle((x, y0), w, h, facecolor=PAPER, edgecolor=INK, lw=0.7))
+        ax.text(x + 0.012, y0 + h - 0.07, head, fontsize=9.0, fontweight="semibold", va="top", color=INK)
+        ax.text(x + 0.012, y0 + 0.06, sub, fontsize=7.9, va="bottom", color=INK2, linespacing=1.15)
         if k:
-            ax.annotate("", xy=(x - 0.002, 0.42 + h / 2), xytext=(x - g + 0.002, 0.42 + h / 2),
-                        arrowprops=dict(arrowstyle="-|>", lw=0.6, color=INK, mutation_scale=6))
-    gx = 2 * (w + g)
-    ax.plot([gx + w / 2, gx + w / 2], [0.42, 0.25], color=RED, lw=0.6)
-    ax.text(gx + w / 2 - 0.004, 0.17, "checked against: blind annotation (Claude; Qwen, another model family) · "
-            "Swiss court rulings · mutation tests · the official text in three languages",
-            fontsize=6.4, color=RED, va="center", ha="left")
-    ax.set_xlim(-0.005, len(steps) * (w + g) - g + 0.005)
-    ax.set_ylim(0.08, 0.82)
-    fig.subplots_adjust(left=0.005, right=0.995, top=0.99, bottom=0.01)
+            ax.annotate("", xy=(x - 0.003, y0 + h / 2), xytext=(x - g + 0.003, y0 + h / 2),
+                        arrowprops=dict(arrowstyle="-|>", lw=0.7, color=INK, mutation_scale=8))
+    # the checks hang off the gold box
+    gx = 1 * (w + g) + w / 2
+    ax.plot([gx, gx], [y0, 0.22], color=RED, lw=0.7)
+    ax.plot([gx, gx + 0.012], [0.22, 0.22], color=RED, lw=0.7)
+    ax.text(gx + 0.018, 0.22, "Gold checked against: blind annotation by Claude agents and by Qwen (another model family),\n"
+            "Swiss court rulings, mutation tests, and the official text in German, French and Italian",
+            fontsize=7.9, color=RED, va="center", ha="left", linespacing=1.2)
+    ax.set_xlim(-0.004, 1.004)
+    ax.set_ylim(0.04, 0.99)
+    fig.subplots_adjust(left=0.004, right=0.996, top=0.995, bottom=0.005)
     save(fig, out, "fig0_method")
 
 
@@ -286,6 +290,7 @@ def fig_rungs(R, out, framing="conv"):
             t.set_fontsize(6.6)
         ax.axhline(1.0, color=LINE, lw=0.5, zorder=1)
         ax.set_title(label.replace("70B DE, user voice", "70B DE, first person"), fontsize=7.4, pad=3)
+    axes[0].set_ylabel("share", fontsize=7.2, labelpad=2)
     h = [plt.Line2D([], [], color=INK, lw=1.0, marker="o", ms=3.6, mfc=INK),
          plt.Line2D([], [], color=INK2, lw=1.0, ls="--", marker="o", ms=3.6, mfc=PAPER, mec=INK2)]
     fig.legend(h, ["acquittals recognised (of 215)", "convictions kept (of 430)"], loc="upper left", ncol=2,

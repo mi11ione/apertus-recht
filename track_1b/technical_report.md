@@ -5,7 +5,7 @@ scenarios under Art. 261bis StGB, built as minimal twins that change one legal f
 threshold are stipulated, so the set tests how a model applies the elements, not whether it predicts a conviction.
 Each verdict is computed by code from pinned Fedlex texts and agrees with ⟨court_ofk⟩ Swiss court rulings we could
 code (mostly convictions: an engine that always convicts would score 55). Without the law, Apertus v1.5 70B convicts
-every German scenario and, in free text, calls ⟨open_r0_mislead⟩ of 75 lawful scenarios punishable. Rules spelled out in plain sentences make it apply the publicity rule, but not the closed list
+all but at most one of the 215 lawful German scenarios and, in free text, calls ⟨open_r0_mislead⟩ of 75 lawful scenarios punishable. Rules spelled out in plain sentences make it apply the publicity rule, but not the closed list
 of protected groups or the date the article took effect. Pasting the verbatim law undoes even that. A second statute
 fails in another shape. One command re-derives every label and number.
 
@@ -19,10 +19,8 @@ fails in another shape. One command re-derives every label and number.
 - **Model:** Apertus v1.5 70B; Apertus v1.5 8B (public Q4_K_M GGUF; for exploration also the SFT, RLVR, DPO and final
   stages, bf16 blends, Q8_0 and MLX 4-bit builds).
 - **How it is used:** evaluation only: forced choice, preference pairs, and free text read by three blind judges.
-- **Where it runs:** the 70B on Public AI through a cost-capped gateway. Public AI's name `apertus-v1.5-8b` currently
-  serves the 70B: its greedy output is identical to the `-70b` name on 760 of 792 test prompts, it runs on a 16-GPU
-  deployment (tensor parallel 8, pipeline 2), and it scores 84% on 250 MMLU items against 71% for Public AI's v1 8B
-  route (`docs/builds.md`). Every hosted number is therefore the 70B. The 8B runs as the public GGUF on CPU in CI.
+- **Where it runs:** the 70B on Public AI through a cost-capped gateway (see Runs for the endpoint name); the 8B as
+  the public GGUF on CPU in CI.
 - **Links:** code https://github.com/mi11ione/apertus-recht · dataset https://huggingface.co/datasets/mi11ion/apertus-recht
 
 ----
@@ -71,7 +69,7 @@ wording is templated (18 act wordings, 29 settings, 33 group phrases; 44 words o
 twins.
 
 **What is new.** To our knowledge no dataset lets one test which version of a real statute a model applies, element by
-element, in the three official languages; the closest work asks when models apply the wrong law [8] (sources in
+element, in the three official languages; the closest work asks when models apply the wrong law [5] (sources in
 `docs/prior-art.md`):
 
 | Dataset | Languages | Gold | One-fact twins | Real amendment dates | Checked against courts |
@@ -108,8 +106,7 @@ or the wording. Every review step was done by Claude agents working blind on opa
   (repeat instances merged; the Perinçek conviction left out after the European Court of Human Rights found a violation
   of Art. 10 ECHR). This tests the conviction rules well and the acquittal rules thinly: an engine that
   always convicts would score 55/57. One of the two acquittals is clean; one agrees on another ground (A15).
-- **Wording fixes:** two defects were found before any result was analysed (A3) and four after (A5). All were fixed and
-  re-scored; the pre-fix responses are archived.
+- **Wording fixes:** two defects found before any result was analysed (A3), four after (A5); fixed, re-scored, archived.
 
 ## Dataset Details
 
@@ -121,11 +118,12 @@ from the list, move the 2020 date by a day, make private settings public) flip e
 **Contamination.** None of our 35,241 distinct 13-grams occurs in the 1,069,365 decisions of `voilaj/swiss-caselaw`;
 the same scan finds 846 of the 1,525 13-grams of the statute and the Regeste (positive control).
 
-**Ethics and licensing.** No data subjects (generic actors, groups named by their characteristic). CDLA-Permissive-2.0
-with per-item licence components; legal texts are public domain (Art. 5 URG); a consent form with an AI-use clause is
-ready for human reviewers; every item carries a canary string.
+**Ethics and licensing.** No data subjects; CDLA-Permissive-2.0 with per-item licence components; legal texts are
+public domain (Art. 5 URG); a consent form with an AI-use clause; a canary string in every item.
 
 ## Evaluation
+
+Figure 1 traces an item from the pinned law to the read-back, and shows what checks the gold.
 
 ![](docs/figures/fig0_method.png)
 
@@ -139,7 +137,8 @@ ready for human reviewers; every item carries a canary string.
 - *Free text* (the same 240 items in each language, R0, R3, R5, greedy): each answer is judged against its acceptance
   criterion by three blind judges. Two are Claude judges; they agree on ⟨open_judges_agree⟩ pass decisions
   (κ ⟨open_kappa⟩), which measures self-consistency of one model. The independent judge is Qwen-SEA-LION-v4-32B: it agrees
-  with their consensus on ⟨judgec_agree⟩ (κ ⟨judgec_kappa_acq⟩ on acquittal and open items). A deterministic parser of
+  with their consensus on ⟨judgec_agree⟩ (κ ⟨judgec_kappa_acq⟩ on acquittal and open items together: ⟨judgec_kappa_acquit⟩ on acquittals, but
+  ⟨judgec_kappa_open⟩ on the contested items, where it disagrees with the Claude judges). A deterministic parser of
   each answer's verdict agrees on ⟨parser_agree⟩ settled answers. A seeded 20% sample is laid out for a human check.
 
 **The read-back.** Each true flip is paired with its base, which the statute convicts. With 95% item-bootstrap
@@ -150,9 +149,18 @@ and predicts the third; it passes if it beats the statute by at least 0.15 in ev
 **Runs.** The 70B on Public AI (vLLM, temperature 0) in three languages at R0 to R5; the 8B public Q4_K_M GGUF
 (sha256 `a037df8d…`) on CPU CI runners, German R0 to R5; preference on 645 settled items per language; free text on
 720 answers per language; Art. 179ter (120 items); the 162-item battery for training stages. Every row records the
-served model and a request hash.
+served model and a request hash. Public AI's name `apertus-v1.5-8b` currently serves the 70B: its greedy output is
+identical to the `-70b` name on 760 of 792 prompts, it runs on 16 GPUs (tensor parallel 8, pipeline 2), and it scores
+84% on 250 MMLU items against 71% for Public AI's v1 8B route (`docs/builds.md`); every hosted number is the 70B.
 
 ## Results
+
+**Without the law, the 70B convicts nearly everything.** At R0 the recall of acquittals is at most 0.01 in every
+language and framing (Table 2; Figure 2 shows every model by rung). Table 1 shows what this means for one twin pair. The model is not blind to the facts: its scores still rank punishable above lawful cases (AUC ⟨auc_r0⟩).
+But the threshold sits so far on the convicting side that no case falls below it. Asking the other way round ("would a
+court acquit?") changes nothing: ⟨rev_r0⟩ of 215 acquittals in every language, so this is not a bias towards "yes".
+In free text the judges fail ⟨open_r0_mislead⟩ of 75 answers to lawful scenarios as misleading; every one names
+Art. 261bis. The independent judge alone counts ⟨judgec_r0⟩ of 75.
 
 ⟨table:twin⟩
 
@@ -162,13 +170,6 @@ Red: an answer the law does not support. Apertus convicts the private message wi
 verbatim law (R5); only the rules spelled out (R3) fix it. Its free-text answer ("Yes, the woman's conduct is
 punishable under Swiss law") is misleading for all three judges.*
 
-**Without the law, the 70B convicts everything.** At R0 the recall of acquittals is at most 0.01 in every language and
-framing. The model is not blind to the facts: its scores still rank punishable above lawful cases (AUC ⟨auc_r0⟩).
-But the threshold sits so far on the convicting side that no case falls below it. Asking the other way round ("would a
-court acquit?") changes nothing: ⟨rev_r0⟩ of 215 acquittals in every language, so this is not a bias towards "yes".
-In free text the judges fail ⟨open_r0_mislead⟩ of 75 answers to lawful scenarios as misleading; every one names
-Art. 261bis. The independent judge alone counts ⟨judgec_r0⟩ of 75.
-
 ⟨table:accuracy⟩
 
 *Table 2. Balanced accuracy (mean of the recall of convictions and of acquittals; 0.50 = no discrimination), Ja/Nein /
@@ -177,10 +178,12 @@ verdict word, and the recall of acquittals at R3. The first-person retelling was
 ![](docs/figures/fig2_rungs.png)
 
 *Figure 2. Share of the 215 lawful scenarios acquitted (solid) and of the 430 punishable ones convicted (dashed), by
-rung, Ja/Nein: the rules spelled out move every model; the verbatim law undoes it.*
+rung, Ja/Nein: the rules spelled out move every model; the verbatim law undoes it. The first-person retelling was
+run at R0 and R3 only.*
 
-**With the rules spelled out (R3), publicity is applied; the closed list and the date are not.** Figure 3 shows each
-element for the German 70B:
+**With the rules spelled out (R3), publicity is applied; the closed list and the date are not.** Figure 3 is the
+read-back itself: the law each model applies, element by element (the pre-registered rule reports it per element
+because the held-out test below fails). It shows every model and language; for the German 70B:
 - **Private settings** are acquitted. Every private variant names family or friends, the words of the paraphrase, so
   this shows uptake of a stated example more than application of BGE 130 IV 111.
 - **Canton, disability and political opinion** stay red: convicted although the prompt lists the four protected
@@ -196,7 +199,7 @@ element for the German 70B:
   date, so this is a gap in what the model knows.
 
 **The verbatim law (R5) undoes the rules.** Given the Fedlex text and the Regeste, as a retrieval pipeline would paste
-them, the German 70B convicts everything again: it acquits ⟨r5_acq_conv⟩ of the 215 lawful scenarios with Ja/Nein,
+them, the German 70B convicts almost everything again: it acquits ⟨r5_acq_conv⟩ of the 215 lawful scenarios with Ja/Nein,
 ⟨r5_acq_ver⟩ with the verdict word. In French and Italian it acquits ⟨r5_fr⟩ and ⟨r5_it⟩ of the 215 lawful scenarios, against 120 and 97 with the rules
 spelled out.
 In free text, ⟨open_r5_mislead⟩ of 75 answers to lawful scenarios call them punishable. The scores do register the
@@ -213,8 +216,9 @@ framing; open: it applies the law in force; dash: the base itself is not convict
 | Control | Result | Rules out |
 |---|---|---|
 | Question asked the other way ("would a court acquit?"), no law | Of 215 lawful scenarios, ⟨rev_r0⟩ are acquitted, in every language. | a bias towards "yes" |
-| The same, rules spelled out | German: the model now also "acquits" punishable cases (balanced accuracy ⟨r3_rev_bal⟩). Averaged over both directions, ⟨r3_avg⟩ of 215 lawful scenarios are acquitted, among them ⟨r3_avg_set⟩ of 55 private settings. Italian: every case convicted. | nothing: part of the R3 gain is answer format |
-| What in the verbatim law hurts (75 lawful German scenarios, one sample) | Rules alone: ⟨r3_same⟩ acquitted. Rules after the verbatim law: ⟨r5a_same⟩. Rules after unrelated legal text of the same length: ⟨r5e_same⟩. | prompt length; it is the law's own text |
+| The same, rules spelled out | German: the model now also "acquits" punishable cases (balanced accuracy ⟨r3_rev_bal⟩). Averaged over both directions, ⟨r3_avg⟩ of 215 lawful scenarios are acquitted, among them ⟨r3_avg_set⟩ of 55 private settings. | nothing: part of the R3 gain is answer format |
+| The same in Italian | Of 215 lawful scenarios, none acquitted: every case is convicted. | nothing: the answer follows the question |
+| What in the verbatim law hurts (75 lawful German scenarios, one sample) | Acquitted with the rules alone: ⟨r3_same⟩ of 75; with the rules after the verbatim law: ⟨r5a_same⟩; with the rules after unrelated legal text of the same length: ⟨r5e_same⟩. | prompt length; it is the law's own text |
 | Verbatim law plus an instruction to check each element (R6) | Of 215 lawful German scenarios, ⟨r6_acq⟩ are acquitted. | a missing instruction in R5 |
 | Free text in French and Italian | Of 75 lawful scenarios, misleading answers: French ⟨ft_fr_r0⟩ without the law, ⟨ft_fr_r5⟩ with it; Italian ⟨ft_it_r0⟩ and ⟨ft_it_r5⟩. | a German-only effect |
 | The same German scenarios told in the first person | Of 215 lawful scenarios, ⟨lay_acq⟩ acquitted without the law; balanced accuracy ⟨lay_r3_bal⟩ with the rules. | an artefact of legal register |
@@ -223,28 +227,27 @@ framing; open: it applies the law in force; dash: the base itself is not convict
 *Table 3. Controls (A13–A15; per-element detail in `reports/controls_a13.json`). Art. 179ter: even with its rules
 stated, a public debate and an outsider (whose act falls under Art. 179bis) are still convicted.*
 
+**Recognising the law is not applying it.** Shown an item's correct answer and its mirror, the 70B picks the correct
+one (German ⟨pref_de_all⟩; Table 4), most cleanly in the closed-list and date columns, although its own verdicts
+convict those cases. In French it prefers the mirror for half the punishable cases (0.53); we have not isolated why.
+
 ⟨table:preference⟩
 
 *Table 4. Preference: share of settled items where the model scores the `chosen` answer above its length-matched
 mirror. Free text: answers that meet the acceptance criterion (240 German items). Columns: the deciding element.*
 
-**Recognising the law is not applying it.** Shown an item's correct answer and its mirror, the 70B picks the correct
-one (German ⟨pref_de_all⟩), most cleanly in the closed-list and date columns, although its own verdicts convict those
-cases. In French it prefers the mirror for half the punishable cases (0.53); we have not isolated why.
-
-**Pre-registered held-out test.** At R0 it passes trivially: a model that convicts everything is predicted perfectly.
-At R3 and R4 the read-back beats the statute in every cell, but not by the pre-registered 0.15 in every framing. The
-test fails, and by our rule these rungs report Figure 3, not the read-back. Two cells could not pass even with a perfect
-read-back, because the model departs from the statute on fewer than 15% of their items (French R3 with the verdict
-word, Italian R4 with Ja/Nein: largest possible gain 0.13 and 0.14). The held-out family differs from the fitted ones
-only in its wording, so the test measures whether the read-back transfers to new wordings, not to new legal facts.
-Every cell is in `results/results.json` (`heldout`) and `prereg/`.
+**Pre-registered held-out test.** At R0 it passes trivially (a convict-everything model is predicted perfectly). At
+R3 and R4 the read-back fitted on two wording families beats the statute on the third in every cell, but not by the
+pre-registered 0.15 in every framing, so the test fails and the read-back is reported per element (Figure 3). Two
+cells could not pass at all: the model departs from the statute on fewer than 15% of their items (French R3 verdict
+word, Italian R4 Ja/Nein; largest possible gain 0.13 and 0.14). The split tests transfer to new wordings, not to new
+legal facts. Every cell: `results/results.json` (`heldout`).
 
 
-**Post-training and builds** (8B, the 162-item exploration battery):
-- *Training stages* (one checkpoint pair, so a lead): from RLVR to DPO, correct acquittals under stated rules fall from
-  ⟨stage_rlvr⟩ to ⟨stage_dpo⟩ of 220 decisions, while all 104 convictions are kept.
-- *Builds:* of 648 decisions, the public Q8_0 GGUF matches bf16 on 638, the Q4_K_M on 622, an MLX 4-bit conversion on 548.
+**Post-training and builds** (8B, the 162-item exploration battery). *Training stages* (one checkpoint pair, so a
+lead): from RLVR to DPO, correct acquittals under stated rules fall from ⟨stage_rlvr⟩ to ⟨stage_dpo⟩ of 220 decisions,
+while all 104 convictions are kept. *Builds:* of 648 decisions, the public Q8_0 GGUF matches bf16 on 638, the Q4_K_M
+on 622, an MLX 4-bit conversion on 548.
 
 ## Dataset Limitations
 
@@ -257,14 +260,12 @@ Every cell is in `results/results.json` (`heldout`) and `prereg/`.
 - **Every review is re-runnable** (agent runs with their instructions in the repository), and each is checked from
   outside one model family: the gold by Qwen, the official text, mutation tests and courts; the free text by Qwen and
   a parser. The wording is templated for exact twins; the first-person retelling shows the findings survive that.
-- **Contested items are few** (15 per language). Accuracy intervals treat items as independent; held-out gains use
-  twin-group bootstraps.
+- **Contested items are few** (15 per language); accuracy intervals treat items as independent.
 
 ## Lessons Learnt and Recommendations
 
-- **Users:** do not ask about Art. 261bis without the law in context, and do not count on pasting the statute. State
-  the rule the case turns on in a plain sentence, and check the characteristic and the date yourself. Prefer the Q8_0
-  GGUF or the served model to 4-bit MLX conversions.
+- **Users:** do not ask about Art. 261bis without the law in context, nor count on pasting the statute. State the rule
+  the case turns on in a plain sentence; check the characteristic and the date yourself; avoid 4-bit MLX conversions.
 - **Developers:** in our one checkpoint pair, DPO costs acquittals under stated rules (8B: ⟨stage_rlvr⟩ → ⟨stage_dpo⟩ of
   220). The model obeys exclusions it is told but not "the list is closed", and reads plain rules but not the law as
   written: instruction-following and long-context legal reading are training targets. Keep the `chosen` / `rejected`
@@ -283,6 +284,5 @@ report CC-BY-4.0.
 
 [1] Swiss Criminal Code (StGB, SR 311.0), Art. 1, 2, 30, 31, 179ter, 261bis; Fedlex consolidations of 1 Feb 2020 and
 1 Oct 2026; amendments AS 1994 2887 and AS 2020 1609. [2] BGE 130 IV 111 (Federal Supreme Court, 2004). [3] Fan et al.,
-LEXam, ICLR 2026. [4] Han et al., LawShift, NeurIPS 2025 D&B. [5] TALD, 2026. [6] Servantez et al., OpenExempt, ACL
-Findings 2026. [7] Röttger et al., Multilingual HateCheck, WOAH 2022. [8] Huang et al., When Do LLMs Apply the Wrong
-Law?, arXiv 2608.14610.
+LEXam, ICLR 2026. [4] Han et al., LawShift, NeurIPS 2025 D&B. [5] Huang et al., When Do LLMs Apply the Wrong Law? (TALD), arXiv 2608.14610, 2026. [6] Servantez et al., OpenExempt, ACL
+Findings 2026. [7] Röttger et al., Multilingual HateCheck, WOAH 2022.
