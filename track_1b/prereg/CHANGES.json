@@ -25,7 +25,8 @@
   "A6",
   "A7",
   "A8",
-  "A11"
+  "A11",
+  "A17"
  ],
  "dataset/eval/core_fr.jsonl": [
   "A2",
@@ -33,7 +34,8 @@
   "A5",
   "A6",
   "A7",
-  "A8"
+  "A8",
+  "A17"
  ],
  "dataset/eval/core_it.jsonl": [
   "A2",
@@ -41,7 +43,8 @@
   "A5",
   "A6",
   "A7",
-  "A8"
+  "A8",
+  "A17"
  ],
  "prereg/PREREG_court.md": [
   "stratum B (LOCK_court.json: stratum_B)",
@@ -52,9 +55,9 @@
   "statutes/stgb_261bis/design.yaml": "0df7093fbb87db8b118ae41bf29d09a1febbb113fdd986a3634f6a32553bc847",
   "src/statute_twins/analysis/heldout.py": "32837662139ab1b88c5add3fd8872adcd37e02803e061d15ffc083e7a06200e5",
   "src/statute_twins/analysis/results.py": "6e9e22256e237b373a2c72b205d2d21e760e72acedb00e6fff232446bf7218f9",
-  "dataset/eval/core_de.jsonl": "7a1fab88633dbc98e34d83cbd5b7bb4ddd8a02f1192986b342da1b5a8895c676",
-  "dataset/eval/core_fr.jsonl": "97fb576250fe600de9f8bab20a0bc599af9765ae45fcfccae6827ac782febed8",
-  "dataset/eval/core_it.jsonl": "4dfd78254bb6e0dd7c8303dea291efbc797e40205bc418316372884ccd43c109",
+  "dataset/eval/core_de.jsonl": "542c08edbc3b4a6abae6e418c6d6ee8a19cb3aae1f59008d493787105c8d89a2",
+  "dataset/eval/core_fr.jsonl": "1e28de7a1e884d347775637edfce8ee58b176655a83bef40bf47f3d740dfa822",
+  "dataset/eval/core_it.jsonl": "13260948682ba43fd172a64a4990da7d8824c75d0240ea05350da0ea3e9a877a",
   "prereg/PREREG_court.md": "65723983e22a3d684b172af35cc7fea6e74246869fc71fde88e852b8e020634f"
  }
 }

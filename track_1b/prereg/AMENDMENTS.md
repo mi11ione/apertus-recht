@@ -261,3 +261,15 @@ extracted equals the item's gold (verdict and deciding element) and the date, ac
 The 70B on the kept paraphrases (R0, R3, R5, both framings) behaves as on their templated originals: Ja/Nein, of 117
 lawful scenarios, 3 acquitted without the law (templated 2) and 47 with the rules (templated 44).
 `selfcheck` step 2g re-derives the verification and the scores. Not pre-registered.
+
+## A17 (2026-10-11, after judge and dogfood round 9): scope note on every acquittal (no gold, prompt or result change)
+A responsible-AI juror and a counsellor of an advice centre for people affected by racism found that "not punishable
+under Art. 261bis" reads as "allowed" and that the reference answers for acquittals end at a bare "Nein", which, used
+as training data, would teach an assistant to reassure. Every acquittal item now carries `scope_note` (in its
+language: «not punishable under Art. 261bis» means neither «allowed» nor «not discrimination»; personality protection,
+Art. 28 ZGB / CC; defamation or threat offences, Art. 173 ff., 180 StGB / CP; employment or tenancy law; the
+counselling network for victims of racism) and `chosen_with_scope` (`chosen` followed by the note), the answer to train
+on. `chosen`, `rejected`, `rejected_minimal`, the acceptance criteria and every prompt are unchanged, so no response,
+judgement or result changes; the locked item files change by the two added fields. The register shows the note on
+every acquittal, labels verdicts "under Art. 261bis", and is localised (German, French, Italian); the README opens
+with the scope note.

@@ -89,3 +89,6 @@ traps:
   date_overapplied:
     - "Nein. Taten vor dem 1. Juli 2020 sind von Art. 261bis StGB nicht erfasst."
     - "Nein. Die Tat liegt vor der Revision von 2020, und das Gesetz gilt nicht rückwirkend."
+# A17: shown with every acquittal; not part of the scored `chosen` answer
+scope_note:
+  acquit: "Wichtig: «Nicht strafbar nach Art. 261bis StGB» heisst weder «erlaubt» noch «keine Diskriminierung». Je nach Fall können andere Bestimmungen greifen: Persönlichkeitsschutz (Art. 28 ZGB), Ehrverletzung oder Drohung (Art. 173 ff., 180 StGB), Arbeits- oder Mietrecht. Beratung bieten die Stellen des Beratungsnetzes für Rassismusopfer."

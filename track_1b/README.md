@@ -7,6 +7,12 @@ some elements and leave others standing; in German, the verbatim law text, as a 
 changes no verdict. Intent and the dignity threshold are stated in the charge-sheet scenarios, so this measures how the model
 applies the elements, not whether it predicts a conviction.
 
+> **Research data, not legal advice.** Verdicts here concern Art. 261bis StGB alone, under the elements this set
+> models. «Not punishable under Art. 261bis» means neither «allowed» nor «not discrimination»: depending on the case,
+> personality protection (Art. 28 ZGB), defamation or threat offences, employment or tenancy law can apply, and the
+> centres of the Beratungsnetz für Rassismusopfer / Réseau de centres de conseil pour les victimes du racisme advise
+> people affected. Every non-punishable item carries this note (`scope_note`, A17).
+
 ![Synopse: the law in force next to the law Apertus applies](docs/figures/fig1_synopse.png)
 
 *Each row changes one legal fact of a scenario the law punishes (above the rule) or a detail that changes nothing
@@ -17,7 +23,7 @@ R4: plus a sentence on the 1 July 2020 extension; R5: the verbatim Fedlex text a
 
 ## What we found
 
-- **No law in the prompt: everything is punishable.** The 70B convicts every scenario we wrote in German, and all but
+- **No law in the prompt: everything is punishable.** The 70B convicts every German scenario when asked Ja/Nein (one acquitted with the verdict word), and all but
   2 (French) and 1 (Italian) of 215 non-punishable ones (balanced accuracy 0.50). Asked in free text, it calls 73 of 75 scenarios punishable (French and Italian: 75 of 75)
   that are not punishable under Art. 261bis; every German answer names that article, and most French and Italian ones
   do (59 and 57; the rest invoke the anti-racism provision without its number). Two Claude judges agree on nearly every
@@ -31,7 +37,7 @@ R4: plus a sentence on the 1 July 2020 extension; R5: the verbatim Fedlex text a
   what the model knows.
 - **The law itself does not help.** Given the verbatim Fedlex text of Art. 261bis and Art. 2 StGB and the Regeste of
   BGE 130 IV 111, as a retrieval pipeline would paste them, the German 70B convicts every scenario again: 0 of
-  215 acquittals recognised, exactly as with no law in the prompt. Its scores do register the facts (a private
+  215 acquittals recognised with Ja/Nein (1 with the verdict word), as with no law in the prompt. Its scores do register the facts (a private
   setting lowers the conviction score), but never below the threshold. In French it recognises 12 and in Italian 43, against 120 and 97 with
   the rules spelled out; in free text it calls every one of 75 non-punishable scenarios punishable. Only rules spelled out in plain sentences move it.
 - **Not a yes-bias.** Asked the other way round ("Würde ein Gericht freisprechen?"), the 70B still recognises 0 of 215

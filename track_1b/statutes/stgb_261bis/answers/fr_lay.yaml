@@ -86,3 +86,6 @@ traps:
   date_overapplied:
     - "Non. Les actes commis avant le 1er juillet 2020 ne sont pas visés par l'art. 261bis CP."
     - "Non. L'acte est antérieur à la révision de 2020, et la loi ne s'applique pas rétroactivement."
+# A17: shown with every acquittal; not part of the scored `chosen` answer
+scope_note:
+  acquit: "Important : « non punissable selon l'art. 261bis CP » ne signifie ni « permis » ni « pas de discrimination ». Selon le cas, d'autres règles peuvent s'appliquer : protection de la personnalité (art. 28 CC), atteintes à l'honneur ou menaces (art. 173 ss, 180 CP), droit du travail ou du bail. Les centres du Réseau de centres de conseil pour les victimes du racisme offrent un conseil."

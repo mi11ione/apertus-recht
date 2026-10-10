@@ -307,6 +307,14 @@ def reference_answers(d: Design, lang: str, sc: Scenario) -> tuple[str, str, str
     return chosen.format(**kw), rejected.format(**kw), (choose(minimal, 0).format(**kw) if minimal else None)
 
 
+def _scope(d: Design, lang: str, verdict: str, chosen: str) -> dict:
+    """answers/<lang>.yaml `scope_note`, per verdict (A17): for an acquittal, what "not punishable under this article"
+    does not mean (allowed, no discrimination) and where else to turn. Kept apart from `chosen`, which stays the scored
+    reference answer; `chosen_with_scope` is the answer to train on."""
+    note = (d.answers[lang].get("scope_note") or {}).get(verdict)
+    return dict(scope_note=note, chosen_with_scope=f"{chosen} {note}") if note else {}
+
+
 def item_id(d: Design, lang: str, sc: Scenario) -> str:
     prefix = d.raw.get("id_prefix") or d.statute.id.split("_", 1)[-1]
     return f"{prefix}-{lang}-{sc.group_id}-{sc.k}"
@@ -336,6 +344,7 @@ def build_items(d: Design, scenarios: list[Scenario], subset: str = "core") -> l
                 label=sc.gold.label, trap=sc.trap,
                 acceptance_criterion=acceptance(d, sc), chosen=chosen, rejected=rejected,
                 **({'rejected_minimal': minimal} if minimal else {}),
+                **_scope(d, lang, sc.gold.verdict, chosen),
                 rationale=rationale(d, sc), citation=_cite(d, auth, lang), normative_source=auth,
                 licence="CDLA-Permissive-2.0", canary=d.raw.get("canary"),
                 provenance=dict(prov, translation="source" if lang == "de" else "claude-agents+back-translation"),

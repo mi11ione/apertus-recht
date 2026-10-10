@@ -45,7 +45,7 @@ it applies**, element by element.
 Per language: 660 scenarios in 220 twin groups (220 base, 215 true flips, 210 placebos, 15 contested); verdicts
 430 convict, 215 acquit, 15 open. Each scenario has an acceptance criterion, an item-specific `chosen` answer, a
 `rejected` answer and a length-matched mirror, a settled or contested label, its normative source and its
-element-by-element derivation. The 660 German scenarios are also retold in the first person (`de_lay`).
+element-by-element derivation. The scenarios are also retold in the first person in all three languages (`de_lay`, `fr_lay`, `it_lay`).
 
 | Term | Meaning |
 |---|---|
@@ -90,7 +90,7 @@ three languages (sha256 of each text), the amendment footnotes, and the Regeste 
 author, labels each variant a true flip, a placebo or contested; the generator refuses to build if that disagrees with
 the design. French and Italian were translated by Claude agents with the official terms, back-translated blind (0
 critical findings) and localised by a lawyer-persona review (places in Romandie and Ticino, Swiss formulas).
-Every change after the pre-registration is a timestamped amendment in `prereg/AMENDMENTS.md`, cited below as A1–A15.
+Every change after the pre-registration is a timestamped amendment in `prereg/AMENDMENTS.md`, cited below as A1–A17.
 
 **Verification without human labels.** Because gold is computed, review looks for errors in the code, the element model
 or the wording. Every review step was done by Claude agents working blind on opaque ids, without code or gold.
@@ -159,7 +159,8 @@ language and framing (Table 2; Figure 2 shows every model by rung). Table 1 show
 But the threshold sits so far on the convicting side that no case falls below it. Asking the other way round ("would a
 court acquit?") changes nothing: ⟨rev_r0⟩ of 215 acquittals in every language, so this is not a bias towards "yes".
 In free text the judges fail ⟨open_r0_mislead⟩ of 75 answers to lawful scenarios as misleading; every one names
-Art. 261bis. The independent judge alone counts ⟨judgec_r0⟩ of 75.
+Art. 261bis. The independent judge alone counts ⟨judgec_r0⟩ of 75. The errors run one way: lawful conduct called
+punishable. The reverse, a punishable case called lawful, appears mainly with the 2020 sentence (R4, below).
 
 ⟨table:twin⟩
 
@@ -217,7 +218,7 @@ framing; open: it applies the law in force; dash: the base itself is not convict
 |---|---|---|
 | Question asked the other way ("would a court acquit?"), no law | Of 215 lawful scenarios, ⟨rev_r0⟩ are acquitted, in every language. | not a bias towards "yes" |
 | The same, rules spelled out | German: the model now also "acquits" punishable cases (balanced accuracy ⟨r3_rev_bal⟩). Averaged over both directions, ⟨r3_avg⟩ of 215 lawful scenarios are acquitted, among them ⟨r3_avg_set⟩ of 55 private settings. | part of the R3 gain is answer format |
-| The same in Italian | Of 215 lawful scenarios, none acquitted: every case is convicted. | the answer follows the question |
+| The same question reversed, rules spelled out, Italian | Of 215 lawful scenarios, none acquitted: every case is convicted. | the answer follows the question |
 | What in the verbatim law hurts (75 lawful German scenarios, a stable sample of 80 twin groups) | Acquitted with the rules alone: ⟨r3_same⟩ of 75; with the rules after the verbatim law: ⟨r5a_same⟩; with the rules after unrelated legal text of the same length: ⟨r5e_same⟩. | not prompt length: the law's own text |
 | Verbatim law plus an instruction to check each element (R6) | Of 215 lawful German scenarios, ⟨r6_acq⟩ are acquitted. | not a missing instruction |
 | Free text in French and Italian | Of 75 lawful scenarios, misleading answers: French ⟨ft_fr_r0⟩ without the law, ⟨ft_fr_r5⟩ with it; Italian ⟨ft_it_r0⟩ and ⟨ft_it_r5⟩. | not a German-only effect |
@@ -276,7 +277,7 @@ on 622, an MLX 4-bit conversion on 548.
 
 `make run` (Docker, CPU, no key, no model) regenerates the dataset from the YAML (sha256 per file), recomputes every
 result from the stored responses, checks every request hash against its prompt, re-aggregates the judges, checks the
-pre-registration (`prereg-verify`: locked files, amendments A1–A15, the frozen held-out code) and the `claims.tsv`
+pre-registration (`prereg-verify`: locked files, amendments A1–A17, the frozen held-out code) and the `claims.tsv`
 numbers for both statutes, and exits non-zero on any mismatch. `LLM_*` variables or `make run-gguf` add a live slice.
 Seeds: generator 261, bootstrap 0 (2,000 resamples). **License:** code Apache-2.0; dataset CDLA-Permissive-2.0; this
 report CC-BY-4.0.

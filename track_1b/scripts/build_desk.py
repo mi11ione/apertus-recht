@@ -21,7 +21,7 @@ from statute_twins.qc.checks import load_items  # noqa: E402
 REV = ROOT / "statutes/stgb_261bis/review"
 REPO = "https://github.com/mi11ione/apertus-recht"
 DATASET = "https://huggingface.co/datasets/mi11ion/apertus-recht"
-LANGS = [("de", "Deutsch"), ("fr", "Français"), ("it", "Italiano"), ("de_lay", "Deutsch · first person"),
+LANGS = [("de", "Deutsch"), ("fr", "Français"), ("it", "Italiano"), ("de_lay", "Deutsch · Ich-Form"),
          ("fr_lay", "Français · première personne"), ("it_lay", "Italiano · prima persona")]
 RUNS = {"70B": {"de": "publicai-70b-fc-core", "fr": "publicai-70b-fc-core-fr", "it": "publicai-70b-fc-core-it",
                 "de_lay": "publicai-70b-fc-lay", "fr_lay": "publicai-70b-fc-lay-fr", "it_lay": "publicai-70b-fc-lay-it"},
@@ -146,7 +146,7 @@ def build_lang(lang, items, ann, lawonly, adj, jd):
                    d=describe(i), b=i.get("base_id"),
                    tw=i["twin_group"], ra=i["rationale"], ci=i.get("citation", []), ac=i["acceptance_criterion"],
                    ch=i["chosen"], rj=i["rejected"], rm=i.get("rejected_minimal"), lab=i["label"], tr=i.get("trap"),
-                   sp=i.get("split"), p0=p0.get(i["id"]))
+                   sp=i.get("split"), p0=p0.get(i["id"]), sn=i.get("scope_note"))
         for name, m in models.items():
             if i["id"] in m:
                 rec["m" + name] = m[i["id"]]
@@ -266,6 +266,7 @@ table.m{border-collapse:collapse;font:13px Mono,monospace;display:block;overflow
 table.m th,table.m td{padding:5px 16px 5px 0;border-bottom:1px solid var(--hair);text-align:left;vertical-align:top}
 table.m th{color:var(--ink2);font-weight:500;border-bottom:1px solid var(--rule)}
 .bad{color:var(--red)}
+.scope{display:block;margin-top:8px;font-size:13px;line-height:1.45;color:var(--ink)}
 .q{border-left:2px solid var(--hair);padding:4px 0 4px 14px;margin:8px 0;max-width:880px}
 .q.bad{border-left-color:var(--red);color:inherit}
 .small{font-size:13px;color:var(--ink2)}
@@ -296,7 +297,7 @@ details[open] summary::before{content:"− "}
 <span class="seg" id="tabs"><button data-tab="items" aria-pressed="true">Scenarios</button><button data-tab="court" aria-pressed="false">Court decisions</button></span>
 <span id="filters" style="display:contents">
 <span class="seg" id="langs"></span>
-<label>show <select id="show">
+<label><span id="lshow">show</span> <select id="show">
 <option value="">all scenarios</option>
 <option value="any">Apertus 70B wrong somewhere</option>
 <option value="R0">wrong with no law</option>
@@ -306,10 +307,10 @@ details[open] summary::before{content:"− "}
 <option value="acq">the law acquits</option>
 <option value="open">contested</option>
 </select></label>
-<label>family <select id="fam"><option value="">all</option></select></label>
+<label><span id="lfam">family</span> <select id="fam"><option value="">all</option></select></label>
 </span>
 </div>
-<main><div id="side"><div id="search"><input id="q" type="search" placeholder="search the text or an id" aria-label="Search"></div><div id="count"><span id="n"></span><span class="key">■ R0 R3 R4 R5 · pink = wrong</span></div><div id="list" tabindex="0"></div></div><div id="case"></div></main>
+<main><div id="side"><div id="search"><input id="q" type="search" placeholder="search · suchen · chercher · cerca" aria-label="Search"></div><div id="count"><span id="n"></span><span class="key">■ R0 R3 R4 R5 · pink = wrong</span></div><div id="list" tabindex="0"></div></div><div id="case"></div></main>
 <script>
 const LANGS = __LANGS__, COURT = __COURT__, REWORDED = __REWORDED__;
 const FAM = {SET:"setting (public / private)", CHAR:"characteristic", CHARX:"characteristic, unlisted", DATE_SO:"date, sexual orientation", DATE_CTRL:"date, other groups", CONTESTED:"contested setting", WORDING:"wording"};
@@ -326,7 +327,35 @@ const FINDINGS = [
   {en:"Acts before 1 January 1995 are not covered: the article was not yet in force.", de:"Vor dem 1. Januar 1995 war der Artikel noch nicht in Kraft.", fr:"Avant le 1er janvier 1995, l'article n'était pas encore en vigueur.", it:"Prima del 1° gennaio 1995 l'articolo non era ancora in vigore.", pick: i => i.r === "act_date:not_in_force", rungs: ["R0","R3"]},
   {en:"Pasting the law itself (the Fedlex text and the leading case) hardly helps; in German, not at all.", de:"Den Gesetzestext einzufügen, hilft kaum; auf Deutsch gar nicht.", fr:"Coller le texte de loi n'aide presque pas.", it:"Incollare il testo di legge aiuta appena.", pick: i => i.g === "acquit", rungs: ["R5"]},
 ];
-const LAW = {acquit:"not punishable", convict:"punishable", open:"depends on facts left open"};
+const UI = {
+  en: {short: {acquit: "not punishable", convict: "punishable", open: "open"}, items: "Scenarios", court: "Court decisions", show: "show", fam: "family",
+       opts: ["all scenarios", "Apertus 70B wrong somewhere", "wrong with no law", "wrong with the rules spelled out", "wrong with the 2020 sentence", "wrong with the law text", "not punishable under Art. 261bis", "contested"],
+       law: {acquit: "not punishable under Art. 261bis", convict: "punishable under Art. 261bis", open: "depends on facts left open"},
+       thelaw: "the law", twins: "Its twins: the same case with one fact changed", why: "Why: the element-by-element derivation",
+       own: "Apertus 70B in its own words", refs: "Reference answers", overview: "overview"},
+  de: {short: {acquit: "nicht strafbar", convict: "strafbar", open: "offen"}, items: "Fälle", court: "Gerichtsentscheide", show: "zeigen", fam: "Familie",
+       opts: ["alle Fälle", "Apertus 70B irgendwo falsch", "falsch ohne Gesetz", "falsch mit ausformulierten Regeln", "falsch mit dem Satz zu 2020", "falsch mit dem Gesetzestext", "nach Art. 261bis nicht strafbar", "umstritten"],
+       law: {acquit: "nach Art. 261bis nicht strafbar", convict: "nach Art. 261bis strafbar", open: "hängt von offenen Tatsachen ab"},
+       thelaw: "das Gesetz", twins: "Die Zwillinge: derselbe Fall, eine Tatsache geändert", why: "Warum: die Herleitung Merkmal für Merkmal",
+       own: "Apertus 70B in eigenen Worten", refs: "Referenzantworten", overview: "Übersicht"},
+  fr: {short: {acquit: "non punissable", convict: "punissable", open: "ouvert"}, items: "Cas", court: "Décisions judiciaires", show: "afficher", fam: "famille",
+       opts: ["tous les cas", "Apertus 70B se trompe quelque part", "faux sans la loi", "faux avec les règles explicitées", "faux avec la phrase sur 2020", "faux avec le texte de loi", "non punissable selon l'art. 261bis", "controversés"],
+       law: {acquit: "non punissable selon l'art. 261bis CP", convict: "punissable selon l'art. 261bis CP", open: "dépend de faits laissés ouverts"},
+       thelaw: "la loi", twins: "Ses jumeaux : le même cas, un fait changé", why: "Pourquoi : la dérivation élément par élément",
+       own: "Apertus 70B dans ses propres mots", refs: "Réponses de référence", overview: "aperçu"},
+  it: {short: {acquit: "non punibile", convict: "punibile", open: "aperto"}, items: "Casi", court: "Decisioni giudiziarie", show: "mostra", fam: "famiglia",
+       opts: ["tutti i casi", "Apertus 70B sbaglia da qualche parte", "sbagliato senza la legge", "sbagliato con le regole esplicitate", "sbagliato con la frase sul 2020", "sbagliato con il testo di legge", "non punibile secondo l'art. 261bis", "controversi"],
+       law: {acquit: "non punibile secondo l'art. 261bis CP", convict: "punibile secondo l'art. 261bis CP", open: "dipende da fatti lasciati aperti"},
+       thelaw: "la legge", twins: "I suoi gemelli: lo stesso caso, un fatto cambiato", why: "Perché: la derivazione elemento per elemento",
+       own: "Apertus 70B con parole sue", refs: "Risposte di riferimento", overview: "panoramica"}};
+const ui = () => UI[lang.split("_")[0]] || UI.en;
+const LAW = new Proxy({}, {get: (_, g) => ui().law[g]});
+function localise() {
+  const u = ui();
+  const [ti, tc] = $("tabs").querySelectorAll("button"); ti.textContent = u.items; tc.textContent = u.court;
+  $("lshow").textContent = u.show; $("lfam").textContent = u.fam;
+  [...$("show").options].forEach((o, k) => { o.textContent = u.opts[k] ?? o.textContent; });
+}
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 let tab = "items", lang = LANGS[0][0], data = {}, view = [], cur = null, pin = null;
@@ -352,7 +381,7 @@ async function refresh() {
     (!sh || (sh === "any" ? ["R0","R3","R4","R5"].some(r => wrong(i, r)) : sh === "acq" ? i.g === "acquit" : sh === "open" ? i.g === "open" : wrong(i, sh))));
   $("n").innerHTML = `${view.length} of ${items.length}` + (pin ? ` · <a href="#" id="unpin">${esc(pin.en.split(",")[0].split(":")[0])} ×</a>` : "");
   if (pin) $("unpin").onclick = e => { e.preventDefault(); pin = null; cur = null; refresh(); };
-  $("list").innerHTML = view.map((i, k) => `<button data-k="${k}"><span class="d">${esc(i.d)}</span><span class="g">${i.g === "open" ? "open" : LAW[i.g]}</span><span class="id">${esc(i.id.replace("261bis-", ""))}</span><span>${strip(i)}</span></button>`).join("");
+  $("list").innerHTML = view.map((i, k) => `<button data-k="${k}"><span class="d">${esc(i.d)}</span><span class="g">${ui().short[i.g]}</span><span class="id">${esc(i.id.replace("261bis-", ""))}</span><span>${strip(i)}</span></button>`).join("");
   $("list").querySelectorAll("button").forEach(b => b.onclick = () => show(view[+b.dataset.k]));
   if (!cur || !view.find(i => i.id === cur.id)) { if (pin || $("show").value || $("fam").value || q) show(view[0], false); else home(); } else mark(true);
 }
@@ -364,22 +393,22 @@ function show(it, scroll = true) {
   if (!it) { $("case").innerHTML = '<p class="empty">Nothing matches. Clear a filter.</p>'; return; }
   mark(scroll); history.replaceState(null, "", "#" + it.id);
   const all = data[lang], base = all.find(i => i.id === it.b), sib = all.filter(i => i.tw === it.tw);
-  let h = `<p class="crumb"><a href="#" id="home">overview</a> · ${esc(it.id)} · ${esc(FAM[it.f] || it.f)} · ${esc(VAR[it.v] || it.v)}</p>`;
+  let h = `<p class="crumb"><a href="#" id="home">${ui().overview}</a> · ${esc(it.id)} · ${esc(FAM[it.f] || it.f)} · ${esc(VAR[it.v] || it.v)}</p>`;
   h += `<p class="text">${base && base.id !== it.id ? diff(base.t, it.t) : esc(it.t)}</p>`;
   if (base && base.id !== it.id) h += `<p class="small">Underlined: what differs from its base case.</p>`;
-  h += `<dl class="verdict"><dt>the law</dt><dd><b>${esc(LAW[it.g])}</b> under Art. 261bis${it.r ? ` <span class="small mono">· ${esc(it.r)}</span>` : ""}<br><span class="small">Other offences (e.g. insult, Art. 177) are not examined. The case is a summary: intent and the dignity threshold are taken as met.</span></dd>`;
+  h += `<dl class="verdict"><dt>${ui().thelaw}</dt><dd><b>${esc(LAW[it.g])}</b>${it.r ? ` <span class="small mono">· ${esc(it.r)}</span>` : ""}<br><span class="small">Other offences (e.g. insult, Art. 177) are not examined. The case is a summary: intent and the dignity threshold are taken as met.</span>${it.sn ? `<br><span class="scope">${esc(it.sn)}</span>` : ""}</dd>`;
   if (it.m70B) h += `<dt>Apertus 70B</dt><dd><span class="rungs">${["R0","R3","R4","R5","R6"].filter(r => it.m70B[r + "c"]).map(r => `<span class="${wrong(it, r) ? "bad" : ""}"><b>${r}</b>${RUNG[r]}: ${SAYS(said(it, r))}</span>`).join("")}</span></dd>`;
   h += `</dl><p class="small">R0 is a normal question with no law in it, the case that matters for the public. Higher rungs paste law into the prompt. Pink = differs from the law.</p>`;
-  if (sib.length > 1) h += `<h2>Its twins: the same case with one fact changed</h2><div class="twins">` + sib.map(s => `<a href="#${esc(s.id)}" data-id="${esc(s.id)}" class="${s.id === it.id ? "me" : ""}"><span class="i">${esc(s.id.replace("261bis-", ""))}</span><span>${esc(s.d)}</span><span class="g">${esc(LAW[s.g])} ${strip(s)}</span></a>`).join("") + "</div>";
-  h += `<h2>Why: the element-by-element derivation</h2><p class="mono small">${esc(it.ra)}</p>`;
+  if (sib.length > 1) h += `<h2>${ui().twins}</h2><div class="twins">` + sib.map(s => `<a href="#${esc(s.id)}" data-id="${esc(s.id)}" class="${s.id === it.id ? "me" : ""}"><span class="i">${esc(s.id.replace("261bis-", ""))}</span><span>${esc(s.d)}</span><span class="g">${esc(LAW[s.g])} ${strip(s)}</span></a>`).join("") + "</div>";
+  h += `<h2>${ui().why}</h2><p class="mono small">${esc(it.ra)}</p>`;
   for (const name of ["70B", "8B"]) {
     const m = it["m" + name]; if (!m) continue;
     const rs = ["R0","R3","R4","R5","R6"].filter(r => m[r + "c"] || m[r + "v"]);
     h += `<h2>Apertus ${name}, forced choice</h2><table class="m"><tr><th></th><th>prompt</th><th>${YN[lang] || "Ja / Nein"}</th><th>${VW[lang] || "verdict word"}</th></tr>` + rs.map(r => `<tr><td>${r}</td><td>${RUNG[r]}</td><td>${dec(m[r + "c"], it.g)}</td><td>${dec(m[r + "v"], it.g)}</td></tr>`).join("") + `</table><p class="small">Numbers: log-odds of conviction (above zero = convicts).</p>`;
   }
   if (it.p0) h += `<details><summary>Exact prompt sent (R0, ${YN[lang] || "Ja / Nein"})</summary><p class="q">${esc(it.p0)}</p></details>`;
-  if (it.ft) h += `<h2>Apertus 70B in its own words</h2>` + it.ft.map(x => { const J = Object.entries(x.j), bad = J.length && J.filter(([k, v]) => !v.p).length > J.length / 2; const reasonBad = !bad && J.length && J.filter(([k, v]) => v.p && v.r === false).length > J.length / 2; return `<div class="q ${bad ? "bad" : ""}"><div class="small mono">${x.rung} · ${RUNG[x.rung]}${J.length ? " · judges: " + (bad ? "wrong verdict" : reasonBad ? "verdict right, reasoning flawed" : "acceptable") + " (" + J.map(([k, v]) => `${k} ${v.p ? "pass" : "fail"}`).join(", ") + ")" : ""}</div>${esc(x.text)}</div>`; }).join("");
-  h += `<details><summary>Reference answers</summary><dl class="kv"><dt>chosen</dt><dd>${esc(it.ch)}</dd><dt>rejected</dt><dd>${esc(it.rj)}</dd>${it.rm ? `<dt>mirror</dt><dd>${esc(it.rm)}${it.pf != null ? ` <span class="small mono">· 70B prefers ${it.pf ? "the chosen answer" : "the mirror"}</span>` : ""}</dd>` : ""}<dt>criterion</dt><dd class="small">${esc(it.ac)}</dd></dl></details>`;
+  if (it.ft) h += `<h2>${ui().own}</h2>` + it.ft.map(x => { const J = Object.entries(x.j), bad = J.length && J.filter(([k, v]) => !v.p).length > J.length / 2; const reasonBad = !bad && J.length && J.filter(([k, v]) => v.p && v.r === false).length > J.length / 2; return `<div class="q ${bad ? "bad" : ""}"><div class="small mono">${x.rung} · ${RUNG[x.rung]}${J.length ? " · judges: " + (bad ? "wrong verdict" : reasonBad ? "verdict right, reasoning flawed" : "acceptable") + " (" + J.map(([k, v]) => `${k} ${v.p ? "pass" : "fail"}`).join(", ") + ")" : ""}</div>${esc(x.text)}</div>`; }).join("");
+  h += `<details><summary>${ui().refs}</summary><dl class="kv"><dt>chosen</dt><dd>${esc(it.ch)}</dd><dt>rejected</dt><dd>${esc(it.rj)}</dd>${it.rm ? `<dt>mirror</dt><dd>${esc(it.rm)}${it.pf != null ? ` <span class="small mono">· 70B prefers ${it.pf ? "the chosen answer" : "the mirror"}</span>` : ""}</dd>` : ""}<dt>criterion</dt><dd class="small">${esc(it.ac)}</dd></dl></details>`;
   if (it.an || it.lo || it.ad) h += `<details><summary>Review records (blind)</summary>${REWORDED[lang] ? `<p class="small">Annotated on the wording before amendment ${REWORDED[lang]}; no fact or gold changed since.</p>` : ""}<table class="m"><tr><th>pass</th><th>label</th><th>element</th><th>reason</th></tr>` + (it.an || []).map(a => `<tr><td>annotation ${a.round}</td><td>${dec(lab(a.label), it.g)}</td><td>${esc(a.el)}</td><td style="font-family:Sans">${esc(a.reason)}</td></tr>`).join("") + (it.lo ? `<tr><td>law only</td><td>${dec(lab(it.lo.label), it.g)}</td><td>${esc(it.lo.el)}</td><td style="font-family:Sans">${esc(it.lo.reason)}</td></tr>` : "") + (it.ad || []).map(a => `<tr><td>adjudicator ${a.who}</td><td>${esc(a.decision.replace("_", " "))}</td><td></td><td style="font-family:Sans">${esc(a.reason)}</td></tr>`).join("") + `</table></details>`;
   h += `<details><summary>Sources</summary><p class="small">${it.ci.map(esc).join("<br>")}</p></details>`;
   $("case").innerHTML = h; $("case").scrollTop = 0;
@@ -420,7 +449,7 @@ function setTab(t) {
 }
 $("tabs").querySelectorAll("button").forEach(b => b.onclick = () => setTab(b.dataset.tab));
 $("langs").innerHTML = LANGS.map(([l, n]) => `<button data-l="${l}" aria-pressed="${l === lang}">${n}</button>`).join("");
-$("langs").querySelectorAll("button").forEach(b => b.onclick = () => { lang = b.dataset.l; $("langs").querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b)); cur = null; refresh(); });
+$("langs").querySelectorAll("button").forEach(b => b.onclick = () => { lang = b.dataset.l; $("langs").querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b)); cur = null; localise(); refresh(); });
 ["show", "fam"].forEach(id => $(id).onchange = () => { cur = null; refresh(); });
 $("q").oninput = () => refresh();
 document.addEventListener("keydown", e => {
@@ -432,6 +461,7 @@ document.addEventListener("keydown", e => {
   const h = decodeURIComponent(location.hash.slice(1));
   const l = LANGS.map(x => x[0]).find(x => h.includes(`-${x}-`));
   if (l) { lang = l; $("langs").querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x.dataset.l === l)); }
+  localise();
   await refresh();
   const it = h && data[lang].find(i => i.id === h);
   if (it) show(it); else home();

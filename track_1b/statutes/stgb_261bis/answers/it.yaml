@@ -84,3 +84,6 @@ traps:
   date_overapplied:
     - "No. I fatti commessi prima del 1° luglio 2020 non sono contemplati dall'art. 261bis CP."
     - "No. Il fatto è anteriore alla revisione del 2020, e la legge non ha effetto retroattivo."
+# A17: shown with every acquittal; not part of the scored `chosen` answer
+scope_note:
+  acquit: "Importante: «non punibile secondo l'art. 261bis CP» non significa né «permesso» né «nessuna discriminazione». A seconda del caso possono applicarsi altre norme: protezione della personalità (art. 28 CC), delitti contro l'onore o minaccia (art. 173 segg., 180 CP), diritto del lavoro o di locazione. I centri della Rete di consulenza per le vittime del razzismo offrono consulenza."
