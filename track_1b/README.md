@@ -100,7 +100,7 @@ Exact forced choice on vLLM endpoints, first-token log-probabilities elsewhere, 
 | Gold | `convict` / `acquit` / `open` with the deciding element, computed by `src/statute_twins/gold/engine.py` from an element model that cites Fedlex texts pinned by sha256 and BGE 130 IV 111 |
 | Per item | acceptance criterion, chosen / rejected answers, settled / contested label, normative source, element-by-element derivation, licence |
 | Prompts | 7 rungs (R0 no law; R1–R4 the elements, a paraphrase of BGE 130 IV 111, the closed list, the 2020 date; R5 the verbatim Fedlex text and Regeste; R6 R5 with the element check) × 2 framings (Ja/Nein; "Urteil: schuldig / nicht schuldig") |
-| Responses | 35 files: the 70B on Public AI (DE/FR/IT, first-person retellings and free text in all three, the A13 controls), the 8B public GGUF on CPU, bf16 training stages and weight blends, MLX 4-bit builds, Qwen3-8B ([`docs/builds.md`](docs/builds.md)) |
+| Responses | 36 files: the 70B on Public AI (DE/FR/IT, first-person retellings and free text in all three, the A13 controls), the 8B public GGUF on CPU, bf16 training stages and weight blends, MLX 4-bit builds, Qwen3-8B ([`docs/builds.md`](docs/builds.md)) |
 
 ## How we know the gold is right
 

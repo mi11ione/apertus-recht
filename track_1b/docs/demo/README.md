@@ -1,6 +1,6 @@
 # Demo film
 
-`apertus-recht-demo.mp4` (1920×1080, 30 fps, about 2:00, English narration with burned-in subtitles) is built by the
+`apertus-recht-demo.mp4` (1920×1080, 30 fps, 2:00, English narration with burned-in subtitles) is built by the
 Remotion project in `/Users/mi11ion/Desktop/hackapertus/build/apertus-recht-film/` (outside this repository).
 The film is one continuous sheet: every square is one scenario of the dataset, and its colour at each step is the
 stored model response for that item (pink with a red edge = the model contradicts the law).

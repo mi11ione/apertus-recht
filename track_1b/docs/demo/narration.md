@@ -7,8 +7,8 @@ Spoken text of `apertus-recht-demo.mp4`, one line per sentence (one audio file e
 - Someone tells an assistant what they said at a family dinner.
 - Apertus 70B, Switzerland's open model, answers: yes.
   - `q_answer` = Ja — dataset/responses/publicai-70b-fc-lay.jsonl, prompt_id 261bis-de_lay-SET002-1/R0/conv, field decision (= 'convict', the prompt's convict token 'Ja')
-- Under Swiss law, that answer is wrong. It is one of 2,802 cases we built to find out why.
-  - `n_total` = 2802 — line counts of dataset/eval/core_de, core_de_lay, core_fr, core_it and battery162 (660 + 660 + 660 + 660 + 162)
+- Under Swiss law, that answer is wrong. It is one of 4,122 cases we built to find out why.
+  - `n_total` = 4122 — line counts of dataset/eval/core_de, core_de_lay, core_fr, core_fr_lay, core_it, core_it_lay and battery162 (660 + 660 + 660 + 660 + 660 + 660 + 162)
 
 ## 2. The law sorts them
 
@@ -44,7 +44,7 @@ Spoken text of `apertus-recht-demo.mp4`, one line per sentence (one audio file e
 
 ## 5. Everywhere
 
-- Same story in French, Italian, first-person German, and the smaller 8B model.
+- Same story in French, Italian, told in the first person, and in the smaller 8B model.
   - `multi` = see source — per-item decisions (framing conv) on the gold-acquit items: German (publicai-70b-fc-core): R0 0, R3 107, R5 0 of 215; French (publicai-70b-fc-core-fr): R0 2, R3 120, R5 12 of 215; Italian (publicai-70b-fc-core-it): R0 1, R3 97, R5 43 of 215; everyday German (publicai-70b-fc-lay): R0 2, R3 119 of 215; Apertus 8B (8b-gguf-q4_k_m-cpu-core): R0 15, R3 122, R5 13 of 215
 - The rules help. The pasted law takes most of it back.
 
@@ -61,5 +61,5 @@ Spoken text of `apertus-recht-demo.mp4`, one line per sentence (one audio file e
 - Sexual orientation, punishable cases 2021–2025: convicted 0 of 35 at R4 (framing ver, the verdict-word prompt).
 - The ribbon is the R5 prompt text (Fedlex wording of Art. 261bis and Art. 2 StGB, Regeste of BGE 130 IV 111), dataset/eval/prompts_core_de.jsonl, 261bis-de-SET002-0/R5/conv, the text between facts and question.
 - Small multiples: per-item decisions (framing conv) on the gold-acquit items: German (publicai-70b-fc-core): R0 0, R3 107, R5 0 of 215; French (publicai-70b-fc-core-fr): R0 2, R3 120, R5 12 of 215; Italian (publicai-70b-fc-core-it): R0 1, R3 97, R5 43 of 215; everyday German (publicai-70b-fc-lay): R0 2, R3 119 of 215; Apertus 8B (8b-gguf-q4_k_m-cpu-core): R0 15, R3 122, R5 13 of 215. Everyday German has no R5 run.
-- The self-check lines are the step titles printed by `statute-twins selfcheck` (what `make run` runs), ticked when the step passed at build time: step 1 PASS, step 2 PASS, step 2b PASS, step 2c PASS, step 2d PASS, step 2e PASS.
+- The self-check lines are the step titles printed by `statute-twins selfcheck` (what `make run` runs), ticked when the step passed at build time: step 1 PASS, step 2 PASS, step 2b PASS, step 2c PASS, step 2d PASS, step 2g PASS, step 2f PASS, step 2e PASS.
 - Runs `publicai-70b-*` are Apertus v1.5 70B via Public AI (the gateway serves it under the name `swiss-ai/apertus-v1.5-8b`; see technical_report.md). The 8B block is run `8b-gguf-q4_k_m-cpu-core` (Apertus v1.5 8B, Q4_K_M GGUF on CPU).
