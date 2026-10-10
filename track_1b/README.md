@@ -35,8 +35,6 @@ Fedlex text and the leading case's Regeste instead (German). Light red: in one f
 - **A lead on where it comes from.** In the 8B at full precision, the DPO step cuts correct acquittals under stated
   rules from 185 to 146 of 220 while keeping every conviction; a 4-bit MLX conversion changes 100 of 648 verdicts, the
   public Q8_0 GGUF 10.
-- **It cost less than a cup of coffee.** Public AI billed USD 0.43 for our whole account (all tracks, as of 10.10.2026
-  08:32); the gateway's list-price upper bound for this release's runs is ⟨usd⟩. The 8B ran on free CI runners.
 
 Hack Apertus 2026 · Track 1B (Swiss Voices, behavioural alignment) · team 444 · report [`444_Report.pdf`](444_Report.pdf)
 · dataset: [`dataset/`](dataset/) (the Hugging Face release, with its card)

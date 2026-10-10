@@ -18,7 +18,6 @@ hf_downloads	698,641	reports/hf_downloads.json	J['models']['swiss-ai/Apertus-v1.
 sens_max	1.4	reports/sensitivity.json	100*J['max_abs_diff']	.1f	technical_report.md	python scripts/sensitivity.py
 open_judges_agree	479 of 480	reports/open_judged_publicai-70b-open.json	f"{J['judges_agree_on_pass']} of {J['judged']}"		README.md,technical_report.md	python scripts/judge_open.py aggregate publicai-70b-open <work_dir>
 open_kappa	0.995	reports/open_judged_publicai-70b-open.json	J['kappa']['pass']	.3f	technical_report.md	python scripts/judge_open.py aggregate publicai-70b-open <work_dir>
-usd	USD 2.00	reports/spend.json	J['usd_text']		README.md,technical_report.md	python scripts/spend.py
 r5_acq_conv	0	results/results.json	[a for a in J['runs']['publicai-70b-fc-core']['accuracy'] if a['subset']=='core' and a['lang']=='de' and a['rung']=='R5' and a['framing']=='conv'][0]['acquit_correct']		README.md,technical_report.md	statute-twins results
 r5_acq_ver	1	results/results.json	[a for a in J['runs']['publicai-70b-fc-core']['accuracy'] if a['subset']=='core' and a['lang']=='de' and a['rung']=='R5' and a['framing']=='ver'][0]['acquit_correct']		technical_report.md	statute-twins results
 lay_acq	2	results/results.json	[a for a in J['runs']['publicai-70b-fc-lay']['accuracy'] if a['subset']=='core' and a['lang']=='de_lay' and a['rung']=='R0' and a['framing']=='conv'][0]['acquit_correct']		README.md,technical_report.md	statute-twins results
@@ -31,4 +30,3 @@ stage_dpo	146	results/results.json	sum(a['acquit_correct'] for a in J['runs']['8
 auc_r0	0.72–0.77	results/results.json	(lambda v: f'{min(v):.2f}–{max(v):.2f}')([a['auc'] for r in ('publicai-70b-fc-core','publicai-70b-fc-core-fr','publicai-70b-fc-core-it') for a in J['runs'][r]['accuracy'] if a['subset']=='core' and a['rung']=='R0'])		technical_report.md	statute-twins results
 lay_r3_bal	0.75	results/results.json	[a for a in J['runs']['publicai-70b-fc-lay']['accuracy'] if a['subset']=='core' and a['lang']=='de_lay' and a['rung']=='R3' and a['framing']=='conv'][0]['balanced_accuracy']	.2f	technical_report.md	statute-twins results
 r6_acq	23	results/results.json	[a for a in J['runs']['publicai-70b-fc-core']['accuracy'] if a['subset']=='core' and a['lang']=='de' and a['rung']=='R6' and a['framing']=='conv'][0]['acquit_correct']		technical_report.md	statute-twins results
-billed	USD 0.43	reports/spend.json	J['billed_text']		README.md,technical_report.md	python scripts/spend.py (reports/publicai_billing.json from the Public AI dashboard)

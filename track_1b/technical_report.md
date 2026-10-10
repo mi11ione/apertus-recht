@@ -23,8 +23,7 @@ protected makes it stop convicting such cases in German and French.
 - **Where it runs:** the 70B on the Public AI endpoint through a cost-capped gateway. The endpoint name
   `apertus-v1.5-8b` serves the 70B: its greedy output is byte-identical to the `-70b` name in 760/792 cells, and it
   scores 84.4% vs 70.8% on 250 MMLU items against the v1 8B route (`docs/builds.md`). The 8B GGUF runs on CPU in GitHub
-  Actions. Public AI billed ⟨billed⟩ for the team's whole account (all tracks, as of 10.10.2026
-  08:32); the gateway's list-price upper bound for this release is ⟨usd⟩.
+  Actions.
 - **Links:** code https://github.com/mi11ione/apertus-recht · dataset on Hugging Face (URL in the form notes).
 
 ----
