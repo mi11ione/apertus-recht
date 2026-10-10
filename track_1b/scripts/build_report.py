@@ -53,6 +53,7 @@ figure table{margin:0 0 1mm}
 figcaption{font-size:8.4pt;line-height:1.32;font-style:italic;color:#222}
 table.twin{font:7.6pt/1.3 'Sans'}
 table.twin td,table.twin th{font-family:'Sans'}
+table.prose td,table.prose th{font-family:'Sans';font-size:8.3pt;line-height:1.3}
 table.twin td.m{font:7.9pt/1.3 'Plex';white-space:nowrap}
 table.twin b{font-weight:600;background:#f1f1ef}
 blockquote{margin:0 0 2mm;padding-left:3mm;border-left:2pt solid #dc0018}
@@ -231,6 +232,8 @@ def main() -> None:
                   html, flags=re.S)
     html = re.sub(r"(<table[^>]*>(?:(?!<table).)*?</table>)\s*<p><em>(Table.*?)</em></p>",
                   r"<figure>\1<figcaption>\2</figcaption></figure>", html, flags=re.S)
+    # tables of sentences (terms, families, prior art, controls) are set in the text face; tables of numbers stay mono
+    html = re.sub(r"<table>(\s*<thead>\s*<tr>\s*<th>(?:Term|Family|Dataset|Control)\b)", r'<table class="prose">\1', html)
     fonts = "".join([font_face("Sans", "SourceSans3-Regular.ttf", 400), font_face("Sans", "SourceSans3-Semibold.ttf", 600),
                      font_face("Plex", "IBMPlexMono-Regular.ttf", 400), font_face("Plex", "IBMPlexMono-Medium.ttf", 500)])
     css = CSS.replace("__DATE__", datetime.date.today().strftime("%d.%m.%Y"))

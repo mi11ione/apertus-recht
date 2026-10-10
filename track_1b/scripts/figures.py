@@ -161,50 +161,99 @@ def _syn_cell(edits_run, lang, edit, rung):
     return dict(state=state, k=conv["v_convicted"], n=conv["n"], drop=drop)
 
 
+def _mark(ax, x, y, state, size=6.4):
+    """One cell of the synopsis, readable in greyscale: filled square = a law not in force is applied in every readable
+    framing; half-filled = in one framing; open square = the law in force is applied; dash = the base itself is not
+    convicted, so the element cannot be read."""
+    if state == "unreadable":
+        ax.plot([x - 0.09, x + 0.09], [y, y], color=GREY, lw=0.9, solid_capstyle="butt")
+        return
+    kw = dict(marker="s", ms=size, mew=0.8, linestyle="none")
+    if state == "red":
+        ax.plot([x], [y], color=RED, mfc=RED, mec=RED, **kw)
+    elif state == "amber":
+        ax.plot([x], [y], color=RED, mfc=RED, mec=RED, fillstyle="left", markerfacecoloralt=PAPER, **kw)
+    else:
+        ax.plot([x], [y], mfc=PAPER, mec=INK, **kw)
+
+
 def fig_synopse(R, out, blocks=SYN_BLOCKS):
+    """The law in force next to the law the model applies: one row per legal fact changed, one column per rung and
+    model block; marks instead of numbers so the pattern reads at print size and in greyscale."""
     blocks = [b for b in blocks if b[0] in R["runs"]]
     rows = [r for r in SYN_ROWS if any(e["edit"] == r[0] and e.get("subset") == "core"
                                        for b in blocks for e in R["runs"][b[0]]["edits"])]
-    # each block shows the rungs its run has (R5, the verbatim law, was run in German only)
+
     def rungs_of(b):
         have = {e["rung"] for e in R["runs"][b[0]]["edits"] if e.get("subset") == "core" and e["lang"] == b[1]}
         return [r for r in RUNGS_ALL if r in have]
-    cols = [(b, rung) for b in blocks for rung in rungs_of(b)]
-    fig, ax = plt.subplots(figsize=(7.3, 0.22 * len(rows) + 0.6))
+    fig, ax = plt.subplots(figsize=(7.3, 0.205 * len(rows) + 0.95))
     ax.set_axis_off()
-    x0, cw, gap = 3.55, 0.47, 0.12
-    tint = {"red": "#f6c5cb", "amber": "#fbe3e6", "ok": PAPER, "unreadable": "#e6e6e3"}
-    xs = []
-    block_index = {b: k for k, b in enumerate(dict.fromkeys(b for b, _ in cols))}
-    for j, (b, rung) in enumerate(cols):
-        xx = x0 + j * cw + block_index[b] * gap
-        xs.append(xx)
-        ax.text(xx + cw / 2, -0.55, rung, ha="center", fontfamily=MONO, fontsize=6.2, color=INK2)
-        if rung == "R0":
-            ax.text(xx, -1.35, b[2], fontsize=6.9, color=INK, fontweight="semibold")
-            nb = sum(1 for bb, _ in cols if bb == b)
-            ax.plot([xx, xx + nb * cw - 0.04], [-1.05, -1.05], color=INK, lw=0.5)
-    ax.text(0, -1.35, "One fact changed", fontsize=7.2, fontweight="semibold")
-    ax.text(2.85, -1.35, "Law", fontsize=7.2, fontweight="semibold")
-    right = xs[-1] + cw
+    x0, cw, gap = 3.25, 0.30, 0.22
+    cols, x = [], x0
+    for b in blocks:
+        rs = rungs_of(b)
+        ax.text(x - 0.12, -1.55, b[2], fontsize=7.0, fontweight="semibold", color=INK)
+        ax.plot([x - 0.12, x + (len(rs) - 1) * cw + 0.12], [-1.2, -1.2], color=INK, lw=0.5)
+        for rung in rs:
+            ax.text(x, -0.75, rung, ha="center", fontfamily=MONO, fontsize=6.2, color=INK2)
+            cols.append((b, rung, x))
+            x += cw
+        x += gap
+    right = x - gap + 0.15
+    ax.text(0, -1.55, "One fact changed", fontsize=7.2, fontweight="semibold")
+    ax.text(2.55, -1.55, "Law", fontsize=7.2, fontweight="semibold")
     for i, (edit, label, law, src) in enumerate(rows):
-        y = i
         if i and rows[i - 1][2] != law:
-            ax.plot([0, right], [y - 0.5, y - 0.5], color=INK, lw=0.5)
-        ax.text(0, y, label, va="center", fontsize=7.0)
-        ax.text(2.85, y, law, va="center", fontsize=6.6, fontfamily=MONO)
-        for xx, (b, rung) in zip(xs, cols):
+            ax.plot([0, right], [i - 0.5, i - 0.5], color=INK, lw=0.5)
+        ax.text(0, i, label, va="center", fontsize=7.0)
+        ax.text(2.55, i, law, va="center", fontsize=6.5, fontfamily=MONO)
+        for b, rung, xx in cols:
             c = _syn_cell(R["runs"][b[0]]["edits"], b[1], edit, rung)
-            if c is None:
-                ax.text(xx + cw / 2, y, "·", ha="center", va="center", color=GREY)
-                continue
-            ax.add_patch(plt.Rectangle((xx + 0.015, y - 0.42), cw - 0.03, 0.84, facecolor=tint[c["state"]], edgecolor="none"))
-            ax.text(xx + cw / 2, y, f"{c['k']}/{c['n']}" + ("↓" if c["drop"] else ""), ha="center", va="center",
-                    fontfamily=MONO, fontsize=5.6 if not c["drop"] else 5.2, color=RED if c["state"] == "red" else INK)
+            if c is not None:
+                _mark(ax, xx, i, c["state"])
+    # legend, in the figure itself so the encoding is never separated from it
+    ly = len(rows) + 0.35
+    items = [("red", "a law not in force is applied (both framings)"), ("amber", "in one framing"),
+             ("ok", "the law in force is applied"), ("unreadable", "base not convicted: cannot be read")]
+    lx = 0.0
+    for state, text in items:
+        _mark(ax, lx + 0.08, ly, state, size=5.6)
+        ax.text(lx + 0.22, ly, text, va="center", fontsize=6.6, color=INK2)
+        lx += 0.42 + 0.047 * len(text)
     ax.set_xlim(-0.05, right + 0.05)
-    ax.set_ylim(len(rows) - 0.45, -1.75)
-    fig.subplots_adjust(left=0.01, right=0.99, top=0.98, bottom=0.02)
+    ax.set_ylim(len(rows) + 0.85, -1.95)
+    fig.subplots_adjust(left=0.01, right=0.99, top=0.99, bottom=0.01)
     save(fig, out, "fig1_synopse")
+
+
+# ------------------------------------------------------------------------------------------- method (diagram)
+def fig_method(out):
+    """From pinned law to the per-element read-back, with the checks on the gold below (one row)."""
+    steps = [("Pinned law", "Fedlex · BGE"), ("Element model", "statute.yaml"),
+             ("Gold verdict", "computed by code"), ("Minimal twins", "one fact changed"),
+             ("Prompts", "R0–R6, 2 framings"), ("Apertus", "scores · free text"),
+             ("Read-back", "law per element")]
+    fig, ax = plt.subplots(figsize=(7.3, 1.05))
+    ax.set_axis_off()
+    w, h, g = 0.128, 0.36, 0.0170
+    for k, (head, sub) in enumerate(steps):
+        x = k * (w + g)
+        ax.add_patch(plt.Rectangle((x, 0.42), w, h, facecolor=PAPER, edgecolor=INK, lw=0.6))
+        ax.text(x + 0.008, 0.42 + h - 0.075, head, fontsize=7.0, fontweight="semibold", va="top", color=INK)
+        ax.text(x + 0.008, 0.42 + 0.08, sub, fontsize=6.4, va="bottom", color=INK2)
+        if k:
+            ax.annotate("", xy=(x - 0.002, 0.42 + h / 2), xytext=(x - g + 0.002, 0.42 + h / 2),
+                        arrowprops=dict(arrowstyle="-|>", lw=0.6, color=INK, mutation_scale=6))
+    gx = 2 * (w + g)
+    ax.plot([gx + w / 2, gx + w / 2], [0.42, 0.25], color=RED, lw=0.6)
+    ax.text(gx + w / 2 - 0.004, 0.17, "checked against: blind annotation (Claude; Qwen, another model family) · "
+            "Swiss court rulings · mutation tests · the official text in three languages",
+            fontsize=6.4, color=RED, va="center", ha="left")
+    ax.set_xlim(-0.005, len(steps) * (w + g) - g + 0.005)
+    ax.set_ylim(0.08, 0.82)
+    fig.subplots_adjust(left=0.005, right=0.995, top=0.99, bottom=0.01)
+    save(fig, out, "fig0_method")
 
 
 # ------------------------------------------------------------------------------------------- rungs (chart)
@@ -217,37 +266,38 @@ RUNG_X = ("R0", "R3", "R4", "R5")
 
 
 def fig_rungs(R, out, framing="conv"):
-    """Two small multiples on one rung axis: share of acquittals recognised and of convictions kept (Ja/Nein)."""
-    fig, axes = plt.subplots(1, 2, figsize=(7.3, 1.75), sharex=True)
-    panels = (("acquit", "Acquittals recognised (of 215)"), ("convict", "Convictions kept (of 430)"))
-    for ax, (side, title) in zip(axes, panels):
-        for run, lang, label, col, mk, ls, filled in RUNG_SERIES:
-            if run not in R["runs"]:
-                continue
-            acc = {a["rung"]: a for a in R["runs"][run]["accuracy"]
-                   if a.get("subset") == "core" and a["lang"] == lang and a["framing"] == framing}
-            xs = [k for k, r in enumerate(RUNG_X) if r in acc]
+    """Small multiples, one panel per model and language: share of acquittals recognised (solid) and of convictions
+    kept (dashed) by rung, Ja/Nein."""
+    series = [s for s in RUNG_SERIES if s[0] in R["runs"]]
+    fig, axes = plt.subplots(1, len(series), figsize=(7.3, 1.6), sharey=True)
+    for ax, (run, lang, label, *_rest) in zip(axes, series):
+        acc = {a["rung"]: a for a in R["runs"][run]["accuracy"]
+               if a.get("subset") == "core" and a["lang"] == lang and a["framing"] == framing}
+        xs = [k for k, r in enumerate(RUNG_X) if r in acc]
+        for side, ls, mfc, col in (("acquit", "-", INK, INK), ("convict", "--", PAPER, INK2)):
             ys = [acc[RUNG_X[k]][f"{side}_correct"] / acc[RUNG_X[k]][f"{side}_n"] for k in xs]
-            ax.plot(xs, ys, color=col, lw=1.0, ls=ls, marker=mk, ms=4.2, mfc=col if filled else PAPER, mec=col, mew=0.9,
-                    zorder=3, label=label)
+            ax.plot(xs, ys, color=col, lw=1.0, ls=ls, marker="o", ms=3.6, mfc=mfc, mec=col, mew=0.8, zorder=3)
         ax.set_xticks(range(len(RUNG_X)), RUNG_X)
-        ax.set_xlim(-0.25, len(RUNG_X) - 0.75)
-        ax.set_ylim(-0.03, 1.03)
+        ax.set_xlim(-0.35, len(RUNG_X) - 0.65)
+        ax.set_ylim(-0.04, 1.06)
         ax.set_yticks([0, 0.5, 1], ["0", "0.5", "1"])
         for t in ax.get_xticklabels() + ax.get_yticklabels():
             t.set_fontfamily(MONO)
+            t.set_fontsize(6.6)
         ax.axhline(1.0, color=LINE, lw=0.5, zorder=1)
-        ax.set_title(title, fontsize=7.6, pad=4)
-    h, l = axes[0].get_legend_handles_labels()
-    fig.legend(h, l, loc="upper left", ncol=len(l), bbox_to_anchor=(0.04, 1.02), handlelength=2.6, columnspacing=1.6,
-               fontsize=7.0)
-    fig.subplots_adjust(left=0.05, right=0.99, wspace=0.14, top=0.78, bottom=0.12)
+        ax.set_title(label.replace("70B DE, user voice", "70B DE, first person"), fontsize=7.4, pad=3)
+    h = [plt.Line2D([], [], color=INK, lw=1.0, marker="o", ms=3.6, mfc=INK),
+         plt.Line2D([], [], color=INK2, lw=1.0, ls="--", marker="o", ms=3.6, mfc=PAPER, mec=INK2)]
+    fig.legend(h, ["acquittals recognised (of 215)", "convictions kept (of 430)"], loc="upper left", ncol=2,
+               bbox_to_anchor=(0.045, 1.04), fontsize=7.0, handlelength=2.6, columnspacing=1.8)
+    fig.subplots_adjust(left=0.05, right=0.995, wspace=0.12, top=0.74, bottom=0.14)
     save(fig, out, "fig2_rungs")
 
 
 def main(results: str, out: str):
     R = json.loads(Path(results).read_text())
     out = Path(out)
+    fig_method(out)
     fig_synopse(R, out)
     fig_rungs(R, out)
     fig_stage(R, out)

@@ -9,10 +9,11 @@ applies the elements, not whether it predicts a conviction.
 
 ![Synopse: the law in force next to the law Apertus applies](docs/figures/fig1_synopse.png)
 
-*Each row changes one legal fact of a scenario the law punishes. Cells: variants the model convicts (k/n). Red: the
-model applies a law that is not in force, in every readable framing. R0: no law in the prompt; R3: the elements, a one-sentence
-paraphrase of BGE 130 IV 111 and the closed list; R4: plus a sentence on the 1 July 2020 extension; R5: the verbatim
-Fedlex text and the leading case's Regeste instead. Light red: in one framing; grey: not readable.*
+*Each row changes one legal fact of a scenario the law punishes (above the rule) or a detail that changes nothing
+(below). Filled square: the model applies a law that is not in force, in both framings; half-filled: in one; open: it
+applies the law in force; dash: the unchanged base is not convicted either, so the element cannot be read. R0: no law
+in the prompt; R3: the rules spelled out (the elements, a one-sentence paraphrase of BGE 130 IV 111, the closed list);
+R4: plus a sentence on the 1 July 2020 extension; R5: the verbatim Fedlex text and the leading case's Regeste.*
 
 ## What we found
 
@@ -62,7 +63,7 @@ Hack Apertus 2026 · Track 1B (Swiss Voices, behavioural alignment) · team 444 
 ```bash
 make run                                 # Docker, CPU, no model, no key: ~25 s
 # without Docker (Python >= 3.10):
-pip install -e . && statute-twins selfcheck
+pip install -e ".[dev]" && statute-twins selfcheck
 ```
 
 1. **Gold re-derivation.** Regenerates all 2,802 items, gold labels and prompts from `statutes/stgb_261bis/` and compares

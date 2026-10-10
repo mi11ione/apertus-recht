@@ -356,7 +356,7 @@ alongside results, since 4-bit conversions changed verdicts in our measurements.
   title  = {Apertus-Recht: Art. 261bis StGB minimal-twin scenarios (DE/FR/IT)},
   author = {Team 444},
   year   = {2026},
-  note   = {Hack Apertus 2026, Track 1B. Dataset version 1.0.0},
+  note   = {Hack Apertus 2026, Track 1B. Dataset version 1.1.0},
   url    = {https://github.com/mi11ione/apertus-recht}
 }
 ```
