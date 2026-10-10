@@ -9,9 +9,7 @@ is. With the statute pasted in, it applies the publicity rule. It still convicts
 political opinion, and for acts committed before the law existed. Told when sexual orientation became protected, it
 stops protecting it.
 
-**Track:** Apertus Readiness · Track 1B (Swiss Voices, behavioural alignment)
-**Event:** Online
-**Team:** 444
+**Track:** Apertus Readiness · Track 1B (Swiss Voices, behavioural alignment) · **Event:** Online · **Team:** 444  
 **Demo:** `make run` in the repository (Docker, CPU, no key, ~25 s); dataset on Hugging Face (link in the form notes)
 
 ----
@@ -71,31 +69,23 @@ families, 29 settings, 33 group phrases. A mean of 44 words is the price of exac
 
 **No data was collected from people.** A seeded generator renders the scenarios from YAML templates. A 97-line engine
 computes the gold verdict from a machine-readable element model of the statute (`statutes/stgb_261bis/statute.yaml`).
-Every element and value cites a pinned source:
-- the Fedlex consolidations of Art. 261bis before and since 1 July 2020, and of Art. 2 StGB (DE/FR/IT, sha256 of the
-  text);
-- the amendment footnotes (AS 1994 2887, AS 2020 1609);
-- the Regeste of BGE 130 IV 111.
-
-The engine, not the author, labels each variant a true flip, a placebo or contested. The generator refuses to build if
+Every element and value cites a pinned source: the Fedlex consolidations of Art. 261bis before and since 1 July 2020
+and of Art. 2 StGB (DE/FR/IT, sha256 of the text), the amendment footnotes (AS 1994 2887, AS 2020 1609) and the Regeste
+of BGE 130 IV 111. The engine, not the author, labels each variant a true flip, a placebo or contested. The generator refuses to build if
 the label disagrees with the design.
 
-**Design choices.**
-- *Placebos* catch surface heuristics.
-- *Rungs* model the retrieval levels of an assistant.
-- *Two framings* are used because a framing is readable only if it convicts the protected reference.
-- Acts are described in the statute's own vocabulary: no slurs, no names.
-- The 15 contested items per language leave the facts BGE 130 IV 111 makes decisive genuinely mixed. Their gold is
-  `open`, and their criterion asks for a hedged answer.
+**Design choices.** *Placebos* catch surface heuristics; *rungs* model the retrieval levels of an assistant; *two
+framings* are used because a framing is readable only if it convicts the protected reference; acts are described in
+the statute's own vocabulary (no slurs, no names); the 15 contested items per language leave the facts BGE 130 IV 111
+makes decisive genuinely mixed, so their gold is `open` and their criterion asks for a hedged answer.
 
 **Translation and localisation.** Claude agents translated the templates into French and Italian with the official
 CP terms, and separate agents back-translated them blind (legal facts: 0 critical findings, 3 minor, all fixed). A
 review by a French- and Italian-speaking lawyer persona then found what back-translation cannot: the cases read as
-German cases in translation. The fix was made before any French or Italian result was analysed (amendment A7):
-- French items are set in Romandie, Italian ones in Ticino and Italian Graubünden;
-- intent is "avec conscience et volonté" / "consapevolmente e volontariamente";
-- the verdict words are "condamnation / acquittement" and "condanna / proscioglimento";
-- citations take the Swiss form of each language (art. 261bis al. 1 CP, ATF … consid. 5.2, DTF … consid. 5.2).
+German cases in translation. Fixed before any French or Italian result was analysed (amendment A7): French items are set in Romandie, Italian ones
+in Ticino and Italian Graubünden; intent reads "avec conscience et volonté" / "consapevolmente e volontariamente"; the
+verdict words are "condamnation / acquittement" and "condanna / proscioglimento"; citations take each language's Swiss
+form (art. 261bis al. 1 CP, ATF / DTF … consid. 5.2).
 
 **Verification without human labels.** Gold is computed, so review looks for errors in the code, the element model or
 the wording. All review was done by Claude agents working blind on opaque ids, without access to code or gold.
@@ -106,34 +96,26 @@ the wording. All review was done by Claude agents working blind on opaque ids, w
   (A5). All were fixed, the affected prompts re-scored, and the pre-fix responses archived.
 - **Adjudication:** two independent adjudicators covered every disagreement, every contested item and a blind 10%
   sample. Gold was wrong in 0/94 sampled items (Wilson upper bound 3.9%).
-- **Court validation:** we triaged ⟨court_triaged⟩ decisions citing Art. 261bis. Each was extracted twice
+- **Court validation:** we triaged ⟨court_triaged⟩ citing Art. 261bis. Each was extracted twice
   (κ 0.83–0.98) and conflicts went to a third agent. The engine agrees with the court in ⟨court_agree⟩ in-scope
   decisions (Wilson 95% ⟨court_ci⟩), 55 convictions and 3 acquittals, under a pre-registered rule.
 
 ## Dataset Details
 
-**Quality gates** (`statute-twins qc`, all passing):
-- schema;
-- gold recomputed for every item;
-- twin invariants: one changed slot; placebos keep the verdict, flips change it;
-- 0 duplicates; language identity; canary;
-- a PII scan over items, responses and metadata: 0 hits.
-
-Tests check every closed-list term and both in-force dates against the official text in three languages. Mutation
+**Quality gates** (`statute-twins qc`, all passing): schema; gold recomputed for every item; twin invariants (one
+changed slot; placebos keep the verdict, flips change it); 0 duplicates; language identity; canary; a PII scan over
+items, responses and metadata (0 hits). Tests check every closed-list term and both in-force dates against the official text in three languages. Mutation
 tests (drop religion from the list, move the 2020 date by a day, make private settings public) flip exactly the items
 each rule governs.
 
-**Contamination.** We scanned all 1,069,365 decisions of `voilaj/swiss-caselaw`:
-- 0 of our 35,241 distinct 13-grams occur in them;
-- the same code finds 846 of the 1,525 13-grams of the statute and the Regeste;
-- the law itself is well represented: 147 decisions mention BGE 130 IV 111 and 754 mention Art. 261bis.
+**Contamination.** None of our 35,241 distinct 13-grams occurs in the 1,069,365 decisions of `voilaj/swiss-caselaw`;
+the same code finds 846 of the 1,525 13-grams of the statute and the Regeste. The law itself is well represented: 147
+decisions mention BGE 130 IV 111 and 754 mention Art. 261bis.
 
-**Ethics and licensing.**
-- **Data subjects:** none. Actors are generic, groups are named by their characteristic, and acts are abstract.
-- **Licences:** items are CDLA-Permissive-2.0 with per-item licence components; statute and decision texts are public
-  domain under Art. 5 URG.
-- **AI use:** declared throughout. A consent form with an AI-use clause is ready for anyone who adds human reviewers.
-- **Canary:** every item carries a canary string.
+**Ethics and licensing.** No data subjects: actors are generic, groups are named by their characteristic, acts are
+abstract. Items are CDLA-Permissive-2.0 with per-item licence components; statute and decision texts are public domain
+(Art. 5 URG). AI use is declared throughout; a consent form with an AI-use clause is ready for anyone who adds human
+reviewers. Every item carries a canary string.
 
 ## Evaluation
 
@@ -265,7 +247,7 @@ exits non-zero on any mismatch.
 - **Traceability:** every number in this report maps to a results file and the command that produced it in
   `claims.tsv`, which CI checks on every push.
 - **Seeds:** generator 261; bootstrap seed 0, 2,000 resamples.
-- **Pre-registration:** `prereg/LOCK.json`, before any model saw the core set. Amendments A1–A6, with their timing
+- **Pre-registration:** `prereg/LOCK.json`, before any model saw the core set. Amendments A1–A7, with their timing
   relative to the analysis, are in `prereg/AMENDMENTS.md`.
 
 ## License
@@ -277,4 +259,4 @@ Code Apache-2.0; dataset CDLA-Permissive-2.0; this report CC-BY-4.0.
 Art. 261bis and Art. 2 StGB, SR 311.0 (Fedlex, versions of 1 Jan 1995 and 1 Jul 2020); AS 1994 2887; AS 2020 1609.
 BGE 130 IV 111. Fan et al., LEXam, ICLR 2026. Han et al., LawShift, NeurIPS 2025 D&B. Servantez et al., OpenExempt,
 ACL Findings 2026. Huang et al., When Do LLMs Apply the Wrong Law?, arXiv 2608.14610. Röttger et al., Multilingual
-HateCheck, WOAH 2022. Swiss AI, Apertus v1.5 technical report, 2026.
+HateCheck, WOAH 2022.

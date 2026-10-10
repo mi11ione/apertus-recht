@@ -32,14 +32,14 @@ CSS = """
   @top-left{content:"Apertus-Recht · Technical report · Hack Apertus 2026, Track 1B";font:7.5pt 'Plex';color:#666}
   @top-right{content:"__DATE__";font:7.5pt 'Plex';color:#666}
   @bottom-right{content:counter(page) " / " counter(pages);font:7.5pt 'Plex';color:#666}}
-html{font:9.6pt/1.42 'Sans',Arial,sans-serif;color:#000}
+html{font:9.3pt/1.38 'Sans',Arial,sans-serif;color:#000}
 body{margin:0}
 h1{font:400 21pt/1.1 'Sans';margin:0 0 3mm;letter-spacing:-.01em}
 h1+p{font-size:10.5pt;margin-top:0}
-h2{font:600 11.5pt/1.25 'Sans';margin:5mm 0 1.5mm;padding-top:1.5mm;border-top:.4pt solid #000;break-after:avoid}
+h2{font:600 11pt/1.25 'Sans';margin:4mm 0 1.2mm;padding-top:1.5mm;border-top:.4pt solid #000;break-after:avoid}
 h3{font:600 9.8pt/1.3 'Sans';margin:3mm 0 1mm;break-after:avoid}
 p{margin:0 0 2mm;orphans:3;widows:3}
-ul,ol{margin:0 0 2mm;padding-left:5mm} li{margin:0 0 .6mm}
+ul,ol{margin:0 0 1.6mm;padding-left:4.5mm} li{margin:0 0 .3mm}
 code{font:8.4pt 'Plex'}
 pre{font:7.8pt/1.35 'Plex';border-left:.4pt solid #000;padding-left:3mm;white-space:pre-wrap;break-inside:avoid}
 table{border-collapse:collapse;width:100%;margin:1mm 0 3mm;font:7.9pt/1.3 'Plex';break-inside:avoid}
@@ -120,6 +120,25 @@ def tables(R: dict) -> dict:
     return out
 
 
+def md_lists(md: str) -> str:
+    """Python-Markdown needs a blank line before a list and four-space indentation for nested items; the report is
+    written in the GitHub style (list right under its paragraph, two-space nesting)."""
+    out, nested = [], False
+    for line in md.split("\n"):
+        if re.match(r"^- ", line):
+            nested = False
+            if out and out[-1].strip() and not re.match(r"^\s*- ", out[-1]) and not out[-1].startswith(" "):
+                out.append("")
+        elif re.match(r"^  - ", line):
+            nested, line = True, "    " + line[2:]
+        elif nested and re.match(r"^    \S", line):
+            line = "      " + line[4:]
+        elif not line.startswith(" "):
+            nested = False
+        out.append(line)
+    return "\n".join(out)
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--md", default=str(ROOT / "technical_report.md"))
@@ -134,6 +153,7 @@ def main() -> None:
     from check_claims import claim_values
     for c in claim_values():
         md = md.replace(f"⟨{c['id']}⟩", c["got"])
+    md = md_lists(md)
     left = re.findall(r"⟨[^⟩]*⟩", md)
     if left:
         raise SystemExit(f"unfilled markers in the report: {left[:5]}")

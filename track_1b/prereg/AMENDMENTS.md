@@ -53,7 +53,7 @@ fact or gold label changes; the item texts change for 88 DE, 123 FR and 151 IT i
 which are re-scored for every model. Because this amendment follows an analysis of the DE results, the pre-amendment
 responses and results are kept unchanged in `dataset/archive/` and the report states both where they differ.
 
-## A6 (2026-10-10, 02:10): item-specific reference answers, free-text framing, unparsed answers in balanced accuracy
+## A6 (2026-10-10, 01:50): item-specific reference answers, free-text framing, unparsed answers in balanced accuracy
 (1) A review found the reference answers too uniform (20 distinct `chosen`, 9 `rejected` per language). `chosen` now
 names the item's own setting, characteristic, paragraph and date; `rejected` and the trap answers are drawn
 deterministically from two wrong answers of the kind models give (333 distinct `chosen`, 31 `rejected` per language).
@@ -66,7 +66,7 @@ answer in the class recall denominators as well (before, only in the accuracy de
 unparsed row, so no published number changes. Hand-computed unit tests for these functions are in
 `tests/test_scoring.py`.
 
-## A7 (2026-10-10, 02:35, before any French or Italian result entered the report): FR/IT localisation from review
+## A7 (2026-10-10, 02:20, before any French or Italian result entered the report): FR/IT localisation from review
 A French- and Italian-speaking lawyer persona (dogfood round 2) found that the FR/IT scenarios read as German cases in
 translation: every place was a German-speaking town (trams in Thun, communal assemblies in cities with a parliament),
 the intent formula of frame F06 was a calque ("savait ce qu'elle faisait et le voulait"), two act phrasings were

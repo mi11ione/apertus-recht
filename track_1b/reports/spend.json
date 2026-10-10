@@ -8,16 +8,16 @@
    "usd": 0.244
   },
   "1b-core-70b-fr": {
-   "requests": 8968,
-   "prompt_tokens": 2470441,
-   "completion_tokens": 8968,
-   "usd": 0.249
+   "requests": 9439,
+   "prompt_tokens": 2601443,
+   "completion_tokens": 9439,
+   "usd": 0.262
   },
   "1b-core-70b-it": {
-   "requests": 8466,
-   "prompt_tokens": 2490655,
-   "completion_tokens": 8466,
-   "usd": 0.251
+   "requests": 8815,
+   "prompt_tokens": 2595115,
+   "completion_tokens": 8815,
+   "usd": 0.261
   },
   "1b-open-70b": {
    "requests": 509,
@@ -26,10 +26,10 @@
    "usd": 0.24
   },
   "1b-pref-70b": {
-   "requests": 137,
-   "prompt_tokens": 30216,
-   "completion_tokens": 137,
-   "usd": 0.003
+   "requests": 517,
+   "prompt_tokens": 114992,
+   "completion_tokens": 517,
+   "usd": 0.012
   },
   "1b-probe": {
    "requests": 1,
@@ -45,8 +45,8 @@
   }
  },
  "total": {
-  "requests": 27057,
-  "usd": 0.99
+  "requests": 28257,
+  "usd": 1.02
  },
- "usd_text": "USD 0.99"
+ "usd_text": "USD 1.02"
 }

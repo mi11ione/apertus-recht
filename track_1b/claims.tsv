@@ -13,3 +13,10 @@ court_triaged	326 decisions	reports/court_validation.json	"f""{len(J['rows'])} d
 court_agree	58/58	reports/court_validation.json	"f""{J['agree']}/{J['in_scope']}"""		README.md	python scripts/court_validation.py ...
 court_ci	0.94–1.00	reports/court_validation.json	"f""{J['agreement_ci'][0]:.2f}–{J['agreement_ci'][1]:.2f}"""		README.md	python scripts/court_validation.py ...
 adj_115	115/115	reports/adjudication.json	"f""{J['adjudicators_agree']}/{J['n']}"""		README.md	see reports/adjudication.json
+open_r0_mislead	74	reports/open_judged_publicai-70b-open.json	J['cells']['rung_gold|R0|acquit']['misleads']		README.md,technical_report.md	python scripts/judge_open.py aggregate publicai-70b-open <work_dir>
+hf_downloads	698,641	reports/hf_downloads.json	J['models']['swiss-ai/Apertus-v1.5-8B']['downloads_30d']	,	technical_report.md	HfApi.model_info (see reports/hf_downloads.json)
+sens_max	1.3	reports/sensitivity.json	100*J['max_abs_diff']	.1f	technical_report.md	python scripts/sensitivity.py
+open_judges_agree	479 of 480	reports/open_judged_publicai-70b-open.json	f"{J['judges_agree_on_pass']} of {J['judged']}"		README.md,technical_report.md	python scripts/judge_open.py aggregate publicai-70b-open <work_dir>
+open_kappa	0.995	reports/open_judged_publicai-70b-open.json	J['kappa']['pass']	.3f	technical_report.md	python scripts/judge_open.py aggregate publicai-70b-open <work_dir>
+open_code_check	466/466	reports/open_judged_publicai-70b-open.json	f"{J['code_check']['pass_matches_code_gold']}/{sum(J['code_check'].values())}"		technical_report.md	python scripts/judge_open.py aggregate publicai-70b-open <work_dir>
+usd	USD 1.02	reports/spend.json	J['usd_text']		README.md,technical_report.md	python scripts/spend.py
