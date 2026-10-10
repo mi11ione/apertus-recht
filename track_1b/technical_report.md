@@ -260,8 +260,8 @@ on 622, an MLX 4-bit conversion on 548.
   accuracy by more than ⟨sens_max⟩ points).
 - **Every review is re-runnable** (agent runs with their instructions in the repository), and each is checked from
   outside one model family: the gold by Qwen, the official text, mutation tests and courts; the free text by Qwen and
-  a parser. The wording is templated for exact twins; the first-person retelling shows the findings survive that.
-- **Contested items are few** (15 per language); accuracy intervals treat items as independent.
+  a parser. Twins need templated wording; natural paraphrases give the same results (Table 3). Contested items are
+  few (15 per language).
 
 ## Lessons Learnt and Recommendations
 

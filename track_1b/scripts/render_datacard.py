@@ -208,7 +208,7 @@ the pinned statute text and BGE 130 IV 111 E. 5.2, never written by hand.
 - **Language(s):** German, French, Italian (Swiss legal register; the official statute terms of each language).
 - **License:** CDLA-Permissive-2.0 (all items; per-item licence components in `metadata/items.jsonl`).
 - **Git repository:** {REPO_URL} (generator, gold engine, harness, tests; Apache-2.0).
-- **Version:** 1.1.0 (generator 1.0.0, seed 261). Changelog at the end.
+- **Version:** 1.2.0 (generator 1.0.0, seed 261). Changelog at the end.
 
 ## Uses
 ### Direct Use
@@ -431,6 +431,8 @@ alongside results, since 4-bit conversions changed verdicts in our measurements.
 {len(runs)} runs (`responses/<run>.jsonl` with `<run>.meta.json`): {', '.join(runs)}.
 
 ## Changelog
+- 1.2.0 (2026-10-11): amendment A16 (first-person retellings in French and Italian, natural paraphrases verified
+  blind by two model families, the 8B in French and Italian); no item or gold label of 1.1.0 changed.
 - 1.1.0 (2026-10-10): amendments A12–A15 (controls, free text in French and Italian, Art. 179ter, corrections);
   no item or gold label of 1.0.0 changed. Files and hashes: `MANIFEST.json` ({len(man['files'])} files).
 - 1.0.0 (2026-10-10): first release. Generator 1.0.0, seed 261.
@@ -460,7 +462,7 @@ alongside results, since 4-bit conversions changed verdicts in our measurements.
   title  = {{Apertus-Recht: Art. 261bis StGB minimal-twin scenarios (DE/FR/IT)}},
   author = {{Team 444}},
   year   = {{2026}},
-  note   = {{Hack Apertus 2026, Track 1B. Dataset version 1.1.0}},
+  note   = {{Hack Apertus 2026, Track 1B. Dataset version 1.2.0}},
   url    = {{{REPO_URL}}}
 }}
 ```

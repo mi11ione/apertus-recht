@@ -330,6 +330,14 @@
   "cross_language": {
    "Colby/apertus-v1.5-8b-text-Q4_K_M-GGUF (CPU, llama-cpp-python 0.3.19)": {
     "joint_errors": {
+     "de-fr": {
+      "both": 0,
+      "errors_a": 0,
+      "errors_b": 0,
+      "n": 0,
+      "p_b": null,
+      "p_b_given_a": null
+     },
      "de-it": {
       "both": 0,
       "errors_a": 0,
@@ -337,9 +345,25 @@
       "n": 0,
       "p_b": null,
       "p_b_given_a": null
+     },
+     "fr-it": {
+      "both": 1130,
+      "errors_a": 1500,
+      "errors_b": 1389,
+      "n": 5160,
+      "p_b": 0.269186,
+      "p_b_given_a": 0.753333
      }
     },
     "pairs": {
+     "fr-de": {
+      "agree": 0,
+      "n": 0
+     },
+     "fr-it": {
+      "agree": 4629,
+      "n": 5280
+     },
      "it-de": {
       "agree": 0,
       "n": 0
@@ -14951,6 +14975,7986 @@
     "run": "8b-gguf-q4_k_m-cpu-core",
     "rungs": "R0,R3,R4,R5",
     "shards": 8
+   },
+   "preference": [],
+   "rows": 5280
+  },
+  "8b-gguf-q4_k_m-cpu-core-fr": {
+   "accuracy": [
+    {
+     "accuracy": 0.663566,
+     "accuracy_ci": [
+      0.626229,
+      0.698966
+     ],
+     "acquit_correct": 12,
+     "acquit_n": 215,
+     "auc": 0.606869,
+     "balanced_accuracy": 0.511628,
+     "convict_correct": 416,
+     "convict_n": 430,
+     "correct": 428,
+     "framing": "conv",
+     "lang": "fr",
+     "n": 645,
+     "recall_acquit": 0.055814,
+     "recall_convict": 0.967442,
+     "rung": "R0",
+     "subset": "core",
+     "unparsed": 0
+    },
+    {
+     "accuracy": 0.666667,
+     "accuracy_ci": [
+      0.629394,
+      0.701965
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 215,
+     "auc": 0.664218,
+     "balanced_accuracy": 0.5,
+     "convict_correct": 430,
+     "convict_n": 430,
+     "correct": 430,
+     "framing": "ver",
+     "lang": "fr",
+     "n": 645,
+     "recall_acquit": 0.0,
+     "recall_convict": 1.0,
+     "rung": "R0",
+     "subset": "core",
+     "unparsed": 0
+    },
+    {
+     "accuracy": 0.862016,
+     "accuracy_ci": [
+      0.833249,
+      0.886496
+     ],
+     "acquit_correct": 140,
+     "acquit_n": 215,
+     "auc": 0.851293,
+     "balanced_accuracy": 0.809302,
+     "convict_correct": 416,
+     "convict_n": 430,
+     "correct": 556,
+     "framing": "conv",
+     "lang": "fr",
+     "n": 645,
+     "recall_acquit": 0.651163,
+     "recall_convict": 0.967442,
+     "rung": "R3",
+     "subset": "core",
+     "unparsed": 0
+    },
+    {
+     "accuracy": 0.733333,
+     "accuracy_ci": [
+      0.697898,
+      0.766006
+     ],
+     "acquit_correct": 44,
+     "acquit_n": 215,
+     "auc": 0.80782,
+     "balanced_accuracy": 0.601163,
+     "convict_correct": 429,
+     "convict_n": 430,
+     "correct": 473,
+     "framing": "ver",
+     "lang": "fr",
+     "n": 645,
+     "recall_acquit": 0.204651,
+     "recall_convict": 0.997674,
+     "rung": "R3",
+     "subset": "core",
+     "unparsed": 0
+    },
+    {
+     "accuracy": 0.59845,
+     "accuracy_ci": [
+      0.560143,
+      0.63559
+     ],
+     "acquit_correct": 200,
+     "acquit_n": 215,
+     "auc": 0.842012,
+     "balanced_accuracy": 0.681395,
+     "convict_correct": 186,
+     "convict_n": 430,
+     "correct": 386,
+     "framing": "conv",
+     "lang": "fr",
+     "n": 645,
+     "recall_acquit": 0.930233,
+     "recall_convict": 0.432558,
+     "rung": "R4",
+     "subset": "core",
+     "unparsed": 0
+    },
+    {
+     "accuracy": 0.782946,
+     "accuracy_ci": [
+      0.749507,
+      0.813034
+     ],
+     "acquit_correct": 102,
+     "acquit_n": 215,
+     "auc": 0.814321,
+     "balanced_accuracy": 0.705814,
+     "convict_correct": 403,
+     "convict_n": 430,
+     "correct": 505,
+     "framing": "ver",
+     "lang": "fr",
+     "n": 645,
+     "recall_acquit": 0.474419,
+     "recall_convict": 0.937209,
+     "rung": "R4",
+     "subset": "core",
+     "unparsed": 0
+    },
+    {
+     "accuracy": 0.688372,
+     "accuracy_ci": [
+      0.651602,
+      0.722912
+     ],
+     "acquit_correct": 14,
+     "acquit_n": 215,
+     "auc": 0.639794,
+     "balanced_accuracy": 0.532558,
+     "convict_correct": 430,
+     "convict_n": 430,
+     "correct": 444,
+     "framing": "conv",
+     "lang": "fr",
+     "n": 645,
+     "recall_acquit": 0.065116,
+     "recall_convict": 1.0,
+     "rung": "R5",
+     "subset": "core",
+     "unparsed": 0
+    },
+    {
+     "accuracy": 0.67907,
+     "accuracy_ci": [
+      0.642074,
+      0.713946
+     ],
+     "acquit_correct": 8,
+     "acquit_n": 215,
+     "auc": 0.681796,
+     "balanced_accuracy": 0.518605,
+     "convict_correct": 430,
+     "convict_n": 430,
+     "correct": 438,
+     "framing": "ver",
+     "lang": "fr",
+     "n": 645,
+     "recall_acquit": 0.037209,
+     "recall_convict": 1.0,
+     "rung": "R5",
+     "subset": "core",
+     "unparsed": 0
+    }
+   ],
+   "accuracy_by_family": [
+    {
+     "accuracy": 0.966667,
+     "accuracy_ci": [
+      0.886362,
+      0.990811
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 0.966667,
+     "convict_correct": 58,
+     "convict_n": 60,
+     "correct": 58,
+     "family": "CHAR",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 60,
+     "recall_acquit": null,
+     "recall_convict": 0.966667,
+     "rung": "R0",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.939828,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 60,
+     "convict_n": 60,
+     "correct": 60,
+     "family": "CHAR",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 60,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R0",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 0.983333,
+     "accuracy_ci": [
+      0.911449,
+      0.997052
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 0.983333,
+     "convict_correct": 59,
+     "convict_n": 60,
+     "correct": 59,
+     "family": "CHAR",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 60,
+     "recall_acquit": null,
+     "recall_convict": 0.983333,
+     "rung": "R3",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.939828,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 60,
+     "convict_n": 60,
+     "correct": 60,
+     "family": "CHAR",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 60,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R3",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 0.516667,
+     "accuracy_ci": [
+      0.393078,
+      0.63825
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 0.516667,
+     "convict_correct": 31,
+     "convict_n": 60,
+     "correct": 31,
+     "family": "CHAR",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 60,
+     "recall_acquit": null,
+     "recall_convict": 0.516667,
+     "rung": "R4",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 0.983333,
+     "accuracy_ci": [
+      0.911449,
+      0.997052
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 0.983333,
+     "convict_correct": 59,
+     "convict_n": 60,
+     "correct": 59,
+     "family": "CHAR",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 60,
+     "recall_acquit": null,
+     "recall_convict": 0.983333,
+     "rung": "R4",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.939828,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 60,
+     "convict_n": 60,
+     "correct": 60,
+     "family": "CHAR",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 60,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R5",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.939828,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 60,
+     "convict_n": 60,
+     "correct": 60,
+     "family": "CHAR",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 60,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R5",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.939828,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 60,
+     "convict_n": 60,
+     "correct": 60,
+     "family": "CHAR",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 60,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R0",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.939828,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 60,
+     "convict_n": 60,
+     "correct": 60,
+     "family": "CHAR",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 60,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R0",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 0.983333,
+     "accuracy_ci": [
+      0.911449,
+      0.997052
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 0.983333,
+     "convict_correct": 59,
+     "convict_n": 60,
+     "correct": 59,
+     "family": "CHAR",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 60,
+     "recall_acquit": null,
+     "recall_convict": 0.983333,
+     "rung": "R3",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.939828,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 60,
+     "convict_n": 60,
+     "correct": 60,
+     "family": "CHAR",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 60,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R3",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 0.466667,
+     "accuracy_ci": [
+      0.346279,
+      0.591066
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 0.466667,
+     "convict_correct": 28,
+     "convict_n": 60,
+     "correct": 28,
+     "family": "CHAR",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 60,
+     "recall_acquit": null,
+     "recall_convict": 0.466667,
+     "rung": "R4",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 0.966667,
+     "accuracy_ci": [
+      0.886362,
+      0.990811
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 0.966667,
+     "convict_correct": 58,
+     "convict_n": 60,
+     "correct": 58,
+     "family": "CHAR",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 60,
+     "recall_acquit": null,
+     "recall_convict": 0.966667,
+     "rung": "R4",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.939828,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 60,
+     "convict_n": 60,
+     "correct": 60,
+     "family": "CHAR",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 60,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R5",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.939828,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 60,
+     "convict_n": 60,
+     "correct": 60,
+     "family": "CHAR",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 60,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R5",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 0.05,
+     "accuracy_ci": [
+      0.01715,
+      0.137005
+     ],
+     "acquit_correct": 3,
+     "acquit_n": 60,
+     "auc": null,
+     "balanced_accuracy": 0.05,
+     "convict_correct": 0,
+     "convict_n": 0,
+     "correct": 3,
+     "family": "CHAR",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 60,
+     "recall_acquit": 0.05,
+     "recall_convict": null,
+     "rung": "R0",
+     "unparsed": 0,
+     "variant": "true_flip"
+    },
+    {
+     "accuracy": 0.0,
+     "accuracy_ci": [
+      0.0,
+      0.060172
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 60,
+     "auc": null,
+     "balanced_accuracy": 0.0,
+     "convict_correct": 0,
+     "convict_n": 0,
+     "correct": 0,
+     "family": "CHAR",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 60,
+     "recall_acquit": 0.0,
+     "recall_convict": null,
+     "rung": "R0",
+     "unparsed": 0,
+     "variant": "true_flip"
+    },
+    {
+     "accuracy": 0.916667,
+     "accuracy_ci": [
+      0.819311,
+      0.96388
+     ],
+     "acquit_correct": 55,
+     "acquit_n": 60,
+     "auc": null,
+     "balanced_accuracy": 0.916667,
+     "convict_correct": 0,
+     "convict_n": 0,
+     "correct": 55,
+     "family": "CHAR",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 60,
+     "recall_acquit": 0.916667,
+     "recall_convict": null,
+     "rung": "R3",
+     "unparsed": 0,
+     "variant": "true_flip"
+    },
+    {
+     "accuracy": 0.2,
+     "accuracy_ci": [
+      0.118285,
+      0.317818
+     ],
+     "acquit_correct": 12,
+     "acquit_n": 60,
+     "auc": null,
+     "balanced_accuracy": 0.2,
+     "convict_correct": 0,
+     "convict_n": 0,
+     "correct": 12,
+     "family": "CHAR",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 60,
+     "recall_acquit": 0.2,
+     "recall_convict": null,
+     "rung": "R3",
+     "unparsed": 0,
+     "variant": "true_flip"
+    },
+    {
+     "accuracy": 0.966667,
+     "accuracy_ci": [
+      0.886362,
+      0.990811
+     ],
+     "acquit_correct": 58,
+     "acquit_n": 60,
+     "auc": null,
+     "balanced_accuracy": 0.966667,
+     "convict_correct": 0,
+     "convict_n": 0,
+     "correct": 58,
+     "family": "CHAR",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 60,
+     "recall_acquit": 0.966667,
+     "recall_convict": null,
+     "rung": "R4",
+     "unparsed": 0,
+     "variant": "true_flip"
+    },
+    {
+     "accuracy": 0.366667,
+     "accuracy_ci": [
+      0.256209,
+      0.49317
+     ],
+     "acquit_correct": 22,
+     "acquit_n": 60,
+     "auc": null,
+     "balanced_accuracy": 0.366667,
+     "convict_correct": 0,
+     "convict_n": 0,
+     "correct": 22,
+     "family": "CHAR",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 60,
+     "recall_acquit": 0.366667,
+     "recall_convict": null,
+     "rung": "R4",
+     "unparsed": 0,
+     "variant": "true_flip"
+    },
+    {
+     "accuracy": 0.0,
+     "accuracy_ci": [
+      0.0,
+      0.060172
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 60,
+     "auc": null,
+     "balanced_accuracy": 0.0,
+     "convict_correct": 0,
+     "convict_n": 0,
+     "correct": 0,
+     "family": "CHAR",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 60,
+     "recall_acquit": 0.0,
+     "recall_convict": null,
+     "rung": "R5",
+     "unparsed": 0,
+     "variant": "true_flip"
+    },
+    {
+     "accuracy": 0.0,
+     "accuracy_ci": [
+      0.0,
+      0.060172
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 60,
+     "auc": null,
+     "balanced_accuracy": 0.0,
+     "convict_correct": 0,
+     "convict_n": 0,
+     "correct": 0,
+     "family": "CHAR",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 60,
+     "recall_acquit": 0.0,
+     "recall_convict": null,
+     "rung": "R5",
+     "unparsed": 0,
+     "variant": "true_flip"
+    },
+    {
+     "accuracy": 0.9,
+     "accuracy_ci": [
+      0.698966,
+      0.972134
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 0.9,
+     "convict_correct": 18,
+     "convict_n": 20,
+     "correct": 18,
+     "family": "CHARX",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 20,
+     "recall_acquit": null,
+     "recall_convict": 0.9,
+     "rung": "R0",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.838875,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 20,
+     "convict_n": 20,
+     "correct": 20,
+     "family": "CHARX",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 20,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R0",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 0.9,
+     "accuracy_ci": [
+      0.698966,
+      0.972134
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 0.9,
+     "convict_correct": 18,
+     "convict_n": 20,
+     "correct": 18,
+     "family": "CHARX",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 20,
+     "recall_acquit": null,
+     "recall_convict": 0.9,
+     "rung": "R3",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.838875,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 20,
+     "convict_n": 20,
+     "correct": 20,
+     "family": "CHARX",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 20,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R3",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 0.35,
+     "accuracy_ci": [
+      0.181192,
+      0.567146
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 0.35,
+     "convict_correct": 7,
+     "convict_n": 20,
+     "correct": 7,
+     "family": "CHARX",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 20,
+     "recall_acquit": null,
+     "recall_convict": 0.35,
+     "rung": "R4",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 0.95,
+     "accuracy_ci": [
+      0.763869,
+      0.991119
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 0.95,
+     "convict_correct": 19,
+     "convict_n": 20,
+     "correct": 19,
+     "family": "CHARX",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 20,
+     "recall_acquit": null,
+     "recall_convict": 0.95,
+     "rung": "R4",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.838875,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 20,
+     "convict_n": 20,
+     "correct": 20,
+     "family": "CHARX",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 20,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R5",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.838875,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 20,
+     "convict_n": 20,
+     "correct": 20,
+     "family": "CHARX",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 20,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R5",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 0.1,
+     "accuracy_ci": [
+      0.03958,
+      0.230518
+     ],
+     "acquit_correct": 4,
+     "acquit_n": 40,
+     "auc": null,
+     "balanced_accuracy": 0.1,
+     "convict_correct": 0,
+     "convict_n": 0,
+     "correct": 4,
+     "family": "CHARX",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 40,
+     "recall_acquit": 0.1,
+     "recall_convict": null,
+     "rung": "R0",
+     "unparsed": 0,
+     "variant": "true_flip"
+    },
+    {
+     "accuracy": 0.0,
+     "accuracy_ci": [
+      0.0,
+      0.087622
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 40,
+     "auc": null,
+     "balanced_accuracy": 0.0,
+     "convict_correct": 0,
+     "convict_n": 0,
+     "correct": 0,
+     "family": "CHARX",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 40,
+     "recall_acquit": 0.0,
+     "recall_convict": null,
+     "rung": "R0",
+     "unparsed": 0,
+     "variant": "true_flip"
+    },
+    {
+     "accuracy": 0.8,
+     "accuracy_ci": [
+      0.652427,
+      0.895
+     ],
+     "acquit_correct": 32,
+     "acquit_n": 40,
+     "auc": null,
+     "balanced_accuracy": 0.8,
+     "convict_correct": 0,
+     "convict_n": 0,
+     "correct": 32,
+     "family": "CHARX",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 40,
+     "recall_acquit": 0.8,
+     "recall_convict": null,
+     "rung": "R3",
+     "unparsed": 0,
+     "variant": "true_flip"
+    },
+    {
+     "accuracy": 0.225,
+     "accuracy_ci": [
+      0.123161,
+      0.375031
+     ],
+     "acquit_correct": 9,
+     "acquit_n": 40,
+     "auc": null,
+     "balanced_accuracy": 0.225,
+     "convict_correct": 0,
+     "convict_n": 0,
+     "correct": 9,
+     "family": "CHARX",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 40,
+     "recall_acquit": 0.225,
+     "recall_convict": null,
+     "rung": "R3",
+     "unparsed": 0,
+     "variant": "true_flip"
+    },
+    {
+     "accuracy": 0.975,
+     "accuracy_ci": [
+      0.871186,
+      0.995573
+     ],
+     "acquit_correct": 39,
+     "acquit_n": 40,
+     "auc": null,
+     "balanced_accuracy": 0.975,
+     "convict_correct": 0,
+     "convict_n": 0,
+     "correct": 39,
+     "family": "CHARX",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 40,
+     "recall_acquit": 0.975,
+     "recall_convict": null,
+     "rung": "R4",
+     "unparsed": 0,
+     "variant": "true_flip"
+    },
+    {
+     "accuracy": 0.375,
+     "accuracy_ci": [
+      0.24223,
+      0.529676
+     ],
+     "acquit_correct": 15,
+     "acquit_n": 40,
+     "auc": null,
+     "balanced_accuracy": 0.375,
+     "convict_correct": 0,
+     "convict_n": 0,
+     "correct": 15,
+     "family": "CHARX",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 40,
+     "recall_acquit": 0.375,
+     "recall_convict": null,
+     "rung": "R4",
+     "unparsed": 0,
+     "variant": "true_flip"
+    },
+    {
+     "accuracy": 0.0,
+     "accuracy_ci": [
+      0.0,
+      0.087622
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 40,
+     "auc": null,
+     "balanced_accuracy": 0.0,
+     "convict_correct": 0,
+     "convict_n": 0,
+     "correct": 0,
+     "family": "CHARX",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 40,
+     "recall_acquit": 0.0,
+     "recall_convict": null,
+     "rung": "R5",
+     "unparsed": 0,
+     "variant": "true_flip"
+    },
+    {
+     "accuracy": 0.0,
+     "accuracy_ci": [
+      0.0,
+      0.087622
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 40,
+     "auc": null,
+     "balanced_accuracy": 0.0,
+     "convict_correct": 0,
+     "convict_n": 0,
+     "correct": 0,
+     "family": "CHARX",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 40,
+     "recall_acquit": 0.0,
+     "recall_convict": null,
+     "rung": "R5",
+     "unparsed": 0,
+     "variant": "true_flip"
+    },
+    {
+     "accuracy": 0.933333,
+     "accuracy_ci": [
+      0.701835,
+      0.988133
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 0.933333,
+     "convict_correct": 14,
+     "convict_n": 15,
+     "correct": 14,
+     "family": "CONTESTED",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 15,
+     "recall_acquit": null,
+     "recall_convict": 0.933333,
+     "rung": "R0",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.796117,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 15,
+     "convict_n": 15,
+     "correct": 15,
+     "family": "CONTESTED",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 15,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R0",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.796117,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 15,
+     "convict_n": 15,
+     "correct": 15,
+     "family": "CONTESTED",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 15,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R3",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 0.933333,
+     "accuracy_ci": [
+      0.701835,
+      0.988133
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 0.933333,
+     "convict_correct": 14,
+     "convict_n": 15,
+     "correct": 14,
+     "family": "CONTESTED",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 15,
+     "recall_acquit": null,
+     "recall_convict": 0.933333,
+     "rung": "R3",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 0.6,
+     "accuracy_ci": [
+      0.357468,
+      0.801755
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 0.6,
+     "convict_correct": 9,
+     "convict_n": 15,
+     "correct": 9,
+     "family": "CONTESTED",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 15,
+     "recall_acquit": null,
+     "recall_convict": 0.6,
+     "rung": "R4",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 0.933333,
+     "accuracy_ci": [
+      0.701835,
+      0.988133
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 0.933333,
+     "convict_correct": 14,
+     "convict_n": 15,
+     "correct": 14,
+     "family": "CONTESTED",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 15,
+     "recall_acquit": null,
+     "recall_convict": 0.933333,
+     "rung": "R4",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.796117,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 15,
+     "convict_n": 15,
+     "correct": 15,
+     "family": "CONTESTED",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 15,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R5",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.796117,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 15,
+     "convict_n": 15,
+     "correct": 15,
+     "family": "CONTESTED",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 15,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R5",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 0.933333,
+     "accuracy_ci": [
+      0.701835,
+      0.988133
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 0.933333,
+     "convict_correct": 14,
+     "convict_n": 15,
+     "correct": 14,
+     "family": "CONTESTED",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 15,
+     "recall_acquit": null,
+     "recall_convict": 0.933333,
+     "rung": "R0",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.796117,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 15,
+     "convict_n": 15,
+     "correct": 15,
+     "family": "CONTESTED",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 15,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R0",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 0.8,
+     "accuracy_ci": [
+      0.548146,
+      0.929525
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 0.8,
+     "convict_correct": 12,
+     "convict_n": 15,
+     "correct": 12,
+     "family": "CONTESTED",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 15,
+     "recall_acquit": null,
+     "recall_convict": 0.8,
+     "rung": "R3",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.796117,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 15,
+     "convict_n": 15,
+     "correct": 15,
+     "family": "CONTESTED",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 15,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R3",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 0.266667,
+     "accuracy_ci": [
+      0.108975,
+      0.519504
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 0.266667,
+     "convict_correct": 4,
+     "convict_n": 15,
+     "correct": 4,
+     "family": "CONTESTED",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 15,
+     "recall_acquit": null,
+     "recall_convict": 0.266667,
+     "rung": "R4",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 0.866667,
+     "accuracy_ci": [
+      0.62118,
+      0.962639
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 0.866667,
+     "convict_correct": 13,
+     "convict_n": 15,
+     "correct": 13,
+     "family": "CONTESTED",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 15,
+     "recall_acquit": null,
+     "recall_convict": 0.866667,
+     "rung": "R4",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.796117,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 15,
+     "convict_n": 15,
+     "correct": 15,
+     "family": "CONTESTED",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 15,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R5",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.796117,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 15,
+     "convict_n": 15,
+     "correct": 15,
+     "family": "CONTESTED",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 15,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R5",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 0.96,
+     "accuracy_ci": [
+      0.804559,
+      0.992904
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 0.96,
+     "convict_correct": 24,
+     "convict_n": 25,
+     "correct": 24,
+     "family": "DATE_CTRL",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 25,
+     "recall_acquit": null,
+     "recall_convict": 0.96,
+     "rung": "R0",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.866808,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 25,
+     "convict_n": 25,
+     "correct": 25,
+     "family": "DATE_CTRL",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 25,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R0",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.866808,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 25,
+     "convict_n": 25,
+     "correct": 25,
+     "family": "DATE_CTRL",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 25,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R3",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.866808,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 25,
+     "convict_n": 25,
+     "correct": 25,
+     "family": "DATE_CTRL",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 25,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R3",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 0.52,
+     "accuracy_ci": [
+      0.334985,
+      0.699687
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 0.52,
+     "convict_correct": 13,
+     "convict_n": 25,
+     "correct": 13,
+     "family": "DATE_CTRL",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 25,
+     "recall_acquit": null,
+     "recall_convict": 0.52,
+     "rung": "R4",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 0.96,
+     "accuracy_ci": [
+      0.804559,
+      0.992904
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 0.96,
+     "convict_correct": 24,
+     "convict_n": 25,
+     "correct": 24,
+     "family": "DATE_CTRL",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 25,
+     "recall_acquit": null,
+     "recall_convict": 0.96,
+     "rung": "R4",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.866808,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 25,
+     "convict_n": 25,
+     "correct": 25,
+     "family": "DATE_CTRL",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 25,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R5",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.866808,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 25,
+     "convict_n": 25,
+     "correct": 25,
+     "family": "DATE_CTRL",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 25,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R5",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 0.96,
+     "accuracy_ci": [
+      0.804559,
+      0.992904
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 0.96,
+     "convict_correct": 24,
+     "convict_n": 25,
+     "correct": 24,
+     "family": "DATE_CTRL",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 25,
+     "recall_acquit": null,
+     "recall_convict": 0.96,
+     "rung": "R0",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.866808,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 25,
+     "convict_n": 25,
+     "correct": 25,
+     "family": "DATE_CTRL",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 25,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R0",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.866808,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 25,
+     "convict_n": 25,
+     "correct": 25,
+     "family": "DATE_CTRL",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 25,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R3",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.866808,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 25,
+     "convict_n": 25,
+     "correct": 25,
+     "family": "DATE_CTRL",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 25,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R3",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 0.48,
+     "accuracy_ci": [
+      0.300313,
+      0.665015
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 0.48,
+     "convict_correct": 12,
+     "convict_n": 25,
+     "correct": 12,
+     "family": "DATE_CTRL",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 25,
+     "recall_acquit": null,
+     "recall_convict": 0.48,
+     "rung": "R4",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 0.96,
+     "accuracy_ci": [
+      0.804559,
+      0.992904
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 0.96,
+     "convict_correct": 24,
+     "convict_n": 25,
+     "correct": 24,
+     "family": "DATE_CTRL",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 25,
+     "recall_acquit": null,
+     "recall_convict": 0.96,
+     "rung": "R4",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.866808,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 25,
+     "convict_n": 25,
+     "correct": 25,
+     "family": "DATE_CTRL",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 25,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R5",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.866808,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 25,
+     "convict_n": 25,
+     "correct": 25,
+     "family": "DATE_CTRL",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 25,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R5",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 0.08,
+     "accuracy_ci": [
+      0.02222,
+      0.249661
+     ],
+     "acquit_correct": 2,
+     "acquit_n": 25,
+     "auc": null,
+     "balanced_accuracy": 0.08,
+     "convict_correct": 0,
+     "convict_n": 0,
+     "correct": 2,
+     "family": "DATE_CTRL",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 25,
+     "recall_acquit": 0.08,
+     "recall_convict": null,
+     "rung": "R0",
+     "unparsed": 0,
+     "variant": "true_flip"
+    },
+    {
+     "accuracy": 0.0,
+     "accuracy_ci": [
+      0.0,
+      0.133192
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 25,
+     "auc": null,
+     "balanced_accuracy": 0.0,
+     "convict_correct": 0,
+     "convict_n": 0,
+     "correct": 0,
+     "family": "DATE_CTRL",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 25,
+     "recall_acquit": 0.0,
+     "recall_convict": null,
+     "rung": "R0",
+     "unparsed": 0,
+     "variant": "true_flip"
+    },
+    {
+     "accuracy": 0.08,
+     "accuracy_ci": [
+      0.02222,
+      0.249661
+     ],
+     "acquit_correct": 2,
+     "acquit_n": 25,
+     "auc": null,
+     "balanced_accuracy": 0.08,
+     "convict_correct": 0,
+     "convict_n": 0,
+     "correct": 2,
+     "family": "DATE_CTRL",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 25,
+     "recall_acquit": 0.08,
+     "recall_convict": null,
+     "rung": "R3",
+     "unparsed": 0,
+     "variant": "true_flip"
+    },
+    {
+     "accuracy": 0.04,
+     "accuracy_ci": [
+      0.007096,
+      0.195441
+     ],
+     "acquit_correct": 1,
+     "acquit_n": 25,
+     "auc": null,
+     "balanced_accuracy": 0.04,
+     "convict_correct": 0,
+     "convict_n": 0,
+     "correct": 1,
+     "family": "DATE_CTRL",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 25,
+     "recall_acquit": 0.04,
+     "recall_convict": null,
+     "rung": "R3",
+     "unparsed": 0,
+     "variant": "true_flip"
+    },
+    {
+     "accuracy": 0.56,
+     "accuracy_ci": [
+      0.370673,
+      0.733344
+     ],
+     "acquit_correct": 14,
+     "acquit_n": 25,
+     "auc": null,
+     "balanced_accuracy": 0.56,
+     "convict_correct": 0,
+     "convict_n": 0,
+     "correct": 14,
+     "family": "DATE_CTRL",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 25,
+     "recall_acquit": 0.56,
+     "recall_convict": null,
+     "rung": "R4",
+     "unparsed": 0,
+     "variant": "true_flip"
+    },
+    {
+     "accuracy": 0.08,
+     "accuracy_ci": [
+      0.02222,
+      0.249661
+     ],
+     "acquit_correct": 2,
+     "acquit_n": 25,
+     "auc": null,
+     "balanced_accuracy": 0.08,
+     "convict_correct": 0,
+     "convict_n": 0,
+     "correct": 2,
+     "family": "DATE_CTRL",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 25,
+     "recall_acquit": 0.08,
+     "recall_convict": null,
+     "rung": "R4",
+     "unparsed": 0,
+     "variant": "true_flip"
+    },
+    {
+     "accuracy": 0.0,
+     "accuracy_ci": [
+      0.0,
+      0.133192
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 25,
+     "auc": null,
+     "balanced_accuracy": 0.0,
+     "convict_correct": 0,
+     "convict_n": 0,
+     "correct": 0,
+     "family": "DATE_CTRL",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 25,
+     "recall_acquit": 0.0,
+     "recall_convict": null,
+     "rung": "R5",
+     "unparsed": 0,
+     "variant": "true_flip"
+    },
+    {
+     "accuracy": 0.0,
+     "accuracy_ci": [
+      0.0,
+      0.133192
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 25,
+     "auc": null,
+     "balanced_accuracy": 0.0,
+     "convict_correct": 0,
+     "convict_n": 0,
+     "correct": 0,
+     "family": "DATE_CTRL",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 25,
+     "recall_acquit": 0.0,
+     "recall_convict": null,
+     "rung": "R5",
+     "unparsed": 0,
+     "variant": "true_flip"
+    },
+    {
+     "accuracy": 0.971429,
+     "accuracy_ci": [
+      0.854669,
+      0.994939
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 0.971429,
+     "convict_correct": 34,
+     "convict_n": 35,
+     "correct": 34,
+     "family": "DATE_SO",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 35,
+     "recall_acquit": null,
+     "recall_convict": 0.971429,
+     "rung": "R0",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.901099,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 35,
+     "convict_n": 35,
+     "correct": 35,
+     "family": "DATE_SO",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 35,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R0",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.901099,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 35,
+     "convict_n": 35,
+     "correct": 35,
+     "family": "DATE_SO",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 35,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R3",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.901099,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 35,
+     "convict_n": 35,
+     "correct": 35,
+     "family": "DATE_SO",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 35,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R3",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 0.228571,
+     "accuracy_ci": [
+      0.120659,
+      0.390173
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 0.228571,
+     "convict_correct": 8,
+     "convict_n": 35,
+     "correct": 8,
+     "family": "DATE_SO",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 35,
+     "recall_acquit": null,
+     "recall_convict": 0.228571,
+     "rung": "R4",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 0.914286,
+     "accuracy_ci": [
+      0.776207,
+      0.970418
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 0.914286,
+     "convict_correct": 32,
+     "convict_n": 35,
+     "correct": 32,
+     "family": "DATE_SO",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 35,
+     "recall_acquit": null,
+     "recall_convict": 0.914286,
+     "rung": "R4",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.901099,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 35,
+     "convict_n": 35,
+     "correct": 35,
+     "family": "DATE_SO",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 35,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R5",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.901099,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 35,
+     "convict_n": 35,
+     "correct": 35,
+     "family": "DATE_SO",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 35,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R5",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 0.942857,
+     "accuracy_ci": [
+      0.813929,
+      0.984187
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 0.942857,
+     "convict_correct": 33,
+     "convict_n": 35,
+     "correct": 33,
+     "family": "DATE_SO",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 35,
+     "recall_acquit": null,
+     "recall_convict": 0.942857,
+     "rung": "R0",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.901099,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 35,
+     "convict_n": 35,
+     "correct": 35,
+     "family": "DATE_SO",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 35,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R0",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.901099,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 35,
+     "convict_n": 35,
+     "correct": 35,
+     "family": "DATE_SO",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 35,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R3",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.901099,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 35,
+     "convict_n": 35,
+     "correct": 35,
+     "family": "DATE_SO",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 35,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R3",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 0.514286,
+     "accuracy_ci": [
+      0.355688,
+      0.670058
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 0.514286,
+     "convict_correct": 18,
+     "convict_n": 35,
+     "correct": 18,
+     "family": "DATE_SO",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 35,
+     "recall_acquit": null,
+     "recall_convict": 0.514286,
+     "rung": "R4",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 0.828571,
+     "accuracy_ci": [
+      0.673177,
+      0.918974
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 0.828571,
+     "convict_correct": 29,
+     "convict_n": 35,
+     "correct": 29,
+     "family": "DATE_SO",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 35,
+     "recall_acquit": null,
+     "recall_convict": 0.828571,
+     "rung": "R4",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.901099,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 35,
+     "convict_n": 35,
+     "correct": 35,
+     "family": "DATE_SO",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 35,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R5",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.901099,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 35,
+     "convict_n": 35,
+     "correct": 35,
+     "family": "DATE_SO",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 35,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R5",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 0.028571,
+     "accuracy_ci": [
+      0.005061,
+      0.145331
+     ],
+     "acquit_correct": 1,
+     "acquit_n": 35,
+     "auc": null,
+     "balanced_accuracy": 0.028571,
+     "convict_correct": 0,
+     "convict_n": 0,
+     "correct": 1,
+     "family": "DATE_SO",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 35,
+     "recall_acquit": 0.028571,
+     "recall_convict": null,
+     "rung": "R0",
+     "unparsed": 0,
+     "variant": "true_flip"
+    },
+    {
+     "accuracy": 0.0,
+     "accuracy_ci": [
+      0.0,
+      0.098901
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 35,
+     "auc": null,
+     "balanced_accuracy": 0.0,
+     "convict_correct": 0,
+     "convict_n": 0,
+     "correct": 0,
+     "family": "DATE_SO",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 35,
+     "recall_acquit": 0.0,
+     "recall_convict": null,
+     "rung": "R0",
+     "unparsed": 0,
+     "variant": "true_flip"
+    },
+    {
+     "accuracy": 0.0,
+     "accuracy_ci": [
+      0.0,
+      0.098901
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 35,
+     "auc": null,
+     "balanced_accuracy": 0.0,
+     "convict_correct": 0,
+     "convict_n": 0,
+     "correct": 0,
+     "family": "DATE_SO",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 35,
+     "recall_acquit": 0.0,
+     "recall_convict": null,
+     "rung": "R3",
+     "unparsed": 0,
+     "variant": "true_flip"
+    },
+    {
+     "accuracy": 0.0,
+     "accuracy_ci": [
+      0.0,
+      0.098901
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 35,
+     "auc": null,
+     "balanced_accuracy": 0.0,
+     "convict_correct": 0,
+     "convict_n": 0,
+     "correct": 0,
+     "family": "DATE_SO",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 35,
+     "recall_acquit": 0.0,
+     "recall_convict": null,
+     "rung": "R3",
+     "unparsed": 0,
+     "variant": "true_flip"
+    },
+    {
+     "accuracy": 0.971429,
+     "accuracy_ci": [
+      0.854669,
+      0.994939
+     ],
+     "acquit_correct": 34,
+     "acquit_n": 35,
+     "auc": null,
+     "balanced_accuracy": 0.971429,
+     "convict_correct": 0,
+     "convict_n": 0,
+     "correct": 34,
+     "family": "DATE_SO",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 35,
+     "recall_acquit": 0.971429,
+     "recall_convict": null,
+     "rung": "R4",
+     "unparsed": 0,
+     "variant": "true_flip"
+    },
+    {
+     "accuracy": 0.4,
+     "accuracy_ci": [
+      0.255507,
+      0.564273
+     ],
+     "acquit_correct": 14,
+     "acquit_n": 35,
+     "auc": null,
+     "balanced_accuracy": 0.4,
+     "convict_correct": 0,
+     "convict_n": 0,
+     "correct": 14,
+     "family": "DATE_SO",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 35,
+     "recall_acquit": 0.4,
+     "recall_convict": null,
+     "rung": "R4",
+     "unparsed": 0,
+     "variant": "true_flip"
+    },
+    {
+     "accuracy": 0.0,
+     "accuracy_ci": [
+      0.0,
+      0.098901
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 35,
+     "auc": null,
+     "balanced_accuracy": 0.0,
+     "convict_correct": 0,
+     "convict_n": 0,
+     "correct": 0,
+     "family": "DATE_SO",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 35,
+     "recall_acquit": 0.0,
+     "recall_convict": null,
+     "rung": "R5",
+     "unparsed": 0,
+     "variant": "true_flip"
+    },
+    {
+     "accuracy": 0.0,
+     "accuracy_ci": [
+      0.0,
+      0.098901
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 35,
+     "auc": null,
+     "balanced_accuracy": 0.0,
+     "convict_correct": 0,
+     "convict_n": 0,
+     "correct": 0,
+     "family": "DATE_SO",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 35,
+     "recall_acquit": 0.0,
+     "recall_convict": null,
+     "rung": "R5",
+     "unparsed": 0,
+     "variant": "true_flip"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.934715,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 55,
+     "convict_n": 55,
+     "correct": 55,
+     "family": "SET",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 55,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R0",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.934715,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 55,
+     "convict_n": 55,
+     "correct": 55,
+     "family": "SET",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 55,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R0",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 0.981818,
+     "accuracy_ci": [
+      0.903942,
+      0.996783
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 0.981818,
+     "convict_correct": 54,
+     "convict_n": 55,
+     "correct": 54,
+     "family": "SET",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 55,
+     "recall_acquit": null,
+     "recall_convict": 0.981818,
+     "rung": "R3",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.934715,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 55,
+     "convict_n": 55,
+     "correct": 55,
+     "family": "SET",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 55,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R3",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 0.4,
+     "accuracy_ci": [
+      0.281185,
+      0.531872
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 0.4,
+     "convict_correct": 22,
+     "convict_n": 55,
+     "correct": 22,
+     "family": "SET",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 55,
+     "recall_acquit": null,
+     "recall_convict": 0.4,
+     "rung": "R4",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 0.927273,
+     "accuracy_ci": [
+      0.827401,
+      0.971356
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 0.927273,
+     "convict_correct": 51,
+     "convict_n": 55,
+     "correct": 51,
+     "family": "SET",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 55,
+     "recall_acquit": null,
+     "recall_convict": 0.927273,
+     "rung": "R4",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.934715,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 55,
+     "convict_n": 55,
+     "correct": 55,
+     "family": "SET",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 55,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R5",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.934715,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 55,
+     "convict_n": 55,
+     "correct": 55,
+     "family": "SET",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 55,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R5",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 0.945455,
+     "accuracy_ci": [
+      0.851469,
+      0.981277
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 0.945455,
+     "convict_correct": 52,
+     "convict_n": 55,
+     "correct": 52,
+     "family": "SET",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 55,
+     "recall_acquit": null,
+     "recall_convict": 0.945455,
+     "rung": "R0",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.934715,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 55,
+     "convict_n": 55,
+     "correct": 55,
+     "family": "SET",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 55,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R0",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 0.909091,
+     "accuracy_ci": [
+      0.804225,
+      0.960542
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 0.909091,
+     "convict_correct": 50,
+     "convict_n": 55,
+     "correct": 50,
+     "family": "SET",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 55,
+     "recall_acquit": null,
+     "recall_convict": 0.909091,
+     "rung": "R3",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.934715,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 55,
+     "convict_n": 55,
+     "correct": 55,
+     "family": "SET",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 55,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R3",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 0.254545,
+     "accuracy_ci": [
+      0.158121,
+      0.383019
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 0.254545,
+     "convict_correct": 14,
+     "convict_n": 55,
+     "correct": 14,
+     "family": "SET",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 55,
+     "recall_acquit": null,
+     "recall_convict": 0.254545,
+     "rung": "R4",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 0.909091,
+     "accuracy_ci": [
+      0.804225,
+      0.960542
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 0.909091,
+     "convict_correct": 50,
+     "convict_n": 55,
+     "correct": 50,
+     "family": "SET",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 55,
+     "recall_acquit": null,
+     "recall_convict": 0.909091,
+     "rung": "R4",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.934715,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 55,
+     "convict_n": 55,
+     "correct": 55,
+     "family": "SET",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 55,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R5",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.934715,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 55,
+     "convict_n": 55,
+     "correct": 55,
+     "family": "SET",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 55,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R5",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 0.036364,
+     "accuracy_ci": [
+      0.01003,
+      0.123235
+     ],
+     "acquit_correct": 2,
+     "acquit_n": 55,
+     "auc": null,
+     "balanced_accuracy": 0.036364,
+     "convict_correct": 0,
+     "convict_n": 0,
+     "correct": 2,
+     "family": "SET",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 55,
+     "recall_acquit": 0.036364,
+     "recall_convict": null,
+     "rung": "R0",
+     "unparsed": 0,
+     "variant": "true_flip"
+    },
+    {
+     "accuracy": 0.0,
+     "accuracy_ci": [
+      0.0,
+      0.065285
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 55,
+     "auc": null,
+     "balanced_accuracy": 0.0,
+     "convict_correct": 0,
+     "convict_n": 0,
+     "correct": 0,
+     "family": "SET",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 55,
+     "recall_acquit": 0.0,
+     "recall_convict": null,
+     "rung": "R0",
+     "unparsed": 0,
+     "variant": "true_flip"
+    },
+    {
+     "accuracy": 0.927273,
+     "accuracy_ci": [
+      0.827401,
+      0.971356
+     ],
+     "acquit_correct": 51,
+     "acquit_n": 55,
+     "auc": null,
+     "balanced_accuracy": 0.927273,
+     "convict_correct": 0,
+     "convict_n": 0,
+     "correct": 51,
+     "family": "SET",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 55,
+     "recall_acquit": 0.927273,
+     "recall_convict": null,
+     "rung": "R3",
+     "unparsed": 0,
+     "variant": "true_flip"
+    },
+    {
+     "accuracy": 0.4,
+     "accuracy_ci": [
+      0.281185,
+      0.531872
+     ],
+     "acquit_correct": 22,
+     "acquit_n": 55,
+     "auc": null,
+     "balanced_accuracy": 0.4,
+     "convict_correct": 0,
+     "convict_n": 0,
+     "correct": 22,
+     "family": "SET",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 55,
+     "recall_acquit": 0.4,
+     "recall_convict": null,
+     "rung": "R3",
+     "unparsed": 0,
+     "variant": "true_flip"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.934715,
+      1.0
+     ],
+     "acquit_correct": 55,
+     "acquit_n": 55,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 0,
+     "convict_n": 0,
+     "correct": 55,
+     "family": "SET",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 55,
+     "recall_acquit": 1.0,
+     "recall_convict": null,
+     "rung": "R4",
+     "unparsed": 0,
+     "variant": "true_flip"
+    },
+    {
+     "accuracy": 0.890909,
+     "accuracy_ci": [
+      0.781745,
+      0.949033
+     ],
+     "acquit_correct": 49,
+     "acquit_n": 55,
+     "auc": null,
+     "balanced_accuracy": 0.890909,
+     "convict_correct": 0,
+     "convict_n": 0,
+     "correct": 49,
+     "family": "SET",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 55,
+     "recall_acquit": 0.890909,
+     "recall_convict": null,
+     "rung": "R4",
+     "unparsed": 0,
+     "variant": "true_flip"
+    },
+    {
+     "accuracy": 0.254545,
+     "accuracy_ci": [
+      0.158121,
+      0.383019
+     ],
+     "acquit_correct": 14,
+     "acquit_n": 55,
+     "auc": null,
+     "balanced_accuracy": 0.254545,
+     "convict_correct": 0,
+     "convict_n": 0,
+     "correct": 14,
+     "family": "SET",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 55,
+     "recall_acquit": 0.254545,
+     "recall_convict": null,
+     "rung": "R5",
+     "unparsed": 0,
+     "variant": "true_flip"
+    },
+    {
+     "accuracy": 0.145455,
+     "accuracy_ci": [
+      0.075593,
+      0.261609
+     ],
+     "acquit_correct": 8,
+     "acquit_n": 55,
+     "auc": null,
+     "balanced_accuracy": 0.145455,
+     "convict_correct": 0,
+     "convict_n": 0,
+     "correct": 8,
+     "family": "SET",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 55,
+     "recall_acquit": 0.145455,
+     "recall_convict": null,
+     "rung": "R5",
+     "unparsed": 0,
+     "variant": "true_flip"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.722467,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 10,
+     "convict_n": 10,
+     "correct": 10,
+     "family": "WORDING",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 10,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R0",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.722467,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 10,
+     "convict_n": 10,
+     "correct": 10,
+     "family": "WORDING",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 10,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R0",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.722467,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 10,
+     "convict_n": 10,
+     "correct": 10,
+     "family": "WORDING",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 10,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R3",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.722467,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 10,
+     "convict_n": 10,
+     "correct": 10,
+     "family": "WORDING",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 10,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R3",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 0.8,
+     "accuracy_ci": [
+      0.490162,
+      0.943318
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 0.8,
+     "convict_correct": 8,
+     "convict_n": 10,
+     "correct": 8,
+     "family": "WORDING",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 10,
+     "recall_acquit": null,
+     "recall_convict": 0.8,
+     "rung": "R4",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.722467,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 10,
+     "convict_n": 10,
+     "correct": 10,
+     "family": "WORDING",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 10,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R4",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.722467,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 10,
+     "convict_n": 10,
+     "correct": 10,
+     "family": "WORDING",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 10,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R5",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.722467,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 10,
+     "convict_n": 10,
+     "correct": 10,
+     "family": "WORDING",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 10,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R5",
+     "unparsed": 0,
+     "variant": "base"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.838875,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 20,
+     "convict_n": 20,
+     "correct": 20,
+     "family": "WORDING",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 20,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R0",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.838875,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 20,
+     "convict_n": 20,
+     "correct": 20,
+     "family": "WORDING",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 20,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R0",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 0.95,
+     "accuracy_ci": [
+      0.763869,
+      0.991119
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 0.95,
+     "convict_correct": 19,
+     "convict_n": 20,
+     "correct": 19,
+     "family": "WORDING",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 20,
+     "recall_acquit": null,
+     "recall_convict": 0.95,
+     "rung": "R3",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.838875,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 20,
+     "convict_n": 20,
+     "correct": 20,
+     "family": "WORDING",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 20,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R3",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 0.6,
+     "accuracy_ci": [
+      0.386582,
+      0.781193
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 0.6,
+     "convict_correct": 12,
+     "convict_n": 20,
+     "correct": 12,
+     "family": "WORDING",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 20,
+     "recall_acquit": null,
+     "recall_convict": 0.6,
+     "rung": "R4",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.838875,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 20,
+     "convict_n": 20,
+     "correct": 20,
+     "family": "WORDING",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 20,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R4",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.838875,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 20,
+     "convict_n": 20,
+     "correct": 20,
+     "family": "WORDING",
+     "framing": "conv",
+     "lang": "fr",
+     "n": 20,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R5",
+     "unparsed": 0,
+     "variant": "placebo"
+    },
+    {
+     "accuracy": 1.0,
+     "accuracy_ci": [
+      0.838875,
+      1.0
+     ],
+     "acquit_correct": 0,
+     "acquit_n": 0,
+     "auc": null,
+     "balanced_accuracy": 1.0,
+     "convict_correct": 20,
+     "convict_n": 20,
+     "correct": 20,
+     "family": "WORDING",
+     "framing": "ver",
+     "lang": "fr",
+     "n": 20,
+     "recall_acquit": null,
+     "recall_convict": 1.0,
+     "rung": "R5",
+     "unparsed": 0,
+     "variant": "placebo"
+    }
+   ],
+   "colours": [
+    {
+     "cells": {
+      "conv": "F",
+      "ver": "F"
+     },
+     "colour": "red",
+     "edit": "act_date:not_in_force",
+     "lang": "fr",
+     "rung": "R0",
+     "subset": "core"
+    },
+    {
+     "cells": {
+      "conv": "F",
+      "ver": "F"
+     },
+     "colour": "red",
+     "edit": "act_date:not_in_force",
+     "lang": "fr",
+     "rung": "R3",
+     "subset": "core"
+    },
+    {
+     "cells": {
+      "conv": "u",
+      "ver": "F"
+     },
+     "colour": "red",
+     "edit": "act_date:not_in_force",
+     "lang": "fr",
+     "rung": "R4",
+     "subset": "core"
+    },
+    {
+     "cells": {
+      "conv": "F",
+      "ver": "F"
+     },
+     "colour": "red",
+     "edit": "act_date:not_in_force",
+     "lang": "fr",
+     "rung": "R5",
+     "subset": "core"
+    },
+    {
+     "cells": {
+      "conv": "F",
+      "ver": "F"
+     },
+     "colour": "red",
+     "edit": "characteristic:not_listed|age",
+     "lang": "fr",
+     "rung": "R0",
+     "subset": "core"
+    },
+    {
+     "cells": {
+      "conv": "a",
+      "ver": "F"
+     },
+     "colour": "amber",
+     "edit": "characteristic:not_listed|age",
+     "lang": "fr",
+     "rung": "R3",
+     "subset": "core"
+    },
+    {
+     "cells": {
+      "conv": "u",
+      "ver": "?"
+     },
+     "colour": "none",
+     "edit": "characteristic:not_listed|age",
+     "lang": "fr",
+     "rung": "R4",
+     "subset": "core"
+    },
+    {
+     "cells": {
+      "conv": "F",
+      "ver": "F"
+     },
+     "colour": "red",
+     "edit": "characteristic:not_listed|age",
+     "lang": "fr",
+     "rung": "R5",
+     "subset": "core"
+    },
+    {
+     "cells": {
+      "conv": "F",
+      "ver": "F"
+     },
+     "colour": "red",
+     "edit": "characteristic:not_listed|canton",
+     "lang": "fr",
+     "rung": "R0",
+     "subset": "core"
+    },
+    {
+     "cells": {
+      "conv": "a",
+      "ver": "F"
+     },
+     "colour": "amber",
+     "edit": "characteristic:not_listed|canton",
+     "lang": "fr",
+     "rung": "R3",
+     "subset": "core"
+    },
+    {
+     "cells": {
+      "conv": "u",
+      "ver": "F"
+     },
+     "colour": "red",
+     "edit": "characteristic:not_listed|canton",
+     "lang": "fr",
+     "rung": "R4",
+     "subset": "core"
+    },
+    {
+     "cells": {
+      "conv": "F",
+      "ver": "F"
+     },
+     "colour": "red",
+     "edit": "characteristic:not_listed|canton",
+     "lang": "fr",
+     "rung": "R5",
+     "subset": "core"
+    },
+    {
+     "cells": {
+      "conv": "F",
+      "ver": "F"
+     },
+     "colour": "red",
+     "edit": "characteristic:not_listed|disability",
+     "lang": "fr",
+     "rung": "R0",
+     "subset": "core"
+    },
+    {
+     "cells": {
+      "conv": "a",
+      "ver": "F"
+     },
+     "colour": "amber",
+     "edit": "characteristic:not_listed|disability",
+     "lang": "fr",
+     "rung": "R3",
+     "subset": "core"
+    },
+    {
+     "cells": {
+      "conv": "u",
+      "ver": "F"
+     },
+     "colour": "red",
+     "edit": "characteristic:not_listed|disability",
+     "lang": "fr",
+     "rung": "R4",
+     "subset": "core"
+    },
+    {
+     "cells": {
+      "conv": "F",
+      "ver": "F"
+     },
+     "colour": "red",
+     "edit": "characteristic:not_listed|disability",
+     "lang": "fr",
+     "rung": "R5",
+     "subset": "core"
+    },
+    {
+     "cells": {
+      "conv": "F",
+      "ver": "F"
+     },
+     "colour": "red",
+     "edit": "characteristic:not_listed|gender_identity",
+     "lang": "fr",
+     "rung": "R0",
+     "subset": "core"
+    },
+    {
+     "cells": {
+      "conv": "a",
+      "ver": "a"
+     },
+     "colour": "none",
+     "edit": "characteristic:not_listed|gender_identity",
+     "lang": "fr",
+     "rung": "R3",
+     "subset": "core"
+    },
+    {
+     "cells": {
+      "conv": "u",
+      "ver": "a"
+     },
+     "colour": "none",
+     "edit": "characteristic:not_listed|gender_identity",
+     "lang": "fr",
+     "rung": "R4",
+     "subset": "core"
+    },
+    {
+     "cells": {
+      "conv": "F",
+      "ver": "F"
+     },
+     "colour": "red",
+     "edit": "characteristic:not_listed|gender_identity",
+     "lang": "fr",
+     "rung": "R5",
+     "subset": "core"
+    },
+    {
+     "cells": {
+      "conv": "F",
+      "ver": "F"
+     },
+     "colour": "red",
+     "edit": "characteristic:not_listed|occupation",
+     "lang": "fr",
+     "rung": "R0",
+     "subset": "core"
+    },
+    {
+     "cells": {
+      "conv": "a",
+      "ver": "F"
+     },
+     "colour": "amber",
+     "edit": "characteristic:not_listed|occupation",
+     "lang": "fr",
+     "rung": "R3",
+     "subset": "core"
+    },
+    {
+     "cells": {
+      "conv": "u",
+      "ver": "?"
+     },
+     "colour": "none",
+     "edit": "characteristic:not_listed|occupation",
+     "lang": "fr",
+     "rung": "R4",
+     "subset": "core"
+    },
+    {
+     "cells": {
+      "conv": "F",
+      "ver": "F"
+     },
+     "colour": "red",
+     "edit": "characteristic:not_listed|occupation",
+     "lang": "fr",
+     "rung": "R5",
+     "subset": "core"
+    },
+    {
+     "cells": {
+      "conv": "F",
+      "ver": "F"
+     },
+     "colour": "red",
+     "edit": "characteristic:not_listed|political_opinion",
+     "lang": "fr",
+     "rung": "R0",
+     "subset": "core"
+    },
+    {
+     "cells": {
+      "conv": "a",
+      "ver": "F"
+     },
+     "colour": "amber",
+     "edit": "characteristic:not_listed|political_opinion",
+     "lang": "fr",
+     "rung": "R3",
+     "subset": "core"
+    },
+    {
+     "cells": {
+      "conv": "u",
+      "ver": "?"
+     },
+     "colour": "none",
+     "edit": "characteristic:not_listed|political_opinion",
+     "lang": "fr",
+     "rung": "R4",
+     "subset": "core"
+    },
+    {
+     "cells": {
+      "conv": "F",
+      "ver": "F"
+     },
+     "colour": "red",
+     "edit": "characteristic:not_listed|political_opinion",
+     "lang": "fr",
+     "rung": "R5",
+     "subset": "core"
+    },
+    {
+     "cells": {
+      "conv": "F",
+      "ver": "F"
+     },
+     "colour": "red",
+     "edit": "characteristic:not_listed|sex",
+     "lang": "fr",
+     "rung": "R0",
+     "subset": "core"
+    },
+    {
+     "cells": {
+      "conv": "a",
+      "ver": "F"
+     },
+     "colour": "amber",
+     "edit": "characteristic:not_listed|sex",
+     "lang": "fr",
+     "rung": "R3",
+     "subset": "core"
+    },
+    {
+     "cells": {
+      "conv": "u",
+      "ver": "F"
+     },
+     "colour": "red",
+     "edit": "characteristic:not_listed|sex",
+     "lang": "fr",
+     "rung": "R4",
+     "subset": "core"
+    },
+    {
+     "cells": {
+      "conv": "F",
+      "ver": "F"
+     },
+     "colour": "red",
+     "edit": "characteristic:not_listed|sex",
+     "lang": "fr",
+     "rung": "R5",
+     "subset": "core"
+    },
+    {
+     "cells": {
+      "conv": "F",
+      "ver": "F"
+     },
+     "colour": "red",
+     "edit": "characteristic:not_yet_covered",
+     "lang": "fr",
+     "rung": "R0",
+     "subset": "core"
+    },
+    {
+     "cells": {
+      "conv": "F",
+      "ver": "F"
+     },
+     "colour": "red",
+     "edit": "characteristic:not_yet_covered",
+     "lang": "fr",
+     "rung": "R3",
+     "subset": "core"
+    },
+    {
+     "cells": {
+      "conv": "u",
+      "ver": "?"
+     },
+     "colour": "none",
+     "edit": "characteristic:not_yet_covered",
+     "lang": "fr",
+     "rung": "R4",
+     "subset": "core"
+    },
+    {
+     "cells": {
+      "conv": "F",
+      "ver": "F"
+     },
+     "colour": "red",
+     "edit": "characteristic:not_yet_covered",
+     "lang": "fr",
+     "rung": "R5",
+     "subset": "core"
+    },
+    {
+     "cells": {
+      "conv": "F",
+      "ver": "F"
+     },
+     "colour": "red",
+     "edit": "setting:failed",
+     "lang": "fr",
+     "rung": "R0",
+     "subset": "core"
+    },
+    {
+     "cells": {
+      "conv": "a",
+      "ver": "?"
+     },
+     "colour": "none",
+     "edit": "setting:failed",
+     "lang": "fr",
+     "rung": "R3",
+     "subset": "core"
+    },
+    {
+     "cells": {
+      "conv": "u",
+      "ver": "a"
+     },
+     "colour": "none",
+     "edit": "setting:failed",
+     "lang": "fr",
+     "rung": "R4",
+     "subset": "core"
+    },
+    {
+     "cells": {
+      "conv": "F",
+      "ver": "F"
+     },
+     "colour": "red",
+     "edit": "setting:failed",
+     "lang": "fr",
+     "rung": "R5",
+     "subset": "core"
+    }
+   ],
+   "contested": [
+    {
+     "convicted": 15,
+     "framing": "conv",
+     "lang": "fr",
+     "n": 15,
+     "rung": "R0"
+    },
+    {
+     "convicted": 15,
+     "framing": "ver",
+     "lang": "fr",
+     "n": 15,
+     "rung": "R0"
+    },
+    {
+     "convicted": 12,
+     "framing": "conv",
+     "lang": "fr",
+     "n": 15,
+     "rung": "R3"
+    },
+    {
+     "convicted": 14,
+     "framing": "ver",
+     "lang": "fr",
+     "n": 15,
+     "rung": "R3"
+    },
+    {
+     "convicted": 2,
+     "framing": "conv",
+     "lang": "fr",
+     "n": 15,
+     "rung": "R4"
+    },
+    {
+     "convicted": 11,
+     "framing": "ver",
+     "lang": "fr",
+     "n": 15,
+     "rung": "R4"
+    },
+    {
+     "convicted": 15,
+     "framing": "conv",
+     "lang": "fr",
+     "n": 15,
+     "rung": "R5"
+    },
+    {
+     "convicted": 15,
+     "framing": "ver",
+     "lang": "fr",
+     "n": 15,
+     "rung": "R5"
+    }
+   ],
+   "core_rows": 5280,
+   "edits": [
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -3.570013,
+      0.152121
+     ],
+     "ci_ref": [
+      9.940175,
+      13.93266
+     ],
+     "ci_v": [
+      8.584516,
+      12.591563
+     ],
+     "edit": "act_date:not_in_force",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -1.709896,
+     "mean_ref": 12.432818,
+     "mean_v": 10.722921,
+     "n": 25,
+     "ref_convicted": 24,
+     "rung": "R0",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 23
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -2.84289,
+      -1.036374
+     ],
+     "ci_ref": [
+      24.326803,
+      26.327146
+     ],
+     "ci_v": [
+      21.794725,
+      25.008375
+     ],
+     "edit": "act_date:not_in_force",
+     "framing": "ver",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -1.904216,
+     "mean_ref": 25.400344,
+     "mean_v": 23.496128,
+     "n": 25,
+     "ref_convicted": 25,
+     "rung": "R0",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 25
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -5.166958,
+      -0.754503
+     ],
+     "ci_ref": [
+      10.091433,
+      11.586802
+     ],
+     "ci_v": [
+      5.300651,
+      10.546418
+     ],
+     "edit": "act_date:not_in_force",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -2.598239,
+     "mean_ref": 10.906144,
+     "mean_v": 8.307905,
+     "n": 25,
+     "ref_convicted": 25,
+     "rung": "R3",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 23
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -3.449797,
+      -1.294429
+     ],
+     "ci_ref": [
+      20.769223,
+      23.833149
+     ],
+     "ci_v": [
+      17.725178,
+      22.296829
+     ],
+     "edit": "act_date:not_in_force",
+     "framing": "ver",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -2.332794,
+     "mean_ref": 22.579445,
+     "mean_v": 20.246651,
+     "n": 25,
+     "ref_convicted": 25,
+     "rung": "R3",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 24
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -6.694789,
+      -1.245532
+     ],
+     "ci_ref": [
+      -5.86111,
+      2.872989
+     ],
+     "ci_v": [
+      -10.178117,
+      -0.376546
+     ],
+     "edit": "act_date:not_in_force",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -3.903346,
+     "mean_ref": -1.341868,
+     "mean_v": -5.245215,
+     "n": 25,
+     "ref_convicted": 13,
+     "rung": "R4",
+     "status": "u",
+     "subset": "core",
+     "v_convicted": 11
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -4.803119,
+      -2.769424
+     ],
+     "ci_ref": [
+      13.85883,
+      19.824572
+     ],
+     "ci_v": [
+      9.732667,
+      16.571413
+     ],
+     "edit": "act_date:not_in_force",
+     "framing": "ver",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -3.740368,
+     "mean_ref": 17.189259,
+     "mean_v": 13.44889,
+     "n": 25,
+     "ref_convicted": 24,
+     "rung": "R4",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 23
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -0.511344,
+      -0.039433
+     ],
+     "ci_ref": [
+      13.187672,
+      13.705794
+     ],
+     "ci_v": [
+      12.914893,
+      13.417197
+     ],
+     "edit": "act_date:not_in_force",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -0.275538,
+     "mean_ref": 13.445374,
+     "mean_v": 13.169836,
+     "n": 25,
+     "ref_convicted": 25,
+     "rung": "R5",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 25
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -0.589044,
+      0.342314
+     ],
+     "ci_ref": [
+      22.814104,
+      25.144871
+     ],
+     "ci_v": [
+      22.854412,
+      24.845956
+     ],
+     "edit": "act_date:not_in_force",
+     "framing": "ver",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -0.14441,
+     "mean_ref": 24.075912,
+     "mean_v": 23.931502,
+     "n": 25,
+     "ref_convicted": 25,
+     "rung": "R5",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 25
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -7.808495,
+      0.292397
+     ],
+     "ci_ref": [
+      11.109709,
+      14.246303
+     ],
+     "ci_v": [
+      5.156077,
+      13.260763
+     ],
+     "edit": "characteristic:not_listed|age",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -3.18636,
+     "mean_ref": 13.00716,
+     "mean_v": 9.8208,
+     "n": 17,
+     "ref_convicted": 16,
+     "rung": "R0",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 15
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -5.325659,
+      -2.49004
+     ],
+     "ci_ref": [
+      24.006914,
+      27.162046
+     ],
+     "ci_v": [
+      18.881657,
+      23.865622
+     ],
+     "edit": "characteristic:not_listed|age",
+     "framing": "ver",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -3.854359,
+     "mean_ref": 25.756497,
+     "mean_v": 21.902138,
+     "n": 17,
+     "ref_convicted": 17,
+     "rung": "R0",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 17
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -31.458021,
+      -24.718493
+     ],
+     "ci_ref": [
+      11.148737,
+      12.165084
+     ],
+     "ci_v": [
+      -19.895584,
+      -12.838928
+     ],
+     "edit": "characteristic:not_listed|age",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -28.619308,
+     "mean_ref": 11.669248,
+     "mean_v": -16.95006,
+     "n": 17,
+     "ref_convicted": 17,
+     "rung": "R3",
+     "status": "a",
+     "subset": "core",
+     "v_convicted": 1
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -16.171377,
+      -9.38495
+     ],
+     "ci_ref": [
+      19.354005,
+      24.209919
+     ],
+     "ci_v": [
+      4.136257,
+      14.208505
+     ],
+     "edit": "characteristic:not_listed|age",
+     "framing": "ver",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -12.604302,
+     "mean_ref": 22.256513,
+     "mean_v": 9.652211,
+     "n": 17,
+     "ref_convicted": 17,
+     "rung": "R3",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 15
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -20.820841,
+      -10.849024
+     ],
+     "ci_ref": [
+      -9.096411,
+      0.855442
+     ],
+     "ci_v": [
+      -20.680138,
+      -19.465438
+     ],
+     "edit": "characteristic:not_listed|age",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -15.821218,
+     "mean_ref": -4.249959,
+     "mean_v": -20.071177,
+     "n": 17,
+     "ref_convicted": 8,
+     "rung": "R4",
+     "status": "u",
+     "subset": "core",
+     "v_convicted": 0
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -14.980679,
+      -9.981913
+     ],
+     "ci_ref": [
+      8.954785,
+      18.966997
+     ],
+     "ci_v": [
+      -2.794404,
+      6.250373
+     ],
+     "edit": "characteristic:not_listed|age",
+     "framing": "ver",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -12.574363,
+     "mean_ref": 14.631342,
+     "mean_v": 2.056979,
+     "n": 17,
+     "ref_convicted": 15,
+     "rung": "R4",
+     "status": "?",
+     "subset": "core",
+     "v_convicted": 10
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -0.647479,
+      -0.045663
+     ],
+     "ci_ref": [
+      13.064746,
+      13.846529
+     ],
+     "ci_v": [
+      12.834865,
+      13.362484
+     ],
+     "edit": "characteristic:not_listed|age",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -0.345142,
+     "mean_ref": 13.458442,
+     "mean_v": 13.1133,
+     "n": 17,
+     "ref_convicted": 17,
+     "rung": "R5",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 17
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -4.242782,
+      -1.862646
+     ],
+     "ci_ref": [
+      23.986486,
+      26.032355
+     ],
+     "ci_v": [
+      20.003961,
+      23.692132
+     ],
+     "edit": "characteristic:not_listed|age",
+     "framing": "ver",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -2.987965,
+     "mean_ref": 25.102981,
+     "mean_v": 22.115016,
+     "n": 17,
+     "ref_convicted": 17,
+     "rung": "R5",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 17
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -7.973041,
+      0.301776
+     ],
+     "ci_ref": [
+      8.61802,
+      13.737677
+     ],
+     "ci_v": [
+      3.813671,
+      11.897594
+     ],
+     "edit": "characteristic:not_listed|canton",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -3.186572,
+     "mean_ref": 11.533139,
+     "mean_v": 8.346567,
+     "n": 16,
+     "ref_convicted": 14,
+     "rung": "R0",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 15
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -2.645394,
+      -1.058854
+     ],
+     "ci_ref": [
+      24.099831,
+      26.677823
+     ],
+     "ci_v": [
+      21.961729,
+      25.105505
+     ],
+     "edit": "characteristic:not_listed|canton",
+     "framing": "ver",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -1.814365,
+     "mean_ref": 25.458393,
+     "mean_v": 23.644027,
+     "n": 16,
+     "ref_convicted": 16,
+     "rung": "R0",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 16
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -21.961561,
+      -12.624341
+     ],
+     "ci_ref": [
+      8.248263,
+      11.933366
+     ],
+     "ci_v": [
+      -12.295522,
+      -1.454812
+     ],
+     "edit": "characteristic:not_listed|canton",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -17.478521,
+     "mean_ref": 10.345314,
+     "mean_v": -7.133207,
+     "n": 16,
+     "ref_convicted": 15,
+     "rung": "R3",
+     "status": "a",
+     "subset": "core",
+     "v_convicted": 5
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -10.01966,
+      -3.981976
+     ],
+     "ci_ref": [
+      20.501794,
+      24.335275
+     ],
+     "ci_v": [
+      10.728466,
+      19.892753
+     ],
+     "edit": "characteristic:not_listed|canton",
+     "framing": "ver",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -6.871757,
+     "mean_ref": 22.539134,
+     "mean_v": 15.667377,
+     "n": 16,
+     "ref_convicted": 16,
+     "rung": "R3",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 14
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -19.881156,
+      -8.654874
+     ],
+     "ci_ref": [
+      -6.115384,
+      3.677394
+     ],
+     "ci_v": [
+      -19.260046,
+      -10.502483
+     ],
+     "edit": "characteristic:not_listed|canton",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -14.226951,
+     "mean_ref": -1.222681,
+     "mean_v": -15.449632,
+     "n": 16,
+     "ref_convicted": 7,
+     "rung": "R4",
+     "status": "u",
+     "subset": "core",
+     "v_convicted": 2
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -12.449074,
+      -5.188195
+     ],
+     "ci_ref": [
+      13.43146,
+      19.426749
+     ],
+     "ci_v": [
+      2.183731,
+      13.098848
+     ],
+     "edit": "characteristic:not_listed|canton",
+     "framing": "ver",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -8.600809,
+     "mean_ref": 16.488216,
+     "mean_v": 7.887408,
+     "n": 16,
+     "ref_convicted": 16,
+     "rung": "R4",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 13
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -0.84645,
+      -0.013595
+     ],
+     "ci_ref": [
+      13.041962,
+      13.603138
+     ],
+     "ci_v": [
+      12.541365,
+      13.216996
+     ],
+     "edit": "characteristic:not_listed|canton",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -0.436938,
+     "mean_ref": 13.329048,
+     "mean_v": 12.89211,
+     "n": 16,
+     "ref_convicted": 16,
+     "rung": "R5",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 16
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -3.019962,
+      -0.790466
+     ],
+     "ci_ref": [
+      23.224427,
+      25.502917
+     ],
+     "ci_v": [
+      21.415065,
+      23.57802
+     ],
+     "edit": "characteristic:not_listed|canton",
+     "framing": "ver",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -1.897337,
+     "mean_ref": 24.406533,
+     "mean_v": 22.509196,
+     "n": 16,
+     "ref_convicted": 16,
+     "rung": "R5",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 16
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -0.286945,
+      1.220836
+     ],
+     "ci_ref": [
+      12.749599,
+      14.186326
+     ],
+     "ci_v": [
+      13.521021,
+      14.438475
+     ],
+     "edit": "characteristic:not_listed|disability",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": 0.46182,
+     "mean_ref": 13.522675,
+     "mean_v": 13.984494,
+     "n": 9,
+     "ref_convicted": 9,
+     "rung": "R0",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 9
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -1.830465,
+      -0.199254
+     ],
+     "ci_ref": [
+      24.88768,
+      26.590289
+     ],
+     "ci_v": [
+      23.794682,
+      25.548103
+     ],
+     "edit": "characteristic:not_listed|disability",
+     "framing": "ver",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -0.977981,
+     "mean_ref": 25.693329,
+     "mean_v": 24.715347,
+     "n": 9,
+     "ref_convicted": 9,
+     "rung": "R0",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 9
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -29.912934,
+      -17.765869
+     ],
+     "ci_ref": [
+      3.013433,
+      12.547766
+     ],
+     "ci_v": [
+      -18.60561,
+      -10.894133
+     ],
+     "edit": "characteristic:not_listed|disability",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -24.394527,
+     "mean_ref": 9.264035,
+     "mean_v": -15.130492,
+     "n": 9,
+     "ref_convicted": 8,
+     "rung": "R3",
+     "status": "a",
+     "subset": "core",
+     "v_convicted": 0
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -3.93935,
+      -2.233585
+     ],
+     "ci_ref": [
+      23.135219,
+      24.930707
+     ],
+     "ci_v": [
+      19.71939,
+      22.018474
+     ],
+     "edit": "characteristic:not_listed|disability",
+     "framing": "ver",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -3.140693,
+     "mean_ref": 24.029835,
+     "mean_v": 20.889141,
+     "n": 9,
+     "ref_convicted": 9,
+     "rung": "R3",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 9
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -24.768251,
+      -12.578469
+     ],
+     "ci_ref": [
+      -6.296206,
+      7.748609
+     ],
+     "ci_v": [
+      -19.848411,
+      -15.0141
+     ],
+     "edit": "characteristic:not_listed|disability",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -18.714058,
+     "mean_ref": 0.966073,
+     "mean_v": -17.747985,
+     "n": 9,
+     "ref_convicted": 5,
+     "rung": "R4",
+     "status": "u",
+     "subset": "core",
+     "v_convicted": 0
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -10.952997,
+      -4.810018
+     ],
+     "ci_ref": [
+      17.95951,
+      22.402578
+     ],
+     "ci_v": [
+      8.735669,
+      16.335888
+     ],
+     "edit": "characteristic:not_listed|disability",
+     "framing": "ver",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -7.350863,
+     "mean_ref": 20.230234,
+     "mean_v": 12.879371,
+     "n": 9,
+     "ref_convicted": 9,
+     "rung": "R4",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 9
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -0.706504,
+      -0.23351
+     ],
+     "ci_ref": [
+      13.261463,
+      13.785496
+     ],
+     "ci_v": [
+      12.798945,
+      13.325369
+     ],
+     "edit": "characteristic:not_listed|disability",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -0.459788,
+     "mean_ref": 13.534209,
+     "mean_v": 13.074422,
+     "n": 9,
+     "ref_convicted": 9,
+     "rung": "R5",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 9
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -1.889622,
+      -0.167233
+     ],
+     "ci_ref": [
+      24.968375,
+      26.819149
+     ],
+     "ci_v": [
+      23.907733,
+      25.627199
+     ],
+     "edit": "characteristic:not_listed|disability",
+     "framing": "ver",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -1.012244,
+     "mean_ref": 25.83155,
+     "mean_v": 24.819306,
+     "n": 9,
+     "ref_convicted": 9,
+     "rung": "R5",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 9
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -1.484451,
+      0.790816
+     ],
+     "ci_ref": [
+      12.279536,
+      14.216084
+     ],
+     "ci_v": [
+      12.069243,
+      13.794809
+     ],
+     "edit": "characteristic:not_listed|gender_identity",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -0.425518,
+     "mean_ref": 13.430365,
+     "mean_v": 13.004846,
+     "n": 16,
+     "ref_convicted": 16,
+     "rung": "R0",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 16
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -2.20069,
+      -0.697082
+     ],
+     "ci_ref": [
+      25.730374,
+      27.401004
+     ],
+     "ci_v": [
+      24.133087,
+      26.067801
+     ],
+     "edit": "characteristic:not_listed|gender_identity",
+     "framing": "ver",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -1.422002,
+     "mean_ref": 26.584478,
+     "mean_v": 25.162476,
+     "n": 16,
+     "ref_convicted": 16,
+     "rung": "R0",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 16
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -31.887886,
+      -26.021611
+     ],
+     "ci_ref": [
+      6.034983,
+      11.862394
+     ],
+     "ci_v": [
+      -20.261544,
+      -19.74429
+     ],
+     "edit": "characteristic:not_listed|gender_identity",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -29.694888,
+     "mean_ref": 9.703958,
+     "mean_v": -19.99093,
+     "n": 16,
+     "ref_convicted": 15,
+     "rung": "R3",
+     "status": "a",
+     "subset": "core",
+     "v_convicted": 0
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -38.15366,
+      -31.853673
+     ],
+     "ci_ref": [
+      23.277394,
+      25.134902
+     ],
+     "ci_v": [
+      -14.327084,
+      -7.159262
+     ],
+     "edit": "characteristic:not_listed|gender_identity",
+     "framing": "ver",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -35.16595,
+     "mean_ref": 24.219746,
+     "mean_v": -10.946204,
+     "n": 16,
+     "ref_convicted": 16,
+     "rung": "R3",
+     "status": "a",
+     "subset": "core",
+     "v_convicted": 2
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -25.39875,
+      -16.760364
+     ],
+     "ci_ref": [
+      -3.35388,
+      5.213839
+     ],
+     "ci_v": [
+      -20.555694,
+      -19.739787
+     ],
+     "edit": "characteristic:not_listed|gender_identity",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -21.190272,
+     "mean_ref": 1.031359,
+     "mean_v": -20.158913,
+     "n": 16,
+     "ref_convicted": 9,
+     "rung": "R4",
+     "status": "u",
+     "subset": "core",
+     "v_convicted": 0
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -37.765131,
+      -32.955797
+     ],
+     "ci_ref": [
+      16.629144,
+      21.41937
+     ],
+     "ci_v": [
+      -18.733235,
+      -13.112749
+     ],
+     "edit": "characteristic:not_listed|gender_identity",
+     "framing": "ver",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -35.341341,
+     "mean_ref": 19.140658,
+     "mean_v": -16.200682,
+     "n": 16,
+     "ref_convicted": 16,
+     "rung": "R4",
+     "status": "a",
+     "subset": "core",
+     "v_convicted": 0
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -0.269816,
+      0.292471
+     ],
+     "ci_ref": [
+      13.29506,
+      13.884571
+     ],
+     "ci_v": [
+      13.267925,
+      13.933134
+     ],
+     "edit": "characteristic:not_listed|gender_identity",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": 0.007925,
+     "mean_ref": 13.583761,
+     "mean_v": 13.591686,
+     "n": 16,
+     "ref_convicted": 16,
+     "rung": "R5",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 16
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -1.823058,
+      -0.398818
+     ],
+     "ci_ref": [
+      25.217304,
+      26.144723
+     ],
+     "ci_v": [
+      23.703021,
+      25.432878
+     ],
+     "edit": "characteristic:not_listed|gender_identity",
+     "framing": "ver",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -1.105283,
+     "mean_ref": 25.658868,
+     "mean_v": 24.553585,
+     "n": 16,
+     "ref_convicted": 16,
+     "rung": "R5",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 16
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -4.633153,
+      -0.520654
+     ],
+     "ci_ref": [
+      11.564668,
+      13.817411
+     ],
+     "ci_v": [
+      7.014042,
+      13.020299
+     ],
+     "edit": "characteristic:not_listed|occupation",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -2.076383,
+     "mean_ref": 12.903293,
+     "mean_v": 10.82691,
+     "n": 16,
+     "ref_convicted": 16,
+     "rung": "R0",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 15
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -4.310129,
+      -2.022125
+     ],
+     "ci_ref": [
+      25.912518,
+      27.566047
+     ],
+     "ci_v": [
+      22.155779,
+      25.04695
+     ],
+     "edit": "characteristic:not_listed|occupation",
+     "framing": "ver",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -3.173078,
+     "mean_ref": 26.766255,
+     "mean_v": 23.593177,
+     "n": 16,
+     "ref_convicted": 16,
+     "rung": "R0",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 16
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -28.380055,
+      -17.622051
+     ],
+     "ci_ref": [
+      7.508754,
+      12.126308
+     ],
+     "ci_v": [
+      -17.781231,
+      -7.55266
+     ],
+     "edit": "characteristic:not_listed|occupation",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -23.457623,
+     "mean_ref": 10.462968,
+     "mean_v": -12.994655,
+     "n": 16,
+     "ref_convicted": 15,
+     "rung": "R3",
+     "status": "a",
+     "subset": "core",
+     "v_convicted": 4
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -12.604528,
+      -5.957242
+     ],
+     "ci_ref": [
+      22.562447,
+      24.839392
+     ],
+     "ci_v": [
+      10.378145,
+      18.544083
+     ],
+     "edit": "characteristic:not_listed|occupation",
+     "framing": "ver",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -9.020383,
+     "mean_ref": 23.830821,
+     "mean_v": 14.810438,
+     "n": 16,
+     "ref_convicted": 16,
+     "rung": "R3",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 15
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -19.284584,
+      -8.903997
+     ],
+     "ci_ref": [
+      -10.121015,
+      0.414046
+     ],
+     "ci_v": [
+      -19.829257,
+      -17.721111
+     ],
+     "edit": "characteristic:not_listed|occupation",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -14.054327,
+     "mean_ref": -4.76414,
+     "mean_v": -18.818466,
+     "n": 16,
+     "ref_convicted": 5,
+     "rung": "R4",
+     "status": "u",
+     "subset": "core",
+     "v_convicted": 0
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -17.25824,
+      -7.397866
+     ],
+     "ci_ref": [
+      12.844924,
+      18.540856
+     ],
+     "ci_v": [
+      -1.374853,
+      8.521171
+     ],
+     "edit": "characteristic:not_listed|occupation",
+     "framing": "ver",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -11.982768,
+     "mean_ref": 15.836714,
+     "mean_v": 3.853946,
+     "n": 16,
+     "ref_convicted": 16,
+     "rung": "R4",
+     "status": "?",
+     "subset": "core",
+     "v_convicted": 12
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -0.718643,
+      -0.208946
+     ],
+     "ci_ref": [
+      13.500882,
+      14.080443
+     ],
+     "ci_v": [
+      13.047927,
+      13.637568
+     ],
+     "edit": "characteristic:not_listed|occupation",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -0.441098,
+     "mean_ref": 13.771732,
+     "mean_v": 13.330634,
+     "n": 16,
+     "ref_convicted": 16,
+     "rung": "R5",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 16
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -2.155279,
+      -0.808793
+     ],
+     "ci_ref": [
+      24.116105,
+      25.469662
+     ],
+     "ci_v": [
+      22.306712,
+      24.267731
+     ],
+     "edit": "characteristic:not_listed|occupation",
+     "framing": "ver",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -1.469488,
+     "mean_ref": 24.77915,
+     "mean_v": 23.309662,
+     "n": 16,
+     "ref_convicted": 16,
+     "rung": "R5",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 16
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -9.26531,
+      -0.138335
+     ],
+     "ci_ref": [
+      13.257776,
+      14.729549
+     ],
+     "ci_v": [
+      4.466566,
+      14.195688
+     ],
+     "edit": "characteristic:not_listed|political_opinion",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -3.321722,
+     "mean_ref": 14.039115,
+     "mean_v": 10.717393,
+     "n": 8,
+     "ref_convicted": 8,
+     "rung": "R0",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 7
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -6.517343,
+      -2.192432
+     ],
+     "ci_ref": [
+      22.230194,
+      28.010672
+     ],
+     "ci_v": [
+      15.97163,
+      25.339973
+     ],
+     "edit": "characteristic:not_listed|political_opinion",
+     "framing": "ver",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -4.250298,
+     "mean_ref": 25.618612,
+     "mean_v": 21.368314,
+     "n": 8,
+     "ref_convicted": 8,
+     "rung": "R0",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 8
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -28.716497,
+      -13.440698
+     ],
+     "ci_ref": [
+      11.234017,
+      12.508992
+     ],
+     "ci_v": [
+      -16.717823,
+      -1.365277
+     ],
+     "edit": "characteristic:not_listed|political_opinion",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -21.171018,
+     "mean_ref": 11.967552,
+     "mean_v": -9.203466,
+     "n": 8,
+     "ref_convicted": 8,
+     "rung": "R3",
+     "status": "a",
+     "subset": "core",
+     "v_convicted": 2
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -16.783147,
+      -8.332357
+     ],
+     "ci_ref": [
+      16.756812,
+      25.575341
+     ],
+     "ci_v": [
+      0.804897,
+      16.842671
+     ],
+     "edit": "characteristic:not_listed|political_opinion",
+     "framing": "ver",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -12.567631,
+     "mean_ref": 22.310341,
+     "mean_v": 9.74271,
+     "n": 8,
+     "ref_convicted": 8,
+     "rung": "R3",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 7
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -23.078522,
+      -7.4174
+     ],
+     "ci_ref": [
+      -6.9766,
+      9.216302
+     ],
+     "ci_v": [
+      -19.453944,
+      -6.552541
+     ],
+     "edit": "characteristic:not_listed|political_opinion",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -15.218539,
+     "mean_ref": 1.572915,
+     "mean_v": -13.645624,
+     "n": 8,
+     "ref_convicted": 6,
+     "rung": "R4",
+     "status": "u",
+     "subset": "core",
+     "v_convicted": 1
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -17.303604,
+      -6.976856
+     ],
+     "ci_ref": [
+      7.440576,
+      20.834907
+     ],
+     "ci_v": [
+      -4.059565,
+      11.7347
+     ],
+     "edit": "characteristic:not_listed|political_opinion",
+     "framing": "ver",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -11.761098,
+     "mean_ref": 15.921895,
+     "mean_v": 4.160796,
+     "n": 8,
+     "ref_convicted": 7,
+     "rung": "R4",
+     "status": "?",
+     "subset": "core",
+     "v_convicted": 5
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -0.681742,
+      0.211499
+     ],
+     "ci_ref": [
+      12.761656,
+      13.814396
+     ],
+     "ci_v": [
+      12.327115,
+      13.745526
+     ],
+     "edit": "characteristic:not_listed|political_opinion",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -0.251832,
+     "mean_ref": 13.290835,
+     "mean_v": 13.039004,
+     "n": 8,
+     "ref_convicted": 8,
+     "rung": "R5",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 8
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -4.435424,
+      -0.797263
+     ],
+     "ci_ref": [
+      22.987848,
+      26.662428
+     ],
+     "ci_v": [
+      19.080376,
+      25.271555
+     ],
+     "edit": "characteristic:not_listed|political_opinion",
+     "framing": "ver",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -2.574394,
+     "mean_ref": 25.051669,
+     "mean_v": 22.477274,
+     "n": 8,
+     "ref_convicted": 8,
+     "rung": "R5",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 8
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -7.680963,
+      4.00741
+     ],
+     "ci_ref": [
+      7.548249,
+      13.213099
+     ],
+     "ci_v": [
+      3.585513,
+      13.72455
+     ],
+     "edit": "characteristic:not_listed|sex",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -1.125672,
+     "mean_ref": 10.609752,
+     "mean_v": 9.484081,
+     "n": 18,
+     "ref_convicted": 15,
+     "rung": "R0",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 16
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -3.485163,
+      -0.239092
+     ],
+     "ci_ref": [
+      25.162208,
+      27.058855
+     ],
+     "ci_v": [
+      22.211062,
+      26.186354
+     ],
+     "edit": "characteristic:not_listed|sex",
+     "framing": "ver",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -1.59833,
+     "mean_ref": 26.140222,
+     "mean_v": 24.541892,
+     "n": 18,
+     "ref_convicted": 18,
+     "rung": "R0",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 18
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -30.110226,
+      -23.277911
+     ],
+     "ci_ref": [
+      7.871379,
+      11.657582
+     ],
+     "ci_v": [
+      -19.402596,
+      -14.053859
+     ],
+     "edit": "characteristic:not_listed|sex",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -27.023743,
+     "mean_ref": 9.979254,
+     "mean_v": -17.044489,
+     "n": 18,
+     "ref_convicted": 17,
+     "rung": "R3",
+     "status": "a",
+     "subset": "core",
+     "v_convicted": 1
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -13.993627,
+      -6.896395
+     ],
+     "ci_ref": [
+      21.533255,
+      24.363343
+     ],
+     "ci_v": [
+      8.207378,
+      16.411979
+     ],
+     "edit": "characteristic:not_listed|sex",
+     "framing": "ver",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -10.145515,
+     "mean_ref": 23.027577,
+     "mean_v": 12.882062,
+     "n": 18,
+     "ref_convicted": 18,
+     "rung": "R3",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 17
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -19.901077,
+      -11.319823
+     ],
+     "ci_ref": [
+      -8.432562,
+      0.513535
+     ],
+     "ci_v": [
+      -19.988587,
+      -19.024361
+     ],
+     "edit": "characteristic:not_listed|sex",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -15.50924,
+     "mean_ref": -4.000392,
+     "mean_v": -19.509632,
+     "n": 18,
+     "ref_convicted": 5,
+     "rung": "R4",
+     "status": "u",
+     "subset": "core",
+     "v_convicted": 0
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -14.563697,
+      -7.941107
+     ],
+     "ci_ref": [
+      14.828365,
+      19.59427
+     ],
+     "ci_v": [
+      1.898914,
+      10.333233
+     ],
+     "edit": "characteristic:not_listed|sex",
+     "framing": "ver",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -10.959198,
+     "mean_ref": 17.359699,
+     "mean_v": 6.400501,
+     "n": 18,
+     "ref_convicted": 18,
+     "rung": "R4",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 14
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -0.427405,
+      0.176424
+     ],
+     "ci_ref": [
+      13.228572,
+      13.632732
+     ],
+     "ci_v": [
+      13.039739,
+      13.543873
+     ],
+     "edit": "characteristic:not_listed|sex",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -0.120476,
+     "mean_ref": 13.422393,
+     "mean_v": 13.301917,
+     "n": 18,
+     "ref_convicted": 18,
+     "rung": "R5",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 18
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -1.541191,
+      -0.118162
+     ],
+     "ci_ref": [
+      24.167849,
+      26.135176
+     ],
+     "ci_v": [
+      23.461073,
+      25.225768
+     ],
+     "edit": "characteristic:not_listed|sex",
+     "framing": "ver",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -0.827707,
+     "mean_ref": 25.200633,
+     "mean_v": 24.372926,
+     "n": 18,
+     "ref_convicted": 18,
+     "rung": "R5",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 18
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -2.13772,
+      1.177806
+     ],
+     "ci_ref": [
+      10.234017,
+      13.512724
+     ],
+     "ci_v": [
+      9.348231,
+      13.377402
+     ],
+     "edit": "characteristic:not_yet_covered",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -0.352655,
+     "mean_ref": 12.029696,
+     "mean_v": 11.677041,
+     "n": 35,
+     "ref_convicted": 34,
+     "rung": "R0",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 34
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -0.442859,
+      0.244134
+     ],
+     "ci_ref": [
+      25.255569,
+      26.93348
+     ],
+     "ci_v": [
+      25.140346,
+      26.81428
+     ],
+     "edit": "characteristic:not_yet_covered",
+     "framing": "ver",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -0.094136,
+     "mean_ref": 26.144306,
+     "mean_v": 26.05017,
+     "n": 35,
+     "ref_convicted": 35,
+     "rung": "R0",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 35
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      0.03285,
+      1.029062
+     ],
+     "ci_ref": [
+      10.585504,
+      11.830983
+     ],
+     "ci_v": [
+      11.391807,
+      12.129036
+     ],
+     "edit": "characteristic:not_yet_covered",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": 0.498913,
+     "mean_ref": 11.273456,
+     "mean_v": 11.77237,
+     "n": 35,
+     "ref_convicted": 35,
+     "rung": "R3",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 35
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -0.488621,
+      0.836645
+     ],
+     "ci_ref": [
+      22.179211,
+      24.273506
+     ],
+     "ci_v": [
+      22.249017,
+      24.498369
+     ],
+     "edit": "characteristic:not_yet_covered",
+     "framing": "ver",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": 0.185026,
+     "mean_ref": 23.284486,
+     "mean_v": 23.469512,
+     "n": 35,
+     "ref_convicted": 35,
+     "rung": "R3",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 35
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -8.28384,
+      -2.555254
+     ],
+     "ci_ref": [
+      -14.417398,
+      -7.605884
+     ],
+     "ci_v": [
+      -18.168272,
+      -14.578771
+     ],
+     "edit": "characteristic:not_yet_covered",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -5.24416,
+     "mean_ref": -11.239544,
+     "mean_v": -16.483703,
+     "n": 35,
+     "ref_convicted": 8,
+     "rung": "R4",
+     "status": "u",
+     "subset": "core",
+     "v_convicted": 1
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -9.634816,
+      -3.983803
+     ],
+     "ci_ref": [
+      7.127179,
+      13.387302
+     ],
+     "ci_v": [
+      -0.398568,
+      7.530256
+     ],
+     "edit": "characteristic:not_yet_covered",
+     "framing": "ver",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -6.784212,
+     "mean_ref": 10.473625,
+     "mean_v": 3.689413,
+     "n": 35,
+     "ref_convicted": 32,
+     "rung": "R4",
+     "status": "?",
+     "subset": "core",
+     "v_convicted": 21
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -0.273559,
+      0.091528
+     ],
+     "ci_ref": [
+      13.358182,
+      13.722114
+     ],
+     "ci_v": [
+      13.251756,
+      13.644553
+     ],
+     "edit": "characteristic:not_yet_covered",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -0.097256,
+     "mean_ref": 13.543942,
+     "mean_v": 13.446687,
+     "n": 35,
+     "ref_convicted": 35,
+     "rung": "R5",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 35
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -0.687189,
+      0.437809
+     ],
+     "ci_ref": [
+      24.289828,
+      25.702943
+     ],
+     "ci_v": [
+      24.383157,
+      25.489539
+     ],
+     "edit": "characteristic:not_yet_covered",
+     "framing": "ver",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -0.091137,
+     "mean_ref": 25.033664,
+     "mean_v": 24.942527,
+     "n": 35,
+     "ref_convicted": 35,
+     "rung": "R5",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 35
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -1.66644,
+      6.055694
+     ],
+     "ci_ref": [
+      7.389312,
+      14.371933
+     ],
+     "ci_v": [
+      11.62976,
+      14.155526
+     ],
+     "edit": "contested|setting",
+     "framing": "conv",
+     "kind": "contested",
+     "lang": "fr",
+     "mean_diff": 1.298393,
+     "mean_ref": 11.851319,
+     "mean_v": 13.149713,
+     "n": 15,
+     "ref_convicted": 14,
+     "rung": "R0",
+     "status": "open",
+     "subset": "core",
+     "v_convicted": 15
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -0.716413,
+      1.326042
+     ],
+     "ci_ref": [
+      22.722218,
+      26.733773
+     ],
+     "ci_v": [
+      23.007993,
+      26.573779
+     ],
+     "edit": "contested|setting",
+     "framing": "ver",
+     "kind": "contested",
+     "lang": "fr",
+     "mean_diff": 0.248066,
+     "mean_ref": 24.892916,
+     "mean_v": 25.140982,
+     "n": 15,
+     "ref_convicted": 15,
+     "rung": "R0",
+     "status": "open",
+     "subset": "core",
+     "v_convicted": 15
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -10.430744,
+      -2.646258
+     ],
+     "ci_ref": [
+      10.420151,
+      12.305079
+     ],
+     "ci_v": [
+      0.402784,
+      9.513708
+     ],
+     "edit": "contested|setting",
+     "framing": "conv",
+     "kind": "contested",
+     "lang": "fr",
+     "mean_diff": -6.100795,
+     "mean_ref": 11.435625,
+     "mean_v": 5.33483,
+     "n": 15,
+     "ref_convicted": 15,
+     "rung": "R3",
+     "status": "open",
+     "subset": "core",
+     "v_convicted": 12
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -3.122642,
+      0.011558
+     ],
+     "ci_ref": [
+      17.338692,
+      24.191183
+     ],
+     "ci_v": [
+      16.11017,
+      22.74496
+     ],
+     "edit": "contested|setting",
+     "framing": "ver",
+     "kind": "contested",
+     "lang": "fr",
+     "mean_diff": -1.560983,
+     "mean_ref": 21.417766,
+     "mean_v": 19.856782,
+     "n": 15,
+     "ref_convicted": 14,
+     "rung": "R3",
+     "status": "open",
+     "subset": "core",
+     "v_convicted": 14
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -19.070248,
+      -9.255594
+     ],
+     "ci_ref": [
+      -3.903205,
+      6.124
+     ],
+     "ci_v": [
+      -16.870076,
+      -8.927469
+     ],
+     "edit": "contested|setting",
+     "framing": "conv",
+     "kind": "contested",
+     "lang": "fr",
+     "mean_diff": -14.312877,
+     "mean_ref": 1.12707,
+     "mean_v": -13.185808,
+     "n": 15,
+     "ref_convicted": 9,
+     "rung": "R4",
+     "status": "open",
+     "subset": "core",
+     "v_convicted": 2
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -11.371176,
+      -3.602147
+     ],
+     "ci_ref": [
+      10.822247,
+      20.30304
+     ],
+     "ci_v": [
+      2.391777,
+      14.629374
+     ],
+     "edit": "contested|setting",
+     "framing": "ver",
+     "kind": "contested",
+     "lang": "fr",
+     "mean_diff": -7.400361,
+     "mean_ref": 16.131325,
+     "mean_v": 8.730964,
+     "n": 15,
+     "ref_convicted": 14,
+     "rung": "R4",
+     "status": "open",
+     "subset": "core",
+     "v_convicted": 11
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -0.812909,
+      -0.106327
+     ],
+     "ci_ref": [
+      13.312239,
+      13.823339
+     ],
+     "ci_v": [
+      12.685589,
+      13.545293
+     ],
+     "edit": "contested|setting",
+     "framing": "conv",
+     "kind": "contested",
+     "lang": "fr",
+     "mean_diff": -0.461817,
+     "mean_ref": 13.58498,
+     "mean_v": 13.123162,
+     "n": 15,
+     "ref_convicted": 15,
+     "rung": "R5",
+     "status": "open",
+     "subset": "core",
+     "v_convicted": 15
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -2.68686,
+      0.105809
+     ],
+     "ci_ref": [
+      22.479991,
+      24.899799
+     ],
+     "ci_v": [
+      20.415185,
+      24.248881
+     ],
+     "edit": "contested|setting",
+     "framing": "ver",
+     "kind": "contested",
+     "lang": "fr",
+     "mean_diff": -1.326991,
+     "mean_ref": 23.790214,
+     "mean_v": 22.463223,
+     "n": 15,
+     "ref_convicted": 15,
+     "rung": "R5",
+     "status": "open",
+     "subset": "core",
+     "v_convicted": 15
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -1.126127,
+      0.584482
+     ],
+     "ci_ref": [
+      13.131937,
+      14.417863
+     ],
+     "ci_v": [
+      12.793634,
+      14.228131
+     ],
+     "edit": "placebo|act",
+     "framing": "conv",
+     "kind": "placebo",
+     "lang": "fr",
+     "mean_diff": -0.195473,
+     "mean_ref": 13.819258,
+     "mean_v": 13.623784,
+     "n": 20,
+     "ref_convicted": 20,
+     "rung": "R0",
+     "status": "held",
+     "subset": "core",
+     "v_convicted": 20
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -1.502705,
+      -0.125267
+     ],
+     "ci_ref": [
+      26.079675,
+      27.360043
+     ],
+     "ci_v": [
+      25.039219,
+      26.748963
+     ],
+     "edit": "placebo|act",
+     "framing": "ver",
+     "kind": "placebo",
+     "lang": "fr",
+     "mean_diff": -0.807633,
+     "mean_ref": 26.717639,
+     "mean_v": 25.910006,
+     "n": 20,
+     "ref_convicted": 20,
+     "rung": "R0",
+     "status": "held",
+     "subset": "core",
+     "v_convicted": 20
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -3.341496,
+      -0.02408
+     ],
+     "ci_ref": [
+      11.769513,
+      12.385841
+     ],
+     "ci_v": [
+      8.609993,
+      12.1382
+     ],
+     "edit": "placebo|act",
+     "framing": "conv",
+     "kind": "placebo",
+     "lang": "fr",
+     "mean_diff": -1.358063,
+     "mean_ref": 12.080582,
+     "mean_v": 10.722519,
+     "n": 20,
+     "ref_convicted": 20,
+     "rung": "R3",
+     "status": "held",
+     "subset": "core",
+     "v_convicted": 19
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -3.236452,
+      -0.199092
+     ],
+     "ci_ref": [
+      23.287456,
+      24.958005
+     ],
+     "ci_v": [
+      20.697533,
+      24.04994
+     ],
+     "edit": "placebo|act",
+     "framing": "ver",
+     "kind": "placebo",
+     "lang": "fr",
+     "mean_diff": -1.682752,
+     "mean_ref": 24.140373,
+     "mean_v": 22.457621,
+     "n": 20,
+     "ref_convicted": 20,
+     "rung": "R3",
+     "status": "held",
+     "subset": "core",
+     "v_convicted": 20
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -11.955313,
+      -0.855324
+     ],
+     "ci_ref": [
+      2.328929,
+      9.386296
+     ],
+     "ci_v": [
+      -5.326989,
+      4.299923
+     ],
+     "edit": "placebo|act",
+     "framing": "conv",
+     "kind": "placebo",
+     "lang": "fr",
+     "mean_diff": -6.589521,
+     "mean_ref": 6.118466,
+     "mean_v": -0.471055,
+     "n": 20,
+     "ref_convicted": 16,
+     "rung": "R4",
+     "status": "?",
+     "subset": "core",
+     "v_convicted": 12
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -4.300135,
+      -0.525489
+     ],
+     "ci_ref": [
+      17.421402,
+      21.231307
+     ],
+     "ci_v": [
+      13.893157,
+      19.776125
+     ],
+     "edit": "placebo|act",
+     "framing": "ver",
+     "kind": "placebo",
+     "lang": "fr",
+     "mean_diff": -2.442032,
+     "mean_ref": 19.39823,
+     "mean_v": 16.956198,
+     "n": 20,
+     "ref_convicted": 20,
+     "rung": "R4",
+     "status": "held",
+     "subset": "core",
+     "v_convicted": 20
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -0.510301,
+      0.133375
+     ],
+     "ci_ref": [
+      13.347184,
+      14.032875
+     ],
+     "ci_v": [
+      13.279196,
+      13.724025
+     ],
+     "edit": "placebo|act",
+     "framing": "conv",
+     "kind": "placebo",
+     "lang": "fr",
+     "mean_diff": -0.175384,
+     "mean_ref": 13.688401,
+     "mean_v": 13.513018,
+     "n": 20,
+     "ref_convicted": 20,
+     "rung": "R5",
+     "status": "held",
+     "subset": "core",
+     "v_convicted": 20
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -0.820947,
+      1.123734
+     ],
+     "ci_ref": [
+      23.76951,
+      25.538223
+     ],
+     "ci_v": [
+      24.078272,
+      25.59559
+     ],
+     "edit": "placebo|act",
+     "framing": "ver",
+     "kind": "placebo",
+     "lang": "fr",
+     "mean_diff": 0.143593,
+     "mean_ref": 24.711552,
+     "mean_v": 24.855145,
+     "n": 20,
+     "ref_convicted": 20,
+     "rung": "R5",
+     "status": "held",
+     "subset": "core",
+     "v_convicted": 20
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -2.082948,
+      1.203734
+     ],
+     "ci_ref": [
+      10.234017,
+      13.512724
+     ],
+     "ci_v": [
+      9.443485,
+      13.294701
+     ],
+     "edit": "placebo|date",
+     "framing": "conv",
+     "kind": "placebo",
+     "lang": "fr",
+     "mean_diff": -0.427863,
+     "mean_ref": 12.029696,
+     "mean_v": 11.601834,
+     "n": 35,
+     "ref_convicted": 34,
+     "rung": "R0",
+     "status": "held",
+     "subset": "core",
+     "v_convicted": 33
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -0.485742,
+      0.097252
+     ],
+     "ci_ref": [
+      25.255569,
+      26.93348
+     ],
+     "ci_v": [
+      25.048489,
+      26.768528
+     ],
+     "edit": "placebo|date",
+     "framing": "ver",
+     "kind": "placebo",
+     "lang": "fr",
+     "mean_diff": -0.191494,
+     "mean_ref": 26.144306,
+     "mean_v": 25.952812,
+     "n": 35,
+     "ref_convicted": 35,
+     "rung": "R0",
+     "status": "held",
+     "subset": "core",
+     "v_convicted": 35
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -0.306666,
+      1.017612
+     ],
+     "ci_ref": [
+      10.585504,
+      11.830983
+     ],
+     "ci_v": [
+      10.948667,
+      12.118347
+     ],
+     "edit": "placebo|date",
+     "framing": "conv",
+     "kind": "placebo",
+     "lang": "fr",
+     "mean_diff": 0.370254,
+     "mean_ref": 11.273456,
+     "mean_v": 11.64371,
+     "n": 35,
+     "ref_convicted": 35,
+     "rung": "R3",
+     "status": "held",
+     "subset": "core",
+     "v_convicted": 35
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -0.00436,
+      1.172783
+     ],
+     "ci_ref": [
+      22.179211,
+      24.273506
+     ],
+     "ci_v": [
+      22.705414,
+      24.811726
+     ],
+     "edit": "placebo|date",
+     "framing": "ver",
+     "kind": "placebo",
+     "lang": "fr",
+     "mean_diff": 0.581717,
+     "mean_ref": 23.284486,
+     "mean_v": 23.866203,
+     "n": 35,
+     "ref_convicted": 35,
+     "rung": "R3",
+     "status": "held",
+     "subset": "core",
+     "v_convicted": 35
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      3.651588,
+      12.263022
+     ],
+     "ci_ref": [
+      -14.417398,
+      -7.605884
+     ],
+     "ci_v": [
+      -7.072617,
+      0.654897
+     ],
+     "edit": "placebo|date",
+     "framing": "conv",
+     "kind": "placebo",
+     "lang": "fr",
+     "mean_diff": 8.056528,
+     "mean_ref": -11.239544,
+     "mean_v": -3.183016,
+     "n": 35,
+     "ref_convicted": 8,
+     "rung": "R4",
+     "status": "u",
+     "subset": "core",
+     "v_convicted": 18
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -4.25532,
+      0.20069
+     ],
+     "ci_ref": [
+      7.127179,
+      13.387302
+     ],
+     "ci_v": [
+      5.110998,
+      11.600171
+     ],
+     "edit": "placebo|date",
+     "framing": "ver",
+     "kind": "placebo",
+     "lang": "fr",
+     "mean_diff": -1.947331,
+     "mean_ref": 10.473625,
+     "mean_v": 8.526294,
+     "n": 35,
+     "ref_convicted": 32,
+     "rung": "R4",
+     "status": "held",
+     "subset": "core",
+     "v_convicted": 29
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -0.180083,
+      0.230028
+     ],
+     "ci_ref": [
+      13.358182,
+      13.722114
+     ],
+     "ci_v": [
+      13.350026,
+      13.777963
+     ],
+     "edit": "placebo|date",
+     "framing": "conv",
+     "kind": "placebo",
+     "lang": "fr",
+     "mean_diff": 0.024981,
+     "mean_ref": 13.543942,
+     "mean_v": 13.568923,
+     "n": 35,
+     "ref_convicted": 35,
+     "rung": "R5",
+     "status": "held",
+     "subset": "core",
+     "v_convicted": 35
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -0.571643,
+      0.411023
+     ],
+     "ci_ref": [
+      24.289828,
+      25.702943
+     ],
+     "ci_v": [
+      24.308902,
+      25.611053
+     ],
+     "edit": "placebo|date",
+     "framing": "ver",
+     "kind": "placebo",
+     "lang": "fr",
+     "mean_diff": -0.057444,
+     "mean_ref": 25.033664,
+     "mean_v": 24.97622,
+     "n": 35,
+     "ref_convicted": 35,
+     "rung": "R5",
+     "status": "held",
+     "subset": "core",
+     "v_convicted": 35
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -0.31106,
+      1.210457
+     ],
+     "ci_ref": [
+      9.940175,
+      13.93266
+     ],
+     "ci_v": [
+      10.936527,
+      13.95724
+     ],
+     "edit": "placebo|date_overapplied",
+     "framing": "conv",
+     "kind": "placebo",
+     "lang": "fr",
+     "mean_diff": 0.336357,
+     "mean_ref": 12.432818,
+     "mean_v": 12.769175,
+     "n": 25,
+     "ref_convicted": 24,
+     "rung": "R0",
+     "status": "held",
+     "subset": "core",
+     "v_convicted": 24
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -0.89366,
+      0.215749
+     ],
+     "ci_ref": [
+      24.326803,
+      26.327146
+     ],
+     "ci_v": [
+      23.676493,
+      26.260795
+     ],
+     "edit": "placebo|date_overapplied",
+     "framing": "ver",
+     "kind": "placebo",
+     "lang": "fr",
+     "mean_diff": -0.308522,
+     "mean_ref": 25.400344,
+     "mean_v": 25.091822,
+     "n": 25,
+     "ref_convicted": 25,
+     "rung": "R0",
+     "status": "held",
+     "subset": "core",
+     "v_convicted": 25
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      0.073647,
+      1.188057
+     ],
+     "ci_ref": [
+      10.091433,
+      11.586802
+     ],
+     "ci_v": [
+      10.838574,
+      12.037012
+     ],
+     "edit": "placebo|date_overapplied",
+     "framing": "conv",
+     "kind": "placebo",
+     "lang": "fr",
+     "mean_diff": 0.575262,
+     "mean_ref": 10.906144,
+     "mean_v": 11.481406,
+     "n": 25,
+     "ref_convicted": 25,
+     "rung": "R3",
+     "status": "held",
+     "subset": "core",
+     "v_convicted": 25
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -0.582249,
+      0.592546
+     ],
+     "ci_ref": [
+      20.769223,
+      23.833149
+     ],
+     "ci_v": [
+      20.509376,
+      24.145633
+     ],
+     "edit": "placebo|date_overapplied",
+     "framing": "ver",
+     "kind": "placebo",
+     "lang": "fr",
+     "mean_diff": 0.032577,
+     "mean_ref": 22.579445,
+     "mean_v": 22.612022,
+     "n": 25,
+     "ref_convicted": 25,
+     "rung": "R3",
+     "status": "held",
+     "subset": "core",
+     "v_convicted": 25
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -4.379727,
+      0.197198
+     ],
+     "ci_ref": [
+      -5.86111,
+      2.872989
+     ],
+     "ci_v": [
+      -8.317895,
+      1.211066
+     ],
+     "edit": "placebo|date_overapplied",
+     "framing": "conv",
+     "kind": "placebo",
+     "lang": "fr",
+     "mean_diff": -2.131506,
+     "mean_ref": -1.341868,
+     "mean_v": -3.473374,
+     "n": 25,
+     "ref_convicted": 13,
+     "rung": "R4",
+     "status": "u",
+     "subset": "core",
+     "v_convicted": 12
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -4.288084,
+      -1.353291
+     ],
+     "ci_ref": [
+      13.85883,
+      19.824572
+     ],
+     "ci_v": [
+      10.646086,
+      17.772913
+     ],
+     "edit": "placebo|date_overapplied",
+     "framing": "ver",
+     "kind": "placebo",
+     "lang": "fr",
+     "mean_diff": -2.716963,
+     "mean_ref": 17.189259,
+     "mean_v": 14.472296,
+     "n": 25,
+     "ref_convicted": 24,
+     "rung": "R4",
+     "status": "held",
+     "subset": "core",
+     "v_convicted": 24
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -0.410931,
+      0.116447
+     ],
+     "ci_ref": [
+      13.187672,
+      13.705794
+     ],
+     "ci_v": [
+      12.98133,
+      13.598672
+     ],
+     "edit": "placebo|date_overapplied",
+     "framing": "conv",
+     "kind": "placebo",
+     "lang": "fr",
+     "mean_diff": -0.142673,
+     "mean_ref": 13.445374,
+     "mean_v": 13.302701,
+     "n": 25,
+     "ref_convicted": 25,
+     "rung": "R5",
+     "status": "held",
+     "subset": "core",
+     "v_convicted": 25
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -0.453627,
+      0.627129
+     ],
+     "ci_ref": [
+      22.814104,
+      25.144871
+     ],
+     "ci_v": [
+      22.984802,
+      25.19501
+     ],
+     "edit": "placebo|date_overapplied",
+     "framing": "ver",
+     "kind": "placebo",
+     "lang": "fr",
+     "mean_diff": 0.089304,
+     "mean_ref": 24.075912,
+     "mean_v": 24.165216,
+     "n": 25,
+     "ref_convicted": 25,
+     "rung": "R5",
+     "status": "held",
+     "subset": "core",
+     "v_convicted": 25
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -1.699125,
+      -0.359878
+     ],
+     "ci_ref": [
+      11.645794,
+      13.592247
+     ],
+     "ci_v": [
+      10.294425,
+      12.986264
+     ],
+     "edit": "placebo|family_wording",
+     "framing": "conv",
+     "kind": "placebo",
+     "lang": "fr",
+     "mean_diff": -0.990493,
+     "mean_ref": 12.780274,
+     "mean_v": 11.789781,
+     "n": 70,
+     "ref_convicted": 69,
+     "rung": "R0",
+     "status": "held",
+     "subset": "core",
+     "v_convicted": 66
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -0.747947,
+      0.069822
+     ],
+     "ci_ref": [
+      24.606015,
+      26.207848
+     ],
+     "ci_v": [
+      24.326234,
+      25.775833
+     ],
+     "edit": "placebo|family_wording",
+     "framing": "ver",
+     "kind": "placebo",
+     "lang": "fr",
+     "mean_diff": -0.363756,
+     "mean_ref": 25.469126,
+     "mean_v": 25.10537,
+     "n": 70,
+     "ref_convicted": 70,
+     "rung": "R0",
+     "status": "held",
+     "subset": "core",
+     "v_convicted": 70
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -5.548397,
+      -2.043538
+     ],
+     "ci_ref": [
+      10.064708,
+      11.493312
+     ],
+     "ci_v": [
+      5.059251,
+      9.044601
+     ],
+     "edit": "placebo|family_wording",
+     "framing": "conv",
+     "kind": "placebo",
+     "lang": "fr",
+     "mean_diff": -3.652956,
+     "mean_ref": 10.846182,
+     "mean_v": 7.193226,
+     "n": 70,
+     "ref_convicted": 69,
+     "rung": "R3",
+     "status": "held",
+     "subset": "core",
+     "v_convicted": 62
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -1.019372,
+      0.347845
+     ],
+     "ci_ref": [
+      20.67419,
+      23.234616
+     ],
+     "ci_v": [
+      20.428415,
+      22.860093
+     ],
+     "edit": "placebo|family_wording",
+     "framing": "ver",
+     "kind": "placebo",
+     "lang": "fr",
+     "mean_diff": -0.327305,
+     "mean_ref": 22.081151,
+     "mean_v": 21.753846,
+     "n": 70,
+     "ref_convicted": 69,
+     "rung": "R3",
+     "status": "held",
+     "subset": "core",
+     "v_convicted": 70
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -9.457333,
+      -4.742265
+     ],
+     "ci_ref": [
+      -5.879905,
+      -0.455
+     ],
+     "ci_v": [
+      -12.634792,
+      -7.465608
+     ],
+     "edit": "placebo|family_wording",
+     "framing": "conv",
+     "kind": "placebo",
+     "lang": "fr",
+     "mean_diff": -7.155055,
+     "mean_ref": -3.015026,
+     "mean_v": -10.170081,
+     "n": 70,
+     "ref_convicted": 31,
+     "rung": "R4",
+     "status": "u",
+     "subset": "core",
+     "v_convicted": 18
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -3.268923,
+      -0.698141
+     ],
+     "ci_ref": [
+      13.221343,
+      17.378522
+     ],
+     "ci_v": [
+      11.212341,
+      15.460636
+     ],
+     "edit": "placebo|family_wording",
+     "framing": "ver",
+     "kind": "placebo",
+     "lang": "fr",
+     "mean_diff": -1.998082,
+     "mean_ref": 15.444411,
+     "mean_v": 13.44633,
+     "n": 70,
+     "ref_convicted": 65,
+     "rung": "R4",
+     "status": "held",
+     "subset": "core",
+     "v_convicted": 63
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -0.828298,
+      -0.474665
+     ],
+     "ci_ref": [
+      13.366254,
+      13.666323
+     ],
+     "ci_v": [
+      12.677129,
+      13.050684
+     ],
+     "edit": "placebo|family_wording",
+     "framing": "conv",
+     "kind": "placebo",
+     "lang": "fr",
+     "mean_diff": -0.649933,
+     "mean_ref": 13.517962,
+     "mean_v": 12.868029,
+     "n": 70,
+     "ref_convicted": 70,
+     "rung": "R5",
+     "status": "held",
+     "subset": "core",
+     "v_convicted": 70
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -1.93468,
+      -0.749474
+     ],
+     "ci_ref": [
+      23.870712,
+      24.975382
+     ],
+     "ci_v": [
+      22.254124,
+      23.858775
+     ],
+     "edit": "placebo|family_wording",
+     "framing": "ver",
+     "kind": "placebo",
+     "lang": "fr",
+     "mean_diff": -1.342312,
+     "mean_ref": 24.450674,
+     "mean_v": 23.108362,
+     "n": 70,
+     "ref_convicted": 70,
+     "rung": "R5",
+     "status": "held",
+     "subset": "core",
+     "v_convicted": 70
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -0.3542,
+      1.132446
+     ],
+     "ci_ref": [
+      11.860251,
+      13.772279
+     ],
+     "ci_v": [
+      12.620033,
+      13.773745
+     ],
+     "edit": "placebo|synonym",
+     "framing": "conv",
+     "kind": "placebo",
+     "lang": "fr",
+     "mean_diff": 0.311498,
+     "mean_ref": 12.929655,
+     "mean_v": 13.241153,
+     "n": 60,
+     "ref_convicted": 58,
+     "rung": "R0",
+     "status": "held",
+     "subset": "core",
+     "v_convicted": 60
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -0.602253,
+      -0.017654
+     ],
+     "ci_ref": [
+      25.939362,
+      26.909803
+     ],
+     "ci_v": [
+      25.587022,
+      26.630729
+     ],
+     "edit": "placebo|synonym",
+     "framing": "ver",
+     "kind": "placebo",
+     "lang": "fr",
+     "mean_diff": -0.296265,
+     "mean_ref": 26.424624,
+     "mean_v": 26.128359,
+     "n": 60,
+     "ref_convicted": 60,
+     "rung": "R0",
+     "status": "held",
+     "subset": "core",
+     "v_convicted": 60
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -0.918834,
+      -0.163115
+     ],
+     "ci_ref": [
+      10.548615,
+      11.926758
+     ],
+     "ci_v": [
+      10.008063,
+      11.45541
+     ],
+     "edit": "placebo|synonym",
+     "framing": "conv",
+     "kind": "placebo",
+     "lang": "fr",
+     "mean_diff": -0.522775,
+     "mean_ref": 11.343818,
+     "mean_v": 10.821043,
+     "n": 60,
+     "ref_convicted": 59,
+     "rung": "R3",
+     "status": "held",
+     "subset": "core",
+     "v_convicted": 59
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -1.30232,
+      -0.437409
+     ],
+     "ci_ref": [
+      23.162365,
+      24.479126
+     ],
+     "ci_v": [
+      22.14606,
+      23.733565
+     ],
+     "edit": "placebo|synonym",
+     "framing": "ver",
+     "kind": "placebo",
+     "lang": "fr",
+     "mean_diff": -0.854131,
+     "mean_ref": 23.844563,
+     "mean_v": 22.990432,
+     "n": 60,
+     "ref_convicted": 60,
+     "rung": "R3",
+     "status": "held",
+     "subset": "core",
+     "v_convicted": 60
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -4.035996,
+      0.142016
+     ],
+     "ci_ref": [
+      -2.699561,
+      2.45144
+     ],
+     "ci_v": [
+      -4.671699,
+      0.625492
+     ],
+     "edit": "placebo|synonym",
+     "framing": "conv",
+     "kind": "placebo",
+     "lang": "fr",
+     "mean_diff": -1.875,
+     "mean_ref": -0.091681,
+     "mean_v": -1.96668,
+     "n": 60,
+     "ref_convicted": 31,
+     "rung": "R4",
+     "status": "u",
+     "subset": "core",
+     "v_convicted": 28
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -1.648292,
+      -0.000709
+     ],
+     "ci_ref": [
+      15.601727,
+      18.78284
+     ],
+     "ci_v": [
+      14.692959,
+      18.05989
+     ],
+     "edit": "placebo|synonym",
+     "framing": "ver",
+     "kind": "placebo",
+     "lang": "fr",
+     "mean_diff": -0.822746,
+     "mean_ref": 17.236848,
+     "mean_v": 16.414102,
+     "n": 60,
+     "ref_convicted": 59,
+     "rung": "R4",
+     "status": "held",
+     "subset": "core",
+     "v_convicted": 58
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -0.008944,
+      0.366341
+     ],
+     "ci_ref": [
+      13.236065,
+      13.550664
+     ],
+     "ci_v": [
+      13.408805,
+      13.735407
+     ],
+     "edit": "placebo|synonym",
+     "framing": "conv",
+     "kind": "placebo",
+     "lang": "fr",
+     "mean_diff": 0.181039,
+     "mean_ref": 13.392522,
+     "mean_v": 13.57356,
+     "n": 60,
+     "ref_convicted": 60,
+     "rung": "R5",
+     "status": "held",
+     "subset": "core",
+     "v_convicted": 60
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -0.226744,
+      0.335894
+     ],
+     "ci_ref": [
+      24.758012,
+      25.552811
+     ],
+     "ci_v": [
+      24.773795,
+      25.668415
+     ],
+     "edit": "placebo|synonym",
+     "framing": "ver",
+     "kind": "placebo",
+     "lang": "fr",
+     "mean_diff": 0.051472,
+     "mean_ref": 25.173049,
+     "mean_v": 25.224521,
+     "n": 60,
+     "ref_convicted": 60,
+     "rung": "R5",
+     "status": "held",
+     "subset": "core",
+     "v_convicted": 60
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -3.350538,
+      -0.915123
+     ],
+     "ci_ref": [
+      12.415694,
+      13.576358
+     ],
+     "ci_v": [
+      9.3965,
+      12.373563
+     ],
+     "edit": "setting:failed",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -1.989415,
+     "mean_ref": 13.033625,
+     "mean_v": 11.04421,
+     "n": 55,
+     "ref_convicted": 55,
+     "rung": "R0",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 53
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -3.253429,
+      -2.002352
+     ],
+     "ci_ref": [
+      24.812375,
+      26.405224
+     ],
+     "ci_v": [
+      21.86801,
+      24.074536
+     ],
+     "edit": "setting:failed",
+     "framing": "ver",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -2.615201,
+     "mean_ref": 25.626274,
+     "mean_v": 23.011073,
+     "n": 55,
+     "ref_convicted": 55,
+     "rung": "R0",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 55
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -29.242528,
+      -24.829634
+     ],
+     "ci_ref": [
+      9.750498,
+      11.45519
+     ],
+     "ci_v": [
+      -18.559494,
+      -14.213332
+     ],
+     "edit": "setting:failed",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -27.243196,
+     "mean_ref": 10.685425,
+     "mean_v": -16.557771,
+     "n": 55,
+     "ref_convicted": 54,
+     "rung": "R3",
+     "status": "a",
+     "subset": "core",
+     "v_convicted": 4
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -22.277184,
+      -16.36037
+     ],
+     "ci_ref": [
+      20.930096,
+      23.445939
+     ],
+     "ci_v": [
+      -0.553087,
+      6.54076
+     ],
+     "edit": "setting:failed",
+     "framing": "ver",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -19.299776,
+     "mean_ref": 22.262075,
+     "mean_v": 2.962299,
+     "n": 55,
+     "ref_convicted": 55,
+     "rung": "R3",
+     "status": "?",
+     "subset": "core",
+     "v_convicted": 33
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -19.135835,
+      -13.508178
+     ],
+     "ci_ref": [
+      -7.131585,
+      -1.189011
+     ],
+     "ci_v": [
+      -20.774881,
+      -20.090755
+     ],
+     "edit": "setting:failed",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -16.316871,
+     "mean_ref": -4.144689,
+     "mean_v": -20.46156,
+     "n": 55,
+     "ref_convicted": 22,
+     "rung": "R4",
+     "status": "u",
+     "subset": "core",
+     "v_convicted": 0
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -32.38174,
+      -26.882478
+     ],
+     "ci_ref": [
+      12.781109,
+      17.410659
+     ],
+     "ci_v": [
+      -17.123493,
+      -11.632326
+     ],
+     "edit": "setting:failed",
+     "framing": "ver",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -29.705422,
+     "mean_ref": 15.257071,
+     "mean_v": -14.448351,
+     "n": 55,
+     "ref_convicted": 51,
+     "rung": "R4",
+     "status": "a",
+     "subset": "core",
+     "v_convicted": 6
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -10.695537,
+      -5.770024
+     ],
+     "ci_ref": [
+      13.31884,
+      13.677726
+     ],
+     "ci_v": [
+      2.785585,
+      7.735462
+     ],
+     "edit": "setting:failed",
+     "framing": "conv",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -8.104966,
+     "mean_ref": 13.499685,
+     "mean_v": 5.394719,
+     "n": 55,
+     "ref_convicted": 55,
+     "rung": "R5",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 41
+    },
+    {
+     "basis": "logodds",
+     "ci_diff": [
+      -14.725767,
+      -10.187263
+     ],
+     "ci_ref": [
+      24.017985,
+      25.174238
+     ],
+     "ci_v": [
+      9.616445,
+      14.648639
+     ],
+     "edit": "setting:failed",
+     "framing": "ver",
+     "kind": "flip",
+     "lang": "fr",
+     "mean_diff": -12.406133,
+     "mean_ref": 24.6308,
+     "mean_v": 12.224667,
+     "n": 55,
+     "ref_convicted": 55,
+     "rung": "R5",
+     "status": "F",
+     "subset": "core",
+     "v_convicted": 47
+    }
+   ],
+   "errors": 0,
+   "heldout": {
+    "fr": {
+     "cells": [
+      {
+       "anchored": true,
+       "base_lo_ci": [
+        13.301012,
+        13.937231
+       ],
+       "framing": "conv",
+       "gain": 0.310185,
+       "lang": "fr",
+       "law": {
+        "characteristic=age": true,
+        "characteristic=canton": true,
+        "characteristic=disability": true,
+        "characteristic=ethnicity": true,
+        "characteristic=gender_identity": true,
+        "characteristic=occupation": true,
+        "characteristic=political_opinion": true,
+        "characteristic=race": true,
+        "characteristic=religion": true,
+        "characteristic=sex": true,
+        "characteristic=sexual_orientation": true,
+        "date=post2020-07|other": true,
+        "date=post2020-07|so": true,
+        "date=pre1995|other": true,
+        "date=pre2020-07|other": true,
+        "date=pre2020-07|so": true,
+        "setting=private": true,
+        "setting=public": true
+       },
+       "n_fit": 429,
+       "n_heldout": 216,
+       "readback_accuracy": 0.986111,
+       "rung": "R0",
+       "statute_accuracy": 0.675926
+      },
+      {
+       "anchored": true,
+       "base_lo_ci": [
+        25.724606,
+        26.89621
+       ],
+       "framing": "ver",
+       "gain": 0.328704,
+       "lang": "fr",
+       "law": {
+        "characteristic=age": true,
+        "characteristic=canton": true,
+        "characteristic=disability": true,
+        "characteristic=ethnicity": true,
+        "characteristic=gender_identity": true,
+        "characteristic=occupation": true,
+        "characteristic=political_opinion": true,
+        "characteristic=race": true,
+        "characteristic=religion": true,
+        "characteristic=sex": true,
+        "characteristic=sexual_orientation": true,
+        "date=post2020-07|other": true,
+        "date=post2020-07|so": true,
+        "date=pre1995|other": true,
+        "date=pre2020-07|other": true,
+        "date=pre2020-07|so": true,
+        "setting=private": true,
+        "setting=public": true
+       },
+       "n_fit": 429,
+       "n_heldout": 216,
+       "readback_accuracy": 1.0,
+       "rung": "R0",
+       "statute_accuracy": 0.671296
+      },
+      {
+       "anchored": true,
+       "base_lo_ci": [
+        10.664955,
+        11.626224
+       ],
+       "framing": "conv",
+       "gain": 0.097222,
+       "lang": "fr",
+       "law": {
+        "characteristic=age": false,
+        "characteristic=canton": false,
+        "characteristic=disability": false,
+        "characteristic=ethnicity": true,
+        "characteristic=gender_identity": false,
+        "characteristic=occupation": false,
+        "characteristic=political_opinion": false,
+        "characteristic=race": true,
+        "characteristic=religion": true,
+        "characteristic=sex": false,
+        "characteristic=sexual_orientation": true,
+        "date=post2020-07|other": true,
+        "date=post2020-07|so": true,
+        "date=pre1995|other": true,
+        "date=pre2020-07|other": true,
+        "date=pre2020-07|so": true,
+        "setting=private": false,
+        "setting=public": true
+       },
+       "n_fit": 429,
+       "n_heldout": 216,
+       "readback_accuracy": 0.939815,
+       "rung": "R3",
+       "statute_accuracy": 0.842593
+      },
+      {
+       "anchored": true,
+       "base_lo_ci": [
+        22.558235,
+        24.108794
+       ],
+       "framing": "ver",
+       "gain": 0.208333,
+       "lang": "fr",
+       "law": {
+        "characteristic=age": true,
+        "characteristic=canton": true,
+        "characteristic=disability": true,
+        "characteristic=ethnicity": true,
+        "characteristic=gender_identity": false,
+        "characteristic=occupation": true,
+        "characteristic=political_opinion": true,
+        "characteristic=race": true,
+        "characteristic=religion": true,
+        "characteristic=sex": true,
+        "characteristic=sexual_orientation": true,
+        "date=post2020-07|other": true,
+        "date=post2020-07|so": true,
+        "date=pre1995|other": true,
+        "date=pre2020-07|other": true,
+        "date=pre2020-07|so": true,
+        "setting=private": true,
+        "setting=public": true
+       },
+       "n_fit": 429,
+       "n_heldout": 216,
+       "readback_accuracy": 0.949074,
+       "rung": "R3",
+       "statute_accuracy": 0.740741
+      },
+      {
+       "anchored": false,
+       "base_lo_ci": [
+        -5.395665,
+        -0.222762
+       ],
+       "framing": "conv",
+       "gain": 0.069444,
+       "lang": "fr",
+       "law": {
+        "characteristic=age": false,
+        "characteristic=canton": false,
+        "characteristic=disability": false,
+        "characteristic=ethnicity": false,
+        "characteristic=gender_identity": false,
+        "characteristic=occupation": false,
+        "characteristic=political_opinion": false,
+        "characteristic=race": true,
+        "characteristic=religion": false,
+        "characteristic=sex": false,
+        "characteristic=sexual_orientation": false,
+        "date=post2020-07|other": false,
+        "date=post2020-07|so": false,
+        "date=pre1995|other": true,
+        "date=pre2020-07|other": true,
+        "date=pre2020-07|so": false,
+        "setting=private": false,
+        "setting=public": false
+       },
+       "n_fit": 429,
+       "n_heldout": 216,
+       "readback_accuracy": 0.675926,
+       "rung": "R4",
+       "statute_accuracy": 0.606481
+      },
+      {
+       "anchored": true,
+       "base_lo_ci": [
+        14.224495,
+        18.074701
+       ],
+       "framing": "ver",
+       "gain": 0.134259,
+       "lang": "fr",
+       "law": {
+        "characteristic=age": true,
+        "characteristic=canton": true,
+        "characteristic=disability": true,
+        "characteristic=ethnicity": true,
+        "characteristic=gender_identity": false,
+        "characteristic=occupation": true,
+        "characteristic=political_opinion": true,
+        "characteristic=race": true,
+        "characteristic=religion": true,
+        "characteristic=sex": true,
+        "characteristic=sexual_orientation": true,
+        "date=post2020-07|other": true,
+        "date=post2020-07|so": true,
+        "date=pre1995|other": true,
+        "date=pre2020-07|other": true,
+        "date=pre2020-07|so": true,
+        "setting=private": false,
+        "setting=public": true
+       },
+       "n_fit": 429,
+       "n_heldout": 216,
+       "readback_accuracy": 0.898148,
+       "rung": "R4",
+       "statute_accuracy": 0.763889
+      }
+     ],
+     "threshold": 0.15,
+     "verdict_by_rung": {
+      "R0": {
+       "anchored_framings": [
+        "conv",
+        "ver"
+       ],
+       "passed": true
+      },
+      "R3": {
+       "anchored_framings": [
+        "conv",
+        "ver"
+       ],
+       "passed": false
+      },
+      "R4": {
+       "anchored_framings": [
+        "ver"
+       ],
+       "passed": false
+      }
+     }
+    }
+   },
+   "heldout_context_posthoc": {
+    "fr": [
+     {
+      "ceiling": 0.986111,
+      "constant": 0.986111,
+      "error_reduction": 0.957143,
+      "framing": "conv",
+      "gain": 0.310185,
+      "gain_ci": [
+       0.270531,
+       0.349057
+      ],
+      "items_short_of_threshold": 0.0,
+      "lang": "fr",
+      "max_gain": 0.324074,
+      "mcnemar": {
+       "b": 69,
+       "c": 2
+      },
+      "n_heldout": 216,
+      "readback": 0.986111,
+      "rung": "R0",
+      "statute": 0.675926,
+      "twin_groups": 77
+     },
+     {
+      "ceiling": 1.0,
+      "constant": 1.0,
+      "error_reduction": 1.0,
+      "framing": "ver",
+      "gain": 0.328704,
+      "gain_ci": [
+       0.3,
+       0.359091
+      ],
+      "items_short_of_threshold": 0.0,
+      "lang": "fr",
+      "max_gain": 0.328704,
+      "mcnemar": {
+       "b": 71,
+       "c": 0
+      },
+      "n_heldout": 216,
+      "readback": 1.0,
+      "rung": "R0",
+      "statute": 0.671296,
+      "twin_groups": 77
+     },
+     {
+      "ceiling": 0.962963,
+      "constant": 0.819444,
+      "error_reduction": 0.617647,
+      "framing": "conv",
+      "gain": 0.097222,
+      "gain_ci": [
+       0.063636,
+       0.132701
+      ],
+      "items_short_of_threshold": 11.4,
+      "lang": "fr",
+      "max_gain": 0.157407,
+      "mcnemar": {
+       "b": 21,
+       "c": 0
+      },
+      "n_heldout": 216,
+      "readback": 0.939815,
+      "rung": "R3",
+      "statute": 0.842593,
+      "twin_groups": 77
+     },
+     {
+      "ceiling": 0.949074,
+      "constant": 0.930556,
+      "error_reduction": 0.803571,
+      "framing": "ver",
+      "gain": 0.208333,
+      "gain_ci": [
+       0.141509,
+       0.269231
+      ],
+      "items_short_of_threshold": 0.0,
+      "lang": "fr",
+      "max_gain": 0.259259,
+      "mcnemar": {
+       "b": 55,
+       "c": 10
+      },
+      "n_heldout": 216,
+      "readback": 0.949074,
+      "rung": "R3",
+      "statute": 0.740741,
+      "twin_groups": 77
+     },
+     {
+      "ceiling": 0.675926,
+      "constant": 0.675926,
+      "error_reduction": 0.176471,
+      "framing": "conv",
+      "gain": 0.069444,
+      "gain_ci": [
+       -0.057416,
+       0.192825
+      ],
+      "items_short_of_threshold": 17.4,
+      "lang": "fr",
+      "max_gain": 0.393519,
+      "mcnemar": {
+       "b": 80,
+       "c": 65
+      },
+      "n_heldout": 216,
+      "readback": 0.675926,
+      "rung": "R4",
+      "statute": 0.606481,
+      "twin_groups": 77
+     },
+     {
+      "ceiling": 0.898148,
+      "constant": 0.805556,
+      "error_reduction": 0.568627,
+      "framing": "ver",
+      "gain": 0.134259,
+      "gain_ci": [
+       0.076555,
+       0.191781
+      ],
+      "items_short_of_threshold": 3.4,
+      "lang": "fr",
+      "max_gain": 0.236111,
+      "mcnemar": {
+       "b": 38,
+       "c": 9
+      },
+      "n_heldout": 216,
+      "readback": 0.898148,
+      "rung": "R4",
+      "statute": 0.763889,
+      "twin_groups": 77
+     }
+    ]
+   },
+   "legacy_rows": 0,
+   "meta": {
+    "backend": {
+     "backend": "llamacpp",
+     "llama_cpp_python": "0.3.19",
+     "model": "Colby/apertus-v1.5-8b-text-Q4_K_M-GGUF (CPU, llama-cpp-python 0.3.19)",
+     "sha256": "a037df8d87ff6caacee794ee85f55342f2152e0d359b7389033300c3bee5f299",
+     "threads": 4
+    },
+    "errors": 0,
+    "jsonl_sha256": "50de76d1cf16a9d8e12f4d6d0399bbb9f63780d21186693594b5cc2939dd0426",
+    "rows": 5280,
+    "run": "8b-gguf-q4_k_m-cpu-core-fr",
+    "shards": 16
    },
    "preference": [],
    "rows": 5280
