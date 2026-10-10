@@ -1,6 +1,6 @@
 {
  "run": "8b-gguf-q4_k_m-cpu-core",
- "rows": 3960,
+ "rows": 5280,
  "errors": 0,
  "shards": 8,
  "backend": {
@@ -10,5 +10,7 @@
   "llama_cpp_python": "0.3.19",
   "threads": 2
  },
- "jsonl_sha256": "d60808ff9131084e6934775ce73e713d5e0cfc1cd6f8cc9e357ca0c0feecb7b3"
+ "jsonl_sha256": "2f5a07c2b56988627fe1d19127e818af8094a15b524316dff7593d46d1ec2513",
+ "rungs": "R0,R3,R4,R5",
+ "note": "R0/R3/R4: CI run 38004065140 (A5 re-score); R5: CI run 38011003848 (A8)"
 }

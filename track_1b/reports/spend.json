@@ -8,16 +8,28 @@
    "usd": 0.244
   },
   "1b-core-70b-fr": {
-   "requests": 9439,
-   "prompt_tokens": 2601443,
-   "completion_tokens": 9439,
-   "usd": 0.262
+   "requests": 17226,
+   "prompt_tokens": 4750689,
+   "completion_tokens": 17226,
+   "usd": 0.478
   },
   "1b-core-70b-it": {
-   "requests": 8815,
-   "prompt_tokens": 2595115,
-   "completion_tokens": 8815,
-   "usd": 0.261
+   "requests": 16701,
+   "prompt_tokens": 4906436,
+   "completion_tokens": 16701,
+   "usd": 0.494
+  },
+  "1b-core-70b-r5": {
+   "requests": 2640,
+   "prompt_tokens": 2401652,
+   "completion_tokens": 2640,
+   "usd": 0.241
+  },
+  "1b-lay-70b": {
+   "requests": 1320,
+   "prompt_tokens": 183206,
+   "completion_tokens": 1320,
+   "usd": 0.019
   },
   "1b-open-70b": {
    "requests": 509,
@@ -26,10 +38,34 @@
    "usd": 0.24
   },
   "1b-pref-70b": {
-   "requests": 517,
-   "prompt_tokens": 114992,
-   "completion_tokens": 517,
-   "usd": 0.012
+   "requests": 999,
+   "prompt_tokens": 230984,
+   "completion_tokens": 999,
+   "usd": 0.023
+  },
+  "1b-pref-70b-fr": {
+   "requests": 387,
+   "prompt_tokens": 87612,
+   "completion_tokens": 387,
+   "usd": 0.009
+  },
+  "1b-pref2-70b-de": {
+   "requests": 917,
+   "prompt_tokens": 236200,
+   "completion_tokens": 917,
+   "usd": 0.024
+  },
+  "1b-pref2-70b-fr": {
+   "requests": 1097,
+   "prompt_tokens": 293018,
+   "completion_tokens": 1097,
+   "usd": 0.03
+  },
+  "1b-pref2-70b-it": {
+   "requests": 1290,
+   "prompt_tokens": 349306,
+   "completion_tokens": 1290,
+   "usd": 0.035
   },
   "1b-probe": {
    "requests": 1,
@@ -45,8 +81,8 @@
   }
  },
  "total": {
-  "requests": 28257,
-  "usd": 1.02
+  "requests": 52063,
+  "usd": 1.84
  },
- "usd_text": "USD 1.02"
+ "usd_text": "USD 1.84"
 }

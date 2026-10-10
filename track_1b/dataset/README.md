@@ -212,10 +212,10 @@ Score with both framings and read the element table, not a single accuracy; repo
 alongside results, since 4-bit conversions changed verdicts in our measurements.
 
 ## Model responses in this release
-16 runs (`responses/<run>.jsonl` with `<run>.meta.json`): 8b-bf16-DPO, 8b-bf16-RLVR, 8b-bf16-blend-RLVR-DPO-a0.25, 8b-bf16-blend-RLVR-DPO-a0.5, 8b-bf16-blend-RLVR-DPO-a0.75, 8b-gguf-q4_k_m, 8b-gguf-q4_k_m-cpu-core, 8b-gguf-q8_0, 8b-mlx4-DPO, 8b-mlx4-RLVR, 8b-mlx4-SFT, 8b-mlx4-base-completion, 8b-mlx4-final, publicai-70b-fc, publicai-70b-gen, qwen3-8b-mlx4.
+24 runs (`responses/<run>.jsonl` with `<run>.meta.json`): 8b-bf16-DPO, 8b-bf16-RLVR, 8b-bf16-blend-RLVR-DPO-a0.25, 8b-bf16-blend-RLVR-DPO-a0.5, 8b-bf16-blend-RLVR-DPO-a0.75, 8b-gguf-q4_k_m, 8b-gguf-q4_k_m-cpu-core, 8b-gguf-q8_0, 8b-mlx4-DPO, 8b-mlx4-RLVR, 8b-mlx4-SFT, 8b-mlx4-base-completion, 8b-mlx4-final, publicai-70b-fc, publicai-70b-fc-core, publicai-70b-fc-core-fr, publicai-70b-fc-core-it, publicai-70b-fc-lay, publicai-70b-gen, publicai-70b-open, publicai-70b-pref, publicai-70b-pref-fr, publicai-70b-pref-it, qwen3-8b-mlx4.
 
 ## Changelog
-- 1.0.0 (2026-10): first release. Generator 1.0.0, seed 261. Files and hashes: `MANIFEST.json` (94 files).
+- 1.0.0 (2026-10): first release. Generator 1.0.0, seed 261. Files and hashes: `MANIFEST.json` (110 files).
   Pre-registration ([`docs/PREREG.md`](docs/PREREG.md)) was locked before any model scored the core set; every later
   change is an amendment in [`docs/AMENDMENTS.md`](docs/AMENDMENTS.md):
   A1 design moved into YAML, output byte-identical; A2 FR/IT surface fixes from back-translation; A3 one contested

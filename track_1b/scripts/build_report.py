@@ -91,7 +91,7 @@ def tables(R: dict) -> dict:
         if not h:
             continue
         by = {(c["rung"], c["framing"]): c for c in h["cells"]}
-        for rung in ("R0", "R3", "R4"):
+        for rung in ("R3", "R4"):              # R0 passes trivially for a model that convicts everything (text)
             c, v = by.get((rung, "conv")), by.get((rung, "ver"))
             if not c or not v:
                 continue

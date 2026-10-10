@@ -10,6 +10,16 @@
   "261bis-de-DATE_SO027-1",
   "261bis-de-DATE_SO030-1",
   "261bis-de-DATE_SO032-1",
+  "261bis-de_lay-DATE_SO005-1",
+  "261bis-de_lay-DATE_SO006-1",
+  "261bis-de_lay-DATE_SO007-1",
+  "261bis-de_lay-DATE_SO011-1",
+  "261bis-de_lay-DATE_SO017-1",
+  "261bis-de_lay-DATE_SO018-1",
+  "261bis-de_lay-DATE_SO024-1",
+  "261bis-de_lay-DATE_SO027-1",
+  "261bis-de_lay-DATE_SO030-1",
+  "261bis-de_lay-DATE_SO032-1",
   "261bis-fr-DATE_SO005-1",
   "261bis-fr-DATE_SO006-1",
   "261bis-fr-DATE_SO007-1",
@@ -31,7 +41,7 @@
   "261bis-it-DATE_SO030-1",
   "261bis-it-DATE_SO032-1"
  ],
- "n_flagged": 30,
+ "n_flagged": 40,
  "runs": {
   "8b-bf16-DPO": [],
   "8b-bf16-RLVR": [],
@@ -86,6 +96,22 @@
     "accuracy": 0.7875968992248062,
     "accuracy_without": 0.7889763779527559,
     "diff": 0.0013794787279496346
+   },
+   {
+    "lang": "de",
+    "rung": "R5",
+    "framing": "conv",
+    "accuracy": 0.6883720930232559,
+    "accuracy_without": 0.6992125984251969,
+    "diff": 0.010840505401941036
+   },
+   {
+    "lang": "de",
+    "rung": "R5",
+    "framing": "ver",
+    "accuracy": 0.6728682170542636,
+    "accuracy_without": 0.6834645669291338,
+    "diff": 0.010596349874870237
    }
   ],
   "8b-gguf-q4_k_m": [],
@@ -95,6 +121,106 @@
   "8b-mlx4-SFT": [],
   "8b-mlx4-base-completion": [],
   "8b-mlx4-final": [],
+  "publicai-70b-fc-core-fr": [
+   {
+    "lang": "fr",
+    "rung": "R0",
+    "framing": "conv",
+    "accuracy": 0.6697674418604651,
+    "accuracy_without": 0.6803149606299213,
+    "diff": 0.010547518769456143
+   },
+   {
+    "lang": "fr",
+    "rung": "R0",
+    "framing": "ver",
+    "accuracy": 0.6697674418604651,
+    "accuracy_without": 0.6803149606299213,
+    "diff": 0.010547518769456143
+   },
+   {
+    "lang": "fr",
+    "rung": "R3",
+    "framing": "conv",
+    "accuracy": 0.8248062015503876,
+    "accuracy_without": 0.8377952755905512,
+    "diff": 0.012989074040163584
+   },
+   {
+    "lang": "fr",
+    "rung": "R3",
+    "framing": "ver",
+    "accuracy": 0.875968992248062,
+    "accuracy_without": 0.889763779527559,
+    "diff": 0.013794787279497012
+   },
+   {
+    "lang": "fr",
+    "rung": "R4",
+    "framing": "conv",
+    "accuracy": 0.7937984496124031,
+    "accuracy_without": 0.7905511811023622,
+    "diff": -0.0032472685100408683
+   },
+   {
+    "lang": "fr",
+    "rung": "R4",
+    "framing": "ver",
+    "accuracy": 0.7255813953488373,
+    "accuracy_without": 0.721259842519685,
+    "diff": -0.004321552829152253
+   }
+  ],
+  "publicai-70b-fc-core-it": [
+   {
+    "lang": "it",
+    "rung": "R0",
+    "framing": "conv",
+    "accuracy": 0.6682170542635659,
+    "accuracy_without": 0.6787401574803149,
+    "diff": 0.010523103216748986
+   },
+   {
+    "lang": "it",
+    "rung": "R0",
+    "framing": "ver",
+    "accuracy": 0.6666666666666666,
+    "accuracy_without": 0.6771653543307087,
+    "diff": 0.01049868766404205
+   },
+   {
+    "lang": "it",
+    "rung": "R3",
+    "framing": "conv",
+    "accuracy": 0.8,
+    "accuracy_without": 0.8125984251968504,
+    "diff": 0.012598425196850394
+   },
+   {
+    "lang": "it",
+    "rung": "R3",
+    "framing": "ver",
+    "accuracy": 0.7953488372093023,
+    "accuracy_without": 0.8078740157480315,
+    "diff": 0.012525178538729254
+   },
+   {
+    "lang": "it",
+    "rung": "R4",
+    "framing": "conv",
+    "accuracy": 0.8589147286821706,
+    "accuracy_without": 0.8566929133858268,
+    "diff": -0.0022218152963437987
+   },
+   {
+    "lang": "it",
+    "rung": "R4",
+    "framing": "ver",
+    "accuracy": 0.7472868217054264,
+    "accuracy_without": 0.7433070866141732,
+    "diff": -0.003979735091253156
+   }
+  ],
   "publicai-70b-fc-core": [
    {
     "lang": "de",
@@ -143,11 +269,37 @@
     "accuracy": 0.7348837209302326,
     "accuracy_without": 0.7307086614173228,
     "diff": -0.004175059512909751
+   },
+   {
+    "lang": "de",
+    "rung": "R5",
+    "framing": "conv",
+    "accuracy": 0.6666666666666666,
+    "accuracy_without": 0.6771653543307087,
+    "diff": 0.01049868766404205
+   },
+   {
+    "lang": "de",
+    "rung": "R5",
+    "framing": "ver",
+    "accuracy": 0.6682170542635659,
+    "accuracy_without": 0.6787401574803149,
+    "diff": 0.010523103216748986
+   }
+  ],
+  "publicai-70b-fc-lay": [
+   {
+    "lang": "de_lay",
+    "rung": "R0",
+    "framing": "conv",
+    "accuracy": 0.6697674418604651,
+    "accuracy_without": 0.6803149606299213,
+    "diff": 0.010547518769456143
    }
   ],
   "publicai-70b-fc": [],
   "publicai-70b-gen": [],
   "qwen3-8b-mlx4": []
  },
- "max_abs_diff": 0.013379722883476775
+ "max_abs_diff": 0.013794787279497012
 }

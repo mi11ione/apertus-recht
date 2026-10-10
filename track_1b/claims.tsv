@@ -15,8 +15,15 @@ court_ci	0.94–1.00	reports/court_validation.json	"f""{J['agreement_ci'][0]:.2f
 adj_115	115/115	reports/adjudication.json	"f""{J['adjudicators_agree']}/{J['n']}"""		README.md	see reports/adjudication.json
 open_r0_mislead	74	reports/open_judged_publicai-70b-open.json	J['cells']['rung_gold|R0|acquit']['misleads']		README.md,technical_report.md	python scripts/judge_open.py aggregate publicai-70b-open <work_dir>
 hf_downloads	698,641	reports/hf_downloads.json	J['models']['swiss-ai/Apertus-v1.5-8B']['downloads_30d']	,	technical_report.md	HfApi.model_info (see reports/hf_downloads.json)
-sens_max	1.3	reports/sensitivity.json	100*J['max_abs_diff']	.1f	technical_report.md	python scripts/sensitivity.py
+sens_max	1.4	reports/sensitivity.json	100*J['max_abs_diff']	.1f	technical_report.md	python scripts/sensitivity.py
 open_judges_agree	479 of 480	reports/open_judged_publicai-70b-open.json	f"{J['judges_agree_on_pass']} of {J['judged']}"		README.md,technical_report.md	python scripts/judge_open.py aggregate publicai-70b-open <work_dir>
 open_kappa	0.995	reports/open_judged_publicai-70b-open.json	J['kappa']['pass']	.3f	technical_report.md	python scripts/judge_open.py aggregate publicai-70b-open <work_dir>
-open_code_check	466/466	reports/open_judged_publicai-70b-open.json	f"{J['judge_consistency']['pass_matches_code_gold']}/{sum(J['judge_consistency'].values())}"		technical_report.md	python scripts/judge_open.py aggregate publicai-70b-open <work_dir>
-usd	USD 1.02	reports/spend.json	J['usd_text']		README.md,technical_report.md	python scripts/spend.py
+usd	USD 1.84	reports/spend.json	J['usd_text']		README.md,technical_report.md	python scripts/spend.py
+r5_acq_conv	0	results/results.json	[a for a in J['runs']['publicai-70b-fc-core']['accuracy'] if a['subset']=='core' and a['lang']=='de' and a['rung']=='R5' and a['framing']=='conv'][0]['acquit_correct']		README.md,technical_report.md	statute-twins results
+r5_acq_ver	1	results/results.json	[a for a in J['runs']['publicai-70b-fc-core']['accuracy'] if a['subset']=='core' and a['lang']=='de' and a['rung']=='R5' and a['framing']=='ver'][0]['acquit_correct']		technical_report.md	statute-twins results
+lay_acq	2	results/results.json	[a for a in J['runs']['publicai-70b-fc-lay']['accuracy'] if a['subset']=='core' and a['lang']=='de_lay' and a['rung']=='R0' and a['framing']=='conv'][0]['acquit_correct']		README.md,technical_report.md	statute-twins results
+r0_bal	0.50	results/results.json	[a for a in J['runs']['publicai-70b-fc-core']['accuracy'] if a['subset']=='core' and a['lang']=='de' and a['rung']=='R0' and a['framing']=='conv'][0]['balanced_accuracy']	.2f	README.md	statute-twins results
+pref_de_all	0.99	results/results.json	[p for p in J['runs']['publicai-70b-pref']['preference'] if p['lang']=='de' and p['reason']=='all'][0]['accuracy']	.2f	technical_report.md	statute-twins results
+pref_fr_all	0.69	results/results.json	[p for p in J['runs']['publicai-70b-pref-fr']['preference'] if p['lang']=='fr' and p['reason']=='all'][0]['accuracy']	.2f	technical_report.md	statute-twins results
+pref_fr_convict	0.53	results/results.json	[p for p in J['runs']['publicai-70b-pref-fr']['preference'] if p['lang']=='fr' and p['reason']=='convict'][0]['accuracy']	.2f	technical_report.md	statute-twins results
+n_runs	24	dataset/MANIFEST.json	len([f for f in J['files'] if f.startswith('responses/') and f.endswith('.jsonl')])		README.md	statute-twins build
