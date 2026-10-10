@@ -161,7 +161,8 @@ exploration battery (162 items) for training stages and builds. Every row record
 ## Results
 
 **Without the law, the 70B convicts everything** (R0: recall of convictions 1.00, of acquittals 0.00, in every
-language and framing). Free text agrees with the forced choice. The judges failed ⟨open_r0_mislead⟩ of 75 R0 answers to
+language and framing). It is not blind to the facts: its conviction scores still rank punishable above non-punishable
+cases (AUC ⟨auc_r0⟩), but the threshold sits so far on the convicting side that no case falls below it. Free text agrees with the forced choice. The judges failed ⟨open_r0_mislead⟩ of 75 R0 answers to
 acquittal items as misleading, and every one of the 14 contested-item answers gave a flat verdict. The judges agreed on
 479 of 480 pass decisions (κ 0.995), and a deterministic parser of each answer's verdict agrees with their reading in
 464 of 466 settled answers, so the judges are needed only for the hedged and contested ones.
@@ -187,7 +188,7 @@ For the German 70B:
 - **R5** pastes the law itself, as a retrieval pipeline would: the Fedlex text of Art. 261bis and Art. 2 StGB with
   Fedlex's footnote, and the Regeste of BGE 130 IV 111. The 70B convicts everything again, exactly as with no law at
   all (acquittals recognised: ⟨r5_acq_conv⟩ of 215 with Ja/Nein, ⟨r5_acq_ver⟩ with the verdict word). The verbatim law states the closed list and the publicity rule,
-  yet helps less than our one-sentence paraphrases.
+  yet helps less than our one-sentence paraphrases (forced choice only; free text was not run at R5).
 
 **Not an artefact of legal register.** The same German scenarios told in a person's own words ("Im Januar 2024 habe
 ich in Aarau an einem Stand auf dem Wochenmarkt … ein Weltbild propagiert, nach dem Muslime minderwertig sind") give
@@ -228,9 +229,10 @@ trivially for every model). Pass: gain ≥ 0.15 in every anchored
 framing.*
 
 **Post-training and builds** (exploration battery, 8B):
-- At full precision, the step from RLVR to DPO turns the canton items of the battery from acquittal (0/6) to
-  conviction (6/6), and exact weight blends between the two checkpoints move monotonically between them. Six items
-  are a lead for the developers, not a finding about all of post-training.
+- At full precision, the step from RLVR to DPO costs acquittals once the rules are stated: at R3, correct acquittals
+  fall from ⟨stage_rlvr⟩ to ⟨stage_dpo⟩ of 220 (both framings), while convictions stay at 104/104. Without the law
+  both stages convict almost everything, so DPO amplifies a prior that RLVR already has. Exact weight blends between
+  the two checkpoints move smoothly between them (canton items: 0/6 → 6/6).
 - The public Q8_0 GGUF agrees with bf16 on 638 of 648 decisions, the Q4_K_M on 622 and our MLX 4-bit conversion on 548.
 
 ## Dataset Limitations
@@ -271,7 +273,10 @@ framing.*
 - Prefer the Q8_0 GGUF or the served model to 4-bit MLX conversions.
 
 **For Apertus developers.**
-- The 8B exploration points at the DPO step for the canton conviction (6 items; worth testing at scale).
+- In the 8B, DPO costs acquittals under stated rules (⟨stage_rlvr⟩ → ⟨stage_dpo⟩ of 220 at R3); preference pairs that
+  reward condemning discrimination are a plausible cause worth checking. The model also obeys exclusions it is told
+  (gender identity) but does not apply "the list is closed" to traits nobody named: an instruction-following target
+  that needs no legal data.
 - The leading case is in the training data, and pasting its Regeste with the statute does not change a single verdict.
   The model reads plain rules but not the law as written; long-context legal reading is a training target.
 - Twin items give a target that can be measured element by element before and after a fix. The `chosen` / `rejected`

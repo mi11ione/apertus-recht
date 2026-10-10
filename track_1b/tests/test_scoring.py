@@ -112,3 +112,10 @@ def test_eval_refuses_without_endpoint(monkeypatch):
     a = argparse.Namespace(backend="openai", base_url=None, model="m", mode="auto", seed=None, label=None, max_tokens=24)
     with pytest.raises(SystemExit, match="LLM_BASE_URL"):
         make_backend(a)
+
+
+def test_auc_by_hand():
+    from statute_twins.analysis.results import _auc
+    assert _auc([3.0, 2.0], [1.0, 0.0]) == 1.0          # perfect ranking
+    assert _auc([1.0], [1.0]) == 0.5                    # tie counts half
+    assert _auc([2.0, 0.0], [1.0]) == 0.5               # one of two pairs ranked right

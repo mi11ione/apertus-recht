@@ -27,3 +27,6 @@ pref_de_all	0.99	results/results.json	[p for p in J['runs']['publicai-70b-pref']
 pref_fr_all	0.69	results/results.json	[p for p in J['runs']['publicai-70b-pref-fr']['preference'] if p['lang']=='fr' and p['reason']=='all'][0]['accuracy']	.2f	technical_report.md	statute-twins results
 pref_fr_convict	0.53	results/results.json	[p for p in J['runs']['publicai-70b-pref-fr']['preference'] if p['lang']=='fr' and p['reason']=='convict'][0]['accuracy']	.2f	technical_report.md	statute-twins results
 n_runs	24	dataset/MANIFEST.json	len([f for f in J['files'] if f.startswith('responses/') and f.endswith('.jsonl')])		README.md	statute-twins build
+stage_rlvr	185	results/results.json	sum(a['acquit_correct'] for a in J['runs']['8b-bf16-RLVR']['accuracy'] if a['subset']=='battery162' and a['rung']=='R3')		README.md,technical_report.md	statute-twins results
+stage_dpo	146	results/results.json	sum(a['acquit_correct'] for a in J['runs']['8b-bf16-DPO']['accuracy'] if a['subset']=='battery162' and a['rung']=='R3')		README.md,technical_report.md	statute-twins results
+auc_r0	0.72–0.77	results/results.json	(lambda v: f'{min(v):.2f}–{max(v):.2f}')([a['auc'] for r in ('publicai-70b-fc-core','publicai-70b-fc-core-fr','publicai-70b-fc-core-it') for a in J['runs'][r]['accuracy'] if a['subset']=='core' and a['rung']=='R0'])		technical_report.md	statute-twins results

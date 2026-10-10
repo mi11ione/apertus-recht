@@ -29,8 +29,9 @@ Fedlex text and the leading case's Regeste instead (German). Light red: in one f
 - **The pre-registered test fails where it matters, and we say so.** Fitted on two wording families, a read-back of
   the law the model applies beats the statute at predicting the third, but with the rules in the prompt not by the
   pre-registered 15 points in every framing (at R0 it passes trivially: the model convicts everything).
-- **A lead on where it comes from.** In the 8B, the DPO step turns 6 of 6 canton items from acquittal to conviction;
-  a 4-bit MLX conversion changes 100 of 648 verdicts, the public Q8_0 GGUF 10.
+- **A lead on where it comes from.** In the 8B at full precision, the DPO step cuts correct acquittals under stated
+  rules from 185 to 146 of 220 while keeping every conviction; a 4-bit MLX conversion changes 100 of 648 verdicts, the
+  public Q8_0 GGUF 10.
 - **It cost USD 1.84** of Public AI calls to score the 70B in three languages, and the 8B ran on free CI runners.
 
 Hack Apertus 2026 · Track 1B (Swiss Voices, behavioural alignment) · team 444 · report [`444_Report.pdf`](444_Report.pdf)

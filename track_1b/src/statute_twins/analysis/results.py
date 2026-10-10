@@ -49,6 +49,7 @@ def accuracy(items: list[dict], rows: list[dict], by=("subset", "lang", "rung", 
     """Accuracy of decisions against gold on settled items, grouped by `by` (item or row fields)."""
     it = {i["id"]: i for i in items}
     cells = defaultdict(lambda: dict(n=0, correct=0, tp=0, pos=0, tn=0, neg=0, unparsed=0))
+    scores = defaultdict(lambda: ([], []))          # log-odds of convict-gold and acquit-gold items (for the AUC)
     for r in rows:
         if "error" in r:
             continue
@@ -58,6 +59,8 @@ def accuracy(items: list[dict], rows: list[dict], by=("subset", "lang", "rung", 
         key = tuple((k, r.get(k, i.get(k))) for k in by)
         c = cells[key]
         d = decision(r)
+        if r.get("lo_conv") is not None:
+            scores[key][0 if i["gold_verdict"] == "convict" else 1].append(r["lo_conv"])
         # an unparsed answer counts in every denominator and is never correct
         c["n"] += 1
         c["unparsed"] += d not in ("convict", "acquit")
@@ -77,8 +80,26 @@ def accuracy(items: list[dict], rows: list[dict], by=("subset", "lang", "rung", 
         bal = mean([x for x in (rec_c, rec_a) if x == x]) if c["n"] else float("nan")
         out.append(dict(dict(key), n=c["n"], correct=c["correct"], accuracy=acc, accuracy_ci=wilson(c["correct"], c["n"]),
                         recall_convict=rec_c, recall_acquit=rec_a, balanced_accuracy=bal, unparsed=c["unparsed"],
-                        acquit_correct=c["tn"], acquit_n=c["neg"], convict_correct=c["tp"], convict_n=c["pos"]))
+                        acquit_correct=c["tn"], acquit_n=c["neg"], convict_correct=c["tp"], convict_n=c["pos"],
+                        auc=_auc(*scores[key]) if key in scores else None))
     return out
+
+
+def _auc(pos: list, neg: list):
+    """Probability that a convict-gold item has a higher conviction log-odds than an acquit-gold item (ties count
+    half): how well the scores rank the cases, whatever the decision threshold."""
+    if not pos or not neg:
+        return None
+    allv = sorted([(v, 1) for v in pos] + [(v, 0) for v in neg])
+    rank_sum, k = 0.0, 0
+    while k < len(allv):
+        j = k
+        while j < len(allv) and allv[j][0] == allv[k][0]:
+            j += 1
+        r = (k + j + 1) / 2                      # average rank (1-based) of the tie block
+        rank_sum += r * sum(1 for x in allv[k:j] if x[1] == 1)
+        k = j
+    return (rank_sum - len(pos) * (len(pos) + 1) / 2) / (len(pos) * len(neg))
 
 
 def contested_lean(items: list[dict], rows: list[dict]) -> list[dict]:
