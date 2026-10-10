@@ -55,3 +55,5 @@ r3_rev_auc	0.27	reports/controls_a13.json	[c for c in J['cells'] if (c['lang'],c
 r3_avg_set	45	reports/controls_a13.json	int([p for p in J['polarity'] if (p['lang'],p['rung'])==('de','R3')][0]['averaged_by_reason']['setting:failed'].split('/')[0])		technical_report.md	python scripts/controls.py
 court_ofk	57 of 57	reports/court_validation.json	f"{J['agree']} of {J['in_scope']}"		technical_report.md	python scripts/court_validation.py statutes/stgb_261bis/review/court/tuples.jsonl statutes/stgb_261bis/review/court/tuples_B.jsonl
 r5e_same	36 of 75	reports/controls_a13.json	(lambda s: f"{s['acquit_correct']} of {s['acquit_n']}")([f for f in J['factorial'] if (f['lang'],f['rung'],f['framing'])==('de','R5e','conv')][0]['same_items'])		technical_report.md	python scripts/controls.py
+qwen_gold	910/939	reports/annotation_model_qwen.json	f"{J['agree_with_gold']}/{J['settled']}"		technical_report.md,README.md	python scripts/annotate_model.py agree --tag qwen
+qwen_gold_dis	29	reports/annotation_model_qwen.json	sum(1 for d in J['disagreements'] if d['gold']=='acquit' and d['model']=='convict')		technical_report.md,README.md	python scripts/annotate_model.py agree --tag qwen

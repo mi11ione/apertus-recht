@@ -289,7 +289,10 @@ contested setting was read as clearly private by 5/5 annotators; that setting an
 (acts in 1993/94 posted online) were fixed before any model result was analysed (pre-registration amendment A3) and the
 changed items re-annotated. A second blind pass with new opaque ids gave the annotators **only the law** (statute texts,
 Art. 2 StGB, the Regeste of BGE 130 IV 111; no rule summary): 939/939 settled items agree with the
-code gold, κ against gold 1.000. All labels: [`review/`](review/).
+code gold, κ against gold 1.000. The same law-only task given to a model of another family
+(Qwen-SEA-LION-v4-32B, amendment A15): 910/939 settled items agree (κ 0.93); each of its
+29 disagreements convicts a case the pinned text does not cover (sexual orientation before 1 July 2020, acts
+before 1995, an unlisted characteristic), the errors Apertus makes, not gold errors. All labels: [`review/`](review/).
 **Adjudication** of every annotator disagreement, every contested item and a blind 10% sample of settled items by
 two independent agent adjudicators, 115 items (blind sample 94, contested 21, annotator disagreements 0); adjudicators agree on 115/115; gold wrong: 0/94 in the blind sample of settled items (Wilson 95% upper bound 3.9%), 0/21 contested items.
 **Court validation** of the gold engine against real decisions: 326 decisions triaged (stratum A: 150, stratum B: 176); 57 in scope (55 convictions, 2 acquittals); engine agrees with the court in 57/57 (Wilson 95% 0.94-1.00; an engine that always convicts would agree in 55/57; acquittals 2/2, Wilson 0.34-1.00); 24 out of scope (unmodelled grounds), 50 unextractable, 195 excluded; every tuple extracted twice by independent agents, conflicts settled by a third (amendment A4). Counted per distinct case (post hoc,
@@ -325,7 +328,7 @@ alongside results, since 4-bit conversions changed verdicts in our measurements.
 
 ## Changelog
 - 1.1.0 (2026-10-10): amendments A12–A15 (controls, free text in French and Italian, Art. 179ter, corrections);
-  no item or gold label of 1.0.0 changed. Files and hashes: `MANIFEST.json` (176 files).
+  no item or gold label of 1.0.0 changed. Files and hashes: `MANIFEST.json` (178 files).
 - 1.0.0 (2026-10-10): first release. Generator 1.0.0, seed 261.
   Pre-registration ([`docs/PREREG.md`](docs/PREREG.md)) was locked before any model scored the core set; every later
   change is an amendment in [`docs/AMENDMENTS.md`](docs/AMENDMENTS.md):

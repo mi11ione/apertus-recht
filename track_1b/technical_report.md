@@ -95,7 +95,10 @@ critical findings) and localised by a lawyer-persona review (places in Romandie 
 **Verification without human labels.** Because gold is computed, review looks for errors in the code, the element model
 or the wording. Every review step was done by Claude agents working blind on opaque ids, without code or gold.
 - **Annotation:** six agents labelled 960 items; they agree with the code on ⟨ann_settled⟩ settled items and name the
-  deciding element in 315/315 acquittals. A second pass that saw only the law agreed on 939/939.
+  deciding element in 315/315 acquittals. A second pass that saw only the law agreed on 939/939. A model of another
+  family (Qwen), given the same law-only task, agrees on ⟨qwen_gold⟩; each of its ⟨qwen_gold_dis⟩ disagreements convicts a
+  case the pinned text does not cover (pre-2020 sexual orientation, pre-1995, unlisted characteristics): Apertus's own
+  errors, not gold errors (A15).
 - **Adjudication:** two independent adjudicators reviewed every disagreement, every contested item and a blind 10%
   sample. Gold was wrong in 0 of 94 sampled items.
 - **Court validation:** ⟨court_triaged⟩ citing Art. 261bis were triaged and coded twice (κ 0.83–0.98). The engine

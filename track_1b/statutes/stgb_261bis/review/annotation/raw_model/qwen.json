@@ -1,0 +1,5765 @@
+{
+"model": "aisingapore/Qwen-SEA-LION-v4-32B-IT",
+"labels": [
+{
+"id": "L10079",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public distribution of flyers systematically discredits gay men based on sexual orientation, meeting Art. 261bis CP post-2020 elements."
+},
+{
+"id": "L10456",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public denigration of Jews due to religion, denying human dignity, meets all elements of Art. 261bis StGB."
+},
+{
+"id": "L10477",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (since 1 July 2020) are met: public setting, targeted group, discriminatory statement, and intent."
+},
+{
+"id": "L10977",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "The incitement was based on political opinions, not race, ethnicity, religion, or sexual orientation."
+},
+{
+"id": "L11010",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public, degrading statement against Roma due to ethnicity, 2021 version applies."
+},
+{
+"id": "L11021",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public denial of human dignity of Jews due to religion in 2025 meets all elements of Art. 261bis StGB."
+},
+{
+"id": "L11023",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public speech in 2020, targeting lesbians, meets Art. 261bis StGB post-2020 criteria."
+},
+{
+"id": "L11314",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis CP (post-2020) are met: public act, intent, discrimination based on sexual orientation."
+},
+{
+"id": "L11434",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public speech denying human equality to Hindus due to religion meets Art. 261bis StGB elements."
+},
+{
+"id": "L11620",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public, ethnic slur, dehumanizing, intentional, post-2020 law applies."
+},
+{
+"id": "L11647",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "The act targeted sex, not race, ethnicity, religion, or sexual orientation."
+},
+{
+"id": "L11665",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (1995–2020 version) are met: public, ethnic discrimination, degrading, intentional."
+},
+{
+"id": "L11814",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (since 2020) are met: public, racial, systematic defamation."
+},
+{
+"id": "L11844",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The act was a private telephone conversation, not public as required by Art. 261bis StGB."
+},
+{
+"id": "L11893",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public speech against bisexuals for discrimination, May 2022, post-2020 law applies."
+},
+{
+"id": "L11985",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis CP (post-2020) are met: public incitement to discrimination based on sexual orientation."
+},
+{
+"id": "L11992",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public propagation of degrading ideology against Hindus due to religion under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L12154",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, racial, degrading ideology, intentional act."
+},
+{
+"id": "L12182",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "The protected characteristics in Art. 261bis CP are race, ethnicity, religion, or sexual orientation, not political beliefs."
+},
+{
+"id": "L12478",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public hate speech against Muslims meets all elements of Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L12693",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public, degrading speech against Muslims due to religion, with intent, meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L12721",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public propagation of degrading ideology against Hindus due to religion under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L12817",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to hatred against Asians due to race via leaflets in a busy pedestrian zone."
+},
+{
+"id": "L12879",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Act occurred in October 1994, before Art. 261bis StGB entered into force on 1 January 1995."
+},
+{
+"id": "L13062",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public distribution of flyers targeting LGBTQ+ people by calling them 'second-class humans' meets all elements of Art. 261bis StGB (post-2020 version)."
+},
+{
+"id": "L13099",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public dissemination of degrading ideology against Asians meets Art. 261bis StGB (2020) elements."
+},
+{
+"id": "L13328",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Age is not a protected characteristic under Art. 261bis StGB."
+},
+{
+"id": "L13525",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to hatred based on sexual orientation under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L13543",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The act was a private phone call, not public as required by Art. 261bis StGB."
+},
+{
+"id": "L13762",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, systematic devaluation, sexual orientation."
+},
+{
+"id": "L13804",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (since 2020) are met: public, religious discrimination, intentional act."
+},
+{
+"id": "L13973",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Art. 261bis StGB in 2019 version does not cover sexual orientation."
+},
+{
+"id": "L14062",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Age not protected under Art. 261bis StGB."
+},
+{
+"id": "L14099",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The act occurred in a private telephone conversation, not publicly."
+},
+{
+"id": "L14137",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public call to discriminate against homosexuals due to sexual orientation meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L14403",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "Private communication to colleagues does not constitute 'public' under Art. 261bis StGB."
+},
+{
+"id": "L14413",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The act occurred in a private setting among close friends, not publicly."
+},
+{
+"id": "L14468",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public appeal to discriminate against Kurds due to ethnicity meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L14706",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public propagation of degrading ideology based on ethnicity under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L14715",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, ethnic targeting, incitement to hatred."
+},
+{
+"id": "L14915",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis CP (post-2020) are met: public propagation, intent, and racial discrimination."
+},
+{
+"id": "L14921",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Disability not protected under Art. 261bis StGB."
+},
+{
+"id": "L15076",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public, dehumanizing speech against homosexuals based on sexual orientation on 1 July 2020."
+},
+{
+"id": "L15077",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public hate speech against bisexuality violates Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L15105",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (1995-2020 version) are met: public propagation, ethnic targeting, intentional act."
+},
+{
+"id": "L15120",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "The act occurred in May 1993, before Art. 261bis StGB entered into force on 1 January 1995."
+},
+{
+"id": "L15127",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public degrading statements against Black people due to race in 2024 under Art. 261bis StGB (post-2020 version)."
+},
+{
+"id": "L15211",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Appartenance cantonale not protected under Art. 261bis StGB."
+},
+{
+"id": "L15229",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "Private message to sister does not constitute 'public' under Art. 261bis StGB."
+},
+{
+"id": "L15263",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public, dehumanizing speech against homosexuals due to sexual orientation meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L15325",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Cantonality is not a protected characteristic under Art. 261bis StGB."
+},
+{
+"id": "L15331",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (since 2020) are met: public call to discrimination based on ethnicity."
+},
+{
+"id": "L15457",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public hate speech against Hindus due to religion, meeting all elements of Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L15462",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Art. 261bis StGB protects against hate speech based on race, ethnicity, religion, or sexual orientation, not political opinion."
+},
+{
+"id": "L15565",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public, dehumanizing speech against homosexuals due to sexual orientation in 2021 under Art. 261bis StGB (post-2020 version)."
+},
+{
+"id": "L15569",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Art. 261bis StGB in 2019 version did not cover sexual orientation."
+},
+{
+"id": "L15604",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act, ethnic group targeted, dignity violated, intentional."
+},
+{
+"id": "L15633",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, systematic devaluation, sexual orientation, intent."
+},
+{
+"id": "L15780",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public call for discrimination based on ethnicity with intent, meeting all elements of Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L15933",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (since 2020) are met: public incitement to hatred against Jews due to religion."
+},
+{
+"id": "L16046",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Kantonszugehörigkeit ist kein geschütztes Merkmal nach Art. 261bis StGB."
+},
+{
+"id": "L16144",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Art. 261bis StGB protects against hate speech based on race, ethnicity, religion, or sexual orientation, not political opinion."
+},
+{
+"id": "L16154",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public speech in 2021, targeting bisexuals, post-2020 law applies."
+},
+{
+"id": "L16219",
+"label": "acquit",
+"deciding_element": "act",
+"reason": "Sexuelle Orientierung nicht in Art. 261bis StGB 1995-2020 geschützt."
+},
+{
+"id": "L16300",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis CP (post-2020) are met: public propagation, systematic discredit, and intent."
+},
+{
+"id": "L16315",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis CP (2020) are met: public act, ethnic motivation, intentional incitement to hatred."
+},
+{
+"id": "L16446",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public setting, ethnic targeting, degrading speech, and intent meet all elements of Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L16490",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis CP (post-2020) are met: public act, intent, discrimination based on sexual orientation."
+},
+{
+"id": "L16679",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, sexual orientation, degrading statement, intent."
+},
+{
+"id": "L16704",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public hate speech against homosexuals due to sexual orientation."
+},
+{
+"id": "L16740",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Act occurred in 2018, before the 2020 amendment adding sexual orientation."
+},
+{
+"id": "L16815",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act, intentional, and targets homosexuals based on orientation."
+},
+{
+"id": "L17030",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Appartenance cantonale not protected under Art. 261bis CP."
+},
+{
+"id": "L17257",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public hate speech against a group based on ethnicity under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L17266",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public setting, racial discrimination, intentional act."
+},
+{
+"id": "L17274",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (post-2020) are met: public setting, religious discrimination, intent."
+},
+{
+"id": "L17276",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, religious discrimination, intentional act."
+},
+{
+"id": "L17515",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Kantonszugehörigkeit ist nicht Rasse, Ethnie, Religion oder sexuelle Orientierung."
+},
+{
+"id": "L17585",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public distribution of degrading theses about gay men violates Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L17590",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public propagation of systematic disparagement based on ethnicity under Art. 261bis StGB (1995 version)."
+},
+{
+"id": "L17756",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public, degrading speech against Muslims due to religion in 2023 under Art. 261bis StGB."
+},
+{
+"id": "L17759",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (since 1 July 2020) are met: public, racial discrimination, systematic devaluation, intentional act."
+},
+{
+"id": "L17880",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Act occurred in October 1994, before the law entered into force in January 1995."
+},
+{
+"id": "L18211",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public social media post targeting Tamils by ethnicity meets all elements of Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L18486",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Art. 261bis CP (orientamento sessuale) entered into force on 1 July 2020; act occurred in November 2018."
+},
+{
+"id": "L18590",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Art. 261bis CP (orientation sexuelle) entered into force 1 July 2020; act occurred in November 2018."
+},
+{
+"id": "L18703",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public propagation of degrading ideology based on religion under Art. 261bis StGB (post-2020 version)."
+},
+{
+"id": "L18723",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "The ideology targets gender, not race, ethnicity, religion, or sexual orientation."
+},
+{
+"id": "L18778",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to racial discrimination in a crowded bus, intent proven, post-2020 law applies."
+},
+{
+"id": "L18837",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Act occurred before Art. 261bis StGB entered into force (1 Jan 1995)."
+},
+{
+"id": "L18850",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act in a forest refuge with 40+ invited participants, incitement to hatred against Muslims."
+},
+{
+"id": "L18854",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public speech against homosexuals due to sexual orientation meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L18968",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "Private conversation with brother, not public as per BGE 130 IV 111."
+},
+{
+"id": "L18980",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public propagation of systematic ethnic discrimination against Kurds meets Art. 261bis CP elements."
+},
+{
+"id": "L19027",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (since 1 July 2020) are met: public setting, religious discrimination, propagation of degrading ideology."
+},
+{
+"id": "L19092",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public dissemination of degrading theses against a religious group meets Art. 261bis StGB."
+},
+{
+"id": "L19135",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "Private communication to colleagues, not public as per BGE 130 IV 111."
+},
+{
+"id": "L19177",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "The ideology targets profession, not race, ethnicity, religion, or sexual orientation."
+},
+{
+"id": "L19193",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Lehrpersonen sind nicht eine Rasse, Ethnie, Religion oder sexuelle Orientierung."
+},
+{
+"id": "L19253",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (since 1.7.2020) are met: public, religious discrimination, intentional act."
+},
+{
+"id": "L19328",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (since 2020) are met: public setting, ethnic targeting, systematic degradation."
+},
+{
+"id": "L19347",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The act was private (personal message to sister), not public as required by Art. 261bis StGB."
+},
+{
+"id": "L19459",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public propagation of racist ideology under Art. 261bis CP (2020 version)."
+},
+{
+"id": "L19488",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Art. 261bis StGB in 2019 version does not cover sexual orientation."
+},
+{
+"id": "L19555",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (since 1 July 2020) are met: public, dehumanizing speech against homosexuals."
+},
+{
+"id": "L19596",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Act occurred on 30 June 2020, before the law's amendment."
+},
+{
+"id": "L19611",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Act occurred in October 1994, before Art. 261bis StGB entered into force on 1 January 1995."
+},
+{
+"id": "L19628",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public propagation of degrading ideology based on religion under Art. 261bis StGB."
+},
+{
+"id": "L19679",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public speech against Africans due to race, systematic devaluation, and intent meet all elements of Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L19861",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public propagation of degrading ideology based on religion under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L20535",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public statement in a regional newspaper targeting gay men by sexual orientation under Art. 261bis CP (2020 version)."
+},
+{
+"id": "L20541",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public hate speech against Muslims due to religion, September 2021 under post-2020 StGB."
+},
+{
+"id": "L20566",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Art. 261bis CP protects against discrimination based on race, ethnicity, religion, or sexual orientation, not disability."
+},
+{
+"id": "L20856",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public defamatory statement against Jenisch people due to ethnicity meets Art. 261bis StGB."
+},
+{
+"id": "L20899",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public hate speech against Kosovo-Albanians due to ethnicity meets all elements of Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L20959",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Herabsetzung wegen politischer Überzeugung, nicht Rasse, Ethnie, Religion oder sexueller Orientierung."
+},
+{
+"id": "L21214",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, ethnic targeting, incitement to discrimination."
+},
+{
+"id": "L21309",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The act occurred in a private setting with close friends, not publicly."
+},
+{
+"id": "L21310",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Art. 261bis StGB protects against discrimination based on race, ethnicity, religion, or sexual orientation, not disability."
+},
+{
+"id": "L21356",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Appartenance cantonale not protected under Art. 261bis CP."
+},
+{
+"id": "L21505",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Act occurred on 30 June 2020, before the law's amendment."
+},
+{
+"id": "L21512",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public speech against homosexuals due to sexual orientation meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L21652",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public propagation of degrading ideology based on sexual orientation under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L21735",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act, ethnic targeting, systematic denigration, intentional promotion of ideology."
+},
+{
+"id": "L21755",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public hate speech against Jews due to religion."
+},
+{
+"id": "L21764",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, ethnic targeting, systematic degradation, and intent."
+},
+{
+"id": "L21880",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to discrimination based on sexual orientation under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L22221",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "The law protects against discrimination based on race, ethnicity, religion, or sexual orientation, not sex."
+},
+{
+"id": "L22358",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The act occurred in a private setting with close friends, not publicly."
+},
+{
+"id": "L22413",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act, ethnic targeting, dignity violation, intentional."
+},
+{
+"id": "L22900",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act of ethnic discrimination in a full bus, meeting all elements of Art. 261bis StGB (post-2020 version)."
+},
+{
+"id": "L23052",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act, intentional, and targets homosexuals, meeting all elements of Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L23073",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Act in 2019, before sexuelle Orientierung was added to Art. 261bis StGB."
+},
+{
+"id": "L23089",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Art. 261bis StGB protects against discrimination based on race, ethnicity, religion, or sexual orientation, not gender identity."
+},
+{
+"id": "L23146",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public degradation of homosexuals due to sexual orientation meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L23196",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, ethnic targeting, systematic degradation, and intent."
+},
+{
+"id": "L23221",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The act occurred in a private setting with close friends, not publicly."
+},
+{
+"id": "L23297",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (1995 version) are met: public incitement to hatred based on race."
+},
+{
+"id": "L23453",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "Setting is private, not public as per BGE 130 IV 111."
+},
+{
+"id": "L23724",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to discrimination against Muslims in a public setting with 300 people."
+},
+{
+"id": "L23824",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "The law protects against discrimination based on race, ethnicity, religion, or sexual orientation, not sex."
+},
+{
+"id": "L23844",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public act, ethnic targeting, dehumanizing statement, intent."
+},
+{
+"id": "L23887",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public dissemination of degrading ideology against Asians meets Art. 261bis StGB."
+},
+{
+"id": "L23903",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public setting, religious discrimination, systematic devaluation."
+},
+{
+"id": "L23987",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public dissemination of systematic degrading ideology against Roma due to ethnicity meets Art. 261bis StGB."
+},
+{
+"id": "L24099",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Art. 261bis StGB protects against discrimination based on race, ethnicity, religion, or sexual orientation, not gender identity."
+},
+{
+"id": "L24139",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act, religious discrimination, intentional, post-2020 law applies."
+},
+{
+"id": "L24330",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public distribution of tracts promoting inferior status to Jews based on religion meets Art. 261bis CP elements."
+},
+{
+"id": "L24426",
+"label": "acquit",
+"deciding_element": "act",
+"reason": "Art. 261bis StGB protects against discrimination based on race, ethnicity, religion, or sexual orientation, not gender identity."
+},
+{
+"id": "L24499",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public denial of human worth based on ethnicity meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L24589",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public speech in 2021, targeting bisexuals by orientation, meets all elements of Art. 261bis StGB post-2020."
+},
+{
+"id": "L24601",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public degradation due to sexual orientation meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L24614",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis CP (2020 version) are met: public incitement to hatred based on sexual orientation."
+},
+{
+"id": "L24618",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (since 2020) are met: public, ethnic targeting, degrading, intentional."
+},
+{
+"id": "L24637",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Herabsetzung nicht auf Rasse, Ethnie, Religion oder sexuelle Orientierung gerichtet."
+},
+{
+"id": "L24692",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Rasse, Ethnie oder Religion nicht genannt; Beruf ist kein geschütztes Merkmal nach Art. 261bis StGB."
+},
+{
+"id": "L24721",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Art. 261bis StGB in 2019 version does not cover sexual orientation."
+},
+{
+"id": "L25132",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Act occurred in 1993, before Art. 261bis StGB entered into force in 1995."
+},
+{
+"id": "L25228",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Herabsetzung wegen Beruf, nicht Rasse, Ethnie, Religion oder sexueller Orientierung."
+},
+{
+"id": "L25354",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public speech against Kurds due to ethnicity, meeting elements of Art. 261bis StGB."
+},
+{
+"id": "L25466",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "Private message to sister does not constitute 'public' under Art. 261bis StGB."
+},
+{
+"id": "L25521",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Age is not a protected characteristic under Art. 261bis CP."
+},
+{
+"id": "L25610",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, intentional, discrimination based on sexual orientation."
+},
+{
+"id": "L25671",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public dissemination of degrading ideology against homosexuals meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L25824",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, ethnic targeting, systematic degradation, and intent."
+},
+{
+"id": "L25892",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Art. 261bis StGB protects against hatred based on race, ethnicity, religion, or sexual orientation, not political opinion."
+},
+{
+"id": "L25968",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public setting, racial targeting, and systematic devaluation meet Art. 261bis StGB (1995–2020 version)."
+},
+{
+"id": "L25997",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to hatred against Roma due to ethnicity meets all elements of Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L26009",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public speech in 2021, racial degradation, meets all elements of Art. 261bis StGB (post-2020 version)."
+},
+{
+"id": "L26042",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The act was private, not public as required by Art. 261bis StGB."
+},
+{
+"id": "L26223",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act, ethnic motivation, intentional discrimination against Roma in housing and employment."
+},
+{
+"id": "L26236",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The act occurred in a private setting with close friends, not publicly."
+},
+{
+"id": "L26327",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public degrading statement against homosexuals due to sexual orientation in 2021 under Art. 261bis StGB (post-2020 version)."
+},
+{
+"id": "L26449",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to hatred against a racial group meets all elements of Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L26523",
+"label": "acquit",
+"deciding_element": "act",
+"reason": "Art. 261bis StGB protects against discrimination based on race, ethnicity, religion, or sexual orientation, not gender."
+},
+{
+"id": "L26544",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to discrimination against Muslims in 2024 meets all elements of Art. 261bis StGB."
+},
+{
+"id": "L26637",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The setting was private (garden party with friends and acquaintances), not public under Art. 261bis StGB."
+},
+{
+"id": "L26855",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (since 2020) are met: public, ethnic targeting, incitement to discrimination."
+},
+{
+"id": "L26928",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public speech in a full bus promoting racial inferiority meets Art. 261bis StGB (2020) elements."
+},
+{
+"id": "L26979",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act, denial of human dignity based on sexual orientation, intentional."
+},
+{
+"id": "L27108",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public hate speech against race in a visible social media post, January 2024, under Art. 261bis StGB (post-2020 version)."
+},
+{
+"id": "L27255",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public propagation of degrading ideology based on race in a crowded bus meets all elements of Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L27443",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public dissemination of degrading ideology against Asians meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L27481",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public ideology targeting Jenisch ethnicity met under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L27616",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Art. 261bis CP (orientation sexuelle) only applies since 1 July 2020."
+},
+{
+"id": "L27617",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The act occurred in a private telephone conversation with a family member, not in a public setting."
+},
+{
+"id": "L27781",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Age is not a protected characteristic under Art. 261bis StGB."
+},
+{
+"id": "L27824",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to hatred against Kosovo Albanians based on ethnicity meets Art. 261bis CP elements."
+},
+{
+"id": "L27844",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to hatred against ethnic group in a regional newspaper letter."
+},
+{
+"id": "L28169",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Art. 261bis StGB protects against discrimination based on race, ethnicity, religion, or sexual orientation, not disability."
+},
+{
+"id": "L28198",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (since 2020) are met: public, ethnic targeting, incitement to hatred."
+},
+{
+"id": "L28283",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Art. 261bis StGB in 2019 version did not cover sexual orientation."
+},
+{
+"id": "L28311",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public distribution of flyers discrediting homosexuals meets Art. 261bis CP post-2020."
+},
+{
+"id": "L28407",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "Private setting with close friends, not public as per BGE 130 IV 111."
+},
+{
+"id": "L28467",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Act occurred in 1993, before Art. 261bis StGB entered into force in 1995."
+},
+{
+"id": "L28585",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The act occurred in a non-public, private setting with a small, familiar group."
+},
+{
+"id": "L28635",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis CP (post-2020) are met: public incitement to discrimination based on race."
+},
+{
+"id": "L28649",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public hate speech against Roma due to ethnicity meets all elements of Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L28652",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public speech targeting Hindus by religion meets all elements of Art. 261bis StGB."
+},
+{
+"id": "L28917",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public appeal to discriminate against Roma due to ethnicity meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L29116",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Act occurred in May 1993, before Art. 261bis StGB entered into force on 1 January 1995."
+},
+{
+"id": "L29175",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public hate speech against a racial group."
+},
+{
+"id": "L29286",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Publicly propagated racist ideology, meeting all elements of Art. 261bis StGB (post-2020 version)."
+},
+{
+"id": "L29468",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020 version) are met: public incitement, racial targeting, and intentional act."
+},
+{
+"id": "L29589",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public advocacy of ideology targeting race meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L29608",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to hatred against bisexuelle persons meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L29609",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Act publicly denigrating homosexuals, denying human dignity, meets Art. 261bis CP post-2020."
+},
+{
+"id": "L29780",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "The law protects against discrimination based on race, ethnicity, religion, or sexual orientation, not sex."
+},
+{
+"id": "L29792",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public setting, racial targeting, incitement to hatred, and intent."
+},
+{
+"id": "L29820",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act, religious discrimination, intentional promotion of inferior status."
+},
+{
+"id": "L29989",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public setting, ideology targeting Muslims, systematic defamation, and intent."
+},
+{
+"id": "L30180",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public dissemination of degrading ideology against Africans meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L30222",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public statement on open platform, ethnic discrimination, intentional act under Art. 261bis CP (2020 version)."
+},
+{
+"id": "L30243",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, ideology, systematic defamation, intent."
+},
+{
+"id": "L30279",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Age is not a protected characteristic under Art. 261bis StGB."
+},
+{
+"id": "L30285",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public setting, ethnic targeting, ideologically motivated act."
+},
+{
+"id": "L30337",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "Act occurred in private family setting, not public as required by Art. 261bis StGB."
+},
+{
+"id": "L30611",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (since 2020) are met: public hate speech against a racial group, deliberate act, and sufficient publicity."
+},
+{
+"id": "L30614",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act, systematic degradation of bisexuals, post-2020 law covers orientation sexuelle."
+},
+{
+"id": "L30676",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to hatred against Muslims meets Art. 261bis CP post-2020."
+},
+{
+"id": "L30756",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public defamation of Asians due to race meets all elements of Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L30777",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (1995–2020) are met: public setting, ethnic targeting, systematic degradation."
+},
+{
+"id": "L30811",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The act was a private telephone conversation, not public."
+},
+{
+"id": "L31206",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "Act occurred in a private family setting, not publicly."
+},
+{
+"id": "L31397",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Sexuelle Orientierung nicht geschütztes Merkmal in der geltenden Fassung von Art. 261bis StGB vom 1.1.1995 bis 30.6.2020."
+},
+{
+"id": "L31472",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis CP (post-2020) are met: public act, discrimination based on sexual orientation, intent."
+},
+{
+"id": "L31474",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to discrimination against Jews in a crowded bus in May 2022 meets all elements of Art. 261bis StGB."
+},
+{
+"id": "L31767",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis CP (2020 version) are met: public act, racial discrimination, intent confirmed."
+},
+{
+"id": "L31927",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public ethnic slur meets Art. 261bis StGB (2020) elements."
+},
+{
+"id": "L32054",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public speech targeting Roma ethnicity with degrading language meets all elements of Art. 261bis StGB (post-2020)."
+},
+{
+"id": "L32070",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (since 2020) are met: public hate speech against a religious group."
+},
+{
+"id": "L32178",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public setting, call for discrimination, sexual orientation, intent."
+},
+{
+"id": "L32251",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public speech in a public square against homosexuals based on sexual orientation meets all elements of Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L32319",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public hate speech against lesbians due to sexual orientation meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L32524",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis CP (post-2020) are met: public propagation, ethnic targeting, intent."
+},
+{
+"id": "L32708",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to hatred based on sexual orientation under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L32933",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Kantonszugehörigkeit ist keine geschützte Eigenschaft unter Art. 261bis StGB."
+},
+{
+"id": "L33015",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act, religious discrimination, intentional, post-2020 law applies."
+},
+{
+"id": "L33024",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Act occurred in October 1994, before Art. 261bis StGB entered into force on 1 January 1995."
+},
+{
+"id": "L33153",
+"label": "convict",
+"deciding_element": "none",
+"reason": "The act meets all elements of Art. 261bis StGB (post-2020 version)."
+},
+{
+"id": "L33225",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Art. 261bis CP (orientamento sessuale) entered into force on 1 July 2020, after the act in November 2018."
+},
+{
+"id": "L33227",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public, ethnic slur, dehumanizing, intentional, pre-2020 law covers ethnicity."
+},
+{
+"id": "L33385",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The act was private (phone call with brother), not public under Art. 261bis CP."
+},
+{
+"id": "L33520",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Act occurred in May 1993, before Art. 261bis StGB entered into force on 1 January 1995."
+},
+{
+"id": "L33593",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to discrimination based on sexual orientation under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L33696",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public call to discriminate against homosexuals due to sexual orientation meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L33708",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Art. 261bis StGB in 2019 version does not cover sexual orientation."
+},
+{
+"id": "L33927",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act under Art. 261bis CP; all elements met."
+},
+{
+"id": "L34075",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public dissemination of degrading ideology against Hindus due to religion."
+},
+{
+"id": "L34343",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Appartenance cantonale not protected under Art. 261bis CP."
+},
+{
+"id": "L34351",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Discrimination based on age is not covered by Art. 261bis CP."
+},
+{
+"id": "L34450",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public, degrading speech against Muslims in a full bus meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L34544",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to discrimination against Hindus due to religion meets all elements of Art. 261bis StGB."
+},
+{
+"id": "L34562",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Appartenance cantonale not protected under Art. 261bis CP."
+},
+{
+"id": "L34921",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The act occurred in a private family chat, not in public as required by Art. 261bis StGB."
+},
+{
+"id": "L34930",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, systematic devaluation, sexual orientation."
+},
+{
+"id": "L34940",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Age is not a protected characteristic under Art. 261bis StGB."
+},
+{
+"id": "L34945",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public distribution of anti-Semitic leaflets meets all elements of Art. 261bis StGB post-2020."
+},
+{
+"id": "L34982",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Art. 261bis StGB in 2019 version did not cover sexual orientation."
+},
+{
+"id": "L35016",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis CP (post-2020) are met: public incitement to discrimination based on religion."
+},
+{
+"id": "L35187",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis CP (post-2020) are met: public speech, ethnic discrimination, intentional act."
+},
+{
+"id": "L35295",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public statement on accessible platform targeting religious group meets all elements of Art. 261bis StGB."
+},
+{
+"id": "L35447",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public degrading statement against bisexuals due to sexual orientation, September 2021 (post-2020 law)."
+},
+{
+"id": "L35453",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public, degrading statement against Jenish people due to ethnicity meets Art. 261bis StGB."
+},
+{
+"id": "L35568",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public distribution of flyers in a busy area meets Art. 261bis StGB (2020) elements."
+},
+{
+"id": "L35806",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public hate speech against homosexuals due to sexual orientation."
+},
+{
+"id": "L35859",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public call to discriminate based on sexual orientation under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L35940",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The act was private, not public as required by Art. 261bis CP."
+},
+{
+"id": "L36133",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Art. 261bis StGB in 2018 version did not cover sexual orientation."
+},
+{
+"id": "L36137",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Kantonszugehörigkeit is not a protected characteristic under Art. 261bis StGB."
+},
+{
+"id": "L36182",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public, intentional degradation based on religion under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L36204",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act of incitement to discrimination against Jews due to religion under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L36333",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Gender is not a protected characteristic under Art. 261bis StGB."
+},
+{
+"id": "L36350",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "The ideology targets gender, not race, ethnicity, religion, or sexual orientation."
+},
+{
+"id": "L36362",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public speech, ethnic targeting, systematic dehumanization, intentional act all meet Art. 261bis CP elements."
+},
+{
+"id": "L36497",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public dehumanizing statement against Roma due to ethnicity meets Art. 261bis StGB."
+},
+{
+"id": "L36669",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (since 1 July 2020) are met: public, sexual orientation, degrading statement, intent."
+},
+{
+"id": "L36700",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public hate speech against Muslims, intent, and setting."
+},
+{
+"id": "L36944",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to discrimination against Jews due to religion under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L36996",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "Setting is private, not public as per BGE 130 IV 111."
+},
+{
+"id": "L37265",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (since 2020) are met: public call to discrimination based on religion."
+},
+{
+"id": "L37336",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (1995 version) are met."
+},
+{
+"id": "L37408",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, ethnic targeting, systematic defamation, and intent."
+},
+{
+"id": "L37480",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act, systematic devaluation of Roma based on ethnicity, intentional."
+},
+{
+"id": "L37753",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (post-2020) are met: public setting, ethnic targeting, intent to discriminate."
+},
+{
+"id": "L37979",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Gender is not a protected characteristic under Art. 261bis StGB."
+},
+{
+"id": "L38199",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Act occurred in October 1994, before Art. 261bis StGB entered into force on 1 January 1995."
+},
+{
+"id": "L38205",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Art. 261bis StGB protects against discrimination based on race, ethnicity, religion, or sexual orientation, not gender."
+},
+{
+"id": "L38284",
+"label": "acquit",
+"deciding_element": "act",
+"reason": "Art. 261bis StGB protects against discrimination based on race, ethnicity, religion, or sexual orientation, not political opinion."
+},
+{
+"id": "L38332",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act, intentional, targets gays based on sexual orientation under Art. 261bis CP (2020 version)."
+},
+{
+"id": "L38338",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public hate speech against homosexuals due to sexual orientation."
+},
+{
+"id": "L38360",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The act occurred in a private family chat, not in public as required by Art. 261bis StGB."
+},
+{
+"id": "L38504",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "Setting is private (quartier association meeting with 25 members)."
+},
+{
+"id": "L38506",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public dissemination of degrading ideology against homosexuals meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L38574",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The act occurred in a private setting with close friends, not publicly."
+},
+{
+"id": "L38632",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public denigration of gay men based on sexual orientation violates Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L38695",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public, degrading statement against bisexuals due to sexual orientation in August 2020, post-2020 StGB version applies."
+},
+{
+"id": "L38714",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The act occurred in a private family chat, not in public as required by Art. 261bis StGB."
+},
+{
+"id": "L38794",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public setting, ideology targeting lesbian women, deliberate act."
+},
+{
+"id": "L38885",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public speech in 2025, ethnic discrimination, systematic devaluation, intentional act under Art. 261bis StGB (post-2020 version)."
+},
+{
+"id": "L39141",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis CP (post-2020) are met: public propagation, ethnic targeting, and intent."
+},
+{
+"id": "L39562",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Age is not a protected characteristic under Art. 261bis CP."
+},
+{
+"id": "L39604",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis CP (post-2020) are met: public act, racial discrimination, dignitary violation, intent."
+},
+{
+"id": "L39632",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Art. 261bis StGB protects against discrimination based on race, ethnicity, religion, or sexual orientation, not age."
+},
+{
+"id": "L39686",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Act occurred on 30 June 2020, before the law's amendment."
+},
+{
+"id": "L39733",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public defamation of Asians due to race meets all elements of Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L39800",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The act was a private phone call, not public as required by Art. 261bis StGB."
+},
+{
+"id": "L39814",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public setting, racial discrimination, intentional act."
+},
+{
+"id": "L39898",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Appartenance cantonale not protected under Art. 261bis CP."
+},
+{
+"id": "L39909",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act, ethnic targeting, dignity violation, intentional."
+},
+{
+"id": "L39938",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public degrading statement against bisexuals due to sexual orientation in 2021 under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L40001",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "Act occurred in a private setting with close friends, not public."
+},
+{
+"id": "L40079",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (post-2020) are met: public, ideology, systematic defamation, intent."
+},
+{
+"id": "L40296",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public, degrading speech against bisexuals due to sexual orientation in August 2020 under Art. 261bis StGB (post-2020 version)."
+},
+{
+"id": "L40345",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public setting, racial discrimination, intentional act."
+},
+{
+"id": "L40417",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Age is not a protected characteristic under Art. 261bis CP."
+},
+{
+"id": "L40726",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public act, racial discrimination, intentional conduct."
+},
+{
+"id": "L40810",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public call to discriminate against Muslims due to religion meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L40922",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, degrading, religious motive, intentional act."
+},
+{
+"id": "L40977",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public denial of human dignity of Muslims based on religion under Art. 261bis CP."
+},
+{
+"id": "L40996",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis CP (post-2020) are met: public incitement, ethnic targeting, and intent."
+},
+{
+"id": "L41277",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, sexual orientation, degrading statement, intent."
+},
+{
+"id": "L41298",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis CP (post-2020) are met: public incitement to discrimination based on gender identity."
+},
+{
+"id": "L41379",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public, degrading speech against Hindus due to religion in 2022 under Art. 261bis StGB (post-2020 version)."
+},
+{
+"id": "L41419",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (since 1 July 2020) are met: public hate speech against a racial group, intentional act in January 2024."
+},
+{
+"id": "L41470",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public hate speech against Jews due to religion under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L41494",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public statement denying equality to lesbians based on sexual orientation meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L41592",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Age is not a protected characteristic under Art. 261bis StGB."
+},
+{
+"id": "L41730",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act, ethnic group, dignity violated, intentional."
+},
+{
+"id": "L41813",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The act occurred in a private family chat, not in public as required by Art. 261bis StGB."
+},
+{
+"id": "L41833",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis CP (post-2020) are met: public incitement to discrimination based on race."
+},
+{
+"id": "L41890",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Incitement is based on age, not race, ethnicity, religion, or sexual orientation."
+},
+{
+"id": "L41900",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public hate speech against bisexuals meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L41947",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public hate speech against Muslims due to religion, September 2021, post-2020 law applies."
+},
+{
+"id": "L42037",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public propagation of ideology targeting bisexuals meets Art. 261bis CP post-2020."
+},
+{
+"id": "L42059",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (post-2020) are met: public, ethnic targeting, degrading, intentional."
+},
+{
+"id": "L42174",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act, systematic devaluation of Roma, intent met under Art. 261bis CP."
+},
+{
+"id": "L42271",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, racial, systematic degradation."
+},
+{
+"id": "L42282",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public hate speech against homosexuals due to sexual orientation in 2018, covered by Art. 261bis StGB (1995 version)."
+},
+{
+"id": "L42331",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public speech against Kurds due to ethnicity, meeting all elements of Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L42369",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public speech targeting sexual orientation on or after 1 July 2020 meets all elements of Art. 261bis StGB."
+},
+{
+"id": "L42550",
+"label": "acquit",
+"deciding_element": "act",
+"reason": "Incitement was based on political beliefs, not race, ethnicity, religion, or sexual orientation."
+},
+{
+"id": "L42588",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act, religious discrimination, intentional, post-2020 law applies."
+},
+{
+"id": "L42663",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (post-2020) are met: public act, ideology targeting sexual orientation, deliberate action."
+},
+{
+"id": "L42879",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (since 2020) are met, including public setting and protected characteristic."
+},
+{
+"id": "L43018",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to hatred against homosexuals based on sexual orientation under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L43075",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Political opinion not protected under Art. 261bis StGB; requires race, ethnicity, religion, or sexual orientation."
+},
+{
+"id": "L43076",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public hate speech against race met under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L43223",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public expression of degrading ethnic stereotypes meets all elements of Art. 261bis StGB (post-2020 version)."
+},
+{
+"id": "L43544",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public call to discrimination based on race."
+},
+{
+"id": "L43583",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public denigration of Kosovo Albanians based on ethnicity, denying human dignity, meets all elements of Art. 261bis StGB."
+},
+{
+"id": "L43604",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, ethnic discrimination, degrading, intentional."
+},
+{
+"id": "L43866",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (since 2020) are met: public, ethnic targeting, degrading statements, intent."
+},
+{
+"id": "L44225",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (since 2020) are met: public, religiously motivated hate speech, intentional act."
+},
+{
+"id": "L44375",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The act occurred in a private setting with close friends, not publicly."
+},
+{
+"id": "L44486",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (since 2020) are met: public hate speech against a racial group."
+},
+{
+"id": "L44643",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to hatred against Kurds due to ethnic origin meets all elements of Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L44718",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Gender is not a protected characteristic under Art. 261bis StGB."
+},
+{
+"id": "L44750",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Gender is not a protected characteristic under Art. 261bis StGB."
+},
+{
+"id": "L44798",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Age is not a protected characteristic under Art. 261bis StGB."
+},
+{
+"id": "L44812",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, ethnic targeting, incitement to hatred."
+},
+{
+"id": "L44849",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The act occurred in a private telephone conversation, not publicly."
+},
+{
+"id": "L44983",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The act was private, not public as required by Art. 261bis StGB."
+},
+{
+"id": "L45007",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Age is not a protected characteristic under Art. 261bis StGB."
+},
+{
+"id": "L45078",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Disability not protected under Art. 261bis StGB."
+},
+{
+"id": "L45293",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act, religious discrimination, intent established."
+},
+{
+"id": "L45369",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to discrimination against Jews due to religion under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L45379",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public propagation of degrading ideology against a religious group meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L45416",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Art. 261bis StGB in 2019 version does not cover sexual orientation."
+},
+{
+"id": "L45432",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "Private message to sister does not constitute 'public' under Art. 261bis StGB."
+},
+{
+"id": "L45462",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public dissemination of degrading ideology against homosexuals since 2020."
+},
+{
+"id": "L45484",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public denial of human equality based on race meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L45604",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public ethnic dehumanization meets Art. 261bis StGB (2020) elements."
+},
+{
+"id": "L45741",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public hate speech against a racial group."
+},
+{
+"id": "L45813",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (since 2020) are met: public, racial, incitement to discrimination."
+},
+{
+"id": "L45829",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public hate speech against Jews due to religion meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L45869",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public dissemination of systematic denigration based on religious affiliation meets Art. 261bis CP elements."
+},
+{
+"id": "L45886",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to discrimination against Muslims due to religion, January 2024, under Art. 261bis StGB (post-2020 version)."
+},
+{
+"id": "L45944",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act, ethnic targeting, dignity violation, intentional."
+},
+{
+"id": "L45948",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public, ethnic slur, degrading, intent present, post-2020 law applies."
+},
+{
+"id": "L45955",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Sexuelle Orientierung ist kein geschütztes Merkmal im StGB-Fassung bis 2020."
+},
+{
+"id": "L46043",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public ethnic slur in newspaper letter meets Art. 261bis StGB (2020) elements."
+},
+{
+"id": "L46096",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "Private message to sister does not constitute 'public' under Art. 261bis StGB."
+},
+{
+"id": "L46109",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (since 2020) are met: public setting, religious discrimination, intentional act."
+},
+{
+"id": "L46213",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (since 1.7.2020) are met: public hate speech against Kurds due to ethnicity in 2024."
+},
+{
+"id": "L46311",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "Private communication to colleagues does not constitute 'public' under Art. 261bis StGB."
+},
+{
+"id": "L46363",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Act meets all elements of Art. 261bis StGB (post-2020 version)."
+},
+{
+"id": "L46656",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to discrimination based on race under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L46788",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to discrimination against Hindus due to religion, vorsätzlich, under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L46870",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public degrading statement based on religion, Vorsatz unbestritten, meets Art. 261bis StGB 1995 version."
+},
+{
+"id": "L46930",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, ethnic targeting, systematic degradation."
+},
+{
+"id": "L47026",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Age is not a protected characteristic under Art. 261bis StGB."
+},
+{
+"id": "L47054",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Art. 261bis CP (orientation sexuelle) only applies from 1 July 2020."
+},
+{
+"id": "L47187",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public call to discrimination based on sexual orientation."
+},
+{
+"id": "L47583",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to hatred against Jenisch due to ethnicity meets all elements of Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L47730",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public call to discriminate based on race meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L47876",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public hate speech against homosexuals due to sexual orientation."
+},
+{
+"id": "L47885",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (1995–2020 version) are met: public hate speech against a racial group."
+},
+{
+"id": "L47902",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Art. 261bis StGB protects against hate speech based on race, ethnicity, religion, or sexual orientation, not disability."
+},
+{
+"id": "L47958",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Art. 261bis StGB did not exist in 1994; temporal scope of Art. 2 StGB does not apply retroactively."
+},
+{
+"id": "L47977",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public call to discrimination against Roma due to ethnicity meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L48196",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, ethnic targeting, systematic defamation, and intent."
+},
+{
+"id": "L48268",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Sexual orientation not covered by Art. 261bis StGB before 1 July 2020."
+},
+{
+"id": "L48281",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, ethnic targeting, systematic degradation."
+},
+{
+"id": "L48283",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Act meets all elements of Art. 261bis CP (post-2020 version)."
+},
+{
+"id": "L48317",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to hatred against bisexuelle persons meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L48321",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis CP (2020 version) are met: public propagation, systematic discredit, racial motive."
+},
+{
+"id": "L48471",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Kantonszugehörigkeit ist keine geschützte Eigenschaft unter Art. 261bis StGB."
+},
+{
+"id": "L48550",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, degrading, sexual orientation, intentional act."
+},
+{
+"id": "L48680",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public setting, racial discrimination, intentional act."
+},
+{
+"id": "L48690",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, ethnic targeting, systematic defamation."
+},
+{
+"id": "L48710",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "The act targeted disability, not race, ethnicity, religion, or sexual orientation."
+},
+{
+"id": "L48712",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, racial hatred, systematic degradation, intentional act."
+},
+{
+"id": "L48741",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public statement on sexual orientation meets Art. 261bis StGB (2020) elements."
+},
+{
+"id": "L48755",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "Chatgruppe ist privater Rahmen, kein öffentliches Aufkommen"
+},
+{
+"id": "L48819",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis CP (2020 version) are met: public incitement to discrimination based on sexual orientation."
+},
+{
+"id": "L49001",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Art. 261bis CP (orientation sexuelle) entered into force on 1 July 2020; act occurred in September 2019."
+},
+{
+"id": "L49012",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act, denial of human dignity based on religion, intent established."
+},
+{
+"id": "L49113",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The act occurred in a private family chat, not a public setting."
+},
+{
+"id": "L49128",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Act occurred in May 1993, before Art. 261bis StGB entered into force on 1 January 1995."
+},
+{
+"id": "L49228",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act, religious discrimination, systematic devaluation, and conscious intent meet all elements of Art. 261bis StGB."
+},
+{
+"id": "L49499",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public, degrading statement against bisexuals due to sexual orientation in 2023, post-2020 StGB version."
+},
+{
+"id": "L49514",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, ideology, sexual orientation, intent."
+},
+{
+"id": "L49519",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Act occurred before Art. 261bis StGB entered into force (1995)."
+},
+{
+"id": "L49761",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, ideology, systematic degradation, sexual orientation."
+},
+{
+"id": "L49957",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public setting, ideology targeting Roma ethnicity, and intent."
+},
+{
+"id": "L50011",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The act was private, not public as required by Art. 261bis StGB."
+},
+{
+"id": "L50072",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Art. 261bis CP (orientation sexuelle) entered into force on 1 July 2020, after the act in November 2018."
+},
+{
+"id": "L50098",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Herabsetzung wegen Beruf, nicht Rasse, Ethnie, Religion oder sexueller Orientierung."
+},
+{
+"id": "L50122",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Publicly propagated ideology discrediting people of color, meeting Art. 261bis CP elements."
+},
+{
+"id": "L50201",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to hatred based on race via leaflets in a busy pedestrian area meets all elements of Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L50244",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public, systematic devaluation of Jews due to religion meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L50505",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public degrading statement based on sexual orientation under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L50534",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act, hate incitement against homosexuals, intentional, post-2020 law applies."
+},
+{
+"id": "L50615",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Act occurred in May 1993, before Art. 261bis StGB entered into force on 1 January 1995."
+},
+{
+"id": "L50670",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Geschlechtsidentität is not protected under Art. 261bis StGB."
+},
+{
+"id": "L50678",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public propagation of racial inferiority meets Art. 261bis StGB (2020) elements."
+},
+{
+"id": "L50764",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis CP (2020 version) are met: public propagation, ideology, systematic defamation, and intent."
+},
+{
+"id": "L50999",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to hatred against homosexuals in 2018 falls under Art. 261bis StGB (1995 version)."
+},
+{
+"id": "L51004",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public dissemination of degrading theses about gay men violates Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L51006",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Art. 261bis StGB in 2018 version does not cover sexual orientation."
+},
+{
+"id": "L51033",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public hate speech against Kurds due to ethnicity."
+},
+{
+"id": "L51052",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The act was private (email to colleagues), not public as required by Art. 261bis CP."
+},
+{
+"id": "L51089",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public distribution of flyers denying Roma ethnic equality meets Art. 261bis StGB elements."
+},
+{
+"id": "L51130",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The act was private, not public as required by Art. 261bis StGB."
+},
+{
+"id": "L51139",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, systematic devaluation, sexual orientation."
+},
+{
+"id": "L51184",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public hate speech against a racial group with intent."
+},
+{
+"id": "L51297",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The act occurred in a private setting with close friends, not publicly."
+},
+{
+"id": "L51312",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Bauarbeiter sind nicht nach Rasse, Ethnie, Religion oder sexueller Orientierung diskriminiert."
+},
+{
+"id": "L51318",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Art. 261bis StGB protects against discrimination based on race, ethnicity, religion, or sexual orientation, not gender."
+},
+{
+"id": "L51327",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public propagation of ideology targeting bisexuals added to Art. 261bis since 2020."
+},
+{
+"id": "L51424",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "Act occurred in private family setting, not public as required by Art. 261bis StGB."
+},
+{
+"id": "L51446",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Age is not a protected characteristic under Art. 261bis StGB."
+},
+{
+"id": "L51490",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Art. 261bis CP (orientation sexuelle) entered into force 1 July 2020; act occurred in November 2018."
+},
+{
+"id": "L51506",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis CP (post-2020) are met: public incitement, ethnic targeting, and intent."
+},
+{
+"id": "L51547",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public propagation of inferiority based on sexual orientation violates Art. 261bis CP (2020 version)."
+},
+{
+"id": "L51565",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public hate speech against Jews due to religion, Vorsatz unbestritten, Art. 261bis StGB 2020 applies."
+},
+{
+"id": "L51604",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public distribution of flyers in a busy area meets 'public' requirement under Art. 261bis StGB (post-2020)."
+},
+{
+"id": "L51630",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The act occurred in a private family chat, not in public as required by Art. 261bis StGB."
+},
+{
+"id": "L51686",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (since 1.7.2020) are met: public, racial discrimination, intentional act."
+},
+{
+"id": "L51688",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public speech targeting sexual orientation on 1.7.2020, post-reform, with intent."
+},
+{
+"id": "L51826",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Rasse, Ethnie, Religion oder sexuelle Orientierung nicht betroffen."
+},
+{
+"id": "L51835",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to hatred against gays due to sexual orientation under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L51863",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public incitement to discrimination based on race."
+},
+{
+"id": "L51955",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public act, ideology targeting sexual orientation, deliberate action."
+},
+{
+"id": "L52096",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public expression of degrading ethnic stereotypes meets all elements of Art. 261bis StGB (post-2020 version)."
+},
+{
+"id": "L52140",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Kantonszugehörigkeit is not a protected characteristic under Art. 261bis StGB."
+},
+{
+"id": "L52151",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (since 1 July 2020) are met: public, ethnic targeting, incitement to hatred, intentional act."
+},
+{
+"id": "L52447",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Act occurred in 2019, before the 2020 amendment adding sexual orientation."
+},
+{
+"id": "L52455",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, degrading, based on sexual orientation."
+},
+{
+"id": "L52525",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Act occurred in 1994, before Art. 261bis StGB entered into force in 1995."
+},
+{
+"id": "L52576",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Act occurred in May 1993, before Art. 261bis StGB entered into force on 1 January 1995."
+},
+{
+"id": "L52680",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public, dehumanizing defamation of Jews due to their religion meets all elements of Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L52776",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public, racial, dehumanizing speech in a full bus meets all elements of Art. 261bis StGB (1995–2020 version)."
+},
+{
+"id": "L52846",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public appeal to discriminate based on race meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L53040",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis CP are met: public act, ethnic targeting, intentional degradation of dignity."
+},
+{
+"id": "L53068",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Publicly disseminated ideology targeting lesbians due to sexual orientation in March 2023, post-2020 law."
+},
+{
+"id": "L53230",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public propagation of degrading ideology based on sexual orientation under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L53243",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act, ethnic targeting, systematic dehumanization, and intent all met under Art. 261bis StGB."
+},
+{
+"id": "L53283",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public dissemination of degrading ideology against a religious group meets Art. 261bis StGB."
+},
+{
+"id": "L53322",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act, intentional, targets sexual orientation under Art. 261bis CP (2020 version)."
+},
+{
+"id": "L53434",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public racial slur meets Art. 261bis StGB (2020) elements."
+},
+{
+"id": "L53517",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Art. 261bis StGB protects against discrimination based on race, ethnicity, religion, or sexual orientation, not disability."
+},
+{
+"id": "L53552",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Act occurred in May 1993, before Art. 261bis StGB entered into force on 1 January 1995."
+},
+{
+"id": "L53822",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act, ethnic discrimination, dignity violated, intentional."
+},
+{
+"id": "L54235",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Geschlechtsidentität ist nicht geschützte Eigenschaft unter Art. 261bis StGB."
+},
+{
+"id": "L54243",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public degrading statement based on religion, with intent, under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L54605",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act, ethnic discrimination, dignity violated, intentional."
+},
+{
+"id": "L54768",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public hate speech against homosexuals due to sexual orientation meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L54822",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public hate speech against sexual orientation under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L54921",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis CP (2020 version) are met: public incitement to hatred against gay men based on sexual orientation."
+},
+{
+"id": "L55002",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "The act targets political beliefs, not race, ethnicity, religion, or sexual orientation."
+},
+{
+"id": "L55029",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to discrimination based on ethnicity in a published letter meets Art. 261bis StGB."
+},
+{
+"id": "L55066",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Kantonszugehörigkeit is not a protected characteristic under Art. 261bis StGB."
+},
+{
+"id": "L55171",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public expression on accessible platform targeting gay men by sexual orientation."
+},
+{
+"id": "L55334",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public speech against homosexuals as second-class citizens due to sexual orientation under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L55340",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act of incitement to discrimination against Jews due to religion under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L55446",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Incitement is against teachers for their profession, not race, ethnicity, religion, or sexual orientation."
+},
+{
+"id": "L55477",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (since 1.7.2020) are met: public setting, ideology targeting Muslims, systematic defamation, and intent."
+},
+{
+"id": "L55565",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Act occurred in 1994, before Art. 261bis StGB entered into force in 1995."
+},
+{
+"id": "L55676",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public expression of racial disdain, denying human dignity, meets Art. 261bis StGB elements."
+},
+{
+"id": "L55697",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The act was private, not public as required by Art. 261bis CP."
+},
+{
+"id": "L55737",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public setting, protected characteristic, and systematic devaluation meet Art. 261bis StGB."
+},
+{
+"id": "L55744",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public appeal to discriminate against Kurds due to ethnicity meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L55762",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public, degrading statement against Muslims due to religion, with intent, under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L55787",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, ethnic targeting, systematic degradation, and intent."
+},
+{
+"id": "L55801",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public hate speech against homosexuals due to sexual orientation."
+},
+{
+"id": "L55807",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Act occurred in May 1993, before Art. 261bis StGB entered into force on 1 January 1995."
+},
+{
+"id": "L55821",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "Act occurred in private family setting, not public as required by Art. 261bis StGB."
+},
+{
+"id": "L55858",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (since 1 July 2020) are met: public, racial, degrading ideology."
+},
+{
+"id": "L56068",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Kantonszugehörigkeit is not a protected characteristic under Art. 261bis StGB."
+},
+{
+"id": "L56112",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis CP (post-2020) are met: public act, systematic denigration, religious motive, intentional conduct."
+},
+{
+"id": "L56151",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to racial discrimination in a crowded bus meets all elements of Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L56235",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public speech in 2020, racial degradation, meets all elements of Art. 261bis StGB."
+},
+{
+"id": "L56261",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public propagation of racial inferiority meets Art. 261bis CP elements."
+},
+{
+"id": "L56355",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Act meets all elements of Art. 261bis StGB (post-2020 version)."
+},
+{
+"id": "L56368",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Appartenance cantonale not protected under Art. 261bis CP."
+},
+{
+"id": "L56389",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Cantonality not protected under Art. 261bis CP."
+},
+{
+"id": "L56420",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to discrimination against Jews due to religion under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L56431",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "Private setting with close friends, not public as per BGE 130 IV 111."
+},
+{
+"id": "L56496",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public propagation of degrading ideology against Muslims due to religion meets all elements of Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L56804",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (1995 version) are met: public propagation, ethnic targeting, intentional act."
+},
+{
+"id": "L56822",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis CP (post-2020) are met: public propagation, ethnic targeting, intent."
+},
+{
+"id": "L57097",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis CP (post-2020) are met: public, intentional, discriminatory act against gay men based on sexual orientation."
+},
+{
+"id": "L57113",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act, systematic degradation based on religion, and conscious intent meet all elements of Art. 261bis StGB."
+},
+{
+"id": "L57351",
+"label": "convict",
+"deciding_element": "none",
+"reason": "The act meets all elements of Art. 261bis StGB (post-2020 version)."
+},
+{
+"id": "L57631",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public denial of equality based on ethnicity meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L57701",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public social media post inciting hatred against Kurds due to ethnic origin meets all elements of Art. 261bis StGB."
+},
+{
+"id": "L57804",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public hate speech against gay men due to sexual orientation."
+},
+{
+"id": "L57820",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public setting, religious discrimination, intentional conduct meet all elements of Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L57894",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to discrimination based on sexual orientation under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L58098",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Gender is not a protected characteristic under Art. 261bis StGB."
+},
+{
+"id": "L58366",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act, ethnic motivation, denial of human dignity, intentional."
+},
+{
+"id": "L58594",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (since 1 July 2020) are met."
+},
+{
+"id": "L58743",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The act occurred in a private family chat, not in public as required by Art. 261bis StGB."
+},
+{
+"id": "L58806",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public, racist, dehumanizing statements distributed in a busy pedestrian zone meet all elements of Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L58855",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public propagation of degrading ideology based on race in a crowded bus meets all elements of Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L58874",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Act meets all elements of Art. 261bis StGB (post-2020 version)."
+},
+{
+"id": "L59154",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public, dehumanizing statement against Jews due to religion, March 2023 under post-2020 law."
+},
+{
+"id": "L59244",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to discrimination based on sexual orientation in June 2020 under Art. 261bis StGB (post-2020 version)."
+},
+{
+"id": "L59279",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public hate speech against a racial group, intentional act, and post-2020 date."
+},
+{
+"id": "L59377",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, degrading, religious discrimination, intentional act."
+},
+{
+"id": "L59433",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public setting, ideology targeting Jews due to religion, and intent."
+},
+{
+"id": "L59503",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to discrimination against Jews due to religion under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L59539",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public promotion of systematic denigration of bisexuals based on sexual orientation under Art. 261bis CP (2020 version)."
+},
+{
+"id": "L59587",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Art. 261bis StGB in 2018 version did not cover sexual orientation."
+},
+{
+"id": "L59687",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act, intentional discrimination based on sexual orientation under Art. 261bis CP (2020 version)."
+},
+{
+"id": "L59737",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public call to discriminate against homosexuals meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L59744",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The act occurred in a private family group, not publicly."
+},
+{
+"id": "L59755",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public degrading statement against Jews due to religion, Vorsatz unbestritten, Art. 261bis StGB 2020 applies."
+},
+{
+"id": "L59797",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis CP (post-2020) are met: public propagation, systematic discredit, and intent."
+},
+{
+"id": "L59801",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (since 1 July 2020) are met: public, ethnic targeting, systematic defamation, and intent."
+},
+{
+"id": "L59859",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, religious discrimination, intent."
+},
+{
+"id": "L59972",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Herabsetzung nicht auf Rasse, Ethnie, Religion oder sexuelle Orientierung gerichtet."
+},
+{
+"id": "L60232",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (post-2020) are met: public, religious discrimination, intent."
+},
+{
+"id": "L60233",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "Chatgruppe ist privater Rahmen, kein öffentliches Erscheinen"
+},
+{
+"id": "L60267",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "Act occurred in a private family setting, not publicly."
+},
+{
+"id": "L60406",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The act occurred in a non-public, private setting with a small, familiar group."
+},
+{
+"id": "L60611",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public ethnic defamation meets Art. 261bis StGB (2020) elements."
+},
+{
+"id": "L60791",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis CP (post-2020) are met: public incitement to discrimination based on sexual orientation."
+},
+{
+"id": "L60797",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public distribution of flyers denying Roma equality meets Art. 261bis StGB (2020) elements."
+},
+{
+"id": "L60875",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The act occurred in a private telephone conversation, not publicly."
+},
+{
+"id": "L60884",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Art. 261bis StGB in 2019 version does not cover sexual orientation."
+},
+{
+"id": "L60902",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public dissemination of systematic degrading ideology against Muslims meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L60956",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, ethnic targeting, systematic degradation, and intent."
+},
+{
+"id": "L61248",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis CP (post-2020) are met: public propagation, racial discrimination, intent."
+},
+{
+"id": "L61314",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis CP (2020) are met: public act, ethnic motivation, intentional incitement to hatred."
+},
+{
+"id": "L61378",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Art. 261bis StGB in 2019 version does not cover sexual orientation."
+},
+{
+"id": "L61457",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act of ethnic discrimination in a full bus, meeting all elements of Art. 261bis StGB (1995–2020 version)."
+},
+{
+"id": "L61474",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, ethnic targeting, degrading speech, intent."
+},
+{
+"id": "L61592",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public hate speech against homosexuals due to sexual orientation."
+},
+{
+"id": "L61630",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (1995 version) are met."
+},
+{
+"id": "L61725",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Hate speech under Art. 261bis StGB is limited to race, ethnicity, religion, or sexual orientation, not gender."
+},
+{
+"id": "L61737",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public dissemination of degrading ideology against a religious group meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L61768",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Geschlechtsidentität is not a protected characteristic under Art. 261bis StGB."
+},
+{
+"id": "L61816",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (since 2020) are met: public hate speech against an ethnic group."
+},
+{
+"id": "L61846",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act, religious discrimination, dignity violated, intent established."
+},
+{
+"id": "L61855",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public, degrading speech against bisexuals due to sexual orientation meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L61945",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The act was private, not public as required by Art. 261bis StGB."
+},
+{
+"id": "L61948",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Art. 261bis StGB protects against discrimination based on race, ethnicity, religion, or sexual orientation, not gender identity."
+},
+{
+"id": "L62223",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public hate speech against a group due to ethnicity."
+},
+{
+"id": "L62245",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "The act targets political beliefs, not race, ethnicity, religion, or sexual orientation."
+},
+{
+"id": "L62251",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The act occurred in a private family chat, not in public as required by Art. 261bis StGB."
+},
+{
+"id": "L62374",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "Private communication to colleagues does not constitute 'public' under Art. 261bis StGB."
+},
+{
+"id": "L62389",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Age is not a protected characteristic under Art. 261bis StGB."
+},
+{
+"id": "L62439",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public propagation of degrading ideology against Jews due to religion under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L62580",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public setting, racial discrimination, intentional act."
+},
+{
+"id": "L62624",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Art. 261bis StGB protects against discrimination based on race, ethnicity, religion, or sexual orientation, not disability."
+},
+{
+"id": "L62802",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Geschlecht is not a protected characteristic under Art. 261bis StGB."
+},
+{
+"id": "L62953",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to hatred against Jews due to their religion in a newspaper letter, March 2023, under Art. 261bis CP post-2020."
+},
+{
+"id": "L63230",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Act occurred in October 1994, before Art. 261bis StGB entered into force on 1 January 1995."
+},
+{
+"id": "L63338",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to discrimination based on sexual orientation in January 2024 under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L63353",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to discrimination based on sexual orientation under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L63365",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The act was private, not public, as defined in BGE 130 IV 111."
+},
+{
+"id": "L63537",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public call to discriminate against Roma due to ethnicity meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L63685",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public hate speech against a racial group, deliberate act, and post-2020 date."
+},
+{
+"id": "L63945",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Age not protected under Art. 261bis StGB."
+},
+{
+"id": "L63984",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (1995–2020 version) are met: public setting, ethnic targeting, degrading statements, and intent."
+},
+{
+"id": "L63993",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public expression targeting gay men's sexual orientation meets Art. 261bis CP post-2020."
+},
+{
+"id": "L64226",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public call to discriminate against homosexuals due to sexual orientation meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L64296",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Act occurred in May 1993, before Art. 261bis StGB entered into force on 1 Jan 1995."
+},
+{
+"id": "L64537",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public distribution of tracts promoting inferior status to Muslims based on religion meets Art. 261bis CP elements."
+},
+{
+"id": "L64545",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis CP (post-2020) are met: public act, intent, and racial discrimination."
+},
+{
+"id": "L64609",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public speech targeting Roma ethnicity with degrading language meets all elements of Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L64642",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public act, sexual orientation, incitement to discrimination."
+},
+{
+"id": "L64671",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act, ethnic targeting, dignity violation, intentional, post-2020 law applies."
+},
+{
+"id": "L64873",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public denial of human worth based on ethnicity meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L64920",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (since 2020) are met: public, ethnic discrimination, degrading, intentional."
+},
+{
+"id": "L65109",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis CP (post-2020) are met: public act, ideology to systematically denigrate, and orientation sexuelle."
+},
+{
+"id": "L65153",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, religious discrimination, degrading, intentional."
+},
+{
+"id": "L65158",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to discrimination based on sexual orientation under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L65180",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "Chatgruppe des Sportvereins gilt als privater Rahmen nach BGE 130 IV 111."
+},
+{
+"id": "L65239",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Publicly degrading a religious group in a visible social media post meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L65276",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to hatred based on race in a newspaper letter in 2022 meets all elements of Art. 261bis StGB (post-2020 version)."
+},
+{
+"id": "L65304",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public, degrading treatment of Jenish people due to ethnicity meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L65330",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The act occurred in a private family setting, not publicly."
+},
+{
+"id": "L65363",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public distribution of tracts promoting inferior status to Muslims based on religion meets Art. 261bis CP elements."
+},
+{
+"id": "L65389",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (since 2020) are met: public, religious discrimination, systematic degradation, and intent."
+},
+{
+"id": "L65432",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "Private conversation with family member, not public."
+},
+{
+"id": "L65485",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Kantonszugehörigkeit is not a protected characteristic under Art. 261bis StGB."
+},
+{
+"id": "L65556",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public speech against bisexuals for discrimination in 2020 under Art. 261bis StGB (post-2020 version)."
+},
+{
+"id": "L65596",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public speech denying equality to Jews due to religion meets Art. 261bis StGB (2020) elements."
+},
+{
+"id": "L65627",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public setting, racial discrimination, intentional act."
+},
+{
+"id": "L65771",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Geschlechtsidentität is not a protected characteristic under Art. 261bis StGB."
+},
+{
+"id": "L65997",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public propagation of degrading ideology against Muslims meets Art. 261bis StGB (2020) elements."
+},
+{
+"id": "L66093",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Act occurred in October 1994, before Art. 261bis StGB entered into force on 1 January 1995."
+},
+{
+"id": "L66136",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "Private telephone call does not constitute 'public' under Art. 261bis StGB."
+},
+{
+"id": "L66202",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public denigration of Jews due to their religion, denying human dignity, meets all elements of Art. 261bis StGB."
+},
+{
+"id": "L66215",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (since 1.7.2020) are met: public, religious discrimination, degrading, intentional."
+},
+{
+"id": "L66279",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Hassruf gerichtet auf Beruf, nicht auf Rasse, Ethnie, Religion oder sexuelle Orientierung."
+},
+{
+"id": "L66300",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to hatred against Asians due to race via leaflets in a public area."
+},
+{
+"id": "L66581",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to discrimination against Roma due to ethnicity under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L66661",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "Act occurred in private family setting, not public as required by Art. 261bis StGB."
+},
+{
+"id": "L67075",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "The law protects against discrimination based on race, ethnicity, religion, or sexual orientation, not sex."
+},
+{
+"id": "L67098",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public, ethnic-based, degrading statement on a public platform, September 2021."
+},
+{
+"id": "L67303",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "Act occurred in a private setting among close friends, not publicly."
+},
+{
+"id": "L67503",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to discrimination against Hindus for their religion meets all elements of Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L67701",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public speech at a busy market, ethnic targeting, degrading statements meet all elements of Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L67800",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public expression on accessible platform targeting gay men by sexual orientation."
+},
+{
+"id": "L67908",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (since 1.7.2020) are met: public hate speech against Muslims due to religion."
+},
+{
+"id": "L68261",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public social media post denying human dignity to Muslims based on religion meets all elements of Art. 261bis StGB (post-2020 version)."
+},
+{
+"id": "L68362",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (1995–2020 version) are met: public incitement to discrimination based on ethnicity."
+},
+{
+"id": "L68385",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public speech, ethnic discrimination, intentional, post-2020 law applies."
+},
+{
+"id": "L68757",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public hate speech against Jenisch due to ethnicity meets all elements of Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L68882",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to discrimination based on sexual orientation under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L68971",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to hatred against Muslims meets Art. 261bis CP post-2020."
+},
+{
+"id": "L69039",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Kantonszugehörigkeit ist kein geschütztes Merkmal nach Art. 261bis StGB."
+},
+{
+"id": "L69111",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "The law protects against discrimination based on race, ethnicity, religion, or sexual orientation, not gender."
+},
+{
+"id": "L69291",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public speech, ethnic targeting, systematic dehumanization, intentional act all meet Art. 261bis CP elements."
+},
+{
+"id": "L69363",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to discrimination based on religion under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L69681",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act, ethnic targeting, dignity violation, and intent are all met under Art. 261bis StGB."
+},
+{
+"id": "L69809",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public dehumanization of Jews due to religion, proven facts meet all elements of Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L69935",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Act occurred in 1993, before Art. 261bis StGB entered into force in 1995."
+},
+{
+"id": "L70264",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "Private setting (garden party with 20 guests) does not meet 'public' requirement under Art. 261bis StGB."
+},
+{
+"id": "L70372",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Art. 261bis StGB in 2018 version does not cover sexual orientation."
+},
+{
+"id": "L70495",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public defamation of Jews due to religion violates Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L70608",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public, racial, degrading speech in a full bus meets all elements of Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L70714",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, ideology, systematic degradation, sexual orientation, intentional act."
+},
+{
+"id": "L70759",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "Private setting with close friends, not public as per BGE 130 IV 111."
+},
+{
+"id": "L70764",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The act occurred in a private, closed group, not publicly."
+},
+{
+"id": "L70787",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public degradation due to sexual orientation meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L70958",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "The ideology targets gender, not race, ethnicity, religion, or sexual orientation."
+},
+{
+"id": "L71038",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Age is not a protected characteristic under Art. 261bis StGB."
+},
+{
+"id": "L71130",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, ethnic targeting, degrading, intentional."
+},
+{
+"id": "L71180",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis CP (post-2020) are met: public incitement to discrimination based on race."
+},
+{
+"id": "L71286",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (post-2020) are met: public hate speech against bisexuals due to sexual orientation."
+},
+{
+"id": "L71748",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, ethnic discrimination, degrading, intentional."
+},
+{
+"id": "L71772",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to hatred against bisexuals based on sexual orientation under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L71774",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, ethnic discrimination, intentional act."
+},
+{
+"id": "L71912",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The act occurred in a non-public, private association setting."
+},
+{
+"id": "L72070",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public setting, protected group, systematic devaluation, post-2020 law applies."
+},
+{
+"id": "L72305",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to discrimination based on sexual orientation under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L72431",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to hatred based on cantonal origin under Art. 261bis StGB."
+},
+{
+"id": "L72507",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "Act occurred in a private family group, not publicly."
+},
+{
+"id": "L72587",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Kantonszugehörigkeit ist kein geschütztes Merkmal nach Art. 261bis StGB."
+},
+{
+"id": "L72650",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public statement in a regional newspaper targeting gay men by sexual orientation under Art. 261bis CP (2020 version)."
+},
+{
+"id": "L72704",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis CP (post-2020) are met: public denigration of Roma people based on ethnicity, intent, and dignity violation."
+},
+{
+"id": "L72716",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to hatred against a religious group meets all elements of Art. 261bis StGB."
+},
+{
+"id": "L72751",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to hatred against bisexuelle persons meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L72787",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Herabsetzung wegen Geschlecht, nicht Rasse, Ethnie, Religion oder sexueller Orientierung."
+},
+{
+"id": "L72918",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The act occurred in a private setting among close friends, not publicly."
+},
+{
+"id": "L72954",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Art. 261bis StGB requires targeting race, ethnicity, religion, or sexual orientation, not political opinion."
+},
+{
+"id": "L73174",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public hate speech against Kosovo-Albanians due to ethnicity meets all elements of Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L73323",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, systematic devaluation, religion, intent."
+},
+{
+"id": "L73539",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public dehumanization of Muslims due to religion, Vorsatz unbestritten, Art. 261bis StGB (2020) applies."
+},
+{
+"id": "L73615",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public propagation of degrading ideology based on sexual orientation under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L73739",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act under Art. 261bis CP (2020 version) met all elements."
+},
+{
+"id": "L73782",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis CP (post-2020) are met: public incitement to discrimination against Jews due to religion."
+},
+{
+"id": "L73832",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act, racial targeting, systematic degradation, intentional conduct all met."
+},
+{
+"id": "L73834",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public hate speech against homosexuals due to sexual orientation."
+},
+{
+"id": "L73969",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to discrimination against Hindus due to religion in 2019 under Art. 261bis StGB (pre-2020 version)."
+},
+{
+"id": "L73985",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to hatred against bisexuality based on sexual orientation under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L74043",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act, hate incitement, sexual orientation, intentional, post-2020 law applies."
+},
+{
+"id": "L74063",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public propagation of degrading ideology against a race in 2024 meets all elements of Art. 261bis StGB (post-2020 version)."
+},
+{
+"id": "L74066",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public call to discriminate against Muslims due to religion meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L74180",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public, degrading speech against Roma due to ethnicity meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L74222",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act, denial of human dignity based on sexual orientation, intentional."
+},
+{
+"id": "L74240",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Kantonszugehörigkeit ist keine geschützte Eigenschaft unter Art. 261bis StGB."
+},
+{
+"id": "L74255",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Act occurred in May 1993, before Art. 261bis StGB entered into force on 1 January 1995."
+},
+{
+"id": "L74407",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The act occurred in a private setting among close friends, not publicly."
+},
+{
+"id": "L74487",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, racial discrimination, intentional act."
+},
+{
+"id": "L74527",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Art. 261bis StGB in 2019 version does not cover sexual orientation."
+},
+{
+"id": "L74620",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public call to discrimination based on religion."
+},
+{
+"id": "L74720",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public propagation of degrading ideology against Jews due to religion under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L74761",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, racial hatred, intent."
+},
+{
+"id": "L74779",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, ideology, systematic degradation, racial motive."
+},
+{
+"id": "L74803",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (since 1 July 2020) are met: public, sexual orientation, degrading statements, intent."
+},
+{
+"id": "L74829",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Herabsetzung wegen Berufs, nicht Rasse, Ethnie, Religion oder sexueller Orientierung."
+},
+{
+"id": "L75124",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public hate speech against lesbians due to sexual orientation."
+},
+{
+"id": "L75144",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public statement targeting Roma ethnicity with degrading language meets all elements of Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L75217",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to hatred against gays based on sexual orientation under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L75251",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (1995 version) are met: public act, religious motivation, intentional incitement."
+},
+{
+"id": "L75447",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public hate speech against race met under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L75493",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act, racial targeting, systematic degradation, intentional conduct under Art. 261bis CP (2020 version)."
+},
+{
+"id": "L75644",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "The call to discriminate is based on profession, not race, ethnicity, religion, or sexual orientation."
+},
+{
+"id": "L75986",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "Statement made in a private family chat, not public."
+},
+{
+"id": "L75994",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public speech targeting Hindus by religion meets all elements of Art. 261bis StGB."
+},
+{
+"id": "L76110",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The act occurred in a private setting among close friends, not publicly."
+},
+{
+"id": "L76226",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public call to discriminate against homosexuals due to sexual orientation meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L76253",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public hate speech against lesbians due to sexual orientation."
+},
+{
+"id": "L76278",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public dissemination of systematic degrading ideology against Roma due to ethnicity under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L76687",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Kantonszugehörigkeit ist kein geschütztes Merkmal nach Art. 261bis StGB."
+},
+{
+"id": "L76856",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Act occurred in May 1993, before the law entered into force in January 1995."
+},
+{
+"id": "L76899",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Act meets all elements of Art. 261bis StGB (post-2020 version)."
+},
+{
+"id": "L76955",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020 version) are met: public incitement to discrimination based on ethnicity."
+},
+{
+"id": "L77100",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public hate speech against Jews due to religion meets all elements of Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L77187",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public ethnic-based devaluation meets Art. 261bis StGB (2020) elements."
+},
+{
+"id": "L77360",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, ideology, systematic defamation, sexual orientation, deliberate act."
+},
+{
+"id": "L77383",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act, systematic denigration based on religion, and conscious intent meet all elements of Art. 261bis StGB."
+},
+{
+"id": "L77478",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public, dehumanizing statement against Jews due to religion, March 2023 under post-2020 law."
+},
+{
+"id": "L77648",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "No protected characteristic (race, ethnicity, religion) targeted."
+},
+{
+"id": "L77831",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public hate speech against a racial group, intentional act, and protected legal interest."
+},
+{
+"id": "L77883",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The act was private (only to sister), not public as required by Art. 261bis StGB."
+},
+{
+"id": "L77987",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Art. 261bis CP protects against discrimination based on race, ethnicity, religion, or sexual orientation, not gender identity."
+},
+{
+"id": "L78049",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, degrading, religious discrimination, intentional act."
+},
+{
+"id": "L78100",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020 version) are met: public incitement to hatred based on sexual orientation."
+},
+{
+"id": "L78175",
+"label": "open",
+"deciding_element": "setting",
+"reason": "The setting's public nature is unclear; private vs. public depends on context per BGE 130 IV 111."
+},
+{
+"id": "L78409",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public ethnic defamation meets Art. 261bis StGB (2020) elements."
+},
+{
+"id": "L78479",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, ethnic targeting, systematic defamation, and intent."
+},
+{
+"id": "L78528",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public degrading statement based on sexual orientation under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L78562",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public call to discriminate based on sexual orientation under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L78665",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (post-2020) are met: public, racial discrimination, systematic devaluation, intent."
+},
+{
+"id": "L78711",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The act occurred in a private family chat, not in public as required by Art. 261bis StGB."
+},
+{
+"id": "L78809",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "Private family setting, not public as per BGE 130 IV 111."
+},
+{
+"id": "L78839",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public ethnic defamation in a video meets all elements of Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L78922",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Age not protected characteristic under Art. 261bis StGB."
+},
+{
+"id": "L78990",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public propagation of racist ideology before 40 unknown participants meets Art. 261bis StGB."
+},
+{
+"id": "L79051",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Age is not a protected characteristic under Art. 261bis StGB."
+},
+{
+"id": "L79145",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis CP (post-2020) are met: public act, racial discrimination, dignitary harm, intent."
+},
+{
+"id": "L79427",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (1995–2020) are met: public, ethnic targeting, systematic defamation."
+},
+{
+"id": "L79734",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public hate speech against lesbians due to sexual orientation."
+},
+{
+"id": "L79788",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "The offense is based on race, ethnicity, religion, or sexual orientation, not gender."
+},
+{
+"id": "L79963",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (since 2020) are met: public, racial, degrading, intentional."
+},
+{
+"id": "L80045",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Art. 261bis CP protects against discrimination based on race, ethnicity, religion, or sexual orientation, not gender."
+},
+{
+"id": "L80054",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, racial discrimination, ideology, intentional act."
+},
+{
+"id": "L80244",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Art. 261bis StGB protects against hate speech based on race, ethnicity, religion, or sexual orientation, not age."
+},
+{
+"id": "L80272",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public, intentional degradation of Hindus due to religion meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L80310",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public ethnic slur meets Art. 261bis StGB (2020) elements."
+},
+{
+"id": "L80404",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (since 1.7.2020) are met: public call to discrimination against Muslims due to religion."
+},
+{
+"id": "L80510",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act, systematic degradation of bisexuals, post-2020 law applies."
+},
+{
+"id": "L80512",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Geschlechtsidentität is not a protected characteristic under Art. 261bis StGB."
+},
+{
+"id": "L80753",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "Act occurred in private family setting, not public as required by Art. 261bis StGB."
+},
+{
+"id": "L80792",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to discrimination based on sexual orientation on 1 July 2020, after the law's amendment."
+},
+{
+"id": "L80884",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, ethnic targeting, incitement to hatred, intentional act."
+},
+{
+"id": "L80908",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public call to discrimination based on sexual orientation."
+},
+{
+"id": "L80934",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public dissemination of ethnic hatred meets Art. 261bis StGB (2020) elements."
+},
+{
+"id": "L80955",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, ethnic targeting, systematic degradation, intentional act."
+},
+{
+"id": "L81145",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Profession is not a protected characteristic under Art. 261bis StGB."
+},
+{
+"id": "L81485",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act, religious discrimination, intentional, post-2020 law applies."
+},
+{
+"id": "L81954",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public dissemination of racist ideology meets Art. 261bis StGB (2020) elements."
+},
+{
+"id": "L82052",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public statement on accessible platform, ethnic discrimination, intent met all elements of Art. 261bis CP post-2020."
+},
+{
+"id": "L82075",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "Act occurred in private family setting, not public as required by Art. 261bis StGB."
+},
+{
+"id": "L82102",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public speech disseminating ideology systematically degrading a religious group meets Art. 261bis StGB."
+},
+{
+"id": "L82133",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Age is not a protected characteristic under Art. 261bis StGB."
+},
+{
+"id": "L82174",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public expression denying human dignity based on religion meets Art. 261bis CP elements."
+},
+{
+"id": "L82205",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, systematic devaluation, sexual orientation."
+},
+{
+"id": "L82212",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to discrimination against Jews based on religion under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L82217",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Incitement is based on age, not race, ethnicity, religion, or sexual orientation."
+},
+{
+"id": "L82239",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, ethnic targeting, systematic degradation, and intent."
+},
+{
+"id": "L82307",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act, dehumanizing Muslims, intent established, post-2020 law applies."
+},
+{
+"id": "L82325",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Act occurred in May 1993, before Art. 261bis StGB entered into force in January 1995."
+},
+{
+"id": "L82349",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, religious discrimination, degrading, intentional."
+},
+{
+"id": "L82370",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Act meets all elements of Art. 261bis StGB (post-2020 version)."
+},
+{
+"id": "L82421",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (1995 version) are met."
+},
+{
+"id": "L82434",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (since 2020) are met: public hate speech against a group due to ethnicity."
+},
+{
+"id": "L82621",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (since 1 July 2020) are met: public call to discrimination based on sexual orientation."
+},
+{
+"id": "L82625",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Art. 261bis StGB protects against discrimination based on race, ethnicity, religion, or sexual orientation, not age."
+},
+{
+"id": "L82640",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to discrimination against Jews due to religion in a crowded bus in May 2022 meets all elements of Art. 261bis StGB."
+},
+{
+"id": "L82948",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public hate speech against Muslims meets Art. 261bis StGB (2020) elements."
+},
+{
+"id": "L83043",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "Private message to sister does not constitute 'public' under Art. 261bis StGB."
+},
+{
+"id": "L83301",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public distribution of degrading literature against homosexuals in a full bus in March 2023 meets all elements of Art. 261bis StGB (post-2020 version)."
+},
+{
+"id": "L83416",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Act occurred in 1994, before Art. 261bis StGB entered into force in 1995."
+},
+{
+"id": "L83549",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Hassruf gerichtet auf Beruf, nicht auf Rasse, Ethnie, Religion oder sexuelle Orientierung."
+},
+{
+"id": "L83609",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Act occurred in October 1994, before Art. 261bis StGB entered into force on 1 January 1995."
+},
+{
+"id": "L83642",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Art. 261bis CP protects against discrimination based on race, ethnicity, religion, or sexual orientation, not gender identity."
+},
+{
+"id": "L83699",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Act meets all elements of Art. 261bis StGB (post-2020 version)."
+},
+{
+"id": "L83708",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public call to discriminate based on sexual orientation under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L83850",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (post-2020) are met: public, ideology, systematic defamation, intent."
+},
+{
+"id": "L83886",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public, ethnic slur, degrading, intent proven, post-2020 law applies."
+},
+{
+"id": "L83906",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The act occurred in a private setting (birthday party in a garden) among friends and acquaintances."
+},
+{
+"id": "L83919",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis CP (post-2020) are met: public propagation, ethnic targeting, intentional act."
+},
+{
+"id": "L84038",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, ethnic targeting, incitement to hatred, intentional act."
+},
+{
+"id": "L84059",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The act occurred in a private family group, not publicly."
+},
+{
+"id": "L84122",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The act occurred in a private family chat, not in public as required by Art. 261bis StGB."
+},
+{
+"id": "L84160",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public dissemination of degrading ideology against bisexuality meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L84175",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public statement denying Muslims human equality due to religion meets Art. 261bis StGB elements."
+},
+{
+"id": "L84195",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public degradation based on canton (race/ethnicity) in a pedestrian zone meets Art. 261bis StGB."
+},
+{
+"id": "L84266",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The act occurred in a private family setting, not publicly."
+},
+{
+"id": "L84495",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public propagation of degrading ideology against Muslims due to religion."
+},
+{
+"id": "L84632",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public speech against Tamils due to ethnicity, degrading them systematically, meets all elements of Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L84750",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (post-2020) are met: public, ethnic targeting, systematic degradation, and intent."
+},
+{
+"id": "L84804",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (since 1 July 2020) are met: public, discriminatory, sexual orientation, intentional."
+},
+{
+"id": "L84823",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Disability not protected under Art. 261bis StGB."
+},
+{
+"id": "L84902",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public degrading statement against Hindus due to religion, v. 261bis StGB (2020) met."
+},
+{
+"id": "L85009",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis CP (post-2020) are met: public incitement to hatred based on ethnicity."
+},
+{
+"id": "L85175",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public call to discriminate against Muslims due to religion meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L85271",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public speech denying Tamil ethnicity's human equality meets Art. 261bis StGB (2020) elements."
+},
+{
+"id": "L85509",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Herabsetzung wegen Berufs, nicht Rasse, Ethnie, Religion oder sexueller Orientierung."
+},
+{
+"id": "L85544",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Act occurred in 1994, before Art. 261bis StGB entered into force in 1995."
+},
+{
+"id": "L85941",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public denigration of gay men based on sexual orientation violates Art. 261bis CP (2020 version)."
+},
+{
+"id": "L85981",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public dissemination of degrading ideology against homosexuals since 1 July 2020."
+},
+{
+"id": "L86336",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Age is not a protected characteristic under Art. 261bis CP."
+},
+{
+"id": "L86347",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public degrading statement against people of African descent due to race, vorsätzlich."
+},
+{
+"id": "L86373",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public ethnic dehumanization meets Art. 261bis StGB (2020) elements."
+},
+{
+"id": "L86429",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public dehumanization of Jews due to religion, September 2021 (post-2020 law)."
+},
+{
+"id": "L86439",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act, systematic degradation based on sexual orientation under Art. 261bis CP (2020 version)."
+},
+{
+"id": "L86644",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act, systematic denigration of Muslims, intent established."
+},
+{
+"id": "L86692",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Act occurred in 1994, before Art. 261bis StGB entered into force in 1995."
+},
+{
+"id": "L86749",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public hate speech against homosexuals due to sexual orientation meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L87055",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act targeting bisexuals by sexual orientation under Art. 261bis CP (2020 version)."
+},
+{
+"id": "L87093",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public degrading statement against homosexuals due to sexual orientation in 2020 under Art. 261bis StGB."
+},
+{
+"id": "L87101",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public speech against Tamils due to ethnicity, degrading them systematically."
+},
+{
+"id": "L87127",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public denigration of homosexuals denying human dignity meets Art. 261bis CP post-2020."
+},
+{
+"id": "L87197",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "Act occurred in private family setting, not public as required by Art. 261bis StGB."
+},
+{
+"id": "L87275",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis CP (post-2020) are met: public incitement to discrimination based on race."
+},
+{
+"id": "L87492",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, systematic devaluation, sexual orientation, intentional act."
+},
+{
+"id": "L87567",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "Act occurred in a private family setting, not publicly."
+},
+{
+"id": "L87578",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Age is not a protected characteristic under Art. 261bis StGB."
+},
+{
+"id": "L87632",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public hate speech against Jews due to religion under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L87636",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to discrimination based on sexual orientation under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L87669",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to hatred based on race in a newspaper letter, May 2022, under Art. 261bis StGB (post-2020 version)."
+},
+{
+"id": "L87868",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public ethnic slur meets Art. 261bis StGB (2020) elements."
+},
+{
+"id": "L87997",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public degrading remarks against Roma due to ethnicity meet Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L88030",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Art. 261bis StGB protects against discrimination based on race, ethnicity, religion, or sexual orientation, not gender identity."
+},
+{
+"id": "L88033",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "The protected characteristics under Art. 261bis StGB do not include gender."
+},
+{
+"id": "L88058",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to hatred against Black people based on race under Art. 261bis StGB (post-2020 version)."
+},
+{
+"id": "L88175",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Art. 261bis StGB in 2019 version did not cover sexual orientation."
+},
+{
+"id": "L88217",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public defamatory speech against Jenisch people due to ethnicity meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L88250",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public appeal to discriminate against Roma due to ethnicity meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L88269",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Act meets all elements of Art. 261bis StGB (post-2020 version)."
+},
+{
+"id": "L88313",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Geschlechtsidentität ist nicht unter Art. 261bis StGB geschützt."
+},
+{
+"id": "L88363",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The act occurred in a private family chat, not in public as required by Art. 261bis StGB."
+},
+{
+"id": "L88388",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public speech in 2020, targeting sexual orientation under Art. 261bis CP (post-2020 version)."
+},
+{
+"id": "L88425",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis CP (2020 version) are met: public incitement to hatred based on race."
+},
+{
+"id": "L88437",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public degrading statement against Jews due to religion, Vorsatz unbestritten, Art. 261bis StGB 2020 applies."
+},
+{
+"id": "L89238",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (1995–2020) are met: public, religious discrimination, intentional act."
+},
+{
+"id": "L89239",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Age is not a protected characteristic under Art. 261bis StGB."
+},
+{
+"id": "L89250",
+"label": "convict",
+"deciding_element": "none",
+"reason": "The act meets all elements of Art. 261bis StGB (post-2020 version)."
+},
+{
+"id": "L89275",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (1995–2020) are met: public, ethnic targeting, systematic degradation, and intent."
+},
+{
+"id": "L89301",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public propagation of degrading ideology based on sexual orientation under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L89375",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Art. 261bis StGB protects against discrimination based on race, ethnicity, religion, or sexual orientation, not gender identity."
+},
+{
+"id": "L89462",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "Private family setting, not public as per BGE 130 IV 111."
+},
+{
+"id": "L89557",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "Private conversation with brother does not constitute 'public' under Art. 261bis StGB."
+},
+{
+"id": "L89642",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public setting, racial targeting, and degrading statements meet all elements of Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L89718",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Art. 261bis StGB protects against hate speech based on race, ethnicity, religion, or sexual orientation, not disability."
+},
+{
+"id": "L89828",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public hate speech against lesbians due to sexual orientation meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L89970",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public call to discriminate against Muslims due to religion meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L90215",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Age is not a protected characteristic under Art. 261bis StGB."
+},
+{
+"id": "L90282",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public dissemination of degrading ideology against homosexuals meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L90447",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public speech against homosexuals due to sexual orientation meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L90518",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The act occurred in a private family chat, not a public setting."
+},
+{
+"id": "L90520",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act, intentional discrimination based on sexual orientation under Art. 261bis CP (2020 version)."
+},
+{
+"id": "L90581",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, ideology, systematic defamation, religion, intent."
+},
+{
+"id": "L90624",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (1995–2020 version) are met: public incitement to hatred based on race."
+},
+{
+"id": "L90747",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "Private telephone call does not constitute 'public' under Art. 261bis StGB."
+},
+{
+"id": "L90777",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act, ethnic motivation, intentional discrimination against Roma in housing and employment."
+},
+{
+"id": "L90917",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, hate speech, sexual orientation."
+},
+{
+"id": "L90923",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "Private family setting, not public as per BGE 130 IV 111."
+},
+{
+"id": "L90950",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "The act was private (phone call with brother), not public as required by Art. 261bis CP."
+},
+{
+"id": "L91175",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act, ethnic motivation, denial of human dignity, intentional."
+},
+{
+"id": "L91200",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to hatred against Jews due to religion in a newspaper letter in 2023, under Art. 261bis CP post-2020."
+},
+{
+"id": "L91387",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, racial, degrading ideology."
+},
+{
+"id": "L91409",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public setting, religious targeting, and systematic degradation meet Art. 261bis StGB elements."
+},
+{
+"id": "L91980",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis CP (post-2020) are met: public propagation, systematic discredit, racial motive."
+},
+{
+"id": "L92091",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Act meets all elements of Art. 261bis StGB (post-2020 version)."
+},
+{
+"id": "L92137",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, hate speech, sexual orientation, degrading language, intent."
+},
+{
+"id": "L92206",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public ethnic slur meets Art. 261bis StGB (2020) elements."
+},
+{
+"id": "L92330",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, racial hatred, intentional act."
+},
+{
+"id": "L92333",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public propagation of degrading ideology against Muslims meets Art. 261bis StGB (2020) elements."
+},
+{
+"id": "L92370",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (1995 version) are met: public incitement to discrimination based on ethnicity."
+},
+{
+"id": "L92430",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Geschlechtsidentität is not protected under Art. 261bis StGB."
+},
+{
+"id": "L92624",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public distribution of defamatory leaflets against Black people due to race meets all elements of Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L92803",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "Private setting (garden party with friends and acquaintances) does not meet the public requirement of Art. 261bis StGB."
+},
+{
+"id": "L92892",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public speech in 2023, targeting lesbians, meets all elements of Art. 261bis StGB (post-2020 version)."
+},
+{
+"id": "L92944",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis CP (2020 version) are met: public act, intent, and discrimination based on sexual orientation."
+},
+{
+"id": "L93039",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public propagation of systematic discredit based on ethnicity under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L93101",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public dissemination of degrading ideology against homosexuals in March 2023 under Art. 261bis StGB (post-2020 version)."
+},
+{
+"id": "L93320",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, ethnic targeting, systematic defamation."
+},
+{
+"id": "L93328",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (since 1.7.2020) are met: public, degrading, based on sexual orientation."
+},
+{
+"id": "L93362",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Art. 261bis StGB protects against discrimination based on race, ethnicity, religion, or sexual orientation, not gender."
+},
+{
+"id": "L93438",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public distribution of leaflets in a pedestrian zone targeting lesbians as second-class citizens meets Art. 261bis StGB post-2020."
+},
+{
+"id": "L93544",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public propagation of degrading ideology based on sexual orientation under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L93575",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public ethnic slur in a newspaper letter meets all elements of Art. 261bis StGB (post-2020)."
+},
+{
+"id": "L93827",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public hate speech against a racial group, deliberate act, post-2020 law applies."
+},
+{
+"id": "L93848",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, racial discrimination, intent."
+},
+{
+"id": "L94144",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis CP (post-2020) are met: public act, racial discrimination, intent."
+},
+{
+"id": "L94276",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public hate speech against Kurds due to ethnicity meets all elements of Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L94337",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public speech at a busy market, targeting a religious group with degrading theses."
+},
+{
+"id": "L94359",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (post-2020) are met: public setting, ethnic targeting, ideologue dissemination, and intent."
+},
+{
+"id": "L94384",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "The law protects against discrimination based on race, ethnicity, religion, or sexual orientation, not sex."
+},
+{
+"id": "L94746",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to discrimination against Jews due to religion under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L94873",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "Act occurred in private family setting, not public as required by Art. 261bis StGB."
+},
+{
+"id": "L95091",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public setting, ethnic targeting, intent to discriminate."
+},
+{
+"id": "L95238",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, ethnic targeting, systematic degradation, and intent."
+},
+{
+"id": "L95314",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Kantonszugehörigkeit ist kein geschütztes Merkmal nach Art. 261bis StGB."
+},
+{
+"id": "L95519",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act, denial of human dignity based on sexual orientation, intentional."
+},
+{
+"id": "L95521",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Age is not a protected characteristic under Art. 261bis StGB."
+},
+{
+"id": "L95571",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Hate speech must target race, ethnicity, religion, or sexual orientation under Art. 261bis StGB."
+},
+{
+"id": "L95618",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to discrimination based on ethnicity under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L95764",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act, intentional, targets gays based on sexual orientation under Art. 261bis CP (2020 version)."
+},
+{
+"id": "L95849",
+"label": "acquit",
+"deciding_element": "setting",
+"reason": "Act occurred in a private family setting, not publicly."
+},
+{
+"id": "L95873",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public hate speech against bisexuals due to sexual orientation in May 2022."
+},
+{
+"id": "L95878",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public dissemination of degrading ideology against homosexuals since 2020."
+},
+{
+"id": "L95990",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, ideology, systematic defamation of Muslims due to religion."
+},
+{
+"id": "L96081",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (1995–2020 version) are met: public, ethnic targeting, systematic degradation, and intent."
+},
+{
+"id": "L96086",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public, hate speech against homosexuals in 2025 under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L96242",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public speech denying equality to Jews due to religion meets Art. 261bis StGB (2020) elements."
+},
+{
+"id": "L96355",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "The offense targets race, ethnicity, or religion, not political beliefs."
+},
+{
+"id": "L96443",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public hate speech against homosexuals, September 2021 (post-2020 law)."
+},
+{
+"id": "L96602",
+"label": "acquit",
+"deciding_element": "act_date",
+"reason": "Art. 261bis StGB did not exist in 1993; retroactive application prohibited by Art. 2 StGB."
+},
+{
+"id": "L96694",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Art. 261bis StGB protects against discrimination based on race, ethnicity, religion, or sexual orientation, not gender."
+},
+{
+"id": "L96916",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public post inciting racial discrimination meets all elements of Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L96927",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public, dehumanizing defamation of Jews due to religion, intentional act in 2023."
+},
+{
+"id": "L96997",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Disability is not a protected characteristic under Art. 261bis CP."
+},
+{
+"id": "L97051",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (since 2020) are met: public hate speech against a group due to ethnicity."
+},
+{
+"id": "L97263",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, ideology, systematic degradation, sexual orientation."
+},
+{
+"id": "L97285",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public, degrading speech against Roma due to ethnicity meets Art. 261bis StGB."
+},
+{
+"id": "L97379",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Act meets all elements of Art. 261bis StGB (post-2020 version)."
+},
+{
+"id": "L97394",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to discrimination against Jews in a full bus in May 2022 meets all elements of Art. 261bis StGB (post-2020 version)."
+},
+{
+"id": "L97638",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public propagation of degrading ideology against Hindus due to religion under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L97842",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (1995 version) are met: public act, ethnic discrimination, dignity violation, intent."
+},
+{
+"id": "L97935",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public call to discriminate against homosexuals due to sexual orientation meets Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L98115",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public incitement to discrimination against Jews due to religion in a full bus in May 2022 meets all elements of Art. 261bis StGB (post-2020 version)."
+},
+{
+"id": "L98185",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis CP (post-2020) are met: public act, intent, and discrimination based on sexual orientation."
+},
+{
+"id": "L98387",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public expression of racial disdain in a crowded bus meets all elements of Art. 261bis StGB post-2020."
+},
+{
+"id": "L98429",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, religious discrimination, degrading speech, intent."
+},
+{
+"id": "L98442",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (since 1.7.2020) are met: public hate speech against Jews due to religion."
+},
+{
+"id": "L98467",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public act in a forest refuge with 40+ invited participants, promoting systematic denigration of Muslims."
+},
+{
+"id": "L98731",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public hate speech against homosexuals under Art. 261bis StGB (2020 version)."
+},
+{
+"id": "L98825",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public setting, religious targeting, and systematic degradation meet Art. 261bis StGB (2020) elements."
+},
+{
+"id": "L98856",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (2020) are met: public, sexual orientation, degrading statements, intent."
+},
+{
+"id": "L98893",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (since 2020) are met: public setting, religious discrimination, intentional act."
+},
+{
+"id": "L98976",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "The protected characteristics under Art. 261bis CP do not include disability."
+},
+{
+"id": "L99060",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Age is not a protected characteristic under Art. 261bis StGB."
+},
+{
+"id": "L99195",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Art. 261bis StGB protects against discrimination based on race, ethnicity, religion, or sexual orientation, not gender."
+},
+{
+"id": "L99315",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis CP (post-2020) are met: public expression, ethnic discrimination, systematic dehumanization."
+},
+{
+"id": "L99579",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public denial of human dignity of Jews due to religion in 2025 meets all elements of Art. 261bis StGB."
+},
+{
+"id": "L99678",
+"label": "convict",
+"deciding_element": "none",
+"reason": "All elements of Art. 261bis StGB (since 2020) are met: public, ethnic targeting, degrading speech, intent."
+},
+{
+"id": "L99782",
+"label": "convict",
+"deciding_element": "none",
+"reason": "Public speech, intentional dehumanization of non-binary people based on gender identity."
+},
+{
+"id": "L99979",
+"label": "acquit",
+"deciding_element": "characteristic",
+"reason": "Geschlechtsidentität is not protected under Art. 261bis StGB."
+}
+]
+}

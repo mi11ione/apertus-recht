@@ -37,6 +37,8 @@ RECORDS = {
     "reports/open_judge_human_sample_publicai-70b-open-fr.tsv": "review/free_text_20pct_sample_fr.tsv",
     "reports/open_judge_human_sample_publicai-70b-open-it.tsv": "review/free_text_20pct_sample_it.tsv",
     "reports/controls_a13.json": "review/controls_a13.json",
+    "reports/annotation_model_qwen.json": "review/annotation_model_qwen.json",
+    "statutes/stgb_261bis/review/annotation/raw_model/qwen.json": "review/annotation_model_qwen_labels.json",
     "reports/open_judge_human_sample_publicai-70b-open.tsv": "review/free_text_20pct_sample.tsv",
     "reports/sensitivity.json": "review/sensitivity.json",
 }
@@ -99,6 +101,7 @@ def main() -> int:
     ag = J("statutes/stgb_261bis/review/annotation/agreement.json")
     ct = J("reports/contamination.json")
     cv = J("reports/court_validation.json")
+    qg = J("reports/annotation_model_qwen.json")
     adj = J("reports/adjudication.json")
     man = J("dataset/MANIFEST.json")
     # released runs are the ones in the manifest; a run still being written stays out of the card and the manifest
@@ -364,7 +367,10 @@ contested setting was read as clearly private by 5/5 annotators; that setting an
 (acts in 1993/94 posted online) were fixed before any model result was analysed (pre-registration amendment A3) and the
 changed items re-annotated. A second blind pass with new opaque ids gave the annotators **only the law** (statute texts,
 Art. 2 StGB, the Regeste of BGE 130 IV 111; no rule summary): {lo['lawonly_vs_gold_settled']} settled items agree with the
-code gold, κ against gold {lo['kappa_lawonly_vs_gold']:.3f}. All labels: [`review/`](review/).
+code gold, κ against gold {lo['kappa_lawonly_vs_gold']:.3f}. The same law-only task given to a model of another family
+(Qwen-SEA-LION-v4-32B, amendment A15): {qg['agree_with_gold']}/{qg['settled']} settled items agree (κ {qg['kappa']:.2f}); each of its
+{len(qg['disagreements'])} disagreements convicts a case the pinned text does not cover (sexual orientation before 1 July 2020, acts
+before 1995, an unlisted characteristic), the errors Apertus makes, not gold errors. All labels: [`review/`](review/).
 **Adjudication** of every annotator disagreement, every contested item and a blind 10% sample of settled items by
 {adj['summary']}.
 **Court validation** of the gold engine against real decisions: {cv['summary']}. Counted per distinct case (post hoc,

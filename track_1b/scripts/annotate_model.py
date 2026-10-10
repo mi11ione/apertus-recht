@@ -72,7 +72,15 @@ def label(tag: str):
     def one(bid):
         i = its[ids[bid]]
         msg = (f"{task}\n\n# law.md\n\n{laws[i['lang']]}\n\n# Scenario [{bid}]\n\n{i['text']}\n\n{FMT}")
-        r = send(dict(model=model, temperature=0.0, max_tokens=160, messages=[{"role": "user", "content": msg}]))
+        import time
+        for attempt in range(6):          # transient network errors (DNS, 429, timeouts) are retried with backoff
+            try:
+                r = send(dict(model=model, temperature=0.0, max_tokens=160, messages=[{"role": "user", "content": msg}]))
+                break
+            except Exception:
+                if attempt == 5:
+                    raise
+                time.sleep(5 * 2 ** attempt)
         text = r["choices"][0]["message"]["content"]
         try:
             x = json.loads(text[text.index("{"): text.rindex("}") + 1])

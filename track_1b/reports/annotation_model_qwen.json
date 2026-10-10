@@ -1,0 +1,218 @@
+{
+ "model": "aisingapore/Qwen-SEA-LION-v4-32B-IT",
+ "items": 960,
+ "settled": 939,
+ "agree_with_gold": 910,
+ "ci": [
+  0.9559976588194132,
+  0.9784118240876649
+ ],
+ "kappa": 0.929,
+ "deciding_element_on_agreed_acquittals": {
+  "agree": 281,
+  "n": 286
+ },
+ "by_lang_gold": {
+  "de|acquit": {
+   "agree": 201,
+   "n": 215
+  },
+  "de|convict": {
+   "agree": 430,
+   "n": 430
+  },
+  "fr|acquit": {
+   "agree": 45,
+   "n": 50
+  },
+  "fr|convict": {
+   "agree": 97,
+   "n": 97
+  },
+  "it|acquit": {
+   "agree": 40,
+   "n": 50
+  },
+  "it|convict": {
+   "agree": 97,
+   "n": 97
+  }
+ },
+ "disagreements": [
+  {
+   "id": "261bis-de-DATE_SO025-1",
+   "gold": "acquit",
+   "model": "convict",
+   "reason": "All elements of Art. 261bis StGB (since 1 July 2020) are met: public setting, targeted group, discriminatory statement, and intent."
+  },
+  {
+   "id": "261bis-it-DATE_SO020-1",
+   "gold": "acquit",
+   "model": "convict",
+   "reason": "All elements of Art. 261bis CP (post-2020) are met: public incitement to discrimination based on sexual orientation."
+  },
+  {
+   "id": "261bis-it-DATE_SO032-1",
+   "gold": "acquit",
+   "model": "convict",
+   "reason": "All elements of Art. 261bis CP (post-2020) are met: public propagation, systematic discredit, and intent."
+  },
+  {
+   "id": "261bis-de-CHARX008-2",
+   "gold": "acquit",
+   "model": "convict",
+   "reason": "Public hate speech against a group based on ethnicity under Art. 261bis StGB (2020 version)."
+  },
+  {
+   "id": "261bis-fr-DATE_SO022-1",
+   "gold": "acquit",
+   "model": "convict",
+   "reason": "Public act, denial of human dignity based on sexual orientation, intentional."
+  },
+  {
+   "id": "261bis-fr-DATE_CTRL002-2",
+   "gold": "acquit",
+   "model": "convict",
+   "reason": "All elements of Art. 261bis StGB (1995 version) are met."
+  },
+  {
+   "id": "261bis-de-DATE_SO015-1",
+   "gold": "acquit",
+   "model": "convict",
+   "reason": "All elements of Art. 261bis StGB (2020) are met: public setting, ideology targeting lesbian women, deliberate act."
+  },
+  {
+   "id": "261bis-it-CHAR022-1",
+   "gold": "acquit",
+   "model": "convict",
+   "reason": "All elements of Art. 261bis CP (post-2020) are met: public incitement to discrimination based on gender identity."
+  },
+  {
+   "id": "261bis-de-DATE_SO008-1",
+   "gold": "acquit",
+   "model": "convict",
+   "reason": "Public hate speech against homosexuals due to sexual orientation in 2018, covered by Art. 261bis StGB (1995 version)."
+  },
+  {
+   "id": "261bis-de-DATE_SO035-1",
+   "gold": "acquit",
+   "model": "convict",
+   "reason": "Act meets all elements of Art. 261bis StGB (post-2020 version)."
+  },
+  {
+   "id": "261bis-de-DATE_SO027-1",
+   "gold": "acquit",
+   "model": "convict",
+   "reason": "All elements of Art. 261bis StGB (2020) are met: public call to discrimination based on sexual orientation."
+  },
+  {
+   "id": "261bis-it-DATE_SO016-1",
+   "gold": "acquit",
+   "model": "convict",
+   "reason": "All elements of Art. 261bis CP (2020 version) are met: public propagation, ideology, systematic defamation, and intent."
+  },
+  {
+   "id": "261bis-it-DATE_SO013-1",
+   "gold": "acquit",
+   "model": "convict",
+   "reason": "Public incitement to hatred against homosexuals in 2018 falls under Art. 261bis StGB (1995 version)."
+  },
+  {
+   "id": "261bis-it-DATE_CTRL017-2",
+   "gold": "acquit",
+   "model": "convict",
+   "reason": "All elements of Art. 261bis StGB (1995 version) are met: public propagation, ethnic targeting, intentional act."
+  },
+  {
+   "id": "261bis-de-DATE_SO009-1",
+   "gold": "acquit",
+   "model": "convict",
+   "reason": "Public incitement to discrimination based on sexual orientation in June 2020 under Art. 261bis StGB (post-2020 version)."
+  },
+  {
+   "id": "261bis-it-DATE_CTRL020-2",
+   "gold": "acquit",
+   "model": "convict",
+   "reason": "All elements of Art. 261bis StGB (1995 version) are met."
+  },
+  {
+   "id": "261bis-it-CHAR024-1",
+   "gold": "acquit",
+   "model": "convict",
+   "reason": "Public incitement to hatred based on cantonal origin under Art. 261bis StGB."
+  },
+  {
+   "id": "261bis-de-DATE_SO016-1",
+   "gold": "acquit",
+   "model": "convict",
+   "reason": "Public incitement to hatred against bisexuelle persons meets Art. 261bis StGB (2020 version)."
+  },
+  {
+   "id": "261bis-fr-DATE_CTRL003-2",
+   "gold": "acquit",
+   "model": "convict",
+   "reason": "All elements of Art. 261bis StGB (1995 version) are met: public act, religious motivation, intentional incitement."
+  },
+  {
+   "id": "261bis-fr-DATE_SO018-1",
+   "gold": "acquit",
+   "model": "convict",
+   "reason": "Public act, systematic degradation of bisexuals, post-2020 law applies."
+  },
+  {
+   "id": "261bis-de-DATE_SO032-1",
+   "gold": "acquit",
+   "model": "convict",
+   "reason": "All elements of Art. 261bis StGB (2020) are met: public, systematic devaluation, sexual orientation."
+  },
+  {
+   "id": "261bis-it-DATE_CTRL002-2",
+   "gold": "acquit",
+   "model": "convict",
+   "reason": "All elements of Art. 261bis StGB (1995 version) are met."
+  },
+  {
+   "id": "261bis-de-CHARX016-2",
+   "gold": "acquit",
+   "model": "convict",
+   "reason": "Public degradation based on canton (race/ethnicity) in a pedestrian zone meets Art. 261bis StGB."
+  },
+  {
+   "id": "261bis-it-DATE_SO025-1",
+   "gold": "acquit",
+   "model": "convict",
+   "reason": "Public speech in 2020, targeting sexual orientation under Art. 261bis CP (post-2020 version)."
+  },
+  {
+   "id": "261bis-de-DATE_SO028-1",
+   "gold": "acquit",
+   "model": "convict",
+   "reason": "Act meets all elements of Art. 261bis StGB (post-2020 version)."
+  },
+  {
+   "id": "261bis-de-DATE_SO001-1",
+   "gold": "acquit",
+   "model": "convict",
+   "reason": "All elements of Art. 261bis StGB (2020) are met: public, hate speech, sexual orientation, degrading language, intent."
+  },
+  {
+   "id": "261bis-de-DATE_SO020-1",
+   "gold": "acquit",
+   "model": "convict",
+   "reason": "Public propagation of degrading ideology based on sexual orientation under Art. 261bis StGB (2020 version)."
+  },
+  {
+   "id": "261bis-de-DATE_SO010-1",
+   "gold": "acquit",
+   "model": "convict",
+   "reason": "Act meets all elements of Art. 261bis StGB (post-2020 version)."
+  },
+  {
+   "id": "261bis-fr-CHAR011-1",
+   "gold": "acquit",
+   "model": "convict",
+   "reason": "Public speech, intentional dehumanization of non-binary people based on gender identity."
+  }
+ ],
+ "note": "law-only blind annotation (same task, law and items as the Claude law-only pass) by a model of another family; disagreements are listed for adjudication, not counted as gold errors"
+}

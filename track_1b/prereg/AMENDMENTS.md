@@ -239,3 +239,10 @@ judgements (A12). A numeric slip in the report ("the 8B convicts 13 of 35") is c
 recording"; Abs. 2 limitation sentence rewritten; reference dates of the pinned Fedlex consolidations; the register's
 findings say "not yet in force" and "not covered by Art. 261bis", list gender identity in every language, and carry a
 legal notice in German, French and Italian.
+(7) **Gold checked by a model of another family.** `scripts/annotate_model.py` re-runs the law-only blind annotation
+(same task text, the law rebuilt from the pinned sources, the same 960 items under opaque ids) with
+Qwen-SEA-LION-v4-32B through the gateway: 910 of 939 settled items agree with the code gold (κ 0.93), and the deciding
+element on 281 of 286 agreed acquittals. All 29 disagreements convict a case the pinned text does not cover (19 sexual
+orientation before 1 July 2020, 5 acts before 1995, 3 canton, 2 gender identity), the errors Apertus makes; none
+points to a gold error. Raw labels in `review/annotation/raw_model/qwen.json`, agreement in
+`reports/annotation_model_qwen.json`.

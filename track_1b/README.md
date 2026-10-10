@@ -102,7 +102,10 @@ Exact forced choice on vLLM endpoints, first-token log-probabilities elsewhere, 
   consolidations and their footnotes in DE, FR and IT; mutation tests change one rule (drop religion, move the 2020 date
   by a day, make private settings public) and check that exactly the items it governs flip.
 - **Against blind annotators.** 960 items labelled blind (opaque ids, no access to code or gold) by six agents:
-  939/939 settled items agree with the code gold, deciding element 315/315. Two independent adjudicators then reviewed
+  939/939 settled items agree with the code gold, deciding element 315/315. A model of another
+  family (Qwen), given the same law-only task, agrees on 910/939; each of its 29 disagreements convicts a case the
+  pinned text does not cover (sexual orientation before 1 July 2020, acts before 1995, a canton, gender identity): the
+  errors Apertus makes. Two independent adjudicators then reviewed
   every contested item and a blind sample of settled ones: 115/115 gold correct.
 - **Against Swiss courts.** 326 decisions from `voilaj/swiss-caselaw`, each coded twice by independent agents with a
   third on conflicts, under a pre-registered rule: the engine agrees with the court in 57/57 rulings on the elements it
