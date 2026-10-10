@@ -1,0 +1,29 @@
+{
+ "fedlex_179ter": {
+  "cite": "Art. 179ter StGB (SR 311.0; Fedlex eli/cc/54/757_781_799, version 2026-10-01)",
+  "file": "../sources/eli_cc_54_757_781_799__art_179_ter__{lang}__2026-10-01.json",
+  "kind": "statute",
+  "licence": "public domain (Swiss Copyright Act, Art. 5 para. 1 lit. a: enactments)",
+  "text_sha256": {
+   "de": "de9a55fa6037905b02568c8d3090c86ca51afef800994c551fa85afadad38b46"
+  }
+ },
+ "fedlex_art30": {
+  "cite": "Art. 30 StGB (complaint)",
+  "file": "../sources/eli_cc_54_757_781_799__art_30__{lang}__2026-10-01.json",
+  "kind": "statute",
+  "licence": "public domain (Swiss Copyright Act, Art. 5 para. 1 lit. a: enactments)",
+  "text_sha256": {
+   "de": "940e349759a14e55d1c8c788ebdb83c7058cbd8db590c73189aa76202ede5214"
+  }
+ },
+ "fedlex_art31": {
+  "cite": "Art. 31 StGB (three-month complaint period)",
+  "file": "../sources/eli_cc_54_757_781_799__art_31__{lang}__2026-10-01.json",
+  "kind": "statute",
+  "licence": "public domain (Swiss Copyright Act, Art. 5 para. 1 lit. a: enactments)",
+  "text_sha256": {
+   "de": "c20dbf2e84ed421d566c7f47a66a1f65b2bd1389d76a8d0cefb3cf99d1151e8d"
+  }
+ }
+}

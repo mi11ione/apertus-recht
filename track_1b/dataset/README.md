@@ -36,6 +36,14 @@ configs:
       - {split: de_user_voice, path: eval/prompts_pref_core_de_lay.jsonl}
   - config_name: metadata
     data_files: [{split: items, path: metadata/items.jsonl}]
+  - config_name: stgb_179ter
+    data_files: [{split: de, path: stgb_179ter/eval/core_de.jsonl}]
+  - config_name: stgb_179ter_prompts
+    data_files: [{split: de, path: stgb_179ter/eval/prompts_core_de.jsonl}]
+  - config_name: stgb_179ter_responses
+    data_files:
+      - {split: publicai_70b_179ter, path: stgb_179ter/responses/publicai-70b-179ter.jsonl}
+
   - config_name: responses
     data_files:
       - {split: 8b_bf16_DPO, path: responses/8b-bf16-DPO.jsonl}
@@ -52,6 +60,9 @@ configs:
       - {split: 8b_mlx4_SFT, path: responses/8b-mlx4-SFT.jsonl}
       - {split: 8b_mlx4_base_completion, path: responses/8b-mlx4-base-completion.jsonl}
       - {split: 8b_mlx4_final, path: responses/8b-mlx4-final.jsonl}
+      - {split: publicai_70b_ctrl_de, path: responses/publicai-70b-ctrl-de.jsonl}
+      - {split: publicai_70b_ctrl_fr, path: responses/publicai-70b-ctrl-fr.jsonl}
+      - {split: publicai_70b_ctrl_it, path: responses/publicai-70b-ctrl-it.jsonl}
       - {split: publicai_70b_fc, path: responses/publicai-70b-fc.jsonl}
       - {split: publicai_70b_fc_core, path: responses/publicai-70b-fc-core.jsonl}
       - {split: publicai_70b_fc_core_fr, path: responses/publicai-70b-fc-core-fr.jsonl}
@@ -62,6 +73,9 @@ configs:
       - {split: publicai_70b_pref, path: responses/publicai-70b-pref.jsonl}
       - {split: publicai_70b_pref_fr, path: responses/publicai-70b-pref-fr.jsonl}
       - {split: publicai_70b_pref_it, path: responses/publicai-70b-pref-it.jsonl}
+      - {split: publicai_70b_r5x_de, path: responses/publicai-70b-r5x-de.jsonl}
+      - {split: publicai_70b_r6_fr, path: responses/publicai-70b-r6-fr.jsonl}
+      - {split: publicai_70b_r6_it, path: responses/publicai-70b-r6-it.jsonl}
       - {split: qwen3_8b_mlx4, path: responses/qwen3-8b-mlx4.jsonl}
 
 ---
@@ -69,8 +83,8 @@ configs:
 # Apertus-Recht: Art. 261bis StGB minimal-twin scenarios (DE / FR / IT)
 
 1980 scenarios (660 per language in DE, FR and IT) about the Swiss racial-discrimination
-offence, Art. 261bis StGB / CP; the same 660 German scenarios retold in the voice of a user asking about
-their own conduct (`user_voice`, language code `de_lay`); and the 162-item German exploration battery on which
+offence, Art. 261bis StGB / CP; the same 660 German scenarios retold as a first-person paraphrase
+by a user asking about their own conduct (`user_voice`, language code `de_lay`; the act keeps the statute's vocabulary); and the 162-item German exploration battery on which
 the stage and build columns were measured. Every scenario belongs to a **twin group**: a base case and variants that each change exactly **one
 legal fact** (public ↔ private setting, protected ↔ unprotected characteristic, before ↔ after the 1 July 2020
 extension, before ↔ after entry into force in 1995) or one irrelevant detail (**placebos**: family wording of a public
@@ -95,10 +109,14 @@ schuldig / nicht schuldig", and the French and Italian equivalents). The
 twins read back **which element** a model gets wrong, not only how often. The same items support the two other
 behavioural-alignment measurements: **preference accuracy** (forced choice between each item's `chosen` and `rejected`
 answer) and **free generation** judged against the item's acceptance criterion (`scripts/judge_open.py` in the
-repository: two blind LLM judges, a code check on every judgement, and a 20% sample laid out for a human check).
+repository: two blind Claude judges, a judge of another model family (Qwen), a deterministic parser, every judgement
+hash-bound to the answer it judged, and a seeded 20% sample laid out for a human check, not yet filled).
 ### Out-of-Scope Use
 Not legal advice and not a model of every element of the offence: intent is fixed, the Abs. 4 dignity threshold is
-written to be met, Abs. 3 and 5 are not covered. Not a training set (canary string in every item). Contains no hateful
+written to be met, Abs. 3 and 5 are not covered, so the items measure how a model applies the elements, not whether
+it predicts a conviction. The free-text question asks whether the act is punishable under Swiss law, while the gold is
+Art. 261bis; every answer judged misleading names Art. 261bis as its basis. The Italian verdict framing uses
+"proscioglimento", which is wider than an acquittal on the merits ("assoluzione"). Not a training set (canary string in every item). Contains no hateful
 text; acts are described abstractly in the statute's vocabulary.
 ### Specifications
 - **Use case → specification:** the question a person asks about their own or someone else's speech; the elements the
@@ -150,6 +168,53 @@ Paragraphs: abs1 220, abs2 218, abs4 222. Diversity (DE): 8 frames,
 18 act wordings in 3 wording families, 29 settings,
 33 group phrases, 14 dates, 12 places,
 8 actors; mean 44.4 words; distinct-2 0.0516, distinct-3 0.0981 (templated by design).
+
+
+### Second statute: Art. 179ter StGB (`stgb_179ter/`, exploratory)
+The same generator, gold engine, QC gates and harness on a different kind of offence: recording a non-public
+conversation one takes part in, without the other participants' consent (Art. 179ter StGB), prosecuted only on a
+complaint filed within three months of learning of the act and the offender (Art. 30 and 31 StGB). Five elements:
+non-public conversation, the recorder is a participant (a third party falls under Art. 179bis instead), sound
+recording, no consent, timely complaint (a procedural element 261bis does not have). 120 German scenarios in
+40 twin groups (COMPLAINT 32, CONSENT 24, CONV 24, MEDIUM 24, ROLE 16); verdicts
+72 convict, 48 acquit. Sources pinned like 261bis: the
+Fedlex texts of Art. 179ter, 30 and 31 StGB (version of 1 Oct 2026, sha256 in `stgb_179ter/metadata/sources.json`).
+Prompts at three rungs (R0 no law; R1 the elements named; R2 plus the complaint rule) in the two framings; every
+question asks about a conviction *under Art. 179ter alone*, since a court is not bound by the legal qualification of
+the charge. German only, not pre-registered and not part of the held-out test: it shows that the method carries to a
+second statute, not a second headline. A legal-reviewer persona (a Claude agent) found all 120 gold labels correct and
+asked for wording fixes, applied before any model was scored: the question restricted to the article, a police report
+instead of an indictment (no indictment of a complaint offence without a complaint), no legal conclusions in the facts
+("Täter", "betroffen"), a rent talk in the landlord's flat instead of a phone call (business calls are exempt under
+Art. 179quinquies). Scope of the gold: it answers only "conviction under Art. 179ter". An outsider who records may be
+punishable under Art. 179bis; without a timely complaint the proceedings are discontinued (Art. 329 Abs. 4 StPO), which
+is not an acquittal on the merits; justification, Art. 179quinquies and intent are assumed; a video with sound counts
+as a sound recording (only handwritten notes are tested as a medium that is not); «schuldig / nicht schuldig» are
+answer tokens, not Swiss dispositive wording. Files: `stgb_179ter/eval/`, `stgb_179ter/metadata/`,
+`stgb_179ter/responses/`, `stgb_179ter/MANIFEST.json`; results in the repository (`results/results_179ter.json`).
+
+Apertus v1.5 70B (`publicai-70b-179ter`):
+
+| rung | framing | acquittals recognised | convictions kept | balanced accuracy |
+|---|---|---|---|---|
+| R0 | Ja/Nein | 48/48 | 0/72 | 0.50 |
+| R0 | schuldig / nicht schuldig | 3/48 | 72/72 | 0.53 |
+| R1 | Ja/Nein | 11/48 | 72/72 | 0.61 |
+| R1 | schuldig / nicht schuldig | 0/48 | 72/72 | 0.50 |
+| R2 | Ja/Nein | 33/48 | 58/72 | 0.75 |
+| R2 | schuldig / nicht schuldig | 19/48 | 72/72 | 0.70 |
+
+| acquittal decided by (Ja/Nein) | R0 | R1 | R2 |
+|---|---|---|---|
+| complaint:failed | 16/16 | 0/16 | 16/16 |
+| consent:failed | 8/8 | 3/8 | 7/8 |
+| conversation:failed | 8/8 | 0/8 | 2/8 |
+| medium:failed | 8/8 | 8/8 | 6/8 |
+| role:failed | 8/8 | 0/8 | 2/8 |
+
+A framing that answers one way for every scenario reads no element: with no law (R0), Ja/Nein says "Nein" to all 120
+(all acquittals "recognised", no conviction kept), while the verdict word convicts all. Only with the complaint rule
+stated (R2) do both framings separate the cases; the public setting and the outsider are still convicted there.
 
 ## Dataset Creation
 ### Curation Rationale
@@ -222,7 +287,11 @@ Art. 2 StGB, the Regeste of BGE 130 IV 111; no rule summary): 939/939 settled it
 code gold, κ against gold 1.000. All labels: [`review/`](review/).
 **Adjudication** of every annotator disagreement, every contested item and a blind 10% sample of settled items by
 two independent agent adjudicators, 115 items (blind sample 94, contested 21, annotator disagreements 0); adjudicators agree on 115/115; gold wrong: 0/94 in the blind sample of settled items (Wilson 95% upper bound 3.9%), 0/21 contested items.
-**Court validation** of the gold engine against real decisions: 326 decisions triaged (stratum A: 150, stratum B: 176); 58 in scope (55 convictions, 3 acquittals); engine agrees with the court in 58/58 (Wilson 95% 0.94-1.00; an engine that always convicts would agree in 55/58; acquittals 3/3, Wilson 0.44-1.00); 24 out of scope (unmodelled grounds), 50 unextractable, 194 excluded; every tuple extracted twice by independent agents, conflicts settled by a third (amendment A4).
+**Court validation** of the gold engine against real decisions: 326 decisions triaged (stratum A: 150, stratum B: 176); 58 in scope (55 convictions, 3 acquittals); engine agrees with the court in 58/58 (Wilson 95% 0.94-1.00; an engine that always convicts would agree in 55/58; acquittals 3/3, Wilson 0.44-1.00); 24 out of scope (unmodelled grounds), 50 unextractable, 194 excluded; every tuple extracted twice by independent agents, conflicts settled by a third (amendment A4). Counted per distinct case (post hoc,
+amendment A12: repeat instances of one case merged; the Perinçek conviction, 6B_398/2007, left out because the ECtHR
+found a violation of Art. 10 ECHR and the Federal Court revised it, 6F_6/2016): 53/53,
+6 of them genocide denial; of the 3 acquittals
+one is clean, one agrees on the outcome on another ground, one predates BGE 130 IV 111.
 #### Annotator Details
 All annotation, adjudication and court-tuple extraction was done by Claude agents (Anthropic), declared as AI, working
 blind (opaque ids, no access to code or gold). No human labels: every label in this release can be regenerated by
@@ -246,10 +315,10 @@ Score with both framings and read the element table, not a single accuracy; repo
 alongside results, since 4-bit conversions changed verdicts in our measurements.
 
 ## Model responses in this release
-25 runs (`responses/<run>.jsonl` with `<run>.meta.json`): 8b-bf16-DPO, 8b-bf16-RLVR, 8b-bf16-blend-RLVR-DPO-a0.25, 8b-bf16-blend-RLVR-DPO-a0.5, 8b-bf16-blend-RLVR-DPO-a0.75, 8b-gguf-q4_k_m, 8b-gguf-q4_k_m-cpu-core, 8b-gguf-q4_k_m-cpu-pref, 8b-gguf-q8_0, 8b-mlx4-DPO, 8b-mlx4-RLVR, 8b-mlx4-SFT, 8b-mlx4-base-completion, 8b-mlx4-final, publicai-70b-fc, publicai-70b-fc-core, publicai-70b-fc-core-fr, publicai-70b-fc-core-it, publicai-70b-fc-lay, publicai-70b-gen, publicai-70b-open, publicai-70b-pref, publicai-70b-pref-fr, publicai-70b-pref-it, qwen3-8b-mlx4.
+31 runs (`responses/<run>.jsonl` with `<run>.meta.json`): 8b-bf16-DPO, 8b-bf16-RLVR, 8b-bf16-blend-RLVR-DPO-a0.25, 8b-bf16-blend-RLVR-DPO-a0.5, 8b-bf16-blend-RLVR-DPO-a0.75, 8b-gguf-q4_k_m, 8b-gguf-q4_k_m-cpu-core, 8b-gguf-q4_k_m-cpu-pref, 8b-gguf-q8_0, 8b-mlx4-DPO, 8b-mlx4-RLVR, 8b-mlx4-SFT, 8b-mlx4-base-completion, 8b-mlx4-final, publicai-70b-ctrl-de, publicai-70b-ctrl-fr, publicai-70b-ctrl-it, publicai-70b-fc, publicai-70b-fc-core, publicai-70b-fc-core-fr, publicai-70b-fc-core-it, publicai-70b-fc-lay, publicai-70b-gen, publicai-70b-open, publicai-70b-pref, publicai-70b-pref-fr, publicai-70b-pref-it, publicai-70b-r5x-de, publicai-70b-r6-fr, publicai-70b-r6-it, qwen3-8b-mlx4.
 
 ## Changelog
-- 1.0.0 (2026-10): first release. Generator 1.0.0, seed 261. Files and hashes: `MANIFEST.json` (129 files).
+- 1.0.0 (2026-10): first release. Generator 1.0.0, seed 261. Files and hashes: `MANIFEST.json` (145 files).
   Pre-registration ([`docs/PREREG.md`](docs/PREREG.md)) was locked before any model scored the core set; every later
   change is an amendment in [`docs/AMENDMENTS.md`](docs/AMENDMENTS.md):
   A1 design moved into YAML, output byte-identical; A2 FR/IT surface fixes from back-translation; A3 one contested
@@ -262,7 +331,10 @@ alongside results, since 4-bit conversions changed verdicts in our measurements.
   (places in Romandie and Ticino, intent formula, verdict nouns, citation forms), before any French or Italian result
   was analysed, with both languages re-scored in full; A8 R5 (the verbatim law), length-matched preference pairs
   (`rejected_minimal`), Art. 1 and 2 StGB in the answers, a contested criterion that accepts a reasoned leaning, and
-  the court-validation baseline; A9 the German scenarios in a user's voice (`de_lay`); A10 R6, the control for R5.
+  the court-validation baseline; A9 the German scenarios as a first-person paraphrase (`de_lay`); A10 R6, the control
+  for R5; A11 German localisation (bus, public information evening), free text with the verbatim law, a Qwen judge;
+  A12 post hoc: court validation per distinct case, paired score differences, judge agreement per gold class,
+  judgements bound to answers, provenance repairs (frozen held-out code shipped, lock commit after the history rewrite).
 
 ## Citation
 ```bibtex

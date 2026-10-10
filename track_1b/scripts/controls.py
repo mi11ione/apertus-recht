@@ -108,7 +108,7 @@ def main():
     out = dict(note="A13, exploratory (post hoc, after judge round 4); 70B via Public AI, exact forced choice; settled items",
                cells=[], polarity=[], factorial=[])
     for (lang, rung, fr), sc in sorted(cells.items()):
-        if len(sc) < 600:
+        if len(sc) < 600:                         # the sampled factorial cells are reported below, not here
             continue
         rec = dict(lang=lang, rung=rung, framing=fr, **cell_stats(items, sc))
         rec["calibrated_oof"] = calibrated(items, sc)
@@ -133,8 +133,13 @@ def main():
                            ("fr", "R6", "conv"), ("it", "R3", "conv"), ("it", "R5", "conv"), ("it", "R6", "conv")]:
         sc = cells.get((lang, rung, fr))
         if sc:
-            out["factorial"].append(dict(lang=lang, rung=rung, framing=fr, **cell_stats(items, sc),
-                                         acquit_by_reason=by_reason(items, sc)))
+            rec = dict(lang=lang, rung=rung, framing=fr, **cell_stats(items, sc), acquit_by_reason=by_reason(items, sc))
+            # the variants ran on a sample of twin groups; every cell is also given on exactly those items
+            ref = cells.get((lang, "R5a" if lang == "de" else "R6", "conv")) or {}
+            same = {i: v for i, v in sc.items() if i in ref}
+            if same:
+                rec["same_items"] = cell_stats(items, same)
+            out["factorial"].append(rec)
     Path(a.out).write_text(json.dumps(out, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     for c in out["cells"]:
         if c["framing"] == "rev" or c["rung"] in ("R0", "R3"):

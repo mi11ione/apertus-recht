@@ -1,0 +1,75 @@
+# Art. 179ter StGB (Unbefugtes Aufnehmen von Gesprächen): second worked example of the statute-twins format.
+# It exercises element kinds the first statute does not: a complaint requirement (Antragsdelikt, Art. 30/31 StGB) and a
+# role element (participant vs outsider; an outsider's recording falls under Art. 179bis, not Art. 179ter).
+schema: statute-twins/v1
+id: stgb_179ter
+version: 0.1.0
+citation: {de: "Art. 179ter StGB"}
+title: {de: Unbefugtes Aufnehmen von Gesprächen}
+scope_note: >-
+  Abs. 1 only (a participant records a non-public conversation on a sound carrier without the other participants'
+  consent), prosecuted on complaint. Intent is fixed to present. Abs. 2 (keeping or passing on such a recording) and
+  justification grounds are out of scope.
+
+sources:
+  fedlex_179ter:
+    kind: statute
+    cite: "Art. 179ter StGB (SR 311.0; Fedlex eli/cc/54/757_781_799, version 2026-10-01)"
+    file: ../sources/eli_cc_54_757_781_799__art_179_ter__{lang}__2026-10-01.json
+    text_sha256:
+      de: de9a55fa6037905b02568c8d3090c86ca51afef800994c551fa85afadad38b46
+  fedlex_art30:
+    kind: statute
+    cite: "Art. 30 StGB (complaint)"
+    file: ../sources/eli_cc_54_757_781_799__art_30__{lang}__2026-10-01.json
+    text_sha256:
+      de: 940e349759a14e55d1c8c788ebdb83c7058cbd8db590c73189aa76202ede5214
+  fedlex_art31:
+    kind: statute
+    cite: "Art. 31 StGB (three-month complaint period)"
+    file: ../sources/eli_cc_54_757_781_799__art_31__{lang}__2026-10-01.json
+    text_sha256:
+      de: c20dbf2e84ed421d566c7f47a66a1f65b2bd1389d76a8d0cefb3cf99d1151e8d
+
+elements:
+  - id: conversation
+    kind: enum
+    label: {de: nichtöffentliches Gespräch}
+    authority: [fedlex_179ter]
+    values:
+      nonpublic: {satisfied: true}
+      public:    {satisfied: false}
+    fail_reason: Only non-public conversations are protected.
+  - id: role
+    kind: enum
+    label: {de: Gesprächsteilnehmer}
+    authority: [fedlex_179ter]
+    values:
+      participant: {satisfied: true}
+      outsider:    {satisfied: false}
+    fail_reason: Art. 179ter covers recordings by a participant; an outsider's recording falls under Art. 179bis.
+  - id: medium
+    kind: enum
+    label: {de: Aufnahme auf einen Tonträger}
+    authority: [fedlex_179ter]
+    values:
+      sound_recording: {satisfied: true}
+      notes:           {satisfied: false}
+    fail_reason: Writing notes is not recording on a sound carrier.
+  - id: consent
+    kind: enum
+    label: {de: Einwilligung der anderen Beteiligten}
+    authority: [fedlex_179ter]
+    values:
+      none: {satisfied: true}
+      all:  {satisfied: false}
+    fail_reason: The other participants consented.
+  - id: complaint
+    kind: enum
+    label: {de: Strafantrag}
+    authority: [fedlex_179ter, fedlex_art30, fedlex_art31]
+    values:
+      timely: {satisfied: true}
+      none:   {satisfied: false}
+      late:   {satisfied: false}
+    fail_reason: Art. 179ter is prosecuted only on a complaint filed within three months (Art. 30, 31 StGB).

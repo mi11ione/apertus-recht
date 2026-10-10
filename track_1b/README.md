@@ -17,7 +17,7 @@ Fedlex text and the leading case's Regeste instead. Light red: in one framing; g
 ## What we found
 
 - **No law in the prompt: everything is punishable.** The 70B convicts every scenario we wrote in German, and all but
-  2 (French) and 1 (Italian) of 215 non-punishable ones (balanced accuracy 0.50). Asked in free text, it calls 73 of 75 scenarios punishable
+  2 (French) and 1 (Italian) of 215 non-punishable ones (balanced accuracy 0.50). Asked in free text, it calls 73 of 75 scenarios punishable (French and Italian: 75 of 75)
   that are not punishable under Art. 261bis, each time naming that article. Two Claude judges agree on nearly every
   answer; a judge of another model family, on its own, counts 72 of 75. Retold as a first-person paraphrase instead of a
   charge sheet, the same scenarios fare no better: 2 of 215 acquittals without the law, and the same element profile with the rules
@@ -32,6 +32,14 @@ Fedlex text and the leading case's Regeste instead. Light red: in one framing; g
   215 acquittals recognised, exactly as with no law in the prompt. Its scores do register the facts (a private
   setting lowers the conviction score), but never below the threshold. In French it recognises 12 and in Italian 43, against 120 and 97 with
   the rules spelled out; in free text it calls every one of 75 non-punishable scenarios punishable. Only rules spelled out in plain sentences move it.
+- **Not a yes-bias.** Asked the other way round ("Würde ein Gericht freisprechen?"), the 70B still recognises 0 of 215
+  acquittals in every language. With the rules spelled out, the reversed question breaks down instead: it then
+  "acquits" half the punishable cases too, so part of that gain is answer-format, not law. Pasting the verbatim law
+  after the plain rules cancels most of their effect; no single sentence of it is to blame (A13).
+- **Not only this article.** A second statute in the same five-file format, Art. 179ter StGB (secretly recording a
+  conversation, with a complaint deadline), fails in another shape: without the law the 70B answers "Nein" to all 120
+  cases when asked Ja/Nein and "schuldig" to 117 when asked for a verdict, so it reads no element at all; with the
+  elements and the complaint rule stated, a public debate and an outsider are still convicted.
 - **The date sentence backfires.** One sentence saying that sexual orientation is protected since 1 July 2020 makes the
   70B stop convicting punishable cases from 2021–25: with the verdict word it convicts 0 of 35 in German, 1 in French,
   5 in Italian (with Ja/Nein, Italian holds up: 29 of 35).
@@ -83,7 +91,7 @@ Exact forced choice on vLLM endpoints, first-token log-probabilities elsewhere, 
 | Gold | `convict` / `acquit` / `open` with the deciding element, computed by `src/statute_twins/gold/engine.py` from an element model that cites Fedlex texts pinned by sha256 and BGE 130 IV 111 |
 | Per item | acceptance criterion, chosen / rejected answers, settled / contested label, normative source, element-by-element derivation, licence |
 | Prompts | 7 rungs (R0 no law; R1–R4 the elements, a paraphrase of BGE 130 IV 111, the closed list, the 2020 date; R5 the verbatim Fedlex text and Regeste; R6 R5 with the element check) × 2 framings (Ja/Nein; "Urteil: schuldig / nicht schuldig") |
-| Responses | 25 files: the 70B on Public AI (DE/FR/IT), the 8B public GGUF on CPU, bf16 training stages and weight blends, MLX 4-bit builds, Qwen3-8B ([`docs/builds.md`](docs/builds.md)) |
+| Responses | 33 files: the 70B on Public AI (DE/FR/IT, free text in all three, the A13 controls), the 8B public GGUF on CPU, bf16 training stages and weight blends, MLX 4-bit builds, Qwen3-8B ([`docs/builds.md`](docs/builds.md)) |
 
 ## How we know the gold is right
 

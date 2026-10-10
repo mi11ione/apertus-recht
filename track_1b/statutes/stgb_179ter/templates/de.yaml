@@ -1,13 +1,13 @@
 lang: de
 frames:
   F01: "Sachverhalt: {Date} fand {conversation} statt. {Role} {Medium} {Consent} {Complaint}"
-  F02: "Sachverhalt: Gemäss Anklageschrift fand {date} {conversation} statt. {Role} {Medium} {Consent} {Complaint}"
+  F02: "Sachverhalt: Gemäss Polizeirapport fand {date} {conversation} statt. {Role} {Medium} {Consent} {Complaint}"
   F03: "Sachverhalt: Folgendes ist erstellt: {Date} fand {conversation} statt. {Role} {Medium} {Consent} {Complaint}"
 actors:
   m1: {surface: "ein Mann", gender: m}
-  m2: {surface: "ein Angestellter", gender: m}
+  m2: {surface: "ein 45-jähriger Mann", gender: m}
   f1: {surface: "eine Frau", gender: f}
-  f2: {surface: "eine Angestellte", gender: f}
+  f2: {surface: "eine 38-jährige Frau", gender: f}
 morphology:
   m: {pron: er, poss_dat_n: seinem, poss_dat_m: seinem}
   f: {pron: sie, poss_dat_n: ihrem, poss_dat_m: ihrem}
@@ -17,7 +17,7 @@ dates:
   d2025_02: "im Februar 2025"
 conversations:
   c_salary: "in einem Sitzungszimmer ein vertrauliches Gespräch über eine Lohnerhöhung"
-  c_rent: "am Telefon ein Gespräch über eine Mietzinserhöhung"
+  c_rent: "in der Wohnung der Vermieterin ein Gespräch über eine Mietzinserhöhung"
   c_doctor: "in einer Arztpraxis ein Gespräch über eine Diagnose"
   c_business: "in einem Restaurant ein vertrauliches Geschäftsgespräch unter vier Augen"
   c_podium: "an einer öffentlichen Podiumsdiskussion vor rund 200 Zuhörenden ein Streitgespräch"
@@ -30,11 +30,14 @@ media:
   dictaphone: "{Pron} zeichnete das Gespräch mit einem Diktiergerät als Tonaufnahme auf."
   notes: "{Pron} schrieb den Inhalt des Gesprächs stichwortartig von Hand mit."
 consents:
-  none: "Die anderen Beteiligten waren damit nicht einverstanden."
-  unnoticed: "Die anderen Beteiligten bemerkten es nicht und hatten nicht eingewilligt."
-  all: "Alle anderen Beteiligten hatten vorher ausdrücklich eingewilligt."
+  none: "Wer sonst am Gespräch teilnahm, war damit nicht einverstanden."
+  unnoticed: "Wer sonst am Gespräch teilnahm, bemerkte es nicht und hatte nicht eingewilligt."
+  all: "Wer sonst am Gespräch teilnahm, hatte vorher ausdrücklich eingewilligt."
 complaints:
-  timely: "Eine betroffene Person stellte zwei Wochen, nachdem sie davon und vom Täter erfahren hatte, Strafantrag."
-  timely_two: "Eine betroffene Person stellte knapp drei Monate, nachdem sie davon und vom Täter erfahren hatte, Strafantrag."
-  none: "Keine der betroffenen Personen stellte Strafantrag."
-  late: "Eine betroffene Person stellte erst fünf Monate, nachdem sie davon und vom Täter erfahren hatte, Strafantrag."
+  timely: "Eine am Gespräch beteiligte Person erfuhr davon und auch, wer es war; zwei Wochen später stellte sie Strafantrag."
+  timely_two: "Eine am Gespräch beteiligte Person erfuhr davon und auch, wer es war; knapp drei Monate später stellte sie Strafantrag."
+  none: "Niemand stellte Strafantrag."
+  late: "Eine am Gespräch beteiligte Person erfuhr davon und auch, wer es war; erst fünf Monate später stellte sie Strafantrag."
+# legal review (10 Oct 2026): for an outsider the consent sentence must not say "who else took part"
+rewrite:
+  - ['(Nebenraum mit\..*?)Wer sonst am', '\1Wer am']

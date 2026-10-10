@@ -1,0 +1,23 @@
+{
+ "run": "publicai-70b-179ter",
+ "backend": {
+  "backend": "openai",
+  "base_url": "gateway:swiss-ai/apertus-v1.5-8b",
+  "model": "swiss-ai/apertus-v1.5-8b",
+  "mode": "exact_prefill",
+  "seed": null
+ },
+ "params": {},
+ "rows": 720,
+ "errors": 0,
+ "served_models": [
+  "swiss-ai/apertus-v1.5-8b"
+ ],
+ "jsonl_sha256": "9769bae26e1ab13415755c771d2099138a2e18f3866bc5dae898aabce591e092",
+ "parts": "core_de (Art. 179ter StGB)",
+ "rungs": "R0,R1,R2",
+ "framings": "conv,ver",
+ "sample": null,
+ "label": "Apertus v1.5 70B via Public AI (name swiss-ai/apertus-v1.5-8b), exact forced choice, Art. 179ter StGB",
+ "model": "swiss-ai/apertus-v1.5-8b"
+}

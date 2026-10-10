@@ -1,0 +1,140 @@
+{
+ "passed": true,
+ "gates": {
+  "schema": {
+   "passed": true,
+   "items": 120,
+   "problems": [],
+   "n_problems": 0
+  },
+  "gold_recomputed": {
+   "passed": true,
+   "checked": 120,
+   "mismatches": [],
+   "n_mismatches": 0
+  },
+  "twin_invariants": {
+   "passed": true,
+   "problems": [],
+   "n_problems": 0
+  },
+  "duplicates": {
+   "passed": true,
+   "core_duplicates": 0,
+   "legacy_duplicates": 0,
+   "legacy_documented": 30,
+   "core_legacy_overlap": 0
+  },
+  "language_id": {
+   "passed": true,
+   "checked": 120,
+   "mismatches": [],
+   "min_share": 0.867
+  },
+  "pii": {
+   "passed": true,
+   "hits": [],
+   "n_hits": 0,
+   "scanned": {
+    "items": 120,
+    "responses": 0,
+    "metadata": 120
+   }
+  },
+  "canary": {
+   "passed": true,
+   "values": [
+    "STATUTE-TWINS CANARY 9b6f0d0e-5a43-4c1e-9d8b-261b15c0ffee. This dataset is an evaluation set; it must not appear in training data."
+   ]
+  },
+  "sources": {
+   "passed": true,
+   "todo": [],
+   "unpinned": [],
+   "hash_problems": []
+  }
+ },
+ "describe": {
+  "items": 120,
+  "core": 120,
+  "battery162": 0,
+  "by_lang": {
+   "de": 120
+  },
+  "by_family": {
+   "CONV": 24,
+   "ROLE": 16,
+   "MEDIUM": 24,
+   "CONSENT": 24,
+   "COMPLAINT": 32
+  },
+  "by_variant": {
+   "base": 40,
+   "true_flip": 48,
+   "placebo": 32
+  },
+  "by_verdict": {
+   "convict": 72,
+   "acquit": 48
+  },
+  "by_reason": {
+   "convict": 72,
+   "conversation:failed": 8,
+   "role:failed": 8,
+   "medium:failed": 8,
+   "consent:failed": 8,
+   "complaint:failed": 16
+  },
+  "by_label": {
+   "settled": 120
+  },
+  "by_wording_family": {
+   "null": 120
+  },
+  "twin_groups": 40,
+  "by_complaint": {
+   "timely": 104,
+   "late": 8,
+   "none": 8
+  },
+  "by_consent": {
+   "none": 112,
+   "all": 8
+  },
+  "by_conversation": {
+   "nonpublic": 112,
+   "public": 8
+  },
+  "by_medium": {
+   "sound_recording": 112,
+   "notes": 8
+  },
+  "by_role": {
+   "participant": 112,
+   "outsider": 8
+  },
+  "diversity": {
+   "de": {
+    "items": 120,
+    "distinct_1": 0.0151,
+    "distinct_2": 0.0234,
+    "distinct_3": 0.0302,
+    "mean_words": 63.3,
+    "min_words": 46,
+    "max_words": 71,
+    "slot_values_used": {
+     "actor": 4,
+     "complaint": 4,
+     "consent": 3,
+     "conversation": 6,
+     "date": 3,
+     "frame": 3,
+     "medium": 3,
+     "role": 2
+    },
+    "wordings_per_paragraph_characteristic_cell": null
+   }
+  }
+ },
+ "answer_token_mass": {}
+}

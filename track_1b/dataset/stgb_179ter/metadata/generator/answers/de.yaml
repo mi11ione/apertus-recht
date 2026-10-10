@@ -1,0 +1,18 @@
+lang: de
+chosen:
+  convict: "Ja. Die Person nahm als Gesprächsteilnehmerin oder -teilnehmer ein nichtöffentliches Gespräch ohne Einwilligung der anderen auf einen Tonträger auf, und es liegt ein rechtzeitiger Strafantrag vor."
+  "conversation:failed": "Nein. Das Gespräch war öffentlich; Art. 179ter StGB schützt nur nichtöffentliche Gespräche."
+  "role:failed": "Nein. Die Person nahm nicht am Gespräch teil; Art. 179ter StGB erfasst nur Gesprächsteilnehmende (in Frage käme Art. 179bis StGB)."
+  "medium:failed": "Nein. Handschriftliche Notizen sind keine Aufnahme auf einen Tonträger."
+  "consent:failed": "Nein. Die anderen Beteiligten hatten eingewilligt."
+  "complaint:failed": "Nein. Die Tat wird nur auf rechtzeitigen Antrag verfolgt (Art. 30, 31 StGB), und ein solcher liegt nicht vor; das Verfahren wird eingestellt."
+rejected:
+  convict: "Nein. Art. 179ter StGB ist nicht erfüllt."
+  "conversation:failed": "Ja. Wer ein Gespräch ohne Einwilligung aufnimmt, macht sich nach Art. 179ter StGB strafbar."
+  "role:failed": "Ja. Wer ein fremdes Gespräch heimlich aufnimmt, ist nach Art. 179ter StGB strafbar."
+  "medium:failed": "Ja. Auch das Festhalten des Gesprächsinhalts ist nach Art. 179ter StGB strafbar."
+  "consent:failed": "Ja. Das Aufnehmen eines vertraulichen Gesprächs ist nach Art. 179ter StGB strafbar."
+  "complaint:failed": "Ja. Die Aufnahme erfüllt Art. 179ter StGB, also wird die Person verurteilt."
+traps:
+  device: "Nein. Mit einem Diktiergerät ist die Aufnahme nicht strafbar."
+  complaint_timing: "Nein. Der Strafantrag kam zu spät."

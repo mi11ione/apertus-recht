@@ -9,7 +9,7 @@ render:
   order: [actor, date, conversation, role, medium, consent, complaint]
 acceptance:
   convict: "Acceptable: concludes that a court would convict under Art. 179ter StGB (participant, non-public conversation, sound recording, no consent, timely complaint). Unacceptable: concludes acquittal"
-  acquit: "Acceptable: concludes that there would be no conviction under Art. 179ter StGB, because {why}. Unacceptable: concludes conviction."
+  acquit: "Acceptable: concludes that there would be no conviction under Art. 179ter StGB, because {why}. Noting that Art. 179bis (or another provision) applies is acceptable. Unacceptable: concludes conviction."
   open: "Acceptable: says the outcome depends on facts the scenario leaves open. Unacceptable: a categorical verdict."
   reasons:
     "conversation:failed": "the conversation was public"

@@ -47,6 +47,47 @@ def pct(x, d=1):
     return f"{100 * x:.{d}f}%"
 
 
+def second_statute() -> dict:
+    """Art. 179ter StGB, the second statute released next to Art. 261bis (dataset/stgb_179ter): sizes from its eval
+    file, runs from its manifest, acquittal counts by element from results/results_179ter.json (when scored)."""
+    import collections
+    base = ROOT / "dataset/stgb_179ter"
+    if not (base / "MANIFEST.json").exists():
+        return {}
+    items = [json.loads(l) for l in (base / "eval/core_de.jsonl").read_text(encoding="utf-8").splitlines() if l.strip()]
+    runs = sorted({run_of(Path(f).name) for f in json.loads((base / "MANIFEST.json").read_text())["files"]
+                   if f.startswith("responses/") and f.endswith(".jsonl")})
+    out = dict(n=len(items), verdicts=collections.Counter(i["gold_verdict"] for i in items),
+               families=collections.Counter(i["family"] for i in items),
+               groups=len({i["twin_group"] for i in items}), runs=runs, table="")
+    rp = ROOT / "results/results_179ter.json"
+    if rp.exists() and runs:
+        R = json.loads(rp.read_text())["runs"].get(runs[0], {})
+        lines = ["| rung | framing | acquittals recognised | convictions kept | balanced accuracy |", "|---|---|---|---|---|"]
+        for a in sorted((a for a in R.get("accuracy", []) if a.get("subset") == "core"),
+                        key=lambda a: (a["rung"], a["framing"])):
+            lines.append(f"| {a['rung']} | {'Ja/Nein' if a['framing'] == 'conv' else 'schuldig / nicht schuldig'} | "
+                         f"{a['acquit_correct']}/{a['acquit_n']} | {a['convict_correct']}/{a['convict_n']} | "
+                         f"{a['balanced_accuracy']:.2f} |")
+        # acquittals recognised by the element that decides the item (Ja/Nein framing), from the stored responses
+        it = {i["id"]: i for i in items}
+        acq = collections.defaultdict(lambda: [0, 0])
+        for l in (base / "responses" / f"{runs[0]}.jsonl").read_text(encoding="utf-8").splitlines():
+            r = json.loads(l)
+            i = it.get(r.get("item_id"))
+            if "error" in r or not i or i["gold_verdict"] != "acquit" or r.get("framing") != "conv":
+                continue
+            c = acq[(i["gold_reason"], r["rung"])]
+            c[0] += r["lo_conv"] <= 0
+            c[1] += 1
+        rungs = sorted({k[1] for k in acq})
+        lines += ["", "| acquittal decided by (Ja/Nein) | " + " | ".join(rungs) + " |", "|---|" + "---|" * len(rungs)]
+        for reason in sorted({k[0] for k in acq}):
+            lines.append(f"| {reason} | " + " | ".join(f"{acq[(reason, rg)][0]}/{acq[(reason, rg)][1]}" for rg in rungs) + " |")
+        out["table"] = "\n".join(lines)
+    return out
+
+
 def main() -> int:
     qc = J("reports/qc.json")
     ds = qc["describe"]
@@ -65,6 +106,7 @@ def main() -> int:
         q.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(ROOT / src, q)
     man = manifest(ROOT / "dataset", unreleased)
+    s2 = second_statute()
     lo = J("reports/annotation_lawonly.json")
     a = ag["all"]
     settled = {k: v for k, v in ag.items() if k.startswith("variant:") and k != "variant:contested"}
@@ -110,6 +152,13 @@ configs:
       - {{split: de_user_voice, path: eval/prompts_pref_core_de_lay.jsonl}}
   - config_name: metadata
     data_files: [{{split: items, path: metadata/items.jsonl}}]
+""" + ("""  - config_name: stgb_179ter
+    data_files: [{split: de, path: stgb_179ter/eval/core_de.jsonl}]
+  - config_name: stgb_179ter_prompts
+    data_files: [{split: de, path: stgb_179ter/eval/prompts_core_de.jsonl}]
+""" + ("  - config_name: stgb_179ter_responses\n    data_files:\n" + "".join(
+        f"      - {{split: {r.replace('-', '_').replace('.', '_')}, path: stgb_179ter/responses/{r}.jsonl}}\n"
+        for r in s2["runs"]) if s2.get("runs") else "") if s2 else "") + f"""
   - config_name: responses
     data_files:
 """ + "".join(f"      - {{split: {r.replace('-', '_').replace('.', '_')}, path: responses/{r}.jsonl}}\n" for r in runs) + f"""
@@ -204,6 +253,38 @@ Paragraphs: {', '.join(f'{k} {v}' for k, v in sorted(ds['by_paragraph'].items())
 {div['de']['slot_values_used']['group']} group phrases, {div['de']['slot_values_used']['date']} dates, {div['de']['slot_values_used']['place']} places,
 {div['de']['slot_values_used']['actor']} actors; mean {div['de']['mean_words']} words; distinct-2 {div['de']['distinct_2']}, distinct-3 {div['de']['distinct_3']} (templated by design).
 
+""" + (f"""
+### Second statute: Art. 179ter StGB (`stgb_179ter/`, exploratory)
+The same generator, gold engine, QC gates and harness on a different kind of offence: recording a non-public
+conversation one takes part in, without the other participants' consent (Art. 179ter StGB), prosecuted only on a
+complaint filed within three months of learning of the act and the offender (Art. 30 and 31 StGB). Five elements:
+non-public conversation, the recorder is a participant (a third party falls under Art. 179bis instead), sound
+recording, no consent, timely complaint (a procedural element 261bis does not have). {s2['n']} German scenarios in
+{s2['groups']} twin groups ({', '.join(f'{k} {v}' for k, v in sorted(s2['families'].items()))}); verdicts
+{s2['verdicts'].get('convict', 0)} convict, {s2['verdicts'].get('acquit', 0)} acquit. Sources pinned like 261bis: the
+Fedlex texts of Art. 179ter, 30 and 31 StGB (version of 1 Oct 2026, sha256 in `stgb_179ter/metadata/sources.json`).
+Prompts at three rungs (R0 no law; R1 the elements named; R2 plus the complaint rule) in the two framings; every
+question asks about a conviction *under Art. 179ter alone*, since a court is not bound by the legal qualification of
+the charge. German only, not pre-registered and not part of the held-out test: it shows that the method carries to a
+second statute, not a second headline. A legal-reviewer persona (a Claude agent) found all 120 gold labels correct and
+asked for wording fixes, applied before any model was scored: the question restricted to the article, a police report
+instead of an indictment (no indictment of a complaint offence without a complaint), no legal conclusions in the facts
+("Täter", "betroffen"), a rent talk in the landlord's flat instead of a phone call (business calls are exempt under
+Art. 179quinquies). Scope of the gold: it answers only "conviction under Art. 179ter". An outsider who records may be
+punishable under Art. 179bis; without a timely complaint the proceedings are discontinued (Art. 329 Abs. 4 StPO), which
+is not an acquittal on the merits; justification, Art. 179quinquies and intent are assumed; a video with sound counts
+as a sound recording (only handwritten notes are tested as a medium that is not); «schuldig / nicht schuldig» are
+answer tokens, not Swiss dispositive wording. Files: `stgb_179ter/eval/`, `stgb_179ter/metadata/`,
+`stgb_179ter/responses/`, `stgb_179ter/MANIFEST.json`; results in the repository (`results/results_179ter.json`).
+""" + (f"""
+Apertus v1.5 70B ({', '.join(f'`{r}`' for r in s2['runs'])}):
+
+{s2['table']}
+
+A framing that answers one way for every scenario reads no element: with no law (R0), Ja/Nein says "Nein" to all 120
+(all acquittals "recognised", no conviction kept), while the verdict word convicts all. Only with the complaint rule
+stated (R2) do both framings separate the cases; the public setting and the outsider are still convicted there.
+""" if s2.get("table") else "") if s2 else "") + f"""
 ## Dataset Creation
 ### Curation Rationale
 Apertus is trained on Swiss court decisions, including BGE 130 IV 111 itself, yet plain-chat answers convict for

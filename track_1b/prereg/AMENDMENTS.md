@@ -170,3 +170,42 @@ Swiss law, while the gold is Art. 261bis; an answer convicting under another off
 to an acquittal item that both judges call misleading names Art. 261bis as its basis (R0 73/73, R3 39/39, R5 75/75);
 8 of the R0 answers also mention another provision (Art. 173/174 defamation, Art. 261). Counted by code in the
 judge aggregation (`misleading_answers_cite`).
+
+## A13 (2026-10-10, 14:50, after judge round 4): controls for agreement bias and for R5 (exploratory, post hoc)
+New prompts only (`dataset/eval/prompts_ctrl_core_*.jsonl`); no item, gold or existing prompt changes. All runs: the
+70B on Public AI, exact forced choice; `scripts/controls.py` writes `reports/controls_a13.json`.
+(1) **The question asked the other way** (framing `rev`: "Würde ein Schweizer Gericht die Person … freisprechen?",
+"Ja" = acquit), all 660 items per language. Without the law (R0) it recognises 0 of 215 acquittals in German, French
+and Italian, as with the original question; the yes-bias (half the mean score difference between the two directions)
+is 1.1–3.1 nats, and the two directions disagree on 0–2 of 645 items. With the verbatim law (R5, German) also 0 of 215.
+So "convicts everything" is not agreement bias. With the rules spelled out (R3) the reversed question breaks down: the
+German 70B also says "Ja, freisprechen" for half the punishable cases (acquittals 53/215, convictions 220/430,
+balanced accuracy 0.38; French 0.45). Averaged over both directions (bias cancels, nothing fitted), R3 recognises
+73 (German) and 88 (French) of 215 acquittals, against 107 and 120 with the original question alone. A threshold
+calibrated out of fold on twin groups reaches 0.68 at R0 (German, Ja/Nein): the scores carry information that the
+decision at zero does not use.
+(2) **Which part of R5 hurts** (German, Ja/Nein, a stable sample of 80 twin groups, `--sample 240`). On the same items
+R3 recognises 39 of 81 acquittals and R5 0. R3's rules plus the verbatim law (R5a): 12/81. R5 without the Regeste's
+closing example (R5b): 1/80. R5 with R1's element-check instruction after the law (R5c): 3/80. R5 plus Art. 1 StGB
+(R5d): 3/81. R6 with the verdict word: 1/81. French and Italian R6 (same sample design): 19/74 and 15/78, against
+R5 7/74 and 15/78 and R3 39/74 and 30/78 on the same items. No single sentence explains R5: the verbatim legal text
+itself cancels most of what the plain rules achieve, and Art. 1 StGB does not restore the closed list.
+(3) Three French `rev` rows hit rate-limit errors (HTTP 429) and were re-run. Italian R3 `rev` was not run (dropped to
+free the gateway for the French and Italian free text; R0 already settles the agreement-bias question).
+
+## A14 (2026-10-10, 16:30, after judge round 4): free text in French and Italian; a second statute (exploratory)
+(1) **Free text in French and Italian.** The same 80 twin groups as the German sample (`statute-twins eval
+--same-groups-as publicai-70b-open`), R0, R3 and R5, greedy, 220 tokens, the 70B under its `-70b` name; 720 answers
+per language. Judged like German: two blind Claude judges per answer (packets of 240, one agent per packet, scratch
+files kept apart after one agent reported stray lines from another agent in a shared scratch file, which it deleted
+unread; its packet agrees with the other judge on 238/240), the Qwen judge through the gateway (now with parallel
+requests, `JUDGE_WORKERS`), and the deterministic parser. Judge folders `review/open_judge_fr`, `open_judge_it`;
+`selfcheck` re-aggregates every language. The article check of the misleading answers is now case- and
+language-insensitive ("art.", "articolo"); German counts are unchanged.
+(2) **Art. 179ter StGB as a second released statute** (`statutes/stgb_179ter`, `dataset/stgb_179ter`): 120 German items
+in five families (conversation public, participant vs. outsider, medium, consent, complaint within three months,
+Art. 30/31 StGB). Before any scoring a legal-reviewer agent checked every item: all gold verdicts correct for
+"conviction under Art. 179ter"; framing and wording fixed (questions limited to Art. 179ter because an outsider falls
+under Art. 179bis; "Polizeirapport" instead of an indictment without complaint; no "Täter" before a verdict; a rent
+talk in the landlord's flat instead of a business call, Art. 179quinquies). Scored for the 70B at R0, R1 (elements)
+and R2 (+ the complaint rule), both framings; `selfcheck` re-derives and re-scores it. Not pre-registered.

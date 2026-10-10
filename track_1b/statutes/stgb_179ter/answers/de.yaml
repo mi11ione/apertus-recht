@@ -5,7 +5,7 @@ chosen:
   "role:failed": "Nein. Die Person nahm nicht am Gespräch teil; Art. 179ter StGB erfasst nur Gesprächsteilnehmende (in Frage käme Art. 179bis StGB)."
   "medium:failed": "Nein. Handschriftliche Notizen sind keine Aufnahme auf einen Tonträger."
   "consent:failed": "Nein. Die anderen Beteiligten hatten eingewilligt."
-  "complaint:failed": "Nein. Die Tat wird nur auf rechtzeitigen Antrag verfolgt (Art. 30, 31 StGB), und ein solcher liegt nicht vor."
+  "complaint:failed": "Nein. Die Tat wird nur auf rechtzeitigen Antrag verfolgt (Art. 30, 31 StGB), und ein solcher liegt nicht vor; das Verfahren wird eingestellt."
 rejected:
   convict: "Nein. Art. 179ter StGB ist nicht erfüllt."
   "conversation:failed": "Ja. Wer ein Gespräch ohne Einwilligung aufnimmt, macht sich nach Art. 179ter StGB strafbar."

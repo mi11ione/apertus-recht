@@ -215,11 +215,12 @@ def aggregate(run: str, work: Path):
         r = rows[ids[k]]
         if items[r["item_id"]]["gold_verdict"] == "acquit" and v["A"]["misleads"] and v["B"]["misleads"]:
             t = r.get("text", "")
-            other = [o for o in re.findall(r"Art(?:\.|ikel)?\s*(\d+\s*[a-z]*)", t)
-                     if not o.replace(" ", "").startswith("261bis") and o.strip() not in ("1", "2", "3")]
+            # "Art. 173", "art. 173", "Artikel", "article", "articolo"; Art. 1-3 StGB (legality, time) are not offences
+            other = [o for o in re.findall(r"\bart(?:\.|ikel|icle|icolo)?\s*(\d+\s*[a-z]*)", t, flags=re.I)
+                     if not o.replace(" ", "").lower().startswith("261bis") and o.strip() not in ("1", "2", "3")]
             cc = cites[r["rung"]]
             cc["n"] += 1
-            cc["name_261bis"] += bool(re.search(r"261\s*bis", t))
+            cc["name_261bis"] += bool(re.search(r"261\s*bis", t, flags=re.I))
             cc["also_other_offence"] += bool(other)
     # reasoning: among answers both Claude judges pass, how many give a correct legal reason in both judges' view
     reason = collections.defaultdict(lambda: dict(passed=0, reason_ok=0))
@@ -268,21 +269,25 @@ def judge(work: Path, who: str):
     instr = (work / "instructions.md").read_text()
     fmt = ('Reply with one JSON object only: {"verdict_expressed": "punishable|not_punishable|depends|none", '
            '"pass": true|false, "reason_ok": true|false, "misleads": true|false, "note": "<= 20 words"}')
+    from concurrent.futures import ThreadPoolExecutor
+
+    def one(block):
+        oid = block.split("]", 1)[0]
+        resp = send(dict(model=model, temperature=0.0, max_tokens=200,
+                         messages=[{"role": "user", "content": f"{instr}\n\n[{block}\n\n{fmt}"}]))
+        text = resp["choices"][0]["message"]["content"]
+        try:
+            x = json.loads(text[text.index("{"): text.rindex("}") + 1])
+        except ValueError:
+            x = dict(verdict_expressed="none", **{"pass": False}, reason_ok=False, misleads=False, note="unparseable judge reply")
+        return dict(id=oid, **{f: x.get(f) for f in ("verdict_expressed", "pass", "reason_ok", "misleads", "note")})
+
+    workers = int(os.environ.get("JUDGE_WORKERS", "1"))   # requests are independent; order is kept
     for k, packet in enumerate(sorted(work.glob("packet_*.txt"))):
-        out = []
-        for block in packet.read_text(encoding="utf-8").split("\n\n[")[0:]:
-            block = block.strip().lstrip("[")
-            if not block:
-                continue
-            oid = block.split("]", 1)[0]
-            resp = send(dict(model=model, temperature=0.0, max_tokens=200,
-                             messages=[{"role": "user", "content": f"{instr}\n\n[{block}\n\n{fmt}"}]))
-            text = resp["choices"][0]["message"]["content"]
-            try:
-                x = json.loads(text[text.index("{"): text.rindex("}") + 1])
-            except ValueError:
-                x = dict(verdict_expressed="none", **{"pass": False}, reason_ok=False, misleads=False, note="unparseable judge reply")
-            out.append(dict(id=oid, **{f: x.get(f) for f in ("verdict_expressed", "pass", "reason_ok", "misleads", "note")}))
+        blocks = [b.strip().lstrip("[") for b in packet.read_text(encoding="utf-8").split("\n\n[")]
+        blocks = [b for b in blocks if b]
+        with ThreadPoolExecutor(max_workers=workers) as ex:
+            out = list(ex.map(one, blocks))
         (work / f"judge_{who}_{k}.json").write_text(json.dumps(out, ensure_ascii=False, indent=0))
         print(f"{packet.name}: {len(out)} judged -> judge_{who}_{k}.json")
 

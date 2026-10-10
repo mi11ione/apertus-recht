@@ -1,0 +1,23 @@
+{
+ "run": "publicai-70b-ctrl-fr",
+ "backend": {
+  "backend": "openai",
+  "base_url": "gateway:swiss-ai/apertus-v1.5-8b",
+  "model": "swiss-ai/apertus-v1.5-8b",
+  "mode": "exact_prefill",
+  "seed": null
+ },
+ "params": {},
+ "rows": 1320,
+ "errors": 0,
+ "served_models": [
+  "swiss-ai/apertus-v1.5-8b"
+ ],
+ "jsonl_sha256": "92ce7159903c25ac31e31dd82510d7c331ed0d58ae0da9ab5b10fd4482dfc4c4",
+ "parts": "ctrl_core_fr",
+ "rungs": "R0,R3",
+ "framings": "rev",
+ "sample": null,
+ "label": "Apertus v1.5 70B via Public AI (name swiss-ai/apertus-v1.5-8b), exact forced choice, A13 polarity control",
+ "model": "swiss-ai/apertus-v1.5-8b"
+}

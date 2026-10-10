@@ -128,3 +128,67 @@ both stay public, no fact or gold label changes. The 115 affected German items a
 prompts only; the pre-fix responses are in `archive/*.before-A11.jsonl`). The free-text framing gains R5 (the same
 240-item sample with the verbatim law), and every free-text answer is also judged by a judge of another model family
 (Qwen-SEA-LION-v4-32B via Public AI) next to the two Claude judges.
+
+## A12 (2026-10-10, 12:40, after judge round 4): post-hoc analyses and provenance repairs (no item, prompt or gold changes)
+(1) **Court validation per distinct case (post hoc).** The pre-registered count is per decision: 58 in-scope rulings,
+58/58. Four of them are further instances of a case already counted (BGE 149 IV 170 / 6B_777/2022; 6B_627/2015 /
+ZH Obergericht SB140436; 6B_350/2019 / two Vaud judgments), and one conviction is superseded: in Perinçek
+(6B_398/2007) the ECtHR Grand Chamber (2015) found a violation of Art. 10 ECHR and the Federal Court revised its
+judgment (6F_6/2016). Counted per distinct case, the engine agrees with the court in 53/53 (Wilson 0.93–1.00): 6 cases
+of genocide denial (10 of the 58 rulings; Abs. 4, second half, which the engine treats with the degradation half),
+47 of incitement or degradation; of the 3 acquittals, one is clean (migrants are not on the list),
+one agrees on the outcome on another ground (the court acquitted on the setting; the engine's first failing element
+is the unlisted characteristic, "foreigners"), and one (BGE 126 IV 176) predates BGE 130 IV 111.
+`scripts/court_validation.py` writes `case_level` next to the pre-registered numbers.
+(2) **Scores next to decisions (post hoc).** The colour rule stays as locked (a cell is misapplied when the variant's
+interval of the conviction log-odds lies above zero). Figure 1 now also marks the cells where the paired difference
+variant − reference lies below zero: the model registers the fact but its score stays on the convicting side. For the
+German 70B (Ja/Nein) this holds in 32 of 37 misapplied cells; with the verbatim law (R5) the private setting lowers the
+score by 6.6 nats (95% CI 5.7–7.4) from 14.7, without changing a decision.
+(3) **Judge agreement per gold class.** The judge of another model family (Qwen) agrees with the Claude consensus on
+470/473 answers to convict items and 224/245 to acquit or open items (κ 0.73; it passes 57 of these against the
+consensus's 40). The headline counts hold by that judge alone: it calls 72 of 75 R0 answers and 70 of 75 R5 answers to
+acquittal items misleading (Claude consensus: 73, 75). `reason_ok` is aggregated for answers both Claude judges pass.
+The Claude judges were Claude Opus 5.5 (`claude-opus-5-5`) running as Claude Code subagents on the packets with
+`instructions.md` as their prompt; only the aggregation is re-runnable as code, the judge model is run by
+`statute-twins judge judge` on any endpoint.
+(4) **Judgements bound to answers.** `review/open_judge/bindings.json` stores, per judgement id, the request hash of
+the prompt and the sha256 of the answer judged; aggregation fails on any mismatch. One declared exception: J00420,
+whose prompt A11 changed (tram → bus) while the greedy answer stayed byte-identical; the pre-A11 judgement is kept.
+(5) **Provenance.** The history rewrite of 10 Oct 2026 (assistant trailers removed from commit messages) gave the lock
+commit d9537fd the new id de35225 with the identical tree; tag `prereg-lock` points to it. The frozen `heldout.py` now
+ships in `prereg/frozen/` (sha256 checked against `LOCK.json`, and against the lock commit where the history exists),
+so `prereg-verify` runs it in Docker as well. `CHANGES.json` gains A11 for `core_de.jsonl` (the German localisation)
+and records each amended file's current hash, so a later change without an amendment fails. Record of earlier changes
+to the locked `results.py` not named before: count fields (10 Oct, 04:47) and the AUC (06:38), both additive; no
+pre-registered quantity changed.
+(6) **Corrections to earlier entries.** A7's heading says "before any French or Italian result entered the report":
+French and Italian runs on the A5 texts had been computed by then (`archive/*.before-A7.jsonl`), but not reported.
+A4 replaced a planned human reviewer (R1, a team member) by agents; the pre-registration had named that person.
+(7) **Which law the misleading answers invoke.** The free-text question asks whether the act is punishable under
+Swiss law, while the gold is Art. 261bis; an answer convicting under another offence would not be wrong. Every answer
+to an acquittal item that both judges call misleading names Art. 261bis as its basis (R0 73/73, R3 39/39, R5 75/75);
+8 of the R0 answers also mention another provision (Art. 173/174 defamation, Art. 261). Counted by code in the
+judge aggregation (`misleading_answers_cite`).
+
+## A13 (2026-10-10, 14:50, after judge round 4): controls for agreement bias and for R5 (exploratory, post hoc)
+New prompts only (`dataset/eval/prompts_ctrl_core_*.jsonl`); no item, gold or existing prompt changes. All runs: the
+70B on Public AI, exact forced choice; `scripts/controls.py` writes `reports/controls_a13.json`.
+(1) **The question asked the other way** (framing `rev`: "Würde ein Schweizer Gericht die Person … freisprechen?",
+"Ja" = acquit), all 660 items per language. Without the law (R0) it recognises 0 of 215 acquittals in German, French
+and Italian, as with the original question; the yes-bias (half the mean score difference between the two directions)
+is 1.1–3.1 nats, and the two directions disagree on 0–2 of 645 items. With the verbatim law (R5, German) also 0 of 215.
+So "convicts everything" is not agreement bias. With the rules spelled out (R3) the reversed question breaks down: the
+German 70B also says "Ja, freisprechen" for half the punishable cases (acquittals 53/215, convictions 220/430,
+balanced accuracy 0.38; French 0.45). Averaged over both directions (bias cancels, nothing fitted), R3 recognises
+73 (German) and 88 (French) of 215 acquittals, against 107 and 120 with the original question alone. A threshold
+calibrated out of fold on twin groups reaches 0.68 at R0 (German, Ja/Nein): the scores carry information that the
+decision at zero does not use.
+(2) **Which part of R5 hurts** (German, Ja/Nein, a stable sample of 80 twin groups, `--sample 240`). On the same items
+R3 recognises 39 of 81 acquittals and R5 0. R3's rules plus the verbatim law (R5a): 12/81. R5 without the Regeste's
+closing example (R5b): 1/80. R5 with R1's element-check instruction after the law (R5c): 3/80. R5 plus Art. 1 StGB
+(R5d): 3/81. R6 with the verdict word: 1/81. French and Italian R6 (same sample design): 19/74 and 15/78, against
+R5 7/74 and 15/78 and R3 39/74 and 30/78 on the same items. No single sentence explains R5: the verbatim legal text
+itself cancels most of what the plain rules achieve, and Art. 1 StGB does not restore the closed list.
+(3) Three French `rev` rows hit rate-limit errors (HTTP 429) and were re-run. Italian R3 `rev` was not run (dropped to
+free the gateway for the French and Italian free text; R0 already settles the agreement-bias question).

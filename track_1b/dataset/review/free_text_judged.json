@@ -20,7 +20,84 @@
   "kappa": 0.918,
   "on_20pct_sample": {
    "agree": 139,
-   "n": 143
+   "n": 143,
+   "note": "sampled answers on which the two Claude judges agree"
+  },
+  "by_gold": {
+   "convict": {
+    "n": 473,
+    "agree": 470,
+    "consensus_pass": 462,
+    "judge_c_pass": 465,
+    "kappa": 0.839
+   },
+   "acquit": {
+    "n": 225,
+    "agree": 210,
+    "consensus_pass": 38,
+    "judge_c_pass": 53,
+    "kappa": 0.795
+   },
+   "open": {
+    "n": 20,
+    "agree": 14,
+    "consensus_pass": 2,
+    "judge_c_pass": 4,
+    "kappa": -0.154
+   },
+   "acquit_or_open": {
+    "n": 245,
+    "agree": 224,
+    "consensus_pass": 40,
+    "judge_c_pass": 57,
+    "kappa": 0.732
+   }
+  },
+  "acquit_misleads_by_rung": {
+   "R0|misleads": 72,
+   "R0|n": 75,
+   "R3|misleads": 30,
+   "R3|n": 75,
+   "R5|misleads": 70,
+   "R5|n": 75
+  }
+ },
+ "misleading_answers_cite": {
+  "R0": {
+   "n": 73,
+   "name_261bis": 73,
+   "also_other_offence": 8
+  },
+  "R3": {
+   "n": 39,
+   "name_261bis": 39,
+   "also_other_offence": 0
+  },
+  "R5": {
+   "n": 75,
+   "name_261bis": 75,
+   "also_other_offence": 0
+  }
+ },
+ "reason_ok_among_passes": {
+  "R0": {
+   "passed": 156,
+   "reason_ok": 139
+  },
+  "R3": {
+   "passed": 187,
+   "reason_ok": 181
+  },
+  "R5": {
+   "passed": 159,
+   "reason_ok": 159
+  }
+ },
+ "bindings": {
+  "checked": 720,
+  "mismatched": [],
+  "exceptions": {
+   "J00420": "A11 changed the setting wording (tram -> bus); the greedy answer is byte-identical, so the pre-A11 judgement is kept"
   }
  },
  "parser_vs_judge": {
@@ -105,7 +182,12 @@
  "human_sample": {
   "file": "reports/open_judge_human_sample_publicai-70b-open.tsv",
   "n": 144,
-  "status": "laid out, not yet checked by a human (v1.0 has no human reviewers)"
+  "by_gold": {
+   "convict": 97,
+   "open": 5,
+   "acquit": 42
+  },
+  "status": "laid out for a human check; not yet checked (v1.0 has no human reviewers)"
  },
  "cells": {
   "all": {
@@ -519,5 +601,5 @@
    "misleads": 19
   }
  },
- "judges": "two independent Claude agents per answer (A on all, B on all), blind to model, rung and family; an answer passes when both judges pass it"
+ "judges": "two independent Claude agents per answer (A on all, B on all; Claude Opus 5.5, claude-opus-5-5, as Claude Code subagents, one packet per agent, instructions.md as the prompt), blind to model, rung and family; an answer passes when both judges pass it"
 }

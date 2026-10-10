@@ -261,6 +261,19 @@ def _compare(a, b, tol, path="") -> list[str]:
     return [] if a == b else [f"{path}: {a!r} != {b!r}"]
 
 
+def further_statutes(ds: Path) -> list[dict]:
+    """Further statutes released inside the main dataset folder: dataset/<name>/MANIFEST.json with statutes/<name>/,
+    results in results/results_<name without the "stgb_" prefix>.json (e.g. dataset/stgb_179ter, results_179ter.json)."""
+    out = []
+    for m in sorted(Path(ds).glob("*/MANIFEST.json")):
+        name = m.parent.name
+        sdir = Path("statutes") / name
+        if sdir.is_dir():
+            out.append(dict(name=name.removeprefix("stgb_"), statute=sdir, dataset=m.parent,
+                            results=Path("results") / f"results_{name.removeprefix('stgb_')}.json"))
+    return out
+
+
 def cmd_selfcheck(a) -> int:
     """make run: (1) dataset regenerates from the statute files; (2) results recompute from the stored responses;
     (3) optional live slice against reference bands. Exit 1 on any FAIL."""
@@ -301,12 +314,15 @@ def cmd_selfcheck(a) -> int:
             print("  " + line)
         ok &= pok
         print("  PASS" if pok else "  FAIL")
-    jdir = Path("statutes/stgb_261bis/review/open_judge")
-    if jdir.exists():
+    jroot = Path("statutes/stgb_261bis/review")
+    if (jroot / "open_judge").exists():
         import subprocess
         print("== step 2d: free-text judgements re-aggregated from the stored judge files")
         for rep in sorted(Path("reports").glob("open_judged_*.json")):
             run_id = rep.stem.removeprefix("open_judged_")
+            # one judge folder per language: open_judge (German), open_judge_fr, open_judge_it
+            suffix = run_id.rsplit("-open", 1)[-1].lstrip("-")
+            jdir = jroot / ("open_judge" + (f"_{suffix}" if suffix else ""))
             r = subprocess.run([sys.executable, "-m", "statute_twins.judging", "aggregate", run_id, str(jdir), "--check"],
                                capture_output=True, text=True)
             print("  " + (r.stdout.strip().splitlines() or ["?"])[-1])
@@ -318,6 +334,32 @@ def cmd_selfcheck(a) -> int:
         for line in r.stdout.strip().splitlines()[-4:]:
             print("  " + line)
         ok &= r.returncode == 0
+    for extra in further_statutes(Path(a.dataset)):
+        # every further statute released next to the main one (dataset/<name>/ built from statutes/<name>/): the same
+        # two checks, re-derivation and re-scoring, against its own results file
+        name, sdir, ds, res = extra["name"], extra["statute"], extra["dataset"], extra["results"]
+        print(f"== step 1·{name}: re-derive {ds} from {sdir} (no model)")
+        probs = dataset.verify(sdir, ds, _reviews(sdir))
+        for p in probs[:20]:
+            print("  FAIL", p)
+        ok &= not probs
+        print("  PASS" if not probs else f"  FAIL ({len(probs)} problems)")
+        print(f"== step 2·{name}: re-score {ds}/responses and compare with {res}")
+        if not res.exists():
+            print(f"  no published results at {res} yet; skipped")
+        else:
+            diffs = _compare(json.loads(res.read_text()),
+                             json.loads(json.dumps(_round(compute_results(ds, released_runs(ds))))), a.tol)
+            for d in diffs[:20]:
+                print("  FAIL", d)
+            ok &= not diffs
+            print("  PASS" if not diffs else f"  FAIL ({len(diffs)} differences)")
+        print(f"== step 2b·{name}: every stored response belongs to the current prompt (request hash recomputed)")
+        stale = check_request_hashes(ds)
+        for line in stale["report"]:
+            print("  " + line)
+        ok &= not stale["mismatches"]
+        print("  PASS" if not stale["mismatches"] else f"  FAIL ({stale['mismatches']} responses do not match their prompt)")
     if a.live:
         from .harness import selfcheck_live
         print(f"== step 3: live slice ({a.live})")

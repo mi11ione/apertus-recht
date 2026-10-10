@@ -68,14 +68,17 @@ def review_records():
 
 
 def judges():
-    d = REV / "open_judge"
-    ids = json.loads((d / "ids.json").read_text())
+    """Judgements per prompt id, from every language's judge folder (open_judge, open_judge_fr, open_judge_it)."""
     out = collections.defaultdict(dict)
-    for who in ("A", "B", "C"):
-        for p in sorted(d.glob(f"judge_{who}_*.json")):
-            for x in json.loads(p.read_text()):
-                if x["id"] in ids:
-                    out[ids[x["id"]]][who] = dict(p=bool(x.get("pass")), r=bool(x.get("reason_ok")), v=x.get("verdict_expressed"), n=x.get("note", ""))
+    for d in sorted(REV.glob("open_judge*")):
+        if not (d / "ids.json").exists():
+            continue
+        ids = json.loads((d / "ids.json").read_text())
+        for who in ("A", "B", "C"):
+            for p in sorted(d.glob(f"judge_{who}_*.json")):
+                for x in json.loads(p.read_text()):
+                    if x["id"] in ids:
+                        out[ids[x["id"]]][who] = dict(p=bool(x.get("pass")), r=bool(x.get("reason_ok")), v=x.get("verdict_expressed"), n=x.get("note", ""))
     return out
 
 
@@ -373,7 +376,6 @@ function show(it, scroll = true) {
     h += `<h2>Apertus ${name}, forced choice</h2><table class="m"><tr><th></th><th>prompt</th><th>${YN[lang] || "Ja / Nein"}</th><th>${VW[lang] || "verdict word"}</th></tr>` + rs.map(r => `<tr><td>${r}</td><td>${RUNG[r]}</td><td>${dec(m[r + "c"], it.g)}</td><td>${dec(m[r + "v"], it.g)}</td></tr>`).join("") + `</table><p class="small">Numbers: log-odds of conviction (above zero = convicts).</p>`;
   }
   if (it.p0) h += `<details><summary>Exact prompt sent (R0, ${YN[lang] || "Ja / Nein"})</summary><p class="q">${esc(it.p0)}</p></details>`;
-  if (!it.ft && lang !== "de" && lang !== "de_lay") h += `<p class="small">Free-text answers were collected in German only.</p>`;
   if (it.ft) h += `<h2>Apertus 70B in its own words</h2>` + it.ft.map(x => { const J = Object.entries(x.j), bad = J.length && J.filter(([k, v]) => !v.p).length > J.length / 2; const reasonBad = !bad && J.length && J.filter(([k, v]) => v.p && v.r === false).length > J.length / 2; return `<div class="q ${bad ? "bad" : ""}"><div class="small mono">${x.rung} · ${RUNG[x.rung]}${J.length ? " · judges: " + (bad ? "wrong verdict" : reasonBad ? "verdict right, reasoning flawed" : "acceptable") + " (" + J.map(([k, v]) => `${k} ${v.p ? "pass" : "fail"}`).join(", ") + ")" : ""}</div>${esc(x.text)}</div>`; }).join("");
   h += `<details><summary>Reference answers</summary><dl class="kv"><dt>chosen</dt><dd>${esc(it.ch)}</dd><dt>rejected</dt><dd>${esc(it.rj)}</dd>${it.rm ? `<dt>mirror</dt><dd>${esc(it.rm)}${it.pf != null ? ` <span class="small mono">· 70B prefers ${it.pf ? "the chosen answer" : "the mirror"}</span>` : ""}</dd>` : ""}<dt>criterion</dt><dd class="small">${esc(it.ac)}</dd></dl></details>`;
   if (it.an || it.lo || it.ad) h += `<details><summary>Review records (blind)</summary>${REWORDED[lang] ? `<p class="small">Annotated on the wording before amendment ${REWORDED[lang]}; no fact or gold changed since.</p>` : ""}<table class="m"><tr><th>pass</th><th>label</th><th>element</th><th>reason</th></tr>` + (it.an || []).map(a => `<tr><td>annotation ${a.round}</td><td>${dec(lab(a.label), it.g)}</td><td>${esc(a.el)}</td><td style="font-family:Sans">${esc(a.reason)}</td></tr>`).join("") + (it.lo ? `<tr><td>law only</td><td>${dec(lab(it.lo.label), it.g)}</td><td>${esc(it.lo.el)}</td><td style="font-family:Sans">${esc(it.lo.reason)}</td></tr>` : "") + (it.ad || []).map(a => `<tr><td>adjudicator ${a.who}</td><td>${esc(a.decision.replace("_", " "))}</td><td></td><td style="font-family:Sans">${esc(a.reason)}</td></tr>`).join("") + `</table></details>`;

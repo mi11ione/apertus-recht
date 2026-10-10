@@ -1,0 +1,18 @@
+{
+ "files": {
+  "eval/core_de.jsonl": "b255afc7779e53d383c07e42487af3ecf45826d757395d59ac74910f85fb88cd",
+  "eval/prompts_core_de.jsonl": "c8017e18bf989d6a10e1e398a3c7b6ace327d869d24ddd0b5094ca7eabbcc278",
+  "metadata/generator/answers/de.yaml": "e617d32eb1ef98202e964ec0d06ea03ed3f5f904420811a831a4ba0f14e6495f",
+  "metadata/generator/design.yaml": "9bc598ea6ba52cc37997deb3fe3c7a74c22da63eba18f48f8449cc3a3c56227d",
+  "metadata/generator/prompts/de.yaml": "20a72f7a982852ecc29825d9dbadaa67433ea3021d09be444cb0e22590d2d57a",
+  "metadata/generator/sources/eli_cc_54_757_781_799__art_179_ter__de__2026-10-01.json": "edd9398f26d2883e71eec32e4171e9617a606f3882f530f863a1205210ca8e93",
+  "metadata/generator/sources/eli_cc_54_757_781_799__art_30__de__2026-10-01.json": "1bb8bc3a8725d3ced7ad5e1e05be5b83752fa085610bc5ecb0263e2b516422c4",
+  "metadata/generator/sources/eli_cc_54_757_781_799__art_31__de__2026-10-01.json": "3d7fdaf5b73bd6758f4ec858042c8539f277ccc865e4fc0c8b87c394b51b88ed",
+  "metadata/generator/statute.yaml": "5135c9da9231d6043b672ff811cbdb1907a57871f7b2b97475cb7bce84f3df75",
+  "metadata/generator/templates/de.yaml": "e8f9b94569b1bbf78f2b6b4248f3a4b61f88970cb84d9921d7a6bd276a6e341f",
+  "metadata/items.jsonl": "ce33add664b144ddc6ef7e23a58987a28c2e2551362d936fa538d07814fdbcec",
+  "metadata/sources.json": "3fea523b2d7535d27d8e91b14a0e4db50d631c3029ebfbb227f70557a6b643cf",
+  "responses/publicai-70b-179ter.jsonl": "9769bae26e1ab13415755c771d2099138a2e18f3866bc5dae898aabce591e092",
+  "responses/publicai-70b-179ter.meta.json": "4c5b20f1c3db4f8bcd3284269a3b1693d6f67a83d889b2c06b94f0ea9fad32f8"
+ }
+}
