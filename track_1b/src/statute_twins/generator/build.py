@@ -263,7 +263,7 @@ def rationale(d: Design, sc: Scenario) -> str:
     return "; ".join(parts) + f" -> {sc.gold.verdict} ({sc.gold.reason})"
 
 
-def reference_answers(d: Design, lang: str, sc: Scenario) -> tuple[str, str]:
+def reference_answers(d: Design, lang: str, sc: Scenario) -> tuple[str, str, str | None]:
     """(chosen, rejected) in the item language. Placeholders: {char_label} (answers.char_labels of the characteristic),
     {date} (the date slot's surface), {<element>_label} for elements listed under answers.labels, {<slot>_label} for
     slots listed under answers.slot_labels (e.g. the setting); a capitalised placeholder ({Setting_label}) capitalises
@@ -300,7 +300,11 @@ def reference_answers(d: Design, lang: str, sc: Scenario) -> tuple[str, str]:
                           + (f" (or {detail!r})" if detail else "") + "; add one (see docs/add-a-statute.md)")
     chosen = choose(pick("chosen"), 0)
     rejected = choose(a["traps"][sc.trap], 1) if (sc.trap and sc.trap in (a.get("traps") or {})) else choose(pick("rejected"), 1)
-    return chosen.format(**kw), rejected.format(**kw)
+    # `minimal`: the chosen answer mirrored, with the verdict and the deciding legal claim negated, of about the same
+    # length and wording; used for preference accuracy, where a longer chosen answer would otherwise lose on length
+    mins = a.get("minimal") or {}
+    minimal = mins.get(detail) if detail and detail in mins else mins.get(key)
+    return chosen.format(**kw), rejected.format(**kw), (choose(minimal, 0).format(**kw) if minimal else None)
 
 
 def item_id(d: Design, lang: str, sc: Scenario) -> str:
@@ -316,7 +320,7 @@ def build_items(d: Design, scenarios: list[Scenario], subset: str = "core") -> l
     for lang in d.langs:
         for sc in scenarios:
             text = render(d, lang, sc.slots)
-            chosen, rejected = reference_answers(d, lang, sc)
+            chosen, rejected, minimal = reference_answers(d, lang, sc)
             auth = _authorities(sc.gold)
             fam = d.slots["act"][sc.slots["act"]].get("family") if "act" in sc.slots else None
             items.append(dict(
@@ -331,6 +335,7 @@ def build_items(d: Design, scenarios: list[Scenario], subset: str = "core") -> l
                 gold_verdict=sc.gold.verdict, deciding_element=sc.gold.deciding_element, gold_reason=sc.gold.reason,
                 label=sc.gold.label, trap=sc.trap,
                 acceptance_criterion=acceptance(d, sc), chosen=chosen, rejected=rejected,
+                **({'rejected_minimal': minimal} if minimal else {}),
                 rationale=rationale(d, sc), citation=_cite(d, auth, lang), normative_source=auth,
                 licence="CDLA-Permissive-2.0", canary=d.raw.get("canary"),
                 provenance=dict(prov, translation="source" if lang == "de" else "claude-agents+back-translation"),
@@ -339,8 +344,9 @@ def build_items(d: Design, scenarios: list[Scenario], subset: str = "core") -> l
 
 
 def build_pref_prompts(d: Design, items: list[dict]) -> list[dict]:
-    """Preference prompts: the plain free-text question (R0) of every settled item, with the item's `chosen` and
-    `rejected` reference answers as the two continuations. They are stored by direction (`convict` = the answer that
+    """Preference prompts: the plain free-text question (R0) of every settled item, with the item's `chosen` answer and
+    its length-matched mirror `rejected_minimal` (same wording, verdict and deciding claim negated) as the two
+    continuations. They are stored by direction (`convict` = the answer that
     says punishable, `acquit` = the one that says not punishable), so a forced choice between them is scored exactly
     like the Ja/Nein framings; `chosen_side` records which of the two is the item's chosen answer."""
     rows = []
@@ -349,9 +355,11 @@ def build_pref_prompts(d: Design, items: list[dict]) -> list[dict]:
             continue
         side = it["gold_verdict"]
         other = "acquit" if side == "convict" else "convict"
+        if not it.get("rejected_minimal"):
+            continue
         rows.append(dict(prompt_id=f"{it['id']}/R0/pref", item_id=it["id"], lang=it["lang"], rung="R0", framing="pref",
                          user=it["text"] + question(d, it["lang"], "R0", "open"), answer_prefix="",
-                         **{side: it["chosen"], other: it["rejected"]}, chosen_side=side))
+                         **{side: it["chosen"], other: it["rejected_minimal"]}, chosen_side=side))
     return rows
 
 

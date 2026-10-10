@@ -57,7 +57,7 @@ def render(d: Design, lang: str, slots: dict) -> str:
     return re.sub(r"\s+", " ", text).strip()
 
 
-RUNGS = ["R0", "R1", "R2", "R3", "R4"]
+RUNGS = ["R0", "R1", "R2", "R3", "R4", "R5"]
 FRAMINGS = ["conv", "ver"]
 
 
@@ -88,7 +88,30 @@ def question(d: Design, lang: str, rung: str, framing: str) -> str:
         return head + p["closed_list"] + p["tails"][framing]
     if rung == "R4":
         return head + p["closed_list"] + p["date_clause"] + p["tails"][framing]
+    if rung == "R5":
+        lt = p["law_text"]
+        return lt["intro"] + law_block(d, lang) + lt["question"] + p["tails"][framing]
     raise ValueError(rung)
+
+
+def law_block(d: Design, lang: str) -> str:
+    """The pinned legal texts, verbatim, as a retrieval pipeline would paste them (prompts/<lang>.yaml: law_text)."""
+    import json
+    parts = []
+    for it in d.prompts[lang]["law_text"]["items"]:
+        rec = json.loads(d.statute.source_file(it["source"], lang).read_text(encoding="utf-8"))
+        if "regeste" in rec:
+            parts.append(f"{it['label']}: {rec['regeste'][lang]}")
+            continue
+        paras = rec["paragraphs"]
+        body = "\n".join(f"{k} {t}" for k, t in enumerate(paras, 1)) if it.get("numbered") else "\n".join(paras)
+        notes = rec.get("notes") or []
+        mark = "¹" if it.get("footnotes") and notes else ""
+        block = f"{it['label']}{mark}\n{body}"
+        if mark:
+            block += f"\n¹ {notes[0]}"
+        parts.append(block)
+    return "\n\n".join(parts)
 
 
 def candidates(d: Design, lang: str, framing: str) -> dict:

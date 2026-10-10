@@ -7,6 +7,15 @@ heads:
   R2: "\n\nEsamini gli elementi costitutivi della fattispecie dell'art. 261bis CP nella versione in vigore al momento del fatto: carattere pubblico dell'esternazione (secondo la DTF 130 IV 111, un'esternazione fatta nell'ambito privato, ad esempio nella cerchia famigliare o in un gruppo di amici, non è pubblica), caratteristica protetta (razza, etnia, religione, orientamento sessuale) e comportamento punibile."
 closed_list: " L'elenco delle caratteristiche protette è esaustivo: razza, etnia, religione, orientamento sessuale. L'identità di genere e il sesso non sono contemplati."
 date_clause: " L'orientamento sessuale è contemplato soltanto per i fatti commessi a partire dal 1° luglio 2020; la legge non ha effetto retroattivo."
+# R5 (A8): the law as a retrieval pipeline would paste it: the pinned Fedlex texts verbatim, with Fedlex's own footnote,
+# and the Regeste of the leading case (rendered from statutes/sources/ by render.law_block).
+law_text:
+  intro: "\n\nBasi legali, testi tratti da Fedlex e dalla sentenza di principio:\n\n"
+  items:
+    - {source: fedlex_261bis_2026, label: "Art. 261bis CP", footnotes: true}
+    - {source: fedlex_art2, label: "Art. 2 CP", numbered: true}
+    - {source: bge_130_iv_111, label: "DTF 130 IV 111, regesto"}
+  question: "\n\nDomanda:"
 tails:
   open: " È punibile secondo il diritto svizzero? Risponda in due o tre frasi."
   conv: " La fattispecie è adempiuta, cosicché un tribunale svizzero condannerebbe la persona? Risponda con Sì o No."

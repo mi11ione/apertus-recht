@@ -1,6 +1,6 @@
 # Prior art: legal LLM evaluation datasets vs. our Art. 261bis StGB minimal-twin dataset
 
-Research date: 2026-10-10. "UNVERIFIED" means I could not confirm it from a primary source (paper, dataset card or repo) during this search. "Not found" means the primary source does not mention it; it does not prove the feature is absent.
+Research date: 2026-10-10. "UNVERIFIED" means we could not confirm it from a primary source (paper, dataset card or repo) during this search. "Not found" means the primary source does not mention it; it does not prove the feature is absent.
 
 **Our dataset (for reference):** one Swiss criminal statute (Art. 261bis StGB); DE/FR/IT; minimal twins where each variant changes exactly one legal fact (publicity; a protected characteristic on/off the closed list; act date before/after an amendment's entry into force, i.e. non-retroactivity); placebo variants that change wording but not the law; gold verdict computed by code from the statute; validated against court decisions; measured across model training stages and quantised builds.
 
@@ -32,7 +32,7 @@ Research date: 2026-10-10. "UNVERIFIED" means I could not confirm it from a prim
 ### 2. Swiss Judgment Prediction
 - Paper: https://arxiv.org/abs/2110.00806 (NLLP 2021). Dataset: https://huggingface.co/datasets/rcds/swiss_judgment_prediction
 - The card's licence fields disagree (CC BY-SA 4.0 tag vs. CC BY 4.0 text). Quote both, or check with the authors.
-- **6b-Swiss. LCI perturbation:** Santosh, Baumgartner, Stürmer, Grabmair, Niklaus, "Towards Explainability and Fairness in Swiss Judgement Prediction" (LREC-COLING 2024), https://arxiv.org/abs/2402.17013. It proposes "Lower Court Insertion" (LCI), which inserts lower-court information into the case text and measures how predictions shift, plus occlusion and 108 expert-rationale cases in DE/FR/IT. This is the closest counterfactual-perturbation work on Swiss data that I found. It probes bias in judgment prediction; its variants do not change legally relevant facts and have no rule-computed gold.
+- **6b-Swiss. LCI perturbation:** Santosh, Baumgartner, Stürmer, Grabmair, Niklaus, "Towards Explainability and Fairness in Swiss Judgement Prediction" (LREC-COLING 2024), https://arxiv.org/abs/2402.17013. It proposes "Lower Court Insertion" (LCI), which inserts lower-court information into the case text and measures how predictions shift, plus occlusion and 108 expert-rationale cases in DE/FR/IT. This is the closest counterfactual-perturbation work on Swiss data that we found. It probes bias in judgment prediction; its variants do not change legally relevant facts and have no rule-computed gold.
 
 ### 3. SCALE
 - Paper v1 (title "SCALE: Scaling up the Complexity for Advanced Language Model Evaluation", first author Rasiah): https://arxiv.org/abs/2306.09237v1. Current v3 ("One Law, Many Languages: Benchmarking Multilingual Legal Reasoning for Judicial Support", first author Stern): https://arxiv.org/abs/2306.09237
@@ -51,7 +51,7 @@ Research date: 2026-10-10. "UNVERIFIED" means I could not confirm it from a prim
 ### 6. Counterfactual / minimal-pair / rule-computed prior art (searched hard)
 - **LawShift** (most similar in design). DOI: https://doi.org/10.52202/085713-4010 ; NeurIPS page: https://papers.nips.cc/paper_files/paper/2025/hash/adf82a0a1d52d93961476458b9566a2b-Abstract-Datasets_and_Benchmarks_Track.html ; data: https://huggingface.co/datasets/triangularPeach/LawShift ; code: https://github.com/triangularPeach/LawShift
   - Shared with ours: criminal code, single-fact edits of real cases, enumerated-scope changes, and an expected verdict flip.
-  - Different from ours: Chinese only; the statute revisions are hypothetical (annotator-drafted), not real amendments with entry-into-force dates; no non-retroactivity; no placebos; expected outcomes come from expert-designed metamorphic relations, not code; it evaluates pre-LLM legal judgment prediction models (5 models). It explicitly cites Wang et al. (edited legal knowledge, 3 change types) as prior work. I did not check that paper.
+  - Different from ours: Chinese only; the statute revisions are hypothetical (annotator-drafted), not real amendments with entry-into-force dates; no non-retroactivity; no placebos; expected outcomes come from expert-designed metamorphic relations, not code; it evaluates pre-LLM legal judgment prediction models (5 models). It explicitly cites Wang et al. (edited legal knowledge, 3 change types) as prior work. We did not check that paper.
 - **OpenExempt**: https://arxiv.org/abs/2601.13183 ; https://github.com/servantez/OpenExempt ; https://huggingface.co/datasets/SergioServantez/OpenExempt ; ACL Findings 2026: https://aclanthology.org/2026.findings-acl.1328/
   - Shared with ours: gold computed from symbolic statute encodings, single-factor diagnostic variation, and a date-relative rule (730 days before filing).
   - Different from ours: English and US only; civil bankruptcy law; no placebos; no amendment or retroactivity test; no court validation.
@@ -61,8 +61,8 @@ Research date: 2026-10-10. "UNVERIFIED" means I could not confirm it from a prim
 - **Hate speech + law:** Luo et al. https://arxiv.org/abs/2305.13677 (code: https://github.com/chufeiluo/legalhatespeech). Multilingual HateCheck https://arxiv.org/abs/2206.09917 is the methodological ancestor of our placebo and contrast design in DE/FR/IT, but its labels are not legal.
 - **Minimal pairs over statute text:** LexFlip https://arxiv.org/abs/2609.05296 (code: github.com/Nyvora-Vision-Labs/LEXFLIP). It targets metrics, not verdicts.
 - **Weaker or excluded:** "Know Your Limits" (https://arxiv.org/abs/2606.16118) has a few minimal hypothesis pairs over ContractNLI, with human labels under a formal definition. Z3 is used only for model predictions. CLAUSE (https://arxiv.org/abs/2511.00340) perturbs contracts. A web "hypothesis" page (lacuna.tiptreesystems.com, "Which Rule Applies When?") describes date-variant contrastive pairs around law revisions, but it is a proposal, not a published dataset. UNVERIFIED and not citable.
-- **Art. 261bis specifically:** I found no LLM evaluation dataset built on Art. 261bis StGB.
-- **Training stages / quantisation:** I found no legal benchmark that reports results across one model's training stages and quantised builds. SwissLegalEvals evaluates one precision per model. This search was not exhaustive.
+- **Art. 261bis specifically:** we found no LLM evaluation dataset built on Art. 261bis StGB.
+- **Training stages / quantisation:** we found no legal benchmark that reports results across one model's training stages and quantised builds. SwissLegalEvals evaluates one precision per model. This search was not exhaustive.
 
 ## Bottom line on novelty
 Each ingredient exists somewhere:
@@ -72,4 +72,4 @@ Each ingredient exists somewhere:
 - template contrasts over protected groups in DE/FR/IT (Multilingual HateCheck, non-legal)
 - Swiss multilingual perturbation (LCI on SJP)
 
-I found no dataset that combines them in one place: a single real criminal statute in DE/FR/IT; one-legal-fact twins over publicity, closed-list membership and act date vs. a real amendment's entry into force (non-retroactivity); wording-only placebos; code-computed verdicts checked against court decisions; and a comparison across training stages and quantisation. Claims should be phrased as "to our knowledge", and should cite LawShift, OpenExempt and TALD as the closest work.
+We found no dataset that combines them in one place: a single real criminal statute in DE/FR/IT; one-legal-fact twins over publicity, closed-list membership and act date vs. a real amendment's entry into force (non-retroactivity); wording-only placebos; code-computed verdicts checked against court decisions; and a comparison across training stages and quantisation. We therefore phrase our claims as "to our knowledge" and cite LawShift, OpenExempt and TALD as the closest work.

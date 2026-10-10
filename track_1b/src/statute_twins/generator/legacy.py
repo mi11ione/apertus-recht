@@ -69,7 +69,7 @@ def build_legacy_items(d: Design) -> list[dict]:
                 sc = Scenario(f"B{set_name}-{gid}", f"LEGACY_{set_name.upper()}", k, {"date": date, "setting": setting_slot}, facts, g, role,
                               None if role == "base" else {"true": "setting", "placebo": "setting", "group": "group",
                                                           "time": "date"}[x["variant"]], trap)
-                chosen, rejected = reference_answers(d, "de", sc)
+                chosen, rejected, _ = reference_answers(d, "de", sc)
                 auth = _authorities(g)
                 items.append(dict(
                     id=legacy_id(set_name, x), lang="de", subset="battery162", statute=d.statute.id,

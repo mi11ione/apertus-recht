@@ -21,11 +21,11 @@ case and closed list pasted in; R4: plus the 1 July 2020 clause.*
   protected characteristics. So is any act from 1993/94, before the article existed.
 - **The date clause backfires.** Told that sexual orientation is protected since 1 July 2020, the 70B convicts only 3
   of 35 punishable cases from 2021–25.
-- **The applied law is stable.** Pre-registered test: at R0, a read-back of the law the model applies, fitted on two
-  wording families, predicts its verdicts on the third far better than the statute does (+33 points). With the law in
-  context it still predicts better, but not by the pre-registered margin, and we report that.
-- **Where it comes from.** In the 8B, the DPO step turns a closed-list acquittal into a conviction; a 4-bit MLX
-  conversion changes 100 of 648 verdicts, the public Q8_0 GGUF 10.
+- **The pre-registered test fails where it matters, and we say so.** Fitted on two wording families, a read-back of
+  the law the model applies beats the statute at predicting the third, but with the law in the prompt not by the
+  pre-registered 15 points in every framing (at R0 it passes trivially: the model convicts everything).
+- **A lead on where it comes from.** In the 8B, the DPO step turns 6 of 6 canton items from acquittal to conviction;
+  a 4-bit MLX conversion changes 100 of 648 verdicts, the public Q8_0 GGUF 10.
 - **It cost ⟨usd⟩** of Public AI calls to score the 70B in three languages, and the 8B ran on free CI runners.
 
 Hack Apertus 2026 · Track 1B (Swiss Voices, behavioural alignment) · team 444 · report [`444_Report.pdf`](444_Report.pdf)

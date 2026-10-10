@@ -19,9 +19,11 @@ stops protecting it.
 - **Model:** Apertus v1.5 70B; Apertus v1.5 8B (public Q4_K_M GGUF; exploration phase: SFT, RLVR, DPO and final stages,
   bf16 weight blends, Q8_0 and MLX 4-bit builds).
 - **How it is used:** evaluation (forced choice, preference pairs, free text with two blind LLM judges).
-- **Where it runs:** the 70B on the Public AI endpoint through a cost-capped gateway (the name `apertus-v1.5-8b`
-  serves the 70B; evidence in `docs/builds.md`); the 8B GGUF on CPU in GitHub Actions; total Public AI spend for this
-  release ⟨usd⟩.
+- **Where it runs:** the 70B on the Public AI endpoint through a cost-capped gateway. The endpoint name
+  `apertus-v1.5-8b` serves the 70B: its greedy output is byte-identical to the `-70b` name in 760/792 cells, and it
+  scores 84.4% vs 70.8% on 250 MMLU items against the v1 8B route (`docs/builds.md`). The 8B GGUF runs on CPU in GitHub
+  Actions. Total Public AI spend for this release: ⟨usd⟩.
+- **Links:** code https://github.com/mi11ione/apertus-recht · dataset on Hugging Face (URL in the form notes).
 
 ----
 
@@ -64,6 +66,18 @@ Per language: 660 scenarios in 220 twin groups (220 base, 215 true flips, 210 pl
 Unprotected characteristics: gender identity, sex, canton, occupation, age, disability and political opinion. Paragraphs
 are balanced (Abs. 1/2/4: 220/218/222 in German). The wording is deliberately templated: 18 act wordings in three
 families, 29 settings, 33 group phrases. A mean of 44 words is the price of exact twins.
+
+**What is new.** To our knowledge no existing dataset lets one test which version of a real statute a model applies,
+element by element, in the three official languages (comparison with sources in `docs/prior-art.md`):
+
+| Dataset | Languages | Gold | One-fact twins | Real amendment dates, non-retroactivity | Checked against courts |
+|---|---|---|---|---|---|
+| LEXam / SwissLegalEvals | DE, EN / DE, FR, IT | exam keys, LLM judges | no | no | no |
+| LawShift (NeurIPS 2025) | ZH | expert metamorphic relations | yes | hypothetical revisions only | no |
+| TALD (2026) | ZH | statute version cited in judgments | no | which version applies | from judgments |
+| OpenExempt (2026) | EN | solver over expert encodings | single-factor suites | one deadline rule | no |
+| Multilingual HateCheck | DE, FR, IT, … | by construction | templated contrasts | no (not legal) | no |
+| **Apertus-Recht** | **DE, FR, IT** | **code from pinned Fedlex texts and BGE** | **yes, with placebos** | **1 Jan 1995, 1 Jul 2020, Art. 2 StGB** | **58/58** |
 
 ## Data Collection Method
 
@@ -128,10 +142,13 @@ reviewers. Every item carries a canary string.
 - *Free text* (a fixed sample of 240 German items, R0 and R3, greedy, 220 tokens): every answer is judged against its
   acceptance criterion by two independent Claude judges, blind to model, rung and family.
 
-**The read-back** pairs every true flip with its base. An element is *in force* in a framing when the 95% bootstrap
-intervals of both are above zero, meaning the model convicts where the law acquits. It is **red** when in force in
-every readable framing. The pre-registered test fits this read-back on wording families A and B and predicts family C.
-It passes if it beats the statute by at least 0.15 in every anchored framing.
+**The read-back** pairs every true flip (variant V) with its base (reference Ref, which the statute convicts) and
+takes 95% item-bootstrap intervals of the mean log-odds of conviction. A framing is *readable* (anchored) for that pair
+set when the interval of Ref lies above zero, i.e. the model convicts the reference at all. An element is *in force*
+when V's interval also lies above zero (the model convicts where the law acquits), *applied* when it lies below. It is
+**red** when in force in every readable framing. The pre-registered test fits this read-back on wording families A and
+B and predicts family C; it passes if it beats the statute by at least 0.15 in every readable framing. R1 and R2 (the
+elements named; the publicity rule added) are released for finer retrieval studies; we score R0, R3 and R4.
 
 | Run | Model and build | Where | Scope |
 |---|---|---|---|
@@ -180,10 +197,11 @@ the unchanged reference is not convicted either, so the element cannot be read.*
 log-probability than the `rejected` one (per token; summed in the repository). Free text: share of answers that meet
 the acceptance criterion (two judges, 240 German items).*
 
-**Pre-registered held-out test.** At R0 the read-back predicts the model's verdicts on unseen wordings far better than
-the statute: +33 points for the 70B and +30 / +33 for the 8B. **The applied law is stable across wordings.** At R3 and
-R4 the read-back still wins in every cell (+0.5 to +22 points), but not by the pre-registered 0.15 in every framing.
-By our own rule these rungs therefore report the per-element table, not the read-back.
+**Pre-registered held-out test.** At R0 the test passes, but trivially: a model that convicts everything is predicted
+perfectly by a read-back that marks every element satisfied, and the gain (+33 points) equals the share of acquittal
+items. The informative rungs are R3 and R4, where the model applies part of the law. There the read-back still beats
+the statute in every cell (+0.5 to +22 points), but not by the pre-registered 0.15 in every framing. The test fails,
+and by our own rule these rungs report the per-element table (Figure 1), not the read-back.
 
 ⟨table:heldout⟩
 
@@ -191,8 +209,9 @@ By our own rule these rungs therefore report the per-element table, not the read
 framing.*
 
 **Post-training and builds** (exploration battery, 8B):
-- At full precision, the step from RLVR to DPO turns a closed-list acquittal (canton, 0/6) into a conviction (6/6).
-  Exact weight blends between the two checkpoints trace a smooth curve.
+- At full precision, the step from RLVR to DPO turns the canton items of the battery from acquittal (0/6) to
+  conviction (6/6), and exact weight blends between the two checkpoints move monotonically between them. Six items
+  are a lead for the developers, not a finding about all of post-training.
 - The public Q8_0 GGUF agrees with bf16 on 638 of 648 decisions, the Q4_K_M on 622 and our MLX 4-bit conversion on 548.
 
 ## Dataset Limitations
@@ -224,7 +243,7 @@ framing.*
 - Prefer the Q8_0 GGUF or the served model to 4-bit MLX conversions.
 
 **For Apertus developers.**
-- The conviction prior comes from post-training, measurably at the DPO step.
+- The 8B exploration points at the DPO step for the canton conviction (6 items; worth testing at scale).
 - The leading case is in the training data. The model still does not apply it without being told.
 - Twin items give a target that can be measured element by element before and after a fix. The `chosen` / `rejected`
   pairs are in the format preference training uses, so keep them out of training if you evaluate on them.

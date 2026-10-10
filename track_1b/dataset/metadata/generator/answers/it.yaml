@@ -45,9 +45,16 @@ chosen:
   "setting:failed": "No. Il contesto ({setting_label}) è privato e caratterizzato da relazioni personali; secondo la DTF 130 IV 111 consid. 5.2 manca quindi il carattere pubblico che l'art. 261bis CP presuppone."
   "characteristic:not_listed": "No. La caratteristica «{char_label}» non figura nell'elenco esaustivo dell'art. 261bis CP (razza, etnia, religione, orientamento sessuale); l'esternazione non è punibile secondo questa disposizione, anche se è avvenuta pubblicamente."
   "characteristic:not_listed|gender_identity": "No. L'identità di genere non figura nell'elenco esaustivo dell'art. 261bis CP; con la revisione del 2020 è stato aggiunto soltanto l'orientamento sessuale."
-  "characteristic:not_yet_covered": "No. L'orientamento sessuale è protetto soltanto per i fatti commessi a partire dal 1° luglio 2020 (RU 2020 1609); un atto commesso {date} non vi rientra, poiché secondo l'art. 2 CP la legge non ha effetto retroattivo."
-  "act_date:not_in_force": "No. L'art. 261bis CP è in vigore soltanto dal 1° gennaio 1995; un atto commesso {date} non è punibile secondo l'art. 2 CP."
+  "characteristic:not_yet_covered": "No. L'orientamento sessuale è protetto soltanto per i fatti commessi a partire dal 1° luglio 2020 (RU 2020 1609); un atto commesso {date} non vi rientra, poiché secondo gli art. 1 e 2 CP la legge penale non ha effetto retroattivo."
+  "act_date:not_in_force": "No. L'art. 261bis CP è in vigore soltanto dal 1° gennaio 1995; un atto commesso {date} non è punibile in base a questa norma (art. 1 e 2 CP)."
   "setting:contested": "Dipende da circostanze che lo stato di fatto lascia aperte. Secondo la DTF 130 IV 111 consid. 5.2, il carattere pubblico del contesto ({setting_label}) dipende dall'esistenza di relazioni personali o di un particolare rapporto di fiducia; conta anche il numero delle persone raggiunte."
+minimal:
+  convict: "No. L'esternazione non è avvenuta pubblicamente ai sensi della DTF 130 IV 111 consid. 5.2 ({setting_label}); è sì diretta contro un gruppo a causa di una caratteristica ({char_label}), ma non adempie la fattispecie dell'art. 261bis {paragraph_label}. Il fatto commesso {date} non è quindi punibile."
+  "setting:failed": "Sì. Il contesto ({setting_label}) non è privato né caratterizzato da relazioni personali; secondo la DTF 130 IV 111 consid. 5.2 è quindi dato il carattere pubblico che l'art. 261bis CP presuppone."
+  "characteristic:not_listed": "Sì. La caratteristica «{char_label}» figura nell'elenco protetto dell'art. 261bis CP (razza, etnia, religione, orientamento sessuale e altre); l'esternazione è punibile secondo questa disposizione, perché è avvenuta pubblicamente."
+  "characteristic:not_listed|gender_identity": "Sì. L'identità di genere figura nell'elenco protetto dell'art. 261bis CP; con la revisione del 2020 è stata aggiunta insieme all'orientamento sessuale."
+  "characteristic:not_yet_covered": "Sì. L'orientamento sessuale è protetto dall'art. 261bis CP (RU 2020 1609); un atto commesso {date} vi rientra, poiché secondo gli art. 1 e 2 CP è determinante la legge in vigore al momento della sentenza."
+  "act_date:not_in_force": "Sì. L'art. 261bis CP è oggi in vigore; un atto commesso {date} è quindi punibile in base a questa norma (art. 1 e 2 CP)."
 rejected:
   convict:
     - "No. Le affermazioni sono riprovevoli, ma rientrano nella libertà di espressione; il reato di cui all'art. 261bis CP non è realizzato."

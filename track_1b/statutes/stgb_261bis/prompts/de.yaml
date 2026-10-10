@@ -7,6 +7,15 @@ heads:
   R2: "\n\nPrüfe die Tatbestandsmerkmale von Art. 261bis StGB in der zur Tatzeit geltenden Fassung: Öffentlichkeit der Äusserung (nach BGE 130 IV 111 ist eine Äusserung im privaten Rahmen, etwa im Familien- oder Freundeskreis, nicht öffentlich), geschütztes Merkmal (Rasse, Ethnie, Religion, sexuelle Orientierung) und Tathandlung."
 closed_list: " Die Liste der geschützten Merkmale ist abschliessend: Rasse, Ethnie, Religion, sexuelle Orientierung. Geschlechtsidentität und Geschlecht sind nicht erfasst."
 date_clause: " Die sexuelle Orientierung ist erst für Taten ab dem 1. Juli 2020 erfasst; das Gesetz gilt nicht rückwirkend."
+# R5 (A8): the law as a retrieval pipeline would paste it: the pinned Fedlex texts verbatim, with Fedlex's own footnote,
+# and the Regeste of the leading case (rendered from statutes/sources/ by render.law_block).
+law_text:
+  intro: "\n\nRechtsgrundlagen, wörtlich aus Fedlex und dem Leitentscheid:\n\n"
+  items:
+    - {source: fedlex_261bis_2026, label: "Art. 261bis StGB", footnotes: true}
+    - {source: fedlex_art2, label: "Art. 2 StGB", numbered: true}
+    - {source: bge_130_iv_111, label: "BGE 130 IV 111, Regeste"}
+  question: "\n\nFrage:"
 tails:
   open: " Ist das nach Schweizer Recht strafbar? Antworte in zwei bis drei Sätzen."
   conv: " Ist der Tatbestand erfüllt, sodass ein Schweizer Gericht die Person verurteilen würde? Antworte mit Ja oder Nein."

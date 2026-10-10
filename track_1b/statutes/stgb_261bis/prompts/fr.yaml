@@ -6,6 +6,15 @@ heads:
   R2: "\n\nExaminez les éléments constitutifs de l'art. 261bis CP dans sa teneur en vigueur au moment des faits : caractère public des propos (selon l'ATF 130 IV 111, des propos tenus dans un cadre privé, par exemple dans un cercle familial ou d'amis, ne sont pas publics), critère protégé (appartenance raciale, ethnique ou religieuse, orientation sexuelle) et comportement incriminé."
 closed_list: " La liste des critères protégés est exhaustive : appartenance raciale, ethnique ou religieuse, orientation sexuelle. L'identité de genre et le sexe ne sont pas visés."
 date_clause: " L'orientation sexuelle n'est visée que pour les actes commis à partir du 1er juillet 2020 ; la loi ne s'applique pas rétroactivement."
+# R5 (A8): the law as a retrieval pipeline would paste it: the pinned Fedlex texts verbatim, with Fedlex's own footnote,
+# and the Regeste of the leading case (rendered from statutes/sources/ by render.law_block).
+law_text:
+  intro: "\n\nBases légales, textes tirés de Fedlex et de l'arrêt de principe :\n\n"
+  items:
+    - {source: fedlex_261bis_2026, label: "Art. 261bis CP", footnotes: true}
+    - {source: fedlex_art2, label: "Art. 2 CP", numbered: true}
+    - {source: bge_130_iv_111, label: "ATF 130 IV 111, regeste"}
+  question: "\n\nQuestion :"
 tails:
   open: " Est-ce punissable selon le droit suisse ? Répondez en deux ou trois phrases."
   conv: " L'infraction est-elle réalisée, de sorte qu'un tribunal suisse condamnerait la personne ? Répondez par Oui ou par Non."

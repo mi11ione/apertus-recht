@@ -137,7 +137,10 @@ text; acts are described abstractly in the statute's vocabulary.
 - **Use case → specification:** the question a person asks about their own or someone else's speech; the elements the
   answer turns on (publicity, characteristic, date) are exactly the slots the twins vary.
 - **Languages** follow where the article is litigated: of the decisions that cite BGE 130 IV 111, most are French- and
-  German-language (court-validation pool: {cv['pool']['by_language']}).
+  German-language (court-validation pool: {', '.join(f'{v} {k.upper()}' for k, v in sorted(cv['pool']['by_language'].items()))} decisions).
+- **Localisation:** each language is set where it is spoken: German items in German-speaking towns, French items in
+  Romandie (Lausanne, Genève, Sion, …), Italian items in Ticino and Italian Graubünden (Lugano, Bellinzona, Poschiavo,
+  …), with each language's official legal terms and citation forms (StGB / CP, BGE / ATF / DTF, AS / RO / RU).
 - **Prompt rungs** model the retrieval levels of an assistant (no law in context → statute and leading case pasted in).
 - **Acceptance criteria, chosen / rejected answers, settled / contested labels and a normative source** are given for
   every item (Track 1B behavioural-alignment requirements).
@@ -181,6 +184,15 @@ Apertus is trained on Swiss court decisions, including BGE 130 IV 111 itself, ye
 statements made only within the family and for characteristics outside the closed list (see the technical report). A
 minimal-twin set with computed gold separates *which* element of the law a model applies from how often it is right,
 and makes each wrong element measurable across training stages and model builds.
+
+**How it differs from existing datasets** (sources and details: `docs/prior-art.md` in the repository). Swiss legal
+benchmarks (LEXam, SwissLegalEvals, Swiss Judgment Prediction, SCALE) score exam answers or judgment outcomes, with no
+one-fact variants and no statute versions. LawShift (Chinese) pairs minimal case edits with *hypothetical* statute
+revisions graded by experts; TALD (Chinese) asks which statute version applies, without twins; OpenExempt (US) computes
+gold with a solver but has no amendment dates; Multilingual HateCheck has templated contrasts but no law. To our
+knowledge this is the first set that combines one-legal-fact twins and placebos, real amendment dates with
+non-retroactivity (1 Jan 1995, 1 Jul 2020, Art. 2 StGB), gold computed from pinned official texts and checked against
+court decisions, in German, French and Italian.
 ### Source Data
 Normative sources only (all public domain, Swiss Copyright Act Art. 5): Art. 261bis StGB in the versions before and since
 1 July 2020 and Art. 2 StGB (Fedlex ELI eli/cc/54/757_781_799, DE/FR/IT, sha256-pinned, `metadata/sources.json`), the
@@ -210,7 +222,9 @@ gold engine's role differs from the design, or if a month-precision date's verdi
 check the closed-list terms and the amendment dates against the official Fedlex text and footnotes, and mutation tests
 check that changing one rule flips exactly the items that rule governs.
 - **Translation:** FR/IT by Claude agents with the official CP terms; blind back-translation into German by separate
-  agents; comparison for legal facts: 0 critical, {3} minor findings, all fixed (`metadata/generator/` reflects the fixes).
+  agents; comparison for legal facts: 0 critical, {3} minor findings, all fixed. A localisation review by a French- and
+  Italian-speaking lawyer persona then fixed what back-translation cannot see (German places, calqued intent formula
+  and verdict words, citation form); amendment A7, before any French or Italian result was analysed.
 - **Contamination** against `voilaj/swiss-caselaw` (listed in the Apertus v1.5 training data; revision
   {ct['revision'][:7]}; {ct['rows']:,} decisions, all {ct['files']} data files including GE, VD and BVGer): of
   {ct['item_ngrams']:,} distinct word 13-grams of our items, {ct['matching_scenario']} scenario 13-grams occur in the corpus
@@ -246,7 +260,7 @@ law; the statute tests against the official text and the court validation check 
 ## Risks, Bias, and Limitations
 - One statute; templated scenarios (low lexical diversity by design); intent and the dignity threshold are fixed.
 - Contested items are few ({ds['by_label'].get('contested', 0)} per language) and their verdict is open by construction.
-- FR/IT are translations, checked by blind back-translation and spot checks, not native-written.
+- FR/IT are translations, checked by blind back-translation and a localisation review, not written by native lawyers.
 - Model responses come from specific builds; the Public AI endpoint named `swiss-ai/apertus-v1.5-8b` serves the 70B
   (evidence in the repository's `docs/builds.md`); its rows are labelled 70B.
 ### Personally Identifiable Information
@@ -269,9 +283,11 @@ alongside results, since 4-bit conversions changed verdicts in our measurements.
   setting and an anachronism (online acts in 1993/94) fixed after blind annotation, before any result was analysed;
   A4 agent verification (double extraction, two adjudicators) instead of a human reviewer; A5 four wording fixes found
   in review after the German results had been analysed, all affected prompts re-scored, the pre-A5 responses kept in
-  the Git repository (`dataset/archive/`) so the effect of the fix is visible.
-  Reference answers are item-specific (setting, characteristic, paragraph and date of each scenario; 333 distinct
-  `chosen` per language); free-text prompts (`eval/prompts_open_*.jsonl`) score the same items without a forced choice.
+  the Git repository (`archive/`) so the effect of the fix is visible; A6 item-specific reference answers (setting,
+  characteristic, paragraph and date of each scenario; 333 distinct `chosen` per language), the free-text and
+  preference prompts, and unparsed answers counted in every recall denominator; A7 French and Italian localisation
+  (places in Romandie and Ticino, intent formula, verdict nouns, citation forms), before any French or Italian result
+  was analysed, with both languages re-scored in full.
 
 ## Citation
 ```bibtex

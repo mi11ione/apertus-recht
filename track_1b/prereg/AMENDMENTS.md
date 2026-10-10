@@ -51,7 +51,7 @@ phrasings were clumsy. Fixed in DE/FR/IT templates (F08: "ereignete sich" / "s'e
 e-mail to "rund 25 frühere und heutige Arbeitskolleginnen und -kollegen"; FR a2C2, IT a2C2/a4B2 word order). No slot,
 fact or gold label changes; the item texts change for 88 DE, 123 FR and 151 IT items (880 / 1,230 / 1,510 prompts),
 which are re-scored for every model. Because this amendment follows an analysis of the DE results, the pre-amendment
-responses and results are kept unchanged in `dataset/archive/` and the report states both where they differ.
+responses and results are kept unchanged in `archive/` and the report states both where they differ.
 
 ## A6 (2026-10-10, 01:50): item-specific reference answers, free-text framing, unparsed answers in balanced accuracy
 (1) A review found the reference answers too uniform (20 distinct `chosen`, 9 `rejected` per language). `chosen` now
@@ -79,8 +79,9 @@ that do not agree with the actor's gender ("Jugement : condamnation / acquitteme
 proscioglimento"); "a nié / ha negato la dignità umana" for a4C1; formal register in Italian. A second read by the
 same reviewer caught that the FR/IT reference answers still named the old settings; fixed before scoring. No slot, fact, gold label or German prompt changes.
 Every FR and IT prompt changes and both languages are re-scored in full; the responses to the A5 texts are kept in
-`dataset/archive/`. Reference answers in all three languages now cite paragraphs in Swiss form ("Art. 261bis Abs. 1
+`archive/`. Reference answers in all three languages now cite paragraphs in Swiss form ("Art. 261bis Abs. 1
 StGB", "art. 261bis al. 1 CP", "art. 261bis cpv. 1 CP") and BGE 130 IV 111 E. 5.2 throughout; the `citation` field is
 in the item's language (ATF/DTF, RO/RU, CP). The reviewer also questioned whether an act published online before
 1 July 2020 that may still be online later is settled; we keep the view that the offence is complete on publication
 and report the accuracies without those 10 items per language (`scripts/sensitivity.py`, `reports/sensitivity.json`).
+(The archive moved from `dataset/archive/` to `archive/` at the repository level on 2026-10-10 so that it can never be uploaded with the dataset.)
