@@ -30,6 +30,9 @@ EDIT_LABEL = {
 }
 
 
+MIN_PAIRS = 5
+
+
 def _label(edit: str) -> str:
     if edit.startswith("characteristic:not_listed|"):
         return "group defined by " + edit.split("|", 1)[1].replace("_", " ")
@@ -47,31 +50,52 @@ def build(run_path: Path, dataset: Path, max_wrong: int = 40) -> str:
     ok = [r for r in rows if "error" not in r]
     unparsed = [r for r in ok if R.decision(r) not in ("convict", "acquit")]
     served = collections.Counter(r.get("served_model") or "local engine" for r in ok)
-    L = [f"# {run_path.stem}: Art. 261bis evaluation report", ""]
+    statutes = sorted({items[r["item_id"]]["statute"] for r in ok if r.get("item_id") in items})
+    is_261bis = statutes == ["stgb_261bis"]
+    L = [f"# {run_path.stem}: evaluation report ({', '.join(statutes) or 'no matching items'})", ""]
+    if not statutes:
+        L += [f"> **No response matches an item of `{dataset}`.** Pass `--dataset` with the dataset these prompts came "
+              "from.", ""]
     L += ["## Run", "",
           f"- backend: `{json.dumps(meta.get('backend', {}), ensure_ascii=False)}`",
           f"- prompts: {len(rows)} ({len(ok) - len(unparsed)} decided, {len(unparsed)} unparsed, {len(errors)} errors)",
           f"- served models: " + ", ".join(f"{k} ({v})" for k, v in served.items()), ""]
     if errors or unparsed:
         L += ["> **Check before using these numbers:** "
-              f"{len(errors)} prompts errored and {len(unparsed)} answers could not be parsed; they are excluded below.", ""]
+              f"{len(errors)} prompts errored (left out below) and {len(unparsed)} answers could not be parsed (counted below, "
+              "always as wrong).", ""]
     L += ["## Accuracy against the statute (settled items)", "",
           "| subset | lang | rung | framing | n | accuracy | 95% interval | convict recall | acquit recall |", "|---|---|---|---|---|---|---|---|---|"]
     for a in res["accuracy"]:
         lo, hi = a["accuracy_ci"]
         L.append(f"| {a['subset']} | {a['lang']} | {a['rung']} | {a['framing']} | {a['n']} | {a['accuracy']:.3f} | "
                  f"{lo:.3f}–{hi:.3f} | {a['recall_convict']:.2f} | {a['recall_acquit']:.2f} |")
-    L += ["", "Rungs: R0 no law in the prompt; R1 elements named; R2 + publicity rule and list; R3 + closed list; "
-          "R4 + 1 July 2020 clause. A model that always says 'convict' scores about 0.67.", ""]
+    if is_261bis:
+        L += ["", "Rungs: R0 no law in the prompt; R1 elements named; R2 + publicity rule and list; R3 + closed list; "
+              "R4 + 1 July 2020 clause. A model that always says 'convict' scores about 0.67.", ""]
+    else:
+        L += ["", "Rungs: R0 is the plain question; each higher rung adds law to the prompt as defined in the statute's "
+              "`prompts/<lang>.yaml`.", ""]
     L += ["## Which law does the model apply? (element read-back)", "",
           "Each row changes one legal fact of a scenario the statute punishes. **red**: the model convicts where the "
           "statute acquits in every readable framing; **amber**: in one framing; **none**: it follows the statute; "
-          "**unreadable**: no framing convicts the base case.", "",
-          "| one fact changed | lang | rung | colour | Ja/Nein | verdict word |", "|---|---|---|---|---|---|"]
+          "**unreadable**: the base cases of these pairs are not convicted either, so the change cannot be read; "
+          f"**too few pairs**: fewer than {MIN_PAIRS} pairs in this run (use a larger `--sample`). n = pairs.", "",
+          "| one fact changed | lang | rung | n | colour | Ja/Nein | verdict word |", "|---|---|---|---|---|---|---|"]
+    npairs = {}
+    for e in res["edits"]:
+        k = (e.get("subset"), e["lang"], e["edit"], e["rung"])
+        npairs[k] = max(npairs.get(k, 0), e.get("n", 0))
     for c in res["colours"]:
         if c["subset"] != "core":
             continue
-        L.append(f"| {_label(c['edit'])} | {c['lang']} | {c['rung']} | **{c['colour']}** | {c['cells'].get('conv', '')} | "
+        n = npairs.get((c["subset"], c["lang"], c["edit"], c["rung"]), 0)
+        colour = c["colour"]
+        if n < MIN_PAIRS and colour in ("none", "unreadable") and all(v in ("u", "?") for v in c["cells"].values()):
+            colour = "too few pairs"
+        elif all(v == "u" for v in c["cells"].values()):
+            colour = "unreadable"
+        L.append(f"| {_label(c['edit'])} | {c['lang']} | {c['rung']} | {n} | **{colour}** | {c['cells'].get('conv', '')} | "
                  f"{c['cells'].get('ver', '')} |")
     wrong = []
     for r in ok:
@@ -114,7 +138,14 @@ def to_html(md: str) -> str:
 def main(run: str, dataset: str = "dataset", out: str | None = None, max_wrong: int = 40) -> Path:
     run_path = Path(run)
     md = build(run_path, Path(dataset), max_wrong)
-    out_p = Path(out) if out else run_path.with_name(run_path.stem + "-report.md")
+    if out:
+        out_p = Path(out)
+    elif run_path.parent.name == "responses" and (run_path.parent.parent / "MANIFEST.json").exists():
+        # never write into a released dataset (every file there is in the manifest)
+        out_p = Path("reports") / f"{run_path.stem}-report.md"
+    else:
+        out_p = run_path.with_name(run_path.stem + "-report.md")
+    out_p.parent.mkdir(parents=True, exist_ok=True)
     out_p.write_text(md, encoding="utf-8")
     out_p.with_suffix(".html").write_text(to_html(md), encoding="utf-8")
     return out_p

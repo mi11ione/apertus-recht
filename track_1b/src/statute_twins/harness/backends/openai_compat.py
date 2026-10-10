@@ -95,6 +95,11 @@ def candidate_logprob(prompt_logprobs: list, target: str) -> tuple[float, list[s
     raise ValueError(f"trailing prompt tokens {toks!r} do not spell the candidate {target!r}")
 
 
+def _unreachable(e: Exception) -> bool:
+    """The endpoint is not there (connection refused, DNS, bad URL): no scoring method will work, so stop."""
+    return isinstance(e, RuntimeError) and str(e).startswith("cannot reach")
+
+
 class OpenAICompat(Backend):
     name = "openai"
 
@@ -138,14 +143,17 @@ class OpenAICompat(Backend):
             return self.mode
         except ServedModelMismatch:
             raise
-        except Exception:
-            pass
+        except Exception as e:
+            if _unreachable(e):
+                raise
         try:
             self._top(dict(row, answer_prefix=""))
             self.mode = "top_logprobs"
         except ServedModelMismatch:
             raise
-        except Exception:
+        except Exception as e:
+            if _unreachable(e):
+                raise
             self.mode = "generate"
         print(f"[auto] endpoint does not support exact prefill scoring; using {self.mode}", flush=True)
         return self.mode

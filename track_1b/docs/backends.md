@@ -20,7 +20,8 @@ list; R3 + "the list is closed"; R4 + the 1 July 2020 clause).
 - `generate`: free generation at temperature 0, decision parsed by a deterministic DE/FR/IT parser.
 - `auto` probes once and picks the best supported method (it prints which); a server that returns no log-probabilities
   falls back to `generate`. Every response's `model` field must equal the requested model.
-- A dead endpoint fails after two attempts with the connection error; HTTP errors show the server's message.
+- `eval` sends one probe request before the run; a missing `LLM_BASE_URL` or an unreachable endpoint stops it within
+  seconds with the connection error. HTTP errors show the server's message; 429 and 5xx are retried with backoff.
 
 ## llama.cpp (`--backend llamacpp --gguf PATH`)
 In-process llama-cpp-python, CPU. Renders the GGUF's own chat template, decodes the prompt once (reusing the KV cache

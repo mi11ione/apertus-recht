@@ -235,6 +235,30 @@ def mass_report(responses_dir: Path) -> dict:
     return out
 
 
+def check_sources(statute: Statute):
+    """Every normative source is pinned: no TODO left from the scaffold, every statute text (an `eli` source) has a
+    stored file and text hash, and the stored texts still match their hashes."""
+    from ..statute import verify_sources
+    todo, unpinned = [], []
+
+    def walk(key, v):
+        if isinstance(v, str) and "TODO" in v:
+            todo.append(key)
+        elif isinstance(v, dict):
+            for x in v.values():
+                walk(key, x)
+        elif isinstance(v, list):
+            for x in v:
+                walk(key, x)
+    for k, src in statute.sources.items():
+        walk(k, src)
+        if "eli" in src and not ("file" in src and src.get("text_sha256")):
+            unpinned.append(k)
+    problems = verify_sources(statute)
+    return "sources", not (todo or unpinned or problems), dict(todo=sorted(set(todo)), unpinned=unpinned,
+                                                                  hash_problems=problems)
+
+
 def run_all(ds: Path, statute: Statute) -> dict:
     ds = Path(ds)
     items = load_items(ds)
@@ -244,6 +268,6 @@ def run_all(ds: Path, statute: Statute) -> dict:
     meta_p = ds / "metadata" / "items.jsonl"
     meta = [json.loads(l) for l in meta_p.read_text(encoding="utf-8").splitlines() if l.strip()] if meta_p.exists() else []
     gates = [check_schema(items), check_gold(items, statute), check_twins(items), check_duplicates(items),
-             check_language(items), check_pii(items, resp, meta), check_canary(items)]
+             check_language(items), check_pii(items, resp, meta), check_canary(items), check_sources(statute)]
     return dict(passed=all(g[1] for g in gates), gates={g[0]: dict(passed=g[1], **g[2]) for g in gates},
                 describe=describe(items), answer_token_mass=mass_report(ds / "responses"))

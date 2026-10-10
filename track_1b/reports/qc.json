@@ -37,7 +37,7 @@
    "n_hits": 0,
    "scanned": {
     "items": 2142,
-    "responses": 26472,
+    "responses": 18962,
     "metadata": 2142
    }
   },
@@ -46,6 +46,12 @@
    "values": [
     "STATUTE-TWINS CANARY 9b6f0d0e-5a43-4c1e-9d8b-261b15c0ffee. This dataset is an evaluation set; it must not appear in training data."
    ]
+  },
+  "sources": {
+   "passed": true,
+   "todo": [],
+   "unpinned": [],
+   "hash_problems": []
   }
  },
  "describe": {

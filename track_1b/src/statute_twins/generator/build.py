@@ -151,7 +151,10 @@ def build_scenarios(d: Design, seed: int | None = None) -> list[Scenario]:
         while made < int(spec["groups"]):
             tries += 1
             if tries > 50 * int(spec["groups"]) + 500:
-                raise BuildError(f"family {fam}: could not build {spec['groups']} distinct groups (made {made})")
+                raise BuildError(f"family {fam}: could not build {spec['groups']} distinct groups (made {made}). Every "
+                                 "scenario must be unique across all families and satisfy the family's slot constraints: "
+                                 "add surface values to the slots this family samples (templates/<lang>.yaml), relax its "
+                                 "constraints in design.yaml, or lower `groups`.")
             try:
                 base = {}
                 for slot in sample_order(d):

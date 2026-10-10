@@ -1,5 +1,6 @@
 """Scoring functions against values computed by hand (independent of any run data)."""
 import math
+from pathlib import Path
 
 import pytest
 
@@ -92,3 +93,22 @@ def test_heldout_run_gain_by_hand():
     # unanchored (the base item is acquitted): no framing can be read, the test cannot pass
     rows = [dict(item_id=i["id"], lang="de", rung="R0", framing="conv", lo_conv=-1.0) for i in ITEMS]
     assert not heldout.run(ITEMS, rows)["verdict_by_rung"]["R0"]["passed"]
+
+
+def test_scaffold_fails_the_sources_gate(tmp_path):
+    """A freshly scaffolded statute still has TODO sources: QC must say so (a dogfood user passed QC with them)."""
+    from statute_twins.qc.checks import check_sources
+    from statute_twins.scaffold import scaffold
+    from statute_twins.statute import load
+    p = scaffold("stgb_999", tmp_path)
+    name, passed, detail = check_sources(load(Path(p) / "statute.yaml"))
+    assert name == "sources" and not passed and detail["todo"]
+
+
+def test_eval_refuses_without_endpoint(monkeypatch):
+    import argparse
+    from statute_twins.cli import make_backend
+    monkeypatch.delenv("LLM_BASE_URL", raising=False)
+    a = argparse.Namespace(backend="openai", base_url=None, model="m", mode="auto", seed=None, label=None, max_tokens=24)
+    with pytest.raises(SystemExit, match="LLM_BASE_URL"):
+        make_backend(a)

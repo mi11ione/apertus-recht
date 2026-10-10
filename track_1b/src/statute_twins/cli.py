@@ -88,7 +88,12 @@ def make_backend(a):
     if a.backend == "gateway":
         return OpenAICompat(base_url="gateway:" + (a.model or ""), api_key="", model=a.model, mode=a.mode, seed=a.seed,
                             transport=gateway_transport(a.tag, a.cap), label=a.label, max_tokens_generate=a.max_tokens)
-    return OpenAICompat(base_url=a.base_url, model=a.model, mode=a.mode, seed=a.seed, label=a.label,
+    import os
+    base_url = a.base_url or os.environ.get("LLM_BASE_URL", "")
+    if not base_url.startswith(("http://", "https://")):
+        raise SystemExit("--backend openai needs an endpoint: set LLM_BASE_URL (e.g. http://localhost:8000/v1) or pass "
+                         "--base-url; LLM_API_KEY if it needs a key; LLM_NAME or --model for the model name")
+    return OpenAICompat(base_url=base_url, model=a.model, mode=a.mode, seed=a.seed, label=a.label,
                         max_tokens_generate=a.max_tokens)
 
 
@@ -115,6 +120,13 @@ def cmd_eval(a) -> int:
             for r in seed:
                 f.write(json.dumps(dict(r, run=a.run_id), ensure_ascii=False) + "\n")
         print(f"[{a.run_id}] seeded {len(seed)} rows from {a.seed_from}", flush=True)
+    if hasattr(be, "probe") and rows:
+        # one request before the run: a missing endpoint fails here, in seconds, not once per prompt
+        try:
+            mode = be.probe(rows[0])
+        except Exception as e:
+            raise SystemExit(f"[{a.run_id}] endpoint check failed: {e}")
+        print(f"[{a.run_id}] scoring method: {mode}", flush=True)
     print(f"[{a.run_id}] {len(rows)} prompts on {be.describe()}", flush=True)
     out_dir = Path(a.out or "runs")
     stats = run.run(be, rows, out_dir, a.run_id, workers=a.workers,
@@ -125,7 +137,7 @@ def cmd_eval(a) -> int:
     unparsed = [r for r in done if "error" not in r and r.get("decision") not in ("convict", "acquit")]
     served = sorted({r.get("served_model") for r in done if r.get("served_model")})
     print(f"[{a.run_id}] {len(done)}/{len(rows)} prompts: {len(done) - len(errors) - len(unparsed)} decided, "
-          f"{len(unparsed)} unparsed, {len(errors)} errors; served by {served or 'local engine'}; "
+          f"{len(unparsed)} unparsed, {len(errors)} errors; served by {served or ('local engine' if a.backend == 'llamacpp' else 'nothing (no successful response)')}; "
           f"file {out_dir / (a.run_id + '.jsonl')} ({stats['secs']} s)")
     for e in errors[:3]:
         print(f"  error {e['prompt_id']}: {e['error'][:300]}")
@@ -166,6 +178,10 @@ def compute_results(ds: Path, runs: list[str] | None = None, responses: Path | N
         if runs and p.stem not in runs:
             continue
         rows = read_jsonl(p)
+        known = {i["id"] for i in items}
+        if rows and not any(r.get("item_id") in known for r in rows):
+            print(f"warning: {p.name}: no response matches an item of {ds} (pass --dataset with the dataset these "
+                  "prompts came from); its results will be empty", file=sys.stderr)
         loaded[p.stem] = rows
         meta = json.loads((rdir / f"{p.stem}.meta.json").read_text()) if (rdir / f"{p.stem}.meta.json").exists() else {}
         metas[p.stem] = meta
@@ -304,13 +320,12 @@ def check_request_hashes(ds: Path) -> dict:
     for p in (ds / "eval").glob("prompts_*.jsonl"):
         for r in _load_jsonl(p):
             prompts[r["prompt_id"]] = r
-    report, bad = [], 0
+    report, bad, imported = [], 0, []
     for run in released_runs(ds) or []:
         mp = ds / "responses" / f"{run}.meta.json"
         meta = json.loads(mp.read_text()) if mp.exists() else {}
         if not isinstance(meta.get("backend"), dict):
-            report.append(f"{run}: imported exploration measurement (no request hashes; each row records the sha256 of its "
-                          f"source file, which is not part of this repository): replayed, not re-verified")
+            imported.append(run)
             continue
         n = m = 0
         for r in read_jsonl(ds / "responses" / f"{run}.jsonl"):
@@ -321,6 +336,9 @@ def check_request_hashes(ds: Path) -> dict:
                 m += 1
         bad += m
         report.append(f"{run}: {n - m}/{n} rows match their prompt")
+    if imported:
+        report.append(f"{len(imported)} imported exploration runs ({', '.join(imported)}): no request hashes (each row "
+                      "records the sha256 of its source file, not part of this repository); replayed, not re-verified")
     return dict(mismatches=bad, report=report)
 
 

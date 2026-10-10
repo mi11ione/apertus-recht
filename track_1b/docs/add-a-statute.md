@@ -51,6 +51,11 @@ so the output is byte-reproducible.
   `"content:failed"`. The same refinement works for `acceptance.reasons` in `design.yaml`.
 - **Wording families**: give acts a `family` attribute and set `heldout_wording_family` to enable the held-out read-back
   test; without it every item has `split: all`.
+- **Every scenario is unique across all families.** A family that asks for more groups than its slots can fill stops
+  the build with "could not build N distinct groups": add surface values to the slots it samples, relax its filters or
+  lower `groups`.
+- **Pin before you trust it**: the `sources` QC gate fails while any source still says TODO or a statute text has no
+  stored file and hash (`statute-twins pin`).
 - **Check as you go**: `statute-twins preview --statute statutes/stgb_<id>` prints a few twin groups with their gold,
   derivation and reference answers; `statute-twins build` refuses to run if a pinned source no longer matches its hash;
   `statute-twins qc` runs every gate on any statute.
