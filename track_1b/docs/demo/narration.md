@@ -26,9 +26,9 @@ Spoken text of `apertus-recht-demo.mp4`, one line per sentence (one audio file e
 - Of the 215 cases the law acquits, how many does Apertus acquit?
   - `n_acq` = 215 — gold_verdict of the settled items in dataset/eval/core_de.jsonl
 - With no law in the prompt: none.
-  - `n0` = 0 — dataset/responses/publicai-70b-fc-core.jsonl, rung 0, framing conv: items with decision acquit among the gold-acquit items of dataset/eval/core_de.jsonl
+  - `n0` = 0 — dataset/responses/publicai-70b-fc-core.jsonl, rung R0, framing conv: items with decision acquit among the gold-acquit items of dataset/eval/core_de.jsonl
 - With the rules in plain sentences: 107.
-  - `n3` = 107 — dataset/responses/publicai-70b-fc-core.jsonl, rung 3, framing conv: items with decision acquit among the gold-acquit items of dataset/eval/core_de.jsonl
+  - `n3` = 107 — dataset/responses/publicai-70b-fc-core.jsonl, rung R3, framing conv: items with decision acquit among the gold-acquit items of dataset/eval/core_de.jsonl
 - The rest it still convicts: a canton, a disability, a political opinion, an act before the law existed.
   - `cl_canton` = 13 of 16 — rung R3, framing conv, gold-acquit items whose deciding element is “canton”: convicted / all
   - `cl_disability` = 8 of 9 — rung R3, framing conv, gold-acquit items whose deciding element is “disability”: convicted / all
@@ -38,7 +38,7 @@ Spoken text of `apertus-recht-demo.mp4`, one line per sentence (one audio file e
   - `so_k / so_n` = 0 / 35 — dataset/responses/publicai-70b-fc-core.jsonl, rung R4, framing ver (verdict words), DATE_SO base items (gold convict): convicted / all
 - Then the law itself, pasted from Fedlex with the leading case, as a retrieval system would.
 - Zero again.
-  - `n5` = 0 — dataset/responses/publicai-70b-fc-core.jsonl, rung 5, framing conv: items with decision acquit among the gold-acquit items of dataset/eval/core_de.jsonl
+  - `n5` = 0 — dataset/responses/publicai-70b-fc-core.jsonl, rung R5, framing conv: items with decision acquit among the gold-acquit items of dataset/eval/core_de.jsonl
 
 ## 5. Everywhere
 

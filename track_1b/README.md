@@ -38,7 +38,8 @@ Fedlex text and the leading case's Regeste instead. Light red: in one framing; g
   public Q8_0 GGUF 10.
 
 Hack Apertus 2026 · Track 1B (Swiss Voices, behavioural alignment) · team 444 · report [`444_Report.pdf`](444_Report.pdf)
-· dataset: [`dataset/`](dataset/) (the Hugging Face release, with its card)
+· dataset: [huggingface.co/datasets/mi11ion/apertus-recht](https://huggingface.co/datasets/mi11ion/apertus-recht)
+· gold register: [apertus-recht.mi11ion.io](https://apertus-recht.mi11ion.io)
 
 ## Run it
 

@@ -11,7 +11,7 @@ political opinion, and for acts committed before the law existed. One sentence o
 protected makes it stop convicting such cases in German and French.
 
 **Track:** Apertus Readiness · Track 1B (Swiss Voices, behavioural alignment) · **Event:** Online · **Team:** 444  
-**Demo:** `make run` in the repository (Docker, CPU, no key, ~25 s); dataset on Hugging Face (link in the form notes)
+**Demo:** https://apertus-recht.mi11ion.io (every scenario, its gold and Apertus's answers) · `make run` (Docker, CPU, no key)
 
 ----
 
@@ -22,7 +22,7 @@ protected makes it stop convicting such cases in German and French.
 - **How it is used:** evaluation (forced choice, preference pairs, free text with three blind LLM judges, two Claude and one Qwen).
 - **Where it runs:** the 70B on Public AI via a cost-capped gateway (the endpoint name `apertus-v1.5-8b` serves the
   70B: byte-identical output to `-70b` in 760/792 cells, `docs/builds.md`); the 8B GGUF on CPU in GitHub Actions.
-- **Links:** code https://github.com/mi11ione/apertus-recht · dataset on Hugging Face (URL in the form notes).
+- **Links:** code https://github.com/mi11ione/apertus-recht · dataset https://huggingface.co/datasets/mi11ion/apertus-recht
 
 ----
 
