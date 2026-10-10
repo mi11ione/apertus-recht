@@ -1,0 +1,375 @@
+# Rewrite each scenario as natural text (the legal facts must not change)
+
+Each entry is a short scenario from a legal evaluation set, written in a stiff template. Rewrite it in the requested
+genre, in the same language, as a real person would write it: 2-5 sentences, varied wording, concrete, third person.
+
+Keep EXACTLY: the date (month and year; the day if one is given), the place, who acted (role, gender), where and before
+whom it happened (the setting and the audience: public or private, how many people, in what relationship), which group
+was targeted and why (the characteristic), what was said or done and how severe it was, and that the person acted
+deliberately. Show the act concretely instead of using statute words ("bezeichnete sie als Menschen zweiter Klasse",
+not "in einer gegen die Menschenwürde verstossenden Weise"), but keep it unmistakably that severe and of the same kind
+(a call to hatred stays a call to hatred; a degrading statement stays degrading; spreading an ideology stays that).
+Do NOT add or drop facts, do not add a legal assessment, no slurs, no real names. Write each paraphrase on its own.
+
+Return a JSON array: [{"id": "P00000", "genre": "<genre used>", "text": "<paraphrase>"}, ...], every id once.
+
+
+[P00000] genre: breve di cronaca
+Fatti: Uno studente di Massagno è accusato dei fatti seguenti, avvenuti il 1° luglio 2020: in un video che ha pubblicato su una piattaforma video liberamente accessibile, ha incitato all'odio contro le persone bisessuali a causa del loro orientamento sessuale. Ha agito intenzionalmente.
+
+[P00001] genre: racconto di una testimone
+Fatti: È accertato che nel giugno 2025 a Minusio un uomo si è espresso come segue: in un video che ha pubblicato su una piattaforma video liberamente accessibile, ha descritto come esseri umani di minor valore i curdi a causa della loro etnia. Ha agito intenzionalmente.
+
+[P00002] genre: voce del giornale di polizia
+Fatti: Nel marzo 2023 una studentessa si trovava a Chiasso. In una lettera alla redazione che è stata pubblicata su un giornale regionale, ha esortato a odiare le lesbiche a causa del loro orientamento sessuale. Ha agito intenzionalmente.
+
+[P00003] genre: racconto in un forum online
+Fatti: Secondo l'atto d'accusa, nel settembre 2021 un pensionato si è espresso a Mendrisio come segue: in un video che ha pubblicato su una piattaforma video liberamente accessibile, ha definito esseri umani di seconda categoria le persone anziane a causa della loro età. Ha agito intenzionalmente.
+
+[P00004] genre: nota di un'assistente sociale
+Fatti: Secondo il rapporto di polizia, nel marzo 2023 a Poschiavo una donna si è espressa come segue: mediante volantini che ha distribuito ai passanti in una zona pedonale molto frequentata, ha negato la dignità umana delle persone con disabilità a causa della loro disabilità. Ha agito intenzionalmente.
+
+[P00005] genre: lettera al giornale che riferisce l'episodio
+Fatti: Un imprenditore di Chiasso è accusato dei fatti seguenti, avvenuti nel marzo 2023: in un autobus gremito, ad alta voce e rivolgendosi a tutti i passeggeri, mentre era in giro con i suoi figli, ha diffuso scritti di una dottrina che discredita sistematicamente le persone omosessuali a causa del loro orientamento sessuale. Ha agito intenzionalmente.
+
+[P00006] genre: breve di cronaca
+Fatti: Secondo il rapporto di polizia, nel maggio 2022 a Roveredo un uomo si è espresso come segue: durante la cena nella più stretta cerchia famigliare, nel suo appartamento, alla sola presenza di sua moglie e dei suoi due figli adulti, ha fomentato l'odio contro le persone di origine asiatica a causa della loro razza. Ha agito intenzionalmente.
+
+[P00007] genre: racconto di una testimone
+Fatti: A Bellinzona un imprenditore si è espresso nel giugno 2025 come segue: in un discorso tenuto durante una serata informativa pubblica del Comune davanti a circa 120 persone, ha denigrato i membri di una Chiesa evangelica libera a causa della loro religione in un modo che lede la dignità umana. L'intenzione non è contestata.
+
+[P00008] genre: voce del giornale di polizia
+Fatti: Una studentessa di Massagno è accusata dei fatti seguenti, avvenuti nel marzo 2019: durante una riunione in un rifugio forestale davanti a circa 40 partecipanti, che erano stati invitati tramite un appello generale e che per la maggior parte non conosceva personalmente, ha invitato a svantaggiare ed emarginare le persone bisessuali a causa del loro orientamento sessuale. Ha agito intenzionalmente.
+
+[P00009] genre: racconto in un forum online
+Fatti: Nel giugno 2025 una studentessa residente ad Ascona si è espressa come segue: in un commento in un forum online liberamente accessibile, ha definito esseri umani di seconda categoria le persone nere a causa della loro razza. Ha agito consapevolmente e volontariamente.
+
+[P00010] genre: nota di un'assistente sociale
+Fatti: È accertato che nel giugno 2025 a Biasca un imprenditore si è espresso come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha discreditato in modo lesivo della dignità umana i tamil a causa della loro etnia. Ha agito intenzionalmente.
+
+[P00011] genre: lettera al giornale che riferisce l'episodio
+Fatti: Secondo l'atto d'accusa, nel maggio 2022 uno studente si è espresso a Mendrisio come segue: in un post consultabile pubblicamente sul suo profilo sui social media, ha disprezzato le persone omosessuali a causa del loro orientamento sessuale negando loro ogni dignità umana. Ha agito intenzionalmente.
+
+[P00012] genre: breve di cronaca
+Fatti: Nel maggio 2022 una donna residente a Chiasso si è espressa come segue: in un discorso tenuto durante una serata informativa pubblica del Comune davanti a circa 120 persone, ha diffuso scritti di una dottrina che discredita sistematicamente i membri di una Chiesa evangelica libera a causa della loro religione. Ha agito consapevolmente e volontariamente.
+
+[P00013] genre: racconto di una testimone
+Fatti: Un imprenditore di Chiasso è accusato dei fatti seguenti, avvenuti nel marzo 2023: in un autobus gremito, ad alta voce e rivolgendosi a tutti i passeggeri, ha diffuso scritti di una dottrina che discredita sistematicamente le persone omosessuali a causa del loro orientamento sessuale. Ha agito intenzionalmente.
+
+[P00014] genre: voce del giornale di polizia
+Fatti: Nel giugno 2025 una studentessa residente a Massagno si è espressa come segue: in un post consultabile pubblicamente sul suo profilo sui social media, ha esortato a odiare le zurighesi e gli zurighesi a causa della loro appartenenza cantonale. Ha agito consapevolmente e volontariamente.
+
+[P00015] genre: racconto in un forum online
+Fatti: Secondo il rapporto di polizia, nel maggio 2022 a Lugano una pensionata si è espressa come segue: in un autobus gremito, ad alta voce e rivolgendosi a tutti i passeggeri, ha propagato un'ideologia intesa a discreditare sistematicamente i membri della comunità rom a causa della loro etnia. Ha agito intenzionalmente.
+
+[P00016] genre: nota di un'assistente sociale
+Fatti: A Bellinzona un imprenditore si è espresso nell'ottobre 1994 come segue: in un discorso tenuto durante una serata informativa pubblica del Comune davanti a circa 120 persone, ha denigrato i membri di una Chiesa evangelica libera a causa della loro religione in un modo che lede la dignità umana. L'intenzione non è contestata.
+
+[P00017] genre: lettera al giornale che riferisce l'episodio
+Fatti: Secondo l'atto d'accusa, nel maggio 2022 uno studente si è espresso a Mendrisio come segue: in un post consultabile pubblicamente sul suo profilo sui social media, ha disprezzato le persone omosessuali a causa della loro omosessualità negando loro ogni dignità umana. Ha agito intenzionalmente.
+
+[P00018] genre: breve di cronaca
+Fatti: Nel marzo 2023 uno studente residente a Giubiasco si è espresso come segue: durante una riunione in un rifugio forestale davanti a circa 40 partecipanti, che erano stati invitati tramite un appello generale e che per la maggior parte non conosceva personalmente, ha negato la dignità umana degli indù a causa della loro religione. Ha agito consapevolmente e volontariamente.
+
+[P00019] genre: racconto di una testimone
+Fatti: Il 30 giugno 2020 un imprenditore si è espresso a Bellinzona come segue: presso una bancarella in un mercato settimanale molto frequentato, davanti a numerosi clienti, ha denigrato le persone bisessuali a causa del loro orientamento sessuale in un modo che lede la dignità umana. Ha agito intenzionalmente.
+
+[P00020] genre: voce del giornale di polizia
+Fatti: Il 30 giugno 2020 uno studente residente a Giubiasco si è espresso come segue: durante una riunione in un rifugio forestale davanti a circa 40 partecipanti, che erano stati invitati tramite un appello generale e che per la maggior parte non conosceva personalmente, ha negato la dignità umana degli indù a causa della loro religione. Ha agito consapevolmente e volontariamente.
+
+[P00021] genre: racconto in un forum online
+Fatti: Un pensionato di Massagno è accusato dei fatti seguenti, avvenuti nel giugno 2025: mediante volantini che ha distribuito ai passanti in una zona pedonale molto frequentata, ha incitato a negare alloggi e posti di lavoro ai membri di una Chiesa evangelica libera a causa della loro religione. Ha agito intenzionalmente.
+
+[P00022] genre: nota di un'assistente sociale
+Fatti: Secondo il rapporto di polizia, il 30 giugno 2020 a Roveredo un'imprenditrice si è espressa come segue: in un discorso tenuto durante una serata informativa pubblica del Comune davanti a circa 120 persone, ha incitato a negare alloggi e posti di lavoro alle persone omosessuali a causa del loro orientamento sessuale. Ha agito intenzionalmente.
+
+[P00023] genre: lettera al giornale che riferisce l'episodio
+Fatti: Nell'agosto 2020 una studentessa si trovava a Chiasso. In una lettera alla redazione che è stata pubblicata su un giornale regionale, ha esortato a odiare le lesbiche a causa del loro orientamento sessuale. Ha agito intenzionalmente.
+
+[P00024] genre: breve di cronaca
+Fatti: Secondo il rapporto di polizia, nel marzo 2023 a Minusio una pensionata si è espressa come segue: in un discorso tenuto durante una serata informativa pubblica del Comune davanti a circa 120 persone, ha esortato a odiare gli uomini gay a causa del loro orientamento sessuale. Ha agito intenzionalmente.
+
+[P00025] genre: racconto di una testimone
+Fatti: Nel giugno 2025 una studentessa residente a Massagno si è espressa come segue: in un post consultabile pubblicamente sul suo profilo sui social media, ha esortato a odiare i musulmani a causa della loro religione. Ha agito consapevolmente e volontariamente.
+
+[P00026] genre: voce del giornale di polizia
+Fatti: A Poschiavo un'imprenditrice si è espressa nel marzo 2023 come segue: mediante volantini che ha distribuito ai passanti in una zona pedonale molto frequentata, ha discreditato in modo lesivo della dignità umana le persone bisessuali a causa del loro orientamento sessuale. L'intenzione non è contestata.
+
+[P00027] genre: racconto in un forum online
+Fatti: È accertato che nel settembre 2021 ad Ascona una pensionata si è espressa come segue: in un discorso tenuto durante una serata informativa pubblica del Comune davanti a circa 120 persone, ha propagato un'ideologia intesa a discreditare sistematicamente i membri della comunità rom a causa della loro appartenenza etnica. Ha agito intenzionalmente.
+
+[P00028] genre: nota di un'assistente sociale
+Fatti: A Bellinzona un'imprenditrice si è espressa nel settembre 2021 come segue: in un commento in un forum online liberamente accessibile, ha diffuso sistematicamente tesi secondo cui le persone omosessuali a causa del loro orientamento sessuale varrebbero meno degli altri esseri umani. L'intenzione non è contestata.
+
+[P00029] genre: lettera al giornale che riferisce l'episodio
+Fatti: Secondo il rapporto di polizia, nel novembre 2018 a Biasca uno studente si è espresso come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha fomentato l'odio contro le persone omosessuali a causa del loro orientamento sessuale. Ha agito intenzionalmente.
+
+[P00030] genre: breve di cronaca
+Fatti: Un imprenditore di Chiasso è accusato dei fatti seguenti, avvenuti nel marzo 2023: in una chat di famiglia di cui fanno parte soltanto i suoi genitori e i suoi fratelli, ha diffuso scritti di una dottrina che discredita sistematicamente le persone omosessuali a causa del loro orientamento sessuale. Ha agito intenzionalmente.
+
+[P00031] genre: racconto di una testimone
+Fatti: È accertato che nel settembre 2021 a Lugano una donna si è espressa come segue: durante la cena nella più stretta cerchia famigliare, nel suo appartamento, alla sola presenza di suo marito e dei suoi due figli adulti, ha fatto propaganda per un'ideologia che mira a calunniare sistematicamente i musulmani a causa della loro religione. Ha agito intenzionalmente.
+
+[P00032] genre: voce del giornale di polizia
+Fatti: Nel settembre 2021 una donna residente ad Ascona si è espressa come segue: in un video che ha pubblicato su una piattaforma video liberamente accessibile, ha invitato a svantaggiare ed emarginare le persone omosessuali a causa della loro omosessualità. Ha agito consapevolmente e volontariamente.
+
+[P00033] genre: racconto in un forum online
+Fatti: Nel giugno 2025 una studentessa residente a Massagno si è espressa come segue: in un post consultabile pubblicamente sul suo profilo sui social media, ha esortato a odiare i musulmani a causa della loro fede. Ha agito consapevolmente e volontariamente.
+
+[P00034] genre: nota di un'assistente sociale
+Fatti: Nel giugno 2025 una studentessa residente ad Ascona si è espressa come segue: in un commento in un forum online liberamente accessibile, ha definito esseri umani di seconda categoria le persone nere a causa del colore della loro pelle. Ha agito consapevolmente e volontariamente.
+
+[P00035] genre: lettera al giornale che riferisce l'episodio
+Fatti: È accertato che nel maggio 2022 a Roveredo una pensionata si è espressa come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha disprezzato i membri di una Chiesa evangelica libera a causa della loro religione negando loro ogni dignità umana. Ha agito intenzionalmente.
+
+[P00036] genre: breve di cronaca
+Fatti: Nell'agosto 2020 una donna si è espressa ad Ascona come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha diffuso una dottrina che presenta sistematicamente come inferiori le persone bisessuali a causa del loro orientamento sessuale. Ha agito intenzionalmente.
+
+[P00037] genre: racconto di una testimone
+Fatti: Nel settembre 2021 una donna residente ad Ascona si è espressa come segue: in un video che ha pubblicato su una piattaforma video liberamente accessibile, ha invitato a svantaggiare ed emarginare le persone omosessuali a causa del loro orientamento sessuale. Ha agito consapevolmente e volontariamente.
+
+[P00038] genre: voce del giornale di polizia
+Fatti: Nel giugno 2025 una studentessa si trovava a Giubiasco. Mediante volantini che ha distribuito ai passanti in una zona pedonale molto frequentata, ha diffuso sistematicamente tesi secondo cui gli uomini gay a causa del loro orientamento sessuale varrebbero meno degli altri esseri umani. Ha agito intenzionalmente.
+
+[P00039] genre: racconto in un forum online
+Fatti: Secondo il rapporto di polizia, nel maggio 1993 a Chiasso un uomo si è espresso come segue: in un autobus gremito, ad alta voce e rivolgendosi a tutti i passeggeri, ha disprezzato gli albanesi del Kosovo a causa della loro etnia negando loro ogni dignità umana. Ha agito intenzionalmente.
+
+[P00040] genre: nota di un'assistente sociale
+Fatti: Nel marzo 2019 un uomo si trovava a Chiasso. In un discorso tenuto durante una serata informativa pubblica del Comune davanti a circa 120 persone, ha esortato a odiare le persone di origine africana a causa della loro razza. Ha agito intenzionalmente.
+
+[P00041] genre: lettera al giornale che riferisce l'episodio
+Fatti: Secondo il rapporto di polizia, nel maggio 2022 a Lugano una pensionata si è espressa come segue: in un autobus gremito, ad alta voce e rivolgendosi a tutti i passeggeri, mentre era in giro con i suoi figli, ha propagato un'ideologia intesa a discreditare sistematicamente i membri della comunità rom a causa della loro etnia. Ha agito intenzionalmente.
+
+[P00042] genre: breve di cronaca
+Fatti: Un pensionato di Massagno è accusato dei fatti seguenti, avvenuti nel giugno 2020: mediante volantini che ha distribuito ai passanti in una zona pedonale molto frequentata, ha incitato a negare alloggi e posti di lavoro ai membri di una Chiesa evangelica libera a causa della loro religione. Ha agito intenzionalmente.
+
+[P00043] genre: racconto di una testimone
+Fatti: A Locarno una donna si è espressa nel gennaio 2024 come segue: in un commento in un forum online liberamente accessibile, ha diffuso una dottrina che presenta sistematicamente come inferiori le persone nere a causa della loro razza. L'intenzione non è contestata.
+
+[P00044] genre: voce del giornale di polizia
+Fatti: È accertato che nel maggio 2022 a Roveredo una pensionata si è espressa come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha disprezzato le persone non binarie a causa della loro identità di genere negando loro ogni dignità umana. Ha agito intenzionalmente.
+
+[P00045] genre: racconto in un forum online
+Fatti: A Poschiavo una pensionata si è espressa nel gennaio 2024 come segue: in una lettera alla redazione che è stata pubblicata su un giornale regionale, ha diffuso una dottrina che presenta sistematicamente come inferiori i curdi a causa della loro etnia. L'intenzione non è contestata.
+
+[P00046] genre: nota di un'assistente sociale
+Fatti: Una studentessa di Lugano è accusata dei fatti seguenti, avvenuti nel giugno 2025: in un video che ha pubblicato su una piattaforma video liberamente accessibile e che ha intitolato «Messaggio alla mia famiglia», ha incitato all'odio contro gli uomini gay a causa del loro orientamento sessuale. Ha agito intenzionalmente.
+
+[P00047] genre: lettera al giornale che riferisce l'episodio
+Fatti: Secondo il rapporto di polizia, il 1° luglio 2020 a Roveredo un'imprenditrice si è espressa come segue: in un discorso tenuto durante una serata informativa pubblica del Comune davanti a circa 120 persone, ha incitato a negare alloggi e posti di lavoro alle persone omosessuali a causa del loro orientamento sessuale. Ha agito intenzionalmente.
+
+[P00048] genre: breve di cronaca
+Fatti: Secondo il rapporto di polizia, nel maggio 2022 a Chiasso un uomo si è espresso come segue: in un autobus gremito, ad alta voce e rivolgendosi a tutti i passeggeri, ha disprezzato gli albanesi del Kosovo a causa della loro etnia negando loro ogni dignità umana. Ha agito intenzionalmente.
+
+[P00049] genre: racconto di una testimone
+Fatti: A Poschiavo un'imprenditrice si è espressa nel marzo 2023 come segue: mediante volantini che ha distribuito ai passanti in una zona pedonale molto frequentata, ha discreditato in modo lesivo della dignità umana le vallesane e i vallesani a causa della loro appartenenza cantonale. L'intenzione non è contestata.
+
+[P00050] genre: voce del giornale di polizia
+Fatti: Secondo l'atto d'accusa, nel giugno 2025 un imprenditore si è espresso a Mendrisio come segue: durante una cena con tre amici stretti di lunga data nel suo appartamento, ha esortato a odiare gli albanesi del Kosovo a causa della loro etnia. Ha agito intenzionalmente.
+
+[P00051] genre: racconto in un forum online
+Fatti: Secondo il rapporto di polizia, nel marzo 2023 a Poschiavo una donna si è espressa come segue: mediante volantini che ha distribuito ai passanti in una zona pedonale molto frequentata, ha negato la dignità umana dei membri della comunità rom a causa della loro etnia. Ha agito intenzionalmente.
+
+[P00052] genre: nota di un'assistente sociale
+Fatti: Uno studente di Massagno è accusato dei fatti seguenti, avvenuti nel marzo 2019: in un video che ha pubblicato su una piattaforma video liberamente accessibile, ha incitato all'odio contro le persone bisessuali a causa del loro orientamento sessuale. Ha agito intenzionalmente.
+
+[P00053] genre: lettera al giornale che riferisce l'episodio
+Fatti: È accertato che nel settembre 2021 ad Ascona una pensionata si è espressa come segue: in un discorso tenuto durante una serata informativa pubblica del Comune davanti a circa 120 persone, ha propagato un'ideologia intesa a discreditare sistematicamente i membri della comunità rom a causa della loro etnia. Ha agito intenzionalmente.
+
+[P00054] genre: breve di cronaca
+Fatti: Secondo il rapporto di polizia, nel settembre 2019 a Chiasso un uomo si è espresso come segue: in un autobus gremito, ad alta voce e rivolgendosi a tutti i passeggeri, ha disprezzato gli albanesi del Kosovo a causa della loro etnia negando loro ogni dignità umana. Ha agito intenzionalmente.
+
+[P00055] genre: racconto di una testimone
+Fatti: A Poschiavo una pensionata si è espressa nel marzo 2019 come segue: in una lettera alla redazione che è stata pubblicata su un giornale regionale, ha diffuso una dottrina che presenta sistematicamente come inferiori i curdi a causa della loro etnia. L'intenzione non è contestata.
+
+[P00056] genre: voce del giornale di polizia
+Fatti: Nel marzo 2023 uno studente si è espresso a Minusio come segue: in un autobus gremito, ad alta voce e rivolgendosi a tutti i passeggeri, ha denigrato i membri di un partito politico a causa delle loro convinzioni politiche in un modo che lede la dignità umana. Ha agito intenzionalmente.
+
+[P00057] genre: racconto in un forum online
+Fatti: Nell'agosto 2020 un imprenditore si è espresso a Bellinzona come segue: presso una bancarella in un mercato settimanale molto frequentato, davanti a numerosi clienti, ha denigrato le persone bisessuali a causa del loro orientamento sessuale in un modo che lede la dignità umana. Ha agito intenzionalmente.
+
+[P00058] genre: nota di un'assistente sociale
+Fatti: Secondo l'atto d'accusa, nel giugno 2025 un imprenditore si è espresso a Mendrisio come segue: in un video che ha pubblicato su una piattaforma video liberamente accessibile, ha esortato a odiare gli albanesi del Kosovo a causa della loro etnia. Ha agito intenzionalmente.
+
+[P00059] genre: lettera al giornale che riferisce l'episodio
+Fatti: È accertato che nel maggio 2022 a Roveredo una pensionata si è espressa come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha disprezzato le persone con disabilità a causa della loro disabilità negando loro ogni dignità umana. Ha agito intenzionalmente.
+
+[P00060] genre: breve di cronaca
+Fatti: È accertato che nel giugno 2025 a Locarno un uomo si è espresso come segue: durante una riunione in un rifugio forestale davanti a circa 40 partecipanti, che erano stati invitati tramite un appello generale e che per la maggior parte non conosceva personalmente, ha disprezzato gli uomini gay a causa del loro orientamento sessuale negando loro ogni dignità umana. Ha agito intenzionalmente.
+
+[P00061] genre: racconto di una testimone
+Fatti: Nel giugno 2025 una pensionata si trovava a Locarno. Presso una bancarella in un mercato settimanale molto frequentato, davanti a numerosi clienti, ha incitato alla discriminazione contro gli indù a causa della loro religione. Ha agito intenzionalmente.
+
+[P00062] genre: voce del giornale di polizia
+Fatti: Una studentessa di Massagno è accusata dei fatti seguenti, avvenuti nel maggio 2022: durante una riunione in un rifugio forestale davanti a circa 40 partecipanti, che erano stati invitati tramite un appello generale e che per la maggior parte non conosceva personalmente, ha invitato a svantaggiare ed emarginare le persone bisessuali a causa del loro orientamento sessuale. Ha agito intenzionalmente.
+
+[P00063] genre: racconto in un forum online
+Fatti: Secondo il rapporto di polizia, nel maggio 2022 a Roveredo un uomo si è espresso come segue: in una lettera alla redazione che è stata pubblicata su un giornale regionale e che ha firmato a nome di tutta la sua famiglia, ha fomentato l'odio contro le persone di origine asiatica a causa della loro razza. Ha agito intenzionalmente.
+
+[P00064] genre: nota di un'assistente sociale
+Fatti: A Locarno una donna si è espressa nel gennaio 2024 come segue: in un commento in un forum online liberamente accessibile, ha diffuso una dottrina che presenta sistematicamente come inferiori le persone nere a causa del colore della loro pelle. L'intenzione non è contestata.
+
+[P00065] genre: lettera al giornale che riferisce l'episodio
+Fatti: A Locarno una donna si è espressa nel gennaio 2024 come segue: in un commento in un forum online liberamente accessibile, ha diffuso una dottrina che presenta sistematicamente come inferiori le vallesane e i vallesani a causa della loro appartenenza cantonale. L'intenzione non è contestata.
+
+[P00066] genre: breve di cronaca
+Fatti: A Poschiavo un'imprenditrice si è espressa nel marzo 2023 come segue: mediante volantini che ha distribuito ai passanti in una zona pedonale molto frequentata, ha discreditato in modo lesivo della dignità umana gli operai edili a causa della loro professione. L'intenzione non è contestata.
+
+[P00067] genre: racconto di una testimone
+Fatti: Secondo il rapporto di polizia, il 1° luglio 2020 a Minusio una pensionata si è espressa come segue: in un discorso tenuto durante una serata informativa pubblica del Comune davanti a circa 120 persone, ha esortato a odiare gli uomini gay a causa del loro orientamento sessuale. Ha agito intenzionalmente.
+
+[P00068] genre: voce del giornale di polizia
+Fatti: A Bellinzona una studentessa si è espressa nel giugno 2025 come segue: mediante volantini che ha distribuito ai passanti in una zona pedonale molto frequentata, ha propagandato una visione del mondo secondo cui sono da considerare inferiori gli ebrei a causa della loro religione. L'intenzione non è contestata.
+
+[P00069] genre: racconto in un forum online
+Fatti: Nel novembre 2018 una studentessa si trovava a Chiasso. In una lettera alla redazione che è stata pubblicata su un giornale regionale, ha esortato a odiare le lesbiche a causa del loro orientamento sessuale. Ha agito intenzionalmente.
+
+[P00070] genre: nota di un'assistente sociale
+Fatti: Secondo l'atto d'accusa, nel maggio 2022 uno studente si è espresso a Mendrisio come segue: in un post consultabile pubblicamente sul suo profilo sui social media, ha disprezzato le persone non binarie a causa della loro identità di genere negando loro ogni dignità umana. Ha agito intenzionalmente.
+
+[P00071] genre: lettera al giornale che riferisce l'episodio
+Fatti: Secondo il rapporto di polizia, nel maggio 2022 a Lugano una pensionata si è espressa come segue: in un messaggio personale che ha inviato soltanto a sua sorella, ha propagato un'ideologia intesa a discreditare sistematicamente i membri della comunità rom a causa della loro etnia. Ha agito intenzionalmente.
+
+[P00072] genre: breve di cronaca
+Fatti: Secondo l'atto d'accusa, nel settembre 2021 un pensionato si è espresso a Mendrisio come segue: in un video che ha pubblicato su una piattaforma video liberamente accessibile, ha definito esseri umani di seconda categoria i tamil a causa della loro etnia. Ha agito intenzionalmente.
+
+[P00073] genre: racconto di una testimone
+Fatti: Secondo l'atto d'accusa, nel maggio 2022 uno studente si è espresso a Giubiasco come segue: in un discorso tenuto durante una serata informativa pubblica del Comune davanti a circa 120 persone, ha negato la dignità umana degli ebrei a causa della loro religione. Ha agito intenzionalmente.
+
+[P00074] genre: voce del giornale di polizia
+Fatti: Una studentessa di Lugano è accusata dei fatti seguenti, avvenuti nel giugno 2025: durante una cena con tre amici stretti di lunga data nel suo appartamento, ha incitato all'odio contro gli uomini gay a causa del loro orientamento sessuale. Ha agito intenzionalmente.
+
+[P00075] genre: racconto in un forum online
+Fatti: È accertato che nel giugno 2025 a Minusio un uomo si è espresso come segue: in un video che ha pubblicato su una piattaforma video liberamente accessibile e che ha intitolato «Messaggio alla mia famiglia», ha descritto come esseri umani di minor valore i curdi a causa della loro etnia. Ha agito intenzionalmente.
+
+[P00076] genre: nota di un'assistente sociale
+Fatti: Nel settembre 2021 una donna residente ad Ascona si è espressa come segue: in un video che ha pubblicato su una piattaforma video liberamente accessibile, ha invitato a svantaggiare ed emarginare gli operai edili a causa della loro professione. Ha agito consapevolmente e volontariamente.
+
+[P00077] genre: lettera al giornale che riferisce l'episodio
+Fatti: Nel marzo 2023 uno studente si è espresso a Minusio come segue: in un autobus gremito, ad alta voce e rivolgendosi a tutti i passeggeri, ha denigrato i musulmani a causa della loro fede in un modo che lede la dignità umana. Ha agito intenzionalmente.
+
+[P00078] genre: breve di cronaca
+Fatti: A Bellinzona un'imprenditrice si è espressa nel settembre 2021 come segue: in un commento in un forum online liberamente accessibile, ha diffuso sistematicamente tesi secondo cui le persone omosessuali a causa della loro omosessualità varrebbero meno degli altri esseri umani. L'intenzione non è contestata.
+
+[P00079] genre: racconto di una testimone
+Fatti: Nel marzo 2023 un imprenditore si è espresso a Bellinzona come segue: presso una bancarella in un mercato settimanale molto frequentato, davanti a numerosi clienti, ha denigrato le persone bisessuali a causa del loro orientamento sessuale in un modo che lede la dignità umana. Ha agito intenzionalmente.
+
+[P00080] genre: voce del giornale di polizia
+Fatti: A Bellinzona una studentessa si è espressa nel giugno 2025 come segue: durante la cena nella più stretta cerchia famigliare, nel suo appartamento, alla sola presenza di suo marito e dei suoi due figli adulti, ha propagandato una visione del mondo secondo cui sono da considerare inferiori gli ebrei a causa della loro religione. L'intenzione non è contestata.
+
+[P00081] genre: racconto in un forum online
+Fatti: È accertato che nel settembre 2021 ad Ascona una pensionata si è espressa come segue: in un discorso tenuto durante una serata informativa pubblica del Comune davanti a circa 120 persone, ha propagato un'ideologia intesa a discreditare sistematicamente le donne a causa del loro sesso. Ha agito intenzionalmente.
+
+[P00082] genre: nota di un'assistente sociale
+Fatti: Secondo l'atto d'accusa, nel maggio 2022 uno studente si è espresso a Giubiasco come segue: in un discorso tenuto durante una serata informativa pubblica del Comune davanti a circa 120 persone, ha negato la dignità umana delle persone non binarie a causa della loro identità di genere. Ha agito intenzionalmente.
+
+[P00083] genre: lettera al giornale che riferisce l'episodio
+Fatti: Una studentessa di Lugano è accusata dei fatti seguenti, avvenuti nel giugno 2025: in un video che ha pubblicato su una piattaforma video liberamente accessibile, ha incitato all'odio contro gli uomini gay a causa del loro orientamento sessuale. Ha agito intenzionalmente.
+
+[P00084] genre: breve di cronaca
+Fatti: Nel maggio 2022 una donna residente a Chiasso si è espressa come segue: durante la cena nella più stretta cerchia famigliare, nel suo appartamento, alla sola presenza di suo marito e dei suoi due figli adulti, ha diffuso scritti di una dottrina che discredita sistematicamente i membri di una Chiesa evangelica libera a causa della loro religione. Ha agito consapevolmente e volontariamente.
+
+[P00085] genre: racconto di una testimone
+Fatti: A Poschiavo una pensionata si è espressa nell'ottobre 1994 come segue: in una lettera alla redazione che è stata pubblicata su un giornale regionale, ha diffuso una dottrina che presenta sistematicamente come inferiori i curdi a causa della loro etnia. L'intenzione non è contestata.
+
+[P00086] genre: voce del giornale di polizia
+Fatti: Una studentessa di Massagno è accusata dei fatti seguenti, avvenuti nell'agosto 2020: durante una riunione in un rifugio forestale davanti a circa 40 partecipanti, che erano stati invitati tramite un appello generale e che per la maggior parte non conosceva personalmente, ha invitato a svantaggiare ed emarginare le persone bisessuali a causa del loro orientamento sessuale. Ha agito intenzionalmente.
+
+[P00087] genre: racconto in un forum online
+Fatti: Un pensionato di Massagno è accusato dei fatti seguenti, avvenuti nell'ottobre 1994: mediante volantini che ha distribuito ai passanti in una zona pedonale molto frequentata, ha incitato a negare alloggi e posti di lavoro ai membri di una Chiesa evangelica libera a causa della loro religione. Ha agito intenzionalmente.
+
+[P00088] genre: nota di un'assistente sociale
+Fatti: Secondo il rapporto di polizia, nel gennaio 2024 a Biasca uno studente si è espresso come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha fomentato l'odio contro le persone omosessuali a causa del loro orientamento sessuale. Ha agito intenzionalmente.
+
+[P00089] genre: lettera al giornale che riferisce l'episodio
+Fatti: Uno studente di Massagno è accusato dei fatti seguenti, avvenuti nel maggio 2022: in un video che ha pubblicato su una piattaforma video liberamente accessibile, ha incitato all'odio contro le persone bisessuali a causa del loro orientamento sessuale. Ha agito intenzionalmente.
+
+[P00090] genre: breve di cronaca
+Fatti: È accertato che nel giugno 2020 a Locarno un uomo si è espresso come segue: durante una riunione in un rifugio forestale davanti a circa 40 partecipanti, che erano stati invitati tramite un appello generale e che per la maggior parte non conosceva personalmente, ha disprezzato gli uomini gay a causa del loro orientamento sessuale negando loro ogni dignità umana. Ha agito intenzionalmente.
+
+[P00091] genre: racconto di una testimone
+Fatti: Secondo l'atto d'accusa, nel maggio 2022 uno studente si è espresso a Giubiasco come segue: in un discorso tenuto durante una serata informativa pubblica del Comune davanti a circa 120 persone, ha negato la dignità umana degli ebrei a causa della loro fede. Ha agito intenzionalmente.
+
+[P00092] genre: voce del giornale di polizia
+Fatti: Secondo il rapporto di polizia, nel maggio 2022 a Roveredo un uomo si è espresso come segue: in una lettera alla redazione che è stata pubblicata su un giornale regionale, ha fomentato l'odio contro le persone di origine asiatica a causa della loro razza. Ha agito intenzionalmente.
+
+[P00093] genre: racconto in un forum online
+Fatti: Nel settembre 2019 una donna si è espressa ad Ascona come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha diffuso una dottrina che presenta sistematicamente come inferiori le persone bisessuali a causa del loro orientamento sessuale. Ha agito intenzionalmente.
+
+[P00094] genre: nota di un'assistente sociale
+Fatti: Nel giugno 2025 una studentessa si trovava a Giubiasco. In una conversazione telefonica con suo fratello, ha diffuso sistematicamente tesi secondo cui gli uomini gay a causa del loro orientamento sessuale varrebbero meno degli altri esseri umani. Ha agito intenzionalmente.
+
+[P00095] genre: lettera al giornale che riferisce l'episodio
+Fatti: A Bellinzona un'imprenditrice si è espressa nel settembre 2021 come segue: in un commento in un forum online liberamente accessibile, ha diffuso sistematicamente tesi secondo cui i giovani adulti a causa della loro età varrebbero meno degli altri esseri umani. L'intenzione non è contestata.
+
+[P00096] genre: breve di cronaca
+Fatti: Nel marzo 2023 un uomo si trovava a Chiasso. In un discorso tenuto durante una serata informativa pubblica del Comune davanti a circa 120 persone, ha esortato a odiare le persone di origine africana a causa della loro razza. Ha agito intenzionalmente.
+
+[P00097] genre: racconto di una testimone
+Fatti: È accertato che nel giugno 2025 a Minusio un uomo si è espresso come segue: in una conversazione telefonica con suo fratello, ha descritto come esseri umani di minor valore i curdi a causa della loro etnia. Ha agito intenzionalmente.
+
+[P00098] genre: voce del giornale di polizia
+Fatti: Nel gennaio 2024 una donna si è espressa ad Ascona come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha diffuso una dottrina che presenta sistematicamente come inferiori le persone bisessuali a causa del loro orientamento sessuale. Ha agito intenzionalmente.
+
+[P00099] genre: racconto in un forum online
+Fatti: È accertato che nel novembre 2018 a Biasca un imprenditore si è espresso come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha discreditato in modo lesivo della dignità umana i tamil a causa della loro etnia. Ha agito intenzionalmente.
+
+[P00100] genre: nota di un'assistente sociale
+Fatti: È accertato che il 1° luglio 2020 a Locarno un uomo si è espresso come segue: durante una riunione in un rifugio forestale davanti a circa 40 partecipanti, che erano stati invitati tramite un appello generale e che per la maggior parte non conosceva personalmente, ha disprezzato gli uomini gay a causa del loro orientamento sessuale negando loro ogni dignità umana. Ha agito intenzionalmente.
+
+[P00101] genre: lettera al giornale che riferisce l'episodio
+Fatti: Nel maggio 2022 una donna residente a Chiasso si è espressa come segue: in un discorso tenuto durante una serata informativa pubblica del Comune davanti a circa 120 persone, tra le quali sedevano anche i suoi genitori e i suoi fratelli, ha diffuso scritti di una dottrina che discredita sistematicamente i membri di una Chiesa evangelica libera a causa della loro religione. Ha agito consapevolmente e volontariamente.
+
+[P00102] genre: breve di cronaca
+Fatti: È accertato che nel maggio 1993 a Biasca un imprenditore si è espresso come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha discreditato in modo lesivo della dignità umana i tamil a causa della loro etnia. Ha agito intenzionalmente.
+
+[P00103] genre: racconto di una testimone
+Fatti: È accertato che nel settembre 2021 a Lugano una donna si è espressa come segue: durante una riunione in un rifugio forestale davanti a circa 40 partecipanti, che erano stati invitati tramite un appello generale e che per la maggior parte non conosceva personalmente, ha fatto propaganda per un'ideologia che mira a calunniare sistematicamente i musulmani a causa della loro religione. Ha agito intenzionalmente.
+
+[P00104] genre: voce del giornale di polizia
+Fatti: Secondo l'atto d'accusa, nel giugno 2025 un imprenditore si è espresso a Mendrisio come segue: in un video che ha pubblicato su una piattaforma video liberamente accessibile e che ha intitolato «Messaggio alla mia famiglia», ha esortato a odiare gli albanesi del Kosovo a causa della loro etnia. Ha agito intenzionalmente.
+
+[P00105] genre: racconto in un forum online
+Fatti: Secondo il rapporto di polizia, nel giugno 2025 a Roveredo un'imprenditrice si è espressa come segue: in un discorso tenuto durante una serata informativa pubblica del Comune davanti a circa 120 persone, ha incitato a negare alloggi e posti di lavoro alle persone omosessuali a causa del loro orientamento sessuale. Ha agito intenzionalmente.
+
+[P00106] genre: nota di un'assistente sociale
+Fatti: Nel marzo 2023 uno studente si è espresso a Minusio come segue: in un autobus gremito, ad alta voce e rivolgendosi a tutti i passeggeri, ha denigrato i musulmani a causa della loro religione in un modo che lede la dignità umana. Ha agito intenzionalmente.
+
+[P00107] genre: lettera al giornale che riferisce l'episodio
+Fatti: A Bellinzona un imprenditore si è espresso nel novembre 2018 come segue: in un discorso tenuto durante una serata informativa pubblica del Comune davanti a circa 120 persone, ha denigrato i membri di una Chiesa evangelica libera a causa della loro religione in un modo che lede la dignità umana. L'intenzione non è contestata.
+
+[P00108] genre: breve di cronaca
+Fatti: Nel maggio 1993 uno studente residente a Giubiasco si è espresso come segue: durante una riunione in un rifugio forestale davanti a circa 40 partecipanti, che erano stati invitati tramite un appello generale e che per la maggior parte non conosceva personalmente, ha negato la dignità umana degli indù a causa della loro religione. Ha agito consapevolmente e volontariamente.
+
+[P00109] genre: racconto di una testimone
+Fatti: Secondo il rapporto di polizia, il 30 giugno 2020 a Minusio una pensionata si è espressa come segue: in un discorso tenuto durante una serata informativa pubblica del Comune davanti a circa 120 persone, ha esortato a odiare gli uomini gay a causa del loro orientamento sessuale. Ha agito intenzionalmente.
+
+[P00110] genre: voce del giornale di polizia
+Fatti: Nel marzo 2019 una pensionata si trovava a Locarno. Presso una bancarella in un mercato settimanale molto frequentato, davanti a numerosi clienti, ha incitato alla discriminazione contro gli indù a causa della loro religione. Ha agito intenzionalmente.
+
+[P00111] genre: racconto in un forum online
+Fatti: Nell'ottobre 1994 una pensionata si trovava a Locarno. Presso una bancarella in un mercato settimanale molto frequentato, davanti a numerosi clienti, ha incitato alla discriminazione contro gli indù a causa della loro religione. Ha agito intenzionalmente.
+
+[P00112] genre: nota di un'assistente sociale
+Fatti: È accertato che nel settembre 2021 a Lugano una donna si è espressa come segue: durante una riunione in un rifugio forestale della sua famiglia davanti a circa 40 partecipanti, che erano stati invitati tramite un appello generale e che per la maggior parte non conosceva personalmente, alla presenza anche di suo marito e dei suoi figli, ha fatto propaganda per un'ideologia che mira a calunniare sistematicamente i musulmani a causa della loro religione. Ha agito intenzionalmente.
+
+[P00113] genre: lettera al giornale che riferisce l'episodio
+Fatti: Nell'ottobre 1994 un uomo si trovava a Chiasso. In un discorso tenuto durante una serata informativa pubblica del Comune davanti a circa 120 persone, ha esortato a odiare le persone di origine africana a causa della loro razza. Ha agito intenzionalmente.
+
+[P00114] genre: breve di cronaca
+Fatti: Secondo l'atto d'accusa, nel settembre 2021 un pensionato si è espresso a Mendrisio come segue: in un video che ha pubblicato su una piattaforma video liberamente accessibile, ha definito esseri umani di seconda categoria le vallesane e i vallesani a causa della loro appartenenza cantonale. Ha agito intenzionalmente.
+
+[P00115] genre: racconto di una testimone
+Fatti: Nel giugno 2025 una studentessa si trovava a Giubiasco. Mediante volantini che, insieme ai suoi figli, ha distribuito ai passanti in una zona pedonale molto frequentata e che ha intitolato «Una famiglia dice la verità», ha diffuso sistematicamente tesi secondo cui gli uomini gay a causa del loro orientamento sessuale varrebbero meno degli altri esseri umani. Ha agito intenzionalmente.
+
+[P00116] genre: voce del giornale di polizia
+Fatti: Secondo il rapporto di polizia, nel marzo 2023 a Poschiavo una donna si è espressa come segue: mediante volantini che ha distribuito ai passanti in una zona pedonale molto frequentata, ha negato la dignità umana dei membri della comunità rom a causa della loro appartenenza etnica. Ha agito intenzionalmente.
+
+[P00117] genre: racconto in un forum online
+Fatti: Secondo il rapporto di polizia, nell'agosto 2020 a Biasca uno studente si è espresso come segue: durante una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone, ha fomentato l'odio contro le persone omosessuali a causa del loro orientamento sessuale. Ha agito intenzionalmente.
+
+[P00118] genre: nota di un'assistente sociale
+Fatti: Nel giugno 2025 una studentessa residente ad Ascona si è espressa come segue: in un commento in un forum online liberamente accessibile, ha definito esseri umani di seconda categoria le persone anziane a causa della loro età. Ha agito consapevolmente e volontariamente.
+
+[P00119] genre: lettera al giornale che riferisce l'episodio
+Fatti: A Bellinzona una studentessa si è espressa nel giugno 2025 come segue: mediante volantini che, insieme ai suoi figli, ha distribuito ai passanti in una zona pedonale molto frequentata e che ha intitolato «Una famiglia dice la verità», ha propagandato una visione del mondo secondo cui sono da considerare inferiori gli ebrei a causa della loro religione. L'intenzione non è contestata.

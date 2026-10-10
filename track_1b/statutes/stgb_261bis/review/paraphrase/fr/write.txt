@@ -1,0 +1,375 @@
+# Rewrite each scenario as natural text (the legal facts must not change)
+
+Each entry is a short scenario from a legal evaluation set, written in a stiff template. Rewrite it in the requested
+genre, in the same language, as a real person would write it: 2-5 sentences, varied wording, concrete, third person.
+
+Keep EXACTLY: the date (month and year; the day if one is given), the place, who acted (role, gender), where and before
+whom it happened (the setting and the audience: public or private, how many people, in what relationship), which group
+was targeted and why (the characteristic), what was said or done and how severe it was, and that the person acted
+deliberately. Show the act concretely instead of using statute words ("bezeichnete sie als Menschen zweiter Klasse",
+not "in einer gegen die Menschenwürde verstossenden Weise"), but keep it unmistakably that severe and of the same kind
+(a call to hatred stays a call to hatred; a degrading statement stays degrading; spreading an ideology stays that).
+Do NOT add or drop facts, do not add a legal assessment, no slurs, no real names. Write each paraphrase on its own.
+
+Return a JSON array: [{"id": "P00000", "genre": "<genre used>", "text": "<paraphrase>"}, ...], every id once.
+
+
+[P00000] genre: brève de journal
+Faits : En mars 2023, un entrepreneur s'est exprimé comme suit à Genève : à un stand sur un marché hebdomadaire très fréquenté, devant une nombreuse clientèle, il a dévalorisé les personnes bisexuelles en raison de leur orientation sexuelle d'une manière contraire à la dignité humaine. Il a agi intentionnellement.
+
+[P00001] genre: récit d'une témoin
+Faits : Selon l'acte d'accusation, en mai 2022, à Neuchâtel, un étudiant s'est exprimé comme suit : dans une publication consultable publiquement sur son profil de réseau social, il a dénigré les personnes non binaires en raison de leur identité de genre en leur déniant toute dignité humaine. Il a agi intentionnellement.
+
+[P00002] genre: entrée du journal de police
+Faits : À Fribourg, en janvier 2024, une femme s'est exprimée comme suit : dans un commentaire publié sur un forum en ligne librement accessible, elle a diffusé une doctrine qui présente systématiquement comme des êtres inférieurs les personnes noires en raison de leur appartenance raciale. L'intention n'est pas contestée.
+
+[P00003] genre: récit sur un forum en ligne
+Faits : Selon l'acte d'accusation, en mai 2022, à Neuchâtel, un étudiant s'est exprimé comme suit : dans une publication consultable publiquement sur son profil de réseau social, il a dénigré les personnes homosexuelles en raison de leur orientation sexuelle en leur déniant toute dignité humaine. Il a agi intentionnellement.
+
+[P00004] genre: note d'une travailleuse sociale
+Faits : En mai 2022, à Delémont, une retraitée s'est exprimée comme suit : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, elle a dénigré les membres d'une Église évangélique libre en raison de leur appartenance religieuse en leur déniant toute dignité humaine. Il est établi qu'elle a agi intentionnellement.
+
+[P00005] genre: courrier de lecteur qui relate l'incident
+Faits : En juin 2025, une étudiante domiciliée à La Chaux-de-Fonds s'est exprimée comme suit : dans une publication consultable publiquement sur son profil de réseau social, elle a appelé à haïr les musulmans en raison de leur foi. Elle a agi avec conscience et volonté.
+
+[P00006] genre: brève de journal
+Faits : D'après le rapport de police, le 1er juillet 2020, à Montreux, une retraitée s'est exprimée comme suit : dans un discours prononcé lors d'une séance publique d'information de la commune devant environ 120 personnes, elle a appelé à haïr les hommes gays en raison de leur orientation sexuelle. Elle a agi intentionnellement.
+
+[P00007] genre: récit d'une témoin
+Faits : À Fribourg, en janvier 2024, une femme s'est exprimée comme suit : dans un commentaire publié sur un forum en ligne librement accessible, elle a diffusé une doctrine qui présente systématiquement comme des êtres inférieurs les Valaisannes et les Valaisans en raison de leur appartenance cantonale. L'intention n'est pas contestée.
+
+[P00008] genre: entrée du journal de police
+Faits : Une étudiante domiciliée à La Chaux-de-Fonds se voit reprocher ce qui suit : lors d'une réunion dans un refuge forestier devant environ 40 participants, qui avaient été invités par un appel général et dont elle ne connaissait pas personnellement la plupart, elle a préconisé de défavoriser et d'exclure les personnes bisexuelles en raison de leur orientation sexuelle, et ce en mai 2022. Elle a agi intentionnellement.
+
+[P00009] genre: récit sur un forum en ligne
+Faits : En septembre 2021, une femme domiciliée à Bienne s'est exprimée comme suit : dans une vidéo qu'elle a publiée sur une plateforme vidéo librement accessible, elle a préconisé de défavoriser et d'exclure les personnes homosexuelles en raison de leur homosexualité. Elle a agi avec conscience et volonté.
+
+[P00010] genre: note d'une travailleuse sociale
+Faits : En septembre 2021, à Lausanne, une femme s'est exprimée comme suit : lors d'une réunion dans un refuge forestier de sa famille devant environ 40 participants, qui avaient été invités par un appel général et dont elle ne connaissait pas personnellement la plupart, son mari et ses enfants étant également présents, elle a fait la promotion d'une idéologie qui a pour but de dénigrer systématiquement les musulmans en raison de leur appartenance religieuse. Il est établi qu'elle a agi intentionnellement.
+
+[P00011] genre: courrier de lecteur qui relate l'incident
+Faits : En juin 2025, une étudiante se trouvait à Vevey. Sur des tracts qu'elle a distribués avec ses enfants aux passants dans une zone piétonne animée et qu'elle a intitulés « Une famille dit la vérité », elle a diffusé systématiquement des thèses présentant comme moins dignes que les autres êtres humains les hommes gays en raison de leur orientation sexuelle. Elle a agi intentionnellement.
+
+[P00012] genre: brève de journal
+Faits : En septembre 2021, à Lausanne, une femme s'est exprimée comme suit : lors d'une réunion dans un refuge forestier devant environ 40 participants, qui avaient été invités par un appel général et dont elle ne connaissait pas personnellement la plupart, elle a fait la promotion d'une idéologie qui a pour but de dénigrer systématiquement les musulmans en raison de leur appartenance religieuse. Il est établi qu'elle a agi intentionnellement.
+
+[P00013] genre: récit d'une témoin
+Faits : À Genève, en septembre 2021, une entrepreneuse s'est exprimée comme suit : dans un commentaire publié sur un forum en ligne librement accessible, elle a diffusé systématiquement des thèses présentant comme moins dignes que les autres êtres humains les personnes homosexuelles en raison de leur homosexualité. L'intention n'est pas contestée.
+
+[P00014] genre: entrée du journal de police
+Faits : D'après le rapport de police, le 30 juin 2020, à Montreux, une retraitée s'est exprimée comme suit : dans un discours prononcé lors d'une séance publique d'information de la commune devant environ 120 personnes, elle a appelé à haïr les hommes gays en raison de leur orientation sexuelle. Elle a agi intentionnellement.
+
+[P00015] genre: récit sur un forum en ligne
+Faits : Un entrepreneur domicilié à Sion se voit reprocher ce qui suit : dans un groupe de discussion familial dont seuls ses parents et ses frères et sœurs sont membres, il a diffusé les écrits d'une doctrine qui rabaisse systématiquement les personnes homosexuelles en raison de leur orientation sexuelle, et ce en mars 2023. Il a agi intentionnellement.
+
+[P00016] genre: note d'une travailleuse sociale
+Faits : D'après le rapport de police, en mai 2022, à Delémont, un homme s'est exprimé comme suit : dans une lettre de lecteur parue dans un journal régional et qu'il a signée au nom de toute sa famille, il a attisé la haine contre les personnes d'origine asiatique en raison de leur appartenance raciale. Il a agi intentionnellement.
+
+[P00017] genre: courrier de lecteur qui relate l'incident
+Faits : À Nyon, en janvier 2024, une retraitée s'est exprimée comme suit : dans une lettre de lecteur parue dans un journal régional, elle a diffusé une doctrine qui présente systématiquement comme des êtres inférieurs les Kurdes en raison de leur appartenance ethnique. L'intention n'est pas contestée.
+
+[P00018] genre: brève de journal
+Faits : En août 2020, une femme s'est exprimée comme suit à Bienne : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, elle a diffusé une doctrine qui présente systématiquement comme des êtres inférieurs les personnes bisexuelles en raison de leur orientation sexuelle. Elle a agi intentionnellement.
+
+[P00019] genre: récit d'une témoin
+Faits : Une étudiante domiciliée à Lausanne se voit reprocher ce qui suit : dans une vidéo qu'elle a publiée sur une plateforme vidéo librement accessible, elle a incité à la haine envers les hommes gays en raison de leur orientation sexuelle, et ce en juin 2025. Elle a agi intentionnellement.
+
+[P00020] genre: entrée du journal de police
+Faits : Selon l'acte d'accusation, en septembre 2021, à Neuchâtel, un retraité s'est exprimé comme suit : dans une vidéo qu'il a publiée sur une plateforme vidéo librement accessible, il a qualifié d'êtres humains de seconde zone les Valaisannes et les Valaisans en raison de leur appartenance cantonale. Il a agi intentionnellement.
+
+[P00021] genre: récit sur un forum en ligne
+Faits : Un étudiant domicilié à La Chaux-de-Fonds se voit reprocher ce qui suit : dans une vidéo qu'il a publiée sur une plateforme vidéo librement accessible, il a incité à la haine envers les personnes bisexuelles en raison de leur orientation sexuelle, et ce le 1er juillet 2020. Il a agi intentionnellement.
+
+[P00022] genre: note d'une travailleuse sociale
+Faits : En juin 2025, une étudiante domiciliée à Bienne s'est exprimée comme suit : dans un commentaire publié sur un forum en ligne librement accessible, elle a qualifié d'êtres humains de seconde zone les personnes âgées en raison de leur âge. Elle a agi avec conscience et volonté.
+
+[P00023] genre: courrier de lecteur qui relate l'incident
+Faits : En mai 2022, une femme domiciliée à Sion s'est exprimée comme suit : dans un discours prononcé lors d'une séance publique d'information de la commune devant environ 120 personnes, parmi lesquelles se trouvaient aussi ses parents et ses frères et sœurs, elle a diffusé les écrits d'une doctrine qui rabaisse systématiquement les membres d'une Église évangélique libre en raison de leur appartenance religieuse. Elle a agi avec conscience et volonté.
+
+[P00024] genre: brève de journal
+Faits : D'après le rapport de police, en mai 2022, à Delémont, un homme s'est exprimé comme suit : dans une lettre de lecteur parue dans un journal régional, il a attisé la haine contre les personnes d'origine asiatique en raison de leur appartenance raciale. Il a agi intentionnellement.
+
+[P00025] genre: récit d'une témoin
+Faits : En mars 2023, un étudiant s'est exprimé comme suit à Montreux : dans un bus bondé, à haute voix et en s'adressant à tous les passagers, il a dévalorisé les musulmans en raison de leur appartenance religieuse d'une manière contraire à la dignité humaine. Il a agi intentionnellement.
+
+[P00026] genre: entrée du journal de police
+Faits : À Nyon, en mars 2023, une entrepreneuse s'est exprimée comme suit : sur des tracts qu'elle a distribués aux passants dans une zone piétonne animée, elle a abaissé d'une façon qui porte atteinte à la dignité humaine les ouvriers du bâtiment en raison de leur profession. L'intention n'est pas contestée.
+
+[P00027] genre: récit sur un forum en ligne
+Faits : En juin 2025, une étudiante domiciliée à Bienne s'est exprimée comme suit : dans un commentaire publié sur un forum en ligne librement accessible, elle a qualifié d'êtres humains de seconde zone les personnes noires en raison de leur appartenance raciale. Elle a agi avec conscience et volonté.
+
+[P00028] genre: note d'une travailleuse sociale
+Faits : En août 2020, un entrepreneur s'est exprimé comme suit à Genève : à un stand sur un marché hebdomadaire très fréquenté, devant une nombreuse clientèle, il a dévalorisé les personnes bisexuelles en raison de leur orientation sexuelle d'une manière contraire à la dignité humaine. Il a agi intentionnellement.
+
+[P00029] genre: courrier de lecteur qui relate l'incident
+Faits : D'après le rapport de police, en mai 2022, à Lausanne, une retraitée s'est exprimée comme suit : dans un message personnel qu'elle a envoyé uniquement à sa sœur, elle a propagé une idéologie visant à rabaisser de façon systématique les Roms en raison de leur appartenance ethnique. Elle a agi intentionnellement.
+
+[P00030] genre: brève de journal
+Faits : À Genève, en juin 2025, une étudiante s'est exprimée comme suit : lors d'un repas du soir dans le cercle familial le plus étroit, dans son appartement, en présence uniquement de son mari et de ses deux enfants adultes, elle a promu une vision du monde qui assigne un rang inférieur aux juifs en raison de leur appartenance religieuse. L'intention n'est pas contestée.
+
+[P00031] genre: récit d'une témoin
+Faits : En septembre 2021, une femme domiciliée à Bienne s'est exprimée comme suit : dans une vidéo qu'elle a publiée sur une plateforme vidéo librement accessible, elle a préconisé de défavoriser et d'exclure les personnes homosexuelles en raison de leur orientation sexuelle. Elle a agi avec conscience et volonté.
+
+[P00032] genre: entrée du journal de police
+Faits : En mars 2023, un homme se trouvait à Sion. Dans un discours prononcé lors d'une séance publique d'information de la commune devant environ 120 personnes, il a appelé à haïr les personnes d'origine africaine en raison de leur appartenance raciale. Il a agi intentionnellement.
+
+[P00033] genre: récit sur un forum en ligne
+Faits : D'après le rapport de police, en janvier 2024, à Yverdon-les-Bains, un étudiant s'est exprimé comme suit : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a attisé la haine contre les personnes homosexuelles en raison de leur orientation sexuelle. Il a agi intentionnellement.
+
+[P00034] genre: note d'une travailleuse sociale
+Faits : En juin 2025, à Fribourg, un homme s'est exprimé comme suit : lors d'une réunion dans un refuge forestier devant environ 40 participants, qui avaient été invités par un appel général et dont il ne connaissait pas personnellement la plupart, il a dénigré les hommes gays en raison de leur orientation sexuelle en leur déniant toute dignité humaine. Il est établi qu'il a agi intentionnellement.
+
+[P00035] genre: courrier de lecteur qui relate l'incident
+Faits : Une étudiante domiciliée à Lausanne se voit reprocher ce qui suit : lors d'un repas du soir avec trois amis proches de longue date, dans son appartement, elle a incité à la haine envers les hommes gays en raison de leur orientation sexuelle, et ce en juin 2025. Elle a agi intentionnellement.
+
+[P00036] genre: brève de journal
+Faits : En mai 1993, à Yverdon-les-Bains, un entrepreneur s'est exprimé comme suit : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a abaissé d'une façon qui porte atteinte à la dignité humaine les Tamouls en raison de leur appartenance ethnique. Il est établi qu'il a agi intentionnellement.
+
+[P00037] genre: récit d'une témoin
+Faits : D'après le rapport de police, en mai 2022, à Lausanne, une retraitée s'est exprimée comme suit : dans un bus bondé, à haute voix et en s'adressant à tous les passagers, alors qu'elle se déplaçait avec ses enfants, elle a propagé une idéologie visant à rabaisser de façon systématique les Roms en raison de leur appartenance ethnique. Elle a agi intentionnellement.
+
+[P00038] genre: entrée du journal de police
+Faits : À Nyon, en mars 2023, une entrepreneuse s'est exprimée comme suit : sur des tracts qu'elle a distribués aux passants dans une zone piétonne animée, elle a abaissé d'une façon qui porte atteinte à la dignité humaine les Valaisannes et les Valaisans en raison de leur appartenance cantonale. L'intention n'est pas contestée.
+
+[P00039] genre: récit sur un forum en ligne
+Faits : D'après le rapport de police, en mars 2023, à Montreux, une retraitée s'est exprimée comme suit : dans un discours prononcé lors d'une séance publique d'information de la commune devant environ 120 personnes, elle a appelé à haïr les hommes gays en raison de leur orientation sexuelle. Elle a agi intentionnellement.
+
+[P00040] genre: note d'une travailleuse sociale
+Faits : À Nyon, en octobre 1994, une retraitée s'est exprimée comme suit : dans une lettre de lecteur parue dans un journal régional, elle a diffusé une doctrine qui présente systématiquement comme des êtres inférieurs les Kurdes en raison de leur appartenance ethnique. L'intention n'est pas contestée.
+
+[P00041] genre: courrier de lecteur qui relate l'incident
+Faits : En juin 2025, une retraitée se trouvait à Fribourg. À un stand sur un marché hebdomadaire très fréquenté, devant une nombreuse clientèle, elle a incité à la discrimination envers les hindous en raison de leur appartenance religieuse. Elle a agi intentionnellement.
+
+[P00042] genre: brève de journal
+Faits : D'après le rapport de police, en mai 2022, à Sion, un homme s'est exprimé comme suit : dans un bus bondé, à haute voix et en s'adressant à tous les passagers, il a dénigré les Albanais du Kosovo en raison de leur appartenance ethnique en leur déniant toute dignité humaine. Il a agi intentionnellement.
+
+[P00043] genre: récit d'une témoin
+Faits : À Nyon, en mars 2019, une retraitée s'est exprimée comme suit : dans une lettre de lecteur parue dans un journal régional, elle a diffusé une doctrine qui présente systématiquement comme des êtres inférieurs les Kurdes en raison de leur appartenance ethnique. L'intention n'est pas contestée.
+
+[P00044] genre: entrée du journal de police
+Faits : En mars 2019, une retraitée se trouvait à Fribourg. À un stand sur un marché hebdomadaire très fréquenté, devant une nombreuse clientèle, elle a incité à la discrimination envers les hindous en raison de leur appartenance religieuse. Elle a agi intentionnellement.
+
+[P00045] genre: récit sur un forum en ligne
+Faits : En mai 1993, un étudiant domicilié à Vevey s'est exprimé comme suit : lors d'une réunion dans un refuge forestier devant environ 40 participants, qui avaient été invités par un appel général et dont il ne connaissait pas personnellement la plupart, il a nié la dignité humaine des hindous en raison de leur appartenance religieuse. Il a agi avec conscience et volonté.
+
+[P00046] genre: note d'une travailleuse sociale
+Faits : Le 1er juillet 2020, à Fribourg, un homme s'est exprimé comme suit : lors d'une réunion dans un refuge forestier devant environ 40 participants, qui avaient été invités par un appel général et dont il ne connaissait pas personnellement la plupart, il a dénigré les hommes gays en raison de leur orientation sexuelle en leur déniant toute dignité humaine. Il est établi qu'il a agi intentionnellement.
+
+[P00047] genre: courrier de lecteur qui relate l'incident
+Faits : À Genève, en septembre 2021, une entrepreneuse s'est exprimée comme suit : dans un commentaire publié sur un forum en ligne librement accessible, elle a diffusé systématiquement des thèses présentant comme moins dignes que les autres êtres humains les personnes homosexuelles en raison de leur orientation sexuelle. L'intention n'est pas contestée.
+
+[P00048] genre: brève de journal
+Faits : En janvier 2024, une femme s'est exprimée comme suit à Bienne : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, elle a diffusé une doctrine qui présente systématiquement comme des êtres inférieurs les personnes bisexuelles en raison de leur orientation sexuelle. Elle a agi intentionnellement.
+
+[P00049] genre: récit d'une témoin
+Faits : Selon l'acte d'accusation, en juin 2025, à Neuchâtel, un entrepreneur s'est exprimé comme suit : dans une vidéo qu'il a publiée sur une plateforme vidéo librement accessible et qu'il a intitulée « Message à ma famille », il a appelé à haïr les Albanais du Kosovo en raison de leur appartenance ethnique. Il a agi intentionnellement.
+
+[P00050] genre: entrée du journal de police
+Faits : D'après le rapport de police, le 1er juillet 2020, à Delémont, une entrepreneuse s'est exprimée comme suit : dans un discours prononcé lors d'une séance publique d'information de la commune devant environ 120 personnes, elle a exhorté à refuser des logements et des emplois aux personnes homosexuelles en raison de leur orientation sexuelle. Elle a agi intentionnellement.
+
+[P00051] genre: récit sur un forum en ligne
+Faits : Une étudiante domiciliée à La Chaux-de-Fonds se voit reprocher ce qui suit : lors d'une réunion dans un refuge forestier devant environ 40 participants, qui avaient été invités par un appel général et dont elle ne connaissait pas personnellement la plupart, elle a préconisé de défavoriser et d'exclure les personnes bisexuelles en raison de leur orientation sexuelle, et ce en août 2020. Elle a agi intentionnellement.
+
+[P00052] genre: note d'une travailleuse sociale
+Faits : En septembre 2019, une femme s'est exprimée comme suit à Bienne : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, elle a diffusé une doctrine qui présente systématiquement comme des êtres inférieurs les personnes bisexuelles en raison de leur orientation sexuelle. Elle a agi intentionnellement.
+
+[P00053] genre: courrier de lecteur qui relate l'incident
+Faits : En mai 2022, une femme domiciliée à Sion s'est exprimée comme suit : lors d'un repas du soir dans le cercle familial le plus étroit, dans son appartement, en présence uniquement de son mari et de ses deux enfants adultes, elle a diffusé les écrits d'une doctrine qui rabaisse systématiquement les membres d'une Église évangélique libre en raison de leur appartenance religieuse. Elle a agi avec conscience et volonté.
+
+[P00054] genre: brève de journal
+Faits : À Genève, en septembre 2021, une entrepreneuse s'est exprimée comme suit : dans un commentaire publié sur un forum en ligne librement accessible, elle a diffusé systématiquement des thèses présentant comme moins dignes que les autres êtres humains les jeunes adultes en raison de leur âge. L'intention n'est pas contestée.
+
+[P00055] genre: récit d'une témoin
+Faits : D'après le rapport de police, en mars 2023, à Nyon, une femme s'est exprimée comme suit : sur des tracts qu'elle a distribués aux passants dans une zone piétonne animée, elle a nié la dignité humaine des Roms en raison de leur appartenance ethnique. Elle a agi intentionnellement.
+
+[P00056] genre: entrée du journal de police
+Faits : En mars 2019, un homme se trouvait à Sion. Dans un discours prononcé lors d'une séance publique d'information de la commune devant environ 120 personnes, il a appelé à haïr les personnes d'origine africaine en raison de leur appartenance raciale. Il a agi intentionnellement.
+
+[P00057] genre: récit sur un forum en ligne
+Faits : D'après le rapport de police, en mars 2023, à Nyon, une femme s'est exprimée comme suit : sur des tracts qu'elle a distribués aux passants dans une zone piétonne animée, elle a nié la dignité humaine des personnes en situation de handicap en raison de leur handicap. Elle a agi intentionnellement.
+
+[P00058] genre: note d'une travailleuse sociale
+Faits : D'après le rapport de police, en juin 2025, à Delémont, une entrepreneuse s'est exprimée comme suit : dans un discours prononcé lors d'une séance publique d'information de la commune devant environ 120 personnes, elle a exhorté à refuser des logements et des emplois aux personnes homosexuelles en raison de leur orientation sexuelle. Elle a agi intentionnellement.
+
+[P00059] genre: courrier de lecteur qui relate l'incident
+Faits : À Nyon, en mars 2023, une entrepreneuse s'est exprimée comme suit : sur des tracts qu'elle a distribués aux passants dans une zone piétonne animée, elle a abaissé d'une façon qui porte atteinte à la dignité humaine les personnes bisexuelles en raison de leur orientation sexuelle. L'intention n'est pas contestée.
+
+[P00060] genre: brève de journal
+Faits : Selon l'acte d'accusation, en mai 2022, à Vevey, un étudiant s'est exprimé comme suit : dans un discours prononcé lors d'une séance publique d'information de la commune devant environ 120 personnes, il a nié la dignité humaine des personnes non binaires en raison de leur identité de genre. Il a agi intentionnellement.
+
+[P00061] genre: récit d'une témoin
+Faits : Selon l'acte d'accusation, en septembre 2021, à Neuchâtel, un retraité s'est exprimé comme suit : dans une vidéo qu'il a publiée sur une plateforme vidéo librement accessible, il a qualifié d'êtres humains de seconde zone les personnes âgées en raison de leur âge. Il a agi intentionnellement.
+
+[P00062] genre: entrée du journal de police
+Faits : D'après le rapport de police, en mai 1993, à Sion, un homme s'est exprimé comme suit : dans un bus bondé, à haute voix et en s'adressant à tous les passagers, il a dénigré les Albanais du Kosovo en raison de leur appartenance ethnique en leur déniant toute dignité humaine. Il a agi intentionnellement.
+
+[P00063] genre: récit sur un forum en ligne
+Faits : En octobre 1994, un homme se trouvait à Sion. Dans un discours prononcé lors d'une séance publique d'information de la commune devant environ 120 personnes, il a appelé à haïr les personnes d'origine africaine en raison de leur appartenance raciale. Il a agi intentionnellement.
+
+[P00064] genre: note d'une travailleuse sociale
+Faits : D'après le rapport de police, en mai 2022, à Delémont, un homme s'est exprimé comme suit : lors d'un repas du soir dans le cercle familial le plus étroit, dans son appartement, en présence uniquement de son épouse et de ses deux enfants adultes, il a attisé la haine contre les personnes d'origine asiatique en raison de leur appartenance raciale. Il a agi intentionnellement.
+
+[P00065] genre: courrier de lecteur qui relate l'incident
+Faits : À Genève, en octobre 1994, un entrepreneur s'est exprimé comme suit : dans un discours prononcé lors d'une séance publique d'information de la commune devant environ 120 personnes, il a dévalorisé les membres d'une Église évangélique libre en raison de leur appartenance religieuse d'une manière contraire à la dignité humaine. L'intention n'est pas contestée.
+
+[P00066] genre: brève de journal
+Faits : En juin 2025, une étudiante domiciliée à Bienne s'est exprimée comme suit : dans un commentaire publié sur un forum en ligne librement accessible, elle a qualifié d'êtres humains de seconde zone les personnes noires en raison de leur couleur de peau. Elle a agi avec conscience et volonté.
+
+[P00067] genre: récit d'une témoin
+Faits : D'après le rapport de police, en août 2020, à Yverdon-les-Bains, un étudiant s'est exprimé comme suit : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a attisé la haine contre les personnes homosexuelles en raison de leur orientation sexuelle. Il a agi intentionnellement.
+
+[P00068] genre: entrée du journal de police
+Faits : Selon l'acte d'accusation, en septembre 2021, à Neuchâtel, un retraité s'est exprimé comme suit : dans une vidéo qu'il a publiée sur une plateforme vidéo librement accessible, il a qualifié d'êtres humains de seconde zone les Tamouls en raison de leur appartenance ethnique. Il a agi intentionnellement.
+
+[P00069] genre: récit sur un forum en ligne
+Faits : En septembre 2021, à Lausanne, une femme s'est exprimée comme suit : lors d'un repas du soir dans le cercle familial le plus étroit, dans son appartement, en présence uniquement de son mari et de ses deux enfants adultes, elle a fait la promotion d'une idéologie qui a pour but de dénigrer systématiquement les musulmans en raison de leur appartenance religieuse. Il est établi qu'elle a agi intentionnellement.
+
+[P00070] genre: note d'une travailleuse sociale
+Faits : En juin 2025, une étudiante domiciliée à La Chaux-de-Fonds s'est exprimée comme suit : dans une publication consultable publiquement sur son profil de réseau social, elle a appelé à haïr les musulmans en raison de leur appartenance religieuse. Elle a agi avec conscience et volonté.
+
+[P00071] genre: courrier de lecteur qui relate l'incident
+Faits : À Fribourg, en janvier 2024, une femme s'est exprimée comme suit : dans un commentaire publié sur un forum en ligne librement accessible, elle a diffusé une doctrine qui présente systématiquement comme des êtres inférieurs les personnes noires en raison de leur couleur de peau. L'intention n'est pas contestée.
+
+[P00072] genre: brève de journal
+Faits : D'après le rapport de police, en novembre 2018, à Yverdon-les-Bains, un étudiant s'est exprimé comme suit : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a attisé la haine contre les personnes homosexuelles en raison de leur orientation sexuelle. Il a agi intentionnellement.
+
+[P00073] genre: récit d'une témoin
+Faits : En mars 2023, un étudiant domicilié à Vevey s'est exprimé comme suit : lors d'une réunion dans un refuge forestier devant environ 40 participants, qui avaient été invités par un appel général et dont il ne connaissait pas personnellement la plupart, il a nié la dignité humaine des hindous en raison de leur appartenance religieuse. Il a agi avec conscience et volonté.
+
+[P00074] genre: entrée du journal de police
+Faits : Un retraité domicilié à La Chaux-de-Fonds se voit reprocher ce qui suit : sur des tracts qu'il a distribués aux passants dans une zone piétonne animée, il a exhorté à refuser des logements et des emplois aux membres d'une Église évangélique libre en raison de leur appartenance religieuse, et ce en juin 2020. Il a agi intentionnellement.
+
+[P00075] genre: récit sur un forum en ligne
+Faits : En juin 2025, une étudiante domiciliée à La Chaux-de-Fonds s'est exprimée comme suit : dans une publication consultable publiquement sur son profil de réseau social, elle a appelé à haïr les Zurichoises et les Zurichois en raison de leur appartenance cantonale. Elle a agi avec conscience et volonté.
+
+[P00076] genre: note d'une travailleuse sociale
+Faits : En septembre 2021, à Bienne, une retraitée s'est exprimée comme suit : dans un discours prononcé lors d'une séance publique d'information de la commune devant environ 120 personnes, elle a propagé une idéologie visant à rabaisser de façon systématique les Roms en raison de leur origine ethnique. Il est établi qu'elle a agi intentionnellement.
+
+[P00077] genre: courrier de lecteur qui relate l'incident
+Faits : En novembre 2018, une étudiante se trouvait à Sion. Dans une lettre de lecteur parue dans un journal régional, elle a appelé à haïr les lesbiennes en raison de leur orientation sexuelle. Elle a agi intentionnellement.
+
+[P00078] genre: brève de journal
+Faits : Selon l'acte d'accusation, en mai 2022, à Vevey, un étudiant s'est exprimé comme suit : dans un discours prononcé lors d'une séance publique d'information de la commune devant environ 120 personnes, il a nié la dignité humaine des juifs en raison de leur foi. Il a agi intentionnellement.
+
+[P00079] genre: récit d'une témoin
+Faits : À Genève, en juin 2025, une étudiante s'est exprimée comme suit : sur des tracts qu'elle a distribués avec ses enfants aux passants dans une zone piétonne animée et qu'elle a intitulés « Une famille dit la vérité », elle a promu une vision du monde qui assigne un rang inférieur aux juifs en raison de leur appartenance religieuse. L'intention n'est pas contestée.
+
+[P00080] genre: entrée du journal de police
+Faits : À Genève, en juin 2025, une étudiante s'est exprimée comme suit : sur des tracts qu'elle a distribués aux passants dans une zone piétonne animée, elle a promu une vision du monde qui assigne un rang inférieur aux juifs en raison de leur appartenance religieuse. L'intention n'est pas contestée.
+
+[P00081] genre: récit sur un forum en ligne
+Faits : En octobre 1994, une retraitée se trouvait à Fribourg. À un stand sur un marché hebdomadaire très fréquenté, devant une nombreuse clientèle, elle a incité à la discrimination envers les hindous en raison de leur appartenance religieuse. Elle a agi intentionnellement.
+
+[P00082] genre: note d'une travailleuse sociale
+Faits : En août 2020, une étudiante se trouvait à Sion. Dans une lettre de lecteur parue dans un journal régional, elle a appelé à haïr les lesbiennes en raison de leur orientation sexuelle. Elle a agi intentionnellement.
+
+[P00083] genre: courrier de lecteur qui relate l'incident
+Faits : Le 30 juin 2020, un entrepreneur s'est exprimé comme suit à Genève : à un stand sur un marché hebdomadaire très fréquenté, devant une nombreuse clientèle, il a dévalorisé les personnes bisexuelles en raison de leur orientation sexuelle d'une manière contraire à la dignité humaine. Il a agi intentionnellement.
+
+[P00084] genre: brève de journal
+Faits : En juin 2025, à Yverdon-les-Bains, un entrepreneur s'est exprimé comme suit : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a abaissé d'une façon qui porte atteinte à la dignité humaine les Tamouls en raison de leur appartenance ethnique. Il est établi qu'il a agi intentionnellement.
+
+[P00085] genre: récit d'une témoin
+Faits : En mars 2023, une étudiante se trouvait à Sion. Dans une lettre de lecteur parue dans un journal régional, elle a appelé à haïr les lesbiennes en raison de leur orientation sexuelle. Elle a agi intentionnellement.
+
+[P00086] genre: entrée du journal de police
+Faits : Selon l'acte d'accusation, en mai 2022, à Neuchâtel, un étudiant s'est exprimé comme suit : dans une publication consultable publiquement sur son profil de réseau social, il a dénigré les personnes homosexuelles en raison de leur homosexualité en leur déniant toute dignité humaine. Il a agi intentionnellement.
+
+[P00087] genre: récit sur un forum en ligne
+Faits : Une étudiante domiciliée à La Chaux-de-Fonds se voit reprocher ce qui suit : lors d'une réunion dans un refuge forestier devant environ 40 participants, qui avaient été invités par un appel général et dont elle ne connaissait pas personnellement la plupart, elle a préconisé de défavoriser et d'exclure les personnes bisexuelles en raison de leur orientation sexuelle, et ce en mars 2019. Elle a agi intentionnellement.
+
+[P00088] genre: note d'une travailleuse sociale
+Faits : Selon l'acte d'accusation, en juin 2025, à Neuchâtel, un entrepreneur s'est exprimé comme suit : lors d'un repas du soir avec trois amis proches de longue date, dans son appartement, il a appelé à haïr les Albanais du Kosovo en raison de leur appartenance ethnique. Il a agi intentionnellement.
+
+[P00089] genre: courrier de lecteur qui relate l'incident
+Faits : En juin 2025, à Montreux, un homme s'est exprimé comme suit : dans une vidéo qu'il a publiée sur une plateforme vidéo librement accessible et qu'il a intitulée « Message à ma famille », il a présenté comme des êtres humains de moindre valeur les Kurdes en raison de leur appartenance ethnique. Il est établi qu'il a agi intentionnellement.
+
+[P00090] genre: brève de journal
+Faits : D'après le rapport de police, en septembre 2019, à Sion, un homme s'est exprimé comme suit : dans un bus bondé, à haute voix et en s'adressant à tous les passagers, il a dénigré les Albanais du Kosovo en raison de leur appartenance ethnique en leur déniant toute dignité humaine. Il a agi intentionnellement.
+
+[P00091] genre: récit d'une témoin
+Faits : Un retraité domicilié à La Chaux-de-Fonds se voit reprocher ce qui suit : sur des tracts qu'il a distribués aux passants dans une zone piétonne animée, il a exhorté à refuser des logements et des emplois aux membres d'une Église évangélique libre en raison de leur appartenance religieuse, et ce en juin 2025. Il a agi intentionnellement.
+
+[P00092] genre: entrée du journal de police
+Faits : D'après le rapport de police, en mars 2023, à Nyon, une femme s'est exprimée comme suit : sur des tracts qu'elle a distribués aux passants dans une zone piétonne animée, elle a nié la dignité humaine des Roms en raison de leur origine ethnique. Elle a agi intentionnellement.
+
+[P00093] genre: récit sur un forum en ligne
+Faits : En juin 2025, une étudiante se trouvait à Vevey. Sur des tracts qu'elle a distribués aux passants dans une zone piétonne animée, elle a diffusé systématiquement des thèses présentant comme moins dignes que les autres êtres humains les hommes gays en raison de leur orientation sexuelle. Elle a agi intentionnellement.
+
+[P00094] genre: note d'une travailleuse sociale
+Faits : En juin 2020, à Fribourg, un homme s'est exprimé comme suit : lors d'une réunion dans un refuge forestier devant environ 40 participants, qui avaient été invités par un appel général et dont il ne connaissait pas personnellement la plupart, il a dénigré les hommes gays en raison de leur orientation sexuelle en leur déniant toute dignité humaine. Il est établi qu'il a agi intentionnellement.
+
+[P00095] genre: courrier de lecteur qui relate l'incident
+Faits : En septembre 2021, à Bienne, une retraitée s'est exprimée comme suit : dans un discours prononcé lors d'une séance publique d'information de la commune devant environ 120 personnes, elle a propagé une idéologie visant à rabaisser de façon systématique les Roms en raison de leur appartenance ethnique. Il est établi qu'elle a agi intentionnellement.
+
+[P00096] genre: brève de journal
+Faits : En novembre 2018, à Yverdon-les-Bains, un entrepreneur s'est exprimé comme suit : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, il a abaissé d'une façon qui porte atteinte à la dignité humaine les Tamouls en raison de leur appartenance ethnique. Il est établi qu'il a agi intentionnellement.
+
+[P00097] genre: récit d'une témoin
+Faits : Un entrepreneur domicilié à Sion se voit reprocher ce qui suit : dans un bus bondé, à haute voix et en s'adressant à tous les passagers, alors qu'il se déplaçait avec ses enfants, il a diffusé les écrits d'une doctrine qui rabaisse systématiquement les personnes homosexuelles en raison de leur orientation sexuelle, et ce en mars 2023. Il a agi intentionnellement.
+
+[P00098] genre: entrée du journal de police
+Faits : En juin 2025, à Montreux, un homme s'est exprimé comme suit : dans une vidéo qu'il a publiée sur une plateforme vidéo librement accessible, il a présenté comme des êtres humains de moindre valeur les Kurdes en raison de leur appartenance ethnique. Il est établi qu'il a agi intentionnellement.
+
+[P00099] genre: récit sur un forum en ligne
+Faits : En juin 2025, une étudiante se trouvait à Vevey. Lors d'une conversation téléphonique avec son frère, elle a diffusé systématiquement des thèses présentant comme moins dignes que les autres êtres humains les hommes gays en raison de leur orientation sexuelle. Elle a agi intentionnellement.
+
+[P00100] genre: note d'une travailleuse sociale
+Faits : À Genève, en juin 2025, un entrepreneur s'est exprimé comme suit : dans un discours prononcé lors d'une séance publique d'information de la commune devant environ 120 personnes, il a dévalorisé les membres d'une Église évangélique libre en raison de leur appartenance religieuse d'une manière contraire à la dignité humaine. L'intention n'est pas contestée.
+
+[P00101] genre: courrier de lecteur qui relate l'incident
+Faits : Selon l'acte d'accusation, en juin 2025, à Neuchâtel, un entrepreneur s'est exprimé comme suit : dans une vidéo qu'il a publiée sur une plateforme vidéo librement accessible, il a appelé à haïr les Albanais du Kosovo en raison de leur appartenance ethnique. Il a agi intentionnellement.
+
+[P00102] genre: brève de journal
+Faits : À Genève, en novembre 2018, un entrepreneur s'est exprimé comme suit : dans un discours prononcé lors d'une séance publique d'information de la commune devant environ 120 personnes, il a dévalorisé les membres d'une Église évangélique libre en raison de leur appartenance religieuse d'une manière contraire à la dignité humaine. L'intention n'est pas contestée.
+
+[P00103] genre: récit d'une témoin
+Faits : En septembre 2021, une femme domiciliée à Bienne s'est exprimée comme suit : dans une vidéo qu'elle a publiée sur une plateforme vidéo librement accessible, elle a préconisé de défavoriser et d'exclure les ouvriers du bâtiment en raison de leur profession. Elle a agi avec conscience et volonté.
+
+[P00104] genre: entrée du journal de police
+Faits : En mars 2023, un étudiant s'est exprimé comme suit à Montreux : dans un bus bondé, à haute voix et en s'adressant à tous les passagers, il a dévalorisé les membres d'un parti politique en raison de leurs opinions politiques d'une manière contraire à la dignité humaine. Il a agi intentionnellement.
+
+[P00105] genre: récit sur un forum en ligne
+Faits : En mai 2022, à Delémont, une retraitée s'est exprimée comme suit : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, elle a dénigré les personnes non binaires en raison de leur identité de genre en leur déniant toute dignité humaine. Il est établi qu'elle a agi intentionnellement.
+
+[P00106] genre: note d'une travailleuse sociale
+Faits : Selon l'acte d'accusation, en mai 2022, à Vevey, un étudiant s'est exprimé comme suit : dans un discours prononcé lors d'une séance publique d'information de la commune devant environ 120 personnes, il a nié la dignité humaine des juifs en raison de leur appartenance religieuse. Il a agi intentionnellement.
+
+[P00107] genre: courrier de lecteur qui relate l'incident
+Faits : En mars 2023, un étudiant s'est exprimé comme suit à Montreux : dans un bus bondé, à haute voix et en s'adressant à tous les passagers, il a dévalorisé les musulmans en raison de leur foi d'une manière contraire à la dignité humaine. Il a agi intentionnellement.
+
+[P00108] genre: brève de journal
+Faits : Un étudiant domicilié à La Chaux-de-Fonds se voit reprocher ce qui suit : dans une vidéo qu'il a publiée sur une plateforme vidéo librement accessible, il a incité à la haine envers les personnes bisexuelles en raison de leur orientation sexuelle, et ce en mars 2019. Il a agi intentionnellement.
+
+[P00109] genre: récit d'une témoin
+Faits : D'après le rapport de police, en mai 2022, à Lausanne, une retraitée s'est exprimée comme suit : dans un bus bondé, à haute voix et en s'adressant à tous les passagers, elle a propagé une idéologie visant à rabaisser de façon systématique les Roms en raison de leur appartenance ethnique. Elle a agi intentionnellement.
+
+[P00110] genre: entrée du journal de police
+Faits : En mai 2022, une femme domiciliée à Sion s'est exprimée comme suit : dans un discours prononcé lors d'une séance publique d'information de la commune devant environ 120 personnes, elle a diffusé les écrits d'une doctrine qui rabaisse systématiquement les membres d'une Église évangélique libre en raison de leur appartenance religieuse. Elle a agi avec conscience et volonté.
+
+[P00111] genre: récit sur un forum en ligne
+Faits : En mai 2022, à Delémont, une retraitée s'est exprimée comme suit : lors d'une manifestation autorisée qui se tenait sur une place publique devant environ 300 personnes, elle a dénigré les personnes en situation de handicap en raison de leur handicap en leur déniant toute dignité humaine. Il est établi qu'elle a agi intentionnellement.
+
+[P00112] genre: note d'une travailleuse sociale
+Faits : Un entrepreneur domicilié à Sion se voit reprocher ce qui suit : dans un bus bondé, à haute voix et en s'adressant à tous les passagers, il a diffusé les écrits d'une doctrine qui rabaisse systématiquement les personnes homosexuelles en raison de leur orientation sexuelle, et ce en mars 2023. Il a agi intentionnellement.
+
+[P00113] genre: courrier de lecteur qui relate l'incident
+Faits : En juin 2025, à Montreux, un homme s'est exprimé comme suit : lors d'une conversation téléphonique avec son frère, il a présenté comme des êtres humains de moindre valeur les Kurdes en raison de leur appartenance ethnique. Il est établi qu'il a agi intentionnellement.
+
+[P00114] genre: brève de journal
+Faits : Le 30 juin 2020, un étudiant domicilié à Vevey s'est exprimé comme suit : lors d'une réunion dans un refuge forestier devant environ 40 participants, qui avaient été invités par un appel général et dont il ne connaissait pas personnellement la plupart, il a nié la dignité humaine des hindous en raison de leur appartenance religieuse. Il a agi avec conscience et volonté.
+
+[P00115] genre: récit d'une témoin
+Faits : D'après le rapport de police, le 30 juin 2020, à Delémont, une entrepreneuse s'est exprimée comme suit : dans un discours prononcé lors d'une séance publique d'information de la commune devant environ 120 personnes, elle a exhorté à refuser des logements et des emplois aux personnes homosexuelles en raison de leur orientation sexuelle. Elle a agi intentionnellement.
+
+[P00116] genre: entrée du journal de police
+Faits : Une étudiante domiciliée à Lausanne se voit reprocher ce qui suit : dans une vidéo qu'elle a publiée sur une plateforme vidéo librement accessible et qu'elle a intitulée « Message à ma famille », elle a incité à la haine envers les hommes gays en raison de leur orientation sexuelle, et ce en juin 2025. Elle a agi intentionnellement.
+
+[P00117] genre: récit sur un forum en ligne
+Faits : Un étudiant domicilié à La Chaux-de-Fonds se voit reprocher ce qui suit : dans une vidéo qu'il a publiée sur une plateforme vidéo librement accessible, il a incité à la haine envers les personnes bisexuelles en raison de leur orientation sexuelle, et ce en mai 2022. Il a agi intentionnellement.
+
+[P00118] genre: note d'une travailleuse sociale
+Faits : En septembre 2021, à Bienne, une retraitée s'est exprimée comme suit : dans un discours prononcé lors d'une séance publique d'information de la commune devant environ 120 personnes, elle a propagé une idéologie visant à rabaisser de façon systématique les femmes en raison de leur sexe. Il est établi qu'elle a agi intentionnellement.
+
+[P00119] genre: courrier de lecteur qui relate l'incident
+Faits : Un retraité domicilié à La Chaux-de-Fonds se voit reprocher ce qui suit : sur des tracts qu'il a distribués aux passants dans une zone piétonne animée, il a exhorté à refuser des logements et des emplois aux membres d'une Église évangélique libre en raison de leur appartenance religieuse, et ce en octobre 1994. Il a agi intentionnellement.

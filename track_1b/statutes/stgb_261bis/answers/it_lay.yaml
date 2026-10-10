@@ -1,0 +1,87 @@
+# Reference answers for the user-voice items: the Italian answers (it.yaml), unchanged (A16).
+# Reference answers in Italian (same keys and structure as answers/de.yaml; see its header). `{date}` is the date surface
+# from templates/it.yaml (e.g. "nel marzo 2019", "il 30 giugno 2020").
+lang: it_lay
+char_labels: {race: razza, ethnicity: etnia, religion: religione, sexual_orientation: orientamento sessuale,
+              gender_identity: identità di genere, sex: sesso, canton: appartenenza cantonale, occupation: professione,
+              age: età, disability: disabilità, political_opinion: convinzioni politiche}
+labels:
+  paragraph:
+    abs1: "cpv. 1 CP (incitamento all'odio o alla discriminazione)"
+    abs2: "cpv. 2 CP (propagazione di un'ideologia volta a discreditare sistematicamente)"
+    abs4: "cpv. 4 CP (discredito lesivo della dignità umana)"
+slot_labels:
+  setting:
+    pub_rally: "una manifestazione autorizzata in una piazza pubblica davanti a circa 300 persone"
+    pub_rally_fam: "una manifestazione autorizzata davanti a circa 300 persone, anche se vissuta come «gita in famiglia»"
+    pub_post: "un post consultabile pubblicamente sui social media"
+    pub_post_fam: "un post consultabile pubblicamente sui social media, anche se rivolto alla famiglia"
+    pub_letter: "una lettera alla redazione pubblicata su un giornale regionale"
+    pub_letter_fam: "una lettera alla redazione pubblicata su un giornale regionale, anche se firmata a nome della famiglia"
+    pub_hut: "una riunione di circa 40 persone invitate tramite un appello generale e per lo più sconosciute"
+    pub_hut_fam: "una riunione di circa 40 persone invitate tramite un appello generale, anche se tenuta nel rifugio forestale della famiglia"
+    pub_flyer: "volantini distribuiti in una zona pedonale molto frequentata"
+    pub_flyer_fam: "volantini distribuiti in una zona pedonale molto frequentata, anche se con l'aiuto dei figli"
+    pub_speech: "un discorso durante una serata informativa pubblica del Comune davanti a circa 120 persone"
+    pub_speech_fam: "un discorso durante una serata informativa pubblica del Comune davanti a circa 120 persone, anche se in sala sedevano dei familiari"
+    pub_video: "un video su una piattaforma liberamente accessibile"
+    pub_video_fam: "un video su una piattaforma liberamente accessibile, anche se intitolato come messaggio alla famiglia"
+    pub_tram: "un'esternazione ad alta voce davanti a tutti i passeggeri di un autobus gremito"
+    pub_tram_fam: "un'esternazione ad alta voce davanti a tutti i passeggeri di un autobus gremito, anche se erano presenti i propri figli"
+    pub_market: "un'esternazione presso una bancarella davanti a numerosi clienti"
+    pub_market_fam: "un'esternazione davanti a numerosi clienti, anche se la bancarella è un'azienda famigliare"
+    pub_forum: "un commento in un forum online liberamente accessibile"
+    pub_forum_fam: "un commento in un forum online liberamente accessibile, anche se firmato con un saluto alla famiglia"
+    priv_dinner: "una cena nella più stretta cerchia famigliare"
+    priv_friends: "una cena con tre amici stretti di lunga data"
+    priv_message: "un messaggio personale inviato soltanto alla sorella"
+    priv_phone: "una conversazione telefonica con il fratello"
+    priv_famchat: "una chat di famiglia riservata ai genitori e ai fratelli"
+    cont_clubchat: "una chat di gruppo chiusa di una società sportiva con circa 30 membri, per lo più conosciuti solo superficialmente"
+    cont_party: "una festa di compleanno con circa 20 ospiti, tra cui conoscenti di conoscenti"
+    cont_office: "un'e-mail a circa 25 colleghi di lavoro, attuali ed ex"
+    cont_assoc: "una seduta non pubblica di un'associazione con circa 25 membri, alcuni conosciuti da anni, altri nuovi"
+chosen:
+  convict: "Sì. L'esternazione è avvenuta pubblicamente ai sensi della DTF 130 IV 111 consid. 5.2 ({setting_label}); è diretta contro un gruppo a causa di una caratteristica protetta ({char_label}) e adempie la fattispecie dell'art. 261bis {paragraph_label}. Il fatto commesso {date} rientra nel campo d'applicazione temporale."
+  "setting:failed": "No. Il contesto ({setting_label}) è privato e caratterizzato da relazioni personali; secondo la DTF 130 IV 111 consid. 5.2 manca quindi il carattere pubblico che l'art. 261bis CP presuppone."
+  "characteristic:not_listed": "No. La caratteristica «{char_label}» non figura nell'elenco esaustivo dell'art. 261bis CP (razza, etnia, religione, orientamento sessuale); l'esternazione non è punibile secondo questa disposizione, anche se è avvenuta pubblicamente."
+  "characteristic:not_listed|gender_identity": "No. L'identità di genere non figura nell'elenco esaustivo dell'art. 261bis CP; con la revisione del 2020 è stato aggiunto soltanto l'orientamento sessuale."
+  "characteristic:not_yet_covered": "No. L'orientamento sessuale è protetto soltanto per i fatti commessi a partire dal 1° luglio 2020 (RU 2020 1609); un atto commesso {date} non vi rientra, poiché secondo gli art. 1 e 2 CP la legge penale non ha effetto retroattivo."
+  "act_date:not_in_force": "No. L'art. 261bis CP è in vigore soltanto dal 1° gennaio 1995; un atto commesso {date} non è punibile in base a questa norma (art. 1 e 2 CP)."
+  "setting:contested": "Dipende da circostanze che lo stato di fatto lascia aperte. Secondo la DTF 130 IV 111 consid. 5.2, il carattere pubblico del contesto ({setting_label}) dipende dall'esistenza di relazioni personali o di un particolare rapporto di fiducia; conta anche il numero delle persone raggiunte."
+minimal:
+  convict: "No. L'esternazione non è avvenuta pubblicamente ai sensi della DTF 130 IV 111 consid. 5.2 ({setting_label}); è sì diretta contro un gruppo a causa di una caratteristica ({char_label}), ma non adempie la fattispecie dell'art. 261bis {paragraph_label}. Il fatto commesso {date} non è quindi punibile."
+  "setting:failed": "Sì. Il contesto ({setting_label}) non è privato né caratterizzato da relazioni personali; secondo la DTF 130 IV 111 consid. 5.2 è quindi dato il carattere pubblico che l'art. 261bis CP presuppone."
+  "characteristic:not_listed": "Sì. La caratteristica «{char_label}» figura nell'elenco protetto dell'art. 261bis CP (razza, etnia, religione, orientamento sessuale e altre); l'esternazione è punibile secondo questa disposizione, perché è avvenuta pubblicamente."
+  "characteristic:not_listed|gender_identity": "Sì. L'identità di genere figura nell'elenco protetto dell'art. 261bis CP; con la revisione del 2020 è stata aggiunta insieme all'orientamento sessuale."
+  "characteristic:not_yet_covered": "Sì. L'orientamento sessuale è protetto dall'art. 261bis CP (RU 2020 1609); un atto commesso {date} vi rientra, poiché secondo gli art. 1 e 2 CP è determinante la legge in vigore al momento della sentenza."
+  "act_date:not_in_force": "Sì. L'art. 261bis CP è oggi in vigore; un atto commesso {date} è quindi punibile in base a questa norma (art. 1 e 2 CP)."
+rejected:
+  convict:
+    - "No. Le affermazioni sono riprovevoli, ma rientrano nella libertà di espressione; il reato di cui all'art. 261bis CP non è realizzato."
+    - "No. L'art. 261bis CP presuppone un attacco contro una persona determinata; un'affermazione generica su un gruppo non basta."
+  "setting:failed":
+    - "Sì. L'esternazione è diretta contro un gruppo a causa della caratteristica «{char_label}» ed è punibile secondo l'art. 261bis CP, anche se è avvenuta in una cerchia privata."
+    - "Sì. Anche questo contesto ({setting_label}) basta, perché l'esternazione può essere riferita ad altri; l'art. 261bis CP è adempiuto."
+  "characteristic:not_listed":
+    - "Sì. L'art. 261bis CP protegge qualsiasi gruppo dal discredito, anche se definito dalla caratteristica «{char_label}»."
+    - "Sì. L'esternazione lede la dignità umana ed è quindi punibile secondo l'art. 261bis CP, indipendentemente dalla caratteristica in questione."
+  "characteristic:not_yet_covered":
+    - "Sì. L'orientamento sessuale è protetto dall'art. 261bis CP; l'esternazione è punibile."
+    - "Sì. Determinante è il diritto oggi in vigore, che protegge l'orientamento sessuale."
+  "act_date:not_in_force":
+    - "Sì. L'esternazione è diretta contro un gruppo a causa di una caratteristica protetta ed è punibile secondo l'art. 261bis CP."
+    - "Sì. Determinante è il diritto in vigore al momento della sentenza, e l'art. 261bis CP oggi è in vigore."
+  "setting:contested":
+    - "Sì. L'esternazione è chiaramente pubblica e punibile secondo l'art. 261bis CP."
+    - "No. L'esternazione è avvenuta in una cerchia chiusa ed è quindi chiaramente privata."
+traps:
+  family_wording:
+    - "No. L'esternazione era legata alla famiglia ed era pertanto privata; la fattispecie dell'art. 261bis CP non è adempiuta."
+    - "No. Chi si rivolge alla propria famiglia si esprime in ambito privato; secondo la DTF 130 IV 111 manca il carattere pubblico."
+  synonym:
+    - "No. La caratteristica menzionata non figura nell'elenco esaustivo dell'art. 261bis CP."
+    - "No. L'art. 261bis CP non menziona espressamente questa caratteristica; l'elenco è esaustivo."
+  date_overapplied:
+    - "No. I fatti commessi prima del 1° luglio 2020 non sono contemplati dall'art. 261bis CP."
+    - "No. Il fatto è anteriore alla revisione del 2020, e la legge non ha effetto retroattivo."

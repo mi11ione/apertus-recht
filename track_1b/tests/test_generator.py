@@ -57,7 +57,7 @@ def test_rendered_text_is_clean(d261, scenarios261):
     for lang in d261.langs:
         for s in scenarios261:
             t = render.render(d261, lang, s.slots)
-            assert not bad.search(t.replace(" :", ":") if lang == "fr" else t), (lang, s.group_id, s.k, t)
+            assert not bad.search(t.replace(" :", ":") if lang.split("_")[0] == "fr" else t), (lang, s.group_id, s.k, t)
 
 
 def test_every_slot_value_is_used(d261, scenarios261):

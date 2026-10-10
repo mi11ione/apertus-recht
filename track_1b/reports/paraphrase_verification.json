@@ -1,0 +1,268 @@
+{
+ "by_lang": {
+  "de": {
+   "written": 120,
+   "kept": 108,
+   "dropped": [
+    {
+     "id": "P00004",
+     "item": "261bis-de-CHAR059-0",
+     "why": {
+      "B": [
+       "act degrade"
+      ]
+     }
+    },
+    {
+     "id": "P00007",
+     "item": "261bis-de-SET020-1",
+     "why": {
+      "B": [
+       "act degrade"
+      ]
+     }
+    },
+    {
+     "id": "P00019",
+     "item": "261bis-de-SET009-0",
+     "why": {
+      "B": [
+       "act degrade"
+      ]
+     }
+    },
+    {
+     "id": "P00029",
+     "item": "261bis-de-CHAR059-1",
+     "why": {
+      "B": [
+       "act degrade"
+      ]
+     }
+    },
+    {
+     "id": "P00033",
+     "item": "261bis-de-CHAR059-2",
+     "why": {
+      "B": [
+       "act degrade"
+      ]
+     }
+    },
+    {
+     "id": "P00034",
+     "item": "261bis-de-DATE_SO021-1",
+     "why": {
+      "B": [
+       "act degrade"
+      ]
+     }
+    },
+    {
+     "id": "P00035",
+     "item": "261bis-de-DATE_SO034-2",
+     "why": {
+      "B": [
+       "act degrade"
+      ]
+     }
+    },
+    {
+     "id": "P00049",
+     "item": "261bis-de-DATE_SO034-1",
+     "why": {
+      "B": [
+       "act degrade"
+      ]
+     }
+    },
+    {
+     "id": "P00051",
+     "item": "261bis-de-CHAR047-1",
+     "why": {
+      "B": [
+       "act degrade"
+      ]
+     }
+    },
+    {
+     "id": "P00063",
+     "item": "261bis-de-SET009-2",
+     "why": {
+      "B": [
+       "act degrade"
+      ]
+     }
+    },
+    {
+     "id": "P00075",
+     "item": "261bis-de-DATE_SO034-0",
+     "why": {
+      "B": [
+       "act degrade"
+      ]
+     }
+    },
+    {
+     "id": "P00095",
+     "item": "261bis-de-SET009-1",
+     "why": {
+      "B": [
+       "act degrade"
+      ]
+     }
+    }
+   ],
+   "kept_by_gold": {
+    "convict": 71,
+    "acquit": 37
+   }
+  },
+  "fr": {
+   "written": 120,
+   "kept": 111,
+   "dropped": [
+    {
+     "id": "P00008",
+     "item": "261bis-fr-DATE_SO034-0",
+     "why": {
+      "B": [
+       "act degrade"
+      ]
+     }
+    },
+    {
+     "id": "P00011",
+     "item": "261bis-fr-SET009-2",
+     "why": {
+      "B": [
+       "act degrade"
+      ]
+     }
+    },
+    {
+     "id": "P00013",
+     "item": "261bis-fr-CHAR059-2",
+     "why": {
+      "B": [
+       "act degrade"
+      ]
+     }
+    },
+    {
+     "id": "P00030",
+     "item": "261bis-fr-SET030-1",
+     "why": {
+      "B": [
+       "act degrade"
+      ]
+     }
+    },
+    {
+     "id": "P00051",
+     "item": "261bis-fr-DATE_SO034-2",
+     "why": {
+      "B": [
+       "act degrade"
+      ]
+     }
+    },
+    {
+     "id": "P00054",
+     "item": "261bis-fr-CHAR059-1",
+     "why": {
+      "B": [
+       "act degrade"
+      ]
+     }
+    },
+    {
+     "id": "P00087",
+     "item": "261bis-fr-DATE_SO034-1",
+     "why": {
+      "B": [
+       "act degrade"
+      ]
+     }
+    },
+    {
+     "id": "P00093",
+     "item": "261bis-fr-SET009-0",
+     "why": {
+      "B": [
+       "act degrade"
+      ]
+     }
+    },
+    {
+     "id": "P00099",
+     "item": "261bis-fr-SET009-1",
+     "why": {
+      "B": [
+       "act degrade"
+      ]
+     }
+    }
+   ],
+   "kept_by_gold": {
+    "convict": 72,
+    "acquit": 39
+   }
+  },
+  "it": {
+   "written": 120,
+   "kept": 115,
+   "dropped": [
+    {
+     "id": "P00028",
+     "item": "261bis-it-CHAR059-0",
+     "why": {
+      "B": [
+       "act degrade"
+      ]
+     }
+    },
+    {
+     "id": "P00038",
+     "item": "261bis-it-SET009-0",
+     "why": {
+      "B": [
+       "act degrade"
+      ]
+     }
+    },
+    {
+     "id": "P00094",
+     "item": "261bis-it-SET009-1",
+     "why": {
+      "B": [
+       "act degrade"
+      ]
+     }
+    },
+    {
+     "id": "P00095",
+     "item": "261bis-it-CHAR059-1",
+     "why": {
+      "B": [
+       "act degrade"
+      ]
+     }
+    },
+    {
+     "id": "P00115",
+     "item": "261bis-it-SET009-2",
+     "why": {
+      "B": [
+       "act degrade"
+      ]
+     }
+    }
+   ],
+   "kept_by_gold": {
+    "convict": 74,
+    "acquit": 41
+   }
+  }
+ }
+}

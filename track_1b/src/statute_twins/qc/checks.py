@@ -22,7 +22,7 @@ REQUIRED = {
     "normative_source": list, "licence": str, "canary": str, "base_id": str,
 }
 ENUMS = {"variant": {"base", "true_flip", "placebo", "contested"}, "gold_verdict": {"convict", "acquit", "open"},
-         "label": {"settled", "contested"}, "lang": {"de", "fr", "it", "de_lay"}}   # de_lay: German, user voice (A9)
+         "label": {"settled", "contested"}, "lang": {"de", "fr", "it", "de_lay", "fr_lay", "it_lay"}}   # *_lay: user voice (A9, A16)
 
 
 def load_items(ds: Path) -> list[dict]:

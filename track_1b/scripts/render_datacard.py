@@ -139,7 +139,10 @@ configs:
       - {{split: fr, path: eval/core_fr.jsonl}}
       - {{split: it, path: eval/core_it.jsonl}}
   - config_name: user_voice
-    data_files: [{{split: de, path: eval/core_de_lay.jsonl}}]
+    data_files:
+      - {{split: de, path: eval/core_de_lay.jsonl}}
+      - {{split: fr, path: eval/core_fr_lay.jsonl}}
+      - {{split: it, path: eval/core_it_lay.jsonl}}
   - config_name: battery162
     data_files: [{{split: de, path: eval/battery162.jsonl}}]
   - config_name: prompts
@@ -148,6 +151,8 @@ configs:
       - {{split: fr, path: eval/prompts_core_fr.jsonl}}
       - {{split: it, path: eval/prompts_core_it.jsonl}}
       - {{split: de_user_voice, path: eval/prompts_core_de_lay.jsonl}}
+      - {{split: fr_user_voice, path: eval/prompts_core_fr_lay.jsonl}}
+      - {{split: it_user_voice, path: eval/prompts_core_it_lay.jsonl}}
       - {{split: battery162, path: eval/prompts_battery162.jsonl}}
   - config_name: prompts_free_text
     data_files:
@@ -155,12 +160,16 @@ configs:
       - {{split: fr, path: eval/prompts_open_core_fr.jsonl}}
       - {{split: it, path: eval/prompts_open_core_it.jsonl}}
       - {{split: de_user_voice, path: eval/prompts_open_core_de_lay.jsonl}}
+      - {{split: fr_user_voice, path: eval/prompts_open_core_fr_lay.jsonl}}
+      - {{split: it_user_voice, path: eval/prompts_open_core_it_lay.jsonl}}
   - config_name: prompts_preference
     data_files:
       - {{split: de, path: eval/prompts_pref_core_de.jsonl}}
       - {{split: fr, path: eval/prompts_pref_core_fr.jsonl}}
       - {{split: it, path: eval/prompts_pref_core_it.jsonl}}
       - {{split: de_user_voice, path: eval/prompts_pref_core_de_lay.jsonl}}
+      - {{split: fr_user_voice, path: eval/prompts_pref_core_fr_lay.jsonl}}
+      - {{split: it_user_voice, path: eval/prompts_pref_core_it_lay.jsonl}}
   - config_name: metadata
     data_files: [{{split: items, path: metadata/items.jsonl}}]
 """ + ("""  - config_name: stgb_179ter
@@ -178,8 +187,10 @@ configs:
 # Apertus-Recht: Art. 261bis StGB minimal-twin scenarios (DE / FR / IT)
 
 {3 * ds['by_lang']['fr']} scenarios ({ds['by_lang']['fr']} per language in DE, FR and IT) about the Swiss racial-discrimination
-offence, Art. 261bis StGB / CP; the same {ds['by_lang']['fr']} German scenarios retold as a first-person paraphrase
-by a user asking about their own conduct (`user_voice`, language code `de_lay`; the act keeps the statute's vocabulary); and the {ds['battery162']}-item German exploration battery on which
+offence, Art. 261bis StGB / CP; the same scenarios retold as a first-person paraphrase
+by a user asking about their own conduct, in all three languages (`user_voice`, language codes `de_lay`, `fr_lay`,
+`it_lay`; {ds['by_lang']['fr']} each; the German acts keep the statute's vocabulary, the French and Italian ones (A16) describe the act
+in everyday words); and the {ds['battery162']}-item German exploration battery on which
 the stage and build columns were measured. Every scenario belongs to a **twin group**: a base case and variants that each change exactly **one
 legal fact** (public ↔ private setting, protected ↔ unprotected characteristic, before ↔ after the 1 July 2020
 extension, before ↔ after entry into force in 1995) or one irrelevant detail (**placebos**: family wording of a public

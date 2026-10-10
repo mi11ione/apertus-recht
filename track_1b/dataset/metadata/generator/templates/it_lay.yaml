@@ -1,0 +1,220 @@
+# Italian, in the voice of a user asking about their own conduct (A16): the same scenarios and facts as it.yaml,
+# told in the first person and in everyday words, like de_lay.yaml. No statute formulas; the act is described concretely
+# enough that the dignity threshold is met; the group is named without its characteristic; intent only in F07.
+lang: it_lay
+frames:
+  F01: '{Date} a {place}, {setting}, ho {act}.'
+  F02: Abito a {place}. {Date}, {setting}, ho {act}.
+  F03: 'Una domanda su una cosa che ho fatto {date} a {place}: {setting}, ho {act}.'
+  F04: '{Date} ero a {place} e, {setting}, ho {act}.'
+  F05: Ho {act} {date} a {place}, {setting}.
+  F06: 'Ecco cosa è successo: {date} a {place}, {setting}, ho {act}.'
+  F07: '{Date} a {place}, {setting}, ho {act}. L''ho fatto di proposito.'
+  F08: 'Per spiegare la mia situazione: {date} a {place}, {setting}, ho {act}.'
+actors:
+  m1:
+    surface: un uomo
+    gender: m
+  m2:
+    surface: un pensionato
+    gender: m
+  m3:
+    surface: un imprenditore
+    gender: m
+  m4:
+    surface: uno studente
+    gender: m
+  f1:
+    surface: una donna
+    gender: f
+  f2:
+    surface: una pensionata
+    gender: f
+  f3:
+    surface: un'imprenditrice
+    gender: f
+  f4:
+    surface: una studentessa
+    gender: f
+morphology:
+  m:
+    spouse: mia moglie
+  f:
+    spouse: mio marito
+places:
+  zh: Lugano
+  be: Bellinzona
+  bs: Locarno
+  lu: Mendrisio
+  sg: Chiasso
+  wi: Biasca
+  bi: Ascona
+  ch: Roveredo
+  aa: Giubiasco
+  th: Minusio
+  sh: Massagno
+  zg: Poschiavo
+dates:
+  d1994_10: nell'ottobre 1994
+  d1993_05: nel maggio 1993
+  d2018_11: nel novembre 2018
+  d2019_03: nel marzo 2019
+  d2019_09: nel settembre 2019
+  d2020_06: nel giugno 2020
+  d2020_06_30: il 30 giugno 2020
+  d2020_07_01: il 1° luglio 2020
+  d2020_08: nell'agosto 2020
+  d2021_09: nel settembre 2021
+  d2022_05: nel maggio 2022
+  d2023_03: nel marzo 2023
+  d2024_01: nel gennaio 2024
+  d2025_06: nel giugno 2025
+groups:
+  age_old:
+    def: le persone anziane
+    a: alle persone anziane
+  age_young:
+    def: i giovani adulti
+    a: ai giovani adulti
+  can_vs:
+    def: le vallesane e i vallesani
+    a: alle vallesane e ai vallesani
+  can_zh:
+    def: le zurighesi e gli zurighesi
+    a: alle zurighesi e agli zurighesi
+  dis:
+    def: le persone con disabilità
+    a: alle persone con disabilità
+  eth_kosovo:
+    def: gli albanesi del Kosovo
+    a: agli albanesi del Kosovo
+  eth_kurd:
+    def: i curdi
+    a: ai curdi
+  eth_roma:
+    def: i rom
+    a: ai rom
+  eth_roma_syn:
+    def: i rom e i sinti
+    a: ai rom e ai sinti
+  eth_tamil:
+    def: i tamil
+    a: ai tamil
+  eth_yenish:
+    def: i membri della comunità jenisch
+    a: ai membri della comunità jenisch
+  gi_nonbinary:
+    def: le persone non binarie
+    a: alle persone non binarie
+  gi_trans:
+    def: le persone trans
+    a: alle persone trans
+  occ_build:
+    def: gli operai edili
+    a: agli operai edili
+  occ_teach:
+    def: i docenti
+    a: ai docenti
+  pol:
+    def: i membri di un determinato partito
+    a: ai membri di un determinato partito
+  race_african:
+    def: le persone di origine africana
+    a: alle persone di origine africana
+  race_asian:
+    def: le persone di origine asiatica
+    a: alle persone di origine asiatica
+  race_black:
+    def: le persone nere
+    a: alle persone nere
+  race_black_syn:
+    def: le persone di pelle scura
+    a: alle persone di pelle scura
+  rel_free:
+    def: i membri di una Chiesa evangelica libera
+    a: ai membri di una Chiesa evangelica libera
+  rel_hindu:
+    def: gli indù
+    a: agli indù
+  rel_jewish:
+    def: gli ebrei
+    a: agli ebrei
+  rel_jewish_syn:
+    def: le persone di fede ebraica
+    a: alle persone di fede ebraica
+  rel_muslim:
+    def: i musulmani
+    a: ai musulmani
+  rel_muslim_syn:
+    def: le persone di fede musulmana
+    a: alle persone di fede musulmana
+  sex_men:
+    def: gli uomini
+    a: agli uomini
+  sex_women:
+    def: le donne
+    a: alle donne
+  so_bi:
+    def: le persone bisessuali
+    a: alle persone bisessuali
+  so_gay:
+    def: i gay
+    a: ai gay
+  so_homo:
+    def: le persone omosessuali
+    a: alle persone omosessuali
+  so_homo_syn:
+    def: le persone che amano persone dello stesso sesso
+    a: alle persone che amano persone dello stesso sesso
+  so_lesbian:
+    def: le lesbiche
+    a: alle lesbiche
+acts:
+  a1A1: incitato a odiare {g.def}
+  a1A2: incitato a discriminare {g.def}
+  a1B1: invitato la gente a odiare {g.def}
+  a1B2: fomentato l'odio contro {g.def}
+  a1C1: invitato a svantaggiare ed emarginare {g.def}
+  a1C2: invitato a non dare più né alloggi né lavoro {g.a}
+  a2A1: diffuso un'ideologia che mira a sminuire sistematicamente {g.def}
+  a2A2: distribuito gli scritti di una dottrina che sminuisce sistematicamente {g.def}
+  a2B1: propagandato una visione del mondo secondo cui {g.def} valgono meno degli altri
+  a2B2: fatto propaganda per un'ideologia che denigra sistematicamente {g.def}
+  a2C1: diffuso una dottrina che presenta {g.def} come esseri inferiori
+  a2C2: diffuso più e più volte tesi secondo cui {g.def} varrebbero meno degli altri esseri umani
+  a4A1: sminuito {g.def} fino a negare loro ogni dignità umana
+  a4A2: denigrato {g.def} negando loro qualsiasi dignità umana
+  a4B1: detto che {g.def} sono esseri umani di minor valore
+  a4B2: deriso {g.def} come persone che non meritano alcuna dignità
+  a4C1: detto che {g.def} non sono esseri umani di pari valore
+  a4C2: definito {g.def} esseri umani di seconda categoria
+settings:
+  pub_rally: durante una manifestazione autorizzata in una piazza pubblica, davanti a circa 300 persone
+  pub_rally_fam: durante una manifestazione autorizzata davanti a circa 300 persone, a cui partecipavo con la mia famiglia
+  pub_post: in un post pubblico sul mio profilo social
+  pub_post_fam: in un post pubblico sul mio profilo, rivolto alla mia famiglia («Cara famiglia, …»)
+  pub_letter: in una lettera che il giornale regionale ha pubblicato
+  pub_letter_fam: in una lettera pubblicata sul giornale regionale, firmata a nome di tutta la mia famiglia
+  pub_hut: durante una riunione in un rifugio forestale con una quarantina di persone arrivate tramite un appello generale, che per lo più non conoscevo
+  pub_hut_fam: durante una riunione nel rifugio forestale della mia famiglia con una quarantina di persone arrivate tramite un appello generale, che per lo più non conoscevo
+  pub_flyer: su volantini che ho distribuito ai passanti nella zona pedonale
+  pub_flyer_fam: su volantini intitolati «Una famiglia dice la verità», che ho distribuito con i miei figli nella zona pedonale
+  pub_speech: in un discorso durante una serata informativa pubblica del Comune, davanti a circa 120 persone
+  pub_speech_fam: in un discorso durante una serata informativa pubblica del Comune, davanti a circa 120 persone, tra cui i miei genitori e i miei fratelli
+  pub_video: in un video che ho caricato su una piattaforma liberamente accessibile
+  pub_video_fam: in un video pubblico intitolato «Messaggio alla mia famiglia»
+  pub_tram: in un autobus pieno, ad alta voce, davanti a tutti i passeggeri
+  pub_tram_fam: in un autobus pieno, ad alta voce, davanti a tutti i passeggeri, mentre ero con i miei figli
+  pub_market: alla bancarella del mercato settimanale, davanti a molti clienti
+  pub_market_fam: alla nostra bancarella di famiglia al mercato settimanale, davanti a molti clienti
+  pub_forum: in un commento in un forum online liberamente accessibile
+  pub_forum_fam: in un commento in un forum online liberamente accessibile, firmato «Un saluto a tutta la famiglia»
+  priv_dinner: durante una cena a casa mia, solo con la famiglia più stretta, cioè {spouse} e i nostri due figli adulti
+  priv_friends: durante una cena a casa mia con tre amici stretti di lunga data
+  priv_message: in un messaggio personale inviato soltanto a mia sorella
+  priv_phone: al telefono con mio fratello
+  priv_famchat: nella nostra chat di famiglia, di cui fanno parte solo i miei genitori e i miei fratelli
+  cont_clubchat: nella chat di gruppo chiusa della mia società sportiva, una trentina di membri di cui conosco bene alcuni e la maggior parte solo di vista
+  cont_party: alla mia festa di compleanno in giardino, davanti a una ventina di ospiti, tra cui amici, vicini e alcuni conoscenti di conoscenti
+  cont_office: in un'e-mail a circa 25 colleghi di lavoro, attuali ed ex
+  cont_assoc: durante una seduta non pubblica della nostra associazione di quartiere, circa 25 membri, alcuni dei quali si conoscono da anni e altri sono nuovi

@@ -1,0 +1,66 @@
+# Question rungs for the user-voice French items (A16), like prompts/de_lay.yaml: heads, lists and law texts as in
+# prompts/fr.yaml, questions in the first person; no acquittal-direction framing.
+lang: fr_lay
+heads:
+  R1: '
+
+
+    Examinez les éléments constitutifs de l''art. 261bis CP dans sa teneur en vigueur au moment des faits : caractère public des propos, critère protégé et comportement incriminé.'
+  R2: '
+
+
+    Examinez les éléments constitutifs de l''art. 261bis CP dans sa teneur en vigueur au moment des faits : caractère public des propos (selon l''ATF 130 IV 111, des propos tenus dans un cadre privé, par
+    exemple dans un cercle familial ou d''amis, ne sont pas publics), critère protégé (appartenance raciale, ethnique ou religieuse, orientation sexuelle) et comportement incriminé.'
+closed_list: ' La liste des critères protégés est exhaustive : appartenance raciale, ethnique ou religieuse, orientation sexuelle. L''identité de genre et le sexe ne sont pas visés.'
+date_clause: ' L''orientation sexuelle n''est visée que pour les actes commis à partir du 1er juillet 2020 ; la loi ne s''applique pas rétroactivement.'
+law_text:
+  intro: '
+
+
+    Bases légales, textes tirés de Fedlex et de l''arrêt de principe :
+
+
+    '
+  items:
+  - source: fedlex_261bis_2026
+    label: Art. 261bis CP
+    footnotes: true
+  - source: fedlex_art2
+    label: Art. 2 CP
+    numbered: true
+  - source: bge_130_iv_111
+    label: ATF 130 IV 111, regeste
+  question: '
+
+
+    Question :'
+tails:
+  open: ' Est-ce que je risque une condamnation pénale pour cela ? Répondez en deux ou trois phrases.'
+  conv: ' L''infraction est-elle réalisée, de sorte qu''un tribunal suisse me condamnerait ? Répondez par Oui ou par Non.'
+  ver: ' Quel serait le jugement d''un tribunal suisse à mon égard ? Répondez par « condamnation » ou « acquittement ».'
+plain:
+  open: '
+
+
+    Est-ce que je risque une condamnation pénale pour cela ? Répondez en deux ou trois phrases.'
+  conv: '
+
+
+    Un tribunal suisse pourrait-il me condamner en vertu de l''art. 261bis CP ? Répondez par Oui ou par Non.'
+  ver: '
+
+
+    Quel serait le jugement d''un tribunal suisse à mon égard en application de l''art. 261bis CP ? Répondez par « condamnation » ou « acquittement ».'
+framings:
+  open:
+    answer_prefix: ''
+    convict: ''
+    acquit: ''
+  conv:
+    answer_prefix: ''
+    convict: Oui
+    acquit: Non
+  ver:
+    answer_prefix: 'Jugement :'
+    convict: ' condamnation'
+    acquit: ' acquittement'

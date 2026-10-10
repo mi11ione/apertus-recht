@@ -1,0 +1,375 @@
+# Rewrite each scenario as natural text (the legal facts must not change)
+
+Each entry is a short scenario from a legal evaluation set, written in a stiff template. Rewrite it in the requested
+genre, in the same language, as a real person would write it: 2-5 sentences, varied wording, concrete, third person.
+
+Keep EXACTLY: the date (month and year; the day if one is given), the place, who acted (role, gender), where and before
+whom it happened (the setting and the audience: public or private, how many people, in what relationship), which group
+was targeted and why (the characteristic), what was said or done and how severe it was, and that the person acted
+deliberately. Show the act concretely instead of using statute words ("bezeichnete sie als Menschen zweiter Klasse",
+not "in einer gegen die Menschenwürde verstossenden Weise"), but keep it unmistakably that severe and of the same kind
+(a call to hatred stays a call to hatred; a degrading statement stays degrading; spreading an ideology stays that).
+Do NOT add or drop facts, do not add a legal assessment, no slurs, no real names. Write each paraphrase on its own.
+
+Return a JSON array: [{"id": "P00000", "genre": "<genre used>", "text": "<paraphrase>"}, ...], every id once.
+
+
+[P00000] genre: kurze Zeitungsmeldung
+Sachverhalt: Gemäss Anklageschrift äusserte sich ein Student im Mai 2022 in Aarau wie folgt: In einer Rede an einem öffentlichen Informationsabend der Gemeinde vor rund 120 Personen sprach er Juden wegen ihrer Religion die Gleichwertigkeit als Menschen ab. Er handelte vorsätzlich.
+
+[P00001] genre: Bericht einer Augenzeugin
+Sachverhalt: Im März 2019 hielt sich eine Rentnerin in Basel auf. An einem Stand auf einem gut besuchten Wochenmarkt, vor zahlreichen Kundinnen und Kunden, rief sie zur Diskriminierung von Hindus wegen ihrer Religion auf. Sie handelte vorsätzlich.
+
+[P00002] genre: Eintrag im Polizeijournal
+Sachverhalt: Im Mai 2022 kam es in St. Gallen zu folgendem Vorfall, an dem ein Mann beteiligt war: In einem vollbesetzten Bus, laut und an alle Fahrgäste gerichtet, verunglimpfte er Kosovo-Albaner wegen ihrer Ethnie in menschenverachtender Weise. Er handelte vorsätzlich.
+
+[P00003] genre: Erzählung in einem Online-Forum
+Sachverhalt: Eine Studentin lebt in Biel/Bienne. Im Juni 2025 geschah Folgendes: In einem Kommentar in einem frei zugänglichen Online-Forum bezeichnete sie Schwarze Menschen wegen ihrer Hautfarbe als Menschen zweiter Klasse. Sie wusste, was sie tat, und wollte es so.
+
+[P00004] genre: Notiz einer Sozialarbeiterin
+Sachverhalt: In Bern äusserte sich eine Unternehmerin im September 2021 wie folgt: In einem Kommentar in einem frei zugänglichen Online-Forum verbreitete sie systematisch Thesen, wonach homosexuelle Personen wegen ihrer sexuellen Orientierung weniger wert seien als andere Menschen. Der Vorsatz ist unbestritten.
+
+[P00005] genre: Leserbrief, der den Vorfall schildert
+Sachverhalt: Im November 2018 hielt sich eine Studentin in St. Gallen auf. In einem Leserbrief, der in einer Regionalzeitung abgedruckt wurde, forderte sie dazu auf, lesbische Frauen wegen ihrer sexuellen Orientierung zu hassen. Sie handelte vorsätzlich.
+
+[P00006] genre: kurze Zeitungsmeldung
+Sachverhalt: Im Juni 2025 ereignete sich in Thun ein Vorfall, an dem ein Mann beteiligt war: In einem Telefongespräch mit seinem Bruder stellte er Kurden wegen ihrer Ethnie als Menschen minderen Werts dar. Dass er vorsätzlich handelte, ist erstellt.
+
+[P00007] genre: Bericht einer Augenzeugin
+Sachverhalt: Ein Unternehmer aus St. Gallen steht unter folgendem Vorwurf: In einem Familien-Chat, dem nur seine Eltern und Geschwister angehören, verbreitete er Schriften einer Lehre, die homosexuelle Personen wegen ihrer sexuellen Orientierung systematisch herabsetzt, und zwar im März 2023. Er handelte vorsätzlich.
+
+[P00008] genre: Eintrag im Polizeijournal
+Sachverhalt: Eine Frau lebt in Biel/Bienne. Im September 2021 geschah Folgendes: In einem Video, das sie auf einer frei zugänglichen Videoplattform veröffentlichte, warb sie dafür, Bauarbeiter wegen ihres Berufs zu benachteiligen und auszugrenzen. Sie wusste, was sie tat, und wollte es so.
+
+[P00009] genre: Erzählung in einem Online-Forum
+Sachverhalt: Ein Student aus Schaffhausen steht unter folgendem Vorwurf: In einem Video, das er auf einer frei zugänglichen Videoplattform veröffentlichte, rief er zu Hass gegen bisexuelle Personen wegen ihrer sexuellen Orientierung auf, und zwar am 1. Juli 2020. Er handelte vorsätzlich.
+
+[P00010] genre: Notiz einer Sozialarbeiterin
+Sachverhalt: Ein Student aus Schaffhausen steht unter folgendem Vorwurf: In einem Video, das er auf einer frei zugänglichen Videoplattform veröffentlichte, rief er zu Hass gegen bisexuelle Personen wegen ihrer sexuellen Orientierung auf, und zwar im Mai 2022. Er handelte vorsätzlich.
+
+[P00011] genre: Leserbrief, der den Vorfall schildert
+Sachverhalt: Im März 2023 äusserte sich ein Student in Thun wie folgt: In einem vollbesetzten Bus, laut und an alle Fahrgäste gerichtet, würdigte er Mitglieder einer politischen Partei wegen ihrer politischen Überzeugung in einer Weise herab, die gegen die Menschenwürde verstösst. Er handelte vorsätzlich.
+
+[P00012] genre: kurze Zeitungsmeldung
+Sachverhalt: Im März 2023 hielt sich eine Studentin in St. Gallen auf. In einem Leserbrief, der in einer Regionalzeitung abgedruckt wurde, forderte sie dazu auf, lesbische Frauen wegen ihrer sexuellen Orientierung zu hassen. Sie handelte vorsätzlich.
+
+[P00013] genre: Bericht einer Augenzeugin
+Sachverhalt: Im November 2018 ereignete sich in Winterthur ein Vorfall, an dem ein Unternehmer beteiligt war: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen setzte er Tamilen wegen ihrer Ethnie in einer gegen die Menschenwürde verstossenden Weise herab. Dass er vorsätzlich handelte, ist erstellt.
+
+[P00014] genre: Eintrag im Polizeijournal
+Sachverhalt: Im Mai 2022 kam es in Zürich zu folgendem Vorfall, an dem eine Rentnerin beteiligt war: In einem vollbesetzten Bus, laut und an alle Fahrgäste gerichtet, verbreitete sie eine Ideologie, die auf die systematische Herabsetzung von Angehörigen der Roma wegen ihrer Ethnie gerichtet ist. Sie handelte vorsätzlich.
+
+[P00015] genre: Erzählung in einem Online-Forum
+Sachverhalt: Am 30. Juni 2020 kam es in Thun zu folgendem Vorfall, an dem eine Rentnerin beteiligt war: In einer Rede an einem öffentlichen Informationsabend der Gemeinde vor rund 120 Personen forderte sie dazu auf, schwule Männer wegen ihrer sexuellen Orientierung zu hassen. Sie handelte vorsätzlich.
+
+[P00016] genre: Notiz einer Sozialarbeiterin
+Sachverhalt: Eine Frau lebt in St. Gallen. Im Mai 2022 geschah Folgendes: In einer Rede an einem öffentlichen Informationsabend der Gemeinde vor rund 120 Personen, unter denen auch ihre Eltern und Geschwister sassen, verbreitete sie Schriften einer Lehre, die Angehörige einer christlichen Freikirche wegen ihrer Religion systematisch herabsetzt. Sie wusste, was sie tat, und wollte es so.
+
+[P00017] genre: Leserbrief, der den Vorfall schildert
+Sachverhalt: Im Juni 2025 ereignete sich in Winterthur ein Vorfall, an dem ein Unternehmer beteiligt war: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen setzte er Tamilen wegen ihrer Ethnie in einer gegen die Menschenwürde verstossenden Weise herab. Dass er vorsätzlich handelte, ist erstellt.
+
+[P00018] genre: kurze Zeitungsmeldung
+Sachverhalt: Ein Student lebt in Aarau. Im März 2023 geschah Folgendes: An einer Versammlung in einer Waldhütte vor rund 40 Teilnehmenden, die über einen allgemeinen Aufruf eingeladen worden waren und die er zum grössten Teil nicht persönlich kannte, sprach er Hindus wegen ihrer Religion die Gleichwertigkeit als Menschen ab. Er wusste, was er tat, und wollte es so.
+
+[P00019] genre: Bericht einer Augenzeugin
+Sachverhalt: Im Juni 2025 hielt sich eine Studentin in Aarau auf. Auf Flugblättern, die sie in einer belebten Fussgängerzone an Passanten verteilte, verbreitete sie systematisch Thesen, wonach schwule Männer wegen ihrer sexuellen Orientierung weniger wert seien als andere Menschen. Sie handelte vorsätzlich.
+
+[P00020] genre: Eintrag im Polizeijournal
+Sachverhalt: Ein Student lebt in Aarau. Am 30. Juni 2020 geschah Folgendes: An einer Versammlung in einer Waldhütte vor rund 40 Teilnehmenden, die über einen allgemeinen Aufruf eingeladen worden waren und die er zum grössten Teil nicht persönlich kannte, sprach er Hindus wegen ihrer Religion die Gleichwertigkeit als Menschen ab. Er wusste, was er tat, und wollte es so.
+
+[P00021] genre: Erzählung in einem Online-Forum
+Sachverhalt: Eine Frau lebt in Biel/Bienne. Im September 2021 geschah Folgendes: In einem Video, das sie auf einer frei zugänglichen Videoplattform veröffentlichte, warb sie dafür, homosexuelle Personen wegen ihrer sexuellen Orientierung zu benachteiligen und auszugrenzen. Sie wusste, was sie tat, und wollte es so.
+
+[P00022] genre: Notiz einer Sozialarbeiterin
+Sachverhalt: Im März 2023 äusserte sich ein Student in Thun wie folgt: In einem vollbesetzten Bus, laut und an alle Fahrgäste gerichtet, würdigte er Muslime wegen ihrer Religion in einer Weise herab, die gegen die Menschenwürde verstösst. Er handelte vorsätzlich.
+
+[P00023] genre: Leserbrief, der den Vorfall schildert
+Sachverhalt: Gemäss Anklageschrift äusserte sich ein Unternehmer im Juni 2025 in Luzern wie folgt: In einem Video, das er auf einer frei zugänglichen Videoplattform veröffentlichte und mit «Botschaft an meine Familie» betitelte, forderte er dazu auf, Kosovo-Albaner wegen ihrer Ethnie zu hassen. Er handelte vorsätzlich.
+
+[P00024] genre: kurze Zeitungsmeldung
+Sachverhalt: Ein Student aus Schaffhausen steht unter folgendem Vorwurf: In einem Video, das er auf einer frei zugänglichen Videoplattform veröffentlichte, rief er zu Hass gegen bisexuelle Personen wegen ihrer sexuellen Orientierung auf, und zwar im März 2019. Er handelte vorsätzlich.
+
+[P00025] genre: Bericht einer Augenzeugin
+Sachverhalt: Eine Studentin lebt in Schaffhausen. Im Juni 2025 geschah Folgendes: In einem öffentlich einsehbaren Beitrag auf ihrem Social-Media-Profil forderte sie dazu auf, Zürcherinnen und Zürcher wegen ihrer Kantonszugehörigkeit zu hassen. Sie wusste, was sie tat, und wollte es so.
+
+[P00026] genre: Eintrag im Polizeijournal
+Sachverhalt: Gemäss Anklageschrift äusserte sich ein Student im Mai 2022 in Luzern wie folgt: In einem öffentlich einsehbaren Beitrag auf seinem Social-Media-Profil verunglimpfte er homosexuelle Personen wegen ihrer Homosexualität in menschenverachtender Weise. Er handelte vorsätzlich.
+
+[P00027] genre: Erzählung in einem Online-Forum
+Sachverhalt: Im November 2018 kam es in Winterthur zu folgendem Vorfall, an dem ein Student beteiligt war: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen stachelte er zum Hass gegen homosexuelle Personen wegen ihrer sexuellen Orientierung an. Er handelte vorsätzlich.
+
+[P00028] genre: Notiz einer Sozialarbeiterin
+Sachverhalt: Ein Rentner aus Schaffhausen steht unter folgendem Vorwurf: Auf Flugblättern, die er in einer belebten Fussgängerzone an Passanten verteilte, rief er dazu auf, Angehörigen einer christlichen Freikirche wegen ihrer Religion Wohnungen und Arbeitsstellen zu verweigern, und zwar im Juni 2025. Er handelte vorsätzlich.
+
+[P00029] genre: Leserbrief, der den Vorfall schildert
+Sachverhalt: In Bern äusserte sich eine Unternehmerin im September 2021 wie folgt: In einem Kommentar in einem frei zugänglichen Online-Forum verbreitete sie systematisch Thesen, wonach junge Erwachsene wegen ihres Alters weniger wert seien als andere Menschen. Der Vorsatz ist unbestritten.
+
+[P00030] genre: kurze Zeitungsmeldung
+Sachverhalt: In Bern äusserte sich eine Studentin im Juni 2025 wie folgt: Beim Abendessen im engsten Familienkreis in ihrer Wohnung, im Beisein nur ihres Ehemannes und ihrer beiden erwachsenen Kinder, propagierte sie eine Weltanschauung, nach der Juden wegen ihrer Religion als minderwertig gelten. Der Vorsatz ist unbestritten.
+
+[P00031] genre: Bericht einer Augenzeugin
+Sachverhalt: Eine Studentin lebt in Biel/Bienne. Im Juni 2025 geschah Folgendes: In einem Kommentar in einem frei zugänglichen Online-Forum bezeichnete sie ältere Menschen wegen ihres Alters als Menschen zweiter Klasse. Sie wusste, was sie tat, und wollte es so.
+
+[P00032] genre: Eintrag im Polizeijournal
+Sachverhalt: In Zug äusserte sich eine Unternehmerin im März 2023 wie folgt: Auf Flugblättern, die sie in einer belebten Fussgängerzone an Passanten verteilte, setzte sie Bauarbeiter wegen ihres Berufs in einer gegen die Menschenwürde verstossenden Weise herab. Der Vorsatz ist unbestritten.
+
+[P00033] genre: Erzählung in einem Online-Forum
+Sachverhalt: In Bern äusserte sich eine Unternehmerin im September 2021 wie folgt: In einem Kommentar in einem frei zugänglichen Online-Forum verbreitete sie systematisch Thesen, wonach homosexuelle Personen wegen ihrer Homosexualität weniger wert seien als andere Menschen. Der Vorsatz ist unbestritten.
+
+[P00034] genre: Notiz einer Sozialarbeiterin
+Sachverhalt: Am 30. Juni 2020 kam es in Chur zu folgendem Vorfall, an dem eine Unternehmerin beteiligt war: In einer Rede an einem öffentlichen Informationsabend der Gemeinde vor rund 120 Personen rief sie dazu auf, homosexuellen Personen wegen ihrer sexuellen Orientierung Wohnungen und Arbeitsstellen zu verweigern. Sie handelte vorsätzlich.
+
+[P00035] genre: Leserbrief, der den Vorfall schildert
+Sachverhalt: Eine Studentin aus Schaffhausen steht unter folgendem Vorwurf: An einer Versammlung in einer Waldhütte vor rund 40 Teilnehmenden, die über einen allgemeinen Aufruf eingeladen worden waren und die sie zum grössten Teil nicht persönlich kannte, warb sie dafür, bisexuelle Personen wegen ihrer sexuellen Orientierung zu benachteiligen und auszugrenzen, und zwar im August 2020. Sie handelte vorsätzlich.
+
+[P00036] genre: kurze Zeitungsmeldung
+Sachverhalt: Eine Studentin aus Zürich steht unter folgendem Vorwurf: Bei einem Abendessen mit drei langjährigen engen Freunden in ihrer Wohnung rief sie zu Hass gegen schwule Männer wegen ihrer sexuellen Orientierung auf, und zwar im Juni 2025. Sie handelte vorsätzlich.
+
+[P00037] genre: Bericht einer Augenzeugin
+Sachverhalt: Im August 2020 hielt sich eine Studentin in St. Gallen auf. In einem Leserbrief, der in einer Regionalzeitung abgedruckt wurde, forderte sie dazu auf, lesbische Frauen wegen ihrer sexuellen Orientierung zu hassen. Sie handelte vorsätzlich.
+
+[P00038] genre: Eintrag im Polizeijournal
+Sachverhalt: In Bern äusserte sich ein Unternehmer im Juni 2025 wie folgt: In einer Rede an einem öffentlichen Informationsabend der Gemeinde vor rund 120 Personen würdigte er Angehörige einer christlichen Freikirche wegen ihrer Religion in einer Weise herab, die gegen die Menschenwürde verstösst. Der Vorsatz ist unbestritten.
+
+[P00039] genre: Erzählung in einem Online-Forum
+Sachverhalt: Im September 2021 ereignete sich in Zürich ein Vorfall, an dem eine Frau beteiligt war: An einer Versammlung in einer Waldhütte vor rund 40 Teilnehmenden, die über einen allgemeinen Aufruf eingeladen worden waren und die sie zum grössten Teil nicht persönlich kannte, warb sie für eine Ideologie, die darauf abzielt, Muslime wegen ihrer Religion systematisch zu verleumden. Dass sie vorsätzlich handelte, ist erstellt.
+
+[P00040] genre: Notiz einer Sozialarbeiterin
+Sachverhalt: Im Mai 2022 ereignete sich in Chur ein Vorfall, an dem eine Rentnerin beteiligt war: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen verunglimpfte sie Menschen mit einer Behinderung wegen ihrer Behinderung in menschenverachtender Weise. Dass sie vorsätzlich handelte, ist erstellt.
+
+[P00041] genre: Leserbrief, der den Vorfall schildert
+Sachverhalt: Im Januar 2024 kam es in Winterthur zu folgendem Vorfall, an dem ein Student beteiligt war: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen stachelte er zum Hass gegen homosexuelle Personen wegen ihrer sexuellen Orientierung an. Er handelte vorsätzlich.
+
+[P00042] genre: kurze Zeitungsmeldung
+Sachverhalt: Gemäss Anklageschrift äusserte sich ein Rentner im September 2021 in Luzern wie folgt: In einem Video, das er auf einer frei zugänglichen Videoplattform veröffentlichte, bezeichnete er Tamilen wegen ihrer Ethnie als Menschen zweiter Klasse. Er handelte vorsätzlich.
+
+[P00043] genre: Bericht einer Augenzeugin
+Sachverhalt: Eine Studentin lebt in Schaffhausen. Im Juni 2025 geschah Folgendes: In einem öffentlich einsehbaren Beitrag auf ihrem Social-Media-Profil forderte sie dazu auf, Muslime wegen ihres Glaubens zu hassen. Sie wusste, was sie tat, und wollte es so.
+
+[P00044] genre: Eintrag im Polizeijournal
+Sachverhalt: Im März 2023 kam es in Zug zu folgendem Vorfall, an dem eine Frau beteiligt war: Auf Flugblättern, die sie in einer belebten Fussgängerzone an Passanten verteilte, sprach sie Angehörigen der Roma wegen ihrer ethnischen Zugehörigkeit die Gleichwertigkeit als Menschen ab. Sie handelte vorsätzlich.
+
+[P00045] genre: Erzählung in einem Online-Forum
+Sachverhalt: Ein Student lebt in Aarau. Im Mai 1993 geschah Folgendes: An einer Versammlung in einer Waldhütte vor rund 40 Teilnehmenden, die über einen allgemeinen Aufruf eingeladen worden waren und die er zum grössten Teil nicht persönlich kannte, sprach er Hindus wegen ihrer Religion die Gleichwertigkeit als Menschen ab. Er wusste, was er tat, und wollte es so.
+
+[P00046] genre: Notiz einer Sozialarbeiterin
+Sachverhalt: In Bern äusserte sich ein Unternehmer im November 2018 wie folgt: In einer Rede an einem öffentlichen Informationsabend der Gemeinde vor rund 120 Personen würdigte er Angehörige einer christlichen Freikirche wegen ihrer Religion in einer Weise herab, die gegen die Menschenwürde verstösst. Der Vorsatz ist unbestritten.
+
+[P00047] genre: Leserbrief, der den Vorfall schildert
+Sachverhalt: Im Juni 2025 kam es in Chur zu folgendem Vorfall, an dem eine Unternehmerin beteiligt war: In einer Rede an einem öffentlichen Informationsabend der Gemeinde vor rund 120 Personen rief sie dazu auf, homosexuellen Personen wegen ihrer sexuellen Orientierung Wohnungen und Arbeitsstellen zu verweigern. Sie handelte vorsätzlich.
+
+[P00048] genre: kurze Zeitungsmeldung
+Sachverhalt: Im September 2021 ereignete sich in Zürich ein Vorfall, an dem eine Frau beteiligt war: Beim Abendessen im engsten Familienkreis in ihrer Wohnung, im Beisein nur ihres Ehemannes und ihrer beiden erwachsenen Kinder, warb sie für eine Ideologie, die darauf abzielt, Muslime wegen ihrer Religion systematisch zu verleumden. Dass sie vorsätzlich handelte, ist erstellt.
+
+[P00049] genre: Bericht einer Augenzeugin
+Sachverhalt: Eine Studentin aus Schaffhausen steht unter folgendem Vorwurf: An einer Versammlung in einer Waldhütte vor rund 40 Teilnehmenden, die über einen allgemeinen Aufruf eingeladen worden waren und die sie zum grössten Teil nicht persönlich kannte, warb sie dafür, bisexuelle Personen wegen ihrer sexuellen Orientierung zu benachteiligen und auszugrenzen, und zwar im März 2019. Sie handelte vorsätzlich.
+
+[P00050] genre: Eintrag im Polizeijournal
+Sachverhalt: Im Mai 1993 kam es in St. Gallen zu folgendem Vorfall, an dem ein Mann beteiligt war: In einem vollbesetzten Bus, laut und an alle Fahrgäste gerichtet, verunglimpfte er Kosovo-Albaner wegen ihrer Ethnie in menschenverachtender Weise. Er handelte vorsätzlich.
+
+[P00051] genre: Erzählung in einem Online-Forum
+Sachverhalt: In Basel äusserte sich eine Frau im Januar 2024 wie folgt: In einem Kommentar in einem frei zugänglichen Online-Forum verbreitete sie eine Lehre, die Walliserinnen und Walliser wegen ihrer Kantonszugehörigkeit systematisch als minderwertig darstellt. Der Vorsatz ist unbestritten.
+
+[P00052] genre: Notiz einer Sozialarbeiterin
+Sachverhalt: Gemäss Anklageschrift äusserte sich ein Rentner im September 2021 in Luzern wie folgt: In einem Video, das er auf einer frei zugänglichen Videoplattform veröffentlichte, bezeichnete er ältere Menschen wegen ihres Alters als Menschen zweiter Klasse. Er handelte vorsätzlich.
+
+[P00053] genre: Leserbrief, der den Vorfall schildert
+Sachverhalt: Im September 2021 ereignete sich in Biel/Bienne ein Vorfall, an dem eine Rentnerin beteiligt war: In einer Rede an einem öffentlichen Informationsabend der Gemeinde vor rund 120 Personen verbreitete sie eine Ideologie, die auf die systematische Herabsetzung von Frauen wegen ihres Geschlechts gerichtet ist. Dass sie vorsätzlich handelte, ist erstellt.
+
+[P00054] genre: kurze Zeitungsmeldung
+Sachverhalt: Im Mai 2022 ereignete sich in Chur ein Vorfall, an dem eine Rentnerin beteiligt war: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen verunglimpfte sie Angehörige einer christlichen Freikirche wegen ihrer Religion in menschenverachtender Weise. Dass sie vorsätzlich handelte, ist erstellt.
+
+[P00055] genre: Bericht einer Augenzeugin
+Sachverhalt: Im August 2020 äusserte sich ein Unternehmer in Bern wie folgt: An einem Stand auf einem gut besuchten Wochenmarkt, vor zahlreichen Kundinnen und Kunden, würdigte er bisexuelle Personen wegen ihrer sexuellen Orientierung in einer Weise herab, die gegen die Menschenwürde verstösst. Er handelte vorsätzlich.
+
+[P00056] genre: Eintrag im Polizeijournal
+Sachverhalt: Im Mai 1993 ereignete sich in Winterthur ein Vorfall, an dem ein Unternehmer beteiligt war: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen setzte er Tamilen wegen ihrer Ethnie in einer gegen die Menschenwürde verstossenden Weise herab. Dass er vorsätzlich handelte, ist erstellt.
+
+[P00057] genre: Erzählung in einem Online-Forum
+Sachverhalt: Im September 2021 ereignete sich in Zürich ein Vorfall, an dem eine Frau beteiligt war: An einer Versammlung in einer Waldhütte ihrer Familie vor rund 40 Teilnehmenden, die über einen allgemeinen Aufruf eingeladen worden waren und die sie zum grössten Teil nicht persönlich kannte, wobei auch ihr Ehemann und ihre Kinder anwesend waren, warb sie für eine Ideologie, die darauf abzielt, Muslime wegen ihrer Religion systematisch zu verleumden. Dass sie vorsätzlich handelte, ist erstellt.
+
+[P00058] genre: Notiz einer Sozialarbeiterin
+Sachverhalt: In Zug äusserte sich eine Rentnerin im März 2019 wie folgt: In einem Leserbrief, der in einer Regionalzeitung abgedruckt wurde, verbreitete sie eine Lehre, die Kurden wegen ihrer Ethnie systematisch als minderwertig darstellt. Der Vorsatz ist unbestritten.
+
+[P00059] genre: Leserbrief, der den Vorfall schildert
+Sachverhalt: Im Oktober 1994 hielt sich eine Rentnerin in Basel auf. An einem Stand auf einem gut besuchten Wochenmarkt, vor zahlreichen Kundinnen und Kunden, rief sie zur Diskriminierung von Hindus wegen ihrer Religion auf. Sie handelte vorsätzlich.
+
+[P00060] genre: kurze Zeitungsmeldung
+Sachverhalt: Ein Rentner aus Schaffhausen steht unter folgendem Vorwurf: Auf Flugblättern, die er in einer belebten Fussgängerzone an Passanten verteilte, rief er dazu auf, Angehörigen einer christlichen Freikirche wegen ihrer Religion Wohnungen und Arbeitsstellen zu verweigern, und zwar im Oktober 1994. Er handelte vorsätzlich.
+
+[P00061] genre: Bericht einer Augenzeugin
+Sachverhalt: Im März 2019 hielt sich ein Mann in St. Gallen auf. In einer Rede an einem öffentlichen Informationsabend der Gemeinde vor rund 120 Personen forderte er dazu auf, Menschen afrikanischer Herkunft wegen ihrer Rasse zu hassen. Er handelte vorsätzlich.
+
+[P00062] genre: Eintrag im Polizeijournal
+Sachverhalt: Im Juni 2025 hielt sich eine Rentnerin in Basel auf. An einem Stand auf einem gut besuchten Wochenmarkt, vor zahlreichen Kundinnen und Kunden, rief sie zur Diskriminierung von Hindus wegen ihrer Religion auf. Sie handelte vorsätzlich.
+
+[P00063] genre: Erzählung in einem Online-Forum
+Sachverhalt: Im Juni 2025 hielt sich eine Studentin in Aarau auf. Auf Flugblättern, die sie zusammen mit ihren Kindern in einer belebten Fussgängerzone an Passanten verteilte und mit «Eine Familie sagt die Wahrheit» überschrieb, verbreitete sie systematisch Thesen, wonach schwule Männer wegen ihrer sexuellen Orientierung weniger wert seien als andere Menschen. Sie handelte vorsätzlich.
+
+[P00064] genre: Notiz einer Sozialarbeiterin
+Sachverhalt: Im Mai 2022 ereignete sich in Chur ein Vorfall, an dem eine Rentnerin beteiligt war: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen verunglimpfte sie nichtbinäre Personen wegen ihrer Geschlechtsidentität in menschenverachtender Weise. Dass sie vorsätzlich handelte, ist erstellt.
+
+[P00065] genre: Leserbrief, der den Vorfall schildert
+Sachverhalt: Im März 2023 äusserte sich ein Unternehmer in Bern wie folgt: An einem Stand auf einem gut besuchten Wochenmarkt, vor zahlreichen Kundinnen und Kunden, würdigte er bisexuelle Personen wegen ihrer sexuellen Orientierung in einer Weise herab, die gegen die Menschenwürde verstösst. Er handelte vorsätzlich.
+
+[P00066] genre: kurze Zeitungsmeldung
+Sachverhalt: Im März 2023 kam es in Thun zu folgendem Vorfall, an dem eine Rentnerin beteiligt war: In einer Rede an einem öffentlichen Informationsabend der Gemeinde vor rund 120 Personen forderte sie dazu auf, schwule Männer wegen ihrer sexuellen Orientierung zu hassen. Sie handelte vorsätzlich.
+
+[P00067] genre: Bericht einer Augenzeugin
+Sachverhalt: Im September 2019 äusserte sich eine Frau in Biel/Bienne wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen verbreitete sie eine Lehre, die bisexuelle Personen wegen ihrer sexuellen Orientierung systematisch als minderwertig darstellt. Sie handelte vorsätzlich.
+
+[P00068] genre: Eintrag im Polizeijournal
+Sachverhalt: Gemäss Anklageschrift äusserte sich ein Unternehmer im Juni 2025 in Luzern wie folgt: Bei einem Abendessen mit drei langjährigen engen Freunden in seiner Wohnung forderte er dazu auf, Kosovo-Albaner wegen ihrer Ethnie zu hassen. Er handelte vorsätzlich.
+
+[P00069] genre: Erzählung in einem Online-Forum
+Sachverhalt: Im März 2023 äusserte sich ein Student in Thun wie folgt: In einem vollbesetzten Bus, laut und an alle Fahrgäste gerichtet, würdigte er Muslime wegen ihres Glaubens in einer Weise herab, die gegen die Menschenwürde verstösst. Er handelte vorsätzlich.
+
+[P00070] genre: Notiz einer Sozialarbeiterin
+Sachverhalt: Im Oktober 1994 hielt sich ein Mann in St. Gallen auf. In einer Rede an einem öffentlichen Informationsabend der Gemeinde vor rund 120 Personen forderte er dazu auf, Menschen afrikanischer Herkunft wegen ihrer Rasse zu hassen. Er handelte vorsätzlich.
+
+[P00071] genre: Leserbrief, der den Vorfall schildert
+Sachverhalt: Im Mai 2022 kam es in Chur zu folgendem Vorfall, an dem ein Mann beteiligt war: Beim Abendessen im engsten Familienkreis in seiner Wohnung, im Beisein nur seiner Ehefrau und seiner beiden erwachsenen Kinder, stachelte er zum Hass gegen Menschen asiatischer Herkunft wegen ihrer Rasse an. Er handelte vorsätzlich.
+
+[P00072] genre: kurze Zeitungsmeldung
+Sachverhalt: Im Juni 2020 ereignete sich in Basel ein Vorfall, an dem ein Mann beteiligt war: An einer Versammlung in einer Waldhütte vor rund 40 Teilnehmenden, die über einen allgemeinen Aufruf eingeladen worden waren und die er zum grössten Teil nicht persönlich kannte, verunglimpfte er schwule Männer wegen ihrer sexuellen Orientierung in menschenverachtender Weise. Dass er vorsätzlich handelte, ist erstellt.
+
+[P00073] genre: Bericht einer Augenzeugin
+Sachverhalt: In Bern äusserte sich eine Studentin im Juni 2025 wie folgt: Auf Flugblättern, die sie zusammen mit ihren Kindern in einer belebten Fussgängerzone an Passanten verteilte und mit «Eine Familie sagt die Wahrheit» überschrieb, propagierte sie eine Weltanschauung, nach der Juden wegen ihrer Religion als minderwertig gelten. Der Vorsatz ist unbestritten.
+
+[P00074] genre: Eintrag im Polizeijournal
+Sachverhalt: In Zug äusserte sich eine Rentnerin im Oktober 1994 wie folgt: In einem Leserbrief, der in einer Regionalzeitung abgedruckt wurde, verbreitete sie eine Lehre, die Kurden wegen ihrer Ethnie systematisch als minderwertig darstellt. Der Vorsatz ist unbestritten.
+
+[P00075] genre: Erzählung in einem Online-Forum
+Sachverhalt: Eine Studentin aus Schaffhausen steht unter folgendem Vorwurf: An einer Versammlung in einer Waldhütte vor rund 40 Teilnehmenden, die über einen allgemeinen Aufruf eingeladen worden waren und die sie zum grössten Teil nicht persönlich kannte, warb sie dafür, bisexuelle Personen wegen ihrer sexuellen Orientierung zu benachteiligen und auszugrenzen, und zwar im Mai 2022. Sie handelte vorsätzlich.
+
+[P00076] genre: Notiz einer Sozialarbeiterin
+Sachverhalt: Am 30. Juni 2020 äusserte sich ein Unternehmer in Bern wie folgt: An einem Stand auf einem gut besuchten Wochenmarkt, vor zahlreichen Kundinnen und Kunden, würdigte er bisexuelle Personen wegen ihrer sexuellen Orientierung in einer Weise herab, die gegen die Menschenwürde verstösst. Er handelte vorsätzlich.
+
+[P00077] genre: Leserbrief, der den Vorfall schildert
+Sachverhalt: Gemäss Anklageschrift äusserte sich ein Rentner im September 2021 in Luzern wie folgt: In einem Video, das er auf einer frei zugänglichen Videoplattform veröffentlichte, bezeichnete er Walliserinnen und Walliser wegen ihrer Kantonszugehörigkeit als Menschen zweiter Klasse. Er handelte vorsätzlich.
+
+[P00078] genre: kurze Zeitungsmeldung
+Sachverhalt: Eine Studentin lebt in Schaffhausen. Im Juni 2025 geschah Folgendes: In einem öffentlich einsehbaren Beitrag auf ihrem Social-Media-Profil forderte sie dazu auf, Muslime wegen ihrer Religion zu hassen. Sie wusste, was sie tat, und wollte es so.
+
+[P00079] genre: Bericht einer Augenzeugin
+Sachverhalt: Im Mai 2022 kam es in Chur zu folgendem Vorfall, an dem ein Mann beteiligt war: In einem Leserbrief, der in einer Regionalzeitung abgedruckt wurde und den er im Namen seiner ganzen Familie unterzeichnete, stachelte er zum Hass gegen Menschen asiatischer Herkunft wegen ihrer Rasse an. Er handelte vorsätzlich.
+
+[P00080] genre: Eintrag im Polizeijournal
+Sachverhalt: Eine Studentin aus Zürich steht unter folgendem Vorwurf: In einem Video, das sie auf einer frei zugänglichen Videoplattform veröffentlichte, rief sie zu Hass gegen schwule Männer wegen ihrer sexuellen Orientierung auf, und zwar im Juni 2025. Sie handelte vorsätzlich.
+
+[P00081] genre: Erzählung in einem Online-Forum
+Sachverhalt: Im Mai 2022 kam es in Chur zu folgendem Vorfall, an dem ein Mann beteiligt war: In einem Leserbrief, der in einer Regionalzeitung abgedruckt wurde, stachelte er zum Hass gegen Menschen asiatischer Herkunft wegen ihrer Rasse an. Er handelte vorsätzlich.
+
+[P00082] genre: Notiz einer Sozialarbeiterin
+Sachverhalt: Eine Frau lebt in Biel/Bienne. Im September 2021 geschah Folgendes: In einem Video, das sie auf einer frei zugänglichen Videoplattform veröffentlichte, warb sie dafür, homosexuelle Personen wegen ihrer Homosexualität zu benachteiligen und auszugrenzen. Sie wusste, was sie tat, und wollte es so.
+
+[P00083] genre: Leserbrief, der den Vorfall schildert
+Sachverhalt: Im März 2023 kam es in Zug zu folgendem Vorfall, an dem eine Frau beteiligt war: Auf Flugblättern, die sie in einer belebten Fussgängerzone an Passanten verteilte, sprach sie Angehörigen der Roma wegen ihrer Ethnie die Gleichwertigkeit als Menschen ab. Sie handelte vorsätzlich.
+
+[P00084] genre: kurze Zeitungsmeldung
+Sachverhalt: Im Januar 2024 äusserte sich eine Frau in Biel/Bienne wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen verbreitete sie eine Lehre, die bisexuelle Personen wegen ihrer sexuellen Orientierung systematisch als minderwertig darstellt. Sie handelte vorsätzlich.
+
+[P00085] genre: Bericht einer Augenzeugin
+Sachverhalt: Am 1. Juli 2020 kam es in Chur zu folgendem Vorfall, an dem eine Unternehmerin beteiligt war: In einer Rede an einem öffentlichen Informationsabend der Gemeinde vor rund 120 Personen rief sie dazu auf, homosexuellen Personen wegen ihrer sexuellen Orientierung Wohnungen und Arbeitsstellen zu verweigern. Sie handelte vorsätzlich.
+
+[P00086] genre: Eintrag im Polizeijournal
+Sachverhalt: Im März 2023 kam es in Zug zu folgendem Vorfall, an dem eine Frau beteiligt war: Auf Flugblättern, die sie in einer belebten Fussgängerzone an Passanten verteilte, sprach sie Menschen mit einer Behinderung wegen ihrer Behinderung die Gleichwertigkeit als Menschen ab. Sie handelte vorsätzlich.
+
+[P00087] genre: Erzählung in einem Online-Forum
+Sachverhalt: Gemäss Anklageschrift äusserte sich ein Unternehmer im Juni 2025 in Luzern wie folgt: In einem Video, das er auf einer frei zugänglichen Videoplattform veröffentlichte, forderte er dazu auf, Kosovo-Albaner wegen ihrer Ethnie zu hassen. Er handelte vorsätzlich.
+
+[P00088] genre: Notiz einer Sozialarbeiterin
+Sachverhalt: Am 1. Juli 2020 kam es in Thun zu folgendem Vorfall, an dem eine Rentnerin beteiligt war: In einer Rede an einem öffentlichen Informationsabend der Gemeinde vor rund 120 Personen forderte sie dazu auf, schwule Männer wegen ihrer sexuellen Orientierung zu hassen. Sie handelte vorsätzlich.
+
+[P00089] genre: Leserbrief, der den Vorfall schildert
+Sachverhalt: Eine Frau lebt in St. Gallen. Im Mai 2022 geschah Folgendes: Beim Abendessen im engsten Familienkreis in ihrer Wohnung, im Beisein nur ihres Ehemannes und ihrer beiden erwachsenen Kinder, verbreitete sie Schriften einer Lehre, die Angehörige einer christlichen Freikirche wegen ihrer Religion systematisch herabsetzt. Sie wusste, was sie tat, und wollte es so.
+
+[P00090] genre: kurze Zeitungsmeldung
+Sachverhalt: In Bern äusserte sich ein Unternehmer im Oktober 1994 wie folgt: In einer Rede an einem öffentlichen Informationsabend der Gemeinde vor rund 120 Personen würdigte er Angehörige einer christlichen Freikirche wegen ihrer Religion in einer Weise herab, die gegen die Menschenwürde verstösst. Der Vorsatz ist unbestritten.
+
+[P00091] genre: Bericht einer Augenzeugin
+Sachverhalt: In Zug äusserte sich eine Unternehmerin im März 2023 wie folgt: Auf Flugblättern, die sie in einer belebten Fussgängerzone an Passanten verteilte, setzte sie bisexuelle Personen wegen ihrer sexuellen Orientierung in einer gegen die Menschenwürde verstossenden Weise herab. Der Vorsatz ist unbestritten.
+
+[P00092] genre: Eintrag im Polizeijournal
+Sachverhalt: Im Juni 2025 ereignete sich in Thun ein Vorfall, an dem ein Mann beteiligt war: In einem Video, das er auf einer frei zugänglichen Videoplattform veröffentlichte, stellte er Kurden wegen ihrer Ethnie als Menschen minderen Werts dar. Dass er vorsätzlich handelte, ist erstellt.
+
+[P00093] genre: Erzählung in einem Online-Forum
+Sachverhalt: Gemäss Anklageschrift äusserte sich ein Student im Mai 2022 in Aarau wie folgt: In einer Rede an einem öffentlichen Informationsabend der Gemeinde vor rund 120 Personen sprach er nichtbinären Personen wegen ihrer Geschlechtsidentität die Gleichwertigkeit als Menschen ab. Er handelte vorsätzlich.
+
+[P00094] genre: Notiz einer Sozialarbeiterin
+Sachverhalt: Im September 2019 kam es in St. Gallen zu folgendem Vorfall, an dem ein Mann beteiligt war: In einem vollbesetzten Bus, laut und an alle Fahrgäste gerichtet, verunglimpfte er Kosovo-Albaner wegen ihrer Ethnie in menschenverachtender Weise. Er handelte vorsätzlich.
+
+[P00095] genre: Leserbrief, der den Vorfall schildert
+Sachverhalt: Im Juni 2025 hielt sich eine Studentin in Aarau auf. In einem Telefongespräch mit ihrem Bruder verbreitete sie systematisch Thesen, wonach schwule Männer wegen ihrer sexuellen Orientierung weniger wert seien als andere Menschen. Sie handelte vorsätzlich.
+
+[P00096] genre: kurze Zeitungsmeldung
+Sachverhalt: Eine Studentin aus Zürich steht unter folgendem Vorwurf: In einem Video, das sie auf einer frei zugänglichen Videoplattform veröffentlichte und mit «Botschaft an meine Familie» betitelte, rief sie zu Hass gegen schwule Männer wegen ihrer sexuellen Orientierung auf, und zwar im Juni 2025. Sie handelte vorsätzlich.
+
+[P00097] genre: Bericht einer Augenzeugin
+Sachverhalt: Im Juni 2025 ereignete sich in Basel ein Vorfall, an dem ein Mann beteiligt war: An einer Versammlung in einer Waldhütte vor rund 40 Teilnehmenden, die über einen allgemeinen Aufruf eingeladen worden waren und die er zum grössten Teil nicht persönlich kannte, verunglimpfte er schwule Männer wegen ihrer sexuellen Orientierung in menschenverachtender Weise. Dass er vorsätzlich handelte, ist erstellt.
+
+[P00098] genre: Eintrag im Polizeijournal
+Sachverhalt: In Basel äusserte sich eine Frau im Januar 2024 wie folgt: In einem Kommentar in einem frei zugänglichen Online-Forum verbreitete sie eine Lehre, die Schwarze Menschen wegen ihrer Hautfarbe systematisch als minderwertig darstellt. Der Vorsatz ist unbestritten.
+
+[P00099] genre: Erzählung in einem Online-Forum
+Sachverhalt: Im September 2021 ereignete sich in Biel/Bienne ein Vorfall, an dem eine Rentnerin beteiligt war: In einer Rede an einem öffentlichen Informationsabend der Gemeinde vor rund 120 Personen verbreitete sie eine Ideologie, die auf die systematische Herabsetzung von Angehörigen der Roma wegen ihrer Ethnie gerichtet ist. Dass sie vorsätzlich handelte, ist erstellt.
+
+[P00100] genre: Notiz einer Sozialarbeiterin
+Sachverhalt: Im September 2021 ereignete sich in Biel/Bienne ein Vorfall, an dem eine Rentnerin beteiligt war: In einer Rede an einem öffentlichen Informationsabend der Gemeinde vor rund 120 Personen verbreitete sie eine Ideologie, die auf die systematische Herabsetzung von Angehörigen der Roma wegen ihrer ethnischen Zugehörigkeit gerichtet ist. Dass sie vorsätzlich handelte, ist erstellt.
+
+[P00101] genre: Leserbrief, der den Vorfall schildert
+Sachverhalt: Im Mai 2022 kam es in Zürich zu folgendem Vorfall, an dem eine Rentnerin beteiligt war: In einer persönlichen Nachricht, die sie nur an ihre Schwester schickte, verbreitete sie eine Ideologie, die auf die systematische Herabsetzung von Angehörigen der Roma wegen ihrer Ethnie gerichtet ist. Sie handelte vorsätzlich.
+
+[P00102] genre: kurze Zeitungsmeldung
+Sachverhalt: Ein Unternehmer aus St. Gallen steht unter folgendem Vorwurf: In einem vollbesetzten Bus, laut und an alle Fahrgäste gerichtet, während er mit seinen Kindern unterwegs war, verbreitete er Schriften einer Lehre, die homosexuelle Personen wegen ihrer sexuellen Orientierung systematisch herabsetzt, und zwar im März 2023. Er handelte vorsätzlich.
+
+[P00103] genre: Bericht einer Augenzeugin
+Sachverhalt: In Bern äusserte sich eine Studentin im Juni 2025 wie folgt: Auf Flugblättern, die sie in einer belebten Fussgängerzone an Passanten verteilte, propagierte sie eine Weltanschauung, nach der Juden wegen ihrer Religion als minderwertig gelten. Der Vorsatz ist unbestritten.
+
+[P00104] genre: Eintrag im Polizeijournal
+Sachverhalt: In Zug äusserte sich eine Rentnerin im Januar 2024 wie folgt: In einem Leserbrief, der in einer Regionalzeitung abgedruckt wurde, verbreitete sie eine Lehre, die Kurden wegen ihrer Ethnie systematisch als minderwertig darstellt. Der Vorsatz ist unbestritten.
+
+[P00105] genre: Erzählung in einem Online-Forum
+Sachverhalt: Ein Rentner aus Schaffhausen steht unter folgendem Vorwurf: Auf Flugblättern, die er in einer belebten Fussgängerzone an Passanten verteilte, rief er dazu auf, Angehörigen einer christlichen Freikirche wegen ihrer Religion Wohnungen und Arbeitsstellen zu verweigern, und zwar im Juni 2020. Er handelte vorsätzlich.
+
+[P00106] genre: Notiz einer Sozialarbeiterin
+Sachverhalt: Gemäss Anklageschrift äusserte sich ein Student im Mai 2022 in Luzern wie folgt: In einem öffentlich einsehbaren Beitrag auf seinem Social-Media-Profil verunglimpfte er nichtbinäre Personen wegen ihrer Geschlechtsidentität in menschenverachtender Weise. Er handelte vorsätzlich.
+
+[P00107] genre: Leserbrief, der den Vorfall schildert
+Sachverhalt: In Zug äusserte sich eine Unternehmerin im März 2023 wie folgt: Auf Flugblättern, die sie in einer belebten Fussgängerzone an Passanten verteilte, setzte sie Walliserinnen und Walliser wegen ihrer Kantonszugehörigkeit in einer gegen die Menschenwürde verstossenden Weise herab. Der Vorsatz ist unbestritten.
+
+[P00108] genre: kurze Zeitungsmeldung
+Sachverhalt: Im Juni 2025 ereignete sich in Thun ein Vorfall, an dem ein Mann beteiligt war: In einem Video, das er auf einer frei zugänglichen Videoplattform veröffentlichte und mit «Botschaft an meine Familie» betitelte, stellte er Kurden wegen ihrer Ethnie als Menschen minderen Werts dar. Dass er vorsätzlich handelte, ist erstellt.
+
+[P00109] genre: Bericht einer Augenzeugin
+Sachverhalt: Im Mai 2022 kam es in Zürich zu folgendem Vorfall, an dem eine Rentnerin beteiligt war: In einem vollbesetzten Bus, laut und an alle Fahrgäste gerichtet, während sie mit ihren Kindern unterwegs war, verbreitete sie eine Ideologie, die auf die systematische Herabsetzung von Angehörigen der Roma wegen ihrer Ethnie gerichtet ist. Sie handelte vorsätzlich.
+
+[P00110] genre: Eintrag im Polizeijournal
+Sachverhalt: Gemäss Anklageschrift äusserte sich ein Student im Mai 2022 in Luzern wie folgt: In einem öffentlich einsehbaren Beitrag auf seinem Social-Media-Profil verunglimpfte er homosexuelle Personen wegen ihrer sexuellen Orientierung in menschenverachtender Weise. Er handelte vorsätzlich.
+
+[P00111] genre: Erzählung in einem Online-Forum
+Sachverhalt: Eine Studentin lebt in Biel/Bienne. Im Juni 2025 geschah Folgendes: In einem Kommentar in einem frei zugänglichen Online-Forum bezeichnete sie Schwarze Menschen wegen ihrer Rasse als Menschen zweiter Klasse. Sie wusste, was sie tat, und wollte es so.
+
+[P00112] genre: Notiz einer Sozialarbeiterin
+Sachverhalt: Eine Frau lebt in St. Gallen. Im Mai 2022 geschah Folgendes: In einer Rede an einem öffentlichen Informationsabend der Gemeinde vor rund 120 Personen verbreitete sie Schriften einer Lehre, die Angehörige einer christlichen Freikirche wegen ihrer Religion systematisch herabsetzt. Sie wusste, was sie tat, und wollte es so.
+
+[P00113] genre: Leserbrief, der den Vorfall schildert
+Sachverhalt: Am 1. Juli 2020 ereignete sich in Basel ein Vorfall, an dem ein Mann beteiligt war: An einer Versammlung in einer Waldhütte vor rund 40 Teilnehmenden, die über einen allgemeinen Aufruf eingeladen worden waren und die er zum grössten Teil nicht persönlich kannte, verunglimpfte er schwule Männer wegen ihrer sexuellen Orientierung in menschenverachtender Weise. Dass er vorsätzlich handelte, ist erstellt.
+
+[P00114] genre: kurze Zeitungsmeldung
+Sachverhalt: Ein Unternehmer aus St. Gallen steht unter folgendem Vorwurf: In einem vollbesetzten Bus, laut und an alle Fahrgäste gerichtet, verbreitete er Schriften einer Lehre, die homosexuelle Personen wegen ihrer sexuellen Orientierung systematisch herabsetzt, und zwar im März 2023. Er handelte vorsätzlich.
+
+[P00115] genre: Bericht einer Augenzeugin
+Sachverhalt: Gemäss Anklageschrift äusserte sich ein Student im Mai 2022 in Aarau wie folgt: In einer Rede an einem öffentlichen Informationsabend der Gemeinde vor rund 120 Personen sprach er Juden wegen ihres Glaubens die Gleichwertigkeit als Menschen ab. Er handelte vorsätzlich.
+
+[P00116] genre: Eintrag im Polizeijournal
+Sachverhalt: Im August 2020 kam es in Winterthur zu folgendem Vorfall, an dem ein Student beteiligt war: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen stachelte er zum Hass gegen homosexuelle Personen wegen ihrer sexuellen Orientierung an. Er handelte vorsätzlich.
+
+[P00117] genre: Erzählung in einem Online-Forum
+Sachverhalt: In Basel äusserte sich eine Frau im Januar 2024 wie folgt: In einem Kommentar in einem frei zugänglichen Online-Forum verbreitete sie eine Lehre, die Schwarze Menschen wegen ihrer Rasse systematisch als minderwertig darstellt. Der Vorsatz ist unbestritten.
+
+[P00118] genre: Notiz einer Sozialarbeiterin
+Sachverhalt: Im März 2023 hielt sich ein Mann in St. Gallen auf. In einer Rede an einem öffentlichen Informationsabend der Gemeinde vor rund 120 Personen forderte er dazu auf, Menschen afrikanischer Herkunft wegen ihrer Rasse zu hassen. Er handelte vorsätzlich.
+
+[P00119] genre: Leserbrief, der den Vorfall schildert
+Sachverhalt: Im August 2020 äusserte sich eine Frau in Biel/Bienne wie folgt: An einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen verbreitete sie eine Lehre, die bisexuelle Personen wegen ihrer sexuellen Orientierung systematisch als minderwertig darstellt. Sie handelte vorsätzlich.

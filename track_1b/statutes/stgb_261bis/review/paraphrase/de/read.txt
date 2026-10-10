@@ -1,0 +1,375 @@
+# Read each text and record the legally relevant facts (blind)
+
+For each entry, from the text alone, give:
+- `setting`: "public" if said or done in public or before a wider audience outside a circle of personal trust;
+  "private" if only among family, close friends or in a setting of personal trust; "unclear" if the text does not say.
+- `characteristic`: the characteristic the group was targeted for: race, ethnicity, religion, sexual_orientation,
+  gender_identity, sex, canton, occupation, age, disability, political_opinion, or other:<word>.
+- `act_date`: the date of the act as YYYY-MM-DD if a day is given, else YYYY-MM.
+- `act`: "incite" (calls for hatred or discrimination), "ideology" (spreads an ideology degrading the group), "degrade"
+  (degrades or discriminates against people in a way violating human dignity), or "other".
+- `severe`: true if the act clearly attacks the group's human dignity or calls for hatred; false if it is mild or vague.
+- `deliberate`: true if the text says or clearly implies the person acted deliberately.
+Reply with a JSON array: [{"id": "P00000", "setting": ..., "characteristic": ..., "act_date": ..., "act": ...,
+"severe": true|false, "deliberate": true|false}, ...].
+
+
+[P00000]
+Aarau – Ein Student muss sich wegen einer Rede verantworten, die er im Mai 2022 an einem öffentlichen Informationsabend der Gemeinde vor rund 120 Personen gehalten hat. Laut Anklageschrift erklärte er dort, Juden seien wegen ihrer Religion keine gleichwertigen Menschen. Er habe dies vorsätzlich getan, heisst es in der Anklage.
+
+[P00001]
+Im März 2019 war ich auf dem Wochenmarkt in Basel, es herrschte viel Betrieb. An einem der Stände rief eine Rentnerin den zahlreichen Kundinnen und Kunden zu, man solle Hindus wegen ihrer Religion benachteiligen und sie schlechter behandeln als alle anderen. Das war kein unbedachter Satz, sie wollte genau das erreichen.
+
+[P00002]
+St. Gallen, Mai 2022. In einem vollbesetzten Bus wandte sich ein Mann lautstark an sämtliche Fahrgäste und zog dabei in menschenverachtender Weise über Kosovo-Albaner wegen ihrer Ethnie her. Er handelte vorsätzlich.
+
+[P00003]
+Ich muss das hier einfach mal loswerden. Eine Studentin aus Biel/Bienne hat im Juni 2025 in einem Forum, das für alle frei zugänglich ist, einen Kommentar geschrieben, in dem sie Schwarze Menschen wegen ihrer Hautfarbe als Menschen zweiter Klasse bezeichnet. Das war kein Ausrutscher – sie wusste genau, was sie da schreibt, und wollte es so.
+
+[P00004]
+Notiz, Bern: Eine Unternehmerin hat im September 2021 in einem frei zugänglichen Online-Forum einen Kommentar verfasst, in dem sie planmässig die These ausbreitete, homosexuelle Personen seien wegen ihrer sexuellen Orientierung weniger wert als andere Menschen. Es handelte sich nicht um eine einzelne Bemerkung, sondern um eine systematisch aufgebaute Argumentation. Dass sie dies absichtlich tat, ist unbestritten.
+
+[P00005]
+Mit Befremden habe ich gelesen, was eine Studentin im November 2018 in St. Gallen in einem Leserbrief geschrieben hat, den unsere Regionalzeitung tatsächlich abdruckte. Darin forderte sie die Leserschaft unverhohlen auf, lesbische Frauen wegen ihrer sexuellen Orientierung zu hassen. Das war keine missglückte Formulierung, sondern volle Absicht.
+
+[P00006]
+Thun – Ein Mann hat im Juni 2025 in einem Telefongespräch mit seinem Bruder Kurden wegen ihrer Ethnie als Menschen von minderem Wert hingestellt. Dass er dabei vorsätzlich handelte, gilt als erwiesen.
+
+[P00007]
+Ich lese in unserem Familien-Chat mit, in dem ausser ihm nur seine Eltern und seine Geschwister sind. Im März 2023 hat er, ein Unternehmer aus St. Gallen, dort Schriften einer Lehre geteilt, die homosexuelle Personen wegen ihrer sexuellen Orientierung durchgehend herabsetzt. Das hat er nicht zufällig weitergeleitet, er tat es ganz bewusst.
+
+[P00008]
+September 2021, Wohnort der Beteiligten: Biel/Bienne. Eine Frau veröffentlichte auf einer frei zugänglichen Videoplattform ein Video, in dem sie dafür warb, Bauarbeiter wegen ihres Berufs zu benachteiligen und auszugrenzen. Sie handelte wissentlich und willentlich.
+
+[P00009]
+Kennt ihr den Fall von dem Studenten aus Schaffhausen? Ihm wird vorgeworfen, am 1. Juli 2020 auf einer frei zugänglichen Videoplattform ein Video hochgeladen zu haben, in dem er dazu aufruft, bisexuelle Personen wegen ihrer sexuellen Orientierung zu hassen. Und das hat er nicht aus Versehen gemacht, sondern mit voller Absicht.
+
+[P00010]
+Aktennotiz: Gegen einen Studenten aus Schaffhausen besteht der Vorwurf, im Mai 2022 ein Video auf eine frei zugängliche Videoplattform gestellt zu haben. Darin ruft er dazu auf, bisexuelle Personen wegen ihrer sexuellen Orientierung zu hassen. Er tat dies bewusst und gewollt.
+
+[P00011]
+Was sich im März 2023 in einem vollbesetzten Bus in Thun abgespielt hat, darf nicht ohne Antwort bleiben. Ein Student wandte sich laut an alle Fahrgäste und stellte Mitglieder einer politischen Partei wegen ihrer politischen Überzeugung als Menschen ohne Wert und ohne Würde hin. Er wusste genau, was er sagte, und tat es mit Absicht.
+
+[P00012]
+St. Gallen – In einer Regionalzeitung ist im März 2023 der Leserbrief einer Studentin erschienen, in dem sie dazu aufforderte, lesbische Frauen wegen ihrer sexuellen Orientierung zu hassen. Die Verfasserin handelte vorsätzlich.
+
+[P00013]
+Ich war im November 2018 an der bewilligten Kundgebung auf dem öffentlichen Platz in Winterthur, wir waren ungefähr 300 Leute. Ein Unternehmer ergriff das Wort und stellte Tamilen wegen ihrer Ethnie als verachtenswerte Menschen zweiter Klasse hin, denen keine Würde zustehe. Dass er das mit Absicht tat, ist erwiesen.
+
+[P00014]
+Zürich, Mai 2022. In einem vollbesetzten Bus verbreitete eine Rentnerin lautstark und an alle Fahrgäste gerichtet eine Ideologie, die darauf angelegt ist, Angehörige der Roma wegen ihrer Ethnie systematisch herabzusetzen. Die Frau handelte vorsätzlich.
+
+[P00015]
+Am 30. Juni 2020 gab es in Thun einen öffentlichen Informationsabend der Gemeinde, rund 120 Leute waren da. Eine Rentnerin hielt dort eine Rede und forderte die Anwesenden allen Ernstes auf, schwule Männer wegen ihrer sexuellen Orientierung zu hassen. Krass finde ich vor allem, dass sie das mit voller Absicht gesagt hat.
+
+[P00016]
+Notiz: Eine Frau aus St. Gallen hielt im Mai 2022 an einem öffentlichen Informationsabend der Gemeinde eine Rede vor rund 120 Personen; im Publikum sassen auch ihre Eltern und Geschwister. Dabei verbreitete sie Schriften einer Lehre, die Angehörige einer christlichen Freikirche wegen ihrer Religion systematisch herabsetzt. Sie wusste, was sie tat, und wollte es so.
+
+[P00017]
+Ich bin entsetzt über den Auftritt eines Unternehmers an der bewilligten Kundgebung im Juni 2025 in Winterthur. Vor rund 300 Menschen auf einem öffentlichen Platz würdigte er Tamilen wegen ihrer Ethnie herab und redete über sie, als stünde ihnen keine menschliche Würde zu. Dass er dies vorsätzlich tat, steht fest.
+
+[P00018]
+Ein in Aarau wohnhafter Student hat im März 2023 an einer Versammlung in einer Waldhütte Hindus wegen ihrer Religion abgesprochen, gleichwertige Menschen zu sein. Die rund 40 Teilnehmenden waren über einen allgemeinen Aufruf eingeladen worden, die meisten von ihnen kannte er nicht persönlich. Er handelte wissentlich und willentlich.
+
+[P00019]
+Im Juni 2025 ging ich durch die belebte Fussgängerzone in Aarau. Eine Studentin verteilte dort Flugblätter an die Passanten, auf denen Punkt für Punkt ausgeführt wurde, schwule Männer seien wegen ihrer sexuellen Orientierung weniger wert als andere Menschen. Sie tat das mit voller Absicht.
+
+[P00020]
+30. Juni 2020. Ein in Aarau wohnhafter Student erklärte an einer Versammlung in einer Waldhütte, Hindus seien wegen ihrer Religion keine gleichwertigen Menschen. Anwesend waren rund 40 Teilnehmende, die über einen allgemeinen Aufruf eingeladen worden waren und die er grösstenteils nicht persönlich kannte. Er handelte mit Wissen und Willen.
+
+[P00021]
+Hat das sonst noch jemand mitbekommen? Eine Frau aus Biel/Bienne hat im September 2021 auf einer frei zugänglichen Videoplattform ein Video veröffentlicht, in dem sie dafür wirbt, homosexuelle Personen wegen ihrer sexuellen Orientierung zu benachteiligen und auszugrenzen. Sie wusste ganz genau, was sie tat, und hat es auch so gewollt.
+
+[P00022]
+Vorfall im März 2023, Thun: Ein Student sprach in einem vollbesetzten Bus laut alle Fahrgäste an und würdigte Muslime wegen ihrer Religion herab, als seien sie Menschen zweiter Klasse ohne jede Würde. Er tat dies bewusst.
+
+[P00023]
+Laut Anklageschrift hat ein Unternehmer im Juni 2025 in Luzern ein Video auf einer frei zugänglichen Videoplattform veröffentlicht, dem er den Titel «Botschaft an meine Familie» gab. Darin fordert er dazu auf, Kosovo-Albaner wegen ihrer Ethnie zu hassen. Er handelte vorsätzlich, und das sollte uns allen zu denken geben.
+
+[P00024]
+Einem Studenten aus Schaffhausen wird vorgeworfen, im März 2019 auf einer frei zugänglichen Videoplattform ein Video veröffentlicht zu haben, in dem er zu Hass gegen bisexuelle Personen wegen ihrer sexuellen Orientierung aufrief. Er handelte dabei vorsätzlich.
+
+[P00025]
+Im Juni 2025 bin ich auf einen öffentlich einsehbaren Beitrag gestossen, den eine Studentin aus Schaffhausen auf ihrem Social-Media-Profil gepostet hatte. Darin rief sie dazu auf, Zürcherinnen und Zürcher wegen ihrer Kantonszugehörigkeit zu hassen. So, wie sie es formulierte, war klar: Sie wusste, was sie schrieb, und meinte es genau so.
+
+[P00026]
+Luzern, Mai 2022 (gemäss Anklageschrift). Ein Student veröffentlichte auf seinem Social-Media-Profil einen öffentlich einsehbaren Beitrag, in dem er homosexuelle Personen wegen ihrer Homosexualität in menschenverachtender Weise schmähte und verächtlich machte. Er handelte vorsätzlich.
+
+[P00027]
+Im November 2018 war in Winterthur eine bewilligte Kundgebung auf einem öffentlichen Platz, so um die 300 Leute. Ein Student hat dort die Menge gegen homosexuelle Personen aufgehetzt und es darauf angelegt, dass man sie wegen ihrer sexuellen Orientierung hasst. Das war Absicht, kein unglücklich gewählter Satz.
+
+[P00028]
+Aktennotiz: Einem Rentner aus Schaffhausen wird vorgeworfen, im Juni 2025 in einer belebten Fussgängerzone Flugblätter an Passanten verteilt zu haben. Darauf forderte er, Angehörigen einer christlichen Freikirche wegen ihrer Religion keine Wohnung zu vermieten und keine Arbeitsstelle zu geben. Er tat dies vorsätzlich.
+
+[P00029]
+In einem frei zugänglichen Online-Forum hat eine Unternehmerin in Bern im September 2021 in einem Kommentar planmässig die Behauptung ausgebreitet, junge Erwachsene seien wegen ihres Alters weniger wert als andere Menschen. Ich frage mich, wie man so etwas über eine ganze Generation schreiben kann. Dass sie es bewusst tat, ist unbestritten.
+
+[P00030]
+Bern – Eine Studentin hat im Juni 2025 beim Abendessen in ihrer Wohnung, im engsten Familienkreis mit nur ihrem Ehemann und ihren beiden erwachsenen Kindern am Tisch, eine Weltanschauung propagiert, nach der Juden wegen ihrer Religion als minderwertig gelten. Dass sie dies vorsätzlich tat, ist unbestritten.
+
+[P00031]
+Ich habe im Juni 2025 in einem frei zugänglichen Online-Forum den Kommentar einer Studentin aus Biel/Bienne gelesen. Sie schrieb darin, ältere Menschen seien wegen ihres Alters Menschen zweiter Klasse. Das war kein Versehen; sie wusste, was sie tat, und wollte es so.
+
+[P00032]
+Zug, März 2023. Eine Unternehmerin verteilte in einer belebten Fussgängerzone Flugblätter an Passanten, auf denen Bauarbeiter wegen ihres Berufs als würdelose, verachtenswerte Menschen zweiter Klasse dargestellt wurden. Den Vorsatz bestreitet sie nicht.
+
+[P00033]
+Im September 2021 hat eine Unternehmerin in Bern in einem frei zugänglichen Online-Forum einen Kommentar gepostet, in dem sie systematisch Thesen aneinanderreiht, wonach homosexuelle Personen wegen ihrer Homosexualität weniger wert seien als andere Menschen. Und sie hat nie bestritten, dass sie das absichtlich so geschrieben hat.
+
+[P00034]
+Chur, 30. Juni 2020: An einem öffentlichen Informationsabend der Gemeinde sprach eine Unternehmerin vor rund 120 Personen. In ihrer Rede forderte sie, homosexuellen Personen wegen ihrer sexuellen Orientierung keine Wohnungen zu vermieten und keine Arbeitsstellen zu geben. Sie tat dies vorsätzlich.
+
+[P00035]
+Einer Studentin aus Schaffhausen wird vorgeworfen, im August 2020 an einer Versammlung in einer Waldhütte dafür geworben zu haben, bisexuelle Personen wegen ihrer sexuellen Orientierung zu benachteiligen und auszugrenzen. Rund 40 Leute waren über einen allgemeinen Aufruf eingeladen worden, die meisten kannte sie gar nicht persönlich. Sie handelte vorsätzlich, und ich finde, darüber muss gesprochen werden.
+
+[P00036]
+Einer Studentin aus Zürich wird vorgeworfen, im Juni 2025 bei einem Abendessen mit drei langjährigen engen Freunden in ihrer Wohnung zu Hass gegen schwule Männer wegen ihrer sexuellen Orientierung aufgerufen zu haben. Sie handelte vorsätzlich.
+
+[P00037]
+Im August 2020 schlug ich in St. Gallen die Regionalzeitung auf und stiess auf den abgedruckten Leserbrief einer Studentin. Darin verlangte sie unverblümt, man solle lesbische Frauen wegen ihrer sexuellen Orientierung hassen. Das hat sie mit Absicht so geschrieben.
+
+[P00038]
+Bern, Juni 2025. Ein Unternehmer hielt an einem öffentlichen Informationsabend der Gemeinde vor rund 120 Personen eine Rede, in der er Angehörige einer christlichen Freikirche wegen ihrer Religion als Menschen ohne Würde hinstellte, die keine Achtung verdienten. Vorsatz unbestritten.
+
+[P00039]
+Im September 2021 gab es in Zürich eine Versammlung in einer Waldhütte, rund 40 Leute, eingeladen über einen allgemeinen Aufruf. Eine Frau, die die meisten davon gar nicht persönlich kannte, machte dort Werbung für eine Ideologie, deren Ziel es ist, Muslime wegen ihrer Religion systematisch zu verleumden. Inzwischen ist auch erstellt, dass sie das mit Absicht getan hat.
+
+[P00040]
+Chur, Mai 2022: Eine Rentnerin trat an einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen auf. Sie verunglimpfte dort Menschen mit einer Behinderung wegen ihrer Behinderung auf menschenverachtende Weise und machte sie vor allen verächtlich. Ihr Vorsatz ist erstellt.
+
+[P00041]
+Im Januar 2024 hat ein Student an einer bewilligten Kundgebung in Winterthur vor rund 300 Menschen auf einem öffentlichen Platz die Zuhörer zum Hass gegen homosexuelle Personen wegen ihrer sexuellen Orientierung angestachelt. Er tat dies vorsätzlich. Ich frage mich, wie lange wir solche Auftritte noch hinnehmen wollen.
+
+[P00042]
+Luzern – Laut Anklageschrift hat ein Rentner im September 2021 auf einer frei zugänglichen Videoplattform ein Video veröffentlicht, in dem er Tamilen wegen ihrer Ethnie als Menschen zweiter Klasse bezeichnete. Er habe vorsätzlich gehandelt.
+
+[P00043]
+Ich habe den Beitrag selbst gesehen: Eine Studentin aus Schaffhausen postete im Juni 2025 auf ihrem öffentlich einsehbaren Social-Media-Profil einen Aufruf, Muslime wegen ihres Glaubens zu hassen. Sie wusste, was sie tat, und wollte genau das.
+
+[P00044]
+Zug, März 2023. Eine Frau verteilte in einer belebten Fussgängerzone Flugblätter an Passanten, in denen Angehörigen der Roma wegen ihrer ethnischen Zugehörigkeit abgesprochen wird, gleichwertige Menschen zu sein. Sie handelte vorsätzlich.
+
+[P00045]
+Alte Geschichte, passt aber zum Thema: Im Mai 1993 hat ein Student aus Aarau an einer Versammlung in einer Waldhütte erklärt, Hindus seien wegen ihrer Religion keine gleichwertigen Menschen. Rund 40 Leute waren über einen allgemeinen Aufruf eingeladen worden, und die meisten davon kannte er nicht einmal persönlich. Er wusste genau, was er sagte, und wollte es auch so.
+
+[P00046]
+Notiz zum Vorfall vom November 2018 in Bern: Ein Unternehmer hielt an einem öffentlichen Informationsabend der Gemeinde vor rund 120 Personen eine Rede. Darin stellte er Angehörige einer christlichen Freikirche wegen ihrer Religion als minderwertige Menschen hin, denen man keinen Respekt schulde. Dass er dies bewusst tat, ist unbestritten.
+
+[P00047]
+Im Juni 2025 hat eine Unternehmerin an einem öffentlichen Informationsabend der Gemeinde in Chur eine Rede vor rund 120 Personen gehalten. Darin rief sie die Anwesenden auf, homosexuellen Personen wegen ihrer sexuellen Orientierung Wohnungen und Arbeitsstellen zu verweigern. Das geschah vorsätzlich, und ich schäme mich dafür, dass so etwas bei uns möglich ist.
+
+[P00048]
+Zürich – Eine Frau hat im September 2021 beim Abendessen in ihrer Wohnung, im engsten Familienkreis mit nur ihrem Ehemann und den beiden erwachsenen Kindern, für eine Ideologie geworben, die darauf abzielt, Muslime wegen ihrer Religion systematisch zu verleumden. Ihr Vorsatz ist erstellt.
+
+[P00049]
+Ich war im März 2019 bei dieser Versammlung in der Waldhütte, eingeladen wie alle anderen über einen allgemeinen Aufruf; wir waren etwa 40 Leute, und die Studentin aus Schaffhausen kannte die meisten von uns nicht persönlich. Sie warb dort offen dafür, bisexuelle Personen wegen ihrer sexuellen Orientierung zu benachteiligen und auszugrenzen. Das hat sie mit Absicht getan.
+
+[P00050]
+St. Gallen, Mai 1993. Ein Mann richtete sich in einem vollbesetzten Bus lautstark an alle Fahrgäste und schmähte Kosovo-Albaner wegen ihrer Ethnie auf menschenverachtende Art. Er handelte vorsätzlich.
+
+[P00051]
+Im Januar 2024 hat eine Frau in Basel in einem frei zugänglichen Online-Forum einen Kommentar geschrieben, mit dem sie eine ganze Lehre verbreitet: Walliserinnen und Walliser seien wegen ihrer Kantonszugehörigkeit durchs Band minderwertig. Dass sie das absichtlich gemacht hat, bestreitet sie nicht einmal.
+
+[P00052]
+Gemäss Anklageschrift hat ein Rentner im September 2021 in Luzern ein Video auf einer frei zugänglichen Videoplattform veröffentlicht. Darin bezeichnet er ältere Menschen wegen ihres Alters als Menschen zweiter Klasse. Er handelte vorsätzlich.
+
+[P00053]
+Ich war fassungslos, als ich erfuhr, was im September 2021 an einem öffentlichen Informationsabend der Gemeinde in Biel/Bienne geschah. Eine Rentnerin verbreitete dort in ihrer Rede vor rund 120 Personen eine Ideologie, die darauf ausgerichtet ist, Frauen wegen ihres Geschlechts systematisch herabzusetzen. Dass sie dies mit Vorsatz tat, ist erwiesen.
+
+[P00054]
+Chur – An einer bewilligten Kundgebung auf einem öffentlichen Platz hat eine Rentnerin im Mai 2022 vor rund 300 Personen Angehörige einer christlichen Freikirche wegen ihrer Religion in menschenverachtender Weise geschmäht. Sie handelte erwiesenermassen vorsätzlich.
+
+[P00055]
+Im August 2020 war ich auf dem gut besuchten Wochenmarkt in Bern. An einem Stand sprach ein Unternehmer vor zahlreichen Kundinnen und Kunden über bisexuelle Personen, als hätten sie wegen ihrer sexuellen Orientierung keine Würde und keinen Respekt verdient. Er tat das ganz bewusst.
+
+[P00056]
+Winterthur, Mai 1993. Anlässlich einer bewilligten Kundgebung auf einem öffentlichen Platz würdigte ein Unternehmer vor rund 300 Personen Tamilen wegen ihrer Ethnie herab, indem er sie als verachtenswerte Menschen zweiter Klasse hinstellte. Vorsatz erstellt.
+
+[P00057]
+Eine Frau hat im September 2021 in Zürich in der Waldhütte ihrer Familie eine Versammlung abgehalten, rund 40 Leute, eingeladen über einen allgemeinen Aufruf und grösstenteils Menschen, die sie nicht persönlich kannte. Auch ihr Ehemann und ihre Kinder waren dabei. Sie machte dort Werbung für eine Ideologie, die darauf abzielt, Muslime wegen ihrer Religion systematisch zu verleumden – und zwar mit Absicht, das ist erstellt.
+
+[P00058]
+Zug, März 2019: Eine Rentnerin hat in einem Leserbrief, der in einer Regionalzeitung abgedruckt wurde, eine Lehre verbreitet, nach der Kurden wegen ihrer Ethnie grundsätzlich minderwertig seien. Ihr Vorsatz ist unbestritten.
+
+[P00059]
+Im Oktober 1994 hat eine Rentnerin in Basel an einem Stand auf dem gut besuchten Wochenmarkt vor zahlreichen Kundinnen und Kunden dazu aufgerufen, Hindus wegen ihrer Religion zu benachteiligen und schlechter zu behandeln als andere. Sie tat das mit Absicht. So etwas hat auf unserem Markt nichts verloren.
+
+[P00060]
+Einem Rentner aus Schaffhausen wird vorgeworfen, im Oktober 1994 in einer belebten Fussgängerzone Flugblätter an Passanten verteilt zu haben, die dazu aufriefen, Angehörigen einer christlichen Freikirche wegen ihrer Religion Wohnungen und Arbeitsstellen zu verweigern. Er handelte dabei vorsätzlich.
+
+[P00061]
+Ich war im März 2019 am öffentlichen Informationsabend der Gemeinde in St. Gallen, etwa 120 Leute waren da. Ein Mann hielt eine Rede und forderte uns alle auf, Menschen afrikanischer Herkunft wegen ihrer Rasse zu hassen. Er meinte das völlig ernst und sagte es mit Absicht.
+
+[P00062]
+Basel, Juni 2025. Eine Rentnerin rief an einem Stand auf dem gut besuchten Wochenmarkt vor zahlreichen Kundinnen und Kunden dazu auf, Hindus wegen ihrer Religion zu benachteiligen und anders zu behandeln als alle übrigen. Sie handelte vorsätzlich.
+
+[P00063]
+Im Juni 2025 stand in der belebten Fussgängerzone von Aarau eine Studentin mit ihren Kindern und verteilte Flugblätter an Passanten. Überschrift: «Eine Familie sagt die Wahrheit». Darin wurde systematisch die These ausgebreitet, schwule Männer seien wegen ihrer sexuellen Orientierung weniger wert als andere Menschen. Das war voll beabsichtigt.
+
+[P00064]
+Chur, Mai 2022: An einer bewilligten Kundgebung auf einem öffentlichen Platz hat eine Rentnerin vor rund 300 Personen nichtbinäre Personen wegen ihrer Geschlechtsidentität verhöhnt und auf menschenverachtende Weise schlechtgemacht. Dass sie dies vorsätzlich tat, ist erstellt.
+
+[P00065]
+Im März 2023 hat ein Unternehmer an einem Stand auf dem gut besuchten Wochenmarkt in Bern vor zahlreichen Kundinnen und Kunden bisexuelle Personen wegen ihrer sexuellen Orientierung als Menschen zweiter Klasse ohne Anspruch auf Würde hingestellt. Er tat dies vorsätzlich. Ich kann nicht verstehen, wie man so über Mitmenschen reden kann.
+
+[P00066]
+Thun – An einem öffentlichen Informationsabend der Gemeinde hat eine Rentnerin im März 2023 vor rund 120 Personen in einer Rede dazu aufgerufen, schwule Männer wegen ihrer sexuellen Orientierung zu hassen. Sie handelte vorsätzlich.
+
+[P00067]
+Im September 2019 war ich an der bewilligten Kundgebung auf einem öffentlichen Platz in Biel/Bienne, rund 300 Menschen waren da. Eine Frau trug dort ausführlich eine Lehre vor, nach der bisexuelle Personen wegen ihrer sexuellen Orientierung grundsätzlich minderwertig seien. Es war offensichtlich, dass sie das mit Absicht tat.
+
+[P00068]
+Luzern, Juni 2025 (gemäss Anklageschrift). Ein Unternehmer forderte bei einem Abendessen mit drei langjährigen engen Freunden in seiner Wohnung dazu auf, Kosovo-Albaner wegen ihrer Ethnie zu hassen. Er handelte vorsätzlich.
+
+[P00069]
+März 2023 in Thun, vollbesetzter Bus: Ein Student fing laut an, sich an alle Fahrgäste zu wenden, und redete über Muslime, als wären sie wegen ihres Glaubens Menschen zweiter Klasse ohne jede Würde. Das war kein Ausrutscher, er hat das mit Absicht gemacht.
+
+[P00070]
+St. Gallen, Oktober 1994: Ein Mann forderte in einer Rede an einem öffentlichen Informationsabend der Gemeinde die rund 120 Anwesenden dazu auf, Menschen afrikanischer Herkunft wegen ihrer Rasse zu hassen. Er tat dies vorsätzlich.
+
+[P00071]
+Ich möchte auf einen Vorfall in Chur hinweisen: Im Mai 2022 hat ein Mann beim Abendessen in seiner Wohnung, im engsten Familienkreis mit nur seiner Ehefrau und den beiden erwachsenen Kindern, zum Hass gegen Menschen asiatischer Herkunft wegen ihrer Rasse angestachelt. Er tat dies vorsätzlich. Mich beschäftigt, dass solche Worte selbst am Familientisch fallen.
+
+[P00072]
+Basel – Ein Mann hat im Juni 2020 an einer Versammlung in einer Waldhütte schwule Männer wegen ihrer sexuellen Orientierung auf menschenverachtende Weise verunglimpft. Die rund 40 Teilnehmenden waren über einen allgemeinen Aufruf eingeladen worden, die meisten von ihnen kannte er nicht persönlich. Sein Vorsatz ist erstellt.
+
+[P00073]
+Im Juni 2025 kam ich in Bern durch die belebte Fussgängerzone, wo eine Studentin zusammen mit ihren Kindern Flugblätter an Passanten verteilte. Die Blätter waren mit «Eine Familie sagt die Wahrheit» überschrieben, und darin wurde eine Weltanschauung propagiert, nach der Juden wegen ihrer Religion minderwertig seien. Dass sie das bewusst tat, ist unbestritten.
+
+[P00074]
+Zug, Oktober 1994. In einem Leserbrief, der in einer Regionalzeitung abgedruckt wurde, verbreitete eine Rentnerin eine Lehre, die Kurden wegen ihrer Ethnie durchwegs als minderwertig darstellt. Vorsatz unbestritten.
+
+[P00075]
+Gegen eine Studentin aus Schaffhausen läuft der Vorwurf, dass sie im Mai 2022 bei einer Versammlung in einer Waldhütte dafür geworben hat, bisexuelle Personen wegen ihrer sexuellen Orientierung zu benachteiligen und auszugrenzen. Da waren rund 40 Leute, eingeladen über einen allgemeinen Aufruf, und sie kannte die meisten gar nicht persönlich. Sie hat das mit Vorsatz getan.
+
+[P00076]
+Bern, 30. Juni 2020: Ein Unternehmer hat an einem Stand auf dem gut besuchten Wochenmarkt vor zahlreichen Kundinnen und Kunden bisexuelle Personen wegen ihrer sexuellen Orientierung herabgewürdigt und ihnen dabei jede Würde abgesprochen. Er tat dies vorsätzlich.
+
+[P00077]
+Gemäss Anklageschrift hat ein Rentner im September 2021 in Luzern ein Video auf einer frei zugänglichen Videoplattform veröffentlicht, in dem er Walliserinnen und Walliser wegen ihrer Kantonszugehörigkeit als Menschen zweiter Klasse bezeichnete. Er handelte vorsätzlich. Ich finde das schlicht beschämend.
+
+[P00078]
+Eine Studentin aus Schaffhausen hat im Juni 2025 auf ihrem Social-Media-Profil in einem öffentlich einsehbaren Beitrag dazu aufgerufen, Muslime wegen ihrer Religion zu hassen. Sie handelte wissentlich und willentlich.
+
+[P00079]
+Im Mai 2022 las ich in Chur in der Regionalzeitung einen Leserbrief, den ein Mann im Namen seiner ganzen Familie unterzeichnet hatte. Darin stachelte er die Leserschaft zum Hass gegen Menschen asiatischer Herkunft wegen ihrer Rasse an. Das war unübersehbar Absicht.
+
+[P00080]
+Juni 2025. Einer Studentin aus Zürich wird vorgeworfen, auf einer frei zugänglichen Videoplattform ein Video veröffentlicht zu haben, in dem sie zu Hass gegen schwule Männer wegen ihrer sexuellen Orientierung aufruft. Sie handelte vorsätzlich.
+
+[P00081]
+In Chur hat im Mai 2022 ein Mann einen Leserbrief geschrieben, der in einer Regionalzeitung abgedruckt wurde. Darin stachelt er die Leute regelrecht zum Hass gegen Menschen asiatischer Herkunft wegen ihrer Rasse an. Er hat das absichtlich gemacht, da gibt es nichts zu deuteln.
+
+[P00082]
+Notiz: Eine in Biel/Bienne wohnhafte Frau hat im September 2021 auf einer frei zugänglichen Videoplattform ein Video veröffentlicht, in dem sie dafür wirbt, homosexuelle Personen wegen ihrer Homosexualität zu benachteiligen und auszugrenzen. Sie wusste, was sie tat, und wollte es so.
+
+[P00083]
+Im März 2023 verteilte eine Frau in einer belebten Fussgängerzone in Zug Flugblätter an Passanten, auf denen Angehörigen der Roma wegen ihrer Ethnie abgesprochen wurde, gleichwertige Menschen zu sein. Sie handelte vorsätzlich. Dass so etwas mitten in unserer Stadt verteilt wird, darf nicht unwidersprochen bleiben.
+
+[P00084]
+Biel/Bienne – Eine Frau hat im Januar 2024 an einer bewilligten Kundgebung auf einem öffentlichen Platz vor rund 300 Personen eine Lehre verbreitet, die bisexuelle Personen wegen ihrer sexuellen Orientierung systematisch als minderwertig hinstellt. Sie handelte vorsätzlich.
+
+[P00085]
+Am 1. Juli 2020 sass ich am öffentlichen Informationsabend der Gemeinde in Chur im Publikum; wir waren etwa 120 Personen. Eine Unternehmerin hielt eine Rede und rief dazu auf, homosexuellen Personen wegen ihrer sexuellen Orientierung keine Wohnungen und keine Arbeitsstellen zu geben. Sie sagte das ganz bewusst.
+
+[P00086]
+Zug, März 2023. Eine Frau verteilte in einer belebten Fussgängerzone Flugblätter an Passanten, in denen Menschen mit einer Behinderung wegen ihrer Behinderung abgesprochen wird, gleichwertige Menschen zu sein. Sie handelte vorsätzlich.
+
+[P00087]
+Laut Anklageschrift hat ein Unternehmer in Luzern im Juni 2025 ein Video auf einer frei zugänglichen Videoplattform hochgeladen, in dem er die Leute auffordert, Kosovo-Albaner wegen ihrer Ethnie zu hassen. Ich hab mir das angeschaut, und da war nichts versehentlich – er hat das vorsätzlich gemacht.
+
+[P00088]
+Thun, 1. Juli 2020: Eine Rentnerin hielt an einem öffentlichen Informationsabend der Gemeinde vor rund 120 Personen eine Rede, in der sie die Anwesenden aufforderte, schwule Männer wegen ihrer sexuellen Orientierung zu hassen. Sie tat dies vorsätzlich.
+
+[P00089]
+Ich möchte auf einen Fall aus St. Gallen aufmerksam machen: Eine Frau verbreitete im Mai 2022 beim Abendessen in ihrer Wohnung, im engsten Familienkreis mit nur ihrem Ehemann und ihren beiden erwachsenen Kindern, Schriften einer Lehre, die Angehörige einer christlichen Freikirche wegen ihrer Religion systematisch herabsetzt. Sie wusste, was sie tat, und wollte es so.
+
+[P00090]
+Bern – Ein Unternehmer hat im Oktober 1994 an einem öffentlichen Informationsabend der Gemeinde vor rund 120 Personen Angehörige einer christlichen Freikirche wegen ihrer Religion als Menschen ohne Würde hingestellt, die keine Achtung verdienten. Der Vorsatz ist unbestritten.
+
+[P00091]
+Im März 2023 drückte mir eine Unternehmerin in der belebten Fussgängerzone in Zug ein Flugblatt in die Hand, wie allen anderen Passanten auch. Darauf wurden bisexuelle Personen wegen ihrer sexuellen Orientierung als würdelose Menschen zweiter Klasse dargestellt. Sie hat das bewusst verteilt, das ist unbestritten.
+
+[P00092]
+Thun, Juni 2025. Ein Mann veröffentlichte auf einer frei zugänglichen Videoplattform ein Video, in dem er Kurden wegen ihrer Ethnie als Menschen von geringerem Wert hinstellt. Vorsatz erstellt.
+
+[P00093]
+Laut Anklageschrift hat ein Student im Mai 2022 in Aarau an einem öffentlichen Informationsabend der Gemeinde eine Rede vor rund 120 Leuten gehalten. Darin hat er nichtbinären Personen wegen ihrer Geschlechtsidentität abgesprochen, gleichwertige Menschen zu sein. Und das war volle Absicht.
+
+[P00094]
+St. Gallen, September 2019: Ein Mann hat sich in einem vollbesetzten Bus laut an sämtliche Fahrgäste gewandt und Kosovo-Albaner wegen ihrer Ethnie auf menschenverachtende Weise beschimpft und verächtlich gemacht. Er handelte vorsätzlich.
+
+[P00095]
+Ein Vorfall aus Aarau vom Juni 2025 lässt mich nicht los. Eine Studentin breitete in einem Telefongespräch mit ihrem Bruder systematisch Thesen aus, wonach schwule Männer wegen ihrer sexuellen Orientierung weniger wert seien als andere Menschen. Sie tat dies vorsätzlich.
+
+[P00096]
+Einer Studentin aus Zürich wird vorgeworfen, im Juni 2025 auf einer frei zugänglichen Videoplattform ein Video mit dem Titel «Botschaft an meine Familie» veröffentlicht zu haben. Darin ruft sie zu Hass gegen schwule Männer wegen ihrer sexuellen Orientierung auf. Sie handelte vorsätzlich.
+
+[P00097]
+Ich war im Juni 2025 bei der Versammlung in einer Waldhütte in Basel; eingeladen wurde über einen allgemeinen Aufruf, rund 40 Leute kamen, und der Mann kannte die meisten von uns nicht persönlich. Er zog dort auf menschenverachtende Weise über schwule Männer wegen ihrer sexuellen Orientierung her. Das war ganz klar Absicht.
+
+[P00098]
+Basel, Januar 2024. Eine Frau verbreitete in einem Kommentar in einem frei zugänglichen Online-Forum eine Lehre, nach der Schwarze Menschen wegen ihrer Hautfarbe grundsätzlich minderwertig seien. Vorsatz unbestritten.
+
+[P00099]
+September 2021, öffentlicher Informationsabend der Gemeinde in Biel/Bienne, rund 120 Leute: Eine Rentnerin hält eine Rede und verbreitet darin eine Ideologie, die Angehörige der Roma wegen ihrer Ethnie systematisch herabsetzt. Mittlerweile ist auch erstellt, dass sie das mit Absicht gemacht hat.
+
+[P00100]
+Biel/Bienne, September 2021: In ihrer Rede an einem öffentlichen Informationsabend der Gemeinde verbreitete eine Rentnerin vor rund 120 Personen eine Ideologie, die darauf ausgerichtet ist, Angehörige der Roma wegen ihrer ethnischen Zugehörigkeit systematisch herabzusetzen. Ihr Vorsatz ist erstellt.
+
+[P00101]
+Ich will einen Fall aus Zürich schildern: Im Mai 2022 schickte eine Rentnerin eine persönliche Nachricht, und zwar nur an ihre Schwester. Darin verbreitete sie eine Ideologie, die Angehörige der Roma wegen ihrer Ethnie systematisch herabsetzt. Sie handelte vorsätzlich.
+
+[P00102]
+Einem Unternehmer aus St. Gallen wird vorgeworfen, im März 2023 in einem vollbesetzten Bus, in dem er mit seinen Kindern unterwegs war, laut und an alle Fahrgäste gerichtet Schriften einer Lehre verbreitet zu haben, die homosexuelle Personen wegen ihrer sexuellen Orientierung systematisch herabsetzt. Er handelte vorsätzlich.
+
+[P00103]
+Im Juni 2025 hat mir eine Studentin in der belebten Fussgängerzone in Bern ein Flugblatt gegeben, so wie allen anderen Passanten auch. Darauf wurde eine Weltanschauung propagiert, nach der Juden wegen ihrer Religion minderwertig seien. Sie verteilte es bewusst, und das ist auch unbestritten.
+
+[P00104]
+Zug, Januar 2024. Eine Rentnerin verbreitete in einem Leserbrief, der in einer Regionalzeitung abgedruckt wurde, eine Lehre, welche Kurden wegen ihrer Ethnie systematisch als minderwertig darstellt. Der Vorsatz ist unbestritten.
+
+[P00105]
+Einem Rentner aus Schaffhausen wird vorgeworfen, im Juni 2020 in einer belebten Fussgängerzone Flugblätter an Passanten verteilt zu haben. Darauf forderte er, Angehörigen einer christlichen Freikirche wegen ihrer Religion keine Wohnungen und keine Jobs zu geben. Das hat er absichtlich gemacht, nicht aus Versehen.
+
+[P00106]
+Gemäss Anklageschrift hat ein Student im Mai 2022 in Luzern auf seinem Social-Media-Profil einen öffentlich einsehbaren Beitrag veröffentlicht, in dem er nichtbinäre Personen wegen ihrer Geschlechtsidentität verhöhnt und auf menschenverachtende Weise schlechtmacht. Er handelte vorsätzlich.
+
+[P00107]
+Im März 2023 verteilte eine Unternehmerin in einer belebten Fussgängerzone in Zug Flugblätter an Passanten, auf denen Walliserinnen und Walliser wegen ihrer Kantonszugehörigkeit als würdelose Menschen zweiter Klasse verächtlich gemacht wurden. Dass sie das bewusst getan hat, ist unbestritten. Ich halte das für einen Tiefpunkt im Umgang miteinander.
+
+[P00108]
+Thun – Ein Mann hat im Juni 2025 auf einer frei zugänglichen Videoplattform ein Video mit dem Titel «Botschaft an meine Familie» veröffentlicht, in dem er Kurden wegen ihrer Ethnie als Menschen von minderem Wert darstellt. Sein Vorsatz ist erstellt.
+
+[P00109]
+Ich sass im Mai 2022 in Zürich in einem vollbesetzten Bus, als eine Rentnerin, die mit ihren Kindern unterwegs war, laut zu allen Fahrgästen zu reden begann. Sie verbreitete eine Ideologie, die darauf gerichtet ist, Angehörige der Roma wegen ihrer Ethnie systematisch herabzusetzen. Sie tat das mit voller Absicht.
+
+[P00110]
+Luzern, Mai 2022 (laut Anklageschrift). Ein Student verunglimpfte in einem öffentlich einsehbaren Beitrag auf seinem Social-Media-Profil homosexuelle Personen wegen ihrer sexuellen Orientierung auf menschenverachtende Weise. Er handelte vorsätzlich.
+
+[P00111]
+Eine Studentin aus Biel/Bienne hat im Juni 2025 in einem frei zugänglichen Online-Forum kommentiert, Schwarze Menschen seien wegen ihrer Rasse Menschen zweiter Klasse. Ich hab's selbst gelesen und war sprachlos. Sie wusste genau, was sie schrieb, und wollte es so.
+
+[P00112]
+Eine Frau aus St. Gallen hat im Mai 2022 an einem öffentlichen Informationsabend der Gemeinde vor rund 120 Personen eine Rede gehalten. Dabei verbreitete sie Schriften einer Lehre, die Angehörige einer christlichen Freikirche wegen ihrer Religion systematisch herabsetzt. Sie handelte wissentlich und willentlich.
+
+[P00113]
+Am 1. Juli 2020 hat ein Mann in Basel an einer Versammlung in einer Waldhütte schwule Männer wegen ihrer sexuellen Orientierung in menschenverachtender Weise schlechtgemacht. Die rund 40 Teilnehmenden waren über einen allgemeinen Aufruf eingeladen worden, und er kannte die meisten nicht persönlich. Sein Vorsatz ist erstellt, und ich finde, das muss öffentlich gesagt werden.
+
+[P00114]
+Ein Unternehmer aus St. Gallen soll im März 2023 in einem vollbesetzten Bus laut und an sämtliche Fahrgäste gewandt Schriften einer Lehre verbreitet haben, die homosexuelle Personen wegen ihrer sexuellen Orientierung systematisch herabsetzt. Er handelte vorsätzlich.
+
+[P00115]
+Ich war im Mai 2022 am öffentlichen Informationsabend der Gemeinde in Aarau, rund 120 Leute im Publikum. Ein Student hielt eine Rede und sagte, Juden seien wegen ihres Glaubens keine gleichwertigen Menschen. So steht es auch in der Anklageschrift, und es war klar, dass er es mit Absicht sagte.
+
+[P00116]
+Winterthur, August 2020. An einer bewilligten Kundgebung auf einem öffentlichen Platz stachelte ein Student die rund 300 Anwesenden zum Hass gegen homosexuelle Personen wegen ihrer sexuellen Orientierung an. Er handelte vorsätzlich.
+
+[P00117]
+Im Januar 2024 hat eine Frau in Basel in einem frei zugänglichen Online-Forum einen Kommentar gepostet, mit dem sie eine Lehre verbreitet, nach der Schwarze Menschen wegen ihrer Rasse grundsätzlich minderwertig seien. Und sie bestreitet nicht einmal, dass sie das absichtlich gemacht hat.
+
+[P00118]
+Vermerk: Im März 2023 hielt ein Mann in St. Gallen an einem öffentlichen Informationsabend der Gemeinde vor rund 120 Personen eine Rede, in der er dazu aufforderte, Menschen afrikanischer Herkunft wegen ihrer Rasse zu hassen. Er handelte vorsätzlich.
+
+[P00119]
+An einer bewilligten Kundgebung im August 2020 in Biel/Bienne hat eine Frau vor rund 300 Personen auf einem öffentlichen Platz eine Lehre verbreitet, die bisexuelle Personen wegen ihrer sexuellen Orientierung systematisch als minderwertig darstellt. Sie tat dies vorsätzlich. Ich hätte nicht gedacht, so etwas in unserer Stadt zu erleben.

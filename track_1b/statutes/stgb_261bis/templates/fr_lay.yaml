@@ -1,0 +1,220 @@
+# French, in the voice of a user asking about their own conduct (A16): the same scenarios and facts as fr.yaml,
+# told in the first person and in everyday words, like de_lay.yaml. No statute formulas; the act is described concretely
+# enough that the dignity threshold is met; the group is named without its characteristic; intent only in F07.
+lang: fr_lay
+frames:
+  F01: '{Date}, à {place}, {setting}, j''ai {act}.'
+  F02: J'habite à {place}. {Date}, {setting}, j'ai {act}.
+  F03: 'Une question sur quelque chose que j''ai fait {date} à {place} : {setting}, j''ai {act}.'
+  F04: '{Date}, j''étais à {place} et, {setting}, j''ai {act}.'
+  F05: J'ai {act} {date} à {place}, {setting}.
+  F06: 'Voici ce qui s''est passé : {date}, à {place}, {setting}, j''ai {act}.'
+  F07: '{Date}, à {place}, {setting}, j''ai {act}. Je l''ai fait délibérément.'
+  F08: 'Pour situer : {date}, à {place}, {setting}, j''ai {act}.'
+actors:
+  m1:
+    surface: un homme
+    gender: m
+  m2:
+    surface: un retraité
+    gender: m
+  m3:
+    surface: un entrepreneur
+    gender: m
+  m4:
+    surface: un étudiant
+    gender: m
+  f1:
+    surface: une femme
+    gender: f
+  f2:
+    surface: une retraitée
+    gender: f
+  f3:
+    surface: une entrepreneuse
+    gender: f
+  f4:
+    surface: une étudiante
+    gender: f
+morphology:
+  m:
+    spouse: ma femme
+  f:
+    spouse: mon mari
+places:
+  zh: Lausanne
+  be: Genève
+  bs: Fribourg
+  lu: Neuchâtel
+  sg: Sion
+  wi: Yverdon-les-Bains
+  bi: Bienne
+  ch: Delémont
+  aa: Vevey
+  th: Montreux
+  sh: La Chaux-de-Fonds
+  zg: Nyon
+dates:
+  d1994_10: en octobre 1994
+  d1993_05: en mai 1993
+  d2018_11: en novembre 2018
+  d2019_03: en mars 2019
+  d2019_09: en septembre 2019
+  d2020_06: en juin 2020
+  d2020_06_30: le 30 juin 2020
+  d2020_07_01: le 1er juillet 2020
+  d2020_08: en août 2020
+  d2021_09: en septembre 2021
+  d2022_05: en mai 2022
+  d2023_03: en mars 2023
+  d2024_01: en janvier 2024
+  d2025_06: en juin 2025
+groups:
+  age_old:
+    def: les personnes âgées
+    a: aux personnes âgées
+  age_young:
+    def: les jeunes adultes
+    a: aux jeunes adultes
+  can_vs:
+    def: les Valaisannes et les Valaisans
+    a: aux Valaisannes et aux Valaisans
+  can_zh:
+    def: les Zurichoises et les Zurichois
+    a: aux Zurichoises et aux Zurichois
+  dis:
+    def: les personnes handicapées
+    a: aux personnes handicapées
+  eth_kosovo:
+    def: les Albanais du Kosovo
+    a: aux Albanais du Kosovo
+  eth_kurd:
+    def: les Kurdes
+    a: aux Kurdes
+  eth_roma:
+    def: les Roms
+    a: aux Roms
+  eth_roma_syn:
+    def: les Roms et les Sinti
+    a: aux Roms et aux Sinti
+  eth_tamil:
+    def: les Tamouls
+    a: aux Tamouls
+  eth_yenish:
+    def: les Yéniches
+    a: aux Yéniches
+  gi_nonbinary:
+    def: les personnes non binaires
+    a: aux personnes non binaires
+  gi_trans:
+    def: les personnes trans
+    a: aux personnes trans
+  occ_build:
+    def: les ouvriers du bâtiment
+    a: aux ouvriers du bâtiment
+  occ_teach:
+    def: les enseignantes et les enseignants
+    a: aux enseignantes et aux enseignants
+  pol:
+    def: les membres d'un certain parti
+    a: aux membres d'un certain parti
+  race_african:
+    def: les personnes d'origine africaine
+    a: aux personnes d'origine africaine
+  race_asian:
+    def: les personnes d'origine asiatique
+    a: aux personnes d'origine asiatique
+  race_black:
+    def: les personnes noires
+    a: aux personnes noires
+  race_black_syn:
+    def: les personnes à la peau foncée
+    a: aux personnes à la peau foncée
+  rel_free:
+    def: les membres d'une Église évangélique libre
+    a: aux membres d'une Église évangélique libre
+  rel_hindu:
+    def: les hindous
+    a: aux hindous
+  rel_jewish:
+    def: les juifs
+    a: aux juifs
+  rel_jewish_syn:
+    def: les personnes de confession juive
+    a: aux personnes de confession juive
+  rel_muslim:
+    def: les musulmans
+    a: aux musulmans
+  rel_muslim_syn:
+    def: les personnes de confession musulmane
+    a: aux personnes de confession musulmane
+  sex_men:
+    def: les hommes
+    a: aux hommes
+  sex_women:
+    def: les femmes
+    a: aux femmes
+  so_bi:
+    def: les personnes bisexuelles
+    a: aux personnes bisexuelles
+  so_gay:
+    def: les gays
+    a: aux gays
+  so_homo:
+    def: les homosexuels
+    a: aux homosexuels
+  so_homo_syn:
+    def: les personnes qui aiment des personnes du même sexe
+    a: aux personnes qui aiment des personnes du même sexe
+  so_lesbian:
+    def: les lesbiennes
+    a: aux lesbiennes
+acts:
+  a1A1: appelé à haïr {g.def}
+  a1A2: appelé à discriminer {g.def}
+  a1B1: demandé aux gens de haïr {g.def}
+  a1B2: attisé la haine contre {g.def}
+  a1C1: appelé à défavoriser et à exclure {g.def}
+  a1C2: appelé à ne plus donner ni logement ni travail {g.a}
+  a2A1: diffusé une idéologie qui veut rabaisser systématiquement {g.def}
+  a2A2: distribué les écrits d'une doctrine qui rabaisse systématiquement {g.def}
+  a2B1: fait la promotion d'une vision du monde selon laquelle {g.def} valent moins que les autres
+  a2B2: fait de la propagande pour une idéologie qui dénigre systématiquement {g.def}
+  a2C1: diffusé une doctrine qui présente {g.def} comme des êtres inférieurs
+  a2C2: répandu encore et encore des thèses selon lesquelles {g.def} vaudraient moins que les autres êtres humains
+  a4A1: rabaissé {g.def} au point de leur dénier toute dignité humaine
+  a4A2: dénigré {g.def} en leur refusant toute dignité humaine
+  a4B1: dit que {g.def} étaient des êtres humains de moindre valeur
+  a4B2: tourné en dérision {g.def} comme des gens qui ne méritent aucune dignité
+  a4C1: dit que {g.def} n'étaient pas des êtres humains de même valeur que les autres
+  a4C2: traité {g.def} d'êtres humains de seconde zone
+settings:
+  pub_rally: lors d'une manifestation autorisée sur une place publique, devant environ 300 personnes
+  pub_rally_fam: lors d'une manifestation autorisée devant environ 300 personnes, à laquelle j'assistais avec ma famille
+  pub_post: dans une publication publique sur mon profil de réseau social
+  pub_post_fam: dans une publication publique sur mon profil, adressée à ma famille (« Chère famille, … »)
+  pub_letter: dans une lettre de lecteur que le journal régional a publiée
+  pub_letter_fam: dans une lettre de lecteur parue dans le journal régional, que j'avais signée au nom de toute ma famille
+  pub_hut: lors d'une réunion dans un refuge forestier avec une quarantaine de personnes venues à la suite d'un appel général, que pour la plupart je ne connaissais pas
+  pub_hut_fam: lors d'une réunion dans le refuge forestier de ma famille avec une quarantaine de personnes venues à la suite d'un appel général, que pour la plupart je ne connaissais pas
+  pub_flyer: sur des tracts que j'ai distribués aux passants dans la zone piétonne
+  pub_flyer_fam: sur des tracts intitulés « Une famille dit la vérité », que j'ai distribués avec mes enfants dans la zone piétonne
+  pub_speech: dans un discours lors d'une séance publique d'information de la commune, devant environ 120 personnes
+  pub_speech_fam: dans un discours lors d'une séance publique d'information de la commune, devant environ 120 personnes, parmi lesquelles mes parents et mes frères et sœurs
+  pub_video: dans une vidéo que j'ai mise en ligne sur une plateforme librement accessible
+  pub_video_fam: dans une vidéo publique intitulée « Message à ma famille »
+  pub_tram: dans un bus bondé, à voix haute, devant tous les passagers
+  pub_tram_fam: dans un bus bondé, à voix haute, devant tous les passagers, alors que j'étais avec mes enfants
+  pub_market: à un stand du marché hebdomadaire, devant de nombreux clients
+  pub_market_fam: à notre stand familial du marché hebdomadaire, devant de nombreux clients
+  pub_forum: dans un commentaire sur un forum en ligne librement accessible
+  pub_forum_fam: dans un commentaire sur un forum en ligne librement accessible, signé « Salutations à toute la famille »
+  priv_dinner: lors d'un repas chez moi, uniquement en famille proche, avec {spouse} et nos deux enfants adultes
+  priv_friends: lors d'un repas chez moi avec trois amis proches de longue date
+  priv_message: dans un message personnel envoyé uniquement à ma sœur
+  priv_phone: au téléphone avec mon frère
+  priv_famchat: dans notre groupe de discussion familial, dont seuls mes parents et mes frères et sœurs font partie
+  cont_clubchat: dans le groupe de discussion fermé de mon club sportif, une trentaine de membres dont je connais quelques-uns bien et la plupart seulement de loin
+  cont_party: lors de ma fête d'anniversaire dans mon jardin, devant une vingtaine d'invités, parmi lesquels des amis, des voisins et quelques connaissances de connaissances
+  cont_office: dans un courriel envoyé à environ 25 collègues de travail, anciens et actuels
+  cont_assoc: lors d'une séance non publique de notre association de quartier, environ 25 membres, dont certains se connaissent depuis des années et d'autres sont nouveaux

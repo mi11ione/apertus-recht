@@ -8,6 +8,7 @@ verdict. Everything is read from the repository's files; nothing is typed by han
 import argparse
 import collections
 import json
+import re
 import shutil
 import sys
 from pathlib import Path
@@ -20,9 +21,10 @@ from statute_twins.qc.checks import load_items  # noqa: E402
 REV = ROOT / "statutes/stgb_261bis/review"
 REPO = "https://github.com/mi11ione/apertus-recht"
 DATASET = "https://huggingface.co/datasets/mi11ion/apertus-recht"
-LANGS = [("de", "Deutsch"), ("fr", "Français"), ("it", "Italiano"), ("de_lay", "Deutsch · user voice")]
+LANGS = [("de", "Deutsch"), ("fr", "Français"), ("it", "Italiano"), ("de_lay", "Deutsch · first person"),
+         ("fr_lay", "Français · première personne"), ("it_lay", "Italiano · prima persona")]
 RUNS = {"70B": {"de": "publicai-70b-fc-core", "fr": "publicai-70b-fc-core-fr", "it": "publicai-70b-fc-core-it",
-                "de_lay": "publicai-70b-fc-lay"},
+                "de_lay": "publicai-70b-fc-lay", "fr_lay": "publicai-70b-fc-lay-fr", "it_lay": "publicai-70b-fc-lay-it"},
         "8B": {"de": "8b-gguf-q4_k_m-cpu-core"}}
 PREF = {"de": "publicai-70b-pref", "fr": "publicai-70b-pref-fr", "it": "publicai-70b-pref-it"}
 # when each language's wording last changed after the annotation passes (amendments); the gold never changed
@@ -153,7 +155,7 @@ def build_lang(lang, items, ann, lawonly, adj, jd):
         if i["id"] in pref:
             # pref stores candidates by direction; the chosen answer is on the gold side
             rec["pf"] = pref[i["id"]] == (i["gold_verdict"] == "convict")
-        src = i["id"].replace("-de_lay-", "-de-")
+        src = re.sub(r"-(de|fr|it)_lay-", r"-\1-", i["id"])
         if ann.get(src):
             rec["an"] = ann[src]
         if src in lawonly:
@@ -313,8 +315,8 @@ const LANGS = __LANGS__, COURT = __COURT__, REWORDED = __REWORDED__;
 const FAM = {SET:"setting (public / private)", CHAR:"characteristic", CHARX:"characteristic, unlisted", DATE_SO:"date, sexual orientation", DATE_CTRL:"date, other groups", CONTESTED:"contested setting", WORDING:"wording"};
 const RUNG = {R0:"asked normally, no law", R3:"rules spelled out", R4:"+ the 2020 sentence", R5:"law text pasted in", R6:"law text + check instruction"};
 const VAR = {base:"base case", true_flip:"one legal fact changed", placebo:"a detail changed, the law's answer did not", contested:"facts left open (contested)"};
-const YN = {de: "Ja / Nein", de_lay: "Ja / Nein", fr: "Oui / Non", it: "Sì / No"};
-const VW = {de: "schuldig / nicht schuldig", de_lay: "schuldig / nicht schuldig", fr: "condamnation / acquittement", it: "condanna / proscioglimento"};
+const YN = {de: "Ja / Nein", de_lay: "Ja / Nein", fr: "Oui / Non", fr_lay: "Oui / Non", it: "Sì / No", it_lay: "Sì / No"};
+const VW = {de: "schuldig / nicht schuldig", de_lay: "schuldig / nicht schuldig", fr: "condamnation / acquittement", fr_lay: "condamnation / acquittement", it: "condanna / proscioglimento", it_lay: "condanna / proscioglimento"};
 const SAYS = d => d === "convict" ? "punishable" : d === "acquit" ? "not punishable" : d;
 const SYN = [[/whats ?app|telegram|signal|messenger|sms|chat/i, "chat"], [/facebook|instagram|tiktok|twitter|social/i, "social"], [/youtube|video|vid[eé]o/i, "video"], [/e-?mail|courriel/i, "mail"], [/dinner|abendessen|repas|cena/i, "abendessen|repas|cena"]];
 const FINDINGS = [

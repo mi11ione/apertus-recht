@@ -1,0 +1,1085 @@
+{
+"model": "aisingapore/Qwen-SEA-LION-v4-32B-IT",
+"labels": [
+{
+"id": "P00000",
+"setting": "public",
+"characteristic": "religion",
+"act_date": "2022-05",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00001",
+"setting": "public",
+"characteristic": "religion",
+"act_date": "2019-03",
+"act": "incite",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00002",
+"setting": "public",
+"characteristic": "ethnicity",
+"act_date": "2022-05",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00003",
+"setting": "public",
+"characteristic": "race",
+"act_date": "2025-06",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00004",
+"setting": "public",
+"characteristic": "sexual_orientation",
+"act_date": "2021-09",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00005",
+"setting": "public",
+"characteristic": "sexual_orientation",
+"act_date": "2018-11",
+"act": "incite",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00006",
+"setting": "private",
+"characteristic": "ethnicity",
+"act_date": "2025-06",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00007",
+"setting": "private",
+"characteristic": "sexual_orientation",
+"act_date": "2023-03",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00008",
+"setting": "public",
+"characteristic": "occupation",
+"act_date": "2021-09",
+"act": "incite",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00009",
+"setting": "public",
+"characteristic": "sexual_orientation",
+"act_date": "2020-07-01",
+"act": "incite",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00010",
+"setting": "public",
+"characteristic": "sexual_orientation",
+"act_date": "2022-05",
+"act": "incite",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00011",
+"setting": "public",
+"characteristic": "political_opinion",
+"act_date": "2023-03",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00012",
+"setting": "public",
+"characteristic": "sexual_orientation",
+"act_date": "2023-03",
+"act": "incite",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00013",
+"setting": "public",
+"characteristic": "ethnicity",
+"act_date": "2018-11",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00014",
+"setting": "public",
+"characteristic": "ethnicity",
+"act_date": "2022-05",
+"act": "ideology",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00015",
+"setting": "public",
+"characteristic": "sexual_orientation",
+"act_date": "2020-06-30",
+"act": "incite",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00016",
+"setting": "public",
+"characteristic": "religion",
+"act_date": "2022-05",
+"act": "ideology",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00017",
+"setting": "public",
+"characteristic": "ethnicity",
+"act_date": "2025-06",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00018",
+"setting": "public",
+"characteristic": "religion",
+"act_date": "2023-03",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00019",
+"setting": "public",
+"characteristic": "sexual_orientation",
+"act_date": "2025-06",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00020",
+"setting": "public",
+"characteristic": "religion",
+"act_date": "2020-06-30",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00021",
+"setting": "public",
+"characteristic": "sexual_orientation",
+"act_date": "2021-09",
+"act": "incite",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00022",
+"setting": "public",
+"characteristic": "religion",
+"act_date": "2023-03",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00023",
+"setting": "public",
+"characteristic": "ethnicity",
+"act_date": "2025-06",
+"act": "incite",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00024",
+"setting": "public",
+"characteristic": "sexual_orientation",
+"act_date": "2019-03",
+"act": "incite",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00025",
+"setting": "public",
+"characteristic": "canton",
+"act_date": "2025-06",
+"act": "incite",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00026",
+"setting": "public",
+"characteristic": "sexual_orientation",
+"act_date": "2022-05",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00027",
+"setting": "public",
+"characteristic": "sexual_orientation",
+"act_date": "2018-11",
+"act": "incite",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00028",
+"setting": "public",
+"characteristic": "religion",
+"act_date": "2025-06",
+"act": "incite",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00029",
+"setting": "public",
+"characteristic": "age",
+"act_date": "2021-09",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00030",
+"setting": "private",
+"characteristic": "religion",
+"act_date": "2025-06",
+"act": "ideology",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00031",
+"setting": "public",
+"characteristic": "age",
+"act_date": "2025-06",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00032",
+"setting": "public",
+"characteristic": "occupation",
+"act_date": "2023-03",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00033",
+"setting": "public",
+"characteristic": "sexual_orientation",
+"act_date": "2021-09",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00034",
+"setting": "public",
+"characteristic": "sexual_orientation",
+"act_date": "2020-06-30",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00035",
+"setting": "public",
+"characteristic": "sexual_orientation",
+"act_date": "2020-08",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00036",
+"setting": "private",
+"characteristic": "sexual_orientation",
+"act_date": "2025-06",
+"act": "incite",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00037",
+"setting": "public",
+"characteristic": "sexual_orientation",
+"act_date": "2020-08",
+"act": "incite",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00038",
+"setting": "public",
+"characteristic": "religion",
+"act_date": "2025-06",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00039",
+"setting": "public",
+"characteristic": "religion",
+"act_date": "2021-09",
+"act": "ideology",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00040",
+"setting": "public",
+"characteristic": "disability",
+"act_date": "2022-05",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00041",
+"setting": "public",
+"characteristic": "sexual_orientation",
+"act_date": "2024-01",
+"act": "incite",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00042",
+"setting": "public",
+"characteristic": "ethnicity",
+"act_date": "2021-09",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00043",
+"setting": "public",
+"characteristic": "religion",
+"act_date": "2025-06",
+"act": "incite",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00044",
+"setting": "public",
+"characteristic": "ethnicity",
+"act_date": "2023-03",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00045",
+"setting": "public",
+"characteristic": "religion",
+"act_date": "1993-05",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00046",
+"setting": "public",
+"characteristic": "religion",
+"act_date": "2018-11",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00047",
+"setting": "public",
+"characteristic": "sexual_orientation",
+"act_date": "2025-06",
+"act": "incite",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00048",
+"setting": "private",
+"characteristic": "religion",
+"act_date": "2021-09",
+"act": "ideology",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00049",
+"setting": "private",
+"characteristic": "sexual_orientation",
+"act_date": "2019-03",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00050",
+"setting": "public",
+"characteristic": "ethnicity",
+"act_date": "1993-05",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00051",
+"setting": "public",
+"characteristic": "canton",
+"act_date": "2024-01",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00052",
+"setting": "public",
+"characteristic": "age",
+"act_date": "2021-09",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00053",
+"setting": "public",
+"characteristic": "sex",
+"act_date": "2021-09",
+"act": "ideology",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00054",
+"setting": "public",
+"characteristic": "religion",
+"act_date": "2022-05",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00055",
+"setting": "public",
+"characteristic": "sexual_orientation",
+"act_date": "2020-08",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00056",
+"setting": "public",
+"characteristic": "ethnicity",
+"act_date": "1993-05",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00057",
+"setting": "public",
+"characteristic": "religion",
+"act_date": "2021-09",
+"act": "ideology",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00058",
+"setting": "public",
+"characteristic": "ethnicity",
+"act_date": "2019-03",
+"act": "ideology",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00059",
+"setting": "public",
+"characteristic": "religion",
+"act_date": "1994-10",
+"act": "incite",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00060",
+"setting": "public",
+"characteristic": "religion",
+"act_date": "1994-10",
+"act": "incite",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00061",
+"setting": "public",
+"characteristic": "race",
+"act_date": "2019-03",
+"act": "incite",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00062",
+"setting": "public",
+"characteristic": "religion",
+"act_date": "2025-06",
+"act": "incite",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00063",
+"setting": "public",
+"characteristic": "sexual_orientation",
+"act_date": "2025-06",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00064",
+"setting": "public",
+"characteristic": "gender_identity",
+"act_date": "2022-05",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00065",
+"setting": "public",
+"characteristic": "sexual_orientation",
+"act_date": "2023-03",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00066",
+"setting": "public",
+"characteristic": "sexual_orientation",
+"act_date": "2023-03",
+"act": "incite",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00067",
+"setting": "public",
+"characteristic": "sexual_orientation",
+"act_date": "2019-09",
+"act": "ideology",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00068",
+"setting": "private",
+"characteristic": "ethnicity",
+"act_date": "2025-06",
+"act": "incite",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00069",
+"setting": "public",
+"characteristic": "religion",
+"act_date": "2023-03",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00070",
+"setting": "public",
+"characteristic": "race",
+"act_date": "1994-10",
+"act": "incite",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00071",
+"setting": "private",
+"characteristic": "race",
+"act_date": "2022-05",
+"act": "incite",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00072",
+"setting": "public",
+"characteristic": "sexual_orientation",
+"act_date": "2020-06",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00073",
+"setting": "public",
+"characteristic": "religion",
+"act_date": "2025-06",
+"act": "ideology",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00074",
+"setting": "public",
+"characteristic": "ethnicity",
+"act_date": "1994-10",
+"act": "ideology",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00075",
+"setting": "public",
+"characteristic": "sexual_orientation",
+"act_date": "2022-05",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00076",
+"setting": "public",
+"characteristic": "sexual_orientation",
+"act_date": "2020-06-30",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00077",
+"setting": "public",
+"characteristic": "canton",
+"act_date": "2021-09",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00078",
+"setting": "public",
+"characteristic": "religion",
+"act_date": "2025-06",
+"act": "incite",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00079",
+"setting": "public",
+"characteristic": "race",
+"act_date": "2022-05",
+"act": "incite",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00080",
+"setting": "public",
+"characteristic": "sexual_orientation",
+"act_date": "2025-06",
+"act": "incite",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00081",
+"setting": "public",
+"characteristic": "race",
+"act_date": "2022-05",
+"act": "incite",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00082",
+"setting": "public",
+"characteristic": "sexual_orientation",
+"act_date": "2021-09",
+"act": "incite",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00083",
+"setting": "public",
+"characteristic": "ethnicity",
+"act_date": "2023-03",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00084",
+"setting": "public",
+"characteristic": "sexual_orientation",
+"act_date": "2024-01",
+"act": "ideology",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00085",
+"setting": "public",
+"characteristic": "sexual_orientation",
+"act_date": "2020-07-01",
+"act": "incite",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00086",
+"setting": "public",
+"characteristic": "disability",
+"act_date": "2023-03",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00087",
+"setting": "public",
+"characteristic": "ethnicity",
+"act_date": "2025-06",
+"act": "incite",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00088",
+"setting": "public",
+"characteristic": "sexual_orientation",
+"act_date": "2020-07",
+"act": "incite",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00089",
+"setting": "private",
+"characteristic": "religion",
+"act_date": "2022-05",
+"act": "ideology",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00090",
+"setting": "public",
+"characteristic": "religion",
+"act_date": "1994-10",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00091",
+"setting": "public",
+"characteristic": "sexual_orientation",
+"act_date": "2023-03",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00092",
+"setting": "public",
+"characteristic": "ethnicity",
+"act_date": "2025-06",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00093",
+"setting": "public",
+"characteristic": "gender_identity",
+"act_date": "2022-05",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00094",
+"setting": "public",
+"characteristic": "ethnicity",
+"act_date": "2019-09",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00095",
+"setting": "private",
+"characteristic": "sexual_orientation",
+"act_date": "2025-06",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00096",
+"setting": "public",
+"characteristic": "sexual_orientation",
+"act_date": "2025-06",
+"act": "incite",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00097",
+"setting": "public",
+"characteristic": "sexual_orientation",
+"act_date": "2025-06",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00098",
+"setting": "public",
+"characteristic": "race",
+"act_date": "2024-01",
+"act": "ideology",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00099",
+"setting": "public",
+"characteristic": "ethnicity",
+"act_date": "2021-09",
+"act": "ideology",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00100",
+"setting": "public",
+"characteristic": "ethnicity",
+"act_date": "2021-09",
+"act": "ideology",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00101",
+"setting": "private",
+"characteristic": "ethnicity",
+"act_date": "2022-05",
+"act": "ideology",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00102",
+"setting": "public",
+"characteristic": "sexual_orientation",
+"act_date": "2023-03",
+"act": "ideology",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00103",
+"setting": "public",
+"characteristic": "religion",
+"act_date": "2025-06",
+"act": "ideology",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00104",
+"setting": "public",
+"characteristic": "ethnicity",
+"act_date": "2024-01",
+"act": "ideology",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00105",
+"setting": "public",
+"characteristic": "religion",
+"act_date": "2020-06",
+"act": "incite",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00106",
+"setting": "public",
+"characteristic": "gender_identity",
+"act_date": "2022-05",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00107",
+"setting": "public",
+"characteristic": "canton",
+"act_date": "2023-03",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00108",
+"setting": "public",
+"characteristic": "ethnicity",
+"act_date": "2025-06",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00109",
+"setting": "public",
+"characteristic": "ethnicity",
+"act_date": "2022-05",
+"act": "ideology",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00110",
+"setting": "public",
+"characteristic": "sexual_orientation",
+"act_date": "2022-05",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00111",
+"setting": "public",
+"characteristic": "race",
+"act_date": "2025-06",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00112",
+"setting": "public",
+"characteristic": "religion",
+"act_date": "2022-05",
+"act": "ideology",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00113",
+"setting": "public",
+"characteristic": "sexual_orientation",
+"act_date": "2020-07-01",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00114",
+"setting": "public",
+"characteristic": "sexual_orientation",
+"act_date": "2023-03",
+"act": "ideology",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00115",
+"setting": "public",
+"characteristic": "religion",
+"act_date": "2022-05",
+"act": "degrade",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00116",
+"setting": "public",
+"characteristic": "sexual_orientation",
+"act_date": "2020-08",
+"act": "incite",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00117",
+"setting": "public",
+"characteristic": "race",
+"act_date": "2024-01",
+"act": "ideology",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00118",
+"setting": "public",
+"characteristic": "race",
+"act_date": "2023-03",
+"act": "incite",
+"severe": true,
+"deliberate": true
+},
+{
+"id": "P00119",
+"setting": "public",
+"characteristic": "sexual_orientation",
+"act_date": "2020-08",
+"act": "ideology",
+"severe": true,
+"deliberate": true
+}
+]
+}

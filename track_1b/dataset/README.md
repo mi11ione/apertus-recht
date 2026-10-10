@@ -12,7 +12,10 @@ configs:
       - {split: fr, path: eval/core_fr.jsonl}
       - {split: it, path: eval/core_it.jsonl}
   - config_name: user_voice
-    data_files: [{split: de, path: eval/core_de_lay.jsonl}]
+    data_files:
+      - {split: de, path: eval/core_de_lay.jsonl}
+      - {split: fr, path: eval/core_fr_lay.jsonl}
+      - {split: it, path: eval/core_it_lay.jsonl}
   - config_name: battery162
     data_files: [{split: de, path: eval/battery162.jsonl}]
   - config_name: prompts
@@ -21,6 +24,8 @@ configs:
       - {split: fr, path: eval/prompts_core_fr.jsonl}
       - {split: it, path: eval/prompts_core_it.jsonl}
       - {split: de_user_voice, path: eval/prompts_core_de_lay.jsonl}
+      - {split: fr_user_voice, path: eval/prompts_core_fr_lay.jsonl}
+      - {split: it_user_voice, path: eval/prompts_core_it_lay.jsonl}
       - {split: battery162, path: eval/prompts_battery162.jsonl}
   - config_name: prompts_free_text
     data_files:
@@ -28,12 +33,16 @@ configs:
       - {split: fr, path: eval/prompts_open_core_fr.jsonl}
       - {split: it, path: eval/prompts_open_core_it.jsonl}
       - {split: de_user_voice, path: eval/prompts_open_core_de_lay.jsonl}
+      - {split: fr_user_voice, path: eval/prompts_open_core_fr_lay.jsonl}
+      - {split: it_user_voice, path: eval/prompts_open_core_it_lay.jsonl}
   - config_name: prompts_preference
     data_files:
       - {split: de, path: eval/prompts_pref_core_de.jsonl}
       - {split: fr, path: eval/prompts_pref_core_fr.jsonl}
       - {split: it, path: eval/prompts_pref_core_it.jsonl}
       - {split: de_user_voice, path: eval/prompts_pref_core_de_lay.jsonl}
+      - {split: fr_user_voice, path: eval/prompts_pref_core_fr_lay.jsonl}
+      - {split: it_user_voice, path: eval/prompts_pref_core_it_lay.jsonl}
   - config_name: metadata
     data_files: [{split: items, path: metadata/items.jsonl}]
   - config_name: stgb_179ter
@@ -68,6 +77,8 @@ configs:
       - {split: publicai_70b_fc_core_fr, path: responses/publicai-70b-fc-core-fr.jsonl}
       - {split: publicai_70b_fc_core_it, path: responses/publicai-70b-fc-core-it.jsonl}
       - {split: publicai_70b_fc_lay, path: responses/publicai-70b-fc-lay.jsonl}
+      - {split: publicai_70b_fc_lay_fr, path: responses/publicai-70b-fc-lay-fr.jsonl}
+      - {split: publicai_70b_fc_lay_it, path: responses/publicai-70b-fc-lay-it.jsonl}
       - {split: publicai_70b_gen, path: responses/publicai-70b-gen.jsonl}
       - {split: publicai_70b_open, path: responses/publicai-70b-open.jsonl}
       - {split: publicai_70b_open_fr, path: responses/publicai-70b-open-fr.jsonl}
@@ -85,8 +96,10 @@ configs:
 # Apertus-Recht: Art. 261bis StGB minimal-twin scenarios (DE / FR / IT)
 
 1980 scenarios (660 per language in DE, FR and IT) about the Swiss racial-discrimination
-offence, Art. 261bis StGB / CP; the same 660 German scenarios retold as a first-person paraphrase
-by a user asking about their own conduct (`user_voice`, language code `de_lay`; the act keeps the statute's vocabulary); and the 162-item German exploration battery on which
+offence, Art. 261bis StGB / CP; the same scenarios retold as a first-person paraphrase
+by a user asking about their own conduct, in all three languages (`user_voice`, language codes `de_lay`, `fr_lay`,
+`it_lay`; 660 each; the German acts keep the statute's vocabulary, the French and Italian ones (A16) describe the act
+in everyday words); and the 162-item German exploration battery on which
 the stage and build columns were measured. Every scenario belongs to a **twin group**: a base case and variants that each change exactly **one
 legal fact** (public ↔ private setting, protected ↔ unprotected characteristic, before ↔ after the 1 July 2020
 extension, before ↔ after entry into force in 1995) or one irrelevant detail (**placebos**: family wording of a public
@@ -324,11 +337,11 @@ Score with both framings and read the element table, not a single accuracy; repo
 alongside results, since 4-bit conversions changed verdicts in our measurements.
 
 ## Model responses in this release
-33 runs (`responses/<run>.jsonl` with `<run>.meta.json`): 8b-bf16-DPO, 8b-bf16-RLVR, 8b-bf16-blend-RLVR-DPO-a0.25, 8b-bf16-blend-RLVR-DPO-a0.5, 8b-bf16-blend-RLVR-DPO-a0.75, 8b-gguf-q4_k_m, 8b-gguf-q4_k_m-cpu-core, 8b-gguf-q4_k_m-cpu-pref, 8b-gguf-q8_0, 8b-mlx4-DPO, 8b-mlx4-RLVR, 8b-mlx4-SFT, 8b-mlx4-base-completion, 8b-mlx4-final, publicai-70b-ctrl-de, publicai-70b-ctrl-fr, publicai-70b-ctrl-it, publicai-70b-fc, publicai-70b-fc-core, publicai-70b-fc-core-fr, publicai-70b-fc-core-it, publicai-70b-fc-lay, publicai-70b-gen, publicai-70b-open, publicai-70b-open-fr, publicai-70b-open-it, publicai-70b-pref, publicai-70b-pref-fr, publicai-70b-pref-it, publicai-70b-r5x-de, publicai-70b-r6-fr, publicai-70b-r6-it, qwen3-8b-mlx4.
+35 runs (`responses/<run>.jsonl` with `<run>.meta.json`): 8b-bf16-DPO, 8b-bf16-RLVR, 8b-bf16-blend-RLVR-DPO-a0.25, 8b-bf16-blend-RLVR-DPO-a0.5, 8b-bf16-blend-RLVR-DPO-a0.75, 8b-gguf-q4_k_m, 8b-gguf-q4_k_m-cpu-core, 8b-gguf-q4_k_m-cpu-pref, 8b-gguf-q8_0, 8b-mlx4-DPO, 8b-mlx4-RLVR, 8b-mlx4-SFT, 8b-mlx4-base-completion, 8b-mlx4-final, publicai-70b-ctrl-de, publicai-70b-ctrl-fr, publicai-70b-ctrl-it, publicai-70b-fc, publicai-70b-fc-core, publicai-70b-fc-core-fr, publicai-70b-fc-core-it, publicai-70b-fc-lay, publicai-70b-fc-lay-fr, publicai-70b-fc-lay-it, publicai-70b-gen, publicai-70b-open, publicai-70b-open-fr, publicai-70b-open-it, publicai-70b-pref, publicai-70b-pref-fr, publicai-70b-pref-it, publicai-70b-r5x-de, publicai-70b-r6-fr, publicai-70b-r6-it, qwen3-8b-mlx4.
 
 ## Changelog
 - 1.1.0 (2026-10-10): amendments A12–A15 (controls, free text in French and Italian, Art. 179ter, corrections);
-  no item or gold label of 1.0.0 changed. Files and hashes: `MANIFEST.json` (178 files).
+  no item or gold label of 1.0.0 changed. Files and hashes: `MANIFEST.json` (196 files).
 - 1.0.0 (2026-10-10): first release. Generator 1.0.0, seed 261.
   Pre-registration ([`docs/PREREG.md`](docs/PREREG.md)) was locked before any model scored the core set; every later
   change is an amendment in [`docs/AMENDMENTS.md`](docs/AMENDMENTS.md):

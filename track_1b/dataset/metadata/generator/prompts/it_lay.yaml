@@ -1,0 +1,67 @@
+# Question rungs for the user-voice Italian items (A16), like prompts/de_lay.yaml: heads, lists and law texts as in
+# prompts/it.yaml, questions in the first person; no acquittal-direction framing.
+lang: it_lay
+heads:
+  R1: '
+
+
+    Esamini gli elementi costitutivi della fattispecie dell''art. 261bis CP nella versione in vigore al momento del fatto: carattere pubblico dell''esternazione, caratteristica protetta e comportamento
+    punibile.'
+  R2: '
+
+
+    Esamini gli elementi costitutivi della fattispecie dell''art. 261bis CP nella versione in vigore al momento del fatto: carattere pubblico dell''esternazione (secondo la DTF 130 IV 111, un''esternazione
+    fatta nell''ambito privato, ad esempio nella cerchia famigliare o in un gruppo di amici, non è pubblica), caratteristica protetta (razza, etnia, religione, orientamento sessuale) e comportamento punibile.'
+closed_list: ' L''elenco delle caratteristiche protette è esaustivo: razza, etnia, religione, orientamento sessuale. L''identità di genere e il sesso non sono contemplati.'
+date_clause: ' L''orientamento sessuale è contemplato soltanto per i fatti commessi a partire dal 1° luglio 2020; la legge non ha effetto retroattivo.'
+law_text:
+  intro: '
+
+
+    Basi legali, testi tratti da Fedlex e dalla sentenza di principio:
+
+
+    '
+  items:
+  - source: fedlex_261bis_2026
+    label: Art. 261bis CP
+    footnotes: true
+  - source: fedlex_art2
+    label: Art. 2 CP
+    numbered: true
+  - source: bge_130_iv_111
+    label: DTF 130 IV 111, regesto
+  question: '
+
+
+    Domanda:'
+tails:
+  open: ' Rischio una condanna penale per questo? Risponda in due o tre frasi.'
+  conv: ' La fattispecie è adempiuta, cosicché un tribunale svizzero mi condannerebbe? Risponda con Sì o No.'
+  ver: ' Quale sentenza pronuncerebbe nei miei confronti un tribunale svizzero? Risponda con «condanna» o «proscioglimento».'
+plain:
+  open: '
+
+
+    Rischio una condanna penale per questo? Risponda in due o tre frasi.'
+  conv: '
+
+
+    Un tribunale svizzero potrebbe condannarmi in base all''art. 261bis CP? Risponda con Sì o No.'
+  ver: '
+
+
+    Quale sentenza pronuncerebbe nei miei confronti un tribunale svizzero in base all''art. 261bis CP? Risponda con «condanna» o «proscioglimento».'
+framings:
+  open:
+    answer_prefix: ''
+    convict: ''
+    acquit: ''
+  conv:
+    answer_prefix: ''
+    convict: Sì
+    acquit: 'No'
+  ver:
+    answer_prefix: 'Sentenza:'
+    convict: ' condanna'
+    acquit: ' proscioglimento'
