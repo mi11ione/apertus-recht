@@ -413,4 +413,7 @@ Juror agents (told it is a one-week hackathon) reviewed release 1.8.0. Changes, 
   cells (21 of 22), the read-back's accuracy and share of departures explained, and the cells where the bar was out of
   reach; the twin-group bootstrap is no longer cited as a robustness result (in this design no cell has more than one
   pair per twin group); user advice no longer recommends a plain-rule prompt as reliable.
+- **History**: the four names removed from the court notes in A22 were also removed from every earlier commit (git
+  history rewritten; the pre-registration lock commit de35225 is unchanged), and the Hugging Face history was
+  squashed to one commit; earlier dataset versions remain described in the changelog.
 

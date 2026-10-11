@@ -490,7 +490,8 @@ alongside results, since 4-bit conversions changed verdicts in our measurements.
 
 ## Changelog
 - 1.8.1 (2026-10-11): amendment A23: BGE 131 IV 23 considerations pinned; policy-demand answer and note; one scope
-  note per open reason; wording of court baselines and the dignity court check. No prompt or result changed.
+  note per open reason; wording of court baselines and the dignity court check. No prompt or result changed. The names removed
+  from the court notes in 1.8.0 were removed from the whole git history too, and this repository's history was squashed.
 - 1.8.0 (2026-10-11): amendment A22: dignity criticisms with an objective basis (re-scored), the policy demand with
   its own answer; victim routes on punishable items; names removed from court notes and the PII gate extended to all
   review files; repaired controls and statistics (`review/controls_a22.json`, `review/stats_a22.json`). The v1.6.0 git
