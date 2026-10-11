@@ -6,13 +6,14 @@ ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 PIP_NO_CACHE_DIR=1 PIP_DISABLE_
 WORKDIR /app
 COPY pyproject.toml README.md ./
 COPY src ./src
-RUN pip install --no-deps . && pip install "pyyaml==6.0.2"
+RUN pip install --no-deps . && pip install "pyyaml==6.0.2" "numpy==2.1.3"
 COPY statutes ./statutes
 COPY dataset ./dataset
 COPY results ./results
 COPY reports ./reports
 COPY prereg ./prereg
 COPY scripts ./scripts
+COPY runs_a22 ./runs_a22
 COPY claims.tsv README.md technical_report.md ./
 COPY tests ./tests
 ENTRYPOINT ["statute-twins"]
