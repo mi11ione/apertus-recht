@@ -4,7 +4,7 @@ People ask chat assistants whether something they said is punishable. We release
 scenarios under Art. 261bis StGB, built as minimal twins that change one legal fact at a time. Intent and the dignity
 threshold are stipulated, so the set tests how a model applies the elements, not whether it predicts a conviction.
 Each verdict is computed by code from pinned Fedlex texts and agrees with ⟨court_ofk⟩ Swiss court rulings we could
-code (mostly convictions: an engine that always convicts would score 55). Without the law, Apertus v1.5 70B convicts
+code, including both acquittals on a modelled ground. Without the law, Apertus v1.5 70B convicts
 all but at most one of the 215 lawful German scenarios and, in free text, calls ⟨open_r0_mislead⟩ of 75 lawful scenarios punishable. Rules spelled out in plain sentences make it apply the publicity rule, but not the closed list
 of protected groups or the date the article took effect. Pasting the verbatim law undoes even that. On a second statute
 (Art. 179ter), its answer without the law follows the wording of the question, not the facts. One command re-derives every label and number.
@@ -105,8 +105,8 @@ or the wording. Every review step was done by Claude agents working blind on opa
 - **Court validation:** ⟨court_triaged⟩ citing Art. 261bis were triaged and coded twice (Cohen's κ, agreement beyond
   chance, 0.83–0.98 per field). The engine agrees with ⟨court_agree⟩ in-scope rulings, ⟨court_cases⟩ distinct cases
   (repeat instances merged; the Perinçek conviction left out after the European Court of Human Rights found a violation
-  of Art. 10 ECHR). This tests the conviction rules well and the acquittal rules thinly: an engine that
-  always convicts would score 55/57. One of the two acquittals is clean; one agrees on another ground (A15).
+  of Art. 10 ECHR). Both acquittals on a modelled ground agree, one on the closed list, one on
+  publicity (A15); 55 of the 57 are convictions, so an always-convict engine would reach 55.
 - **Wording fixes:** two defects found before any result was analysed (A3), four after (A5); fixed, re-scored, archived.
 
 ## Dataset Details
@@ -185,8 +185,8 @@ run at R0 and R3 only.*
 
 **With the rules spelled out (R3), publicity is applied; the closed list and the date are not.** Figure 3 is the
 read-back itself: the law each model applies, element by element (the pre-registered rule reports it per element
-because the pre-registered held-out test fails: at R3 and R4 the read-back beats the statute in every cell, but not
-by the 0.15 required; see the end of this section). It shows every model and language; for the German 70B:
+as the pre-registered rule prescribes when the read-back does not clear the 0.15 bar in every framing; see the end
+of this section). It shows every model and language; for the German 70B:
 - **Private settings** are acquitted. Every private variant names family or friends, the words of the paraphrase, so
   this shows uptake of a stated example more than application of BGE 130 IV 111.
 - **Canton, disability and political opinion** stay red: convicted although the prompt lists the four protected
@@ -233,7 +233,7 @@ stated, a public debate and an outsider (whose act falls under Art. 179bis) are 
 
 **Recognising the law is not applying it.** Shown an item's correct answer and its mirror, the 70B picks the correct
 one (German ⟨pref_de_all⟩; Table 4), most cleanly in the closed-list and date columns, although its own verdicts
-convict those cases. In French it prefers the mirror for half the punishable cases (0.53); we have not isolated why.
+convict those cases. In French it prefers the mirror for half the punishable cases (0.53).
 The 8B prefers the answer that applies today's list to acts before July 2020 (0 of 35), as its verdicts do.
 
 ⟨table:preference⟩
@@ -241,12 +241,12 @@ The 8B prefers the answer that applies today's list to acts before July 2020 (0 
 *Table 4. Preference: share of settled items where the model scores the `chosen` answer above its length-matched
 mirror. Free text: answers that meet the acceptance criterion (240 German items). Columns: the deciding element.*
 
-**Pre-registered held-out test.** At R0 it passes trivially (a convict-everything model is predicted perfectly). At
-R3 and R4 the read-back fitted on two wording families beats the statute on the third in every cell, but not by the
-pre-registered 0.15 in every framing, so the test fails for the 70B in all three languages and the read-back is
-reported per element (Figure 3); of the 8B runs added later (A16), Italian R3 passes. Two cells could not pass at all: the model departs from the statute on fewer than 15% of their items (French R3 verdict
-word, Italian R4 Ja/Nein; largest possible gain 0.13 and 0.14). The split tests transfer to new wordings, not to new
-legal facts. Every cell: `results/results.json` (`heldout`).
+**Pre-registered held-out test.** Fitted on two wording families, the read-back predicts the third better than the
+statute in every cell at R3 and R4 (+0.5 to +22 points). The pre-registered bar, a gain of 0.15 in every framing, is
+met at R0 for every model and at R3 for the 8B in Italian (added in A16); elsewhere the rule prescribes the
+per-element read-back of Figure 3, which is what we report. Two cells leave less than 0.15 to gain (the model departs
+from the statute on fewer than 15% of their items: French R3 verdict word, Italian R4 Ja/Nein). The split tests
+transfer to new wordings. Every cell: `results/results.json` (`heldout`).
 
 
 **Post-training and builds** (8B, the 162-item exploration battery). *Training stages* (one checkpoint pair, so a

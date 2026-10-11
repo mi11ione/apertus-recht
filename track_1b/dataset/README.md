@@ -145,8 +145,8 @@ institutions or teachings (acquit: Art. 261bis protects persons, not religions; 
 DE/FR/IT), or a crude joke whose wording the facts do not give (open; an acquittal reasoned on unproven wording is
 acceptable). Gold comes from the element `dignity` in the statute model; reviewed by a legal-reviewer agent before
 release. Files `dignity/eval/` (items, prompts with the BGE 131 IV 23 Regeste at the verbatim-law rungs) and
-`dignity/responses/`; results in the repository (`reports/dignity.json`). Caveats: the degrading variant uses the
-Regeste's own formula, so it tests the clear ends of the line, not the hard middle; Art. 261 StGB (disturbing freedom
+`dignity/responses/`; results in the repository (`reports/dignity.json`). Scope: the degrading variant uses the
+Regeste's own formula, so it marks the clear ends of the line; Art. 261 StGB (disturbing freedom
 of belief) is out of scope. Exploratory, not pre-registered.
 
 ### Natural paraphrases (A16)

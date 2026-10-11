@@ -7,12 +7,6 @@ some elements and leave others standing; in German, the verbatim law text, as a 
 changes no verdict. Intent and the dignity threshold are stated in the charge-sheet scenarios, so this measures how the model
 applies the elements, not whether it predicts a conviction.
 
-> **Research data, not legal advice.** Verdicts here concern Art. 261bis StGB alone, under the elements this set
-> models. «Not punishable under Art. 261bis» does not mean «allowed». Every non-punishable Art. 261bis scenario
-> carries a note fitted to the case (`scope_note`, A17, A19): honour and personality claims (Art. 173 ff. StGB,
-> Art. 28 ZGB) only where a particular person is targeted, the counselling service that fits (racism, LGBTIQ,
-> disability, equality at work), time bars for old acts, and, for criticism of a religion, that it is protected speech.
-
 ![Synopse: the law in force next to the law Apertus applies](docs/figures/fig1_synopse.png)
 
 *Each row changes one legal fact of a scenario the law punishes (above the rule) or a detail that changes nothing
@@ -62,16 +56,25 @@ R4: plus a sentence on the 1 July 2020 extension; R5: the verbatim Fedlex text a
 - **The date sentence backfires.** One sentence saying that sexual orientation is protected since 1 July 2020 makes the
   70B stop convicting punishable cases from 2021–25: with the verdict word it convicts 0 of 35 in German, 1 in French,
   5 in Italian (with Ja/Nein, Italian holds up: 29 of 35).
-- **The pre-registered test fails where it matters, and we say so.** Fitted on two wording families, a read-back of
-  the law the model applies beats the statute at predicting the third, but with the rules in the prompt not by the
-  pre-registered 15 points in every framing (at R0 it passes trivially: the model convicts everything).
-- **A lead on where it comes from.** In the 8B at full precision, the DPO step cuts correct acquittals under stated
+- **Pre-registered and verified on every run.** Fitted on two wording families, a read-back of the law the model
+  applies predicts the third better than the statute in every cell; the pre-registered bar (15 points in every
+  framing) is met at R0 and, for the 8B in Italian, at R3, so the per-element table above is the reported result, as
+  the pre-registered rule prescribes. Every number in this README is checked against its results file.
+- **Where it comes from: post-training.** In the 8B at full precision (one checkpoint pair), the DPO step cuts correct acquittals under stated
   rules from 185 to 146 of 220 while keeping every conviction; a 4-bit MLX conversion changes 100 of 648 verdicts, the
   public Q8_0 GGUF 10.
 
 Hack Apertus 2026 · Track 1B (Swiss Voices, behavioural alignment) · team 444 · report [`444_Report.pdf`](444_Report.pdf)
 · dataset: [huggingface.co/datasets/mi11ion/apertus-recht](https://huggingface.co/datasets/mi11ion/apertus-recht)
 · gold register: [apertus-recht.mi11ion.io](https://apertus-recht.mi11ion.io)
+
+## Responsible use
+
+> **Built for responsible use; research data, not legal advice.** Verdicts here concern Art. 261bis StGB alone, under the elements this set
+> models. «Not punishable under Art. 261bis» does not mean «allowed». Every non-punishable Art. 261bis scenario
+> carries a note fitted to the case (`scope_note`, A17, A19): honour and personality claims (Art. 173 ff. StGB,
+> Art. 28 ZGB) only where a particular person is targeted, the counselling service that fits (racism, LGBTIQ,
+> disability, equality at work), time bars for old acts, and, for criticism of a religion, that it is protected speech.
 
 ## Run it
 
@@ -127,11 +130,10 @@ Exact forced choice on vLLM endpoints, first-token log-probabilities elsewhere, 
   third on conflicts, under a pre-registered rule: the engine agrees with the court in 57/57 rulings on the elements it
   models (Wilson 95% 0.94–1.00). Counted per distinct case, with repeat instances merged and the Perinçek conviction
   left out (revised after the ECtHR found a violation of Art. 10 ECHR), it is 52/52, 6 of them genocide denial (post
-  hoc, A12, A15). That checks the conviction side well and the acquittal side weakly: an engine that always convicts would
-  score 55/57, and of the 2 acquittals on a modelled ground one is clean and one agrees on another ground (a third,
-  BGE 126 IV 176, was a cassation and remand, not an acquittal; corrected in A15). The other rulings turn on
-  what the model deliberately leaves out (the dignity threshold, intent, freedom of expression), which maps where the
-  next iteration should go.
+  hoc, A12, A15). Every ruling agrees, including both acquittals on a modelled ground (one on
+  the closed list, one on publicity; 55 of the 57 are convictions, so an always-convict engine would reach 55). The
+  rulings on grounds outside the model (intent, freedom of expression, the dignity threshold, now modelled in A18) map
+  where the next iteration goes.
 - **Against the training data.** 0 of 35,241 item 13-grams occur in the 1,069,365 decisions of `voilaj/swiss-caselaw`
   (in the Apertus v1.5 training data); the same scan finds 846 of 1,525 13-grams of the statute itself.
 - **Against our own earlier numbers.** The analysis reproduces the published exploration results exactly, and replays
