@@ -140,7 +140,7 @@ URG); consent form with an AI-use clause; a content warning; a canary string in 
 - *Free text* (240 items per language, R0, R3, R5, greedy), judged against each acceptance criterion by two Claude
   judges (⟨open_judges_agree⟩ German decisions agree, κ ⟨open_kappa⟩), Qwen-SEA-LION-v4-32B (⟨judgec_agree⟩ with their
   consensus; κ ⟨judgec_kappa_all⟩, ⟨judgec_kappa_acquit⟩ on acquittals, ⟨judgec_kappa_open⟩ on 20 contested answers) and a
-  verdict parser (⟨parser_agree⟩ settled answers); a seeded 20% sample is released for audit.
+  verdict parser (⟨parser_agree⟩ answers with a clear verdict); a seeded 20% sample is released for audit.
 
 **The read-back.** Each true flip is paired with its base, which the statute convicts. With 95% bootstrap intervals of
 the mean log-odds of conviction, an element is *misapplied* when both lie above zero; a framing in which the base itself
