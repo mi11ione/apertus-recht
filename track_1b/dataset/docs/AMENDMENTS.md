@@ -447,3 +447,17 @@ Juror agents (told it is a one-week hackathon) reviewed release 1.8.0. Changes, 
   pseudonymised; the content warning extended to quoted court records; the contamination scan dated; the docket of
   the removed non-final ruling dropped from these amendments.
 
+## A26 (2026-10-11, after judge round 16): report structure and labels; court summaries withheld; dataset 1.8.4
+- **Report**: the pre-registered paragraph states the trivial R0 pass and marks the cell counts as post hoc; the
+  synopsis becomes Figure 1 and follows it; the reversed-question result is explained correctly (under the rules the
+  model answers whether the elements are met and ignores the reversal; the verdict-word framing, with no Ja/Nein,
+  confirms the gain: 47 of 55 private settings, all gender-identity and sex cases; `reports/stats_a22.json`); Table 3
+  keeps the controls, the robustness checks become one paragraph; Table 4 shows the verdict-only mirror; the
+  independent judge's overall κ (0.92) is given; adjudicators named as agents; a lesson for retrieval builders.
+- **Court summaries withheld**: the dignity-check fact summaries (pseudonymised data on criminal proceedings) leave the
+  release; `packet.sha256` and per-case `facts_sha256` pin them; the codings, dockets and outcomes stay. Earlier
+  versions of these files are removed from the git history.
+- **Precision**: the dignity threshold decides 4 of the 23 coded court acquittals (one not final); the court headline
+  is instance-level and includes the later-revised Perinçek conviction; first-person answer headers say their scope
+  notes address the speaker; Art. 261 StGB limited to statements in German too; references completed.
+

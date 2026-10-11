@@ -1390,5 +1390,17 @@
    "only_R0": 0,
    "p_exact": 0.25
   }
+ },
+ "verdict_word_R3_by_element": {
+  "act_date:not_in_force": "0/25",
+  "characteristic:not_listed|age": "1/17",
+  "characteristic:not_listed|canton": "0/16",
+  "characteristic:not_listed|disability": "0/9",
+  "characteristic:not_listed|gender_identity": "16/16",
+  "characteristic:not_listed|occupation": "3/16",
+  "characteristic:not_listed|political_opinion": "0/8",
+  "characteristic:not_listed|sex": "18/18",
+  "characteristic:not_yet_covered": "0/35",
+  "setting:failed": "47/55"
  }
 }

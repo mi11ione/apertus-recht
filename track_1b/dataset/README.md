@@ -129,7 +129,7 @@ the pinned statute text and BGE 130 IV 111 E. 5.2, never written by hand.
 - **License:** CDLA-Permissive-2.0 (all items; per-item licence components and provenance in `metadata/items.jsonl`
   for the core and first-person sets, and in `metadata/items.jsonl` inside `dignity/`, `paraphrase/` and `stgb_179ter/`).
 - **Git repository:** https://github.com/mi11ione/apertus-recht (generator, gold engine, harness, tests; Apache-2.0).
-- **Version:** 1.8.3 (generator 1.0.0, seed 261). Changelog at the end.
+- **Version:** 1.8.4 (generator 1.0.0, seed 261). Changelog at the end.
 
 ## Uses
 ### Direct Use
@@ -145,7 +145,8 @@ answer) and **free generation** judged against the item's acceptance criterion (
 repository: two blind Claude judges, a judge of another model family (Qwen), a deterministic parser, every judgement
 hash-bound to the answer it judged, and a seeded 20% sample laid out so that anyone can audit the judges).
 ### The dignity threshold (A18)
-The most frequent single ground among the coded court acquittals (6 of 23): 20 twin groups per language in which a public statement about a religious group is
+The Abs. 4 degradation threshold decides 4 of the 23 coded court acquittals (one of them not final), the most frequent
+single ground: 20 twin groups per language in which a public statement about a religious group is
 either degrading (denying, or at least calling into question, the believers' equal worth as human beings: convict),
 a criticism of the religion's institutions or teachings that stays objective and cites an objective basis (a published
 report, the institutions' own statements or texts; acquit: BGE 131 IV 23 E. 3, Regeste pinned
@@ -184,8 +185,8 @@ Not legal advice and not a model of every element of the offence: intent is fixe
 written to be met outside the dignity family (A18), Abs. 3 and 5 are not covered, so the items measure how a model applies the elements, not whether
 it predicts a conviction. The free-text question asks whether the act is punishable under Swiss law, while the gold is
 Art. 261bis; every answer judged misleading names Art. 261bis as its basis. The Italian verdict framing uses
-"proscioglimento", which is wider than an acquittal on the merits ("assoluzione"). Not a training set: the canary string in every item record (the `eval/` item files; prompt and response files refer to
-items by id) marks it as evaluation data, to be kept out of training corpora.
+"proscioglimento", which is wider than an acquittal on the merits ("assoluzione"). Not a training set: the canary string in every item record (the `eval/` item files; the prompt files carry the scenario
+text without it, so filter them by item id) marks it as evaluation data, to be kept out of training corpora.
 Do not train on generator output either: the reference answers are written per legal reason, so most of them recur
 verbatim for any seed. `chosen_with_scope` documents the answer an assistant should give; use it as a specification
 for training data written independently. Content warning: see the top of this card.
@@ -405,9 +406,9 @@ law; the statute tests against the official text and the court validation check 
   (evidence in the repository's `docs/builds.md`); its rows are labelled 70B.
 ### Personally Identifiable Information
 Items: none (no names, no identifiers; PII gate result above). Validation records cite public court decisions by
-docket and URL; their notes name no private person (only case names such as Perinçek v. Switzerland), and the dignity-check summaries replace names, offices, party names, exact dates and
-small places with general descriptions (such as "a politician"); the docket and URL of each ruling are released for
-verification, so the summaries are pseudonymised, not anonymous.
+docket and URL; their notes name no private person (only case names such as Perinçek v. Switzerland), and the fact summaries written for the dignity
+check are withheld (pseudonymised data on criminal proceedings): only their sha256, the docket, the court outcome and
+the coders' values are released.
 ### Sensitive Information
 The scenarios mention protected characteristics (race, ethnicity, religion, sexual orientation, gender identity, etc.)
 of **groups**, as the statute requires; no individual's characteristic is described. Some items state degrading
@@ -420,13 +421,15 @@ alongside results, since 4-bit conversions changed verdicts in our measurements.
 37 runs (`responses/<run>.jsonl` with `<run>.meta.json`): 8b-bf16-DPO, 8b-bf16-RLVR, 8b-bf16-blend-RLVR-DPO-a0.25, 8b-bf16-blend-RLVR-DPO-a0.5, 8b-bf16-blend-RLVR-DPO-a0.75, 8b-gguf-q4_k_m, 8b-gguf-q4_k_m-cpu-core, 8b-gguf-q4_k_m-cpu-core-fr, 8b-gguf-q4_k_m-cpu-core-it, 8b-gguf-q4_k_m-cpu-pref, 8b-gguf-q8_0, 8b-mlx4-DPO, 8b-mlx4-RLVR, 8b-mlx4-SFT, 8b-mlx4-base-completion, 8b-mlx4-final, publicai-70b-ctrl-de, publicai-70b-ctrl-fr, publicai-70b-ctrl-it, publicai-70b-fc, publicai-70b-fc-core, publicai-70b-fc-core-fr, publicai-70b-fc-core-it, publicai-70b-fc-lay, publicai-70b-fc-lay-fr, publicai-70b-fc-lay-it, publicai-70b-gen, publicai-70b-open, publicai-70b-open-fr, publicai-70b-open-it, publicai-70b-pref, publicai-70b-pref-fr, publicai-70b-pref-it, publicai-70b-r5x-de, publicai-70b-r6-fr, publicai-70b-r6-it, qwen3-8b-mlx4.
 
 ## Changelog
+- 1.8.4 (2026-10-11): amendment A26: report restructured; court-check summaries withheld (hashes and codings stay);
+  precision in the card and answers. No prompt or result changed.
 - 1.8.3 (2026-10-11): amendment A25: figure encoding (undetermined cells), legal precision in answers and notes,
   card wording. No prompt or result changed.
 - 1.8.2 (2026-10-11): amendment A24: the dignity court check reads seven final rulings (a ruling under appeal removed);
   R4 and dignity paired statistics; wording of coverage and claims. No prompt or result changed.
 - 1.8.1 (2026-10-11): amendment A23: BGE 131 IV 23 considerations pinned; policy-demand answer and note; one scope
   note per open reason; wording of court baselines and the dignity court check. No prompt or result changed. The names removed
-  from the court notes in 1.8.0 were removed from the whole git history too, and this repository's history was squashed.
+  from the court notes in 1.8.0 were removed from the whole git history too, and the Hugging Face history was squashed.
 - 1.8.0 (2026-10-11): amendment A22: dignity criticisms with an objective basis (re-scored), the policy demand with
   its own answer; victim routes on punishable items; five names removed from court notes and the PII gate extended to all
   review files; repaired controls and statistics (`review/controls_a22.json`, `review/stats_a22.json`). The v1.6.0 git
@@ -472,7 +475,7 @@ alongside results, since 4-bit conversions changed verdicts in our measurements.
   title  = {Apertus-Recht: Art. 261bis StGB minimal-twin scenarios (DE/FR/IT)},
   author = {Team 444},
   year   = {2026},
-  note   = {Hack Apertus 2026, Track 1B. Dataset version 1.8.3},
+  note   = {Hack Apertus 2026, Track 1B. Dataset version 1.8.4},
   url    = {https://github.com/mi11ione/apertus-recht}
 }
 ```

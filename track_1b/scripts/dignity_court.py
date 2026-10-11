@@ -1,7 +1,8 @@
 """The dignity element against real rulings (A20): statements Swiss courts acquitted on the Abs. 4 dignity threshold,
 mixed with Abs. 4 convictions, coded blind under BGE 131 IV 23 and run through the statute model's `dignity` element.
 
-Each case is summarised as facts only (`review/court/dignity_check/packet.txt`: no court, outcome, docket or legal
+Each case is summarised as facts only (`packet.txt`, withheld from the release since A26 as pseudonymised data on
+criminal proceedings; `packet.sha256` and per-case `facts_sha256` pin it): no court, outcome, docket or legal
 test). Two Claude coders (A, B) and a model of another family (C, Qwen-SEA-LION via the gateway) assign the element
 value (degrading / not_degrading / borderline) from the Regeste alone; the engine maps the value to its verdict
 (degrading -> convict, not_degrading -> acquit, borderline -> open) with every other element taken as the court found

@@ -495,6 +495,7 @@ def cmd_stats(_a):
     out["colour_cluster_bootstrap"] = colour_check(items, np)
     out["r4_sexual_orientation"] = r4_so_effect(items)
     out["dignity_r0_vs_r3_mcnemar"] = dignity_mcnemar()
+    out["verdict_word_R3_by_element"] = verdict_word_r3(items)
     _out("reports/stats_a22.json", json.dumps(out, ensure_ascii=False, indent=1) + "\n")
     print("wrote reports/stats_a22.json")
 
@@ -512,6 +513,23 @@ def r4_so_effect(items):
             conv = {r: sum((lo.get((i, r, fr)) or -1) > 0 for i in ids) for r in ("R3", "R4")}
             out[f"{grp}|{fr}"] = dict(n=len(ids), convicted_R3=conv["R3"], convicted_R4=conv["R4"])
     return out
+
+
+def verdict_word_r3(items):
+    """A26: German 70B, rules spelled out (R3), verdict-word framing: settled acquittals recognised per deciding element."""
+    lo = {(r["item_id"], r["rung"], r["framing"]): r.get("lo_conv")
+          for r in jl(ROOT / "dataset/responses/publicai-70b-fc-core.jsonl") if "error" not in r}
+    c = defaultdict(lambda: [0, 0])
+    for i, d in items.items():
+        if d["lang"] != "de" or d["subset"] != "core" or d["gold_verdict"] != "acquit" or d["label"] != "settled":
+            continue
+        v = lo.get((i, "R3", "ver"))
+        if v is None:
+            continue
+        k = d["gold_reason"] + (f"|{d['characteristic']}" if d["gold_reason"] == "characteristic:not_listed" else "")
+        c[k][1] += 1
+        c[k][0] += v <= 0
+    return {k: f"{a}/{b}" for k, (a, b) in sorted(c.items())}
 
 
 def dignity_mcnemar():

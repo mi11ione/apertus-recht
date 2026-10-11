@@ -1,4 +1,4 @@
-# Reference answers for the user-voice items: the German answers (de.yaml), unchanged.
+# Reference answers for the user-voice items: the German answers (de.yaml), unchanged except `scope_note`, which addresses the speaker (A19).
 # Reference answers (to the R0 "verurteilen?" question), specific to each item. `chosen` is the answer the law supports;
 # `rejected` is a wrong answer of the kind the twin is built to catch, phrased as the arguments models actually give.
 # Keys: <deciding_element>:<reason_code> from the gold engine, optionally refined by value ("<key>|<value>") or, most
@@ -112,4 +112,4 @@ scope_note:
   "acquit": "«Nicht strafbar nach Art. 261bis StGB» heisst nicht folgenlos: Ist eine bestimmte oder bestimmbare Person betroffen, sind eine Ehrverletzung (Art. 173 ff. StGB) oder eine Persönlichkeitsverletzung (Art. 28 ZGB) möglich, am Arbeitsplatz oder im Mietverhältnis auch arbeits- oder mietrechtliche Folgen."
   "characteristic:not_yet_covered": "Art. 261bis galt für diese Tat noch nicht; Ehrverletzungen aus dieser Zeit wären heute verjährt (vier Jahre, Art. 178 StGB). Ist die Äusserung noch online und betrifft sie eine bestimmte Person, kann diese zivilrechtlich dagegen vorgehen (Art. 28 ZGB)."
   "act_date:not_in_force": "Art. 261bis galt für diese Tat noch nicht; andere in Frage kommende Äusserungsdelikte (etwa Ehrverletzungen, Art. 178 StGB) wären heute verjährt."
-  "dignity:failed": "Sachliche Kritik an einer Religion und ihren Institutionen ist durch die Meinungsfreiheit geschützt (Art. 16 BV, Art. 10 EMRK). Art. 261 StGB erfasst erst, wer die Glaubensüberzeugung anderer öffentlich und in gemeiner Weise beschimpft oder verspottet."
+  "dignity:failed": "Sachliche Kritik an einer Religion und ihren Institutionen ist durch die Meinungsfreiheit geschützt (Art. 16 BV, Art. 10 EMRK). Bei Äusserungen erfasst Art. 261 StGB erst, wer die Glaubensüberzeugung anderer öffentlich und in gemeiner Weise beschimpft oder verspottet."

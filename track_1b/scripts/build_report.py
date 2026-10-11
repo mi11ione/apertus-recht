@@ -119,6 +119,17 @@ def tables(R: dict) -> dict:
             continue
         L.append(f"| preference | {name} | {lang.upper()} | " +
                  " | ".join(f"{pr[(lang, k)]['accuracy']:.2f}" if (lang, k) in pr else "–" for k, _ in cols) + " |")
+    # A26: the verdict-only mirror (the chosen answer with only its opening verdict word flipped)
+    cv = ROOT / "reports" / "controls_a22.json"
+    if cv.exists():
+        pv = json.loads(cv.read_text())["preference_verdict_only"]
+        labels = {"all": "all", "convict": "convict", "setting:failed": "private setting",
+                  "characteristic:not_listed": "not listed", "characteristic:not_yet_covered": "SO before 1 Jul 2020",
+                  "act_date:not_in_force": "act before 1995"}
+        for lang in ("de", "fr", "it"):
+            br = pv[lang]["by_reason"]
+            L.append(f"| verdict only | 70B | {lang.upper()} | " + " | ".join(
+                f"{br[labels[k]]['verdict_only']['accuracy']:.2f}" if labels[k] in br else "–" for k, _ in cols) + " |")
     for run, name in OPEN:
         p = ROOT / "reports" / f"open_judged_{run}.json"
         if not p.exists():

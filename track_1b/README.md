@@ -25,11 +25,12 @@ R4: plus a sentence on the 1 July 2020 extension; R5: the verbatim Fedlex text a
   German answer names Art. 261bis); a judge of another model family, on its own, counts 72 of 75. Asked the other way round ("Würde ein
   Gericht freisprechen?"), it still recognises 0 of 215 acquittals: not a yes-bias. Its scores do rank punishable above
   lawful cases; the threshold is what fails.
-- **Rules spelled out (R3): publicity and the named exclusions are applied, the rest of the closed list and the dates
-  are not.** Asked whether a statement is
+- **Rules spelled out (R3): publicity and the named exclusions are applied; in German, canton, disability, political
+  opinion and the dates are not.** Asked whether a statement is
   punishable, it acquits private settings, while public statements worded with "family" or "friends" are still convicted, so the model reads the
-  setting, not the words. Gender identity and sex, which the prompt names as excluded, are acquitted; a canton, a
-  disability or a political opinion is still convicted although the prompt lists the four protected characteristics; acts from 1993/94, before the article entered into force, are convicted at
+  setting, not the words. Gender identity and sex, which the prompt names as excluded, are acquitted; in German, a
+  canton, a disability or a political opinion is still convicted although the prompt lists the four protected
+  characteristics; acts from 1993/94, before the article entered into force, are convicted at
   every rung.
 - **The verbatim law takes the gain back.** Given the Fedlex text of Art. 261bis and Art. 2 StGB and the Regeste of
   BGE 130 IV 111, the German 70B recognises 0 of 215 acquittals with Ja/Nein, as with no law at all; French 12,
@@ -42,7 +43,7 @@ R4: plus a sentence on the 1 July 2020 extension; R5: the verbatim Fedlex text a
   settings and 64 of 100 unlisted characteristics: with the correct legal reasoning following, it still favours
   "punishable" for about a third of them.
 - **The date sentence backfires.** One sentence saying that sexual orientation is protected since 1 July 2020 makes the
-  70B stop convicting punishable cases from 2021–25: with the verdict word it convicts 0 of 35 in German, 1 in French,
+  70B stop convicting most punishable cases from 2021–25: with the verdict word it convicts 0 of 35 in German, 1 in French,
   5 in Italian (Ja/Nein: 3, 11, 29). Across all punishable German scenarios it convicts 22 of 125 about sexual
   orientation, against 296 of 305 about race, ethnicity and religion: it takes the characteristic off the list.
 - **Spelled-out rules make it convict lawful criticism.** Objective criticism of a religion's institutions or
@@ -73,14 +74,17 @@ Hack Apertus 2026 · Track 1B (Swiss Voices, behavioural alignment) · team 444 
 ## Responsible use
 
 > **Built for responsible use; research data, not legal advice.** Verdicts concern Art. 261bis StGB alone, under the
-> elements this set models. Every Art. 261bis scenario carries a note fitted to the case (`scope_note`). On a lawful one: «not
+> elements this set models. Every Art. 261bis scenario outside the 162-item exploration battery carries a note fitted
+> to the case (`scope_note`). On a lawful one: «not
 > punishable under Art. 261bis» does not mean «allowed»; honour and personality claims (Art. 173 ff. StGB, Art. 28 ZGB)
 > where a particular person is targeted; the counselling service that fits (racism, LGBTIQ, disability, equality at
 > work); time bars for old acts; for objective criticism of a religion, that it is protected speech. On a punishable one: an
 > assessment of the stated facts, not legal advice; the offence is prosecuted by the state, and those affected can
 > report it and find counselling. The items are evaluation data (a canary string in every item record), not training data.
 > **Content warning:** many items describe discriminatory or degrading statements about groups in substance; no slur
-> is spelled out in the items (the court-validation records quote public decisions, slurs included). Every reviewer, juror or counsellor named in this repository is a Claude agent given that role.
+> is spelled out in the items (the court-validation records quote public decisions, slurs included). Every reviewer, juror or counsellor named in the card and the amendments is a Claude agent given that role (the
+> original pre-registration planned a human reviewer; A4 replaced that with agents). First-person items carry notes
+> addressed to the speaker.
 
 ## Run it
 

@@ -1,4 +1,4 @@
-# Reference answers for the user-voice items: the French answers (fr.yaml), unchanged (A16).
+# Reference answers for the user-voice items: the French answers (fr.yaml), unchanged except `scope_note`, which addresses the speaker (A16, A19).
 # Reference answers in French (same keys and structure as answers/de.yaml; see its header). `{date}` is the date surface
 # from templates/fr.yaml (e.g. "en mars 2019", "le 30 juin 2020").
 lang: fr_lay

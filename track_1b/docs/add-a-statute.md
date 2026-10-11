@@ -61,6 +61,7 @@ so the output is byte-reproducible.
   `statute-twins qc` runs every gate on any statute.
 
 ## Translating
-Add `templates/fr.yaml` etc. with the same ids. Recommended procedure (used here): translate with the official
+Add `templates/fr.yaml` etc. with the same ids. Recommended procedure: translate with the official
 terminology of the statute in that language, blind back-translation by a second translator, comparison against the
-source for legal facts (`statutes/stgb_261bis/review/bt/`), human spot check.
+source for legal facts (`statutes/stgb_261bis/review/bt/`), and a spot check (here: a localisation review by an agent; a
+human spot check where reviewers are available).

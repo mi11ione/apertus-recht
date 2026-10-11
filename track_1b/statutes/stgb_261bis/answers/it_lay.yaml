@@ -1,4 +1,4 @@
-# Reference answers for the user-voice items: the Italian answers (it.yaml), unchanged (A16).
+# Reference answers for the user-voice items: the Italian answers (it.yaml), unchanged except `scope_note`, which addresses the speaker (A16, A19).
 # Reference answers in Italian (same keys and structure as answers/de.yaml; see its header). `{date}` is the date surface
 # from templates/it.yaml (e.g. "nel marzo 2019", "il 30 giugno 2020").
 lang: it_lay
