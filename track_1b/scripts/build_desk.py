@@ -211,6 +211,7 @@ PAGE = r"""<!doctype html>
 *{box-sizing:border-box}
 html,body{margin:0;height:100%;background:var(--paper);color:var(--ink);font:15px/1.45 Sans,Arial,sans-serif}
 body{display:flex;flex-direction:column;overflow-x:hidden}
+body>*{min-width:0;max-width:100vw}
 a{color:var(--ink)}
 button{font:inherit;color:inherit}
 .mono{font-family:Mono,monospace}
@@ -284,6 +285,31 @@ details[open] summary::before{content:"− "}
 .finding a{font:13px Mono,monospace}
 .finding b{color:var(--red);font-weight:500}
 .key{font:12px Mono,monospace;color:var(--ink3)}
+.notice{font:12px/1.5 Mono,monospace;color:var(--ink2);border-left:2px solid var(--red);padding:2px 0 2px 10px;margin:0 0 18px;max-width:880px}
+.hero{max-width:880px;margin:6px 0 10px}
+.hero .lead{font-size:25px;line-height:1.3;margin:0 0 6px;font-weight:600}
+.hero .loc{color:var(--ink2);margin:0 0 18px;font-size:15px}
+.trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:2px solid var(--ink);border-bottom:1px solid var(--rule);max-width:880px}
+.trio>div{padding:12px 16px 14px 0}
+.trio>div+div{border-left:1px solid var(--hair);padding-left:16px}
+.trio .k{font:12px Mono,monospace;color:var(--ink2)}
+.trio .v{font-size:44px;font-weight:600;line-height:1.05;margin:8px 0 2px;font-variant-numeric:tabular-nums}
+.trio .v small{font-size:16px;font-weight:400;color:var(--ink2)}
+.trio .low .v{color:var(--red)}
+.trio .u{font:12px Mono,monospace;color:var(--ink2)}
+.meter{height:4px;background:var(--hair);margin-top:10px}.meter i{display:block;height:100%;background:var(--ink)}
+.trio .low .meter i{background:var(--red)}
+.cap{font:12px Mono,monospace;color:var(--ink3);margin:8px 0 26px;max-width:880px}
+.frow{display:grid;grid-template-columns:minmax(0,1fr) 270px;gap:4px 28px;border-top:1px solid var(--hair);padding:12px 0;max-width:880px;align-items:start}
+.frow .fe{font-size:17px;line-height:1.35;margin:0}
+.frow .fl{color:var(--ink2);font-size:14px;margin:3px 0 6px}
+.frow a{font:12px Mono,monospace}
+.wbar{display:grid;grid-template-columns:30px minmax(0,1fr) 96px;white-space:nowrap;gap:8px;align-items:center;margin:2px 0;font:12px Mono,monospace;color:var(--ink2)}
+.wbar .t{height:6px;background:var(--hair)}.wbar .t i{display:block;height:100%;background:var(--red)}
+.wbar .c{text-align:right}
+.more{max-width:880px;margin-top:22px}
+.more p{font-size:14px;color:var(--ink2);margin:6px 0 10px;max-width:820px}
+@media (max-width:820px){.trio{grid-template-columns:minmax(0,1fr)}.trio>div+div{border-left:0;border-top:1px solid var(--hair);padding-left:0}.frow{grid-template-columns:minmax(0,1fr)}.hero .lead{font-size:21px}}
 @media (max-width:820px){body{height:auto}main{grid-template-columns:minmax(0,1fr);flex:none}.verdict{grid-template-columns:1fr}.bar{padding:10px 16px}header{padding:10px 16px}#count,#list button{padding-left:16px;padding-right:16px}.bar input{width:100%}#side{border-right:0;border-bottom:1px solid var(--rule)}#list{max-height:42vh}#case{padding:16px}.text{font-size:18px}.twins a{grid-template-columns:1fr auto}.twins a .i{display:none}header nav{margin-left:0}}
 </style>
 </head>
@@ -418,17 +444,37 @@ function show(it, scroll = true) {
 function home() {
   cur = null; mark(false); history.replaceState(null, "", location.pathname);
   const items = data[lang], L = lang.split("_")[0];
-  const NOTICE = {de: "Inhaltswarnung: Einige Fälle geben herabsetzende Äusserungen über Gruppen inhaltlich wieder (in den Fällen ohne ausgeschriebene Beschimpfungen; die Gerichtsentscheide zitieren Urteile, auch Beschimpfungen). Forschungsdaten, keine Rechtsberatung: Das Urteil betrifft nur die modellierten Merkmale von Art. 261bis StGB; andere Delikte, Verjährung und Verfahren sind nicht geprüft. Für Ihren eigenen Fall wenden Sie sich an eine Anwältin, einen Anwalt oder eine Beratungsstelle.",
-    fr: "Avertissement : certains cas rapportent en substance des propos dégradants envers des groupes (dans les cas, aucune insulte n'est écrite en toutes lettres ; les décisions de justice citent les jugements, insultes comprises). Données de recherche, pas un conseil juridique : le verdict ne porte que sur les éléments modélisés de l'art. 261bis CP ; les autres infractions, la prescription et la procédure ne sont pas examinées. Pour votre propre situation, adressez-vous à une avocate, un avocat ou un service de conseil.",
-    it: "Avvertenza: alcuni casi riportano nella sostanza affermazioni degradanti verso gruppi (nei casi nessun insulto è scritto per esteso; le decisioni giudiziarie citano le sentenze, insulti compresi). Dati di ricerca, non consulenza legale: il verdetto riguarda solo gli elementi modellati dell'art. 261bis CP; altri reati, prescrizione e procedura non sono esaminati. Per il vostro caso rivolgetevi a un'avvocata, a un avvocato o a un servizio di consulenza."};
-  let h = (NOTICE[L] ? `<p class="small">${NOTICE[L]}</p>` : "") + `<p class="intro"><b>Content warning:</b> some cases describe degrading statements about groups in substance (no slur is spelled out in the cases; the court decisions quote rulings, slurs included). Every case here is a short scenario under Art. 261bis StGB / CP (discrimination and incitement to hatred), with the verdict under the modelled elements of the article (other offences, limitation and procedure not examined), computed from the official text and the leading case BGE 130 IV 111, and what Apertus, Switzerland's open model, answered. Each case has twins that change exactly one legal fact. Cases are summaries: intent and, outside the dignity cases, the dignity threshold are taken as met; other offences are not examined. This is a research dataset, not legal advice: for your own situation, ask a lawyer or a counselling service. <span class="small">Apertus 70B: scored through Public AI, whose endpoint name <span class="mono">apertus-v1.5-8b</span> serves the 70B (same output as the <span class="mono">-70b</span> name on 760 of 792 prompts, a 16-GPU deployment; the free text ran under the <span class="mono">-70b</span> name). A forced-choice answer compares how likely the model finds each answer word; it is not text the model wrote. Art. 261bis StGB = art. 261bis CP.</span></p><h2>What Apertus gets wrong, in plain words</h2>`;
+  const T = {
+    en: {lead: "Asked whether a statement is punishable under Art. 261bis, Apertus 70B convicts almost every lawful case. Rules in plain words help; the law's own text does not.",
+         notice: "Research data, not legal advice. Content warning: some cases describe degrading statements about groups in substance.",
+         cols: ["no law in the prompt", "rules spelled out", "verbatim law pasted in"], unit: "lawful cases it gets right",
+         cap: "Apertus 70B, Ja/Nein, lawful cases of this language. The law's answer comes from the official text; the model's from its own scores.",
+         wrong: "What Apertus gets wrong", show: n => `show the ${n} cases →`, more: "Content warning, scope and how to read the numbers",
+         pick: "Pick a case on the left, or a finding above. Arrow keys move through the list."},
+    de: {loc: "Gefragt, ob eine Äusserung nach Art. 261bis strafbar ist, verurteilt Apertus 70B fast jeden straflosen Fall. Ausformulierte Regeln helfen, der Gesetzestext selbst nicht.",
+         notice: "Forschungsdaten, keine Rechtsberatung. Inhaltswarnung: Einige Fälle geben herabsetzende Äusserungen über Gruppen inhaltlich wieder."},
+    fr: {loc: "Interrogé sur le caractère punissable d'une déclaration selon l'art. 261bis CP, Apertus 70B condamne presque chaque cas licite. Des règles en clair aident, le texte de loi lui-même non.",
+         notice: "Données de recherche, pas un conseil juridique. Avertissement : certains cas rapportent en substance des propos dégradants envers des groupes."},
+    it: {loc: "Interrogato sulla punibilità di una dichiarazione secondo l'art. 261bis CP, Apertus 70B condanna quasi ogni caso lecito. Regole in chiaro aiutano, il testo di legge stesso no.",
+         notice: "Dati di ricerca, non consulenza legale. Avvertenza: alcuni casi riportano nella sostanza affermazioni degradanti verso gruppi."}};
+  const E = T.en, X = T[L] || {};
+  const lawful = items.filter(i => i.g === "acquit");
+  const col = (r, k) => { const n = lawful.filter(i => said(i, r)).length, ok = lawful.filter(i => said(i, r) === "acquit").length;
+    if (!n) return "";
+    const pc = Math.round(100 * ok / n);
+    return `<div class="${pc < 15 ? "low" : ""}"><div class="k">${r} · ${E.cols[k]}</div><div class="v">${ok} <small>of ${n}</small></div><div class="u">${E.unit}</div><div class="meter"><i style="width:${Math.max(pc, 0.6)}%"></i></div></div>`; };
+  let h = `<div class="hero"><p class="lead">${esc(E.lead)}</p>${X.loc ? `<p class="loc">${esc(X.loc)}</p>` : ""}</div>`;
+  h += `<div class="trio">${col("R0", 0)}${col("R3", 1)}${col("R5", 2)}</div>`;
+  h += `<h2>${E.wrong}</h2>`;
   for (const F of FINDINGS) {
     const picked = items.filter(i => F.pick(i));
     if (!picked.length) continue;
-    const parts = F.rungs.map(r => { const w = picked.filter(i => wrong(i, r)).length, n = picked.filter(i => said(i, r)).length; return n ? `${RUNG[r]}: wrong on <b>${w}</b> of ${n}` : ""; }).filter(Boolean).join(" · ");
-    h += `<div class="finding"><p class="fe">${esc(F.en)}</p>${F[L] && L !== "en" ? `<p class="fl">${esc(F[L])}</p>` : ""}<p class="small mono">Apertus 70B — ${parts}</p><a href="#" data-k="${FINDINGS.indexOf(F)}">show these ${picked.length} cases</a></div>`;
+    const bars = F.rungs.map(r => { const w = picked.filter(i => wrong(i, r)).length, n = picked.filter(i => said(i, r)).length;
+      return n ? `<div class="wbar"><span>${r}</span><span class="t"><i style="width:${100 * w / n}%"></i></span><span class="c">${w}/${n} wrong</span></div>` : ""; }).join("");
+    h += `<div class="frow"><div><p class="fe">${esc(F.en)}</p>${F[L] && L !== "en" ? `<p class="fl">${esc(F[L])}</p>` : ""}<a href="#" data-k="${FINDINGS.indexOf(F)}">${E.show(picked.length)}</a></div><div>${bars}</div></div>`;
   }
-  h += `<p class="small">Pick a case on the left, or a finding above. Arrow keys move through the list.</p>`;
+  h += `<details class="more"><summary>About this register</summary><p><b>Content warning.</b> Some cases describe degrading statements about groups in substance; no slur is spelled out in the cases. The court decisions quote rulings, slurs included.</p><p><b>Scope.</b> Every case is a short scenario under Art. 261bis StGB / CP (discrimination and incitement to hatred). The verdict covers the modelled elements of the article only (other offences, limitation and procedure are not examined) and is computed from the official text and the leading cases BGE 130 IV 111 and 131 IV 23. Intent and, outside the dignity cases, the dignity threshold are taken as met. Each case has twins that change exactly one legal fact. This is research data, not legal advice: for your own situation, ask a lawyer or a counselling service.</p><p><b>How to read the numbers.</b> R0 asks with no law in the prompt, R3 spells out the rules, R4 adds a sentence on the 2020 extension, R5 pastes the verbatim law. A forced-choice answer compares how likely the model finds each answer word; it is not text the model wrote. Apertus 70B was scored through Public AI, whose endpoint name <span class="mono">apertus-v1.5-8b</span> serves the 70B (same output as the <span class="mono">-70b</span> name on 760 of 792 prompts; the free text ran under the <span class="mono">-70b</span> name). Art. 261bis StGB = art. 261bis CP.</p></details>`;
+
   $("case").innerHTML = h; $("case").scrollTop = 0;
   $("case").querySelectorAll("a[data-k]").forEach(a => a.onclick = e => { e.preventDefault(); pin = FINDINGS[+a.dataset.k]; cur = null; $("show").value = ""; $("fam").value = ""; $("q").value = ""; refresh().then(() => show(view[0])); });
 }
