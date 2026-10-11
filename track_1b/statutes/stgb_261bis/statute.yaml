@@ -10,7 +10,7 @@ title: {de: Diskriminierung und Aufruf zu Hass, fr: Discrimination et incitation
 scope_note: >-
   Models the objective elements that decide the verdict in the scenarios this package generates: temporal scope,
   protected characteristic (closed list, amended 1 Jul 2020), act paragraph (Abs. 1, 2, 4) and publicity.
-  Intent (Vorsatz) is fixed to "present" in every scenario. Abs. 3 (propaganda) and Abs. 5 (refusal of a public service,
+  Intent (Vorsatz) is fixed to "present" in every scenario. Abs. 3 (propaganda) and Abs. 5 (refusal of a service intended for the general public,
   no publicity element) are out of scope. Whether a concrete statement reaches the Abs. 4 dignity threshold is a
   question of fact; the act descriptions are written so that it is met, and the judgement is not modelled, except in the DIGNITY family (A18).
 

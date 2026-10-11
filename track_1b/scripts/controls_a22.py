@@ -187,7 +187,7 @@ def cmd_report(a):
         if r["item_id"] in settled:
             cells[r["rung"]][r["item_id"]] = r["lo_conv"]
     a13 = defaultdict(dict)
-    for r in jl(ROOT / "runs_a13/publicai-70b-r5x-de.jsonl"):
+    for r in jl(ROOT / "dataset/responses/publicai-70b-r5x-de.jsonl"):
         if "error" not in r and r.get("lo_conv") is not None and r["item_id"] in settled and r["framing"] == "conv":
             a13[r["rung"]][r["item_id"]] = r["lo_conv"]
     ref75 = set(a13["R5a"]) & set(a13["R5e"])            # the same_items of reports/controls_a13.json
@@ -376,7 +376,7 @@ def wilson_table(items):
 
 def mcnemar_r5a_r5e(items):
     lo = defaultdict(dict)
-    for r in jl(ROOT / "runs_a13/publicai-70b-r5x-de.jsonl"):
+    for r in jl(ROOT / "dataset/responses/publicai-70b-r5x-de.jsonl"):
         if "error" not in r and r.get("lo_conv") is not None and r["framing"] == "conv" and items[r["item_id"]]["label"] == "settled":
             lo[r["rung"]][r["item_id"]] = r["lo_conv"]
     same = sorted(set(lo["R5a"]) & set(lo["R5e"]))
@@ -484,7 +484,7 @@ def cmd_stats(_a):
     out = dict(note="A22 statistics, from stored responses only (no model calls)")
     # the inputs this was computed from (other files are edited in parallel; a later change shows up as a hash mismatch)
     ins = ["reports/controls_a13.json", "reports/dignity.json", "reports/paraphrase.json", "results/results.json",
-           "runs_a13/publicai-70b-r5x-de.jsonl"] + [f"reports/open_judged_{r}.json" for r in
+           "dataset/responses/publicai-70b-r5x-de.jsonl"] + [f"reports/open_judged_{r}.json" for r in
                                                      ("publicai-70b-open", "publicai-70b-open-fr", "publicai-70b-open-it")]
     out["inputs_sha256"] = {p: hashlib.sha256((ROOT / p).read_bytes()).hexdigest() for p in ins}
     out["wilson"] = wilson_table(items)

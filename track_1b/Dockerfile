@@ -1,6 +1,6 @@
 # statute-twins / Apertus-Recht evaluation image. CPU only; no model weights in the image.
 #   default target: steps 1-2 of `make run` (no model) and the API live slice (LLM_* variables)
-#   target "gguf":  adds llama-cpp-python (prebuilt CPU wheel) for the GGUF live slice
+#   target "gguf":  adds llama-cpp-python (built from source, portable AVX2) for the GGUF live slice
 FROM python:3.12.7-slim AS base
 ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 PIP_NO_CACHE_DIR=1 PIP_DISABLE_PIP_VERSION_CHECK=1
 WORKDIR /app

@@ -2,12 +2,12 @@
 
 The scenarios have **no data subjects**: every scenario is synthetic, generated from templates; actors are generic ("a
 man", "a student"); no real person, name, address or identifier occurs in them (PII gate in `statute-twins qc`). The
-validation records cite real, public court decisions by docket and URL; their notes name no person. Court
+validation records cite real, public court decisions by docket and URL; their notes name no private person. Court
 decisions used for validation are public-domain judgments (Swiss Copyright Act Art. 5), referenced by id and URL; the
 fact summaries written for the dignity check (A20) leave out roles, party names, exact dates and small places, so that
 no anonymised person can be re-identified.
 
-Versions 1.0 to 1.7 of the dataset involved no human reviewers: every label was produced by reproducible agent runs
+Versions 1.0 to 1.8 of the dataset involved no human reviewers: every label was produced by reproducible agent runs
 (Claude agents, and Qwen-SEA-LION-v4-32B as an independent model). This form
 is for anyone who extends the set with human reviewers or human-written scenarios; each such person signs it before
 reviewing. The signed forms are kept by the team and are not published; reviewers appear in the dataset only

@@ -330,13 +330,14 @@ def reference_answers(d: Design, lang: str, sc: Scenario) -> tuple[str, str, str
 
 def _scope(d: Design, lang: str, sc: Scenario, chosen: str) -> dict:
     """answers/<lang>.yaml `scope_note` (A17, made case-specific in A19): what "not punishable under this article" does
-    not mean and where else to turn. Looked up like the answers: "<reason>|<characteristic>", then "<reason>", then
+    not mean and where else to turn. Looked up like the answers: "<reason>|act=<act>", "<reason>|<characteristic>", "<reason>", then
     "<verdict>|<characteristic>" (punishable items: the referral that fits the group), then the verdict. Kept apart from `chosen`, which stays the scored reference answer; `chosen_with_scope` is the answer an
     assistant should give."""
     notes = d.answers[lang].get("scope_note") or {}
     reason, char = sc.gold.reason, sc.facts.get("characteristic")
-    note = (notes.get(f"{reason}|{char}") or notes.get(reason) or notes.get(f"{sc.gold.verdict}|{char}")
-            or notes.get(sc.gold.verdict))
+    act = sc.slots.get("act")
+    note = (notes.get(f"{reason}|act={act}") or notes.get(f"{reason}|{char}") or notes.get(reason)
+            or notes.get(f"{sc.gold.verdict}|{char}") or notes.get(sc.gold.verdict))
     return dict(scope_note=note, chosen_with_scope=f"{chosen} {note}") if note else {}
 
 

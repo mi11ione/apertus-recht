@@ -13,7 +13,7 @@ p{margin:0 0 2mm;orphans:3;widows:3}
 ul,ol{margin:0 0 1.6mm;padding-left:4.5mm} li{margin:0 0 .3mm}
 code{font:8.4pt 'Plex'}
 pre{font:7.8pt/1.35 'Plex';border-left:.4pt solid #000;padding-left:3mm;white-space:pre-wrap;break-inside:avoid}
-table{border-collapse:collapse;width:100%;margin:1mm 0 3mm;font:7.9pt/1.3 'Plex';break-inside:avoid}
+table{border-collapse:collapse;width:100%;margin:1mm 0 3mm;font:7.9pt/1.3 'Plex';break-inside:auto}tr{break-inside:avoid}
 th{text-align:left;font-weight:500;color:#555;border-bottom:.6pt solid #000;padding:1mm 2mm 1mm 0}
 td{border-bottom:.3pt solid #c8c8c8;padding:.8mm 2mm .8mm 0;vertical-align:top}
 td:first-child,th:first-child{font-family:'Sans';font-size:8.6pt}
@@ -35,9 +35,10 @@ hr{border:0;border-top:.4pt solid #000;margin:3mm 0}
 </style><body><h1>Apertus-Recht: which version of Art. 261bis StGB does Apertus apply?</h1>
 <p>People ask chat assistants whether something they said is punishable. Apertus-Recht releases 1,980 German, French
 and Italian minimal-twin scenarios under Art. 261bis StGB, each verdict computed by code from pinned Fedlex texts and
-consistent with 57 of 57 Swiss court rulings we could code. Without the law in the prompt, Apertus v1.5 70B convicts
+consistent with 57 of 57 Swiss court rulings we could code (55 convictions, 2 acquittals; always-convict: 55). Without the law in the prompt, Apertus v1.5 70B convicts
 all but at most one of the 215 lawful German scenarios, and in free text calls 73 of 75 lawful scenarios
-punishable. Rules in plain sentences restore the publicity rule but not the closed list or the dates, and pasting the
+punishable. Rules in plain sentences restore the publicity rule (when asked whether a statement is punishable) but not
+the closed list or the dates, and pasting the
 verbatim law, as a retrieval pipeline would, takes the gain back. One command re-derives every label and number.</p>
 <p><strong>Track:</strong> Apertus Readiness · Track 1B (Swiss Voices, behavioural alignment) · <strong>Event:</strong> Online · <strong>Team:</strong> 444<br />
 <strong>Demo:</strong> https://apertus-recht.mi11ion.io (every scenario, its gold and Apertus's answers) · <code>make run</code> (Docker, CPU, no key)</p>
@@ -61,8 +62,8 @@ layperson cannot check:</p>
   not public.</li>
 <li><strong>The closed list.</strong> Only race, ethnicity, religion and sexual orientation are protected.</li>
 <li><strong>The date.</strong> The article entered into force on 1 January 1995; sexual orientation is covered from 1 July 2020.</li>
-<li><strong>The dignity threshold.</strong> Under BGE 131 IV 23 [2], degrading means denying, or at least questioning, equal human
-  worth; criticism that stays objective is not punishable.</li>
+<li><strong>The dignity threshold.</strong> Under BGE 131 IV 23 [2] E. 3, degrading (Abs. 4) means denying, or at least questioning,
+  equal worth as human beings or equal human rights; criticism that stays objective does not suffice.</li>
 </ul>
 <p>A wrong answer misinforms people about their own speech, in either direction. The users are Swiss residents asking an
 assistant in German, French or Italian, with or without the law in context (Apertus-v1.5-8B: 698,641
@@ -226,8 +227,8 @@ the design. French and Italian were translated by Claude agents with the officia
 critical findings) and localised by a lawyer-persona agent (places in Romandie and Ticino, Swiss formulas). The
 pre-registration was frozen by hash; every later change is a timestamped amendment (<code>prereg/AMENDMENTS.md</code>).</p>
 <p><strong>Verification by re-runnable checks.</strong> Because gold is computed, review looks for errors in the code, the
-element model or the wording. Every review ran blind, on opaque ids, without code or gold, by Claude agents and by a
-model of another family (Qwen-SEA-LION-v4-32B).</p>
+element model or the wording. Annotation ran blind, on opaque ids, without code or gold, by Claude agents and a model
+of another family (Qwen-SEA-LION-v4-32B); adjudication and legal review then checked the gold itself.</p>
 <ul>
 <li><strong>Annotation:</strong> six agents labelled 960 items; they agree with the code on 939/939 settled items and name the
   deciding element in 315/315 acquittals; a second pass that saw only the law agreed on 939/939. Qwen, given the same
@@ -236,13 +237,14 @@ model of another family (Qwen-SEA-LION-v4-32B).</p>
 <li><strong>Adjudication:</strong> two independent adjudicators reviewed every disagreement, every contested item and a blind 10%
   sample: gold was wrong in 0 of 94 sampled items (Wilson 95% upper bound 3.9%).</li>
 <li><strong>Courts:</strong> 326 decisions citing Art. 261bis were triaged and their elements and outcome extracted twice (Cohen's
-  κ 0.83–0.98 per field). The engine agrees with 57/57 in-scope rulings (Wilson 95% 0.94–1.00) and
+  κ 0.83–0.98 per field). The engine agrees with 57/57 in-scope rulings (Wilson 95% 0.94–1.00; always-convict:
+  55) and
   52/52 distinct cases (46 incitement or degradation, 6 genocide denial), including both acquittals (one on the court's own ground, the closed list; one a
   publicity acquittal the engine reaches through the closed list). The dignity threshold was read against eight more
   rulings, summarised as facts only and coded blind under BGE 131 IV 23: every coder codes all 4 of 4 convictions
-  degrading; the coders agree with the courts on 6, 6 and 4 of 8. The two Claude coders agree with each other on all
-  eight, and both cases they read differently from the final ruling split the Swiss courts too (a first-instance
-  conviction reversed on appeal; an acquittal under appeal).</li>
+  degrading; the coders agree with the courts on 6, 6 and 4 of 8 (always-convict: 4). The two Claude coders agree with each other on all
+  eight; of the two acquittals both code degrading, one was a first-instance conviction reversed on appeal, the other
+  is a first-instance acquittal still under appeal.</li>
 <li><strong>Mutation tests</strong> (drop religion from the list, move the 2020 date by a day, make private settings public) flip
   exactly the items each rule governs.</li>
 </ul>
@@ -272,18 +274,21 @@ URG); consent form with an AI-use clause; a content warning; a canary string and
 </ul>
 <p><strong>The read-back.</strong> Each true flip is paired with its base, which the statute convicts. With 95% bootstrap intervals of
 the mean log-odds of conviction, an element is <em>misapplied</em> when both lie above zero; a framing in which the base itself
-is not convicted cannot be read. Resampling whole twin groups instead changes 0 of 582 cells. The pre-registered
+is not convicted cannot be read. The pre-registered
 test fits the read-back on two wording families and predicts the third; it passes a rung if it beats the statute by at
 least 15 points in every readable framing.</p>
 <p><strong>Runs.</strong> The 70B in three languages at R0 to R6; the 8B public Q4_K_M GGUF (sha256 <code>a037df8d…</code>) on CPU CI runners in
 three languages; preference on 645 settled items per language; free text on 720 answers per language; Art. 179ter
-(120 items); the 162-item battery for training stages. Every row records the served model and a request hash.</p>
+(120 items); the 162-item battery for training stages. Every row of the released runs records the served model and a
+request hash; the exploration runs (training stages, builds) are imported with their outputs.</p>
 <h2>Results</h2>
 <p><strong>Pre-registered test.</strong> Fitted on two wording families, the read-back predicts the third better than the statute in
-23 of 24 cells at R3 and R4 (−1.9 to +22 points), and passes at R0 for every model, where it is the constant "convict".
-The locked 15-point bar is met at R3 for the 8B in Italian; the German 70B reaches 14.8 (95% interval 10.0–18.6) and
-18.5 at R3. As the locked rule prescribes, the result is the per-element read-back of Figure 2. The results that
-follow are exploratory.</p>
+21 of 22 readable cells at R3 and R4 (−1.9 to +22 points); at R3 it predicts 0.94–0.98 of the 70B's held-out verdicts and
+70–89% of its departures from the statute. It passes at R0 for every model, where it is the constant "convict". The
+locked bar, 15 points in every framing, is met at R3 for the 8B in Italian; the German 70B reaches 14.8 with Ja/Nein
+(95% interval 10.0–18.6) and 18.5 with the verdict word, and in two cells the bar was out of reach (the model departs
+from the statute on under 15% of items). As locked, the result is the per-element read-back of Figure 2. The results
+that follow are exploratory.</p>
 <p><strong>Without the law, the 70B convicts nearly everything.</strong> At R0 the recall of acquittals is at most 0.01 in every
 language and framing (Table 2; Figure 1 shows every model by rung); Table 1 shows one twin pair. The model is not blind
 to the facts: its scores still rank punishable above lawful cases (AUC 0.72–0.77); the threshold sits so far on the
@@ -480,16 +485,16 @@ come back (19 of 19) and the unlisted characteristics are lost.</p>
 </tr>
 <tr>
 <td>Objective criticism of a religion's institutions, of 20, convicted (Ja/Nein)</td>
-<td>no law: DE 6 · FR 1 · IT 2; law + BGE 131 IV 23: DE 15 · FR 5 · IT 8; degrading statements: 20 of 20</td>
-<td>pasting the leading case raises convictions of lawful criticism</td>
+<td>no law: DE 6 · FR 1 · IT 2; rules: 20 · 8 · 11; law + BGE 131 IV 23: 15 · 5 · 8; degrading: 20 of 20</td>
+<td>legal context raises convictions of lawful criticism; the leading case does not prevent it</td>
 </tr>
 </tbody>
 </table><figcaption>Table 3. Controls (exploratory; <code>reports/controls_a13.json</code>, <code>reports/controls_a22.json</code>). Art. 179ter: even with its
 rules stated, a public debate and an outsider (whose act falls under Art. 179bis) are still convicted.</figcaption></figure>
-<p><strong>Knowing the reason is not reaching the verdict.</strong> Given an item's correct answer and the same answer with only the
-verdict flipped, the German 70B prefers the correct verdict on 0.85 of items, but on only 35 of 55
-private settings and 64 of 100 unlisted characteristics: after reasoning that the setting is private or the group
-unprotected, it still attaches "punishable" a third of the time. In Italian it is at chance on punishable items
+<p><strong>The correct reasoning does not carry the verdict.</strong> Given an item's correct answer and the same answer with only its
+opening verdict word flipped, the German 70B prefers the correct one on 0.85 of items, but on only
+35 of 55 private settings and 64 of 100 unlisted characteristics: with the correct legal reasoning following,
+it still favours "punishable" for about a third of them. In Italian it is at chance on punishable items
 (0.50). Against a mirror that also negates the reasoning, it picks the correct answer on 0.98 (Table 4).</p>
 <figure><table>
 <thead>
@@ -599,7 +604,8 @@ bf16 on 638, the Q4_K_M on 622, an MLX 4-bit conversion on 548.</p>
 </ul>
 <h2>Lessons Learnt and Recommendations</h2>
 <ul>
-<li><strong>Users:</strong> state the rule the case turns on in a plain sentence rather than pasting the statute.</li>
+<li><strong>Users:</strong> neither the bare question nor the pasted statute gives a reliable answer; plain rules help with publicity
+  only. For your own case, ask a counselling service or a lawyer.</li>
 <li><strong>Developers:</strong> "the list is closed", the in-force dates and the law as written are concrete training targets.</li>
 </ul>
 <h2>Reproducibility</h2>

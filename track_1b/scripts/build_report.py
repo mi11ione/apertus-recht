@@ -42,7 +42,7 @@ p{margin:0 0 2mm;orphans:3;widows:3}
 ul,ol{margin:0 0 1.6mm;padding-left:4.5mm} li{margin:0 0 .3mm}
 code{font:8.4pt 'Plex'}
 pre{font:7.8pt/1.35 'Plex';border-left:.4pt solid #000;padding-left:3mm;white-space:pre-wrap;break-inside:avoid}
-table{border-collapse:collapse;width:100%;margin:1mm 0 3mm;font:7.9pt/1.3 'Plex';break-inside:avoid}
+table{border-collapse:collapse;width:100%;margin:1mm 0 3mm;font:7.9pt/1.3 'Plex';break-inside:auto}tr{break-inside:avoid}
 th{text-align:left;font-weight:500;color:#555;border-bottom:.6pt solid #000;padding:1mm 2mm 1mm 0}
 td{border-bottom:.3pt solid #c8c8c8;padding:.8mm 2mm .8mm 0;vertical-align:top}
 td:first-child,th:first-child{font-family:'Sans';font-size:8.6pt}

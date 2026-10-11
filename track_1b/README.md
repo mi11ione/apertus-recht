@@ -1,7 +1,7 @@
 # Apertus-Recht
 
-**Which version of Art. 261bis StGB, the Swiss criminal provision against discrimination and incitement to hatred,
-does Apertus apply?** Not the one in force. Asked whether a statement is punishable, Apertus v1.5 convicts for words said
+**Does Apertus apply Art. 261bis StGB, the Swiss criminal provision against discrimination and incitement to hatred,
+as it is in force?** No. Asked whether a statement is punishable, Apertus v1.5 convicts for words said
 only at a family dinner, for degrading statements about a canton or a profession, and for acts before the article
 entered into force (1 Jan 1995). Rules spelled out in the prompt fix some elements and leave others standing; in German,
 the verbatim law text, as a retrieval pipeline would paste it, changes no verdict. 1,980 minimal-twin scenarios in
@@ -24,8 +24,8 @@ R4: plus a sentence on the 1 July 2020 extension; R5: the verbatim Fedlex text a
   answer names Art. 261bis); a judge of another model family, on its own, counts 72 of 75. Asked the other way round ("Würde ein
   Gericht freisprechen?"), it still recognises 0 of 215 acquittals: not a yes-bias. Its scores do rank punishable above
   lawful cases; the threshold is what fails.
-- **Rules spelled out (R3): publicity is applied, the closed list and the dates are not.** Private settings are
-  acquitted, while public statements worded with "family" or "friends" are still convicted, so the model reads the
+- **Rules spelled out (R3): publicity is applied, the closed list and the dates are not.** Asked whether a statement is
+  punishable, it acquits private settings, while public statements worded with "family" or "friends" are still convicted, so the model reads the
   setting, not the words. A canton, a disability or a political opinion is still convicted although the prompt lists
   the four protected characteristics; acts from 1993/94, before the article entered into force, are convicted at
   every rung.
@@ -34,25 +34,28 @@ R4: plus a sentence on the 1 July 2020 extension; R5: the verbatim Fedlex text a
   Italian 43, against 120 and 97 with the rules. It is the law's text, not its length: on the same 75 lawful items,
   unrelated legal text of equal length leaves 36 acquitted, the verbatim law 11 (McNemar p = 6·10⁻⁸), and no single
   part of the text explains it.
-- **Knowing the reason is not reaching the verdict.** Given its own correct reasoning with only the verdict word
-  flipped, the German 70B picks the right verdict on 0.85 of items, but on only 35 of 55 private settings and 64 of 100
-  unlisted characteristics: after reasoning that the setting is private, it still attaches "punishable".
+- **The correct reasoning does not carry the verdict.** Given the correct answer and the same answer with only its
+  opening verdict word flipped, the German 70B prefers the correct one on 0.85 of items, but on only 35 of 55 private
+  settings and 64 of 100 unlisted characteristics: with the correct legal reasoning following, it still favours
+  "punishable" for about a third of them.
 - **The date sentence backfires.** One sentence saying that sexual orientation is protected since 1 July 2020 makes the
   70B stop convicting punishable cases from 2021–25: with the verdict word it convicts 0 of 35 in German, 1 in French,
   5 in Italian. It does not teach the date; it takes the characteristic off the list.
-- **Pasting the leading case raises convictions of lawful criticism.** Objective criticism of a religion's
-  institutions (BGE 131 IV 23: only denying, or at least questioning, equal human worth is punishable) is convicted
-  6 of 20 times in German without the law and 15 of 20 with the law and that leading case pasted in (French 1 and 5,
-  Italian 2 and 8); degrading statements are convicted 20 of 20.
+- **Legal context makes it convict lawful criticism.** Objective criticism of a religion's institutions (BGE 131
+  IV 23 E. 3: under Abs. 4, degrading means denying, or at least questioning, equal worth as human beings or equal
+  human rights; criticism that stays objective does not suffice) is convicted by the German 70B 6 of 20
+  times without the law, 20 of 20 with the rules spelled out, and 15 of 20 with the law and that leading case pasted in
+  (Ja/Nein; with the verdict word 11, 17 and 8). Degrading statements are convicted 20 of 20.
 - **Not the template, not the register, not one article.** Natural paraphrases verified blind by two model families
   give the same picture (3 of 117 lawful ones acquitted without the law, 47 with the rules; templated: 2 and 44); so do
   first-person retellings in all three languages. A second statute in the same format, Art. 179ter StGB, fails in
   another shape: without the law the 70B answers "Nein" to all 120 cases when asked Ja/Nein and "schuldig" to 117 when
   asked for a verdict.
-- **Pre-registered and robust.** Fitted on two wording families, the read-back of the law the model applies predicts
-  the third better than the statute in 23 of 24 cells at R3 and R4 (−1.9 to +22 points); the locked 15-point bar is
-  met at R3 for the 8B in Italian and not elsewhere, so the result is the per-element read-back, as locked. Resampling whole twin groups
-  changes 0 of 582 cells of it. Every number in this README is checked against its results file.
+- **Pre-registered.** Fitted on two wording families, the read-back of the law the model applies predicts the third
+  better than the statute in 21 of 22 readable cells at R3 and R4 (−1.9 to +22 points); the locked 15-point bar is met
+  at R0 for every model (trivially: there the read-back is the constant "convict") and at R3 for the 8B in Italian, so
+  the result is the per-element read-back, as locked. The key numbers here are checked against their results files on
+  every run (`claims.tsv`).
 - **Training stages and builds.** In the 8B at full precision (one checkpoint pair), the DPO step cuts correct
   acquittals under stated rules from 185 to 146 of 220 while keeping every conviction; a 4-bit MLX conversion changes
   100 of 648 verdicts, the public Q8_0 GGUF 10.
@@ -67,7 +70,7 @@ Hack Apertus 2026 · Track 1B (Swiss Voices, behavioural alignment) · team 444 
 > elements this set models. Every scenario carries a note fitted to the case (`scope_note`). On a lawful one: «not
 > punishable under Art. 261bis» does not mean «allowed»; honour and personality claims (Art. 173 ff. StGB, Art. 28 ZGB)
 > where a particular person is targeted; the counselling service that fits (racism, LGBTIQ, disability, equality at
-> work); time bars for old acts; for criticism of a religion, that it is protected speech. On a punishable one: an
+> work); time bars for old acts; for objective criticism of a religion, that it is protected speech. On a punishable one: an
 > assessment of the stated facts, not legal advice; the offence is prosecuted by the state, and those affected can
 > report it and find counselling. The items are evaluation data (canary string), not training data.
 > **Content warning:** many items describe discriminatory or degrading statements about groups in substance; no slur
@@ -76,7 +79,7 @@ Hack Apertus 2026 · Track 1B (Swiss Voices, behavioural alignment) · team 444 
 ## Run it
 
 ```bash
-make run                                 # Docker, CPU, no model, no key: about a minute
+make run                                 # Docker, CPU, no model, no key: a few minutes
 # without Docker (Python >= 3.10):
 pip install -e ".[dev]" && statute-twins selfcheck
 ```
@@ -96,7 +99,7 @@ Non-zero exit on any mismatch. `make test` runs the test suite in the same image
 
 ```bash
 statute-twins eval --backend openai --run-id my-model --parts core_de,core_fr,core_it --rungs R0,R3,R4
-statute-twins results && statute-twins selfcheck
+statute-twins results --responses runs     # scores every run in runs/, yours included
 ```
 Exact forced choice on vLLM endpoints, first-token log-probabilities elsewhere, or generate-and-parse
 ([`docs/backends.md`](docs/backends.md)); a GGUF scores in-process on CPU (`--backend llamacpp --gguf …`).
@@ -125,15 +128,17 @@ Exact forced choice on vLLM endpoints, first-token log-probabilities elsewhere, 
   every contested item and a blind sample of settled ones: 115/115 gold correct.
 - **Against Swiss courts.** 326 decisions from `voilaj/swiss-caselaw`, each coded twice by independent agents with a
   third on conflicts, under a pre-registered rule: the engine agrees with the court in 57/57 rulings on the elements it
-  models (Wilson 95% 0.94–1.00), 52/52 distinct cases with repeat instances merged and the later-revised Perinçek
+  models (Wilson 95% 0.94–1.00; 55 of them convictions, so always-convict would reach 55), 52/52 distinct cases with repeat instances merged and the later-revised Perinçek
   conviction left out (46 incitement or degradation, 6 genocide denial). Both acquittals agree: one on the court's own
   ground, the closed list; one, a publicity acquittal, through the closed list. The dignity threshold is read against
   eight more rulings, summarised as facts only and coded blind under BGE 131 IV 23 by three coders of two model
-  families: every coder codes 4 of 4 convictions degrading; agreement with the courts 6, 6 and 4 of 8. The two Claude
-  coders agree with each other on all eight, and the cases they read differently from the final ruling split the Swiss
-  courts too (a first-instance conviction reversed on appeal; an acquittal under appeal).
+  families: every coder codes 4 of 4 convictions degrading; agreement with the courts 6, 6 and 4 of 8 (always-convict: 4). The two Claude
+  coders agree with each other on all eight. Of the two acquittals both code degrading, one was a first-instance
+  conviction reversed on appeal, partly on the subjective side; the other is a first-instance acquittal still under
+  appeal.
 - **Against the training data.** 0 of 35,241 item 13-grams occur in the 1,069,365 decisions of `voilaj/swiss-caselaw`
-  (a v1.5 pre-training source in the Apertus data catalogue); the same scan finds 846 of 1,525 13-grams of the statute
+  (a v1.5 pre-training source in the Apertus data catalogue); the same scan finds 846 of 1,525 13-grams of the statute and
+  the Regeste (positive control)
   itself.
 - **Against our own earlier numbers.** The analysis reproduces the published exploration results exactly, and replays
   cached live scores bit for bit (`tests/test_reproduce_spikes.py`).

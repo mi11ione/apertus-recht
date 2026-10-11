@@ -396,3 +396,21 @@ Exploratory, post hoc. Juror agents (strict, responsible-AI, Swiss criminal law,
   ruling is final and whether the first instance convicted.
 No core prompt changed; every core result is unchanged.
 
+## A23 (2026-10-11, after judge round 13): wording, notes, pins; dataset 1.8.1
+Juror agents (told it is a one-week hackathon) reviewed release 1.8.0. Changes, none to a scored prompt or result:
+- **CI from a clean clone**: the A22 statistics read one response file from a git-ignored folder; they now read the
+  identical released copy (`dataset/responses/publicai-70b-r5x-de.jsonl`, same sha256).
+- **BGE 131 IV 23 considerations pinned**: E. 1.1, 3.1, 3.3 and 3.4.2 verbatim with sha256 in
+  `statutes/sources/bge_131_IV_23.json` (fetched from bger.ch), so the pinpoints cited in the answers are pinned too.
+- **Policy demand** (a4D_crit4): its chosen answer adds that it is no call to discrimination under Abs. 1 (BGE 131 IV 23
+  E. 3.3); its own scope note (political demands are protected speech; the limit is Abs. 1 and 4).
+- **Open items**: one scope note per reason (publicity contested: who was present and how many; dignity contested:
+  the wording), instead of one note for both.
+- **Wording**: court checks state their always-convict baselines; the dignity court check describes the two acquittals
+  the Claude coders read as degrading exactly (one reversed first-instance conviction, one acquittal under appeal) and
+  discloses the earlier round (5, 5 and 4 of 8); the verdict-only preference result no longer speaks of the model's own
+  reasoning; the dignity result reports every rung and both framings; the pre-registered test reports the readable
+  cells (21 of 22), the read-back's accuracy and share of departures explained, and the cells where the bar was out of
+  reach; the twin-group bootstrap is no longer cited as a robustness result (in this design no cell has more than one
+  pair per twin group); user advice no longer recommends a plain-rule prompt as reliable.
+
