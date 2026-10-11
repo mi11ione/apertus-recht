@@ -68,6 +68,7 @@ def item_metadata(d: design.Design, it: dict, reviews: dict) -> dict:
 def write_eval(statute_dir: Path, out: Path, reviews: dict | None = None) -> dict:
     statute_dir, out = Path(statute_dir), Path(out)
     d, core, leg = all_items(statute_dir)
+    core = [i for i in core if i["subset"] == "core"]    # exploratory subsets (A18: dignity) live in their own folder
     reviews = reviews or {}
     parts = {f"core_{l}": [i for i in core if i["lang"] == l] for l in d.langs}
     if leg:

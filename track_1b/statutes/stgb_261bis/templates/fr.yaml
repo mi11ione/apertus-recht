@@ -113,18 +113,26 @@ groups:
     def: "les juifs en raison de leur appartenance religieuse"
     de: "des juifs en raison de leur appartenance religieuse"
     a: "aux juifs en raison de leur appartenance religieuse"
+    who: "les juifs"
+    rel: "du judaïsme"
   rel_muslim:
     def: "les musulmans en raison de leur appartenance religieuse"
     de: "des musulmans en raison de leur appartenance religieuse"
     a: "aux musulmans en raison de leur appartenance religieuse"
+    who: "les musulmans"
+    rel: "de l'islam"
   rel_free:
     def: "les membres d'une Église évangélique libre en raison de leur appartenance religieuse"
     de: "des membres d'une Église évangélique libre en raison de leur appartenance religieuse"
     a: "aux membres d'une Église évangélique libre en raison de leur appartenance religieuse"
+    who: "les membres d'une Église évangélique libre"
+    rel: "d'une Église évangélique libre"
   rel_hindu:
     def: "les hindous en raison de leur appartenance religieuse"
     de: "des hindous en raison de leur appartenance religieuse"
     a: "aux hindous en raison de leur appartenance religieuse"
+    who: "les hindous"
+    rel: "de l'hindouisme"
   rel_muslim_syn:
     def: "les musulmans en raison de leur foi"
     de: "des musulmans en raison de leur foi"
@@ -224,6 +232,10 @@ acts:
   a4B2: "{pron} a dénigré {g.def} en leur déniant toute dignité humaine"
   a4C1: "{pron} a nié la dignité humaine {g.de}"
   a4C2: "{pron} a qualifié d'êtres humains de seconde zone {g.def}"
+  # A18 (famille DIGNITY uniquement)
+  a4D_deg: "{pron} a traité {g.who} de vermine et leur a dénié, en raison de leur foi, la qualité d'êtres humains égaux"
+  a4D_crit: "{pron} a vivement critiqué les enseignements et les institutions {g.rel}, jugeant rétrogrades leurs règles sur le rôle des femmes et affirmant que des règles religieuses particulières ne devraient pas s'appliquer en Suisse"
+  a4D_bord: "{pron} a fait une plaisanterie grossière visant {g.who}, dont la teneur exacte n'a pas pu être établie et que des personnes présentes ont qualifiée de « déplacée »"
 
 settings:
   # public

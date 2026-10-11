@@ -133,6 +133,16 @@ def validate(d: Design) -> list[str]:
     missing = set(st.element_ids) - elements_covered
     if missing:
         problems.append(f"no slot carries a fact for elements {sorted(missing)}")
+    # A18: a value with `only_families` is rendered only where one of those families is rendered (a family may list
+    # `langs`); its surface may use group forms that only the groups that family draws provide (rendering fails loudly
+    # if a drawn group lacks one)
+    def restricted(slot, vid):
+        return bool(d.slots[slot][vid].get("only_families"))
+
+    def rendered_in(slot, vid, lang):
+        only = d.slots[slot][vid].get("only_families")
+        return not only or any(not (d.families.get(f) or {}).get("langs") or lang in d.families[f]["langs"] for f in only)
+
     for lang, t in d.templates.items():
         morph_keys = set()
         for g in t.get("morphology", {}).values():
@@ -142,9 +152,13 @@ def validate(d: Design) -> list[str]:
         allowed = names | {n[:1].upper() + n[1:] for n in names}
         allowed |= morph_keys | {k[:1].upper() + k[1:] for k in morph_keys}
         for slot, alias in aliases.items():
-            forms_used = {ph[len(alias) + 1:] for key in {section(s, d) for s in d.slots} for x in (t.get(key) or {}).values()
+            forms_used = {ph[len(alias) + 1:] for s_ in d.slots for vid_, x in (t.get(section(s_, d)) or {}).items()
+                          if not (vid_ in d.slots[s_] and restricted(s_, vid_))
                           for ph in placeholders(str(x)) if ph.startswith(alias + ".")}
-            allowed |= {f"{alias}.{f}" for f in forms_used}
+            restricted_forms = {ph[len(alias) + 1:] for s_ in d.slots for vid_, x in (t.get(section(s_, d)) or {}).items()
+                                if vid_ in d.slots[s_] and restricted(s_, vid_)
+                                for ph in placeholders(str(x)) if ph.startswith(alias + ".")}
+            allowed |= {f"{alias}.{f}" for f in forms_used | restricted_forms}
             for gid, forms in (t.get(section(slot, d)) or {}).items():
                 missing_forms = forms_used - set(forms)
                 if missing_forms:
@@ -153,7 +167,7 @@ def validate(d: Design) -> list[str]:
             key = section(slot, d)
             surf = t.get(key) or {}
             for vid in d.slots[slot]:
-                if vid not in surf:
+                if vid not in surf and rendered_in(slot, vid, lang):
                     problems.append(f"{lang}: no surface for {slot}.{vid}")
             for vid, s in surf.items():
                 if vid not in d.slots[slot]:

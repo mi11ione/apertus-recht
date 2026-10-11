@@ -334,6 +334,13 @@ def cmd_selfcheck(a) -> int:
             r = subprocess.run([sys.executable, "scripts/paraphrase.py", step, "--check"], capture_output=True, text=True)
             print("  " + ((r.stdout.strip().splitlines() or [r.stderr.strip()[-200:]])[-1]))
             ok &= r.returncode == 0
+    if Path("dataset/dignity/eval").exists() and Path("scripts/dignity.py").exists():
+        import subprocess
+        print("== step 2h: dignity family: items, prompts and scores re-derived from the statute and the stored responses (A18)")
+        for step in ("build", "report"):
+            r = subprocess.run([sys.executable, "scripts/dignity.py", step, "--check"], capture_output=True, text=True)
+            print("  " + ((r.stdout.strip().splitlines() or [r.stderr.strip()[-200:]])[-1]))
+            ok &= r.returncode == 0
     if Path("reports/qc.json").exists():
         # the published QC report must be what the gates give on the released dataset now (counts drift otherwise)
         from . import statute as _statute

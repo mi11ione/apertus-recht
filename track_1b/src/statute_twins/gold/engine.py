@@ -7,7 +7,9 @@ Rules (generic over any statute file):
   * ``date``         met iff the date is on or after ``in_force_from``.
   * ``covered_set``  met iff the value has a ``covered_from`` date and the date element it depends on is on or after it.
   * ``enum``/``bool`` met, failed or contested as declared for the value.
-Elements are checked in YAML order. Any failed element -> "acquit", decided by the first failed element. Otherwise any
+An element may declare a `default` value, used when a scenario's facts do not mention it (A18: the dignity
+threshold of Abs. 4 defaults to met, so scenarios that stipulate it keep their gold); a defaulted element that is met
+is left out of the trace. Elements are checked in YAML order. Any failed element -> "acquit", decided by the first failed element. Otherwise any
 contested element -> "open" (label "contested"). Otherwise "convict" (deciding element "all_met").
 The engine never sees scenario text; it only reads the slot facts the generator recorded.
 """
@@ -58,9 +60,9 @@ def element_status(statute: Statute, eid: str, facts: dict) -> tuple[str, list[s
 def _status(statute: Statute, eid: str, facts: dict) -> tuple[str, list[str], str]:
     """(status, authorities, reason code) of one element."""
     e = statute.element(eid)
-    if eid not in facts:
+    if eid not in facts and e.raw.get("default") is None:
         raise FactError(f"missing fact for element {eid!r}")
-    v = facts[eid]
+    v = facts.get(eid, e.raw.get("default"))
     if e.kind == "date":
         ok = e.in_force_from is None or _d(v) >= e.in_force_from
         return (MET, e.authority, "") if ok else (FAILED, e.authority, "not_in_force")
@@ -82,7 +84,10 @@ def gold(statute: Statute, facts: dict) -> Gold:
     trace, failing, contested, codes = [], [], [], {}
     for e in statute.elements:
         status, auth, code = _status(statute, e.id, facts)
-        trace.append((("element", e.id), ("value", str(facts[e.id])), ("status", status), ("authority", tuple(auth))))
+        if e.id not in facts and status == MET:
+            continue                     # a defaulted element that is met does not appear in the derivation
+        v = facts.get(e.id, e.raw.get("default"))
+        trace.append((("element", e.id), ("value", str(v)), ("status", status), ("authority", tuple(auth))))
         codes[e.id] = code
         if status == FAILED:
             failing.append(e.id)

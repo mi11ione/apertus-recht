@@ -31,7 +31,7 @@ def test_remove_religion_from_closed_list(d261, facts):
     # every religion item that was not already an acquittal flips: convictions and open (contested) items alike,
     # because a failed element decides even when another element is contested
     expect = {i for i, f in enumerate(facts) if f["characteristic"] == "religion" and f["setting"] != "private"
-              and f["act_date"] >= "1995-01-01"}
+              and f["act_date"] >= "1995-01-01" and f.get("dignity", "degrading") != "criticism"}
     assert expect and _flips(d261.statute, m, facts) == expect
     assert all(gold(m, facts[i]).verdict == "acquit" for i in expect)
 
@@ -88,4 +88,13 @@ def test_every_true_flip_is_caught_by_some_mutation(d261, scenarios261):
             by_reason.setdefault(s.gold.reason, 0)
             by_reason[s.gold.reason] += 1
     assert set(by_reason) == {"setting:failed", "characteristic:not_listed", "characteristic:not_yet_covered",
-                              "act_date:not_in_force"}
+                              "act_date:not_in_force", "dignity:failed"}
+
+
+def test_treat_criticism_as_degrading(d261, facts):
+    """A18: if objective criticism of a religion counted as degrading, exactly the DIGNITY criticism variants flip."""
+    m = _mutant(d261)
+    m.element("dignity").values["criticism"]["satisfied"] = True
+    expect = {i for i, f in enumerate(facts) if f.get("dignity") == "criticism" and f["setting"] == "public"
+              and f["characteristic"] in ("race", "ethnicity", "religion") and f["act_date"] >= "1995-01-01"}
+    assert expect and _flips(d261.statute, m, facts) == expect

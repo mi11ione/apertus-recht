@@ -1,0 +1,311 @@
+{
+ "note": "A18, exploratory: the dignity threshold (BGE 131 IV 23 E. 3); 70B, exact forced choice",
+ "cells": [
+  {
+   "lang": "de",
+   "rung": "R0",
+   "framing": "conv",
+   "degrading": {
+    "convicted": 20,
+    "n": 20
+   },
+   "criticism": {
+    "convicted": 16,
+    "n": 20
+   },
+   "borderline": {
+    "convicted": 20,
+    "n": 20
+   }
+  },
+  {
+   "lang": "de",
+   "rung": "R0",
+   "framing": "ver",
+   "degrading": {
+    "convicted": 20,
+    "n": 20
+   },
+   "criticism": {
+    "convicted": 19,
+    "n": 20
+   },
+   "borderline": {
+    "convicted": 20,
+    "n": 20
+   }
+  },
+  {
+   "lang": "de",
+   "rung": "R3",
+   "framing": "conv",
+   "degrading": {
+    "convicted": 20,
+    "n": 20
+   },
+   "criticism": {
+    "convicted": 20,
+    "n": 20
+   },
+   "borderline": {
+    "convicted": 20,
+    "n": 20
+   }
+  },
+  {
+   "lang": "de",
+   "rung": "R3",
+   "framing": "ver",
+   "degrading": {
+    "convicted": 20,
+    "n": 20
+   },
+   "criticism": {
+    "convicted": 20,
+    "n": 20
+   },
+   "borderline": {
+    "convicted": 20,
+    "n": 20
+   }
+  },
+  {
+   "lang": "de",
+   "rung": "R5",
+   "framing": "conv",
+   "degrading": {
+    "convicted": 20,
+    "n": 20
+   },
+   "criticism": {
+    "convicted": 20,
+    "n": 20
+   },
+   "borderline": {
+    "convicted": 20,
+    "n": 20
+   }
+  },
+  {
+   "lang": "de",
+   "rung": "R5",
+   "framing": "ver",
+   "degrading": {
+    "convicted": 20,
+    "n": 20
+   },
+   "criticism": {
+    "convicted": 19,
+    "n": 20
+   },
+   "borderline": {
+    "convicted": 20,
+    "n": 20
+   }
+  },
+  {
+   "lang": "fr",
+   "rung": "R0",
+   "framing": "conv",
+   "degrading": {
+    "convicted": 20,
+    "n": 20
+   },
+   "criticism": {
+    "convicted": 2,
+    "n": 20
+   },
+   "borderline": {
+    "convicted": 17,
+    "n": 20
+   }
+  },
+  {
+   "lang": "fr",
+   "rung": "R0",
+   "framing": "ver",
+   "degrading": {
+    "convicted": 20,
+    "n": 20
+   },
+   "criticism": {
+    "convicted": 9,
+    "n": 20
+   },
+   "borderline": {
+    "convicted": 20,
+    "n": 20
+   }
+  },
+  {
+   "lang": "fr",
+   "rung": "R3",
+   "framing": "conv",
+   "degrading": {
+    "convicted": 20,
+    "n": 20
+   },
+   "criticism": {
+    "convicted": 16,
+    "n": 20
+   },
+   "borderline": {
+    "convicted": 18,
+    "n": 20
+   }
+  },
+  {
+   "lang": "fr",
+   "rung": "R3",
+   "framing": "ver",
+   "degrading": {
+    "convicted": 20,
+    "n": 20
+   },
+   "criticism": {
+    "convicted": 2,
+    "n": 20
+   },
+   "borderline": {
+    "convicted": 11,
+    "n": 20
+   }
+  },
+  {
+   "lang": "fr",
+   "rung": "R5",
+   "framing": "conv",
+   "degrading": {
+    "convicted": 20,
+    "n": 20
+   },
+   "criticism": {
+    "convicted": 20,
+    "n": 20
+   },
+   "borderline": {
+    "convicted": 20,
+    "n": 20
+   }
+  },
+  {
+   "lang": "fr",
+   "rung": "R5",
+   "framing": "ver",
+   "degrading": {
+    "convicted": 20,
+    "n": 20
+   },
+   "criticism": {
+    "convicted": 20,
+    "n": 20
+   },
+   "borderline": {
+    "convicted": 20,
+    "n": 20
+   }
+  },
+  {
+   "lang": "it",
+   "rung": "R0",
+   "framing": "conv",
+   "degrading": {
+    "convicted": 20,
+    "n": 20
+   },
+   "criticism": {
+    "convicted": 2,
+    "n": 20
+   },
+   "borderline": {
+    "convicted": 20,
+    "n": 20
+   }
+  },
+  {
+   "lang": "it",
+   "rung": "R0",
+   "framing": "ver",
+   "degrading": {
+    "convicted": 20,
+    "n": 20
+   },
+   "criticism": {
+    "convicted": 12,
+    "n": 20
+   },
+   "borderline": {
+    "convicted": 20,
+    "n": 20
+   }
+  },
+  {
+   "lang": "it",
+   "rung": "R3",
+   "framing": "conv",
+   "degrading": {
+    "convicted": 20,
+    "n": 20
+   },
+   "criticism": {
+    "convicted": 20,
+    "n": 20
+   },
+   "borderline": {
+    "convicted": 20,
+    "n": 20
+   }
+  },
+  {
+   "lang": "it",
+   "rung": "R3",
+   "framing": "ver",
+   "degrading": {
+    "convicted": 20,
+    "n": 20
+   },
+   "criticism": {
+    "convicted": 19,
+    "n": 20
+   },
+   "borderline": {
+    "convicted": 20,
+    "n": 20
+   }
+  },
+  {
+   "lang": "it",
+   "rung": "R5",
+   "framing": "conv",
+   "degrading": {
+    "convicted": 20,
+    "n": 20
+   },
+   "criticism": {
+    "convicted": 20,
+    "n": 20
+   },
+   "borderline": {
+    "convicted": 20,
+    "n": 20
+   }
+  },
+  {
+   "lang": "it",
+   "rung": "R5",
+   "framing": "ver",
+   "degrading": {
+    "convicted": 20,
+    "n": 20
+   },
+   "criticism": {
+    "convicted": 20,
+    "n": 20
+   },
+   "borderline": {
+    "convicted": 20,
+    "n": 20
+   }
+  }
+ ]
+}

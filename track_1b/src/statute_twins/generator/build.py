@@ -48,6 +48,13 @@ def _attr(d: Design, slot: str, vid: str, attr: str):
     return facts[attr] if attr in facts else a.get(attr)
 
 
+def _family_ok(d: Design, slot: str, vid: str, fam: str) -> bool:
+    """A slot value with `only_families` is drawn only by those families (A18), so adding one leaves the draws of every
+    other family unchanged."""
+    only = d.slots[slot][vid].get("only_families")
+    return not only or fam in only
+
+
 def matches(d: Design, slot: str, vid: str, flt: dict, base: dict | None) -> bool:
     a = d.slots[slot][vid]
     for key, want in (flt or {}).items():
@@ -159,13 +166,15 @@ def build_scenarios(d: Design, seed: int | None = None) -> list[Scenario]:
                 base = {}
                 for slot in sample_order(d):
                     flt = (spec.get("base") or {}).get(slot, {})
-                    cands = [v for v in d.slots[slot] if matches(d, slot, v, flt, None) and _satisfiable(d, spec, slot, v)]
+                    cands = [v for v in d.slots[slot] if matches(d, slot, v, flt, None) and _satisfiable(d, spec, slot, v)
+                             and _family_ok(d, slot, v, fam)]
                     base[slot] = picker.pick(fam, slot, cands)
                 variants = []
                 for vs in spec["variants"]:
                     slot = vs["slot"]
                     used = {base[slot]} | {x[slot] for x, _ in variants}
-                    cands = [v for v in d.slots[slot] if v not in used and matches(d, slot, v, vs.get("filter"), base)]
+                    cands = [v for v in d.slots[slot] if v not in used and matches(d, slot, v, vs.get("filter"), base)
+                             and _family_ok(d, slot, v, fam)]
                     vslots = dict(base)
                     vslots[slot] = picker.pick(fam, slot, cands)
                     variants.append((vslots, vs))
@@ -246,7 +255,7 @@ def acceptance(d: Design, sc: Scenario) -> str:
         detail = f"{g.reason}|{sc.facts.get(g.deciding_element)}"
         why = reasons.get(detail, reasons.get(g.reason, g.reason)).format(**kw)
         return spec["acquit"].format(why=why, **kw)
-    return spec["open"].format(**kw)
+    return ((spec.get("open_reasons") or {}).get(g.reason) or spec["open"]).format(**kw)
 
 
 def rationale(d: Design, sc: Scenario) -> str:
@@ -327,18 +336,21 @@ def build_items(d: Design, scenarios: list[Scenario], subset: str = "core") -> l
     items = []
     for lang in d.langs:
         for sc in scenarios:
+            fspec = d.families.get(sc.family) or {}
+            if fspec.get("langs") and lang not in fspec["langs"]:
+                continue                 # a family may be rendered in some languages only (A18)
             text = render(d, lang, sc.slots)
             chosen, rejected, minimal = reference_answers(d, lang, sc)
             auth = _authorities(sc.gold)
             fam = d.slots["act"][sc.slots["act"]].get("family") if "act" in sc.slots else None
             items.append(dict(
-                id=item_id(d, lang, sc), lang=lang, subset=subset, statute=d.statute.id,
+                id=item_id(d, lang, sc), lang=lang, subset=fspec.get("subset", subset), statute=d.statute.id,
                 twin_group=sc.group_id, family=sc.family, variant=sc.role, variant_index=sc.k,
                 changed_slot=sc.changed_slot, base_id=item_id(d, lang, Scenario(sc.group_id, sc.family, 0, {}, {}, sc.gold, "base")),
                 template_id=sc.slots.get("frame"), wording_family=fam,
                 split=("heldout" if fam == heldout else "fit") if (heldout and fam) else "all",
                 slots=dict(sc.slots), facts=dict(sc.facts),
-                **{e: sc.facts.get(e) for e in d.statute.element_ids},
+                **{e: sc.facts.get(e) for e in d.statute.element_ids if e in sc.facts},
                 text=text,
                 gold_verdict=sc.gold.verdict, deciding_element=sc.gold.deciding_element, gold_reason=sc.gold.reason,
                 label=sc.gold.label, trap=sc.trap,

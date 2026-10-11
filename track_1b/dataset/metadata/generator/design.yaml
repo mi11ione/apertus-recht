@@ -26,6 +26,9 @@ acceptance:
     "characteristic:not_listed": "{char} is not on the closed list of Art. 261bis StGB"
     "characteristic:not_yet_covered": "sexual orientation is protected only for acts from 1 July 2020 (AS 2020 1609; no retroactivity, Art. 2 StGB)"
     "act_date:not_in_force": "Art. 261bis StGB entered into force on 1 January 1995 and does not apply retroactively (Art. 2 StGB)"
+    "dignity:failed": "the statement criticises the religion's teachings and institutions without denying its members equal worth as human beings; unfavourable but objective criticism does not fulfil Art. 261bis Abs. 4 (BGE 131 IV 23 E. 3)"
+  open_reasons:
+    "dignity:contested": "Acceptable: identifies as decisive whether the remark denies the group's members equal worth as human beings (BGE 131 IV 23 E. 3) and explains that this depends on its exact wording and context, which the facts leave open; a reasoned leaning is acceptable. Unacceptable: a verdict stated as certain without addressing the dignity threshold."
   traps:
     family_wording: "for example by treating the family wording as making a public statement private"
     synonym: "for example by treating the paraphrased characteristic as one outside the closed list"
@@ -107,6 +110,10 @@ slots:
       a4B2: {facts: {paragraph: abs4}, family: B}
       a4C1: {facts: {paragraph: abs4}, family: C}
       a4C2: {facts: {paragraph: abs4}, family: C}
+      # A18: the dignity threshold decides; drawn by the DIGNITY family only (other families' draws are unchanged)
+      a4D_deg:  {facts: {paragraph: abs4, dignity: degrading}, family: D, tags: [dignity, degrading], only_families: [DIGNITY]}
+      a4D_crit: {facts: {paragraph: abs4, dignity: criticism}, family: D, tags: [dignity, criticism], only_families: [DIGNITY]}
+      a4D_bord: {facts: {paragraph: abs4, dignity: borderline}, family: D, tags: [dignity, borderline], only_families: [DIGNITY]}
   setting:
     values:
       pub_rally:      {facts: {setting: public}, tags: [public, crowd]}
@@ -215,6 +222,20 @@ families:
     variants:
       - {slot: act, filter: {match: [paragraph], differ: [family]}, expect: placebo}
       - {slot: act, filter: {differ: [paragraph]}, expect: placebo}
+
+  DIGNITY:
+    title: the dignity threshold of Abs. 4 (BGE 131 IV 23 E. 3) - degrading the believers vs criticising the religion, and a borderline remark (A18, exploratory)
+    groups: 20
+    subset: dignity            # written to dataset/dignity/, outside the core set and its pre-registered tests
+    langs: [de, fr, it]
+    base:
+      setting: {tags: [public, crowd], placebo_of: null}    # spoken: the exact wording of a joke can stay unestablished
+      group:   {characteristic: religion, synonym_of: null}
+      date:    {tags: [recent]}
+      act:     {tags: [dignity, degrading]}
+    variants:
+      - {slot: act, filter: {tags: [dignity, criticism]}, expect: true_flip}
+      - {slot: act, filter: {tags: [dignity, borderline]}, expect: contested}
 
 # held-out wording family for the pre-registered read-back test (fit on A+B, predict C)
 heldout_wording_family: C

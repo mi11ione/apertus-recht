@@ -55,6 +55,17 @@ def main():
         if not ok:
             sys.exit(f"paraphrase split: personal data found: {info['hits'][:5]}")
         allow += sorted(str(f.relative_to(ROOT / "dataset")) for f in para.rglob("*") if f.is_file())
+    # the dignity family (A18): its own items, prompts and responses, scanned like the paraphrases
+    dign = ROOT / "dataset/dignity"
+    if dign.exists():
+        from statute_twins.qc.checks import check_pii
+        rows = [json.loads(l) for f in sorted(dign.glob("eval/*.jsonl")) if not f.name.startswith("prompts_")
+                for l in f.read_text().splitlines()]
+        resp = [json.loads(l) for f in sorted(dign.glob("responses/*.jsonl")) for l in f.read_text().splitlines()]
+        name, ok, info = check_pii(rows, resp)
+        if not ok:
+            sys.exit(f"dignity family: personal data found: {info['hits'][:5]}")
+        allow += sorted(str(f.relative_to(ROOT / "dataset")) for f in dign.rglob("*") if f.is_file())
     api = HfApi()
     api.create_repo(a.repo, repo_type="dataset", private=a.private, exist_ok=True)
     api.upload_folder(repo_id=a.repo, repo_type="dataset", folder_path=str(ROOT / "dataset"),

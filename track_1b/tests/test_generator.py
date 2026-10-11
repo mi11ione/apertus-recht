@@ -44,11 +44,17 @@ def test_each_variant_changes_exactly_one_slot(scenarios261):
             assert diff == [s.changed_slot]
 
 
+def _rendered(d, s, lang):
+    """A family may be rendered in some languages only (A18: DIGNITY in de, fr, it)."""
+    langs = (d.families.get(s.family) or {}).get("langs")
+    return not langs or lang in langs
+
+
 def test_no_duplicate_scenarios_or_texts(d261, scenarios261):
     sigs = [tuple(sorted(s.slots.items())) for s in scenarios261]
     assert len(set(sigs)) == len(sigs)
     for lang in d261.langs:
-        texts = [render.render(d261, lang, s.slots) for s in scenarios261]
+        texts = [render.render(d261, lang, s.slots) for s in scenarios261 if _rendered(d261, s, lang)]
         assert len(set(texts)) == len(texts), lang
 
 
@@ -56,6 +62,8 @@ def test_rendered_text_is_clean(d261, scenarios261):
     bad = re.compile(r"[{}]|\s[,.;:]|,,|\.\.(?!\.)|\s{2,}|^\s|\s$")
     for lang in d261.langs:
         for s in scenarios261:
+            if not _rendered(d261, s, lang):
+                continue
             t = render.render(d261, lang, s.slots)
             assert not bad.search(t.replace(" :", ":") if lang.split("_")[0] == "fr" else t), (lang, s.group_id, s.k, t)
 

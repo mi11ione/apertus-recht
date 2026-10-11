@@ -273,3 +273,18 @@ on. `chosen`, `rejected`, `rejected_minimal`, the acceptance criteria and every 
 judgement or result changes; the locked item files change by the two added fields. The register shows the note on
 every acquittal, labels verdicts "under Art. 261bis", and is localised (German, French, Italian); the README opens
 with the scope note.
+
+## A18 (2026-10-11, after round 9): the dignity threshold as an element (exploratory)
+Every juror noted that the core set stipulates the dignity threshold of Abs. 4, where most real acquittals turn. A new
+element `dignity` (Abs. 4 first half; authority BGE 131 IV 23 E. 3, Regeste pinned verbatim in DE/FR/IT from bger.ch:
+degrading means denying equal worth as human beings; objective criticism does not) with the values `degrading` (met),
+`criticism` (failed: criticism of a religion's teachings, practices or institutions without degrading its members) and
+`borderline` (contested: a crude "joke" whose wording is not established), declared with the default `degrading`, so
+every existing item keeps its gold, id and prompts (all prompt files byte-identical; results unchanged; the locked
+item files change only in `provenance.statute_sha256`; the engine gains generic element defaults). A family DIGNITY of
+20 twin groups per language (the four religion groups; spoken public settings; 60 items per language) is written to
+`dataset/dignity/`, outside the core set, and scored for the 70B at R0, R3 and R5 in both framings
+(`scripts/dignity.py`, `reports/dignity.json`; selfcheck step 2h re-derives items, prompts and scores). Degrading
+statements are convicted throughout; legitimate criticism is recognised without the law in French and Italian
+(Ja/Nein, 18 of 20) but convicted once the rules or the verbatim law are in the prompt, in every language. A
+legal-reviewer agent checked the family before release. Not pre-registered.

@@ -43,6 +43,8 @@ slot_labels:
     cont_office: "un courriel adressé à quelque 25 collègues de travail, anciens et actuels"
     cont_assoc: "une séance non publique d'une association d'environ 25 membres, certains connus depuis longtemps, d'autres récents"
 chosen:
+  "dignity:failed": "Non. Les propos critiquent les enseignements et les institutions d'une religion, mais ne dénient pas à ses membres une valeur égale en tant qu'êtres humains ; une critique négative mais objective ne réalise pas l'art. 261bis al. 4 CP (ATF 131 IV 23 consid. 3)."
+  "dignity:contested": "Cela dépend de la teneur exacte, que les faits laissent ouverte. Selon l'ATF 131 IV 23 consid. 3, il s'agit de savoir si la plaisanterie dénie aux membres de la religion une valeur égale en tant qu'êtres humains ou si elle est seulement grossière et de mauvais goût."
   convict: "Oui. Les propos ont été tenus publiquement au sens de l'ATF 130 IV 111 consid. 5.2 ({setting_label}) ; ils visent un groupe en raison d'un critère protégé ({char_label}) et réalisent l'infraction de l'art. 261bis {paragraph_label}. L'acte commis {date} entre dans le champ d'application temporel."
   "setting:failed": "Non. {Setting_label} est un cadre privé marqué par des relations personnelles ; selon l'ATF 130 IV 111 consid. 5.2, il manque le caractère public qu'exige l'art. 261bis CP."
   "characteristic:not_listed": "Non. Le critère « {char_label} » ne fait pas partie de la liste exhaustive de l'art. 261bis CP (appartenance raciale, ethnique ou religieuse, orientation sexuelle) ; les propos ne tombent pas sous cette disposition, même tenus publiquement."
@@ -51,6 +53,7 @@ chosen:
   "act_date:not_in_force": "Non. L'art. 261bis CP n'est en vigueur que depuis le 1er janvier 1995 ; un acte commis {date} n'est pas punissable en vertu de cette disposition (art. 1 et 2 CP)."
   "setting:contested": "Cela dépend de circonstances que l'état de fait laisse ouvertes. Selon l'ATF 130 IV 111 consid. 5.2, le caractère public du cadre ({setting_label}) dépend de l'existence de relations personnelles ou d'une confiance particulière ; le nombre de personnes atteintes compte aussi."
 minimal:
+  "dignity:failed": "Oui. Les propos ne critiquent pas seulement les enseignements et les institutions d'une religion, mais dénient à ses membres une valeur égale en tant qu'êtres humains ; ils réalisent l'art. 261bis al. 4 CP (ATF 131 IV 23 consid. 3)."
   convict: "Non. Les propos n'ont pas été tenus publiquement au sens de l'ATF 130 IV 111 consid. 5.2 ({setting_label}) ; ils visent certes un groupe en raison d'un critère ({char_label}), mais ne réalisent pas l'infraction de l'art. 261bis {paragraph_label}. L'acte commis {date} n'est donc pas punissable."
   "setting:failed": "Oui. {Setting_label} n'est pas un cadre privé marqué par des relations personnelles ; selon l'ATF 130 IV 111 consid. 5.2, le caractère public qu'exige l'art. 261bis CP est donc donné."
   "characteristic:not_listed": "Oui. Le critère « {char_label} » fait partie de la liste protégée de l'art. 261bis CP (appartenance raciale, ethnique ou religieuse, orientation sexuelle et autres) ; les propos tombent sous cette disposition, car ils ont été tenus publiquement."
@@ -58,6 +61,12 @@ minimal:
   "characteristic:not_yet_covered": "Oui. L'orientation sexuelle est protégée par l'art. 261bis CP (RO 2020 1609) ; un acte commis {date} est visé, car selon les art. 1 et 2 CP c'est la loi en vigueur au moment du jugement qui s'applique."
   "act_date:not_in_force": "Oui. L'art. 261bis CP est aujourd'hui en vigueur ; un acte commis {date} est donc punissable en vertu de cette disposition (art. 1 et 2 CP)."
 rejected:
+  "dignity:failed":
+    - "Oui. Qualifier publiquement une religion de rétrograde rabaisse ses membres et tombe sous le coup de l'art. 261bis CP."
+    - "Oui. Tout dénigrement public d'une religion porte atteinte à la dignité des croyants ; l'art. 261bis CP est réalisé."
+  "dignity:contested":
+    - "Oui. Une plaisanterie grossière sur une communauté religieuse est clairement punissable selon l'art. 261bis CP."
+    - "Non. Une plaisanterie relève de la liberté d'expression et n'est jamais punissable."
   convict:
     - "Non. Les propos sont certes choquants, mais ils relèvent de la liberté d'expression ; l'infraction prévue à l'art. 261bis CP n'est pas réalisée."
     - "Non. L'art. 261bis CP suppose une attaque contre une personne déterminée ; des propos généraux sur un groupe ne suffisent pas."

@@ -1,0 +1,23 @@
+{
+ "kind": "decision",
+ "id": "BGE 131 IV 23",
+ "docket": "6S.64/2004",
+ "date": "2004-10-06",
+ "court": "Bundesgericht, Kassationshof",
+ "consideration": "E. 3",
+ "regeste": {
+  "de": "Art. 261bis Abs. 4 StGB, Art. 16 BV, Art. 10 EMRK, Art. 19 UNO-Pakt II; Rassendiskriminierung, Meinungsäusserungsfreiheit, politische Auseinandersetzung. Als Herabsetzung oder Diskriminierung im Sinne von Art. 261bis Abs. 4 StGB erscheinen alle Verhaltensweisen, durch welche den Angehörigen einer Bevölkerungsgruppe aufgrund ihrer Rasse, Ethnie oder Religion die Gleichwertigkeit als menschliche Wesen oder die Gleichberechtigung in Bezug auf die Menschenrechte abgesprochen oder zumindest in Frage gestellt werden. Die Freiheit der Meinungsäusserung verbietet es, in der politischen Auseinandersetzung eine Herabsetzung oder Diskriminierung im Sinne von Art. 261bis Abs. 4 StGB leichthin zu bejahen. Den Tatbestand erfüllt nicht bereits, wer über eine geschützte Bevölkerungsgruppe etwas Unvorteilhaftes äussert, solange die Kritik im Gesamtzusammenhang sachlich bleibt und sich auf objektive Umstände stützt (E. 3).",
+  "fr": "Art. 261bis al. 4 CP, art. 16 Cst., art. 10 CEDH, art. 19 Pacte ONU II; discrimination raciale, liberté d'expression, débat politique. Constituent un abaissement ou une discrimination au sens de l'art. 261bis al. 4 CP, tous les comportements qui dénient à des membres de groupes humains, en raison de leur race, leur ethnie ou leur religion, une valeur égale en tant qu'êtres humains ou des droits de l'homme égaux, ou du moins qui remettent en question cette égalité. La liberté d'expression commande que l'on n'admette pas trop facilement, dans le débat politique, l'existence d'un abaissement ou d'une discrimination au sens de l'art. 261bis al. 4 CP. Ne se rend pas encore coupable de cette infraction, celui qui exprime quelque chose de négatif sur un groupe humain protégé par cette disposition, pour autant que la critique demeure globalement dans les limites de l'objectivité et repose sur des faits objectifs (consid. 3).",
+  "it": "Art. 261bis cpv. 4 CP, art. 16 Cost., art. 10 CEDU, art. 19 Patto ONU II; discriminazione razziale, libertà d'espressione, dibattito politico. Discredita o discrimina ai sensi dell'art. 261bis cpv. 4 CP, chiunque mediante il proprio modo di comportarsi non riconosce o perlomeno mette in dubbio la parità di valore in quanto esseri umani o l'uguaglianza, in ambito di diritti dell'uomo, degli appartenenti ad un gruppo di popolazione, per motivo della loro razza, etnia o religione. Nel dibattito politico, la libertà d'espressione impedisce che vengano ammessi alla leggera l'esistenza di discredito o discriminazione ai sensi dell'art. 261bis cpv. 4 CP. Non si rende ancora colpevole di questo reato, colui che esprime qualcosa di negativo su di un gruppo di popolazione protetto da tale disposizione, nella misura in cui la critica resta complessivamente obiettiva e si basa su circostanze fattuali (consid. 3)."
+ },
+ "regeste_sha256": {
+  "de": "10ef4c076db8d10c1485fe1846af9227cdbcd8e2a068e5aa6bc2500ba94effe3",
+  "fr": "6809918744caa325e8c8fab769aed2c78ccf9d219c4b66bfdfd6b1cf2ca91eac",
+  "it": "faad7eea3609828fb594b813e43edb8f272bd41a19d527bb82a88ef7981d3309"
+ },
+ "source": {
+  "url": "https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?lang=de&type=highlight_simple_query&query_words=&highlight_docid=BGE-131-IV-23&top_subcollection_clir=bge&regeste_lang={ger,fre,ita}",
+  "fetched": "2026-10-11"
+ },
+ "licence": "public domain (URG Art. 5 Abs. 1 lit. c)"
+}

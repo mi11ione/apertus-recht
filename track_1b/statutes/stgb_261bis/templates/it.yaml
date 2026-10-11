@@ -83,10 +83,10 @@ groups:
   eth_tamil:       {def: "i tamil a causa della loro etnia", di: "dei tamil a causa della loro etnia", a: "ai tamil a causa della loro etnia"}
   eth_kurd:        {def: "i curdi a causa della loro etnia", di: "dei curdi a causa della loro etnia", a: "ai curdi a causa della loro etnia"}
   eth_roma_syn:    {def: "i membri della comunità rom a causa della loro appartenenza etnica", di: "dei membri della comunità rom a causa della loro appartenenza etnica", a: "ai membri della comunità rom a causa della loro appartenenza etnica"}
-  rel_jewish:      {def: "gli ebrei a causa della loro religione", di: "degli ebrei a causa della loro religione", a: "agli ebrei a causa della loro religione"}
-  rel_muslim:      {def: "i musulmani a causa della loro religione", di: "dei musulmani a causa della loro religione", a: "ai musulmani a causa della loro religione"}
-  rel_free:        {def: "i membri di una Chiesa evangelica libera a causa della loro religione", di: "dei membri di una Chiesa evangelica libera a causa della loro religione", a: "ai membri di una Chiesa evangelica libera a causa della loro religione"}
-  rel_hindu:       {def: "gli indù a causa della loro religione", di: "degli indù a causa della loro religione", a: "agli indù a causa della loro religione"}
+  rel_jewish:      {def: "gli ebrei a causa della loro religione", di: "degli ebrei a causa della loro religione", a: "agli ebrei a causa della loro religione", who: "gli ebrei", rel: "dell'ebraismo"}
+  rel_muslim:      {def: "i musulmani a causa della loro religione", di: "dei musulmani a causa della loro religione", a: "ai musulmani a causa della loro religione", who: "i musulmani", rel: "dell'islam"}
+  rel_free:        {def: "i membri di una Chiesa evangelica libera a causa della loro religione", di: "dei membri di una Chiesa evangelica libera a causa della loro religione", a: "ai membri di una Chiesa evangelica libera a causa della loro religione", who: "i membri di una Chiesa evangelica libera", rel: "di una Chiesa evangelica libera"}
+  rel_hindu:       {def: "gli indù a causa della loro religione", di: "degli indù a causa della loro religione", a: "agli indù a causa della loro religione", who: "gli indù", rel: "dell'induismo"}
   rel_muslim_syn:  {def: "i musulmani a causa della loro fede", di: "dei musulmani a causa della loro fede", a: "ai musulmani a causa della loro fede"}
   rel_jewish_syn:  {def: "gli ebrei a causa della loro fede", di: "degli ebrei a causa della loro fede", a: "agli ebrei a causa della loro fede"}
   so_homo:         {def: "le persone omosessuali a causa del loro orientamento sessuale", di: "delle persone omosessuali a causa del loro orientamento sessuale", a: "alle persone omosessuali a causa del loro orientamento sessuale"}
@@ -129,6 +129,10 @@ acts:
   a4B2: "ha disprezzato {g.def} negando loro ogni dignità umana"
   a4C1: "ha negato la dignità umana {g.di}"
   a4C2: "ha definito esseri umani di seconda categoria {g.def}"
+  # A18 (solo famiglia DIGNITY)
+  a4D_deg: "ha definito {g.who} parassiti e ha negato loro, a causa della loro fede, la qualità di esseri umani di pari valore"
+  a4D_crit: "ha criticato duramente gli insegnamenti e le istituzioni {g.rel}, definendo retrograde le loro norme sul ruolo delle donne e affermando che regole religiose speciali non dovrebbero valere in Svizzera"
+  a4D_bord: "ha raccontato una barzelletta volgare che prendeva di mira {g.who}, la cui formulazione esatta non è stata accertata e che alcuni presenti hanno definito «fuori luogo»"
 
 settings:
   # public

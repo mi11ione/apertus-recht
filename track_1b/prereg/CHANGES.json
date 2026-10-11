@@ -3,12 +3,14 @@
  "note": "Every locked file whose hash differs from LOCK.json / LOCK_court.json, with the amendments that changed it (see AMENDMENTS.md) and, under sha256_now, its hash after the last recorded amendment. The lock commit was d9537fd before the history rewrite of 10 Oct 2026 (assistant trailers removed); de35225 has the identical tree, and tag prereg-lock points to it. Checked by `statute-twins prereg-verify`.",
  "statutes/stgb_261bis/statute.yaml": [
   "A7",
-  "A8"
+  "A8",
+  "A18"
  ],
  "statutes/stgb_261bis/design.yaml": [
   "A1",
   "A3",
-  "A8"
+  "A8",
+  "A18"
  ],
  "src/statute_twins/analysis/heldout.py": [
   "A6",
@@ -26,7 +28,8 @@
   "A7",
   "A8",
   "A11",
-  "A17"
+  "A17",
+  "A18"
  ],
  "dataset/eval/core_fr.jsonl": [
   "A2",
@@ -35,7 +38,8 @@
   "A6",
   "A7",
   "A8",
-  "A17"
+  "A17",
+  "A18"
  ],
  "dataset/eval/core_it.jsonl": [
   "A2",
@@ -44,20 +48,25 @@
   "A6",
   "A7",
   "A8",
-  "A17"
+  "A17",
+  "A18"
  ],
  "prereg/PREREG_court.md": [
   "stratum B (LOCK_court.json: stratum_B)",
   "A4"
  ],
  "sha256_now": {
-  "statutes/stgb_261bis/statute.yaml": "330fdf9e83a28dda71ced2d3b0883951e608db2b84965baf1dbaca6af1a8c5ce",
-  "statutes/stgb_261bis/design.yaml": "0df7093fbb87db8b118ae41bf29d09a1febbb113fdd986a3634f6a32553bc847",
+  "statutes/stgb_261bis/statute.yaml": "ac98a1930aba283b754f9f56e58a2f2f7a7ddd29066732ad6fddae5bd1a27588",
+  "statutes/stgb_261bis/design.yaml": "4b45e14bfefd365081fd67ed2e04aac49c218c85ba997e394e7e5acc7d860c3e",
   "src/statute_twins/analysis/heldout.py": "32837662139ab1b88c5add3fd8872adcd37e02803e061d15ffc083e7a06200e5",
   "src/statute_twins/analysis/results.py": "6e9e22256e237b373a2c72b205d2d21e760e72acedb00e6fff232446bf7218f9",
-  "dataset/eval/core_de.jsonl": "542c08edbc3b4a6abae6e418c6d6ee8a19cb3aae1f59008d493787105c8d89a2",
-  "dataset/eval/core_fr.jsonl": "1e28de7a1e884d347775637edfce8ee58b176655a83bef40bf47f3d740dfa822",
-  "dataset/eval/core_it.jsonl": "13260948682ba43fd172a64a4990da7d8824c75d0240ea05350da0ea3e9a877a",
-  "prereg/PREREG_court.md": "65723983e22a3d684b172af35cc7fea6e74246869fc71fde88e852b8e020634f"
- }
+  "dataset/eval/core_de.jsonl": "9e71832cddbf9e203d3c3c90243f12a33f143d18952e924f2cada22ed8e6f7f2",
+  "dataset/eval/core_fr.jsonl": "ddaa8a13f2c4b17fdd1a3ac7123354d0f6245a82aa5f3ea3a0f6d92ce61bde98",
+  "dataset/eval/core_it.jsonl": "73ae1e00bb971f13c061c162b51f1dacea5588ed1eef681a8eca567fc6a2f8f0",
+  "prereg/PREREG_court.md": "65723983e22a3d684b172af35cc7fea6e74246869fc71fde88e852b8e020634f",
+  "src/statute_twins/gold/engine.py": "e06f5cbdf72505a019c7c7427c54c3d7e75f5df3279b44303176a9d97da419be"
+ },
+ "src/statute_twins/gold/engine.py": [
+  "A18"
+ ]
 }

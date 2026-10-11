@@ -77,6 +77,19 @@ sources:
       Äusserungen im Familien- und Freundeskreis oder sonst in einem durch persönliche Beziehungen oder besonderes
       Vertrauen geprägten Umfeld. Ob diese Voraussetzung erfüllt ist, hängt von den konkreten Umständen ab, wobei
       insoweit auch die Zahl der anwesenden Personen eine Rolle spielen kann.
+  bge_131_iv_23:
+    cite: "BGE 131 IV 23 E. 3"
+    cite_lang: {fr: "ATF 131 IV 23 consid. 3", it: "DTF 131 IV 23 consid. 3"}
+    kind: decision
+    file: ../sources/bge_131_IV_23.json
+    ref: BGE 131 IV 23 E. 3 (6S.64/2004, 6 Oct 2004)
+    holding: >-
+      Als Herabsetzung oder Diskriminierung im Sinne von Art. 261bis Abs. 4 StGB erscheinen alle Verhaltensweisen,
+      durch welche den Angehörigen einer Bevölkerungsgruppe aufgrund ihrer Rasse, Ethnie oder Religion die
+      Gleichwertigkeit als menschliche Wesen oder die Gleichberechtigung in Bezug auf die Menschenrechte abgesprochen
+      oder zumindest in Frage gestellt werden. Den Tatbestand erfüllt nicht bereits, wer über eine geschützte
+      Bevölkerungsgruppe etwas Unvorteilhaftes äussert, solange die Kritik im Gesamtzusammenhang sachlich bleibt und
+      sich auf objektive Umstände stützt.
   pa_iv_13_407:
     cite: "Pa.Iv. 13.407 (legislative history)"
     cite_lang: {fr: "Iv.pa. 13.407 (travaux préparatoires)", it: "Iv.Pa. 13.407 (materiali legislativi)"}
@@ -126,6 +139,24 @@ elements:
       abs1: {satisfied: true, note: call to hatred or discrimination}
       abs2: {satisfied: true, note: spreading an ideology of systematic denigration}
       abs4: {satisfied: true, note: degrading in a manner contrary to human dignity}
+
+  # A18: the dignity threshold of Abs. 4 (first half). Every scenario outside the DIGNITY family stipulates it (the act
+  # is written to deny equal human worth), so the element defaults to `degrading` and stays out of their derivation.
+  - id: dignity
+    kind: enum
+    label: {de: Herabsetzung gegen die Menschenwürde, fr: atteinte à la dignité humaine, it: lesione della dignità umana}
+    authority: [bge_131_iv_23]
+    default: degrading
+    values:
+      degrading:  {satisfied: true, note: the group's members are denied equal worth as human beings}
+      criticism:  {satisfied: false, note: criticism of a religion's teachings or institutions that stays objective}
+      borderline: {satisfied: contested, note: a crude remark whose degrading character depends on wording the facts leave open}
+    fail_reason: >-
+      The statement criticises the religion's teachings and institutions without denying its members equal worth as
+      human beings; unfavourable but objective criticism does not fulfil Art. 261bis Abs. 4 (BGE 131 IV 23 E. 3).
+    contested_reason: >-
+      Whether the remark denies the group's members equal worth as human beings (BGE 131 IV 23 E. 3) depends on its
+      exact wording and context, which the scenario leaves open.
 
   - id: setting
     kind: enum

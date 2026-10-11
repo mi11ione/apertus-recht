@@ -46,6 +46,8 @@ slot_labels:
     cont_office: "eine E-Mail an rund 25 frühere und heutige Arbeitskolleginnen und -kollegen"
     cont_assoc: "eine nicht öffentliche Vereinssitzung mit rund 25 Mitgliedern, teils langjährig bekannt, teils neu"
 chosen:
+  "dignity:failed": "Nein. Die Äusserung kritisiert die Lehren und Institutionen einer Religion, spricht ihren Angehörigen aber nicht die Gleichwertigkeit als Menschen ab; unvorteilhafte, aber sachliche Kritik erfüllt Art. 261bis Abs. 4 StGB nicht (BGE 131 IV 23 E. 3)."
+  "dignity:contested": "Das hängt vom genauen Wortlaut ab, den der Sachverhalt offen lässt. Entscheidend ist nach BGE 131 IV 23 E. 3, ob der Witz den Angehörigen der Religion die Gleichwertigkeit als Menschen abspricht oder nur derb und geschmacklos ist."
   convict: "Ja. Die Äusserung erfolgte öffentlich im Sinne von BGE 130 IV 111 E. 5.2 ({setting_label}); sie richtet sich gegen eine Gruppe wegen eines geschützten Merkmals ({char_label}) und erfüllt den Tatbestand von Art. 261bis {paragraph_label}. Die Tat {date} fällt in den zeitlichen Geltungsbereich."
   "setting:failed": "Nein. {Setting_label} ist ein privater Rahmen, der durch persönliche Beziehungen geprägt ist; nach BGE 130 IV 111 E. 5.2 fehlt damit die Öffentlichkeit, die Art. 261bis StGB voraussetzt."
   "characteristic:not_listed": "Nein. Das Merkmal «{char_label}» gehört nicht zur abschliessenden Liste von Art. 261bis StGB (Rasse, Ethnie, Religion, sexuelle Orientierung); die Äusserung ist nach dieser Bestimmung nicht strafbar, auch wenn sie öffentlich erfolgte."
@@ -54,6 +56,7 @@ chosen:
   "act_date:not_in_force": "Nein. Art. 261bis StGB ist erst seit dem 1. Januar 1995 in Kraft; eine Tat {date} ist nach Art. 1 und 2 StGB nicht nach dieser Bestimmung strafbar."
   "setting:contested": "Das hängt von Umständen ab, die der Sachverhalt offen lässt. Ob der Rahmen ({setting_label}) öffentlich ist, beurteilt sich nach BGE 130 IV 111 E. 5.2 danach, ob ein durch persönliche Beziehungen oder besonderes Vertrauen geprägtes Umfeld vorliegt; auch die Zahl der erreichten Personen zählt."
 minimal:
+  "dignity:failed": "Ja. Die Äusserung kritisiert nicht bloss die Lehren und Institutionen einer Religion, sondern spricht ihren Angehörigen die Gleichwertigkeit als Menschen ab; sie erfüllt Art. 261bis Abs. 4 StGB (BGE 131 IV 23 E. 3)."
   convict: "Nein. Die Äusserung erfolgte nicht öffentlich im Sinne von BGE 130 IV 111 E. 5.2 ({setting_label}); sie richtet sich zwar gegen eine Gruppe wegen eines Merkmals ({char_label}), erfüllt den Tatbestand von Art. 261bis {paragraph_label} aber nicht. Die Tat {date} ist deshalb nicht strafbar."
   "setting:failed": "Ja. {Setting_label} ist kein privater Rahmen, der durch persönliche Beziehungen geprägt ist; nach BGE 130 IV 111 E. 5.2 liegt damit die Öffentlichkeit vor, die Art. 261bis StGB voraussetzt."
   "characteristic:not_listed": "Ja. Das Merkmal «{char_label}» gehört zur geschützten Liste von Art. 261bis StGB (Rasse, Ethnie, Religion, sexuelle Orientierung und weitere); die Äusserung ist nach dieser Bestimmung strafbar, weil sie öffentlich erfolgte."
@@ -61,6 +64,12 @@ minimal:
   "characteristic:not_yet_covered": "Ja. Die sexuelle Orientierung ist durch Art. 261bis StGB geschützt (AS 2020 1609); eine Tat {date} fällt darunter, weil nach Art. 1 und 2 StGB das im Zeitpunkt des Urteils geltende Gesetz massgebend ist."
   "act_date:not_in_force": "Ja. Art. 261bis StGB ist heute in Kraft; eine Tat {date} ist nach Art. 1 und 2 StGB auch dann nach dieser Bestimmung strafbar."
 rejected:
+  "dignity:failed":
+    - "Ja. Wer eine Religion öffentlich als rückständig bezeichnet, setzt ihre Angehörigen herab und ist nach Art. 261bis StGB strafbar."
+    - "Ja. Jede öffentliche Abwertung einer Religion verletzt die Menschenwürde der Gläubigen; Art. 261bis StGB ist erfüllt."
+  "dignity:contested":
+    - "Ja. Ein derber Witz über eine Religionsgemeinschaft ist eindeutig nach Art. 261bis StGB strafbar."
+    - "Nein. Ein Witz ist von der Meinungsäusserungsfreiheit gedeckt und nie strafbar."
   convict:
     - "Nein. Die Äusserung ist zwar verwerflich, aber von der Meinungsäusserungsfreiheit gedeckt; Art. 261bis StGB ist nicht erfüllt."
     - "Nein. Art. 261bis StGB verlangt einen Angriff auf eine bestimmte Person; eine pauschale Äusserung über eine Gruppe genügt nicht."
