@@ -235,10 +235,10 @@ acts:
   # A18 (famille DIGNITY uniquement)
   a4D_deg: "{pron} a traité {g.who} de vermine et leur a dénié, en raison de leur foi, la qualité d'êtres humains égaux"
   a4D_bord: "{pron} a fait une plaisanterie grossière, dont la teneur ne ressort pas des faits, visant {g.who} ; des personnes présentes l'ont qualifiée de « déplacée »"
-  a4D_crit1: "{pron} a reproché aux communautés et aux associations {g.rel} de refuser toute réforme"
-  a4D_crit2: "{pron} a critiqué l'opacité des finances des institutions {g.rel} et exigé leur pleine transparence"
-  a4D_crit3: "{pron} a jugé dépassées les prescriptions des enseignements {g.rel} sur le rôle des femmes"
-  a4D_crit4: "{pron} a affirmé que l'enseignement religieux {g.rel} n'a pas sa place dans les écoles publiques"
+  a4D_crit1: "{pron} a reproché aux communautés et aux associations {g.rel}, en se référant à leurs propres prises de position publiques, de refuser toute réforme"
+  a4D_crit2: "{pron} a critiqué, en se référant à un rapport de révision publié, l'opacité des finances des institutions {g.rel} et exigé leur pleine transparence"
+  a4D_crit3: "{pron} a jugé dépassées les prescriptions des enseignements {g.rel} sur le rôle des femmes, telles qu'elles figurent dans leurs propres textes de référence"
+  a4D_crit4: "{pron} a affirmé, en se référant à la neutralité confessionnelle de l'État, que l'enseignement religieux {g.rel} n'a pas sa place dans les écoles publiques"
 
 settings:
   # public

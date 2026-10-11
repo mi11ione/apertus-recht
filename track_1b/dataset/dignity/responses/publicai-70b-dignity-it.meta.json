@@ -13,11 +13,11 @@
  "served_models": [
   "swiss-ai/apertus-v1.5-8b"
  ],
- "jsonl_sha256": "8334c3a8e1e460390628bfc7eaa48586b3a71aedc6f16fbe5903efc983025e6c",
+ "jsonl_sha256": "a66cbad2c59dc92b6e3693bee4b8f339b129e912b4ed9ced3aa0190f29f226f3",
  "parts": "dignity_it",
  "rungs": "R0,R3,R5",
  "framings": "conv,ver",
  "sample": null,
- "label": "Apertus v1.5 70B via Public AI (name swiss-ai/apertus-v1.5-8b), exact forced choice, DIGNITY family (A18)",
+ "label": "Apertus v1.5 70B via Public AI (name swiss-ai/apertus-v1.5-8b), exact forced choice, DIGNITY family (A18; criticism variants re-scored in A22)",
  "model": "swiss-ai/apertus-v1.5-8b"
 }

@@ -4,7 +4,7 @@
 #   step 3  live slice on a model, checked against reference bands                         (only if configured)
 # Live slice: set LLM_NAME, LLM_BASE_URL, LLM_API_KEY (any OpenAI-compatible endpoint) for LIVE=api, or LIVE=gguf to
 # download the public Q4_K_M GGUF of Apertus v1.5 8B (5.1 GB, sha256-checked) and score it on CPU with llama.cpp.
-IMAGE ?= apertus-recht:1.0
+IMAGE ?= apertus-recht:1.8
 LIVE ?= $(if $(LLM_BASE_URL),api,)
 LIVE_ITEMS ?= 30
 

@@ -136,14 +136,21 @@ PII_PATTERNS = {
 NAMES = set("""Daniel Peter Thomas Martin Christian Hans Michael Andreas Marco David Stefan Markus Urs Bruno Walter Luca
 Maria Anna Ursula Sandra Ruth Elisabeth Monika Barbara Claudia Nicole Laura Sarah Julia Lea Marie Sophie Emma Mia Noah Leon
 Müller Meier Schmid Keller Weber Huber Schneider Meyer Steiner Fischer Gerber Brunner Baumann Frei Zimmermann Moser Widmer
-Wyss Graf Roth Bianchi Rossi Ferrari Russo Colombo Bernasconi Martin Favre Rochat Bonvin Morel Dubois Girard Mercier""".split())
+Wyss Graf Roth Bianchi Rossi Ferrari Russo Colombo Bernasconi Martin Favre Rochat Bonvin Morel Dubois Girard Mercier
+Erwin Kurt Werner Ernst Rolf Heinz Fritz Paul Josef Beat Reto Roger Rene René Pierre Jean Jacques Michel Philippe Alain
+Giuseppe Mario Franco Ruth Verena Heidi Rosa Esther Marianne Christine Silvia Brigitte""".split())
 # Tokens that are ordinary words in this domain, not names: "Christian" is the religion adjective in English review
 # text (the dataset's actors are generic and never named).
 ALLOW: set[str] = {"Christian"}
 
 
+# Words that follow a year in the court notes and are not towns ("2013 Muslims", "2019 Facebook").
+NOT_TOWNS = {"Muslims", "Jews", "Facebook", "Twitter", "Instagram", "YouTube", "TikTok", "Telegram"}
+
+
 def pii_hits(text: str) -> list[tuple[str, str]]:
-    hits = [(k, m.group(0)) for k, p in PII_PATTERNS.items() for m in re.finditer(p, text)]
+    hits = [(k, m.group(0)) for k, p in PII_PATTERNS.items() for m in re.finditer(p, text)
+            if not (k == "postcode_town" and m.group(0).split()[-1] in NOT_TOWNS)]
     for tok in re.findall(r"\b[A-ZÄÖÜ][a-zäöüéèàì]+\b", text):
         if tok in NAMES and tok not in ALLOW:
             hits.append(("name_gazetteer", tok))
@@ -270,8 +277,9 @@ def run_all(ds: Path, statute: Statute) -> dict:
     meta_p = ds / "metadata" / "items.jsonl"
     meta = [json.loads(l) for l in meta_p.read_text(encoding="utf-8").splitlines() if l.strip()] if meta_p.exists() else []
     # released review records (judgements, annotations, court checks) and the exploratory splits are scanned too
-    for p in sorted((ds / "review").rglob("*.json")) if (ds / "review").exists() else []:
-        meta.append(dict(id=str(p.relative_to(ds)), record=json.loads(p.read_text(encoding="utf-8"))))
+    for p in sorted((ds / "review").rglob("*")) if (ds / "review").exists() else []:
+        if p.suffix in (".json", ".jsonl", ".tsv"):
+            meta.append(dict(id=str(p.relative_to(ds)), record=p.read_text(encoding="utf-8")))
     for sub in ("dignity", "paraphrase"):
         for p in sorted((ds / sub).rglob("*.jsonl")) if (ds / sub).exists() else []:
             meta += [json.loads(l) for l in p.read_text(encoding="utf-8").splitlines() if l.strip()]

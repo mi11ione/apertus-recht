@@ -14,12 +14,14 @@ Regeste (binding test, verbatim):
 > nicht bereits, wer über eine geschützte Bevölkerungsgruppe etwas Unvorteilhaftes äussert, solange die Kritik im
 > Gesamtzusammenhang sachlich bleibt und sich auf objektive Umstände stützt (E. 3).
 
-Values (the same three as the `dignity` element in `statute.yaml`):
+Values (corresponding to the three values of the `dignity` element in `statute.yaml`):
 
 - `degrading`: the statement denies, or at least calls into question, the members' equal worth as human beings or their
   equal human rights.
 - `not_degrading`: unfavourable, offensive or crude, but it does not reach that threshold (for example, it targets a
-  concrete incident, an institution or a doctrine, or it stays an insult to one person).
+  concrete incident, an institution or a doctrine, or it is a personal insult that does not attack the person's
+  equal worth because of the protected characteristic: Art. 177 StGB rather than Art. 261bis Abs. 4, which also covers
+  degrading a single person for that reason).
 - `borderline`: the facts given do not let you decide; say which missing fact would decide it.
 
 Judge only this element. Assume every other element (publicity, intent, protected characteristic) is met; do not

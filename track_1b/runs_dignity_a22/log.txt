@@ -1,0 +1,31 @@
+[publicai-70b-dignity-de] scoring method: exact_prefill
+[publicai-70b-dignity-de] 360 prompts on {'backend': 'openai', 'base_url': 'gateway:swiss-ai/apertus-v1.5-8b', 'model': 'swiss-ai/apertus-v1.5-8b', 'mode': 'exact_prefill', 'seed': None}
+[publicai-70b-dignity-de] 50/120 scored, 0 errors, 161s
+[publicai-70b-dignity-de] 100/120 scored, 0 errors, 325s
+[publicai-70b-dignity-de] 360/360 prompts: 360 decided, 0 unparsed, 0 errors; served by ['swiss-ai/apertus-v1.5-8b']; file runs_dignity_a22/publicai-70b-dignity-de.jsonl (356.6 s)
+[publicai-70b-dignity-de] next: statute-twins report --run runs_dignity_a22/publicai-70b-dignity-de.jsonl
+[publicai-70b-dignity-de] scoring method: exact_prefill
+[publicai-70b-dignity-de] 360 prompts on {'backend': 'openai', 'base_url': 'gateway:swiss-ai/apertus-v1.5-8b', 'model': 'swiss-ai/apertus-v1.5-8b', 'mode': 'exact_prefill', 'seed': None}
+[publicai-70b-dignity-de] 360/360 prompts: 360 decided, 0 unparsed, 0 errors; served by ['swiss-ai/apertus-v1.5-8b']; file runs_dignity_a22/publicai-70b-dignity-de.jsonl (0.0 s)
+[publicai-70b-dignity-de] next: statute-twins report --run runs_dignity_a22/publicai-70b-dignity-de.jsonl
+[publicai-70b-dignity-fr] scoring method: exact_prefill
+[publicai-70b-dignity-fr] 360 prompts on {'backend': 'openai', 'base_url': 'gateway:swiss-ai/apertus-v1.5-8b', 'model': 'swiss-ai/apertus-v1.5-8b', 'mode': 'exact_prefill', 'seed': None}
+[publicai-70b-dignity-fr] 50/120 scored, 0 errors, 137s
+[publicai-70b-dignity-fr] 100/120 scored, 0 errors, 289s
+[publicai-70b-dignity-fr] 360/360 prompts: 360 decided, 0 unparsed, 0 errors; served by ['swiss-ai/apertus-v1.5-8b']; file runs_dignity_a22/publicai-70b-dignity-fr.jsonl (424.1 s)
+[publicai-70b-dignity-fr] next: statute-twins report --run runs_dignity_a22/publicai-70b-dignity-fr.jsonl
+[publicai-70b-dignity-fr] scoring method: exact_prefill
+[publicai-70b-dignity-fr] 360 prompts on {'backend': 'openai', 'base_url': 'gateway:swiss-ai/apertus-v1.5-8b', 'model': 'swiss-ai/apertus-v1.5-8b', 'mode': 'exact_prefill', 'seed': None}
+[publicai-70b-dignity-fr] 360/360 prompts: 360 decided, 0 unparsed, 0 errors; served by ['swiss-ai/apertus-v1.5-8b']; file runs_dignity_a22/publicai-70b-dignity-fr.jsonl (0.0 s)
+[publicai-70b-dignity-fr] next: statute-twins report --run runs_dignity_a22/publicai-70b-dignity-fr.jsonl
+[publicai-70b-dignity-it] scoring method: exact_prefill
+[publicai-70b-dignity-it] 360 prompts on {'backend': 'openai', 'base_url': 'gateway:swiss-ai/apertus-v1.5-8b', 'model': 'swiss-ai/apertus-v1.5-8b', 'mode': 'exact_prefill', 'seed': None}
+[publicai-70b-dignity-it] 50/120 scored, 0 errors, 155s
+[publicai-70b-dignity-it] 100/120 scored, 0 errors, 278s
+[publicai-70b-dignity-it] 360/360 prompts: 360 decided, 0 unparsed, 0 errors; served by ['swiss-ai/apertus-v1.5-8b']; file runs_dignity_a22/publicai-70b-dignity-it.jsonl (351.5 s)
+[publicai-70b-dignity-it] next: statute-twins report --run runs_dignity_a22/publicai-70b-dignity-it.jsonl
+[publicai-70b-dignity-it] scoring method: exact_prefill
+[publicai-70b-dignity-it] 360 prompts on {'backend': 'openai', 'base_url': 'gateway:swiss-ai/apertus-v1.5-8b', 'model': 'swiss-ai/apertus-v1.5-8b', 'mode': 'exact_prefill', 'seed': None}
+[publicai-70b-dignity-it] 360/360 prompts: 360 decided, 0 unparsed, 0 errors; served by ['swiss-ai/apertus-v1.5-8b']; file runs_dignity_a22/publicai-70b-dignity-it.jsonl (0.0 s)
+[publicai-70b-dignity-it] next: statute-twins report --run runs_dignity_a22/publicai-70b-dignity-it.jsonl
+ALLDONE

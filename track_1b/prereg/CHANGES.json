@@ -14,7 +14,8 @@
   "A8",
   "A18",
   "A19",
-  "A21"
+  "A21",
+  "A22"
  ],
  "src/statute_twins/analysis/heldout.py": [
   "A6",
@@ -35,7 +36,8 @@
   "A17",
   "A18",
   "A19",
-  "A21"
+  "A21",
+  "A22"
  ],
  "dataset/eval/core_fr.jsonl": [
   "A2",
@@ -47,7 +49,8 @@
   "A17",
   "A18",
   "A19",
-  "A21"
+  "A21",
+  "A22"
  ],
  "dataset/eval/core_it.jsonl": [
   "A2",
@@ -59,7 +62,8 @@
   "A17",
   "A18",
   "A19",
-  "A21"
+  "A21",
+  "A22"
  ],
  "prereg/PREREG_court.md": [
   "stratum B (LOCK_court.json: stratum_B)",
@@ -67,12 +71,12 @@
  ],
  "sha256_now": {
   "statutes/stgb_261bis/statute.yaml": "335993999c0ae16fc25dfab34a101c5c08b51b2a3d30ed657aed8fdeb801376a",
-  "statutes/stgb_261bis/design.yaml": "7ebee1cd6dbe74e40ad14eea9042f2bd306771cbe969dbc5ab9619850ab1cf50",
+  "statutes/stgb_261bis/design.yaml": "666e6c85b87c78a0f1a9e9a799a63cb80ef7f98c12f4749cff5743fbc4e4c988",
   "src/statute_twins/analysis/heldout.py": "32837662139ab1b88c5add3fd8872adcd37e02803e061d15ffc083e7a06200e5",
   "src/statute_twins/analysis/results.py": "6e9e22256e237b373a2c72b205d2d21e760e72acedb00e6fff232446bf7218f9",
-  "dataset/eval/core_de.jsonl": "c2da096eac5ffffd485518ce3fbbc6277173e4cf171bab2687c876baeb7097b7",
-  "dataset/eval/core_fr.jsonl": "64f9fb716784cc5d3ef37b88badd1e56527d5bc3865011d19d5674700f43901e",
-  "dataset/eval/core_it.jsonl": "eea534c0bd13cc20988fc870734e03abb7b8de0f2975ffcc4514c9cfb635cad2",
+  "dataset/eval/core_de.jsonl": "c03da8d4589c627b261d3126b556b5ca299da31d645a42095a2288ccdb0c8129",
+  "dataset/eval/core_fr.jsonl": "ea488b8f80ea404b3cff3b9015a9287ec9d5006cfa4ad2734e171e5793213430",
+  "dataset/eval/core_it.jsonl": "db8b039c12e35f879f92bea35dbbafabc471b8e900e3b71ce1392c1187f1dce6",
   "prereg/PREREG_court.md": "65723983e22a3d684b172af35cc7fea6e74246869fc71fde88e852b8e020634f",
   "src/statute_twins/gold/engine.py": "e06f5cbdf72505a019c7c7427c54c3d7e75f5df3279b44303176a9d97da419be"
  },

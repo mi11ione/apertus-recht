@@ -1,0 +1,824 @@
+{
+ "note": "A22, exploratory (post hoc, after review): verdict-only preference mirror and R5a ablations; 70B via Public AI (gateway name swiss-ai/apertus-v1.5-8b), exact forced choice; settled items",
+ "preference_verdict_only": {
+  "de": {
+   "run": "publicai-70b-prefv-de",
+   "rows": 645,
+   "chosen_logprob_identical_to_released": 645,
+   "by_reason": {
+    "all": {
+     "verdict_only": {
+      "n": 645,
+      "correct": 546,
+      "accuracy": 0.8465,
+      "ci": [
+       0.8166,
+       0.8723
+      ],
+      "per_token": 0.8465,
+      "per_token_ci": [
+       0.8166,
+       0.8723
+      ]
+     },
+     "minimal_released": {
+      "n": 645,
+      "correct": 634,
+      "accuracy": 0.9829,
+      "ci": [
+       0.9697,
+       0.9905
+      ],
+      "per_token": 0.9922,
+      "per_token_ci": [
+       0.982,
+       0.9967
+      ]
+     }
+    },
+    "convict": {
+     "verdict_only": {
+      "n": 430,
+      "correct": 388,
+      "accuracy": 0.9023,
+      "ci": [
+       0.8706,
+       0.9269
+      ],
+      "per_token": 0.9023,
+      "per_token_ci": [
+       0.8706,
+       0.9269
+      ]
+     },
+     "minimal_released": {
+      "n": 430,
+      "correct": 420,
+      "accuracy": 0.9767,
+      "ci": [
+       0.9577,
+       0.9873
+      ],
+      "per_token": 1.0,
+      "per_token_ci": [
+       0.9911,
+       1.0
+      ]
+     }
+    },
+    "private setting": {
+     "verdict_only": {
+      "n": 55,
+      "correct": 35,
+      "accuracy": 0.6364,
+      "ci": [
+       0.5042,
+       0.7507
+      ],
+      "per_token": 0.6364,
+      "per_token_ci": [
+       0.5042,
+       0.7507
+      ]
+     },
+     "minimal_released": {
+      "n": 55,
+      "correct": 55,
+      "accuracy": 1.0,
+      "ci": [
+       0.9347,
+       1.0
+      ],
+      "per_token": 1.0,
+      "per_token_ci": [
+       0.9347,
+       1.0
+      ]
+     }
+    },
+    "not listed": {
+     "verdict_only": {
+      "n": 100,
+      "correct": 64,
+      "accuracy": 0.64,
+      "ci": [
+       0.5424,
+       0.7273
+      ],
+      "per_token": 0.64,
+      "per_token_ci": [
+       0.5424,
+       0.7273
+      ]
+     },
+     "minimal_released": {
+      "n": 100,
+      "correct": 100,
+      "accuracy": 1.0,
+      "ci": [
+       0.963,
+       1.0
+      ],
+      "per_token": 1.0,
+      "per_token_ci": [
+       0.963,
+       1.0
+      ]
+     }
+    },
+    "SO before 1 Jul 2020": {
+     "verdict_only": {
+      "n": 35,
+      "correct": 34,
+      "accuracy": 0.9714,
+      "ci": [
+       0.8547,
+       0.9949
+      ],
+      "per_token": 0.9714,
+      "per_token_ci": [
+       0.8547,
+       0.9949
+      ]
+     },
+     "minimal_released": {
+      "n": 35,
+      "correct": 34,
+      "accuracy": 0.9714,
+      "ci": [
+       0.8547,
+       0.9949
+      ],
+      "per_token": 0.8571,
+      "per_token_ci": [
+       0.7062,
+       0.9374
+      ]
+     }
+    },
+    "act before 1995": {
+     "verdict_only": {
+      "n": 25,
+      "correct": 25,
+      "accuracy": 1.0,
+      "ci": [
+       0.8668,
+       1.0
+      ],
+      "per_token": 1.0,
+      "per_token_ci": [
+       0.8668,
+       1.0
+      ]
+     },
+     "minimal_released": {
+      "n": 25,
+      "correct": 25,
+      "accuracy": 1.0,
+      "ci": [
+       0.8668,
+       1.0
+      ],
+      "per_token": 1.0,
+      "per_token_ci": [
+       0.8668,
+       1.0
+      ]
+     }
+    }
+   },
+   "per_item_cross": {
+    "chosen beats both mirrors": 540,
+    "beats verdict-only only": 6,
+    "beats minimal only": 94,
+    "beats neither": 5
+   }
+  },
+  "fr": {
+   "run": "publicai-70b-prefv-fr",
+   "rows": 645,
+   "chosen_logprob_identical_to_released": 645,
+   "by_reason": {
+    "all": {
+     "verdict_only": {
+      "n": 645,
+      "correct": 491,
+      "accuracy": 0.7612,
+      "ci": [
+       0.7269,
+       0.7925
+      ],
+      "per_token": 0.7659,
+      "per_token_ci": [
+       0.7317,
+       0.7969
+      ]
+     },
+     "minimal_released": {
+      "n": 645,
+      "correct": 442,
+      "accuracy": 0.6853,
+      "ci": [
+       0.6484,
+       0.7199
+      ],
+      "per_token": 0.524,
+      "per_token_ci": [
+       0.4855,
+       0.5623
+      ]
+     }
+    },
+    "convict": {
+     "verdict_only": {
+      "n": 430,
+      "correct": 345,
+      "accuracy": 0.8023,
+      "ci": [
+       0.7621,
+       0.8372
+      ],
+      "per_token": 0.8977,
+      "per_token_ci": [
+       0.8654,
+       0.9229
+      ]
+     },
+     "minimal_released": {
+      "n": 430,
+      "correct": 228,
+      "accuracy": 0.5302,
+      "ci": [
+       0.483,
+       0.5769
+      ],
+      "per_token": 0.2907,
+      "per_token_ci": [
+       0.2498,
+       0.3353
+      ]
+     }
+    },
+    "private setting": {
+     "verdict_only": {
+      "n": 55,
+      "correct": 49,
+      "accuracy": 0.8909,
+      "ci": [
+       0.7817,
+       0.949
+      ],
+      "per_token": 0.7636,
+      "per_token_ci": [
+       0.6365,
+       0.8563
+      ]
+     },
+     "minimal_released": {
+      "n": 55,
+      "correct": 55,
+      "accuracy": 1.0,
+      "ci": [
+       0.9347,
+       1.0
+      ],
+      "per_token": 1.0,
+      "per_token_ci": [
+       0.9347,
+       1.0
+      ]
+     }
+    },
+    "not listed": {
+     "verdict_only": {
+      "n": 100,
+      "correct": 57,
+      "accuracy": 0.57,
+      "ci": [
+       0.4722,
+       0.6627
+      ],
+      "per_token": 0.31,
+      "per_token_ci": [
+       0.2278,
+       0.4063
+      ]
+     },
+     "minimal_released": {
+      "n": 100,
+      "correct": 100,
+      "accuracy": 1.0,
+      "ci": [
+       0.963,
+       1.0
+      ],
+      "per_token": 0.98,
+      "per_token_ci": [
+       0.93,
+       0.9945
+      ]
+     }
+    },
+    "SO before 1 Jul 2020": {
+     "verdict_only": {
+      "n": 35,
+      "correct": 15,
+      "accuracy": 0.4286,
+      "ci": [
+       0.2798,
+       0.5914
+      ],
+      "per_token": 0.3143,
+      "per_token_ci": [
+       0.1855,
+       0.4798
+      ]
+     },
+     "minimal_released": {
+      "n": 35,
+      "correct": 34,
+      "accuracy": 0.9714,
+      "ci": [
+       0.8547,
+       0.9949
+      ],
+      "per_token": 1.0,
+      "per_token_ci": [
+       0.9011,
+       1.0
+      ]
+     }
+    },
+    "act before 1995": {
+     "verdict_only": {
+      "n": 25,
+      "correct": 25,
+      "accuracy": 1.0,
+      "ci": [
+       0.8668,
+       1.0
+      ],
+      "per_token": 0.96,
+      "per_token_ci": [
+       0.8046,
+       0.9929
+      ]
+     },
+     "minimal_released": {
+      "n": 25,
+      "correct": 25,
+      "accuracy": 1.0,
+      "ci": [
+       0.8668,
+       1.0
+      ],
+      "per_token": 1.0,
+      "per_token_ci": [
+       0.8668,
+       1.0
+      ]
+     }
+    }
+   },
+   "per_item_cross": {
+    "chosen beats both mirrors": 344,
+    "beats verdict-only only": 147,
+    "beats minimal only": 98,
+    "beats neither": 56
+   }
+  },
+  "it": {
+   "run": "publicai-70b-prefv-it",
+   "rows": 645,
+   "chosen_logprob_identical_to_released": 645,
+   "by_reason": {
+    "all": {
+     "verdict_only": {
+      "n": 645,
+      "correct": 375,
+      "accuracy": 0.5814,
+      "ci": [
+       0.543,
+       0.6189
+      ],
+      "per_token": 0.6155,
+      "per_token_ci": [
+       0.5774,
+       0.6523
+      ]
+     },
+     "minimal_released": {
+      "n": 645,
+      "correct": 608,
+      "accuracy": 0.9426,
+      "ci": [
+       0.9219,
+       0.9581
+      ],
+      "per_token": 0.9984,
+      "per_token_ci": [
+       0.9913,
+       0.9997
+      ]
+     }
+    },
+    "convict": {
+     "verdict_only": {
+      "n": 430,
+      "correct": 216,
+      "accuracy": 0.5023,
+      "ci": [
+       0.4553,
+       0.5494
+      ],
+      "per_token": 0.6186,
+      "per_token_ci": [
+       0.5718,
+       0.6633
+      ]
+     },
+     "minimal_released": {
+      "n": 430,
+      "correct": 395,
+      "accuracy": 0.9186,
+      "ci": [
+       0.8889,
+       0.9409
+      ],
+      "per_token": 0.9977,
+      "per_token_ci": [
+       0.9869,
+       0.9996
+      ]
+     }
+    },
+    "private setting": {
+     "verdict_only": {
+      "n": 55,
+      "correct": 50,
+      "accuracy": 0.9091,
+      "ci": [
+       0.8042,
+       0.9605
+      ],
+      "per_token": 0.8727,
+      "per_token_ci": [
+       0.7598,
+       0.937
+      ]
+     },
+     "minimal_released": {
+      "n": 55,
+      "correct": 55,
+      "accuracy": 1.0,
+      "ci": [
+       0.9347,
+       1.0
+      ],
+      "per_token": 1.0,
+      "per_token_ci": [
+       0.9347,
+       1.0
+      ]
+     }
+    },
+    "not listed": {
+     "verdict_only": {
+      "n": 100,
+      "correct": 53,
+      "accuracy": 0.53,
+      "ci": [
+       0.4329,
+       0.6249
+      ],
+      "per_token": 0.34,
+      "per_token_ci": [
+       0.2546,
+       0.4372
+      ]
+     },
+     "minimal_released": {
+      "n": 100,
+      "correct": 98,
+      "accuracy": 0.98,
+      "ci": [
+       0.93,
+       0.9945
+      ],
+      "per_token": 1.0,
+      "per_token_ci": [
+       0.963,
+       1.0
+      ]
+     }
+    },
+    "SO before 1 Jul 2020": {
+     "verdict_only": {
+      "n": 35,
+      "correct": 32,
+      "accuracy": 0.9143,
+      "ci": [
+       0.7762,
+       0.9704
+      ],
+      "per_token": 0.7143,
+      "per_token_ci": [
+       0.5495,
+       0.8367
+      ]
+     },
+     "minimal_released": {
+      "n": 35,
+      "correct": 35,
+      "accuracy": 1.0,
+      "ci": [
+       0.9011,
+       1.0
+      ],
+      "per_token": 1.0,
+      "per_token_ci": [
+       0.9011,
+       1.0
+      ]
+     }
+    },
+    "act before 1995": {
+     "verdict_only": {
+      "n": 25,
+      "correct": 24,
+      "accuracy": 0.96,
+      "ci": [
+       0.8046,
+       0.9929
+      ],
+      "per_token": 0.96,
+      "per_token_ci": [
+       0.8046,
+       0.9929
+      ]
+     },
+     "minimal_released": {
+      "n": 25,
+      "correct": 25,
+      "accuracy": 1.0,
+      "ci": [
+       0.8668,
+       1.0
+      ],
+      "per_token": 1.0,
+      "per_token_ci": [
+       0.8668,
+       1.0
+      ]
+     }
+    }
+   },
+   "per_item_cross": {
+    "chosen beats both mirrors": 359,
+    "beats verdict-only only": 16,
+    "beats minimal only": 249,
+    "beats neither": 21
+   }
+  }
+ },
+ "r5a_ablations": {
+  "definitions": {
+   "R5a": "R3's rules after the verbatim law (A13, re-sent)",
+   "R5ab": "R5a without the Regeste's closing example (consid. 6)",
+   "R5ac": "R5a with R1's element-check instruction after the law, before R3's rules",
+   "R5ag": "R3's rules before the law; R1's element-check instruction after the law",
+   "R5ad": "R5a with Art. 1 StGB before Art. 2"
+  },
+  "sample_items": 233,
+  "same_items_n": 233,
+  "same_items_acquit_n": 75,
+  "r5a_rows_identical_to_a13": "233/233",
+  "a13_reference_same_items": {
+   "R3": {
+    "acquit": "37/75",
+    "convict": "152/158"
+   },
+   "R5": {
+    "acquit": "0/75",
+    "convict": "158/158"
+   },
+   "R5a": {
+    "acquit": "11/75",
+    "convict": "158/158"
+   },
+   "R5b": {
+    "acquit": "1/75",
+    "convict": "158/158"
+   },
+   "R5c": {
+    "acquit": "3/75",
+    "convict": "158/158"
+   },
+   "R5d": {
+    "acquit": "3/75",
+    "convict": "158/158"
+   },
+   "R5e": {
+    "acquit": "36/75",
+    "convict": "156/158"
+   }
+  },
+  "cells": {
+   "R5a": {
+    "sampled": {
+     "n": 233,
+     "convict_correct": 158,
+     "convict_n": 158,
+     "acquit_correct": 11,
+     "acquit_n": 75,
+     "recall_convict": 1.0,
+     "recall_acquit": 0.14666666666666667,
+     "balanced_accuracy": 0.5733333333333334
+    },
+    "acquit_by_reason": {
+     "act_date:not_in_force": "0/9",
+     "characteristic:not_listed|age": "0/8",
+     "characteristic:not_listed|canton": "0/5",
+     "characteristic:not_listed|disability": "0/1",
+     "characteristic:not_listed|gender_identity": "4/4",
+     "characteristic:not_listed|occupation": "0/6",
+     "characteristic:not_listed|political_opinion": "0/4",
+     "characteristic:not_listed|sex": "6/6",
+     "characteristic:not_yet_covered": "0/13",
+     "setting:failed": "1/19"
+    },
+    "same_items": {
+     "n": 233,
+     "convict_correct": 158,
+     "convict_n": 158,
+     "acquit_correct": 11,
+     "acquit_n": 75,
+     "recall_convict": 1.0,
+     "recall_acquit": 0.14666666666666667,
+     "balanced_accuracy": 0.5733333333333334
+    },
+    "vs_R5a_on_75": {
+     "only_variant_acquits": 0,
+     "only_R5a_acquits": 0,
+     "p_exact": 1.0
+    }
+   },
+   "R5ab": {
+    "sampled": {
+     "n": 233,
+     "convict_correct": 158,
+     "convict_n": 158,
+     "acquit_correct": 14,
+     "acquit_n": 75,
+     "recall_convict": 1.0,
+     "recall_acquit": 0.18666666666666668,
+     "balanced_accuracy": 0.5933333333333334
+    },
+    "acquit_by_reason": {
+     "act_date:not_in_force": "0/9",
+     "characteristic:not_listed|age": "0/8",
+     "characteristic:not_listed|canton": "0/5",
+     "characteristic:not_listed|disability": "0/1",
+     "characteristic:not_listed|gender_identity": "4/4",
+     "characteristic:not_listed|occupation": "0/6",
+     "characteristic:not_listed|political_opinion": "0/4",
+     "characteristic:not_listed|sex": "6/6",
+     "characteristic:not_yet_covered": "0/13",
+     "setting:failed": "4/19"
+    },
+    "same_items": {
+     "n": 233,
+     "convict_correct": 158,
+     "convict_n": 158,
+     "acquit_correct": 14,
+     "acquit_n": 75,
+     "recall_convict": 1.0,
+     "recall_acquit": 0.18666666666666668,
+     "balanced_accuracy": 0.5933333333333334
+    },
+    "vs_R5a_on_75": {
+     "only_variant_acquits": 3,
+     "only_R5a_acquits": 0,
+     "p_exact": 0.25
+    }
+   },
+   "R5ac": {
+    "sampled": {
+     "n": 233,
+     "convict_correct": 157,
+     "convict_n": 158,
+     "acquit_correct": 14,
+     "acquit_n": 75,
+     "recall_convict": 0.9936708860759493,
+     "recall_acquit": 0.18666666666666668,
+     "balanced_accuracy": 0.590168776371308
+    },
+    "acquit_by_reason": {
+     "act_date:not_in_force": "0/9",
+     "characteristic:not_listed|age": "0/8",
+     "characteristic:not_listed|canton": "0/5",
+     "characteristic:not_listed|disability": "0/1",
+     "characteristic:not_listed|gender_identity": "4/4",
+     "characteristic:not_listed|occupation": "0/6",
+     "characteristic:not_listed|political_opinion": "0/4",
+     "characteristic:not_listed|sex": "5/6",
+     "characteristic:not_yet_covered": "0/13",
+     "setting:failed": "5/19"
+    },
+    "same_items": {
+     "n": 233,
+     "convict_correct": 157,
+     "convict_n": 158,
+     "acquit_correct": 14,
+     "acquit_n": 75,
+     "recall_convict": 0.9936708860759493,
+     "recall_acquit": 0.18666666666666668,
+     "balanced_accuracy": 0.590168776371308
+    },
+    "vs_R5a_on_75": {
+     "only_variant_acquits": 4,
+     "only_R5a_acquits": 1,
+     "p_exact": 0.375
+    }
+   },
+   "R5ag": {
+    "sampled": {
+     "n": 233,
+     "convict_correct": 156,
+     "convict_n": 158,
+     "acquit_correct": 21,
+     "acquit_n": 75,
+     "recall_convict": 0.9873417721518988,
+     "recall_acquit": 0.28,
+     "balanced_accuracy": 0.6336708860759495
+    },
+    "acquit_by_reason": {
+     "act_date:not_in_force": "0/9",
+     "characteristic:not_listed|age": "0/8",
+     "characteristic:not_listed|canton": "0/5",
+     "characteristic:not_listed|disability": "0/1",
+     "characteristic:not_listed|gender_identity": "2/4",
+     "characteristic:not_listed|occupation": "0/6",
+     "characteristic:not_listed|political_opinion": "0/4",
+     "characteristic:not_listed|sex": "0/6",
+     "characteristic:not_yet_covered": "0/13",
+     "setting:failed": "19/19"
+    },
+    "same_items": {
+     "n": 233,
+     "convict_correct": 156,
+     "convict_n": 158,
+     "acquit_correct": 21,
+     "acquit_n": 75,
+     "recall_convict": 0.9873417721518988,
+     "recall_acquit": 0.28,
+     "balanced_accuracy": 0.6336708860759495
+    },
+    "vs_R5a_on_75": {
+     "only_variant_acquits": 18,
+     "only_R5a_acquits": 8,
+     "p_exact": 0.0755
+    }
+   },
+   "R5ad": {
+    "sampled": {
+     "n": 233,
+     "convict_correct": 158,
+     "convict_n": 158,
+     "acquit_correct": 16,
+     "acquit_n": 75,
+     "recall_convict": 1.0,
+     "recall_acquit": 0.21333333333333335,
+     "balanced_accuracy": 0.6066666666666667
+    },
+    "acquit_by_reason": {
+     "act_date:not_in_force": "0/9",
+     "characteristic:not_listed|age": "2/8",
+     "characteristic:not_listed|canton": "0/5",
+     "characteristic:not_listed|disability": "0/1",
+     "characteristic:not_listed|gender_identity": "4/4",
+     "characteristic:not_listed|occupation": "0/6",
+     "characteristic:not_listed|political_opinion": "0/4",
+     "characteristic:not_listed|sex": "6/6",
+     "characteristic:not_yet_covered": "0/13",
+     "setting:failed": "4/19"
+    },
+    "same_items": {
+     "n": 233,
+     "convict_correct": 158,
+     "convict_n": 158,
+     "acquit_correct": 16,
+     "acquit_n": 75,
+     "recall_convict": 1.0,
+     "recall_acquit": 0.21333333333333335,
+     "balanced_accuracy": 0.6066666666666667
+    },
+    "vs_R5a_on_75": {
+     "only_variant_acquits": 5,
+     "only_R5a_acquits": 0,
+     "p_exact": 0.0625
+    }
+   }
+  }
+ }
+}

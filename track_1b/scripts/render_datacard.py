@@ -30,6 +30,8 @@ RECORDS = {
     "statutes/stgb_261bis/review/court/tuples_B.jsonl": "review/court_tuples_B.jsonl",
     "reports/court_validation.json": "review/court_validation.json",
     "reports/dignity_court.json": "review/dignity_court.json",
+    "reports/controls_a22.json": "review/controls_a22.json",
+    "reports/stats_a22.json": "review/stats_a22.json",
     "reports/contamination.json": "review/contamination.json",
     "reports/qc.json": "review/qc.json",
     "reports/open_judged_publicai-70b-open.json": "review/free_text_judged.json",
@@ -199,6 +201,10 @@ configs:
 
 # Apertus-Recht: Art. 261bis StGB minimal-twin scenarios (DE / FR / IT)
 
+> **Content warning.** To test where Art. 261bis draws its lines, many items describe discriminatory or degrading
+> statements about real groups in substance (for example, a group called second-class people, a religious group called
+> vermin); no slur is spelled out. Research data, not legal advice.
+
 {3 * ds['by_lang']['fr']} scenarios ({ds['by_lang']['fr']} per language in DE, FR and IT) about the Swiss offence of discrimination
 and incitement to hatred, Art. 261bis StGB / CP (Diskriminierung und Aufruf zu Hass); the same scenarios retold as a first-person paraphrase
 by a user asking about their own conduct, in all three languages (`user_voice`, language codes `de_lay`, `fr_lay`,
@@ -216,7 +222,7 @@ the pinned statute text and BGE 130 IV 111 E. 5.2, never written by hand.
 - **License:** CDLA-Permissive-2.0 (all items; per-item licence components and provenance in `metadata/items.jsonl`
   for the core and first-person sets, and in `metadata/items.jsonl` inside `dignity/`, `paraphrase/` and `stgb_179ter/`).
 - **Git repository:** {REPO_URL} (generator, gold engine, harness, tests; Apache-2.0).
-- **Version:** 1.7.0 (generator 1.0.0, seed 261). Changelog at the end.
+- **Version:** 1.8.0 (generator 1.0.0, seed 261). Changelog at the end.
 
 ## Uses
 ### Direct Use
@@ -234,22 +240,27 @@ hash-bound to the answer it judged, and a seeded 20% sample laid out so that any
 ### The dignity threshold (A18)
 Where most real acquittals turn: 20 twin groups per language in which a public statement about a religious group is
 either degrading (denying, or at least calling into question, the believers' equal worth as human beings: convict),
-a criticism of the religion's institutions or teachings that stays objective (acquit: BGE 131 IV 23 E. 3, Regeste pinned
+a criticism of the religion's institutions or teachings that stays objective and cites an objective basis (a published
+report, the institutions' own statements or texts; acquit: BGE 131 IV 23 E. 3, Regeste pinned
 in DE/FR/IT), or a crude joke whose wording the facts do not give (open, a modelling choice: a court would acquit if the
 wording is not established, Art. 10 Abs. 3 StPO, and the criterion accepts that answer). One of the four criticisms
-(no religious instruction in public schools) is a policy demand; it is tagged `policy_demand`, and its acquittal rests
-on the restraint BGE 131 IV 23 asks for in political debate. Gold comes from the element `dignity` in the statute model; reviewed by a legal-reviewer agent before
+(no religious instruction in public schools, citing the state's confessional neutrality) is a policy demand (act
+`a4D_crit4` in `slots.act`); it has its own answer and criterion, resting on the restraint BGE 131 IV 23 E. 3.1, 3.3 and
+3.4.2 asks for in political debate. The "opaque finances" criticism is never paired with Judaism (A22). Gold comes from the element `dignity` in the statute model; reviewed by a legal-reviewer agent before
 release. Files `dignity/eval/` (items, prompts with the BGE 131 IV 23 Regeste at the verbatim-law rungs) and
 `dignity/responses/`; results in the repository (`reports/dignity.json`). Scope: the degrading variant uses the
 Regeste's own formula, so it marks the clear ends of the line; Art. 261 StGB (disturbing freedom
 of belief) is out of scope. Exploratory, not pre-registered. Read against {dc['cases']} court rulings (A20,
 `review/dignity_court.json`; {dc['acquittals']} acquittals on the dignity threshold, {dc['convictions']} convictions): each case
 summarised as facts only, the element value coded blind from the Regeste of BGE 131 IV 23 by two Claude agents and
-Qwen-SEA-LION. Every coder codes all {dc['convictions']} convictions degrading; on the acquittals the coders are stricter than
-the courts (agreement with the courts {', '.join(v.split('/')[0] for v in dc['agree_with_court'].values())} of {dc['cases']};
-always-convict: {dc['convictions']}). One acquittal is a first-instance judgment under appeal, one rested partly on intent.
-No sampled ruling concerns criticism of a religion's doctrine or institutions, so the check is consistent with the
-gold here but does not test it.
+Qwen-SEA-LION. Every coder codes all {dc['convictions']} convictions degrading. Agreement with the courts:
+{', '.join(v.split('/')[0] for v in dc['agree_with_court'].values())} of {dc['cases']} (always-convict: {dc['convictions']}); the two
+Claude coders agree with each other on {dc['coder_A_B_same_value']} of {dc['cases']}. The acquittals they code degrading are cases
+Swiss courts split on: in {len(dc['acquittals_first_instance_convicted'])} of the {dc['acquittals']} acquittals the first-instance
+court had convicted the same statement, and {len(dc['not_final'])} is under appeal. Each coding concerns a facts-only
+summary, not the persons; the acquittals stand, and the coders' written reasons are not released. No sampled ruling
+concerns criticism of a religion's doctrine or institutions, so the check is consistent with the gold here but does
+not test it.
 
 ### Natural paraphrases (A16)
 To test whether the findings depend on the templated wording, a stable sample of 40 twin groups (the same in DE, FR and
@@ -266,10 +277,9 @@ written to be met outside the dignity family (A18), Abs. 3 and 5 are not covered
 it predicts a conviction. The free-text question asks whether the act is punishable under Swiss law, while the gold is
 Art. 261bis; every answer judged misleading names Art. 261bis as its basis. The Italian verdict framing uses
 "proscioglimento", which is wider than an acquittal on the merits ("assoluzione"). Not a training set: the canary string in every item marks it as evaluation data, to be kept out of training corpora.
-To train assistant behaviour, generate fresh scenarios with the same generator and another seed (`design.yaml`), and
-use their `chosen_with_scope`. **Content warning:** to test the dignity threshold, some items describe degrading
-statements in substance (for example, a religious group called vermin, a group called second-class people); no slur
-is spelled out.
+Do not train on generator output either: the reference answers are written per legal reason, so most of them recur
+verbatim for any seed. `chosen_with_scope` documents the answer an assistant should give; use it as a specification
+for training data written independently. Content warning: see the top of this card.
 ### Specifications
 - **Use case → specification:** the question a person asks about their own or someone else's speech; the elements the
   answer turns on (publicity, characteristic, date) are exactly the slots the twins vary.
@@ -344,9 +354,10 @@ asked for wording fixes, applied before any model was scored: the question restr
 instead of an indictment (no indictment of a complaint offence without a complaint), no legal conclusions in the facts
 ("Täter", "betroffen"), a rent talk in the landlord's flat instead of a phone call (business phone calls on orders, contracts,
 reservations and similar are exempt under Art. 179quinquies Abs. 1 lit. b). Scope of the gold: it answers only "conviction under Art. 179ter". An outsider who records may be
-punishable under Art. 179bis; without a timely complaint the proceedings are discontinued (Art. 329 Abs. 4 StPO), so for the 16 complaint items
+punishable under Art. 179bis; without a timely complaint the proceedings are not opened or are discontinued (Art. 310 Abs. 1 lit. a, Art. 319
+Abs. 1 lit. d, Art. 329 Abs. 4 StPO), so for the 16 complaint items
 the verdict framing has no correct answer and they are read in the Ja/Nein framing only; this
-is not an acquittal on the merits; justification, Art. 179quinquies and intent are assumed; a video with sound counts
+is not an acquittal on the merits; justification and Art. 179quinquies are assumed not to apply, intent is assumed present; a video with sound counts
 as a sound recording (only handwritten notes are tested as a medium that is not); «schuldig / nicht schuldig» are
 answer tokens, not Swiss dispositive wording. Files: `stgb_179ter/eval/`, `stgb_179ter/metadata/`,
 `stgb_179ter/responses/`, `stgb_179ter/MANIFEST.json`; results in the repository (`results/results_179ter.json`).
@@ -413,7 +424,8 @@ check that changing one rule flips exactly the items that rule governs.
   agents; comparison for legal facts: 0 critical, {3} minor findings, all fixed. A localisation review by a French- and
   Italian-speaking lawyer persona then fixed what back-translation cannot see (German places, calqued intent formula
   and verdict words, citation form); amendment A7, before any French or Italian result was analysed.
-- **Contamination** against `voilaj/swiss-caselaw` (listed in the Apertus v1.5 training data; revision
+- **Contamination** against `voilaj/swiss-caselaw` (listed as v1.5 pre-training data in the Apertus data catalogue,
+  github.com/swiss-ai/apertus-data-transparency; revision
   {ct['revision'][:7]}; {ct['rows']:,} decisions, all {ct['files']} data files including GE, VD and BVGer): of
   {ct['item_ngrams']:,} distinct word 13-grams of our items, {ct['matching_scenario']} scenario 13-grams occur in the corpus
   ({ct['matching_statute_derived']} statute-derived). Exposure of the law itself: {ct['exposure']['docs_bge_130_IV_111']}
@@ -462,7 +474,9 @@ law; the statute tests against the official text and the court validation check 
 - Model responses come from specific builds; the Public AI endpoint named `swiss-ai/apertus-v1.5-8b` serves the 70B
   (evidence in the repository's `docs/builds.md`); its rows are labelled 70B.
 ### Personally Identifiable Information
-None: no names, no identifiers; PII gate result above.
+Items: none (no names, no identifiers; PII gate result above). Validation records cite public court decisions by
+docket and URL; their notes name no person, and the dignity-check summaries leave out roles, parties, exact dates and
+small places.
 ### Sensitive Information
 The scenarios mention protected characteristics (race, ethnicity, religion, sexual orientation, gender identity, etc.)
 of **groups**, as the statute requires; no individual's characteristic is described. Some items state degrading
@@ -475,6 +489,10 @@ alongside results, since 4-bit conversions changed verdicts in our measurements.
 {len(runs)} runs (`responses/<run>.jsonl` with `<run>.meta.json`): {', '.join(runs)}.
 
 ## Changelog
+- 1.8.0 (2026-10-11): amendment A22: dignity criticisms with an objective basis (re-scored), the policy demand with
+  its own answer; victim routes on punishable items; names removed from court notes and the PII gate extended to all
+  review files; repaired controls and statistics (`review/controls_a22.json`, `review/stats_a22.json`). The v1.6.0 git
+  tag no longer passes CI by design: the unredacted A20 case summaries it needed were removed from the history.
 - 1.7.0 (2026-10-11): amendment A21: scope notes on every item; BGE 131 IV 23 stated in full in the gold answers;
   first-person time-bar note corrected; per-item licence and provenance for the dignity and paraphrase splits; content
   warning; consent template completed; A20 re-coded on redacted case summaries. No prompt or response changed.
@@ -516,7 +534,7 @@ alongside results, since 4-bit conversions changed verdicts in our measurements.
   title  = {{Apertus-Recht: Art. 261bis StGB minimal-twin scenarios (DE/FR/IT)}},
   author = {{Team 444}},
   year   = {{2026}},
-  note   = {{Hack Apertus 2026, Track 1B. Dataset version 1.7.0}},
+  note   = {{Hack Apertus 2026, Track 1B. Dataset version 1.8.0}},
   url    = {{{REPO_URL}}}
 }}
 ```

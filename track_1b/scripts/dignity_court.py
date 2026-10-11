@@ -91,6 +91,14 @@ def compare():
                                                       for r in rows) for c in coders},
                acquittals_degrading_all_coders=[r["blind_id"] for r in rows if r["court"] == "acquit"
                                                 and all(v == "degrading" for v in r["values"].values())],
+               acquittals_agree={c: sum(r["court"] == "acquit" and r["engine"][c] == "acquit" for r in rows) for c in coders},
+               acquittals_first_instance_convicted=[r["blind_id"] for r in rows
+                                                    if "first-instance court had convicted" in (r.get("note") or "")],
+               not_final=[r["blind_id"] for r in rows if "not final" in (r.get("note") or "")],
+               agree_with_court_final_only={c: f"{sum(r['engine'][c] == r['court'] for r in rows if 'not final' not in (r.get('note') or ''))}"
+                                               f"/{sum('not final' not in (r.get('note') or '') for r in rows)}" for c in coders},
+               scope=("each coding concerns a facts-only summary read under the Regeste of BGE 131 IV 23, not the persons; "
+                      "the courts' acquittals stand"),
                coder_A_B_same_value=pair, models={c: (json.loads((DC / f"coder_{c}.json").read_text()).get("model")
                                                       or "claude agent") for c in coders},
                rows=rows)

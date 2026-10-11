@@ -119,6 +119,14 @@ def validate(d: Design) -> list[str]:
             for ref in ("synonym_of", "placebo_of"):
                 if a.get(ref) and a[ref] not in vals:
                     problems.append(f"{slot}.{vid}: {ref} {a[ref]} does not exist")
+            for other, excl in (a.get("not_with") or {}).items():
+                order = d.raw.get("sample_order") or []
+                if other not in d.slots:
+                    problems.append(f"{slot}.{vid}: not_with names unknown slot {other!r}")
+                    continue
+                if slot in order and other in order and order.index(other) > order.index(slot):
+                    problems.append(f"{slot}.{vid}: not_with slot {other!r} is drawn after {slot!r} (sample_order)")
+                problems += [f"{slot}.{vid}: not_with {other}.{x} does not exist" for x in excl if x not in d.slots[other]]
     for fam, spec in (d.families or {}).items():
         for slot in (spec.get("base") or {}):
             if slot not in d.slots:

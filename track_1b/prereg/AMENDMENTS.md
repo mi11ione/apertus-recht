@@ -44,7 +44,7 @@ pre-registered rule unchanged. Made after the first-pass result (30/30) had been
 settled items) is adjudicated by two independent agents, with a third agent on their disagreements.
 
 ## A5 (2026-10-10, 01:35, after the German 70B and 8B core results had been analysed): wording fixes from review
-A lawyer-persona review (dogfood round 1) found: frame F08 dated the *recording* of the incident ("wurde aktenkundig",
+A lawyer-persona review (a Claude agent; dogfood round 1) found: frame F08 dated the *recording* of the incident ("wurde aktenkundig",
 "consigné au dossier", "messo agli atti"), not the act, which makes the date-boundary items ambiguous; the contested
 e-mail setting ("an die 25 Mitarbeitenden ihrer Abteilung") was incoherent for retired or student actors; two FR/IT act
 phrasings were clumsy. Fixed in DE/FR/IT templates (F08: "ereignete sich" / "s'est produit" / "si è verificato";
@@ -67,7 +67,7 @@ unparsed row, so no published number changes. Hand-computed unit tests for these
 `tests/test_scoring.py`.
 
 ## A7 (2026-10-10, 02:20, before any French or Italian result entered the report): FR/IT localisation from review
-A French- and Italian-speaking lawyer persona (dogfood round 2) found that the FR/IT scenarios read as German cases in
+A French- and Italian-speaking lawyer persona (a Claude agent; dogfood round 2) found that the FR/IT scenarios read as German cases in
 translation: every place was a German-speaking town (trams in Thun, communal assemblies in cities with a parliament),
 the intent formula of frame F06 was a calque ("savait ce qu'elle faisait et le voulait"), two act phrasings were
 calques of German (a4B2, a4C1) and one had German word order (IT a2C2), openings were stilted, and the verdict framing
@@ -87,7 +87,7 @@ and report the accuracies without those 10 items per language (`scripts/sensitiv
 (The archive moved from `dataset/archive/` to `archive/` at the repository level on 2026-10-10 so that it can never be uploaded with the dataset.)
 
 ## A8 (2026-10-10, 02:50, after judge review round 2; the pre-registered test and its verdicts are unchanged)
-(1) **R5, verbatim law.** Reviewers pointed out that R1–R4 state the law as rules written by us (a one-sentence
+(1) **R5, verbatim law.** Reviewer agents pointed out that R1–R4 state the law as rules written by us (a one-sentence
 paraphrase of BGE 130 IV 111, the closed list, the 2020 date) and that no rung contains the law itself. R5 adds the
 pinned Fedlex texts of Art. 261bis (with Fedlex's own footnote) and Art. 2 StGB verbatim and the Regeste of BGE 130 IV
 111, as a retrieval pipeline would paste them (`prompts/<lang>.yaml: law_text`, `render.law_block`). R5 is exploratory:
@@ -107,7 +107,7 @@ same key; keys now carry the subset) and extended in A6; `heldout.py` filters fr
 prereg-verify`). `prereg/CHANGES.json` maps every locked file that differs from `LOCK.json` to its amendments.
 
 ## A9 (2026-10-10, 03:00): the same German scenarios in a user's voice (exploratory)
-Reviewers noted that the scenarios read like charge sheets (the dignity threshold and intent are stated in the statute's
+Reviewer agents noted that the scenarios read like charge sheets (the dignity threshold and intent are stated in the statute's
 words), while the use case is a person asking about their own conduct. `de_lay` renders the same 660 German scenarios
 (same slots, facts and gold, same twin groups) in the first person and in everyday words, with no legal conclusions:
 "Im Januar 2024 habe ich in Aarau an einem Stand auf dem Wochenmarkt vor vielen Kundinnen und Kunden ein Weltbild
@@ -115,13 +115,13 @@ propagiert, nach dem Muslime minderwertig sind." The group is named without its 
 of the pre-registered test (`heldout.py` runs per language; `de_lay` results are reported next to `de`).
 
 ## A10 (2026-10-10, 06:40, after judge and dogfood round 3): R6, a control for R5; the user voice at R3
-A legal reviewer pointed out that R5 differs from R3 in two ways: it adds the verbatim law and drops R3's instruction
+A legal-reviewer agent pointed out that R5 differs from R3 in two ways: it adds the verbatim law and drops R3's instruction
 to check the elements. R6 is R5 with R1's instruction ("Prüfe die Tatbestandsmerkmale … in der zur Tatzeit geltenden
 Fassung") put back, scored for the German 70B with Ja/Nein. The user-voice German items (A9) are also scored at R3, so
 the register comparison is not limited to R0, where the model convicts everything. Both exploratory.
 
 ## A11 (2026-10-10, 08:50, after judge round 3): German localisation, free text with the verbatim law, a second judge
-Reviewers found German items with a tram in towns that have none (only Zürich, Bern and Basel of the twelve do) and a
+Reviewer agents found German items with a tram in towns that have none (only Zürich, Bern and Basel of the twelve do) and a
 communal assembly in cities with a parliament, the same defects A7 fixed in French and Italian. `templates/de.yaml`,
 `de_lay.yaml` and the German answers now use a bus and a public information evening of the commune (120 people);
 both stay public, no fact or gold label changes. The 115 affected German items are re-scored for every model (changed
@@ -263,7 +263,8 @@ lawful scenarios, 3 acquitted without the law (templated 2) and 47 with the rule
 `selfcheck` step 2g re-derives the verification and the scores. Not pre-registered.
 
 ## A17 (2026-10-11, after judge and dogfood round 9): scope note on every acquittal (no gold, prompt or result change)
-A responsible-AI juror and a counsellor of an advice centre for people affected by racism found that "not punishable
+A responsible-AI juror agent and an agent in the role of a counsellor of an advice centre for people affected by
+racism found that "not punishable
 under Art. 261bis" reads as "allowed" and that the reference answers for acquittals end at a bare "Nein", which, used
 as training data, would teach an assistant to reassure. Every acquittal item now carries `scope_note` (in its
 language: «not punishable under Art. 261bis» means neither «allowed» nor «not discrimination»; personality protection,
@@ -275,7 +276,7 @@ every acquittal, labels verdicts "under Art. 261bis", and is localised (German, 
 with the scope note.
 
 ## A18 (2026-10-11, after round 9): the dignity threshold as an element (exploratory)
-Every juror noted that the core set stipulates the dignity threshold of Abs. 4, where most real acquittals turn. A new
+Every juror agent noted that the core set stipulates the dignity threshold of Abs. 4, where most real acquittals turn. A new
 element `dignity` (Abs. 4 first half; authority BGE 131 IV 23 E. 3, Regeste pinned verbatim in DE/FR/IT from bger.ch:
 degrading means denying equal worth as human beings; objective criticism does not) with the values `degrading` (met),
 `criticism` (failed: criticism of a religion's teachings, practices or institutions without degrading its members) and
@@ -300,7 +301,7 @@ German 11 / 20 / 18, French 3 / 8 / 8, Italian 6 / 15 / 10; degrading statements
 remark is convicted in most cells (a forced choice cannot hedge, and acquitting would be the defensible answer).
 
 ## A19 (2026-10-11, after judge round 10): case-specific scope notes; dignity answers restate the authority's test
-A legal reviewer and a responsible-AI juror found the A17 note too generic: it sent trans, disabled or older people to
+A legal-reviewer agent and a responsible-AI juror agent found the A17 note too generic: it sent trans, disabled or older people to
 the counselling network for victims of racism, named honour and personality claims (Art. 173 ff. StGB, Art. 28 ZGB)
 without saying they need an identifiable person, addressed victims in the first-person items (told by the speaker),
 and warned "not discrimination" on legitimate criticism of a religion. `scope_note` is now looked up per case
@@ -342,8 +343,8 @@ Juror agents (strict, responsible-AI, Swiss criminal law, ML evaluation) reviewe
   worth as human beings or equal human rights; criticism that stays objective does not suffice (chosen answers,
   criteria, statute model). The criticism scope note cites freedom of expression (Art. 16 BV, Art. 10 ECHR) only.
 - **Time bar** in the first-person note on sexual-orientation acts before July 2020: only honour offences are
-  time-barred (four years, Art. 178 StGB), not "other offences" (misdemeanours prescribe after ten years, Art. 97
-  StGB); the note adds the civil remedy against a post still online (Art. 28 ZGB), as do the charge-sheet notes.
+  time-barred (four years, Art. 178 StGB), not "other offences" (other misdemeanours prescribe after ten or seven years, depending on the maximum penalty, Art. 97
+  Abs. 1 lit. c–d StGB); the note adds the civil remedy against a post still online (Art. 28 ZGB), as do the charge-sheet notes.
 - **Scope notes on every item**: convictions and open items now carry a note too (an assessment of the stated facts,
   not legal advice; a court also weighs intent and evidence), so `chosen_with_scope` exists for every item.
 - **Statute model**: German title "Diskriminierung und Aufruf zu Hass" (since 1 July 2020); the quoted court texts are
@@ -359,3 +360,39 @@ Juror agents (strict, responsible-AI, Swiss criminal law, ML evaluation) reviewe
   irrevocability; every reviewer, juror, counsellor or lawyer named in these amendments is a Claude agent given that
   role. The PII gate now also scans the released review records and the exploratory splits.
 No prompt changed, so no response was re-collected; every result is unchanged except the A20 coding.
+
+## A22 (2026-10-11, after judge round 12): repaired controls, statistics, dignity wording, names; dataset 1.8.0
+Exploratory, post hoc. Juror agents (strict, responsible-AI, Swiss criminal law, ML evaluation) reviewed release 1.7.0.
+- **Verdict-only preference mirror** (70B, DE/FR/IT, 645 settled items each, R0): `chosen` word for word with only the
+  verdict word flipped, next to the released mirror that also negates the reasoning. German 0.85 overall, 35 of 55
+  private settings, 64 of 100 unlisted characteristics; Italian 0.50 on punishable items (`reports/controls_a22.json`).
+- **R5a ablations** (German, the A13 sample): A13's R5b–d were built on R5, which acquits nothing; rebuilt on R5a
+  (the rules after the verbatim law, 11 of 75): without the Regeste's example 14, with an element check 14, with
+  Art. 1 StGB 16; rules before the law 21, with all 19 private settings and fewer unlisted characteristics.
+- **Statistics from stored responses** (`reports/stats_a22.json`, selfcheck step 2j): a twin-group bootstrap of the
+  read-back colours changes 0 of 582 cells; Wilson intervals for the headline counts; exact McNemar R5a vs R5e on the
+  same 75 items, p = 6·10⁻⁸; twin-group bootstrap intervals for every held-out gain (German 70B R3 Ja/Nein 0.148,
+  0.100–0.186); reversed-question counts per element at R3 (private settings 0 of 55 in every language).
+- **Dignity family, criticism variants** (after a Swiss-criminal-law agent's review): the "opaque finances" criticism
+  is never paired with Judaism (an act value can now exclude group values); every criticism cites an objective basis
+  (a published report, the institutions' own statements or texts, the state's confessional neutrality); the chosen
+  answer states both limbs of the Regeste ("sachlich bleibt und sich auf objektive Umstände stützt"); the policy demand
+  (no religious instruction in public schools) has its own answer and criterion, citing BGE 131 IV 23 E. 3.1, 3.3 and
+  3.4.2 (verified against the decision text). The 360 changed prompts were re-scored on the 70B; superseded rows in
+  `archive/dignity-before-a22/`. Criticism convicted (Ja/Nein, no law / law with BGE 131 IV 23): DE 6 / 15, FR 1 / 5,
+  IT 2 / 8 (before: 11 / 18, 3 / 8, 6 / 10); degrading 20 of 20.
+- **Dignity court check (A20)**: the coder instructions now say that Abs. 4 also covers degrading one person because
+  of the protected characteristic (a mere insult falls under Art. 177 StGB); the D05 summary adds the facts the court
+  relied on (post deleted, public apology, complaint withdrawn); all three coders re-run; only the values are released.
+  Agreement with the courts 6, 6 and 4 of 8; the two Claude coders agree with each other on 8 of 8.
+- **Scope notes**: punishable items name the route for those affected (prosecution ex officio, report to the police
+  or prosecutor, the counselling network that fits the group); the pre-1995 note limits the time bar to the expression
+  offences that come into question (honour offences, Art. 178 StGB).
+- **Data protection**: the court-extraction notes named four people; the names are replaced. The PII gate now scans
+  every released review file (JSON, JSONL, TSV). The unredacted A20 summaries were removed from the public git history.
+- **Documentation**: content warning on the card and the register; training guidance (reference answers recur across
+  seeds, so generator output is not training data either); consent template with a content clause and a licence
+  warranty for human-written scenarios; inline agent labels in these amendments; court-check report records whether a
+  ruling is final and whether the first instance convicted.
+No core prompt changed; every core result is unchanged.
+

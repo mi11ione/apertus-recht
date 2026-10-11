@@ -1,0 +1,23 @@
+{
+ "run": "publicai-70b-r5a-ablation-de",
+ "backend": {
+  "backend": "openai",
+  "base_url": "gateway:swiss-ai/apertus-v1.5-8b",
+  "model": "swiss-ai/apertus-v1.5-8b",
+  "mode": "exact_prefill",
+  "seed": null
+ },
+ "params": {},
+ "rows": 1200,
+ "errors": 0,
+ "served_models": [
+  "swiss-ai/apertus-v1.5-8b"
+ ],
+ "jsonl_sha256": "e4914bb4b8ee3c23fec1bc37329dd3e65c51f79824c0058961d4a70f184e6fd2",
+ "parts": "ctrl2_core_de",
+ "rungs": "R5a,R5ab,R5ac,R5ag,R5ad",
+ "framings": "conv",
+ "sample": 240,
+ "label": "Apertus v1.5 70B via Public AI (name swiss-ai/apertus-v1.5-8b), exact forced choice, A22 R5a ablations",
+ "model": "swiss-ai/apertus-v1.5-8b"
+}

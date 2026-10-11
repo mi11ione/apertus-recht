@@ -55,6 +55,12 @@ def _family_ok(d: Design, slot: str, vid: str, fam: str) -> bool:
     return not only or fam in only
 
 
+def _excluded(d: Design, slot: str, vid: str, slots: dict) -> bool:
+    """A slot value with `not_with: {other_slot: [values]}` is never combined with those values of an already drawn
+    slot (A22: a criticism whose wording echoes a stereotype about one group is not drawn for that group)."""
+    return any(slots.get(s) in vs for s, vs in (d.slots[slot][vid].get("not_with") or {}).items())
+
+
 def matches(d: Design, slot: str, vid: str, flt: dict, base: dict | None) -> bool:
     a = d.slots[slot][vid]
     for key, want in (flt or {}).items():
@@ -133,11 +139,14 @@ class _Picker:
         self.use_global: dict = {}
         self.use_family: dict = {}
 
-    def pick(self, family: str, slot: str, cands: list[str]) -> str:
-        if not cands:
-            raise LookupError
+    def pick(self, family: str, slot: str, cands: list[str], excluded=lambda v: False) -> str:
+        # `excluded` values still take part in the seeded tie-break (one draw per candidate), so excluding a value
+        # changes only the pick it would have won, not the random draws of any later pick
         keyed = sorted(cands, key=lambda v: (self.use_global.get((slot, v), 0), self.use_family.get((family, slot, v), 0),
                                              self.rng.random()))
+        keyed = [v for v in keyed if not excluded(v)]
+        if not keyed:
+            raise LookupError
         return keyed[0]
 
     def commit(self, family: str, slots_list: list[dict]) -> None:
@@ -168,7 +177,7 @@ def build_scenarios(d: Design, seed: int | None = None) -> list[Scenario]:
                     flt = (spec.get("base") or {}).get(slot, {})
                     cands = [v for v in d.slots[slot] if matches(d, slot, v, flt, None) and _satisfiable(d, spec, slot, v)
                              and _family_ok(d, slot, v, fam)]
-                    base[slot] = picker.pick(fam, slot, cands)
+                    base[slot] = picker.pick(fam, slot, cands, lambda v, s=slot: _excluded(d, s, v, base))
                 variants = []
                 for vs in spec["variants"]:
                     slot = vs["slot"]
@@ -176,7 +185,7 @@ def build_scenarios(d: Design, seed: int | None = None) -> list[Scenario]:
                     cands = [v for v in d.slots[slot] if v not in used and matches(d, slot, v, vs.get("filter"), base)
                              and _family_ok(d, slot, v, fam)]
                     vslots = dict(base)
-                    vslots[slot] = picker.pick(fam, slot, cands)
+                    vslots[slot] = picker.pick(fam, slot, cands, lambda v, s=slot: _excluded(d, s, v, base))
                     variants.append((vslots, vs))
             except LookupError:
                 continue
@@ -252,8 +261,10 @@ def acceptance(d: Design, sc: Scenario) -> str:
         return spec["convict"].format(**kw) + (f", {trap}." if trap else ".")
     if g.verdict == "acquit":
         reasons = spec.get("reasons") or {}
-        detail = f"{g.reason}|{sc.facts.get(g.deciding_element)}"
-        why = reasons.get(detail, reasons.get(g.reason, g.reason)).format(**kw)
+        # most specific first: "<reason>|act=<act id>" (A22), "<reason>|<value of the deciding element>", "<reason>"
+        keys = [f"{g.reason}|act={sc.slots['act']}"] if "act" in sc.slots else []
+        keys += [f"{g.reason}|{sc.facts.get(g.deciding_element)}", g.reason]
+        why = next((reasons[k] for k in keys if k in reasons), g.reason).format(**kw)
         return spec["acquit"].format(why=why, **kw)
     return ((spec.get("open_reasons") or {}).get(g.reason) or spec["open"]).format(**kw)
 
@@ -292,8 +303,10 @@ def reference_answers(d: Design, lang: str, sc: Scenario) -> tuple[str, str, str
             kw[f"{slot}_label"] = labels.get(sc.slots[slot], "")
     kw.update({k[:1].upper() + k[1:]: (v[:1].upper() + v[1:] if isinstance(v, str) else v) for k, v in list(kw.items())})
     key = sc.gold.reason
-    # a reason may be refined by the value of the deciding element: "<reason>|<value>" wins over "<reason>"
+    # a reason may be refined by the value of the deciding element: "<reason>|<value>" wins over "<reason>"; an
+    # act-specific key "<reason>|act=<act id>" (A22) wins over both
     detail = f"{key}|{sc.facts.get(sc.gold.deciding_element)}" if sc.gold.deciding_element in sc.facts else None
+    keys = ([f"{key}|act={sc.slots['act']}"] if "act" in sc.slots else []) + ([detail] if detail else []) + [key]
     seed = int(hashlib.sha256(f"{sc.group_id}/{sc.k}".encode()).hexdigest(), 16)
 
     def choose(v, salt):
@@ -301,10 +314,9 @@ def reference_answers(d: Design, lang: str, sc: Scenario) -> tuple[str, str, str
 
     def pick(section):
         sec = a.get(section) or {}
-        if detail and detail in sec:
-            return sec[detail]
-        if key in sec:
-            return sec[key]
+        for k in keys:
+            if k in sec:
+                return sec[k]
         raise DesignError(f"answers/{lang}.yaml: no {section!r} answer for gold reason {key!r}"
                           + (f" (or {detail!r})" if detail else "") + "; add one (see docs/add-a-statute.md)")
     chosen = choose(pick("chosen"), 0)
@@ -312,18 +324,19 @@ def reference_answers(d: Design, lang: str, sc: Scenario) -> tuple[str, str, str
     # `minimal`: the chosen answer mirrored, with the verdict and the deciding legal claim negated, of about the same
     # length and wording; used for preference accuracy, where a longer chosen answer would otherwise lose on length
     mins = a.get("minimal") or {}
-    minimal = mins.get(detail) if detail and detail in mins else mins.get(key)
+    minimal = next((mins[k] for k in keys if k in mins), None)
     return chosen.format(**kw), rejected.format(**kw), (choose(minimal, 0).format(**kw) if minimal else None)
 
 
 def _scope(d: Design, lang: str, sc: Scenario, chosen: str) -> dict:
     """answers/<lang>.yaml `scope_note` (A17, made case-specific in A19): what "not punishable under this article" does
-    not mean and where else to turn. Looked up like the answers: "<reason>|<characteristic>", then "<reason>", then the
-    verdict. Kept apart from `chosen`, which stays the scored reference answer; `chosen_with_scope` is the answer to
-    train on."""
+    not mean and where else to turn. Looked up like the answers: "<reason>|<characteristic>", then "<reason>", then
+    "<verdict>|<characteristic>" (punishable items: the referral that fits the group), then the verdict. Kept apart from `chosen`, which stays the scored reference answer; `chosen_with_scope` is the answer an
+    assistant should give."""
     notes = d.answers[lang].get("scope_note") or {}
     reason, char = sc.gold.reason, sc.facts.get("characteristic")
-    note = notes.get(f"{reason}|{char}") or notes.get(reason) or notes.get(sc.gold.verdict)
+    note = (notes.get(f"{reason}|{char}") or notes.get(reason) or notes.get(f"{sc.gold.verdict}|{char}")
+            or notes.get(sc.gold.verdict))
     return dict(scope_note=note, chosen_with_scope=f"{chosen} {note}") if note else {}
 
 

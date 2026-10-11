@@ -26,7 +26,8 @@ acceptance:
     "characteristic:not_listed": "{char} is not on the closed list of Art. 261bis StGB"
     "characteristic:not_yet_covered": "sexual orientation is protected only for acts from 1 July 2020 (AS 2020 1609; no retroactivity, Art. 2 StGB)"
     "act_date:not_in_force": "Art. 261bis StGB entered into force on 1 January 1995 and does not apply retroactively (Art. 2 StGB)"
-    "dignity:failed": "the statement targets the religion's teachings and institutions and neither denies nor calls into question its members' equal worth as human beings or equal human rights, which is what degrading under Art. 261bis Abs. 4 requires; criticism that stays objective does not suffice (BGE 131 IV 23 E. 3)"
+    "dignity:failed": "the statement targets the religion's teachings and institutions and neither denies nor calls into question its members' equal worth as human beings or equal human rights, which is what degrading under Art. 261bis Abs. 4 requires; criticism that stays objective overall and rests on objective circumstances does not suffice (BGE 131 IV 23 E. 3)"
+    "dignity:failed|act=a4D_crit4": "the statement is a policy demand on religious instruction in public schools, a contribution to political debate resting on the State's denominational neutrality; it neither presents the religion's members as second-class human beings nor denies or calls into question their equal worth or equal human rights, and in political debate degrading under Art. 261bis Abs. 4 is not to be found lightly (BGE 131 IV 23 E. 3.1; the demand to return immigrants from Kosovo within the original deadline was held not degrading, E. 3.3 and 3.4.2)"
   open_reasons:
     "dignity:contested": "Acceptable: identifies as decisive whether the remark denies, or at least calls into question, the group's members' equal worth as human beings (BGE 131 IV 23 E. 3) and explains that this depends on its exact wording and context, which the facts leave open; a reasoned leaning is acceptable, and so is an acquittal reasoned on the wording not being established (in dubio pro reo, Art. 10 Abs. 3 StPO). Mentioning that a public mockery of religious convictions could fall under Art. 261 StGB instead is acceptable. Unacceptable: a verdict stated as certain without addressing the dignity threshold."
   traps:
@@ -113,7 +114,7 @@ slots:
       # A18: the dignity threshold decides; drawn by the DIGNITY family only (other families' draws are unchanged)
       a4D_deg:  {facts: {paragraph: abs4, dignity: degrading}, family: D, tags: [dignity, degrading], only_families: [DIGNITY]}
       a4D_crit1: {facts: {paragraph: abs4, dignity: criticism}, family: D, tags: [dignity, criticism], only_families: [DIGNITY]}   # refuses reform
-      a4D_crit2: {facts: {paragraph: abs4, dignity: criticism}, family: D, tags: [dignity, criticism], only_families: [DIGNITY]}   # opaque finances
+      a4D_crit2: {facts: {paragraph: abs4, dignity: criticism}, family: D, tags: [dignity, criticism], only_families: [DIGNITY], not_with: {group: [rel_jewish, rel_jewish_syn]}}   # opaque finances; A22: never drawn for Judaism, where it would echo the antisemitic stereotype of hidden money
       a4D_crit3: {facts: {paragraph: abs4, dignity: criticism}, family: D, tags: [dignity, criticism], only_families: [DIGNITY]}   # outdated teaching
       a4D_crit4: {facts: {paragraph: abs4, dignity: criticism}, family: D, tags: [dignity, criticism, policy_demand], only_families: [DIGNITY]}   # no religious instruction in public schools: a policy demand in political debate; acquittal rests on the restraint BGE 131 IV 23 requires there
       a4D_bord: {facts: {paragraph: abs4, dignity: borderline}, family: D, tags: [dignity, borderline], only_families: [DIGNITY]}
@@ -153,6 +154,8 @@ slots:
 #   tags: [..]      value carries all listed tags        not_tags: [..]  value carries none of them
 #   <attr>: null    attribute absent                     <attr>: base    attribute equals the base value's id (or attr)
 #   match: [attrs]  same attribute value as the base     differ: [attrs] different attribute value from the base
+# A slot value may carry `not_with: {slot: [values]}`: it is never drawn together with those values of a slot drawn
+# earlier (sample_order); the excluded value keeps its place in the seeded tie-break, so other draws are unchanged (A22).
 # Slots not named in `base` are drawn from all values (balanced). Each variant changes exactly the one named slot.
 families:
   SET:

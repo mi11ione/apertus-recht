@@ -1,0 +1,23 @@
+{
+ "run": "publicai-70b-dignity-de",
+ "backend": {
+  "backend": "openai",
+  "base_url": "gateway:swiss-ai/apertus-v1.5-8b",
+  "model": "swiss-ai/apertus-v1.5-8b",
+  "mode": "exact_prefill",
+  "seed": null
+ },
+ "params": {},
+ "rows": 360,
+ "errors": 0,
+ "served_models": [
+  "swiss-ai/apertus-v1.5-8b"
+ ],
+ "jsonl_sha256": "89679205aec375b959e3fceac1912ce296c4e71da50c80c98891cecc650ab6d1",
+ "parts": "dignity_de",
+ "rungs": "R0,R3,R5",
+ "framings": "conv,ver",
+ "sample": null,
+ "label": "Apertus v1.5 70B via Public AI (name swiss-ai/apertus-v1.5-8b), exact forced choice, DIGNITY family (A18; criticism variants re-scored in A22)",
+ "model": "swiss-ai/apertus-v1.5-8b"
+}

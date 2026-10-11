@@ -1,0 +1,88 @@
+[publicai-70b-prefv-de] scoring method: exact_prefill
+[publicai-70b-prefv-de] 645 prompts on {'backend': 'openai', 'base_url': 'gateway:swiss-ai/apertus-v1.5-8b', 'model': 'swiss-ai/apertus-v1.5-8b', 'mode': 'exact_prefill', 'seed': None}
+[publicai-70b-prefv-de] 50/645 scored, 0 errors, 37s
+[publicai-70b-prefv-de] 100/645 scored, 0 errors, 72s
+[publicai-70b-prefv-de] 150/645 scored, 0 errors, 105s
+[publicai-70b-prefv-de] 200/645 scored, 0 errors, 141s
+[publicai-70b-prefv-de] 250/645 scored, 0 errors, 176s
+[publicai-70b-prefv-de] 300/645 scored, 0 errors, 211s
+[publicai-70b-prefv-de] 350/645 scored, 0 errors, 290s
+[publicai-70b-prefv-de] 400/645 scored, 0 errors, 369s
+[publicai-70b-prefv-de] 450/645 scored, 0 errors, 450s
+[publicai-70b-prefv-de] 500/645 scored, 0 errors, 531s
+[publicai-70b-prefv-de] 550/645 scored, 0 errors, 584s
+[publicai-70b-prefv-de] 600/645 scored, 0 errors, 667s
+[publicai-70b-prefv-de] 645/645 prompts: 645 decided, 0 unparsed, 0 errors; served by ['swiss-ai/apertus-v1.5-8b']; file runs_a22/publicai-70b-prefv-de.jsonl (738.8 s)
+[publicai-70b-prefv-de] next: statute-twins report --run runs_a22/publicai-70b-prefv-de.jsonl
+[publicai-70b-prefv-fr] scoring method: exact_prefill
+[publicai-70b-prefv-fr] 645 prompts on {'backend': 'openai', 'base_url': 'gateway:swiss-ai/apertus-v1.5-8b', 'model': 'swiss-ai/apertus-v1.5-8b', 'mode': 'exact_prefill', 'seed': None}
+[publicai-70b-prefv-fr] 50/645 scored, 0 errors, 76s
+[publicai-70b-prefv-fr] 100/645 scored, 0 errors, 193s
+[publicai-70b-prefv-fr] 150/645 scored, 0 errors, 224s
+[publicai-70b-prefv-fr] 200/645 scored, 0 errors, 298s
+[publicai-70b-prefv-fr] 250/645 scored, 0 errors, 373s
+[publicai-70b-prefv-fr] 300/645 scored, 0 errors, 434s
+[publicai-70b-prefv-fr] 350/645 scored, 0 errors, 489s
+[publicai-70b-prefv-fr] 400/645 scored, 0 errors, 566s
+[publicai-70b-prefv-fr] 450/645 scored, 0 errors, 598s
+[publicai-70b-prefv-fr] 500/645 scored, 0 errors, 630s
+[publicai-70b-prefv-fr] 550/645 scored, 0 errors, 664s
+[publicai-70b-prefv-fr] 600/645 scored, 0 errors, 695s
+[publicai-70b-prefv-fr] 645/645 prompts: 645 decided, 0 unparsed, 0 errors; served by ['swiss-ai/apertus-v1.5-8b']; file runs_a22/publicai-70b-prefv-fr.jsonl (723.3 s)
+[publicai-70b-prefv-fr] next: statute-twins report --run runs_a22/publicai-70b-prefv-fr.jsonl
+[publicai-70b-prefv-it] scoring method: exact_prefill
+[publicai-70b-prefv-it] 645 prompts on {'backend': 'openai', 'base_url': 'gateway:swiss-ai/apertus-v1.5-8b', 'model': 'swiss-ai/apertus-v1.5-8b', 'mode': 'exact_prefill', 'seed': None}
+[publicai-70b-prefv-it] 50/645 scored, 0 errors, 30s
+[publicai-70b-prefv-it] 100/645 scored, 0 errors, 60s
+[publicai-70b-prefv-it] 150/645 scored, 0 errors, 97s
+[publicai-70b-prefv-it] 200/645 scored, 0 errors, 130s
+[publicai-70b-prefv-it] 250/645 scored, 0 errors, 156s
+[publicai-70b-prefv-it] 300/645 scored, 0 errors, 250s
+[publicai-70b-prefv-it] 350/645 scored, 0 errors, 285s
+[publicai-70b-prefv-it] 400/645 scored, 0 errors, 321s
+[publicai-70b-prefv-it] 450/645 scored, 0 errors, 353s
+[publicai-70b-prefv-it] 500/645 scored, 0 errors, 388s
+[publicai-70b-prefv-it] 550/645 scored, 0 errors, 412s
+[publicai-70b-prefv-it] 600/645 scored, 0 errors, 435s
+[publicai-70b-prefv-it] 645/645 prompts: 645 decided, 0 unparsed, 0 errors; served by ['swiss-ai/apertus-v1.5-8b']; file runs_a22/publicai-70b-prefv-it.jsonl (454.8 s)
+[publicai-70b-prefv-it] next: statute-twins report --run runs_a22/publicai-70b-prefv-it.jsonl
+[publicai-70b-r5a-ablation-de] scoring method: exact_prefill
+[publicai-70b-r5a-ablation-de] 1200 prompts on {'backend': 'openai', 'base_url': 'gateway:swiss-ai/apertus-v1.5-8b', 'model': 'swiss-ai/apertus-v1.5-8b', 'mode': 'exact_prefill', 'seed': None}
+[publicai-70b-r5a-ablation-de] 50/1200 scored, 0 errors, 60s
+[publicai-70b-r5a-ablation-de] 100/1200 scored, 0 errors, 118s
+[publicai-70b-r5a-ablation-de] 150/1200 scored, 0 errors, 173s
+[publicai-70b-r5a-ablation-de] 200/1200 scored, 0 errors, 227s
+[publicai-70b-r5a-ablation-de] 250/1200 scored, 0 errors, 283s
+[publicai-70b-r5a-ablation-de] 300/1200 scored, 0 errors, 338s
+[publicai-70b-r5a-ablation-de] 350/1200 scored, 0 errors, 390s
+[publicai-70b-r5a-ablation-de] 400/1200 scored, 0 errors, 435s
+[publicai-70b-r5a-ablation-de] 450/1200 scored, 0 errors, 489s
+[publicai-70b-r5a-ablation-de] 500/1200 scored, 0 errors, 540s
+[publicai-70b-r5a-ablation-de] 550/1200 scored, 0 errors, 601s
+[publicai-70b-r5a-ablation-de] 600/1200 scored, 0 errors, 684s
+[publicai-70b-r5a-ablation-de] 650/1200 scored, 0 errors, 844s
+[publicai-70b-r5a-ablation-de] 700/1200 scored, 20 errors, 2589s
+[publicai-70b-r5a-ablation-de] 750/1200 scored, 60 errors, 5235s
+[publicai-70b-r5a-ablation-de] 800/1200 scored, 100 errors, 8058s
+[publicai-70b-r5a-ablation-de] 850/1200 scored, 140 errors, 10922s
+[publicai-70b-r5a-ablation-de] 900/1200 scored, 156 errors, 11953s
+[publicai-70b-r5a-ablation-de] 950/1200 scored, 156 errors, 11997s
+[publicai-70b-r5a-ablation-de] 1000/1200 scored, 156 errors, 12062s
+[publicai-70b-r5a-ablation-de] 1050/1200 scored, 156 errors, 12085s
+[publicai-70b-r5a-ablation-de] 1100/1200 scored, 156 errors, 12150s
+[publicai-70b-r5a-ablation-de] 1150/1200 scored, 156 errors, 12215s
+[publicai-70b-r5a-ablation-de] 1200/1200 scored, 156 errors, 12280s
+[publicai-70b-r5a-ablation-de] 1200/1200 prompts: 1044 decided, 0 unparsed, 156 errors; served by ['swiss-ai/apertus-v1.5-8b']; file runs_a22/publicai-70b-r5a-ablation-de.jsonl (12279.7 s)
+  error 261bis-de-DATE_CTRL020-0/R5ad/conv: URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+  error 261bis-de-DATE_SO005-0/R5ab/conv: URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+  error 261bis-de-DATE_SO005-0/R5ac/conv: URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+[publicai-70b-r5a-ablation-de] FAIL: 13.0% of prompts errored or could not be parsed (allowed 0.0%); re-running the same command retries only those prompts
+FAILED --run-id publicai-70b-r5a-ablation-de --tag 1b-a22-r5abl --parts ctrl2_core_de --rungs R5a,R5ab,R5ac,R5ag,R5ad --framings conv --sample 240 --label Apertus v1.5 70B via Public AI (name swiss-ai/apertus-v1.5-8b), exact forced choice, A22 R5a ablations
+ALLDONE
+[publicai-70b-r5a-ablation-de] scoring method: exact_prefill
+[publicai-70b-r5a-ablation-de] 1200 prompts on {'backend': 'openai', 'base_url': 'gateway:swiss-ai/apertus-v1.5-8b', 'model': 'swiss-ai/apertus-v1.5-8b', 'mode': 'exact_prefill', 'seed': None}
+[publicai-70b-r5a-ablation-de] 50/156 scored, 0 errors, 39s
+[publicai-70b-r5a-ablation-de] 100/156 scored, 0 errors, 121s
+[publicai-70b-r5a-ablation-de] 150/156 scored, 0 errors, 198s
+[publicai-70b-r5a-ablation-de] 1200/1200 prompts: 1200 decided, 0 unparsed, 0 errors; served by ['swiss-ai/apertus-v1.5-8b']; file runs_a22/publicai-70b-r5a-ablation-de.jsonl (201.8 s)
+[publicai-70b-r5a-ablation-de] next: statute-twins report --run runs_a22/publicai-70b-r5a-ablation-de.jsonl

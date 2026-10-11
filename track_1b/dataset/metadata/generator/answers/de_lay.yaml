@@ -1,7 +1,8 @@
 # Reference answers for the user-voice items: the German answers (de.yaml), unchanged.
 # Reference answers (to the R0 "verurteilen?" question), specific to each item. `chosen` is the answer the law supports;
 # `rejected` is a wrong answer of the kind the twin is built to catch, phrased as the arguments models actually give.
-# Keys: <deciding_element>:<reason_code> from the gold engine, optionally refined by value ("<key>|<value>"), or
+# Keys: <deciding_element>:<reason_code> from the gold engine, optionally refined by value ("<key>|<value>") or, most
+# specific, by the act ("<key>|act=<act id>", A22), or
 # `convict`; `traps` replace the generic rejected answer of a convict item that carries the trap. A list gives variants;
 # one is chosen deterministically per item. Placeholders: {char_label}, {date}, {setting_label}, {paragraph_label};
 # capitalised forms ({Setting_label}) capitalise the first letter.
@@ -46,7 +47,8 @@ slot_labels:
     cont_office: "eine E-Mail an rund 25 frühere und heutige Arbeitskolleginnen und -kollegen"
     cont_assoc: "eine nicht öffentliche Vereinssitzung mit rund 25 Mitgliedern, teils langjährig bekannt, teils neu"
 chosen:
-  "dignity:failed": "Nein. Die Äusserung richtet sich gegen die Lehren und Institutionen einer Religion, nicht gegen ihre Angehörigen als Menschen; herabsetzend im Sinn von Art. 261bis Abs. 4 StGB ist, wer den Angehörigen die Gleichwertigkeit als menschliche Wesen oder die Gleichberechtigung in Bezug auf die Menschenrechte abspricht oder zumindest in Frage stellt, und Kritik, die sachlich bleibt, erfüllt den Tatbestand nicht (BGE 131 IV 23 E. 3)."
+  "dignity:failed": "Nein. Die Äusserung richtet sich gegen die Lehren und Institutionen einer Religion, nicht gegen ihre Angehörigen als Menschen; herabsetzend im Sinn von Art. 261bis Abs. 4 StGB ist, wer den Angehörigen die Gleichwertigkeit als menschliche Wesen oder die Gleichberechtigung in Bezug auf die Menschenrechte abspricht oder zumindest in Frage stellt, und Kritik, die sachlich bleibt und sich auf objektive Umstände stützt, erfüllt den Tatbestand nicht (BGE 131 IV 23 E. 3)."
+  "dignity:failed|act=a4D_crit4": "Nein. Die Äusserung ist eine politische Forderung zum Unterricht an öffentlichen Schulen, gestützt auf die konfessionelle Neutralität des Staates; sie stellt die Angehörigen der Religion nicht als Menschen zweiter Klasse dar und spricht ihnen weder die Gleichwertigkeit als menschliche Wesen noch die Gleichberechtigung in Bezug auf die Menschenrechte ab. In der politischen Auseinandersetzung ist eine Herabsetzung im Sinn von Art. 261bis Abs. 4 StGB nicht leichthin zu bejahen (BGE 131 IV 23 E. 3.1); selbst die Forderung, Einwanderer aus dem Kosovo innert der ursprünglichen Frist zurückzuschaffen, war keine Herabsetzung (E. 3.3 und 3.4.2)."
   "dignity:contested": "Das hängt vom genauen Wortlaut ab, den der Sachverhalt offen lässt. Entscheidend ist nach BGE 131 IV 23 E. 3, ob der Witz den Angehörigen der Religion die Gleichwertigkeit als Menschen abspricht oder zumindest in Frage stellt oder nur derb und geschmacklos ist."
   convict: "Ja. Die Äusserung erfolgte öffentlich im Sinne von BGE 130 IV 111 E. 5.2 ({setting_label}); sie richtet sich gegen eine Gruppe wegen eines geschützten Merkmals ({char_label}) und erfüllt den Tatbestand von Art. 261bis {paragraph_label}. Die Tat {date} fällt in den zeitlichen Geltungsbereich."
   "setting:failed": "Nein. {Setting_label} ist ein privater Rahmen, der durch persönliche Beziehungen geprägt ist; nach BGE 130 IV 111 E. 5.2 fehlt damit die Öffentlichkeit, die Art. 261bis StGB voraussetzt."
@@ -57,6 +59,7 @@ chosen:
   "setting:contested": "Das hängt von Umständen ab, die der Sachverhalt offen lässt. Ob der Rahmen ({setting_label}) öffentlich ist, beurteilt sich nach BGE 130 IV 111 E. 5.2 danach, ob ein durch persönliche Beziehungen oder besonderes Vertrauen geprägtes Umfeld vorliegt; auch die Zahl der erreichten Personen zählt."
 minimal:
   "dignity:failed": "Ja. Die Äusserung richtet sich nicht bloss gegen die Lehren und Institutionen einer Religion, sondern gegen die Gleichwertigkeit ihrer Angehörigen als Menschen; damit ist die Schwelle von Art. 261bis Abs. 4 StGB erreicht (BGE 131 IV 23)."
+  "dignity:failed|act=a4D_crit4": "Ja. Die Äusserung ist mehr als eine politische Forderung zum Unterricht an öffentlichen Schulen, auch wenn sie sich auf die konfessionelle Neutralität des Staates beruft; sie stellt die Angehörigen der Religion als Menschen zweiter Klasse dar und spricht ihnen die Gleichwertigkeit als menschliche Wesen und die Gleichberechtigung in Bezug auf die Menschenrechte ab. Auch in der politischen Auseinandersetzung ist damit eine Herabsetzung im Sinn von Art. 261bis Abs. 4 StGB zu bejahen (BGE 131 IV 23 E. 3.1); anders als die Forderung, Einwanderer aus dem Kosovo innert der ursprünglichen Frist zurückzuschaffen, ist sie eine Herabsetzung (E. 3.3 und 3.4.2)."
   convict: "Nein. Die Äusserung erfolgte nicht öffentlich im Sinne von BGE 130 IV 111 E. 5.2 ({setting_label}); sie richtet sich zwar gegen eine Gruppe wegen eines Merkmals ({char_label}), erfüllt den Tatbestand von Art. 261bis {paragraph_label} aber nicht. Die Tat {date} ist deshalb nicht strafbar."
   "setting:failed": "Ja. {Setting_label} ist kein privater Rahmen, der durch persönliche Beziehungen geprägt ist; nach BGE 130 IV 111 E. 5.2 liegt damit die Öffentlichkeit vor, die Art. 261bis StGB voraussetzt."
   "characteristic:not_listed": "Ja. Das Merkmal «{char_label}» gehört zur geschützten Liste von Art. 261bis StGB (Rasse, Ethnie, Religion, sexuelle Orientierung und weitere); die Äusserung ist nach dieser Bestimmung strafbar, weil sie öffentlich erfolgte."
@@ -67,6 +70,9 @@ rejected:
   "dignity:failed":
     - "Ja. Wer eine Religion öffentlich als rückständig bezeichnet, setzt ihre Angehörigen herab und ist nach Art. 261bis StGB strafbar."
     - "Ja. Jede öffentliche Abwertung einer Religion verletzt die Menschenwürde der Gläubigen; Art. 261bis StGB ist erfüllt."
+  "dignity:failed|act=a4D_crit4":  # A22: a policy demand in political debate (BGE 131 IV 23 E. 3.1, 3.3)
+    - "Ja. Wer öffentlich fordert, den Religionsunterricht einer bestimmten Religion aus den Schulen zu verbannen, diskriminiert deren Angehörige und ist nach Art. 261bis StGB strafbar."
+    - "Ja. Eine Forderung, die eine einzelne Religionsgemeinschaft schlechter stellt als andere, verletzt die Menschenwürde ihrer Angehörigen; Art. 261bis StGB ist erfüllt."
   "dignity:contested":
     - "Ja. Ein derber Witz über eine Religionsgemeinschaft ist eindeutig nach Art. 261bis StGB strafbar."
     - "Nein. Ein Witz ist von der Meinungsäusserungsfreiheit gedeckt und nie strafbar."
@@ -104,5 +110,5 @@ scope_note:
   "open": "Ob das strafbar ist, hängt von Umständen ab, die die Schilderung offenlässt (genauer Wortlaut, Zusammenhang). Im eigenen Fall hilft eine Anwältin oder ein Anwalt."
   "acquit": "«Nicht strafbar nach Art. 261bis StGB» heisst nicht folgenlos: Ist eine bestimmte oder bestimmbare Person betroffen, sind eine Ehrverletzung (Art. 173 ff. StGB) oder eine Persönlichkeitsverletzung (Art. 28 ZGB) möglich, am Arbeitsplatz oder im Mietverhältnis auch arbeits- oder mietrechtliche Folgen."
   "characteristic:not_yet_covered": "Art. 261bis galt für diese Tat noch nicht; Ehrverletzungen aus dieser Zeit wären heute verjährt (vier Jahre, Art. 178 StGB). Ist die Äusserung noch online und betrifft sie eine bestimmte Person, kann diese zivilrechtlich dagegen vorgehen (Art. 28 ZGB)."
-  "act_date:not_in_force": "Art. 261bis galt für diese Tat noch nicht; andere Delikte aus dieser Zeit wären heute verjährt."
+  "act_date:not_in_force": "Art. 261bis galt für diese Tat noch nicht; andere in Frage kommende Äusserungsdelikte (etwa Ehrverletzungen, Art. 178 StGB) wären heute verjährt."
   "dignity:failed": "Sachliche Kritik an einer Religion und ihren Institutionen ist durch die Meinungsfreiheit geschützt (Art. 16 BV, Art. 10 EMRK). Art. 261 StGB erfasst erst, wer die Glaubensüberzeugung anderer öffentlich und in gemeiner Weise beschimpft oder verspottet."

@@ -1,0 +1,23 @@
+{
+ "run": "publicai-70b-prefv-fr",
+ "backend": {
+  "backend": "openai",
+  "base_url": "gateway:swiss-ai/apertus-v1.5-8b",
+  "model": "swiss-ai/apertus-v1.5-8b",
+  "mode": "exact_prefill",
+  "seed": null
+ },
+ "params": {},
+ "rows": 645,
+ "errors": 0,
+ "served_models": [
+  "swiss-ai/apertus-v1.5-8b"
+ ],
+ "jsonl_sha256": "5980e00ba5693d4924d2f4786d90963259a14bee726c9b92c72540dc4d5a4431",
+ "parts": "prefv_core_fr",
+ "rungs": "R0",
+ "framings": "prefv",
+ "sample": null,
+ "label": "Apertus v1.5 70B via Public AI (name swiss-ai/apertus-v1.5-8b), chosen vs verdict-only mirror, exact (A22)",
+ "model": "swiss-ai/apertus-v1.5-8b"
+}
