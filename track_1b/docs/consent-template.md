@@ -5,8 +5,8 @@ man", "a student"); no real person, name, address or identifier occurs in them (
 validation records cite real, public, anonymised court decisions by docket and URL (pseudonymised data on criminal
 proceedings, released for verification); their notes name no private person. Court
 decisions used for validation are public-domain judgments (Swiss Copyright Act Art. 5), referenced by id and URL; the
-fact summaries written for the dignity check (A20) leave out roles, party names, exact dates and small places, so that
-no anonymised person can be re-identified.
+fact summaries written for the dignity check (A20) replace names, offices, party names, exact dates and small places
+with general descriptions; with their docket and URL they remain pseudonymised data, not anonymous data.
 
 Versions 1.0 to 1.8 of the dataset involved no human reviewers: every label was produced by reproducible agent runs
 (Claude agents, and Qwen-SEA-LION-v4-32B as an independent model). This form

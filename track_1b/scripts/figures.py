@@ -154,7 +154,14 @@ def _syn_cell(edits_run, lang, edit, rung):
     anchored = [e for e in es if e["status"] != "u"]
     bad = [e for e in anchored if e["status"] in ("F", "broken")]
     conv = next((e for e in es if e["framing"] == "conv"), es[0])
-    state = "unreadable" if not anchored else ("red" if len(bad) == len(anchored) else ("amber" if bad else "ok"))
+    if not anchored:
+        state = "unreadable"
+    elif bad:
+        state = "red" if len(bad) == len(anchored) else "amber"
+    else:
+        # A24: open square only where every readable framing applies the law in force; an interval spanning zero is
+        # shown as undetermined, not as the law in force
+        state = "ok" if all(e["status"] in ("a", "held") for e in anchored) else "undetermined"
     # post hoc (A12): the paired score difference variant - reference lies below zero in the Ja/Nein framing, i.e. the
     # model registers the fact although its decision stays on the convicting side
     drop = state in ("red", "amber") and conv.get("ci_diff") is not None and conv["ci_diff"][1] < 0
@@ -167,6 +174,10 @@ def _mark(ax, x, y, state, size=6.4):
     convicted, so the element cannot be read."""
     if state == "unreadable":
         ax.plot([x - 0.09, x + 0.09], [y, y], color=GREY, lw=0.9, solid_capstyle="butt")
+        return
+    if state == "undetermined":                      # A24: the interval spans zero
+        ax.plot([x], [y], marker="s", ms=size, mew=0.8, linestyle="none", mfc=PAPER, mec=GREY)
+        ax.plot([x], [y], marker="o", ms=size * 0.3, linestyle="none", mfc=GREY, mec=GREY)
         return
     kw = dict(marker="s", ms=size, mew=0.8, linestyle="none")
     if state == "red":
@@ -215,7 +226,8 @@ def fig_synopse(R, out, blocks=SYN_BLOCKS):
     # legend, in the figure itself so the encoding is never separated from it
     ly = len(rows) + 0.35
     items = [("red", "a law not in force is applied (both framings)"), ("amber", "in one framing"),
-             ("ok", "the law in force is applied"), ("unreadable", "base not convicted: cannot be read")]
+             ("ok", "the law in force is applied"), ("undetermined", "undetermined (interval spans 0)"),
+             ("unreadable", "base not convicted: cannot be read")]
     lx = 0.0
     for state, text in items:
         _mark(ax, lx + 0.08, ly, state, size=5.6)
@@ -280,7 +292,13 @@ def fig_rungs(R, out, framing="conv"):
         xs = [k for k, r in enumerate(RUNG_X) if r in acc]
         for side, ls, mfc, col in (("acquit", "-", INK, INK), ("convict", "--", PAPER, INK2)):
             ys = [acc[RUNG_X[k]][f"{side}_correct"] / acc[RUNG_X[k]][f"{side}_n"] for k in xs]
-            ax.plot(xs, ys, color=col, lw=1.0, ls=ls, marker="o", ms=3.6, mfc=mfc, mec=col, mew=0.8, zorder=3)
+            # R5 replaces the rules with the verbatim law: drawn as its own point, not joined to R4 (A24)
+            cut = [i for i, k in enumerate(xs) if RUNG_X[k] in ("R5", "R6")]
+            seg = len(xs) if not cut else cut[0]
+            ax.plot(xs[:seg], ys[:seg], color=col, lw=1.0, ls=ls, marker="o", ms=3.6, mfc=mfc, mec=col, mew=0.8, zorder=3)
+            if cut:
+                ax.plot(xs[seg:], ys[seg:], color=col, lw=1.0, ls=ls, marker="o", ms=3.6, mfc=mfc, mec=col, mew=0.8,
+                        zorder=3)
         ax.set_xticks(range(len(RUNG_X)), RUNG_X)
         ax.set_xlim(-0.35, len(RUNG_X) - 0.65)
         ax.set_ylim(-0.04, 1.06)

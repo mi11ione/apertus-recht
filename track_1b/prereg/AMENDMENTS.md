@@ -329,7 +329,7 @@ packet.txt`, leak-searched). Three coders assigned the element value from the Re
 gateway (C). The engine maps degrading to convict, not_degrading to acquit and borderline to open. Results as revised in A21
 (coders re-run on the redacted packet; `scripts/dignity_court.py`, `reports/dignity_court.json`, selfcheck step 2i):
 every coder codes all four convictions degrading; on the acquittals the coders are stricter than the courts (agreement
-with the courts 5, 5 and 4 of 8; always-convict: 4). One acquittal (a Zurich first-instance judgment) is a first-instance judgment under
+with the courts 5, 5 and 4 of 8; always-convict: 4). One acquittal (the Zurich first-instance judgment) is under
 appeal; one (BS AG.2017.79) rested partly on the subjective side. No sampled ruling concerns criticism of a religion's
 doctrine or institutions, so the check is consistent with the A18 gold but does not test it; the A18 gold rests on
 BGE 131 IV 23 itself. No item, prompt, response or prior result changed.
@@ -407,7 +407,7 @@ Juror agents (told it is a one-week hackathon) reviewed release 1.8.0. Changes, 
 - **Open items**: one scope note per reason (publicity contested: who was present and how many; dignity contested:
   the wording), instead of one note for both.
 - **Wording**: court checks state their always-convict baselines; the dignity court check describes the two acquittals
-  the Claude coders read as degrading exactly (one reversed first-instance conviction, one acquittal under appeal) and
+  the Claude coders read as degrading exactly (one reversed first-instance conviction, and one ruling since removed, A24) and
   discloses the earlier round (5, 5 and 4 of 8); the verdict-only preference result no longer speaks of the model's own
   reasoning; the dignity result reports every rung and both framings; the pre-registered test reports the readable
   cells (21 of 22), the read-back's accuracy and share of departures explained, and the cells where the bar was out of
@@ -418,7 +418,7 @@ Juror agents (told it is a one-week hackathon) reviewed release 1.8.0. Changes, 
   squashed to one commit; earlier dataset versions remain described in the changelog.
 
 ## A24 (2026-10-11, after judge round 14): non-final ruling removed; public history replaced; wording; dataset 1.8.2
-- **Dignity court check**: the first-instance acquittal still under appeal (a Zurich first-instance judgment) is removed from the released
+- **Dignity court check**: the first-instance acquittal still under appeal is removed from the released
   records; the check now reads seven final rulings (four convictions, three acquittals): agreement 6, 6 and 4 of 7,
   always-convict 4.
 - **Public history**: GitHub kept serving pre-rewrite commits by their id; the old repository was made private and
@@ -433,4 +433,17 @@ Juror agents (told it is a one-week hackathon) reviewed release 1.8.0. Changes, 
   near-misses of the pre-registered bar are given with intervals; genocide-denial rulings are reported apart from
   incitement and degradation; canary and scope-note coverage stated per file; court records described as pseudonymised
   data on criminal proceedings; the PII gate also reads scope notes and the mirrored answers.
+
+## A25 (2026-10-11, after judge round 15): figure encoding, wording; dataset 1.8.3
+- **Figure 2** marks a cell whose interval spans zero as undetermined (grey square with a dot) instead of as applying
+  the law in force; **Figure 1** no longer joins R4 to R5 (R5 replaces the rules).
+- **Report**: the R5 result is stated as a threshold shift (the scores still separate the cases: AUC per rung); the
+  abstract names the characteristics the rules do not fix; the pre-registered test reports how many gains have their
+  interval above zero; the dignity rows are split; the dignity court check is summarised (details in the card).
+- **Legal precision**: the BGE 131 IV 23 Regeste quoted in full in the statute model; the dignity answers cite E. 1.1
+  and 3; the French and Italian notes on Art. 261 StGB limited to statements; the policy-demand note names its limits
+  "namentlich"; the Art. 179ter complaint answer names non-opening and discontinuation (Art. 310, 319 StPO).
+- **Card**: the dignity family's share of court acquittals stated (6 of 23); the court summaries described as
+  pseudonymised; the content warning extended to quoted court records; the contamination scan dated; the docket of
+  the removed non-final ruling dropped from these amendments.
 

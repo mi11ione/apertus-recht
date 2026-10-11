@@ -203,7 +203,8 @@ configs:
 
 > **Content warning.** To test where Art. 261bis draws its lines, many items describe discriminatory or degrading
 > statements about real groups in substance (for example, a group called second-class people, a religious group called
-> vermin); no slur is spelled out. Research data, not legal advice.
+> vermin); no slur is spelled out in the items. The court-validation records quote public decisions, including slurs
+> and insults. Research data, not legal advice.
 
 {3 * ds['by_lang']['fr']} scenarios ({ds['by_lang']['fr']} per language in DE, FR and IT) about the Swiss offence of discrimination
 and incitement to hatred, Art. 261bis StGB / CP (Diskriminierung und Aufruf zu Hass); the same scenarios retold as a first-person paraphrase
@@ -222,7 +223,7 @@ the pinned statute text and BGE 130 IV 111 E. 5.2, never written by hand.
 - **License:** CDLA-Permissive-2.0 (all items; per-item licence components and provenance in `metadata/items.jsonl`
   for the core and first-person sets, and in `metadata/items.jsonl` inside `dignity/`, `paraphrase/` and `stgb_179ter/`).
 - **Git repository:** {REPO_URL} (generator, gold engine, harness, tests; Apache-2.0).
-- **Version:** 1.8.2 (generator 1.0.0, seed 261). Changelog at the end.
+- **Version:** 1.8.3 (generator 1.0.0, seed 261). Changelog at the end.
 
 ## Uses
 ### Direct Use
@@ -238,7 +239,7 @@ answer) and **free generation** judged against the item's acceptance criterion (
 repository: two blind Claude judges, a judge of another model family (Qwen), a deterministic parser, every judgement
 hash-bound to the answer it judged, and a seeded 20% sample laid out so that anyone can audit the judges).
 ### The dignity threshold (A18)
-Where most real acquittals turn: 20 twin groups per language in which a public statement about a religious group is
+The most frequent single ground among the coded court acquittals (6 of 23): 20 twin groups per language in which a public statement about a religious group is
 either degrading (denying, or at least calling into question, the believers' equal worth as human beings: convict),
 a criticism of the religion's institutions or teachings that stays objective and cites an objective basis (a published
 report, the institutions' own statements or texts; acquit: BGE 131 IV 23 E. 3, Regeste pinned
@@ -429,7 +430,9 @@ check that changing one rule flips exactly the items that rule governs.
   agents; comparison for legal facts: 0 critical, {3} minor findings, all fixed. A localisation review by a French- and
   Italian-speaking lawyer persona then fixed what back-translation cannot see (German places, calqued intent formula
   and verdict words, citation form); amendment A7, before any French or Italian result was analysed.
-- **Contamination** against `voilaj/swiss-caselaw` (listed as v1.5 pre-training data in the Apertus data catalogue,
+- **Contamination** (scan of 9 October 2026 on the core items as they stood then, before later wording amendments;
+  the first-person, dignity and paraphrase splits were written later and not scanned) against `voilaj/swiss-caselaw`
+  (listed as v1.5 pre-training data in the Apertus data catalogue,
   github.com/swiss-ai/apertus-data-transparency; revision
   {ct['revision'][:7]}; {ct['rows']:,} decisions, all {ct['files']} data files including GE, VD and BVGer): of
   {ct['item_ngrams']:,} distinct word 13-grams of our items, {ct['matching_scenario']} scenario 13-grams occur in the corpus
@@ -481,8 +484,9 @@ law; the statute tests against the official text and the court validation check 
   (evidence in the repository's `docs/builds.md`); its rows are labelled 70B.
 ### Personally Identifiable Information
 Items: none (no names, no identifiers; PII gate result above). Validation records cite public court decisions by
-docket and URL; their notes name no private person (only case names such as Perinçek v. Switzerland), and the dignity-check summaries leave out roles, parties, exact dates and
-small places.
+docket and URL; their notes name no private person (only case names such as Perinçek v. Switzerland), and the dignity-check summaries replace names, offices, party names, exact dates and
+small places with general descriptions (such as "a politician"); the docket and URL of each ruling are released for
+verification, so the summaries are pseudonymised, not anonymous.
 ### Sensitive Information
 The scenarios mention protected characteristics (race, ethnicity, religion, sexual orientation, gender identity, etc.)
 of **groups**, as the statute requires; no individual's characteristic is described. Some items state degrading
@@ -495,6 +499,8 @@ alongside results, since 4-bit conversions changed verdicts in our measurements.
 {len(runs)} runs (`responses/<run>.jsonl` with `<run>.meta.json`): {', '.join(runs)}.
 
 ## Changelog
+- 1.8.3 (2026-10-11): amendment A25: figure encoding (undetermined cells), legal precision in answers and notes,
+  card wording. No prompt or result changed.
 - 1.8.2 (2026-10-11): amendment A24: the dignity court check reads seven final rulings (a ruling under appeal removed);
   R4 and dignity paired statistics; wording of coverage and claims. No prompt or result changed.
 - 1.8.1 (2026-10-11): amendment A23: BGE 131 IV 23 considerations pinned; policy-demand answer and note; one scope
@@ -545,7 +551,7 @@ alongside results, since 4-bit conversions changed verdicts in our measurements.
   title  = {{Apertus-Recht: Art. 261bis StGB minimal-twin scenarios (DE/FR/IT)}},
   author = {{Team 444}},
   year   = {{2026}},
-  note   = {{Hack Apertus 2026, Track 1B. Dataset version 1.8.2}},
+  note   = {{Hack Apertus 2026, Track 1B. Dataset version 1.8.3}},
   url    = {{{REPO_URL}}}
 }}
 ```

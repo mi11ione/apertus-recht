@@ -4,7 +4,7 @@
 as it is in force?** No. Asked whether a statement is punishable, Apertus v1.5 convicts for words said
 only at a family dinner, for degrading statements about a canton or a profession, and for acts before the article
 entered into force (1 Jan 1995). Rules spelled out in the prompt fix some elements and leave others standing; in German,
-the verbatim law text, as a retrieval pipeline would paste it, changes no verdict. 1,980 minimal-twin scenarios in
+the verbatim law text, as a retrieval pipeline would paste it, changes no forced-choice verdict. 1,980 minimal-twin scenarios in
 German, French and Italian, each verdict computed by code from the pinned law, measure which law the model applies,
 element by element.
 
@@ -12,7 +12,8 @@ element by element.
 
 *Each row changes one legal fact of a scenario the law punishes (above the rule) or a detail that changes nothing
 (below). Filled square: the model applies a law that is not in force, in both framings; half-filled: in one; open: it
-applies the law in force; dash: the unchanged base is not convicted either, so the element cannot be read. R0: no law
+applies the law in force; grey with a dot: undetermined (the interval spans zero); dash: the unchanged base is not
+convicted either, so the element cannot be read. R0: no law
 in the prompt; R3: the rules spelled out (the elements, a one-sentence paraphrase of BGE 130 IV 111, the closed list);
 R4: plus a sentence on the 1 July 2020 extension; R5: the verbatim Fedlex text and the leading case's Regeste.*
 
@@ -33,7 +34,8 @@ R4: plus a sentence on the 1 July 2020 extension; R5: the verbatim Fedlex text a
 - **The verbatim law takes the gain back.** Given the Fedlex text of Art. 261bis and Art. 2 StGB and the Regeste of
   BGE 130 IV 111, the German 70B recognises 0 of 215 acquittals with Ja/Nein, as with no law at all; French 12,
   Italian 43, against 120 and 97 with the rules. It is the law's text, not its length: on the same 75 lawful items,
-  unrelated legal text of equal length leaves 36 acquitted, the verbatim law 11 (McNemar p = 6·10⁻⁸), and no single
+  unrelated legal text of equal length before the same rules leaves 36 acquitted, the verbatim law before the same
+  rules 11 (McNemar p = 6·10⁻⁸), and no single
   part of the text explains it.
 - **The correct reasoning does not carry the verdict.** Given the correct answer and the same answer with only its
   opening verdict word flipped, the German 70B prefers the correct one on 0.85 of items, but on only 35 of 55 private
@@ -78,7 +80,7 @@ Hack Apertus 2026 · Track 1B (Swiss Voices, behavioural alignment) · team 444 
 > assessment of the stated facts, not legal advice; the offence is prosecuted by the state, and those affected can
 > report it and find counselling. The items are evaluation data (a canary string in every item record), not training data.
 > **Content warning:** many items describe discriminatory or degrading statements about groups in substance; no slur
-> is spelled out. Every reviewer, juror or counsellor named in this repository is a Claude agent given that role.
+> is spelled out in the items (the court-validation records quote public decisions, slurs included). Every reviewer, juror or counsellor named in this repository is a Claude agent given that role.
 
 ## Run it
 
