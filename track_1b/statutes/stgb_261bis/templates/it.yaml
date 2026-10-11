@@ -131,8 +131,11 @@ acts:
   a4C2: "ha definito esseri umani di seconda categoria {g.def}"
   # A18 (solo famiglia DIGNITY)
   a4D_deg: "ha definito {g.who} parassiti e ha negato loro, a causa della loro fede, la qualità di esseri umani di pari valore"
-  a4D_crit: "ha criticato duramente gli insegnamenti e le istituzioni {g.rel}, definendo retrograde le loro norme sul ruolo delle donne e affermando che regole religiose speciali non dovrebbero valere in Svizzera"
-  a4D_bord: "ha raccontato una barzelletta volgare che prendeva di mira {g.who}, la cui formulazione esatta non è stata accertata e che alcuni presenti hanno definito «fuori luogo»"
+  a4D_bord: "ha raccontato una barzelletta volgare che prendeva di mira {g.who}; i fatti non ne riportano la formulazione, alcuni presenti l'hanno definita «fuori luogo»"
+  a4D_crit1: "ha rimproverato alle comunità e alle associazioni {g.rel} di rifiutare qualsiasi riforma"
+  a4D_crit2: "ha criticato la scarsa trasparenza delle finanze delle istituzioni {g.rel} e ne ha chiesto la piena pubblicazione"
+  a4D_crit3: "ha definito superate le prescrizioni degli insegnamenti {g.rel} sul ruolo delle donne"
+  a4D_crit4: "ha affermato che l'insegnamento religioso {g.rel} non deve trovare posto nelle scuole pubbliche"
 
 settings:
   # public

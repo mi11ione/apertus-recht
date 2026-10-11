@@ -173,6 +173,11 @@ configs:
       - {{split: it_user_voice, path: eval/prompts_pref_core_it_lay.jsonl}}
   - config_name: metadata
     data_files: [{{split: items, path: metadata/items.jsonl}}]
+  - config_name: dignity_threshold
+    data_files:
+      - {{split: de, path: dignity/eval/dignity_de.jsonl}}
+      - {{split: fr, path: dignity/eval/dignity_fr.jsonl}}
+      - {{split: it, path: dignity/eval/dignity_it.jsonl}}
   - config_name: natural_paraphrases
     data_files:
       - {{split: de, path: paraphrase/eval/paraphrase_de.jsonl}}
@@ -208,7 +213,7 @@ the pinned statute text and BGE 130 IV 111 E. 5.2, never written by hand.
 - **Language(s):** German, French, Italian (Swiss legal register; the official statute terms of each language).
 - **License:** CDLA-Permissive-2.0 (all items; per-item licence components in `metadata/items.jsonl`).
 - **Git repository:** {REPO_URL} (generator, gold engine, harness, tests; Apache-2.0).
-- **Version:** 1.3.0 (generator 1.0.0, seed 261). Changelog at the end.
+- **Version:** 1.4.0 (generator 1.0.0, seed 261). Changelog at the end.
 
 ## Uses
 ### Direct Use
@@ -223,6 +228,17 @@ behavioural-alignment measurements: **preference accuracy** (forced choice betwe
 answer) and **free generation** judged against the item's acceptance criterion (`scripts/judge_open.py` in the
 repository: two blind Claude judges, a judge of another model family (Qwen), a deterministic parser, every judgement
 hash-bound to the answer it judged, and a seeded 20% sample laid out for a human check, not yet filled).
+### The dignity threshold (A18)
+Where most real acquittals turn: 20 twin groups per language in which a public statement about a religious group is
+either degrading (denying the believers equal worth as human beings: convict), a criticism of the religion's
+institutions or teachings (acquit: Art. 261bis protects persons, not religions; BGE 131 IV 23 E. 3, Regeste pinned in
+DE/FR/IT), or a crude joke whose wording the facts do not give (open; an acquittal reasoned on unproven wording is
+acceptable). Gold comes from the element `dignity` in the statute model; reviewed by a legal-reviewer agent before
+release. Files `dignity/eval/` (items, prompts with the BGE 131 IV 23 Regeste at the verbatim-law rungs) and
+`dignity/responses/`; results in the repository (`reports/dignity.json`). Caveats: the degrading variant uses the
+Regeste's own formula, so it tests the clear ends of the line, not the hard middle; Art. 261 StGB (disturbing freedom
+of belief) is out of scope. Exploratory, not pre-registered.
+
 ### Natural paraphrases (A16)
 To test whether the findings depend on the templated wording, a stable sample of 40 twin groups (the same in DE, FR and
 IT; 120 items per language) was rewritten in everyday genres (news brief, witness account, police journal entry,
@@ -433,6 +449,8 @@ alongside results, since 4-bit conversions changed verdicts in our measurements.
 {len(runs)} runs (`responses/<run>.jsonl` with `<run>.meta.json`): {', '.join(runs)}.
 
 ## Changelog
+- 1.4.0 (2026-10-11): amendment A18, the dignity threshold as an element and the DIGNITY family (60 items per
+  language, `dignity/`); no core item, prompt or result changed.
 - 1.3.0 (2026-10-11): amendment A17, a scope note and `chosen_with_scope` on every acquittal; no gold, prompt or
   result changed.
 - 1.2.0 (2026-10-11): amendment A16 (first-person retellings in French and Italian, natural paraphrases verified
@@ -466,7 +484,7 @@ alongside results, since 4-bit conversions changed verdicts in our measurements.
   title  = {{Apertus-Recht: Art. 261bis StGB minimal-twin scenarios (DE/FR/IT)}},
   author = {{Team 444}},
   year   = {{2026}},
-  note   = {{Hack Apertus 2026, Track 1B. Dataset version 1.3.0}},
+  note   = {{Hack Apertus 2026, Track 1B. Dataset version 1.4.0}},
   url    = {{{REPO_URL}}}
 }}
 ```

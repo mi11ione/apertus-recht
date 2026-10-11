@@ -69,3 +69,9 @@ para_r0	3	reports/paraphrase.json	sum(c.get('para_acquit_ok',0) for c in J['cell
 para_r3	47	reports/paraphrase.json	sum(c.get('para_acquit_ok',0) for c in J['cells'] if c['rung']=='R3' and c['framing']=='conv')		technical_report.md,README.md	python scripts/paraphrase.py report
 orig_r0	2	reports/paraphrase.json	sum(c.get('orig_acquit_ok',0) for c in J['cells'] if c['rung']=='R0' and c['framing']=='conv')		technical_report.md,README.md	python scripts/paraphrase.py report
 orig_r3	44	reports/paraphrase.json	sum(c.get('orig_acquit_ok',0) for c in J['cells'] if c['rung']=='R3' and c['framing']=='conv')		technical_report.md,README.md	python scripts/paraphrase.py report
+dg_de_r0	11	reports/dignity.json	[c for c in J['cells'] if (c['lang'],c['rung'],c['framing'])==('de','R0','conv')][0]['criticism']['convicted']		technical_report.md,README.md	python scripts/dignity.py report
+dg_de_r3	20	reports/dignity.json	[c for c in J['cells'] if (c['lang'],c['rung'],c['framing'])==('de','R3','conv')][0]['criticism']['convicted']		technical_report.md,README.md	python scripts/dignity.py report
+dg_fr_r0	3	reports/dignity.json	[c for c in J['cells'] if (c['lang'],c['rung'],c['framing'])==('fr','R0','conv')][0]['criticism']['convicted']		technical_report.md	python scripts/dignity.py report
+dg_fr_r3	8	reports/dignity.json	[c for c in J['cells'] if (c['lang'],c['rung'],c['framing'])==('fr','R3','conv')][0]['criticism']['convicted']		technical_report.md	python scripts/dignity.py report
+dg_it_r0	6	reports/dignity.json	[c for c in J['cells'] if (c['lang'],c['rung'],c['framing'])==('it','R0','conv')][0]['criticism']['convicted']		technical_report.md	python scripts/dignity.py report
+dg_it_r3	15	reports/dignity.json	[c for c in J['cells'] if (c['lang'],c['rung'],c['framing'])==('it','R3','conv')][0]['criticism']['convicted']		technical_report.md	python scripts/dignity.py report

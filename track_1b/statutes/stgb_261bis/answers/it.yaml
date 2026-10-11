@@ -41,7 +41,7 @@ slot_labels:
     cont_office: "un'e-mail a circa 25 colleghi di lavoro, attuali ed ex"
     cont_assoc: "una seduta non pubblica di un'associazione con circa 25 membri, alcuni conosciuti da anni, altri nuovi"
 chosen:
-  "dignity:failed": "No. Le affermazioni criticano gli insegnamenti e le istituzioni di una religione, ma non negano ai suoi membri la parità di valore in quanto esseri umani; una critica negativa ma obiettiva non adempie l'art. 261bis cpv. 4 CP (DTF 131 IV 23 consid. 3)."
+  "dignity:failed": "No. Le affermazioni prendono di mira gli insegnamenti e le istituzioni di una religione, non il valore dei suoi membri in quanto esseri umani; l'art. 261bis CP protegge le persone, non le religioni (DTF 131 IV 23 consid. 3)."
   "dignity:contested": "Dipende dalla formulazione esatta, che i fatti lasciano aperta. Secondo la DTF 131 IV 23 consid. 3 occorre stabilire se la barzelletta nega ai membri della religione la parità di valore in quanto esseri umani o se è soltanto volgare e di cattivo gusto."
   convict: "Sì. L'esternazione è avvenuta pubblicamente ai sensi della DTF 130 IV 111 consid. 5.2 ({setting_label}); è diretta contro un gruppo a causa di una caratteristica protetta ({char_label}) e adempie la fattispecie dell'art. 261bis {paragraph_label}. Il fatto commesso {date} rientra nel campo d'applicazione temporale."
   "setting:failed": "No. Il contesto ({setting_label}) è privato e caratterizzato da relazioni personali; secondo la DTF 130 IV 111 consid. 5.2 manca quindi il carattere pubblico che l'art. 261bis CP presuppone."
@@ -51,7 +51,7 @@ chosen:
   "act_date:not_in_force": "No. L'art. 261bis CP è in vigore soltanto dal 1° gennaio 1995; un atto commesso {date} non è punibile in base a questa norma (art. 1 e 2 CP)."
   "setting:contested": "Dipende da circostanze che lo stato di fatto lascia aperte. Secondo la DTF 130 IV 111 consid. 5.2, il carattere pubblico del contesto ({setting_label}) dipende dall'esistenza di relazioni personali o di un particolare rapporto di fiducia; conta anche il numero delle persone raggiunte."
 minimal:
-  "dignity:failed": "Sì. Le affermazioni non criticano soltanto gli insegnamenti e le istituzioni di una religione, ma negano ai suoi membri la parità di valore in quanto esseri umani; adempiono l'art. 261bis cpv. 4 CP (DTF 131 IV 23 consid. 3)."
+  "dignity:failed": "Sì. Le affermazioni non prendono di mira soltanto gli insegnamenti e le istituzioni di una religione, ma il valore dei suoi membri in quanto esseri umani; l'art. 261bis CP protegge queste persone (DTF 131 IV 23 consid. 3)."
   convict: "No. L'esternazione non è avvenuta pubblicamente ai sensi della DTF 130 IV 111 consid. 5.2 ({setting_label}); è sì diretta contro un gruppo a causa di una caratteristica ({char_label}), ma non adempie la fattispecie dell'art. 261bis {paragraph_label}. Il fatto commesso {date} non è quindi punibile."
   "setting:failed": "Sì. Il contesto ({setting_label}) non è privato né caratterizzato da relazioni personali; secondo la DTF 130 IV 111 consid. 5.2 è quindi dato il carattere pubblico che l'art. 261bis CP presuppone."
   "characteristic:not_listed": "Sì. La caratteristica «{char_label}» figura nell'elenco protetto dell'art. 261bis CP (razza, etnia, religione, orientamento sessuale e altre); l'esternazione è punibile secondo questa disposizione, perché è avvenuta pubblicamente."

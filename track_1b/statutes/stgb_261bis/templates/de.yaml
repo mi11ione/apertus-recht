@@ -123,8 +123,11 @@ acts:
   a4C2: "bezeichnete {pron} {g.nom} als Menschen zweiter Klasse"
   # A18 (DIGNITY family only): the dignity threshold decides
   a4D_deg: "bezeichnete {pron} {g.who} als Ungeziefer und sprach ihnen wegen ihres Glaubens ab, gleichwertige Menschen zu sein"
-  a4D_crit: "kritisierte {pron} die Lehren und Institutionen {g.rel} scharf; deren Vorschriften zur Rolle der Frau seien rückständig, und religiöse Sonderregeln dürften in der Schweiz nicht gelten"
-  a4D_bord: "machte {pron} einen derben Witz über {g.who}, dessen genauer Wortlaut nicht festgestellt werden konnte und den Anwesende als «daneben» beschrieben"
+  a4D_bord: "machte {pron} einen derben Witz über {g.who}; der Sachverhalt gibt den Wortlaut nicht wieder, Anwesende beschrieben ihn als «daneben»"
+  a4D_crit1: "warf {pron} den Gemeinden und Verbänden {g.rel} vor, sich jeder Reform zu verschliessen"
+  a4D_crit2: "kritisierte {pron} die undurchsichtigen Finanzen der Institutionen {g.rel} und verlangte volle Offenlegung"
+  a4D_crit3: "bezeichnete {pron} die Vorschriften der Lehren {g.rel} zur Rolle der Frau als überholt"
+  a4D_crit4: "forderte {pron}, dass der Religionsunterricht {g.rel} keinen Platz an öffentlichen Schulen habe"
 
 settings:
   # public

@@ -15,6 +15,10 @@ law_text:
     - {source: fedlex_261bis_2026, label: "Art. 261bis StGB", footnotes: true}
     - {source: fedlex_art2, label: "Art. 2 StGB", numbered: true}
     - {source: bge_130_iv_111, label: "BGE 130 IV 111, Regeste"}
+  # A18: added after the core law block for the DIGNITY family only (the authority that decides it)
+  family_items:
+    DIGNITY:
+      - {source: bge_131_iv_23, label: "BGE 131 IV 23, Regeste"}
   question: "\n\nFrage:"
   # control R5d (A13): Art. 1 StGB pasted before Art. 2; Fedlex eli/cc/54/757_781_799, version 2026-10-01, pinned with
   # `statute-twins pin --eid art_1`; the text hash is checked when the prompt is rendered

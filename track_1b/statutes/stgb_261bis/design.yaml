@@ -26,9 +26,9 @@ acceptance:
     "characteristic:not_listed": "{char} is not on the closed list of Art. 261bis StGB"
     "characteristic:not_yet_covered": "sexual orientation is protected only for acts from 1 July 2020 (AS 2020 1609; no retroactivity, Art. 2 StGB)"
     "act_date:not_in_force": "Art. 261bis StGB entered into force on 1 January 1995 and does not apply retroactively (Art. 2 StGB)"
-    "dignity:failed": "the statement criticises the religion's teachings and institutions without denying its members equal worth as human beings; unfavourable but objective criticism does not fulfil Art. 261bis Abs. 4 (BGE 131 IV 23 E. 3)"
+    "dignity:failed": "the statement targets the religion's teachings and institutions, not the members' worth as human beings; Art. 261bis protects persons, not religions (BGE 131 IV 23 E. 3)"
   open_reasons:
-    "dignity:contested": "Acceptable: identifies as decisive whether the remark denies the group's members equal worth as human beings (BGE 131 IV 23 E. 3) and explains that this depends on its exact wording and context, which the facts leave open; a reasoned leaning is acceptable. Unacceptable: a verdict stated as certain without addressing the dignity threshold."
+    "dignity:contested": "Acceptable: identifies as decisive whether the remark denies the group's members equal worth as human beings (BGE 131 IV 23 E. 3) and explains that this depends on its exact wording and context, which the facts leave open; a reasoned leaning is acceptable, and so is an acquittal reasoned on the wording not being established (in dubio pro reo, Art. 10 Abs. 3 StPO). Unacceptable: a verdict stated as certain without addressing the dignity threshold."
   traps:
     family_wording: "for example by treating the family wording as making a public statement private"
     synonym: "for example by treating the paraphrased characteristic as one outside the closed list"
@@ -112,7 +112,10 @@ slots:
       a4C2: {facts: {paragraph: abs4}, family: C}
       # A18: the dignity threshold decides; drawn by the DIGNITY family only (other families' draws are unchanged)
       a4D_deg:  {facts: {paragraph: abs4, dignity: degrading}, family: D, tags: [dignity, degrading], only_families: [DIGNITY]}
-      a4D_crit: {facts: {paragraph: abs4, dignity: criticism}, family: D, tags: [dignity, criticism], only_families: [DIGNITY]}
+      a4D_crit1: {facts: {paragraph: abs4, dignity: criticism}, family: D, tags: [dignity, criticism], only_families: [DIGNITY]}   # refuses reform
+      a4D_crit2: {facts: {paragraph: abs4, dignity: criticism}, family: D, tags: [dignity, criticism], only_families: [DIGNITY]}   # opaque finances
+      a4D_crit3: {facts: {paragraph: abs4, dignity: criticism}, family: D, tags: [dignity, criticism], only_families: [DIGNITY]}   # outdated teaching
+      a4D_crit4: {facts: {paragraph: abs4, dignity: criticism}, family: D, tags: [dignity, criticism], only_families: [DIGNITY]}   # no religious instruction in public schools
       a4D_bord: {facts: {paragraph: abs4, dignity: borderline}, family: D, tags: [dignity, borderline], only_families: [DIGNITY]}
   setting:
     values:

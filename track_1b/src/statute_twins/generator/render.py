@@ -73,7 +73,7 @@ def rung_names(d: Design, lang: str) -> list[str]:
     return list(spec) if spec else list(RUNGS)
 
 
-def question(d: Design, lang: str, rung: str, framing: str) -> str:
+def question(d: Design, lang: str, rung: str, framing: str, family: str | None = None) -> str:
     """The question appended to the scenario text. If prompts/<lang>.yaml has `rungs: {R0: [parts...]}`, the rung is the
     concatenation of those parts, where `plain` and `tail` mean plain[framing] and tails[framing] and any other name is
     a top-level string of the prompts file. Otherwise the Art. 261bis ladder: R0 plain; R1 elements named; R2 + publicity
@@ -97,11 +97,11 @@ def question(d: Design, lang: str, rung: str, framing: str) -> str:
         return head + p["closed_list"] + p["date_clause"] + p["tails"][framing]
     if rung == "R5":
         lt = p["law_text"]
-        return lt["intro"] + law_block(d, lang) + lt["question"] + p["tails"][framing]
+        return lt["intro"] + law_block(d, lang, family=family) + lt["question"] + p["tails"][framing]
     if rung == "R6":
         # control for R5: the same verbatim law, preceded by the element-check instruction of R1 (A10)
         lt = p["law_text"]
-        return p["heads"]["R1"] + lt["intro"] + law_block(d, lang) + lt["question"] + p["tails"][framing]
+        return p["heads"]["R1"] + lt["intro"] + law_block(d, lang, family=family) + lt["question"] + p["tails"][framing]
     if rung == "R5a":
         return p["law_text"]["intro"] + law_block(d, lang) + head + p["closed_list"] + p["tails"][framing]
     if rung == "R5b":
@@ -145,14 +145,17 @@ def drop_exemplar(regeste: str) -> str:
     return head + ")."
 
 
-def law_block(d: Design, lang: str, exemplar: bool = True, art1: bool = False) -> str:
+def law_block(d: Design, lang: str, exemplar: bool = True, art1: bool = False, family: str | None = None) -> str:
     """The pinned legal texts, verbatim, as a retrieval pipeline would paste them (prompts/<lang>.yaml: law_text).
     exemplar=False drops the Regeste's closing example sentence (control R5b, A13); art1=True puts Art. 1 StGB
     before Art. 2 (control R5d, A13)."""
     import json
     parts = []
     src_lang = lang.split("_")[0]          # a register variant (de_lay) uses the official texts of its language
-    for it in d.prompts[lang]["law_text"]["items"]:
+    # A18: a family may add the authority that decides it (prompts/<lang>.yaml law_text.family_items), so the
+    # verbatim-law rungs give the DIGNITY items BGE 131 IV 23 as well; every other item's law block is unchanged
+    extra = ((d.prompts[lang]["law_text"].get("family_items") or {}).get(family) or []) if family else []
+    for it in list(d.prompts[lang]["law_text"]["items"]) + list(extra):
         if art1 and it["source"] == "fedlex_art2":
             parts.append(_art1_control(d, lang))
         rec = json.loads(d.statute.source_file(it["source"], src_lang).read_text(encoding="utf-8"))

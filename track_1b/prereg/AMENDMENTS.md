@@ -288,3 +288,13 @@ item files change only in `provenance.statute_sha256`; the engine gains generic 
 statements are convicted throughout; legitimate criticism is recognised without the law in French and Italian
 (Ja/Nein, 18 of 20) but convicted once the rules or the verbatim law are in the prompt, in every language. A
 legal-reviewer agent checked the family before release. Not pre-registered.
+After the legal review (same day, before release): the borderline variant no longer says the wording "could not be
+established" (an unprovable fact means acquittal, in dubio pro reo) but that the facts do not give it, and its
+criterion accepts an acquittal reasoned on unproven wording; the criticism variants rotate four institution-level
+criticisms (refusal of reform, opaque finances, a teaching on the role of women called outdated, no religious
+instruction in public schools) instead of one sentence for all four religions; the acquittal rests on the target
+("Art. 261bis protects persons, not religions"); the verbatim-law rungs of this family also paste the Regeste of BGE
+131 IV 23. All changed prompts were re-scored (pre-review responses in `archive/*.before-review.jsonl`). Final
+results (criticism convicted as racial discrimination, of 20, Ja/Nein, no law / rules spelled out / verbatim law):
+German 11 / 20 / 18, French 3 / 8 / 8, Italian 6 / 15 / 10; degrading statements 20 of 20 throughout; the borderline
+remark is convicted in most cells (a forced choice cannot hedge, and acquitting would be the defensible answer).

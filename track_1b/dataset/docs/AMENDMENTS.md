@@ -273,3 +273,28 @@ on. `chosen`, `rejected`, `rejected_minimal`, the acceptance criteria and every 
 judgement or result changes; the locked item files change by the two added fields. The register shows the note on
 every acquittal, labels verdicts "under Art. 261bis", and is localised (German, French, Italian); the README opens
 with the scope note.
+
+## A18 (2026-10-11, after round 9): the dignity threshold as an element (exploratory)
+Every juror noted that the core set stipulates the dignity threshold of Abs. 4, where most real acquittals turn. A new
+element `dignity` (Abs. 4 first half; authority BGE 131 IV 23 E. 3, Regeste pinned verbatim in DE/FR/IT from bger.ch:
+degrading means denying equal worth as human beings; objective criticism does not) with the values `degrading` (met),
+`criticism` (failed: criticism of a religion's teachings, practices or institutions without degrading its members) and
+`borderline` (contested: a crude "joke" whose wording is not established), declared with the default `degrading`, so
+every existing item keeps its gold, id and prompts (all prompt files byte-identical; results unchanged; the locked
+item files change only in `provenance.statute_sha256`; the engine gains generic element defaults). A family DIGNITY of
+20 twin groups per language (the four religion groups; spoken public settings; 60 items per language) is written to
+`dataset/dignity/`, outside the core set, and scored for the 70B at R0, R3 and R5 in both framings
+(`scripts/dignity.py`, `reports/dignity.json`; selfcheck step 2h re-derives items, prompts and scores). Degrading
+statements are convicted throughout; legitimate criticism is recognised without the law in French and Italian
+(Ja/Nein, 18 of 20) but convicted once the rules or the verbatim law are in the prompt, in every language. A
+legal-reviewer agent checked the family before release. Not pre-registered.
+After the legal review (same day, before release): the borderline variant no longer says the wording "could not be
+established" (an unprovable fact means acquittal, in dubio pro reo) but that the facts do not give it, and its
+criterion accepts an acquittal reasoned on unproven wording; the criticism variants rotate four institution-level
+criticisms (refusal of reform, opaque finances, a teaching on the role of women called outdated, no religious
+instruction in public schools) instead of one sentence for all four religions; the acquittal rests on the target
+("Art. 261bis protects persons, not religions"); the verbatim-law rungs of this family also paste the Regeste of BGE
+131 IV 23. All changed prompts were re-scored (pre-review responses in `archive/*.before-review.jsonl`). Final
+results (criticism convicted as racial discrimination, of 20, Ja/Nein, no law / rules spelled out / verbatim law):
+German 11 / 20 / 18, French 3 / 8 / 8, Italian 6 / 15 / 10; degrading statements 20 of 20 throughout; the borderline
+remark is convicted in most cells (a forced choice cannot hedge, and acquitting would be the defensible answer).

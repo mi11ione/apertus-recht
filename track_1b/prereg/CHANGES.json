@@ -56,13 +56,13 @@
   "A4"
  ],
  "sha256_now": {
-  "statutes/stgb_261bis/statute.yaml": "ac98a1930aba283b754f9f56e58a2f2f7a7ddd29066732ad6fddae5bd1a27588",
-  "statutes/stgb_261bis/design.yaml": "4b45e14bfefd365081fd67ed2e04aac49c218c85ba997e394e7e5acc7d860c3e",
+  "statutes/stgb_261bis/statute.yaml": "48e633ff409db669c9f8f2c86927ad20c8e01d3ab53d13a766204adc1a22c933",
+  "statutes/stgb_261bis/design.yaml": "6fee1ec8c9ce374145f4b9b55a158a8213d9165129aab82118719000e0ab4c57",
   "src/statute_twins/analysis/heldout.py": "32837662139ab1b88c5add3fd8872adcd37e02803e061d15ffc083e7a06200e5",
   "src/statute_twins/analysis/results.py": "6e9e22256e237b373a2c72b205d2d21e760e72acedb00e6fff232446bf7218f9",
-  "dataset/eval/core_de.jsonl": "9e71832cddbf9e203d3c3c90243f12a33f143d18952e924f2cada22ed8e6f7f2",
-  "dataset/eval/core_fr.jsonl": "ddaa8a13f2c4b17fdd1a3ac7123354d0f6245a82aa5f3ea3a0f6d92ce61bde98",
-  "dataset/eval/core_it.jsonl": "73ae1e00bb971f13c061c162b51f1dacea5588ed1eef681a8eca567fc6a2f8f0",
+  "dataset/eval/core_de.jsonl": "301b50bb0801dd24b8f4da2396b7c7e4702fbefc59412302d0bc701f22314dda",
+  "dataset/eval/core_fr.jsonl": "e025571dd1ff7964612d29040a9a51e5347f1e18d4a9fefe4f999a747c50594e",
+  "dataset/eval/core_it.jsonl": "dcb4172f12c3e1a1c2b5b1f461133c07ccda9ac9349a2840853e0bf520571391",
   "prereg/PREREG_court.md": "65723983e22a3d684b172af35cc7fea6e74246869fc71fde88e852b8e020634f",
   "src/statute_twins/gold/engine.py": "e06f5cbdf72505a019c7c7427c54c3d7e75f5df3279b44303176a9d97da419be"
  },

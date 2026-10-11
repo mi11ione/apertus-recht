@@ -392,5 +392,5 @@ def build_prompts(d: Design, items: list[dict], rungs=None, framings=FRAMINGS) -
             for f in framings:
                 c = candidates(d, it["lang"], f)
                 rows.append(dict(prompt_id=f"{it['id']}/{r}/{f}", item_id=it["id"], lang=it["lang"], rung=r, framing=f,
-                                 user=it["text"] + question(d, it["lang"], r, f), **c))
+                                 user=it["text"] + question(d, it["lang"], r, f, family=it.get("family")), **c))
     return rows

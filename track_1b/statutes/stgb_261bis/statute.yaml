@@ -12,7 +12,7 @@ scope_note: >-
   protected characteristic (closed list, amended 1 Jul 2020), act paragraph (Abs. 1, 2, 4) and publicity.
   Intent (Vorsatz) is fixed to "present" in every scenario. Abs. 3 (propaganda) and Abs. 5 (refusal of a public service,
   no publicity element) are out of scope. Whether a concrete statement reaches the Abs. 4 dignity threshold is a
-  question of fact; the act descriptions are written so that it is met, and the judgement is not modelled.
+  question of fact; the act descriptions are written so that it is met, and the judgement is not modelled, except in the DIGNITY family (A18).
 
 sources:
   fedlex_261bis_2026:
@@ -152,8 +152,8 @@ elements:
       criticism:  {satisfied: false, note: criticism of a religion's teachings or institutions that stays objective}
       borderline: {satisfied: contested, note: a crude remark whose degrading character depends on wording the facts leave open}
     fail_reason: >-
-      The statement criticises the religion's teachings and institutions without denying its members equal worth as
-      human beings; unfavourable but objective criticism does not fulfil Art. 261bis Abs. 4 (BGE 131 IV 23 E. 3).
+      The statement targets the religion's teachings and institutions, not the members' worth as human beings;
+      Art. 261bis protects persons, not religions (BGE 131 IV 23 E. 3).
     contested_reason: >-
       Whether the remark denies the group's members equal worth as human beings (BGE 131 IV 23 E. 3) depends on its
       exact wording and context, which the scenario leaves open.

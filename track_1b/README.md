@@ -50,6 +50,10 @@ R4: plus a sentence on the 1 July 2020 extension; R5: the verbatim Fedlex text a
   ones acquitted without the law, 47 with the rules, against 2 and 44 for the templated originals. Told in a person's
   own words, in German, French and Italian, it is the same again without the law (0 to 4 of 215), and the rules
   then work somewhat better than on the charge sheet.
+- **Criticism of a religion is punished as racial discrimination.** Where the dignity threshold decides (BGE 131 IV
+  23: degrading the believers is punishable, criticising a religion's institutions is not), the German 70B convicts
+  11 of 20 criticisms without the law and 20 of 20 once the rules are spelled out; French and Italian do better without
+  the law. Degrading statements are convicted every time (A18).
 - **Not only this article.** A second statute in the same five-file format, Art. 179ter StGB (recording a non-public
   conversation, with a complaint deadline), fails in another shape: without the law the 70B answers "Nein" to all 120
   cases when asked Ja/Nein and "schuldig" to 117 when asked for a verdict, so it reads no element at all; with the

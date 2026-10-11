@@ -219,7 +219,7 @@ three languages (sha256 of each text), the amendment footnotes, and the Regeste 
 author, labels each variant a true flip, a placebo or contested; the generator refuses to build if that disagrees with
 the design. French and Italian were translated by Claude agents with the official terms, back-translated blind (0
 critical findings) and localised by a lawyer-persona review (places in Romandie and Ticino, Swiss formulas).
-Every change after the pre-registration is a timestamped amendment in <code>prereg/AMENDMENTS.md</code>, cited below as A1–A17.</p>
+Every change after the pre-registration is a timestamped amendment in <code>prereg/AMENDMENTS.md</code>, cited below as A1–A18.</p>
 <p><strong>Verification without human labels.</strong> Because gold is computed, review looks for errors in the code, the element model
 or the wording. Every review step was done by Claude agents working blind on opaque ids, without code or gold.</p>
 <ul>
@@ -419,57 +419,57 @@ framing; open: it applies the law in force; dash: the base itself is not convict
 <tr>
 <th>Control</th>
 <th>Result</th>
-<th>What it shows</th>
+<th>Shows</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Question asked the other way ("would a court acquit?"), no law</td>
-<td>Of 215 lawful scenarios, 0 are acquitted, in every language.</td>
-<td>not a bias towards "yes"</td>
+<td>Question reversed ("acquit?"), no law</td>
+<td>0 of 215 lawful acquitted, every language</td>
+<td>not a yes-bias</td>
 </tr>
 <tr>
-<td>The same, rules spelled out</td>
-<td>German: the model now also "acquits" punishable cases (balanced accuracy 0.38). Averaged over both directions, 73 of 215 lawful scenarios are acquitted, among them 45 of 55 private settings.</td>
-<td>part of the R3 gain is answer format</td>
+<td>Question reversed, rules spelled out</td>
+<td>German balanced accuracy 0.38; both directions averaged: 73 of 215 (45 of 55 private); Italian convicts all</td>
+<td>part of the R3 gain is format</td>
 </tr>
 <tr>
-<td>The same question reversed, rules spelled out, Italian</td>
-<td>Of 215 lawful scenarios, none acquitted: every case is convicted.</td>
-<td>the answer follows the question</td>
+<td>Rules alone · after the verbatim law · after unrelated legal text of equal length (75 lawful German)</td>
+<td>37 · 11 of 75 · 36 of 75 acquitted</td>
+<td>the law's text, not length</td>
 </tr>
 <tr>
-<td>What in the verbatim law hurts (75 lawful German scenarios, a stable sample of 80 twin groups)</td>
-<td>Acquitted with the rules alone: 37 of 75; with the rules after the verbatim law: 11 of 75; with the rules after unrelated legal text of the same length: 36 of 75.</td>
-<td>not prompt length: the law's own text</td>
-</tr>
-<tr>
-<td>Verbatim law plus an instruction to check each element (R6)</td>
-<td>Of 215 lawful German scenarios, 23 are acquitted.</td>
+<td>Verbatim law + element check (R6)</td>
+<td>23 of 215 lawful acquitted</td>
 <td>not a missing instruction</td>
 </tr>
 <tr>
-<td>Free text in French and Italian</td>
-<td>Of 75 lawful scenarios, misleading answers: French 75 without the law, 75 with it; Italian 75 and 66.</td>
-<td>not a German-only effect</td>
+<td>Free text, French · Italian (misleading of 75, R0 / R5)</td>
+<td>75 / 75 · 75 / 66</td>
+<td>not German-only</td>
 </tr>
 <tr>
-<td>The same scenarios told in the first person, all three languages</td>
-<td>Of 215 lawful scenarios, acquitted without the law: German 2, French 4, Italian 0. With the rules: 119, 136, 143 (charge sheet: 107, 120, 97).</td>
-<td>not an artefact of legal register</td>
+<td>First person, DE · FR · IT (of 215 lawful)</td>
+<td>no law 2 · 4 · 0; rules 119 · 136 · 143 (charge sheet 107 · 120 · 97)</td>
+<td>not legal register</td>
 </tr>
 <tr>
-<td>The same scenarios rewritten as natural text, facts verified blind by two model families</td>
-<td>Of 117 lawful scenarios (three languages, Ja/Nein): 3 acquitted without the law, 47 with the rules; the templated originals: 2 and 44.</td>
-<td>not an artefact of templated wording</td>
+<td>Natural text, facts verified blind (117 lawful)</td>
+<td>no law 3, rules 47 (templated 2, 44)</td>
+<td>not the template</td>
 </tr>
 <tr>
-<td>A second statute, Art. 179ter (120 German scenarios)</td>
-<td>Without the law: "Nein" to all 120 when asked Ja/Nein, "schuldig" to 117 when asked for the verdict. With its elements and the complaint rule: balanced accuracy 0.76.</td>
-<td>not specific to one article</td>
+<td>Art. 179ter, second statute (120)</td>
+<td>no law: "Nein" to all 120 (Ja/Nein), "schuldig" to 117 (verdict); rules: balanced 0.76</td>
+<td>not one article</td>
+</tr>
+<tr>
+<td>Dignity threshold (BGE 131 IV 23): criticism of a religion's institutions, of 20</td>
+<td>convicted, no law / rules: DE 11 / 20, FR 3 / 8, IT 6 / 15; degrading: 20 of 20</td>
+<td>criticism is punished</td>
 </tr>
 </tbody>
-</table><figcaption>Table 3. Controls (A13–A16; per-element detail in <code>reports/controls_a13.json</code>). Art. 179ter: even with its rules
+</table><figcaption>Table 3. Controls (A13–A18; per-element detail in <code>reports/controls_a13.json</code>). Art. 179ter: even with its rules
 stated, a public debate and an outsider (whose act falls under Art. 179bis) are still convicted.</figcaption></figure>
 <p><strong>Recognising the law is not applying it.</strong> Shown an item's correct answer and its mirror, the 70B picks the correct
 one (German 0.98; Table 4), most cleanly in the closed-list and date columns, although its own verdicts
@@ -604,7 +604,7 @@ on 622, an MLX 4-bit conversion on 548.</p>
 <h2>Reproducibility</h2>
 <p><code>make run</code> (Docker, CPU, no key, no model) regenerates the dataset from the YAML (sha256 per file), recomputes every
 result from the stored responses, checks every request hash against its prompt, re-aggregates the judges, checks the
-pre-registration (<code>prereg-verify</code>: locked files, amendments A1–A17, the frozen held-out code) and the <code>claims.tsv</code>
+pre-registration (<code>prereg-verify</code>: locked files, amendments A1–A18, the frozen held-out code) and the <code>claims.tsv</code>
 numbers for both statutes, and exits non-zero on any mismatch. <code>LLM_*</code> variables or <code>make run-gguf</code> add a live slice.
 Seeds: generator 261, bootstrap 0 (2,000 resamples). <strong>License:</strong> code Apache-2.0; dataset CDLA-Permissive-2.0; this
 report CC-BY-4.0.</p>

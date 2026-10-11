@@ -10,7 +10,7 @@
     "n": 20
    },
    "criticism": {
-    "convicted": 16,
+    "convicted": 11,
     "n": 20
    },
    "borderline": {
@@ -21,6 +21,40 @@
   {
    "lang": "de",
    "rung": "R0",
+   "framing": "ver",
+   "degrading": {
+    "convicted": 20,
+    "n": 20
+   },
+   "criticism": {
+    "convicted": 14,
+    "n": 20
+   },
+   "borderline": {
+    "convicted": 20,
+    "n": 20
+   }
+  },
+  {
+   "lang": "de",
+   "rung": "R3",
+   "framing": "conv",
+   "degrading": {
+    "convicted": 20,
+    "n": 20
+   },
+   "criticism": {
+    "convicted": 20,
+    "n": 20
+   },
+   "borderline": {
+    "convicted": 20,
+    "n": 20
+   }
+  },
+  {
+   "lang": "de",
+   "rung": "R3",
    "framing": "ver",
    "degrading": {
     "convicted": 20,
@@ -37,40 +71,6 @@
   },
   {
    "lang": "de",
-   "rung": "R3",
-   "framing": "conv",
-   "degrading": {
-    "convicted": 20,
-    "n": 20
-   },
-   "criticism": {
-    "convicted": 20,
-    "n": 20
-   },
-   "borderline": {
-    "convicted": 20,
-    "n": 20
-   }
-  },
-  {
-   "lang": "de",
-   "rung": "R3",
-   "framing": "ver",
-   "degrading": {
-    "convicted": 20,
-    "n": 20
-   },
-   "criticism": {
-    "convicted": 20,
-    "n": 20
-   },
-   "borderline": {
-    "convicted": 20,
-    "n": 20
-   }
-  },
-  {
-   "lang": "de",
    "rung": "R5",
    "framing": "conv",
    "degrading": {
@@ -78,7 +78,7 @@
     "n": 20
    },
    "criticism": {
-    "convicted": 20,
+    "convicted": 18,
     "n": 20
    },
    "borderline": {
@@ -95,7 +95,7 @@
     "n": 20
    },
    "criticism": {
-    "convicted": 19,
+    "convicted": 11,
     "n": 20
    },
    "borderline": {
@@ -112,11 +112,11 @@
     "n": 20
    },
    "criticism": {
-    "convicted": 2,
+    "convicted": 3,
     "n": 20
    },
    "borderline": {
-    "convicted": 17,
+    "convicted": 15,
     "n": 20
    }
   },
@@ -129,7 +129,7 @@
     "n": 20
    },
    "criticism": {
-    "convicted": 9,
+    "convicted": 8,
     "n": 20
    },
    "borderline": {
@@ -146,7 +146,7 @@
     "n": 20
    },
    "criticism": {
-    "convicted": 16,
+    "convicted": 8,
     "n": 20
    },
    "borderline": {
@@ -163,7 +163,7 @@
     "n": 20
    },
    "criticism": {
-    "convicted": 2,
+    "convicted": 3,
     "n": 20
    },
    "borderline": {
@@ -180,11 +180,11 @@
     "n": 20
    },
    "criticism": {
-    "convicted": 20,
+    "convicted": 8,
     "n": 20
    },
    "borderline": {
-    "convicted": 20,
+    "convicted": 12,
     "n": 20
    }
   },
@@ -197,7 +197,7 @@
     "n": 20
    },
    "criticism": {
-    "convicted": 20,
+    "convicted": 9,
     "n": 20
    },
    "borderline": {
@@ -214,7 +214,7 @@
     "n": 20
    },
    "criticism": {
-    "convicted": 2,
+    "convicted": 6,
     "n": 20
    },
    "borderline": {
@@ -225,6 +225,40 @@
   {
    "lang": "it",
    "rung": "R0",
+   "framing": "ver",
+   "degrading": {
+    "convicted": 20,
+    "n": 20
+   },
+   "criticism": {
+    "convicted": 9,
+    "n": 20
+   },
+   "borderline": {
+    "convicted": 20,
+    "n": 20
+   }
+  },
+  {
+   "lang": "it",
+   "rung": "R3",
+   "framing": "conv",
+   "degrading": {
+    "convicted": 20,
+    "n": 20
+   },
+   "criticism": {
+    "convicted": 15,
+    "n": 20
+   },
+   "borderline": {
+    "convicted": 20,
+    "n": 20
+   }
+  },
+  {
+   "lang": "it",
+   "rung": "R3",
    "framing": "ver",
    "degrading": {
     "convicted": 20,
@@ -241,40 +275,6 @@
   },
   {
    "lang": "it",
-   "rung": "R3",
-   "framing": "conv",
-   "degrading": {
-    "convicted": 20,
-    "n": 20
-   },
-   "criticism": {
-    "convicted": 20,
-    "n": 20
-   },
-   "borderline": {
-    "convicted": 20,
-    "n": 20
-   }
-  },
-  {
-   "lang": "it",
-   "rung": "R3",
-   "framing": "ver",
-   "degrading": {
-    "convicted": 20,
-    "n": 20
-   },
-   "criticism": {
-    "convicted": 19,
-    "n": 20
-   },
-   "borderline": {
-    "convicted": 20,
-    "n": 20
-   }
-  },
-  {
-   "lang": "it",
    "rung": "R5",
    "framing": "conv",
    "degrading": {
@@ -282,7 +282,7 @@
     "n": 20
    },
    "criticism": {
-    "convicted": 20,
+    "convicted": 10,
     "n": 20
    },
    "borderline": {
@@ -299,7 +299,7 @@
     "n": 20
    },
    "criticism": {
-    "convicted": 20,
+    "convicted": 11,
     "n": 20
    },
    "borderline": {

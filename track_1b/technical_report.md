@@ -90,7 +90,7 @@ three languages (sha256 of each text), the amendment footnotes, and the Regeste 
 author, labels each variant a true flip, a placebo or contested; the generator refuses to build if that disagrees with
 the design. French and Italian were translated by Claude agents with the official terms, back-translated blind (0
 critical findings) and localised by a lawyer-persona review (places in Romandie and Ticino, Swiss formulas).
-Every change after the pre-registration is a timestamped amendment in `prereg/AMENDMENTS.md`, cited below as A1–A17.
+Every change after the pre-registration is a timestamped amendment in `prereg/AMENDMENTS.md`, cited below as A1–A18.
 
 **Verification without human labels.** Because gold is computed, review looks for errors in the code, the element model
 or the wording. Every review step was done by Claude agents working blind on opaque ids, without code or gold.
@@ -214,19 +214,19 @@ scenario the statute punishes (above the rule) or a detail that changes nothing 
 model. Filled square: the model applies a law that is not in force (both framings, 95% intervals); half-filled: in one
 framing; open: it applies the law in force; dash: the base itself is not convicted, so the row cannot be read.*
 
-| Control | Result | What it shows |
+| Control | Result | Shows |
 |---|---|---|
-| Question asked the other way ("would a court acquit?"), no law | Of 215 lawful scenarios, ⟨rev_r0⟩ are acquitted, in every language. | not a bias towards "yes" |
-| The same, rules spelled out | German: the model now also "acquits" punishable cases (balanced accuracy ⟨r3_rev_bal⟩). Averaged over both directions, ⟨r3_avg⟩ of 215 lawful scenarios are acquitted, among them ⟨r3_avg_set⟩ of 55 private settings. | part of the R3 gain is answer format |
-| The same question reversed, rules spelled out, Italian | Of 215 lawful scenarios, none acquitted: every case is convicted. | the answer follows the question |
-| What in the verbatim law hurts (75 lawful German scenarios, a stable sample of 80 twin groups) | Acquitted with the rules alone: ⟨r3_same⟩ of 75; with the rules after the verbatim law: ⟨r5a_same⟩; with the rules after unrelated legal text of the same length: ⟨r5e_same⟩. | not prompt length: the law's own text |
-| Verbatim law plus an instruction to check each element (R6) | Of 215 lawful German scenarios, ⟨r6_acq⟩ are acquitted. | not a missing instruction |
-| Free text in French and Italian | Of 75 lawful scenarios, misleading answers: French ⟨ft_fr_r0⟩ without the law, ⟨ft_fr_r5⟩ with it; Italian ⟨ft_it_r0⟩ and ⟨ft_it_r5⟩. | not a German-only effect |
-| The same scenarios told in the first person, all three languages | Of 215 lawful scenarios, acquitted without the law: German ⟨lay_acq⟩, French ⟨layfr_r0⟩, Italian ⟨layit_r0⟩. With the rules: ⟨lay_r3⟩, ⟨layfr_r3⟩, ⟨layit_r3⟩ (charge sheet: 107, 120, 97). | not an artefact of legal register |
-| The same scenarios rewritten as natural text, facts verified blind by two model families | Of ⟨para_acq_n⟩ lawful scenarios (three languages, Ja/Nein): ⟨para_r0⟩ acquitted without the law, ⟨para_r3⟩ with the rules; the templated originals: ⟨orig_r0⟩ and ⟨orig_r3⟩. | not an artefact of templated wording |
-| A second statute, Art. 179ter (120 German scenarios) | Without the law: "Nein" to all ⟨r179_r0_nein⟩ when asked Ja/Nein, "schuldig" to ⟨r179_r0_ver⟩ when asked for the verdict. With its elements and the complaint rule: balanced accuracy ⟨r179_r2⟩. | not specific to one article |
+| Question reversed ("acquit?"), no law | ⟨rev_r0⟩ of 215 lawful acquitted, every language | not a yes-bias |
+| Question reversed, rules spelled out | German balanced accuracy ⟨r3_rev_bal⟩; both directions averaged: ⟨r3_avg⟩ of 215 (⟨r3_avg_set⟩ of 55 private); Italian convicts all | part of the R3 gain is format |
+| Rules alone · after the verbatim law · after unrelated legal text of equal length (75 lawful German) | ⟨r3_same⟩ · ⟨r5a_same⟩ · ⟨r5e_same⟩ acquitted | the law's text, not length |
+| Verbatim law + element check (R6) | ⟨r6_acq⟩ of 215 lawful acquitted | not a missing instruction |
+| Free text, French · Italian (misleading of 75, R0 / R5) | ⟨ft_fr_r0⟩ / ⟨ft_fr_r5⟩ · ⟨ft_it_r0⟩ / ⟨ft_it_r5⟩ | not German-only |
+| First person, DE · FR · IT (of 215 lawful) | no law ⟨lay_acq⟩ · ⟨layfr_r0⟩ · ⟨layit_r0⟩; rules ⟨lay_r3⟩ · ⟨layfr_r3⟩ · ⟨layit_r3⟩ (charge sheet 107 · 120 · 97) | not legal register |
+| Natural text, facts verified blind (⟨para_acq_n⟩ lawful) | no law ⟨para_r0⟩, rules ⟨para_r3⟩ (templated ⟨orig_r0⟩, ⟨orig_r3⟩) | not the template |
+| Art. 179ter, second statute (120) | no law: "Nein" to all ⟨r179_r0_nein⟩ (Ja/Nein), "schuldig" to ⟨r179_r0_ver⟩ (verdict); rules: balanced ⟨r179_r2⟩ | not one article |
+| Dignity threshold (BGE 131 IV 23): criticism of a religion's institutions, of 20 | convicted, no law / rules: DE ⟨dg_de_r0⟩ / ⟨dg_de_r3⟩, FR ⟨dg_fr_r0⟩ / ⟨dg_fr_r3⟩, IT ⟨dg_it_r0⟩ / ⟨dg_it_r3⟩; degrading: 20 of 20 | criticism is punished |
 
-*Table 3. Controls (A13–A16; per-element detail in `reports/controls_a13.json`). Art. 179ter: even with its rules
+*Table 3. Controls (A13–A18; per-element detail in `reports/controls_a13.json`). Art. 179ter: even with its rules
 stated, a public debate and an outsider (whose act falls under Art. 179bis) are still convicted.*
 
 **Recognising the law is not applying it.** Shown an item's correct answer and its mirror, the 70B picks the correct
@@ -277,7 +277,7 @@ on 622, an MLX 4-bit conversion on 548.
 
 `make run` (Docker, CPU, no key, no model) regenerates the dataset from the YAML (sha256 per file), recomputes every
 result from the stored responses, checks every request hash against its prompt, re-aggregates the judges, checks the
-pre-registration (`prereg-verify`: locked files, amendments A1–A17, the frozen held-out code) and the `claims.tsv`
+pre-registration (`prereg-verify`: locked files, amendments A1–A18, the frozen held-out code) and the `claims.tsv`
 numbers for both statutes, and exits non-zero on any mismatch. `LLM_*` variables or `make run-gguf` add a live slice.
 Seeds: generator 261, bootstrap 0 (2,000 resamples). **License:** code Apache-2.0; dataset CDLA-Permissive-2.0; this
 report CC-BY-4.0.

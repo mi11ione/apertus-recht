@@ -234,8 +234,11 @@ acts:
   a4C2: "{pron} a qualifié d'êtres humains de seconde zone {g.def}"
   # A18 (famille DIGNITY uniquement)
   a4D_deg: "{pron} a traité {g.who} de vermine et leur a dénié, en raison de leur foi, la qualité d'êtres humains égaux"
-  a4D_crit: "{pron} a vivement critiqué les enseignements et les institutions {g.rel}, jugeant rétrogrades leurs règles sur le rôle des femmes et affirmant que des règles religieuses particulières ne devraient pas s'appliquer en Suisse"
-  a4D_bord: "{pron} a fait une plaisanterie grossière visant {g.who}, dont la teneur exacte n'a pas pu être établie et que des personnes présentes ont qualifiée de « déplacée »"
+  a4D_bord: "{pron} a fait une plaisanterie grossière, dont la teneur ne ressort pas des faits, visant {g.who} ; des personnes présentes l'ont qualifiée de « déplacée »"
+  a4D_crit1: "{pron} a reproché aux communautés et aux associations {g.rel} de refuser toute réforme"
+  a4D_crit2: "{pron} a critiqué l'opacité des finances des institutions {g.rel} et exigé leur pleine transparence"
+  a4D_crit3: "{pron} a jugé dépassées les prescriptions des enseignements {g.rel} sur le rôle des femmes"
+  a4D_crit4: "{pron} a affirmé que l'enseignement religieux {g.rel} n'a pas sa place dans les écoles publiques"
 
 settings:
   # public
