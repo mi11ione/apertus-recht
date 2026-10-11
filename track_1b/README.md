@@ -132,8 +132,11 @@ Exact forced choice on vLLM endpoints, first-token log-probabilities elsewhere, 
   left out (revised after the ECtHR found a violation of Art. 10 ECHR), it is 52/52, 6 of them genocide denial (post
   hoc, A12, A15). Every ruling agrees, including both acquittals on a modelled ground (one on
   the closed list, one on publicity; 55 of the 57 are convictions, so an always-convict engine would reach 55). The
-  rulings on grounds outside the model (intent, freedom of expression, the dignity threshold, now modelled in A18) map
-  where the next iteration goes.
+  dignity threshold (modelled in A18) is checked on its own rulings (A20): eight cases summarised as facts only, coded
+  blind under BGE 131 IV 23 by three coders of two model families. Every coder codes 4 of 4 convictions degrading; for
+  2 of 4 acquittals all three do too, and in both the court read the words against one concrete incident. The courts
+  acquit further than the Regeste read alone, so the A18 gold (objective criticism acquitted) holds a fortiori, and
+  incident-bound statements are the next family. Rulings on intent and freedom of expression map the rest.
 - **Against the training data.** 0 of 35,241 item 13-grams occur in the 1,069,365 decisions of `voilaj/swiss-caselaw`
   (in the Apertus v1.5 training data); the same scan finds 846 of 1,525 13-grams of the statute itself.
 - **Against our own earlier numbers.** The analysis reproduces the published exploration results exactly, and replays

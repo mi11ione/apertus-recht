@@ -29,6 +29,7 @@ RECORDS = {
     "statutes/stgb_261bis/review/court/tuples.jsonl": "review/court_tuples_A.jsonl",
     "statutes/stgb_261bis/review/court/tuples_B.jsonl": "review/court_tuples_B.jsonl",
     "reports/court_validation.json": "review/court_validation.json",
+    "reports/dignity_court.json": "review/dignity_court.json",
     "reports/contamination.json": "review/contamination.json",
     "reports/qc.json": "review/qc.json",
     "reports/open_judged_publicai-70b-open.json": "review/free_text_judged.json",
@@ -101,6 +102,7 @@ def main() -> int:
     ag = J("statutes/stgb_261bis/review/annotation/agreement.json")
     ct = J("reports/contamination.json")
     cv = J("reports/court_validation.json")
+    dc = J("reports/dignity_court.json")
     qg = J("reports/annotation_model_qwen.json")
     pv = J("reports/paraphrase_verification.json")["by_lang"]
     adj = J("reports/adjudication.json")
@@ -213,7 +215,7 @@ the pinned statute text and BGE 130 IV 111 E. 5.2, never written by hand.
 - **Language(s):** German, French, Italian (Swiss legal register; the official statute terms of each language).
 - **License:** CDLA-Permissive-2.0 (all items; per-item licence components in `metadata/items.jsonl`).
 - **Git repository:** {REPO_URL} (generator, gold engine, harness, tests; Apache-2.0).
-- **Version:** 1.5.0 (generator 1.0.0, seed 261). Changelog at the end.
+- **Version:** 1.6.0 (generator 1.0.0, seed 261). Changelog at the end.
 
 ## Uses
 ### Direct Use
@@ -227,7 +229,7 @@ twins read back **which element** a model gets wrong, not only how often. The sa
 behavioural-alignment measurements: **preference accuracy** (forced choice between each item's `chosen` and `rejected`
 answer) and **free generation** judged against the item's acceptance criterion (`scripts/judge_open.py` in the
 repository: two blind Claude judges, a judge of another model family (Qwen), a deterministic parser, every judgement
-hash-bound to the answer it judged, and a seeded 20% sample laid out for a human check, not yet filled).
+hash-bound to the answer it judged, and a seeded 20% sample laid out so that anyone can audit the judges).
 ### The dignity threshold (A18)
 Where most real acquittals turn: 20 twin groups per language in which a public statement about a religious group is
 either degrading (denying the believers equal worth as human beings: convict), a criticism of the religion's
@@ -237,7 +239,12 @@ acceptable). Gold comes from the element `dignity` in the statute model; reviewe
 release. Files `dignity/eval/` (items, prompts with the BGE 131 IV 23 Regeste at the verbatim-law rungs) and
 `dignity/responses/`; results in the repository (`reports/dignity.json`). Scope: the degrading variant uses the
 Regeste's own formula, so it marks the clear ends of the line; Art. 261 StGB (disturbing freedom
-of belief) is out of scope. Exploratory, not pre-registered.
+of belief) is out of scope. Exploratory, not pre-registered. Checked against {dc['cases']} court rulings (A20,
+`review/dignity_court.json`): each case summarised as facts only, the element value coded blind from the Regeste of
+BGE 131 IV 23 by two Claude agents and Qwen-SEA-LION; every coder codes {min(dc['convictions_coded_degrading'].values())} of
+{dc['convictions']} convictions degrading, and {len(dc['acquittals_degrading_all_coders'])} of {dc['acquittals']} acquittals
+are coded degrading by all three: the courts read those words against one concrete incident and acquit further than the
+Regeste read alone, so objective criticism of an institution (gold acquit here) is acquitted a fortiori.
 
 ### Natural paraphrases (A16)
 To test whether the findings depend on the templated wording, a stable sample of 40 twin groups (the same in DE, FR and
@@ -450,6 +457,8 @@ alongside results, since 4-bit conversions changed verdicts in our measurements.
 {len(runs)} runs (`responses/<run>.jsonl` with `<run>.meta.json`): {', '.join(runs)}.
 
 ## Changelog
+- 1.6.0 (2026-10-11): amendment A20, the dignity element checked against eight court rulings coded blind
+  (`review/dignity_court.json`); no item, prompt or result changed.
 - 1.5.0 (2026-10-11): amendment A19, case-specific scope notes (referral by characteristic, limits of honour and
   personality claims, time bars, criticism as protected speech, speaker-facing notes for first-person items); the
   dignity answers restate BGE 131 IV 23's test; no prompt or result changed.
@@ -486,7 +495,7 @@ alongside results, since 4-bit conversions changed verdicts in our measurements.
   title  = {{Apertus-Recht: Art. 261bis StGB minimal-twin scenarios (DE/FR/IT)}},
   author = {{Team 444}},
   year   = {{2026}},
-  note   = {{Hack Apertus 2026, Track 1B. Dataset version 1.5.0}},
+  note   = {{Hack Apertus 2026, Track 1B. Dataset version 1.6.0}},
   url    = {{{REPO_URL}}}
 }}
 ```

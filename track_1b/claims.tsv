@@ -75,3 +75,5 @@ dg_fr_r0	3	reports/dignity.json	[c for c in J['cells'] if (c['lang'],c['rung'],c
 dg_fr_r5	8	reports/dignity.json	[c for c in J['cells'] if (c['lang'],c['rung'],c['framing'])==('fr','R5','conv')][0]['criticism']['convicted']		technical_report.md,README.md	python scripts/dignity.py report
 dg_it_r0	6	reports/dignity.json	[c for c in J['cells'] if (c['lang'],c['rung'],c['framing'])==('it','R0','conv')][0]['criticism']['convicted']		technical_report.md,README.md	python scripts/dignity.py report
 dg_it_r5	10	reports/dignity.json	[c for c in J['cells'] if (c['lang'],c['rung'],c['framing'])==('it','R5','conv')][0]['criticism']['convicted']		technical_report.md,README.md	python scripts/dignity.py report
+dgc_conv	4 of 4	reports/dignity_court.json	f"{min(J['convictions_coded_degrading'].values())} of {J['convictions']}"		technical_report.md,README.md	python scripts/dignity_court.py compare
+dgc_acq	2 of 4	reports/dignity_court.json	f"{len(J['acquittals_degrading_all_coders'])} of {J['acquittals']}"		technical_report.md,README.md	python scripts/dignity_court.py compare

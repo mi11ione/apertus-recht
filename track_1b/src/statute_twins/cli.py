@@ -341,6 +341,11 @@ def cmd_selfcheck(a) -> int:
             r = subprocess.run([sys.executable, "scripts/dignity.py", step, "--check"], capture_output=True, text=True)
             print("  " + ((r.stdout.strip().splitlines() or [r.stderr.strip()[-200:]])[-1]))
             ok &= r.returncode == 0
+    if Path("reports/dignity_court.json").exists() and Path("scripts/dignity_court.py").exists():
+        print("== step 2i: dignity element against court rulings: report recomputed from the blind coders (A20)")
+        r = subprocess.run([sys.executable, "scripts/dignity_court.py", "compare", "--check"], capture_output=True, text=True)
+        print("  " + ((r.stdout.strip().splitlines() or [r.stderr.strip()[-200:]])[-1]))
+        ok &= r.returncode == 0
     if Path("reports/qc.json").exists():
         # the published QC report must be what the gates give on the released dataset now (counts drift otherwise)
         from . import statute as _statute

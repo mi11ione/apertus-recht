@@ -1,6 +1,6 @@
 {
  "files": {
-  "docs/AMENDMENTS.md": "957bfc8ea1375a7fa398ab0f6f73b749012f8b4be8f8690fda65cf5f65ff7a07",
+  "docs/AMENDMENTS.md": "e5e51d4cf0526c181c4f3472819938fb4f69633263934f0d688a9934b9a6a338",
   "docs/PREREG.md": "6c743044fb519c96a2e059cb802ac7c2a990b4d2b32f3646718c1878c64ceecb",
   "docs/PREREG_court.md": "65723983e22a3d684b172af35cc7fea6e74246869fc71fde88e852b8e020634f",
   "docs/annotation-guidelines.md": "20d3ecd1c53e30357c081350605ae3af41891b144ebbd317aa533b78128056b6",
@@ -156,6 +156,7 @@
   "review/court_tuples_A.jsonl": "9bb130040ebc72e7f1ae7a296909fa22cd54bbf181c9cd1e7b711d4faa4eab88",
   "review/court_tuples_B.jsonl": "7f3df0196b3374b89e69565491c437a7df307d26f1c418dfa34d79bcc4ebc60f",
   "review/court_validation.json": "e834c6f8883e105d4cc641c5761a6d79476d773dc1a3749b6b37c543dd5cac0a",
+  "review/dignity_court.json": "fc7c561f55bde45b25bfae270df1d3802908512b7f99b886ee16308cf5880688",
   "review/free_text_20pct_sample.tsv": "f841d1e1682404498b19d479046a43f7c6cc93873cc67c725a1585d60ad8f288",
   "review/free_text_20pct_sample_fr.tsv": "c18b65f41c3f73351e93390c21a18c3d57cb7614bbb1bf6d51509aa770fa22d5",
   "review/free_text_20pct_sample_it.tsv": "bca6cd85526a3012493718333faf68682c3255064c0fb691e3845e67f175a252",

@@ -123,7 +123,7 @@ the pinned statute text and BGE 130 IV 111 E. 5.2, never written by hand.
 - **Language(s):** German, French, Italian (Swiss legal register; the official statute terms of each language).
 - **License:** CDLA-Permissive-2.0 (all items; per-item licence components in `metadata/items.jsonl`).
 - **Git repository:** https://github.com/mi11ione/apertus-recht (generator, gold engine, harness, tests; Apache-2.0).
-- **Version:** 1.5.0 (generator 1.0.0, seed 261). Changelog at the end.
+- **Version:** 1.6.0 (generator 1.0.0, seed 261). Changelog at the end.
 
 ## Uses
 ### Direct Use
@@ -137,7 +137,7 @@ twins read back **which element** a model gets wrong, not only how often. The sa
 behavioural-alignment measurements: **preference accuracy** (forced choice between each item's `chosen` and `rejected`
 answer) and **free generation** judged against the item's acceptance criterion (`scripts/judge_open.py` in the
 repository: two blind Claude judges, a judge of another model family (Qwen), a deterministic parser, every judgement
-hash-bound to the answer it judged, and a seeded 20% sample laid out for a human check, not yet filled).
+hash-bound to the answer it judged, and a seeded 20% sample laid out so that anyone can audit the judges).
 ### The dignity threshold (A18)
 Where most real acquittals turn: 20 twin groups per language in which a public statement about a religious group is
 either degrading (denying the believers equal worth as human beings: convict), a criticism of the religion's
@@ -147,7 +147,12 @@ acceptable). Gold comes from the element `dignity` in the statute model; reviewe
 release. Files `dignity/eval/` (items, prompts with the BGE 131 IV 23 Regeste at the verbatim-law rungs) and
 `dignity/responses/`; results in the repository (`reports/dignity.json`). Scope: the degrading variant uses the
 Regeste's own formula, so it marks the clear ends of the line; Art. 261 StGB (disturbing freedom
-of belief) is out of scope. Exploratory, not pre-registered.
+of belief) is out of scope. Exploratory, not pre-registered. Checked against 8 court rulings (A20,
+`review/dignity_court.json`): each case summarised as facts only, the element value coded blind from the Regeste of
+BGE 131 IV 23 by two Claude agents and Qwen-SEA-LION; every coder codes 4 of
+4 convictions degrading, and 2 of 4 acquittals
+are coded degrading by all three: the courts read those words against one concrete incident and acquit further than the
+Regeste read alone, so objective criticism of an institution (gold acquit here) is acquitted a fortiori.
 
 ### Natural paraphrases (A16)
 To test whether the findings depend on the templated wording, a stable sample of 40 twin groups (the same in DE, FR and
@@ -375,6 +380,8 @@ alongside results, since 4-bit conversions changed verdicts in our measurements.
 37 runs (`responses/<run>.jsonl` with `<run>.meta.json`): 8b-bf16-DPO, 8b-bf16-RLVR, 8b-bf16-blend-RLVR-DPO-a0.25, 8b-bf16-blend-RLVR-DPO-a0.5, 8b-bf16-blend-RLVR-DPO-a0.75, 8b-gguf-q4_k_m, 8b-gguf-q4_k_m-cpu-core, 8b-gguf-q4_k_m-cpu-core-fr, 8b-gguf-q4_k_m-cpu-core-it, 8b-gguf-q4_k_m-cpu-pref, 8b-gguf-q8_0, 8b-mlx4-DPO, 8b-mlx4-RLVR, 8b-mlx4-SFT, 8b-mlx4-base-completion, 8b-mlx4-final, publicai-70b-ctrl-de, publicai-70b-ctrl-fr, publicai-70b-ctrl-it, publicai-70b-fc, publicai-70b-fc-core, publicai-70b-fc-core-fr, publicai-70b-fc-core-it, publicai-70b-fc-lay, publicai-70b-fc-lay-fr, publicai-70b-fc-lay-it, publicai-70b-gen, publicai-70b-open, publicai-70b-open-fr, publicai-70b-open-it, publicai-70b-pref, publicai-70b-pref-fr, publicai-70b-pref-it, publicai-70b-r5x-de, publicai-70b-r6-fr, publicai-70b-r6-it, qwen3-8b-mlx4.
 
 ## Changelog
+- 1.6.0 (2026-10-11): amendment A20, the dignity element checked against eight court rulings coded blind
+  (`review/dignity_court.json`); no item, prompt or result changed.
 - 1.5.0 (2026-10-11): amendment A19, case-specific scope notes (referral by characteristic, limits of honour and
   personality claims, time bars, criticism as protected speech, speaker-facing notes for first-person items); the
   dignity answers restate BGE 131 IV 23's test; no prompt or result changed.
@@ -388,7 +395,7 @@ alongside results, since 4-bit conversions changed verdicts in our measurements.
   provenance repairs (A12); controls for agreement bias and for R5 (A13, `review/controls_a13.json`); free text in
   French and Italian and Art. 179ter as a second statute (A14); corrections, a length control, an other-family gold
   check (A15);
-  no item or gold label of 1.0.0 changed. Files and hashes: `MANIFEST.json` (201 files).
+  no item or gold label of 1.0.0 changed. Files and hashes: `MANIFEST.json` (202 files).
 - 1.0.0 (2026-10-10): first release. Generator 1.0.0, seed 261.
   Pre-registration ([`docs/PREREG.md`](docs/PREREG.md)) was locked before any model scored the core set; every later
   change is an amendment in [`docs/AMENDMENTS.md`](docs/AMENDMENTS.md):
@@ -411,7 +418,7 @@ alongside results, since 4-bit conversions changed verdicts in our measurements.
   title  = {Apertus-Recht: Art. 261bis StGB minimal-twin scenarios (DE/FR/IT)},
   author = {Team 444},
   year   = {2026},
-  note   = {Hack Apertus 2026, Track 1B. Dataset version 1.5.0},
+  note   = {Hack Apertus 2026, Track 1B. Dataset version 1.6.0},
   url    = {https://github.com/mi11ione/apertus-recht}
 }
 ```

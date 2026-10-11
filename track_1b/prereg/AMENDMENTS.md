@@ -315,3 +315,24 @@ IV 23's own test (degrading means denying equal worth as human beings) instead o
 religions", which the pinned Regeste does not say, and the joke's criterion accepts a reference to Art. 261 StGB. The
 DIGNITY headline now uses R5 (the verbatim law with BGE 131 IV 23 pasted), since R3 states no dignity rule. No prompt,
 response or result changed.
+
+## A20 (2026-10-11): the dignity element against court rulings
+Exploratory, not pre-registered. The court check (57 rulings) leaves out acquittals on the dignity threshold, because
+the core set stipulates it. A18 models that threshold as the element `dignity`, so we ran a separate check against
+real rulings: the four statement-based acquittals in the court pool whose main ground is the Abs. 4 dignity threshold (
+BS AG.2017.79, NE CPEN.2021.9, a Zurich first-instance judgment, and the election-flyer count of BS AG.2024.375), mixed with the first
+four public Abs. 4 convictions in sha256(decision_id) order (genocide denial and repeat dockets skipped). An agent
+summarised each case as facts only, with no court, outcome, docket or legal test (`review/court/dignity_check/
+packet.txt`, leak-searched). Three coders assigned the element value from the Regeste of BGE 131 IV 23 alone
+(`coder_instructions.md`): two Claude agents working blind and separately (A, B) and Qwen-SEA-LION-v4-32B via the
+gateway (C). The engine maps degrading to convict, not_degrading to acquit and borderline to open. Results
+(`scripts/dignity_court.py`, `reports/dignity_court.json`, selfcheck step 2i):
+- **Convictions:** all four are coded degrading by every coder.
+- **Acquittals:** of the four, each coder leaves one (A, C) or two (B) short of degrading.
+- **The other two acquittals:** every coder calls them degrading. In both the court read the words against a concrete
+  incident: a post on a video of one attack, and a remark in a dispute with one passenger.
+
+The courts draw the line further toward acquittal than a reading of the Regeste alone. This supports the A18 gold
+(objective criticism of an institution is acquitted a fortiori) and names the next family: statements tied to a
+concrete incident.
+No item, prompt, response or prior result changed.

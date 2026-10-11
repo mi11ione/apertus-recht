@@ -106,7 +106,10 @@ or the wording. Every review step was done by Claude agents working blind on opa
   chance, 0.83–0.98 per field). The engine agrees with ⟨court_agree⟩ in-scope rulings, ⟨court_cases⟩ distinct cases
   (repeat instances merged; the Perinçek conviction left out after the European Court of Human Rights found a violation
   of Art. 10 ECHR). Both acquittals on a modelled ground agree, one on the closed list, one on
-  publicity (A15); 55 of the 57 are convictions, so an always-convict engine would reach 55.
+  publicity (A15); 55 of the 57 are convictions, so an always-convict engine would reach 55. The dignity threshold
+  (A18) has its own check (A20): eight rulings as facts only, coded blind under BGE 131 IV 23 by three coders of two
+  model families. Every coder codes ⟨dgc_conv⟩ convictions degrading; ⟨dgc_acq⟩ acquittals all three code degrading
+  too, each read by the court against one concrete incident: the courts acquit further, so the A18 gold holds.
 - **Wording fixes:** two defects found before any result was analysed (A3), four after (A5); fixed, re-scored, archived.
 
 ## Dataset Details
@@ -281,7 +284,7 @@ on 622, an MLX 4-bit conversion on 548.
 
 `make run` (Docker, CPU, no key, no model) regenerates the dataset from the YAML (sha256 per file), recomputes every
 result from the stored responses, checks every request hash against its prompt, re-aggregates the judges, checks the
-pre-registration (`prereg-verify`: locked files, amendments A1–A19, the frozen held-out code) and the `claims.tsv`
+pre-registration (`prereg-verify`: locked files, amendments A1–A20, the frozen held-out code) and the `claims.tsv`
 numbers for both statutes, and exits non-zero on any mismatch. `LLM_*` variables or `make run-gguf` add a live slice.
 Seeds: generator 261, bootstrap 0 (2,000 resamples). **License:** code Apache-2.0; dataset CDLA-Permissive-2.0; this
 report CC-BY-4.0.
