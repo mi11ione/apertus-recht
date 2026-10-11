@@ -4,13 +4,15 @@
  "statutes/stgb_261bis/statute.yaml": [
   "A7",
   "A8",
-  "A18"
+  "A18",
+  "A19"
  ],
  "statutes/stgb_261bis/design.yaml": [
   "A1",
   "A3",
   "A8",
-  "A18"
+  "A18",
+  "A19"
  ],
  "src/statute_twins/analysis/heldout.py": [
   "A6",
@@ -29,7 +31,8 @@
   "A8",
   "A11",
   "A17",
-  "A18"
+  "A18",
+  "A19"
  ],
  "dataset/eval/core_fr.jsonl": [
   "A2",
@@ -39,7 +42,8 @@
   "A7",
   "A8",
   "A17",
-  "A18"
+  "A18",
+  "A19"
  ],
  "dataset/eval/core_it.jsonl": [
   "A2",
@@ -49,20 +53,21 @@
   "A7",
   "A8",
   "A17",
-  "A18"
+  "A18",
+  "A19"
  ],
  "prereg/PREREG_court.md": [
   "stratum B (LOCK_court.json: stratum_B)",
   "A4"
  ],
  "sha256_now": {
-  "statutes/stgb_261bis/statute.yaml": "48e633ff409db669c9f8f2c86927ad20c8e01d3ab53d13a766204adc1a22c933",
-  "statutes/stgb_261bis/design.yaml": "6fee1ec8c9ce374145f4b9b55a158a8213d9165129aab82118719000e0ab4c57",
+  "statutes/stgb_261bis/statute.yaml": "9e26c0153f30891fd40ca544161ca6f5e5b377e68e8c051bf5c6099f83fc6124",
+  "statutes/stgb_261bis/design.yaml": "fbea1b8ac0621a349100002104131094f856961896cffabe5ef3d11d74b4c97b",
   "src/statute_twins/analysis/heldout.py": "32837662139ab1b88c5add3fd8872adcd37e02803e061d15ffc083e7a06200e5",
   "src/statute_twins/analysis/results.py": "6e9e22256e237b373a2c72b205d2d21e760e72acedb00e6fff232446bf7218f9",
-  "dataset/eval/core_de.jsonl": "301b50bb0801dd24b8f4da2396b7c7e4702fbefc59412302d0bc701f22314dda",
-  "dataset/eval/core_fr.jsonl": "e025571dd1ff7964612d29040a9a51e5347f1e18d4a9fefe4f999a747c50594e",
-  "dataset/eval/core_it.jsonl": "dcb4172f12c3e1a1c2b5b1f461133c07ccda9ac9349a2840853e0bf520571391",
+  "dataset/eval/core_de.jsonl": "e0c0126537a5bad9658345ef10516a08b4e89939d879de5e3f8a213565e7d7c4",
+  "dataset/eval/core_fr.jsonl": "0d8e306999cddcf0f6afd31b2904d03351d3684bd3defef6c11c715bbcb469d0",
+  "dataset/eval/core_it.jsonl": "690065310714c96d7f0f1c239fb895cdb96122385aaf666947bfaed0d416745b",
   "prereg/PREREG_court.md": "65723983e22a3d684b172af35cc7fea6e74246869fc71fde88e852b8e020634f",
   "src/statute_twins/gold/engine.py": "e06f5cbdf72505a019c7c7427c54c3d7e75f5df3279b44303176a9d97da419be"
  },

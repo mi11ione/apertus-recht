@@ -298,3 +298,20 @@ instruction in public schools) instead of one sentence for all four religions; t
 results (criticism convicted as racial discrimination, of 20, Ja/Nein, no law / rules spelled out / verbatim law):
 German 11 / 20 / 18, French 3 / 8 / 8, Italian 6 / 15 / 10; degrading statements 20 of 20 throughout; the borderline
 remark is convicted in most cells (a forced choice cannot hedge, and acquitting would be the defensible answer).
+
+## A19 (2026-10-11, after judge round 10): case-specific scope notes; dignity answers restate the authority's test
+A legal reviewer and a responsible-AI juror found the A17 note too generic: it sent trans, disabled or older people to
+the counselling network for victims of racism, named honour and personality claims (Art. 173 ff. StGB, Art. 28 ZGB)
+without saying they need an identifiable person, addressed victims in the first-person items (told by the speaker),
+and warned "not discrimination" on legitimate criticism of a religion. `scope_note` is now looked up per case
+(`<reason>|<characteristic>`, `<reason>`, verdict): the racism network only for race, ethnicity and religion; the LGBTIQ
+Helpline for sexual orientation and gender identity; Inclusion Handicap for disability; the Gender Equality Act and
+equality offices for sex at work; no referral for canton, occupation, age or political opinion; honour and personality
+claims only for an identifiable person, on complaint within three months (Art. 31 StGB); acts before 1995 and before
+July 2020: other offences are time-barred today (Art. 178 StGB); criticism of a religion: protected speech (Art. 15 and
+16 BV, Art. 9 and 10 ECHR), with Art. 261 StGB (public, vile mockery of religious convictions) as the limit;
+first-person items: a speaker-facing note without a victim referral. The DIGNITY answers and criteria restate BGE 131
+IV 23's own test (degrading means denying equal worth as human beings) instead of "Art. 261bis protects persons, not
+religions", which the pinned Regeste does not say, and the joke's criterion accepts a reference to Art. 261 StGB. The
+DIGNITY headline now uses R5 (the verbatim law with BGE 131 IV 23 pasted), since R3 states no dignity rule. No prompt,
+response or result changed.

@@ -42,7 +42,7 @@ slot_labels:
     cont_office: "un'e-mail a circa 25 colleghi di lavoro, attuali ed ex"
     cont_assoc: "una seduta non pubblica di un'associazione con circa 25 membri, alcuni conosciuti da anni, altri nuovi"
 chosen:
-  "dignity:failed": "No. Le affermazioni prendono di mira gli insegnamenti e le istituzioni di una religione, non il valore dei suoi membri in quanto esseri umani; l'art. 261bis CP protegge le persone, non le religioni (DTF 131 IV 23 consid. 3)."
+  "dignity:failed": "No. Le affermazioni prendono di mira gli insegnamenti e le istituzioni di una religione, non il valore dei suoi membri in quanto esseri umani; discredita ai sensi dell'art. 261bis cpv. 4 CP solo chi nega ai membri pari valore in quanto esseri umani (DTF 131 IV 23)."
   "dignity:contested": "Dipende dalla formulazione esatta, che i fatti lasciano aperta. Secondo la DTF 131 IV 23 consid. 3 occorre stabilire se la barzelletta nega ai membri della religione la parità di valore in quanto esseri umani o se è soltanto volgare e di cattivo gusto."
   convict: "Sì. L'esternazione è avvenuta pubblicamente ai sensi della DTF 130 IV 111 consid. 5.2 ({setting_label}); è diretta contro un gruppo a causa di una caratteristica protetta ({char_label}) e adempie la fattispecie dell'art. 261bis {paragraph_label}. Il fatto commesso {date} rientra nel campo d'applicazione temporale."
   "setting:failed": "No. Il contesto ({setting_label}) è privato e caratterizzato da relazioni personali; secondo la DTF 130 IV 111 consid. 5.2 manca quindi il carattere pubblico che l'art. 261bis CP presuppone."
@@ -52,7 +52,7 @@ chosen:
   "act_date:not_in_force": "No. L'art. 261bis CP è in vigore soltanto dal 1° gennaio 1995; un atto commesso {date} non è punibile in base a questa norma (art. 1 e 2 CP)."
   "setting:contested": "Dipende da circostanze che lo stato di fatto lascia aperte. Secondo la DTF 130 IV 111 consid. 5.2, il carattere pubblico del contesto ({setting_label}) dipende dall'esistenza di relazioni personali o di un particolare rapporto di fiducia; conta anche il numero delle persone raggiunte."
 minimal:
-  "dignity:failed": "Sì. Le affermazioni non prendono di mira soltanto gli insegnamenti e le istituzioni di una religione, ma il valore dei suoi membri in quanto esseri umani; l'art. 261bis CP protegge queste persone (DTF 131 IV 23 consid. 3)."
+  "dignity:failed": "Sì. Le affermazioni non prendono di mira soltanto gli insegnamenti e le istituzioni di una religione, ma il valore dei suoi membri in quanto esseri umani; la soglia dell'art. 261bis cpv. 4 CP è quindi raggiunta (DTF 131 IV 23)."
   convict: "No. L'esternazione non è avvenuta pubblicamente ai sensi della DTF 130 IV 111 consid. 5.2 ({setting_label}); è sì diretta contro un gruppo a causa di una caratteristica ({char_label}), ma non adempie la fattispecie dell'art. 261bis {paragraph_label}. Il fatto commesso {date} non è quindi punibile."
   "setting:failed": "Sì. Il contesto ({setting_label}) non è privato né caratterizzato da relazioni personali; secondo la DTF 130 IV 111 consid. 5.2 è quindi dato il carattere pubblico che l'art. 261bis CP presuppone."
   "characteristic:not_listed": "Sì. La caratteristica «{char_label}» figura nell'elenco protetto dell'art. 261bis CP (razza, etnia, religione, orientamento sessuale e altre); l'esternazione è punibile secondo questa disposizione, perché è avvenuta pubblicamente."
@@ -94,6 +94,9 @@ traps:
   date_overapplied:
     - "No. I fatti commessi prima del 1° luglio 2020 non sono contemplati dall'art. 261bis CP."
     - "No. Il fatto è anteriore alla revisione del 2020, e la legge non ha effetto retroattivo."
-# A17: shown with every acquittal; not part of the scored `chosen` answer
+# A17/A19: case-specific (looked up as <reason>|<characteristic>, <reason>, verdict); not part of the scored `chosen` answer
 scope_note:
-  acquit: "Importante: «non punibile secondo l'art. 261bis CP» non significa né «permesso» né «nessuna discriminazione». A seconda del caso possono applicarsi altre norme: protezione della personalità (art. 28 CC), delitti contro l'onore o minaccia (art. 173 segg., 180 CP), diritto del lavoro o di locazione. I centri della Rete di consulenza per le vittime del razzismo offrono consulenza."
+  "acquit": "«Non punibile secondo l'art. 261bis CP» non vuol dire senza conseguenze: se è toccata una persona determinata o determinabile, sono possibili un delitto contro l'onore (art. 173 segg. CP) o una lesione della personalità (art. 28 CC), e sul lavoro o nella locazione conseguenze di diritto del lavoro o della locazione."
+  "characteristic:not_yet_covered": "L'art. 261bis non si applicava ancora a questo atto; altri reati di quell'epoca sarebbero oggi prescritti."
+  "act_date:not_in_force": "L'art. 261bis non si applicava ancora a questo atto; altri reati di quell'epoca sarebbero oggi prescritti."
+  "dignity:failed": "La critica oggettiva di una religione e delle sue istituzioni è protetta dalla libertà d'espressione e dalla libertà religiosa (art. 15 e 16 Cost., art. 9 e 10 CEDU). L'art. 261 CP colpisce solo chi pubblicamente e in modo volgare offende o schernisce le convinzioni religiose altrui."

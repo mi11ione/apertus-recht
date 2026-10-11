@@ -318,7 +318,7 @@ const RUNG = {R0:"asked normally, no law", R3:"rules spelled out", R4:"+ the 202
 const VAR = {base:"base case", true_flip:"one legal fact changed", placebo:"a detail changed, the law's answer did not", contested:"facts left open (contested)"};
 const YN = {de: "Ja / Nein", de_lay: "Ja / Nein", fr: "Oui / Non", fr_lay: "Oui / Non", it: "Sì / No", it_lay: "Sì / No"};
 const VW = {de: "schuldig / nicht schuldig", de_lay: "schuldig / nicht schuldig", fr: "condamnation / acquittement", fr_lay: "condamnation / acquittement", it: "condanna / proscioglimento", it_lay: "condanna / proscioglimento"};
-const SAYS = d => d === "convict" ? "punishable" : d === "acquit" ? "not punishable" : d;
+const SAYS = d => (d === "convict" || d === "acquit") ? ui().short[d] : d;
 const SYN = [[/whats ?app|telegram|signal|messenger|sms|chat/i, "chat"], [/facebook|instagram|tiktok|twitter|social/i, "social"], [/youtube|video|vid[eé]o/i, "video"], [/e-?mail|courriel/i, "mail"], [/dinner|abendessen|repas|cena/i, "abendessen|repas|cena"]];
 const FINDINGS = [
   {en:"A dinner with family or close friends is not public, so it is not punishable under Art. 261bis.", de:"Ein Abendessen im Familien- oder Freundeskreis ist nicht öffentlich.", fr:"Un repas en famille ou entre amis proches n'est pas public.", it:"Una cena in famiglia o tra amici stretti non è pubblica.", pick: i => i.r === "setting:failed", rungs: ["R0","R3"]},
@@ -328,22 +328,22 @@ const FINDINGS = [
   {en:"Pasting the law itself (the Fedlex text and the leading case) hardly helps; in German, not at all.", de:"Den Gesetzestext einzufügen, hilft kaum; auf Deutsch gar nicht.", fr:"Coller le texte de loi n'aide presque pas.", it:"Incollare il testo di legge aiuta appena.", pick: i => i.g === "acquit", rungs: ["R5"]},
 ];
 const UI = {
-  en: {short: {acquit: "not punishable", convict: "punishable", open: "open"}, items: "Scenarios", court: "Court decisions", show: "show", fam: "family",
+  en: {caveat: "Only Art. 261bis is examined, not other offences. The case is a summary: intent and the dignity threshold are taken as met (except in the dignity family).", short: {acquit: "not punishable", convict: "punishable", open: "open"}, items: "Scenarios", court: "Court decisions", show: "show", fam: "family",
        opts: ["all scenarios", "Apertus 70B wrong somewhere", "wrong with no law", "wrong with the rules spelled out", "wrong with the 2020 sentence", "wrong with the law text", "not punishable under Art. 261bis", "contested"],
        law: {acquit: "not punishable under Art. 261bis", convict: "punishable under Art. 261bis", open: "depends on facts left open"},
        thelaw: "the law", twins: "Its twins: the same case with one fact changed", why: "Why: the element-by-element derivation",
        own: "Apertus 70B in its own words", refs: "Reference answers", overview: "overview"},
-  de: {short: {acquit: "nicht strafbar", convict: "strafbar", open: "offen"}, items: "Fälle", court: "Gerichtsentscheide", show: "zeigen", fam: "Familie",
+  de: {caveat: "Geprüft wird nur Art. 261bis, keine anderen Delikte. Der Fall ist eine Zusammenfassung: Vorsatz und Würdeschwelle gelten als erfüllt (ausser in der Würde-Familie).", short: {acquit: "nicht strafbar", convict: "strafbar", open: "offen"}, items: "Fälle", court: "Gerichtsentscheide", show: "zeigen", fam: "Familie",
        opts: ["alle Fälle", "Apertus 70B irgendwo falsch", "falsch ohne Gesetz", "falsch mit ausformulierten Regeln", "falsch mit dem Satz zu 2020", "falsch mit dem Gesetzestext", "nach Art. 261bis nicht strafbar", "umstritten"],
        law: {acquit: "nach Art. 261bis nicht strafbar", convict: "nach Art. 261bis strafbar", open: "hängt von offenen Tatsachen ab"},
        thelaw: "das Gesetz", twins: "Die Zwillinge: derselbe Fall, eine Tatsache geändert", why: "Warum: die Herleitung Merkmal für Merkmal",
        own: "Apertus 70B in eigenen Worten", refs: "Referenzantworten", overview: "Übersicht"},
-  fr: {short: {acquit: "non punissable", convict: "punissable", open: "ouvert"}, items: "Cas", court: "Décisions judiciaires", show: "afficher", fam: "famille",
+  fr: {caveat: "Seul l'art. 261bis est examiné, pas d'autres infractions. Le cas est un résumé : l'intention et le seuil de la dignité sont tenus pour réalisés (sauf dans la famille dignité).", short: {acquit: "non punissable", convict: "punissable", open: "ouvert"}, items: "Cas", court: "Décisions judiciaires", show: "afficher", fam: "famille",
        opts: ["tous les cas", "Apertus 70B se trompe quelque part", "faux sans la loi", "faux avec les règles explicitées", "faux avec la phrase sur 2020", "faux avec le texte de loi", "non punissable selon l'art. 261bis", "controversés"],
        law: {acquit: "non punissable selon l'art. 261bis CP", convict: "punissable selon l'art. 261bis CP", open: "dépend de faits laissés ouverts"},
        thelaw: "la loi", twins: "Ses jumeaux : le même cas, un fait changé", why: "Pourquoi : la dérivation élément par élément",
        own: "Apertus 70B dans ses propres mots", refs: "Réponses de référence", overview: "aperçu"},
-  it: {short: {acquit: "non punibile", convict: "punibile", open: "aperto"}, items: "Casi", court: "Decisioni giudiziarie", show: "mostra", fam: "famiglia",
+  it: {caveat: "Si esamina solo l'art. 261bis, non altri reati. Il caso è un riassunto: intenzione e soglia della dignità si considerano adempiute (tranne nella famiglia dignità).", short: {acquit: "non punibile", convict: "punibile", open: "aperto"}, items: "Casi", court: "Decisioni giudiziarie", show: "mostra", fam: "famiglia",
        opts: ["tutti i casi", "Apertus 70B sbaglia da qualche parte", "sbagliato senza la legge", "sbagliato con le regole esplicitate", "sbagliato con la frase sul 2020", "sbagliato con il testo di legge", "non punibile secondo l'art. 261bis", "controversi"],
        law: {acquit: "non punibile secondo l'art. 261bis CP", convict: "punibile secondo l'art. 261bis CP", open: "dipende da fatti lasciati aperti"},
        thelaw: "la legge", twins: "I suoi gemelli: lo stesso caso, un fatto cambiato", why: "Perché: la derivazione elemento per elemento",
@@ -396,7 +396,7 @@ function show(it, scroll = true) {
   let h = `<p class="crumb"><a href="#" id="home">${ui().overview}</a> · ${esc(it.id)} · ${esc(FAM[it.f] || it.f)} · ${esc(VAR[it.v] || it.v)}</p>`;
   h += `<p class="text">${base && base.id !== it.id ? diff(base.t, it.t) : esc(it.t)}</p>`;
   if (base && base.id !== it.id) h += `<p class="small">Underlined: what differs from its base case.</p>`;
-  h += `<dl class="verdict"><dt>${ui().thelaw}</dt><dd><b>${esc(LAW[it.g])}</b>${it.r ? ` <span class="small mono">· ${esc(it.r)}</span>` : ""}<br><span class="small">Other offences (e.g. insult, Art. 177) are not examined. The case is a summary: intent and the dignity threshold are taken as met.</span>${it.sn ? `<br><span class="scope">${esc(it.sn)}</span>` : ""}</dd>`;
+  h += `<dl class="verdict"><dt>${ui().thelaw}</dt><dd><b>${esc(LAW[it.g])}</b>${it.r ? ` <span class="small mono">· ${esc(it.r)}</span>` : ""}<br><span class="small">${ui().caveat}</span>${it.sn ? `<br><span class="scope">${esc(it.sn)}</span>` : ""}</dd>`;
   if (it.m70B) h += `<dt>Apertus 70B</dt><dd><span class="rungs">${["R0","R3","R4","R5","R6"].filter(r => it.m70B[r + "c"]).map(r => `<span class="${wrong(it, r) ? "bad" : ""}"><b>${r}</b>${RUNG[r]}: ${SAYS(said(it, r))}</span>`).join("")}</span></dd>`;
   h += `</dl><p class="small">R0 is a normal question with no law in it, the case that matters for the public. Higher rungs paste law into the prompt. Pink = differs from the law.</p>`;
   if (sib.length > 1) h += `<h2>${ui().twins}</h2><div class="twins">` + sib.map(s => `<a href="#${esc(s.id)}" data-id="${esc(s.id)}" class="${s.id === it.id ? "me" : ""}"><span class="i">${esc(s.id.replace("261bis-", ""))}</span><span>${esc(s.d)}</span><span class="g">${esc(LAW[s.g])} ${strip(s)}</span></a>`).join("") + "</div>";

@@ -273,7 +273,7 @@ def fig_rungs(R, out, framing="conv"):
     """Small multiples, one panel per model and language: share of acquittals recognised (solid) and of convictions
     kept (dashed) by rung, Ja/Nein."""
     series = [s for s in RUNG_SERIES if s[0] in R["runs"]]
-    fig, axes = plt.subplots(1, len(series), figsize=(7.3, 1.6), sharey=True)
+    fig, axes = plt.subplots(1, len(series), figsize=(7.3, 1.9), sharey=True)
     for ax, (run, lang, label, *_rest) in zip(axes, series):
         acc = {a["rung"]: a for a in R["runs"][run]["accuracy"]
                if a.get("subset") == "core" and a["lang"] == lang and a["framing"] == framing}
@@ -287,14 +287,14 @@ def fig_rungs(R, out, framing="conv"):
         ax.set_yticks([0, 0.5, 1], ["0", "0.5", "1"])
         for t in ax.get_xticklabels() + ax.get_yticklabels():
             t.set_fontfamily(MONO)
-            t.set_fontsize(6.6)
+            t.set_fontsize(8)
         ax.axhline(1.0, color=LINE, lw=0.5, zorder=1)
-        ax.set_title(label.replace("70B DE, user voice", "70B DE, first person"), fontsize=7.4, pad=3)
-    axes[0].set_ylabel("share", fontsize=7.2, labelpad=2)
+        ax.set_title(label.replace("70B DE, user voice", "70B DE, first person"), fontsize=8.6, pad=3)
+    axes[0].set_ylabel("share", fontsize=8.4, labelpad=2)
     h = [plt.Line2D([], [], color=INK, lw=1.0, marker="o", ms=3.6, mfc=INK),
          plt.Line2D([], [], color=INK2, lw=1.0, ls="--", marker="o", ms=3.6, mfc=PAPER, mec=INK2)]
     fig.legend(h, ["acquittals recognised (of 215)", "convictions kept (of 430)"], loc="upper left", ncol=2,
-               bbox_to_anchor=(0.045, 1.04), fontsize=7.0, handlelength=2.6, columnspacing=1.8)
+               bbox_to_anchor=(0.045, 1.04), fontsize=8.4, handlelength=2.6, columnspacing=1.8)
     fig.subplots_adjust(left=0.05, right=0.995, wspace=0.12, top=0.74, bottom=0.14)
     save(fig, out, "fig2_rungs")
 

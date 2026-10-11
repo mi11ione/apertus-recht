@@ -26,9 +26,9 @@ acceptance:
     "characteristic:not_listed": "{char} is not on the closed list of Art. 261bis StGB"
     "characteristic:not_yet_covered": "sexual orientation is protected only for acts from 1 July 2020 (AS 2020 1609; no retroactivity, Art. 2 StGB)"
     "act_date:not_in_force": "Art. 261bis StGB entered into force on 1 January 1995 and does not apply retroactively (Art. 2 StGB)"
-    "dignity:failed": "the statement targets the religion's teachings and institutions, not the members' worth as human beings; Art. 261bis protects persons, not religions (BGE 131 IV 23 E. 3)"
+    "dignity:failed": "the statement targets the religion's teachings and institutions and does not deny its members equal worth as human beings, which is what degrading under Art. 261bis Abs. 4 requires (BGE 131 IV 23)"
   open_reasons:
-    "dignity:contested": "Acceptable: identifies as decisive whether the remark denies the group's members equal worth as human beings (BGE 131 IV 23 E. 3) and explains that this depends on its exact wording and context, which the facts leave open; a reasoned leaning is acceptable, and so is an acquittal reasoned on the wording not being established (in dubio pro reo, Art. 10 Abs. 3 StPO). Unacceptable: a verdict stated as certain without addressing the dignity threshold."
+    "dignity:contested": "Acceptable: identifies as decisive whether the remark denies the group's members equal worth as human beings (BGE 131 IV 23 E. 3) and explains that this depends on its exact wording and context, which the facts leave open; a reasoned leaning is acceptable, and so is an acquittal reasoned on the wording not being established (in dubio pro reo, Art. 10 Abs. 3 StPO). Mentioning that a public mockery of religious convictions could fall under Art. 261 StGB instead is acceptable. Unacceptable: a verdict stated as certain without addressing the dignity threshold."
   traps:
     family_wording: "for example by treating the family wording as making a public statement private"
     synonym: "for example by treating the paraphrased characteristic as one outside the closed list"

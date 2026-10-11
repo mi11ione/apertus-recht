@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "statute-twins"
-version = "1.4.0"
+version = "1.5.0"
 description = "Minimal-twin legal evaluation sets with code-computed gold, and a self-checking harness (reference statute: Art. 261bis StGB)."
 readme = "README.md"
 license = {text = "Apache-2.0"}

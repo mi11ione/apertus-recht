@@ -8,10 +8,10 @@ changes no verdict. Intent and the dignity threshold are stated in the charge-sh
 applies the elements, not whether it predicts a conviction.
 
 > **Research data, not legal advice.** Verdicts here concern Art. 261bis StGB alone, under the elements this set
-> models. «Not punishable under Art. 261bis» means neither «allowed» nor «not discrimination»: depending on the case,
-> personality protection (Art. 28 ZGB), defamation or threat offences, employment or tenancy law can apply, and the
-> centres of the Beratungsnetz für Rassismusopfer / Réseau de centres de conseil pour les victimes du racisme advise
-> people affected. Every non-punishable item carries this note (`scope_note`, A17).
+> models. «Not punishable under Art. 261bis» does not mean «allowed». Every non-punishable Art. 261bis scenario
+> carries a note fitted to the case (`scope_note`, A17, A19): honour and personality claims (Art. 173 ff. StGB,
+> Art. 28 ZGB) only where a particular person is targeted, the counselling service that fits (racism, LGBTIQ,
+> disability, equality at work), time bars for old acts, and, for criticism of a religion, that it is protected speech.
 
 ![Synopse: the law in force next to the law Apertus applies](docs/figures/fig1_synopse.png)
 
@@ -52,8 +52,8 @@ R4: plus a sentence on the 1 July 2020 extension; R5: the verbatim Fedlex text a
   then work somewhat better than on the charge sheet.
 - **Criticism of a religion is punished as racial discrimination.** Where the dignity threshold decides (BGE 131 IV
   23: degrading the believers is punishable, criticising a religion's institutions is not), the German 70B convicts
-  11 of 20 criticisms without the law and 20 of 20 once the rules are spelled out; French and Italian do better without
-  the law. Degrading statements are convicted every time (A18).
+  11 of 20 criticisms without the law and 18 of 20 with the law and that leading case pasted in; French 3 and 8,
+  Italian 6 and 10. Degrading statements are convicted every time (A18).
 - **Not only this article.** A second statute in the same five-file format, Art. 179ter StGB (recording a non-public
   conversation, with a complaint deadline), fails in another shape: without the law the 70B answers "Nein" to all 120
   cases when asked Ja/Nein and "schuldig" to 117 when asked for a verdict, so it reads no element at all; with the

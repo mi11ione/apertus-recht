@@ -64,9 +64,9 @@ hr{border:0;border-top:.4pt solid #000;margin:3mm 0}
 """
 
 
-MODELS = [("publicai-70b-fc-core", "70B", "de"), ("publicai-70b-fc-lay", "70B, first person", "de_lay"),
-          ("publicai-70b-fc-lay-fr", "70B, first person", "fr_lay"), ("publicai-70b-fc-lay-it", "70B, first person", "it_lay"),
-          ("publicai-70b-fc-core-fr", "70B", "fr"), ("publicai-70b-fc-core-it", "70B", "it"),
+MODELS = [("publicai-70b-fc-core", "70B", "de"), ("publicai-70b-fc-core-fr", "70B", "fr"), ("publicai-70b-fc-core-it", "70B", "it"),
+          ("publicai-70b-fc-lay", "70B, first person", "de_lay"), ("publicai-70b-fc-lay-fr", "70B, first person", "fr_lay"),
+          ("publicai-70b-fc-lay-it", "70B, first person", "it_lay"),
           ("8b-gguf-q4_k_m-cpu-core", "8B Q4_K_M", "de"), ("8b-gguf-q4_k_m-cpu-core-fr", "8B Q4_K_M", "fr"),
           ("8b-gguf-q4_k_m-cpu-core-it", "8B Q4_K_M", "it")]
 RUNGS = ("R0", "R3", "R4", "R5")

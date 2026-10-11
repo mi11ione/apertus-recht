@@ -240,7 +240,7 @@ def aggregate(run: str, work: Path):
                parser_vs_gold={k: dict(correct=v[0], n=v[1], ci=wilson(v[0], v[1])) for k, v in sorted(parsed.items())},
                judge_only=dict(judge_only), disputed=disputed, human_sample=dict(file=str(hs.relative_to(ROOT)), n=len(sample),
                by_gold=dict(collections.Counter(items[rows[ids[k]]["item_id"]]["gold_verdict"] for k in sample)),
-               status="laid out for a human check; not yet checked (v1.0 has no human reviewers)"), cells=table,
+               status="laid out for a human check; not yet checked (no human reviewers so far)"), cells=table,
                judges="two independent Claude agents per answer (A on all, B on all; Claude Opus 5.5, claude-opus-5-5, as "
                       "Claude Code subagents, one packet per agent, instructions.md as the prompt), blind to model, rung "
                       "and family; an answer passes when both judges pass it")

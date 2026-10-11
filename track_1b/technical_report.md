@@ -38,7 +38,8 @@ statement is punishable turns on three elements a layperson cannot check:
 A wrong answer misinforms people about their own speech, in either direction. The users are Swiss residents asking an
 assistant in German, French or Italian, with or without the law in context (Apertus-v1.5-8B: ⟨hf_downloads⟩
 downloads in the 30 days before 9 October 2026). The dataset asks not "how often is the model right" but **which law
-it applies**, element by element.
+it applies**, element by element. It is research data, not legal advice: every non-punishable scenario carries a
+note fitted to the case on what "not punishable under Art. 261bis" does not mean and where to turn (A17, A19).
 
 ## Dataset Summary
 
@@ -90,7 +91,7 @@ three languages (sha256 of each text), the amendment footnotes, and the Regeste 
 author, labels each variant a true flip, a placebo or contested; the generator refuses to build if that disagrees with
 the design. French and Italian were translated by Claude agents with the official terms, back-translated blind (0
 critical findings) and localised by a lawyer-persona review (places in Romandie and Ticino, Swiss formulas).
-Every change after the pre-registration is a timestamped amendment in `prereg/AMENDMENTS.md`, cited below as A1–A18.
+Every change after the pre-registration is a timestamped amendment in `prereg/AMENDMENTS.md`, cited below as A1–A19.
 
 **Verification without human labels.** Because gold is computed, review looks for errors in the code, the element model
 or the wording. Every review step was done by Claude agents working blind on opaque ids, without code or gold.
@@ -116,7 +117,8 @@ closed-list term and both in-force dates against the official text in three lang
 from the list, move the 2020 date by a day, make private settings public) flip exactly the items each rule governs.
 
 **Contamination.** None of our 35,241 distinct 13-grams occurs in the 1,069,365 decisions of `voilaj/swiss-caselaw`;
-the same scan finds 846 of the 1,525 13-grams of the statute and the Regeste (positive control).
+the same scan finds 846 of the 1,525 13-grams of the statute and the Regeste (positive control). The texts added later
+(retellings, paraphrases, the dignity family) were written after Apertus v1.5's training data was collected.
 
 **Ethics and licensing.** No data subjects; CDLA-Permissive-2.0 with per-item licence components; legal texts are
 public domain (Art. 5 URG); a consent form with an AI-use clause; a canary string in every item.
@@ -221,10 +223,10 @@ framing; open: it applies the law in force; dash: the base itself is not convict
 | Rules alone · after the verbatim law · after unrelated legal text of equal length (75 lawful German) | ⟨r3_same⟩ · ⟨r5a_same⟩ · ⟨r5e_same⟩ acquitted | the law's text, not length |
 | Verbatim law + element check (R6) | ⟨r6_acq⟩ of 215 lawful acquitted | not a missing instruction |
 | Free text, French · Italian (misleading of 75, R0 / R5) | ⟨ft_fr_r0⟩ / ⟨ft_fr_r5⟩ · ⟨ft_it_r0⟩ / ⟨ft_it_r5⟩ | not German-only |
-| First person, DE · FR · IT (of 215 lawful) | no law ⟨lay_acq⟩ · ⟨layfr_r0⟩ · ⟨layit_r0⟩; rules ⟨lay_r3⟩ · ⟨layfr_r3⟩ · ⟨layit_r3⟩ (charge sheet 107 · 120 · 97) | not legal register |
+| First person, DE · FR · IT (of 215 lawful) | no law ⟨lay_acq⟩ · ⟨layfr_r0⟩ · ⟨layit_r0⟩; rules ⟨lay_r3⟩ · ⟨layfr_r3⟩ · ⟨layit_r3⟩ (third-person scenarios: 107 · 120 · 97) | not legal register |
 | Natural text, facts verified blind (⟨para_acq_n⟩ lawful) | no law ⟨para_r0⟩, rules ⟨para_r3⟩ (templated ⟨orig_r0⟩, ⟨orig_r3⟩) | not the template |
 | Art. 179ter, second statute (120) | no law: "Nein" to all ⟨r179_r0_nein⟩ (Ja/Nein), "schuldig" to ⟨r179_r0_ver⟩ (verdict); rules: balanced ⟨r179_r2⟩ | not one article |
-| Dignity threshold (BGE 131 IV 23): criticism of a religion's institutions, of 20 | convicted, no law / rules: DE ⟨dg_de_r0⟩ / ⟨dg_de_r3⟩, FR ⟨dg_fr_r0⟩ / ⟨dg_fr_r3⟩, IT ⟨dg_it_r0⟩ / ⟨dg_it_r3⟩; degrading: 20 of 20 | criticism is punished |
+| Dignity threshold (BGE 131 IV 23): criticism of a religion's institutions, of 20 | convicted, no law / law with BGE 131 IV 23: DE ⟨dg_de_r0⟩ / ⟨dg_de_r5⟩, FR ⟨dg_fr_r0⟩ / ⟨dg_fr_r5⟩, IT ⟨dg_it_r0⟩ / ⟨dg_it_r5⟩; degrading: 20 of 20 | criticism is punished |
 
 *Table 3. Controls (A13–A18; per-element detail in `reports/controls_a13.json`). Art. 179ter: even with its rules
 stated, a public debate and an outsider (whose act falls under Art. 179bis) are still convicted.*
@@ -232,6 +234,7 @@ stated, a public debate and an outsider (whose act falls under Art. 179bis) are 
 **Recognising the law is not applying it.** Shown an item's correct answer and its mirror, the 70B picks the correct
 one (German ⟨pref_de_all⟩; Table 4), most cleanly in the closed-list and date columns, although its own verdicts
 convict those cases. In French it prefers the mirror for half the punishable cases (0.53); we have not isolated why.
+The 8B prefers the answer that applies today's list to acts before July 2020 (0 of 35), as its verdicts do.
 
 ⟨table:preference⟩
 
@@ -240,8 +243,8 @@ mirror. Free text: answers that meet the acceptance criterion (240 German items)
 
 **Pre-registered held-out test.** At R0 it passes trivially (a convict-everything model is predicted perfectly). At
 R3 and R4 the read-back fitted on two wording families beats the statute on the third in every cell, but not by the
-pre-registered 0.15 in every framing, so the test fails and the read-back is reported per element (Figure 3). Two
-cells could not pass at all: the model departs from the statute on fewer than 15% of their items (French R3 verdict
+pre-registered 0.15 in every framing, so the test fails for the 70B in all three languages and the read-back is
+reported per element (Figure 3); of the 8B runs added later (A16), Italian R3 passes. Two cells could not pass at all: the model departs from the statute on fewer than 15% of their items (French R3 verdict
 word, Italian R4 Ja/Nein; largest possible gain 0.13 and 0.14). The split tests transfer to new wordings, not to new
 legal facts. Every cell: `results/results.json` (`heldout`).
 
@@ -254,7 +257,8 @@ on 622, an MLX 4-bit conversion on 548.
 ## Dataset Limitations
 
 - **Depth over breadth.** One statute modelled exactly, three of its five paragraphs. Intent, the characteristic and
-  the dignity threshold are stated in the facts, where most court acquittals turn, so the set measures element
+  the dignity threshold are stated in the facts (except in the dignity family, A18), where most court acquittals
+  turn, so the set measures element
   application, not conviction prediction. A second statute (Art. 179ter) is released in the same five-file format.
 - **Two contestable legal choices, stated.** An Abs. 2 act ("propagating an ideology") is also told as a one-off
   statement; an online post before 1 July 2020 counts as completed on publication (dropping those items moves no
@@ -267,7 +271,7 @@ on 622, an MLX 4-bit conversion on 548.
 ## Lessons Learnt and Recommendations
 
 - **Users:** do not ask about Art. 261bis without the law in context, nor count on pasting the statute. State the rule
-  the case turns on in a plain sentence; check the characteristic and the date yourself; avoid 4-bit MLX conversions.
+  the case turns on in a plain sentence; for your own case, ask a counselling service or a lawyer; avoid 4-bit MLX conversions.
 - **Developers:** in our one checkpoint pair, DPO costs acquittals under stated rules (8B: ⟨stage_rlvr⟩ → ⟨stage_dpo⟩ of
   220). The model obeys exclusions it is told but not "the list is closed", and reads plain rules but not the law as
   written: instruction-following and long-context legal reading are training targets. Keep the `chosen` / `rejected`
@@ -277,7 +281,7 @@ on 622, an MLX 4-bit conversion on 548.
 
 `make run` (Docker, CPU, no key, no model) regenerates the dataset from the YAML (sha256 per file), recomputes every
 result from the stored responses, checks every request hash against its prompt, re-aggregates the judges, checks the
-pre-registration (`prereg-verify`: locked files, amendments A1–A18, the frozen held-out code) and the `claims.tsv`
+pre-registration (`prereg-verify`: locked files, amendments A1–A19, the frozen held-out code) and the `claims.tsv`
 numbers for both statutes, and exits non-zero on any mismatch. `LLM_*` variables or `make run-gguf` add a live slice.
 Seeds: generator 261, bootstrap 0 (2,000 resamples). **License:** code Apache-2.0; dataset CDLA-Permissive-2.0; this
 report CC-BY-4.0.
