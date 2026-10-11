@@ -172,7 +172,7 @@ itself is not convicted, so the row cannot be read.*
 **Without the law, the 70B convicts nearly everything.** At R0 the recall of acquittals is at most 0.01 in every
 language and framing (Table 2; Figure 2 shows every model by rung); Table 1 shows one twin pair. The model is not blind
 to the facts: its scores still rank punishable above lawful cases (AUC ⟨auc_r0⟩); the threshold sits so far on the
-convicting side that no case falls below it. Asking the other way round ("would a court acquit?") gives ⟨rev_r0⟩ of
+convicting side that almost no case falls below it. Asking the other way round ("would a court acquit?") gives ⟨rev_r0⟩ of
 215 acquittals in every language, so this is not a bias towards "yes". In free text the judges fail ⟨open_r0_mislead⟩
 of 75 answers to lawful scenarios as misleading (the independent judge alone: ⟨judgec_r0⟩); every one names Art. 261bis.
 
