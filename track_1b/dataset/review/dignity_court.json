@@ -1,0 +1,166 @@
+{
+ "cases": 7,
+ "acquittals": 3,
+ "convictions": 4,
+ "agree_with_court": {
+  "A": "6/7",
+  "B": "6/7",
+  "C": "4/7"
+ },
+ "convictions_coded_degrading": {
+  "A": 4,
+  "B": 4,
+  "C": 4
+ },
+ "acquittals_not_coded_degrading": {
+  "A": 2,
+  "B": 2,
+  "C": 0
+ },
+ "acquittals_degrading_all_coders": [
+  "D05"
+ ],
+ "acquittals_agree": {
+  "A": 2,
+  "B": 2,
+  "C": 0
+ },
+ "acquittals_first_instance_convicted": [
+  "D04",
+  "D05"
+ ],
+ "not_final": [],
+ "agree_with_court_final_only": {
+  "A": "6/7",
+  "B": "6/7",
+  "C": "4/7"
+ },
+ "scope": "each coding concerns a facts-only summary read under the Regeste of BGE 131 IV 23, not the persons; the courts' acquittals stand",
+ "coder_A_B_same_value": 7,
+ "models": {
+  "A": "claude agent A",
+  "B": "claude agent B",
+  "C": "aisingapore/Qwen-SEA-LION-v4-32B-IT"
+ },
+ "rows": [
+  {
+   "blind_id": "D01",
+   "decision_id": "zh_obergericht_SB170332",
+   "url": "https://entscheidsuche.ch/docs/ZH_Obergericht/ZH_OG_002_SB170332_2018-03-02.pdf",
+   "court": "convict",
+   "values": {
+    "A": "degrading",
+    "B": "degrading",
+    "C": "degrading"
+   },
+   "engine": {
+    "A": "convict",
+    "B": "convict",
+    "C": "convict"
+   },
+   "note": null
+  },
+  {
+   "blind_id": "D02",
+   "decision_id": "ne_gerichte_CPEN.2022.32",
+   "url": "https://entscheidsuche.ch/docs/NE_Omni/NE_TC_009_CPEN-2022-32_2023-02-21.html",
+   "court": "convict",
+   "values": {
+    "A": "degrading",
+    "B": "degrading",
+    "C": "degrading"
+   },
+   "engine": {
+    "A": "convict",
+    "B": "convict",
+    "C": "convict"
+   },
+   "note": null
+  },
+  {
+   "blind_id": "D03",
+   "decision_id": "ne_gerichte_CPEN.2021.9",
+   "url": "https://entscheidsuche.ch/docs/NE_Omni/NE_TC_009_CPEN-2021-9_2021-09-07.html",
+   "court": "acquit",
+   "values": {
+    "A": "not_degrading",
+    "B": "not_degrading",
+    "C": "degrading"
+   },
+   "engine": {
+    "A": "acquit",
+    "B": "acquit",
+    "C": "convict"
+   },
+   "note": null
+  },
+  {
+   "blind_id": "D04",
+   "decision_id": "bs_appellationsgericht_AG.2024.375",
+   "url": "https://entscheidsuche.ch/docs/BS_Omni/BS_APG_001_SB-2022-80_2024-05-24.html",
+   "court": "acquit",
+   "values": {
+    "A": "not_degrading",
+    "B": "not_degrading",
+    "C": "degrading"
+   },
+   "engine": {
+    "A": "acquit",
+    "B": "acquit",
+    "C": "convict"
+   },
+   "note": "statement-level acquittal; row coded convicted for another count; the court called it a borderline case (Grenzfall); the first-instance court had convicted the same statement"
+  },
+  {
+   "blind_id": "D05",
+   "decision_id": "bs_appellationsgericht_AG.2017.79",
+   "url": "https://entscheidsuche.ch/docs/BS_Omni/BS_APG_001_SB-2015-78_2016-12-02.html",
+   "court": "acquit",
+   "values": {
+    "A": "degrading",
+    "B": "degrading",
+    "C": "degrading"
+   },
+   "engine": {
+    "A": "convict",
+    "B": "convict",
+    "C": "convict"
+   },
+   "note": "acquittal also turned on the subjective side (whether the accused accepted the discriminatory reading); the court called equating a whole religious community with Nazis impermissible; the first-instance court had convicted the same statement"
+  },
+  {
+   "blind_id": "D06",
+   "decision_id": "ge_gerichte_P_2155_2015",
+   "url": "https://entscheidsuche.ch/docs/GE_Gerichte/GE_CJ_009_P-2155-2015_2016-05-15.pdf",
+   "court": "convict",
+   "values": {
+    "A": "degrading",
+    "B": "degrading",
+    "C": "degrading"
+   },
+   "engine": {
+    "A": "convict",
+    "B": "convict",
+    "C": "convict"
+   },
+   "note": null
+  },
+  {
+   "blind_id": "D08",
+   "decision_id": "bger_6B_694_2025",
+   "url": "https://www.bger.ch/ext/eurospider/live/fr/php/aza/http/index.php?highlight_docid=aza%3A%2F%2F02-10-2025-6B_694-2025&lang=fr&type=show_document",
+   "court": "convict",
+   "values": {
+    "A": "degrading",
+    "B": "degrading",
+    "C": "degrading"
+   },
+   "engine": {
+    "A": "convict",
+    "B": "convict",
+    "C": "convict"
+   },
+   "note": null
+  }
+ ]
+}

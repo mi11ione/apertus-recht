@@ -1,0 +1,27 @@
+{
+ "model": "aisingapore/Qwen-SEA-LION-v4-32B-IT",
+ "labels": {
+  "D01": {
+   "value": "degrading"
+  },
+  "D02": {
+   "value": "degrading"
+  },
+  "D03": {
+   "value": "degrading"
+  },
+  "D04": {
+   "value": "degrading"
+  },
+  "D05": {
+   "value": "degrading"
+  },
+  "D06": {
+   "value": "degrading"
+  },
+  "D08": {
+   "value": "degrading"
+  }
+ },
+ "note": "values only: the coders' written reasons are not released, since each coding concerns a summary of a real, anonymised case"
+}

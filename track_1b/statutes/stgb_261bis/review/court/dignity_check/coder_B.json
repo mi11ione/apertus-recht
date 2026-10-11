@@ -1,0 +1,27 @@
+{
+ "model": "claude agent B",
+ "labels": {
+  "D01": {
+   "value": "degrading"
+  },
+  "D02": {
+   "value": "degrading"
+  },
+  "D03": {
+   "value": "not_degrading"
+  },
+  "D04": {
+   "value": "not_degrading"
+  },
+  "D05": {
+   "value": "degrading"
+  },
+  "D06": {
+   "value": "degrading"
+  },
+  "D08": {
+   "value": "degrading"
+  }
+ },
+ "note": "values only: the coders' written reasons are not released, since each coding concerns a summary of a real, anonymised case"
+}
