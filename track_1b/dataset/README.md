@@ -129,7 +129,7 @@ the pinned statute text and BGE 130 IV 111 E. 5.2, never written by hand.
 - **License:** CDLA-Permissive-2.0 (all items; per-item licence components and provenance in `metadata/items.jsonl`
   for the core and first-person sets, and in `metadata/items.jsonl` inside `dignity/`, `paraphrase/` and `stgb_179ter/`).
 - **Git repository:** https://github.com/mi11ione/apertus-recht (generator, gold engine, harness, tests; Apache-2.0).
-- **Version:** 1.8.4 (generator 1.0.0, seed 261). Changelog at the end.
+- **Version:** 1.8.5 (generator 1.0.0, seed 261). Changelog at the end.
 
 ## Uses
 ### Direct Use
@@ -145,8 +145,8 @@ answer) and **free generation** judged against the item's acceptance criterion (
 repository: two blind Claude judges, a judge of another model family (Qwen), a deterministic parser, every judgement
 hash-bound to the answer it judged, and a seeded 20% sample laid out so that anyone can audit the judges).
 ### The dignity threshold (A18)
-The Abs. 4 degradation threshold decides 4 of the 23 coded court acquittals (one of them not final), the most frequent
-single ground: 20 twin groups per language in which a public statement about a religious group is
+The dignity threshold is the coded ground of 6 of the 23 coded court acquittals, the most frequent single ground (three
+of them statement-based Abs. 4 acquittals, one not final): 20 twin groups per language in which a public statement about a religious group is
 either degrading (denying, or at least calling into question, the believers' equal worth as human beings: convict),
 a criticism of the religion's institutions or teachings that stays objective and cites an objective basis (a published
 report, the institutions' own statements or texts; acquit: BGE 131 IV 23 E. 3, Regeste pinned
@@ -298,7 +298,7 @@ stated (R2) do both framings separate the cases; the public setting and the outs
 
 ## Dataset Creation
 ### Curation Rationale
-Apertus is trained on Swiss court decisions, including BGE 130 IV 111 itself, yet plain-chat answers convict for
+Apertus is trained on Swiss court decisions, 147 of which cite BGE 130 IV 111, yet plain-chat answers convict for
 statements made only within the family and for characteristics outside the closed list (see the technical report). A
 minimal-twin set with computed gold separates *which* element of the law a model applies from how often it is right,
 and makes each wrong element measurable across training stages and model builds.
@@ -421,6 +421,8 @@ alongside results, since 4-bit conversions changed verdicts in our measurements.
 37 runs (`responses/<run>.jsonl` with `<run>.meta.json`): 8b-bf16-DPO, 8b-bf16-RLVR, 8b-bf16-blend-RLVR-DPO-a0.25, 8b-bf16-blend-RLVR-DPO-a0.5, 8b-bf16-blend-RLVR-DPO-a0.75, 8b-gguf-q4_k_m, 8b-gguf-q4_k_m-cpu-core, 8b-gguf-q4_k_m-cpu-core-fr, 8b-gguf-q4_k_m-cpu-core-it, 8b-gguf-q4_k_m-cpu-pref, 8b-gguf-q8_0, 8b-mlx4-DPO, 8b-mlx4-RLVR, 8b-mlx4-SFT, 8b-mlx4-base-completion, 8b-mlx4-final, publicai-70b-ctrl-de, publicai-70b-ctrl-fr, publicai-70b-ctrl-it, publicai-70b-fc, publicai-70b-fc-core, publicai-70b-fc-core-fr, publicai-70b-fc-core-it, publicai-70b-fc-lay, publicai-70b-fc-lay-fr, publicai-70b-fc-lay-it, publicai-70b-gen, publicai-70b-open, publicai-70b-open-fr, publicai-70b-open-it, publicai-70b-pref, publicai-70b-pref-fr, publicai-70b-pref-it, publicai-70b-r5x-de, publicai-70b-r6-fr, publicai-70b-r6-it, qwen3-8b-mlx4.
 
 ## Changelog
+- 1.8.5 (2026-10-11): amendment A27: wording corrections; three reference answers refined (policy demand, borderline
+  joke, first-person re-posting). No prompt or result changed.
 - 1.8.4 (2026-10-11): amendment A26: report restructured; court-check summaries withheld (hashes and codings stay);
   precision in the card and answers. No prompt or result changed.
 - 1.8.3 (2026-10-11): amendment A25: figure encoding (undetermined cells), legal precision in answers and notes,
@@ -432,8 +434,9 @@ alongside results, since 4-bit conversions changed verdicts in our measurements.
   from the court notes in 1.8.0 were removed from the whole git history too, and the Hugging Face history was squashed.
 - 1.8.0 (2026-10-11): amendment A22: dignity criticisms with an objective basis (re-scored), the policy demand with
   its own answer; victim routes on punishable items; five names removed from court notes and the PII gate extended to all
-  review files; repaired controls and statistics (`review/controls_a22.json`, `review/stats_a22.json`). The v1.6.0 git
-  tag no longer passes CI by design: the unredacted A20 case summaries it needed were removed from the history.
+  review files; repaired controls and statistics (`review/controls_a22.json`, `review/stats_a22.json`). The git tags
+  v1.6.0 to v1.8.3 no longer pass the dignity court step (selfcheck 2i): the court-check files they needed were
+  removed from the history (A23, A26); v1.8.4 and later reproduce in full.
 - 1.7.0 (2026-10-11): amendment A21: scope notes on every item; BGE 131 IV 23 stated in full in the gold answers;
   first-person time-bar note corrected; per-item licence and provenance for the dignity and paraphrase splits; content
   warning; consent template completed; A20 re-coded on redacted case summaries. No prompt or response changed.
@@ -475,7 +478,7 @@ alongside results, since 4-bit conversions changed verdicts in our measurements.
   title  = {Apertus-Recht: Art. 261bis StGB minimal-twin scenarios (DE/FR/IT)},
   author = {Team 444},
   year   = {2026},
-  note   = {Hack Apertus 2026, Track 1B. Dataset version 1.8.4},
+  note   = {Hack Apertus 2026, Track 1B. Dataset version 1.8.5},
   url    = {https://github.com/mi11ione/apertus-recht}
 }
 ```

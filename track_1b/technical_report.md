@@ -38,7 +38,7 @@ layperson cannot check:
 
 A wrong answer misinforms people about their own speech, in either direction. The users are Swiss residents asking an
 assistant in German, French or Italian, with or without the law in context (Apertus-v1.5-8B: ⟨hf_downloads⟩
-downloads in the 30 days before 9 October 2026). The dataset asks not "how often is the model right" but **which law
+downloads worldwide in the 30 days before 9 October 2026). The dataset asks not "how often is the model right" but **which law
 it applies**, element by element. Every Art. 261bis scenario (except the 162-item exploration battery) carries a note fitted to the case: on a lawful one, what "not
 punishable under Art. 261bis" does not mean and where to turn; on a punishable one, that this assesses the stated facts,
 not legal advice, and where those affected can turn.
@@ -157,7 +157,7 @@ the exploration runs (training stages, builds) are imported with their outputs.
 **Pre-registered test.** The locked result is Figure 1, the law each model applies, element by element. The locked
 held-out bar (a 15-point gain in every framing) passes trivially at R0, where the read-back is the constant "convict",
 and at R3 only for the 8B in Italian (16.2, interval 10.6–21.2); the German and Italian 70B reach 14.8 (10.0–18.6 and
-10.5–19.5), within each other's noise. Post hoc: the read-back beats the statute in ⟨ho_anch⟩ readable cells at R3 and
+10.5–19.5), so the 15-point bar lies inside both intervals. Post hoc: the read-back beats the statute in ⟨ho_anch⟩ readable cells at R3 and
 R4 (⟨ho_ci_pos⟩ with the interval above zero) and at R3 predicts ⟨ho_acc⟩ of the 70B's held-out verdicts. Everything
 after this paragraph is exploratory.
 
@@ -216,8 +216,8 @@ paste them, the German 70B acquits ⟨r5_acq_conv⟩ of the 215 lawful scenarios
 word; French and Italian acquit ⟨r5_fr⟩ and ⟨r5_it⟩ (Italian keeps most private settings). The scores still separate the
 cases (AUC ⟨auc_r5⟩, against ⟨auc_r0⟩ at R0 and ⟨auc_r3⟩ at R3): the law moves the threshold back to "convict". In free text,
 ⟨open_r5_mislead⟩ of 75 German answers to lawful scenarios call them punishable. It is the law's text, not its length
-(Table 3; McNemar p = ⟨mcn_p⟩), and no single part of it: without the Regeste's example, with an element check or with
-Art. 1 StGB, at most ⟨r5a_abl_max⟩ are acquitted; rules placed before the law bring back the private settings (⟨r5ag_priv⟩).
+(Table 3; McNemar p = ⟨mcn_p⟩), and removing the Regeste's example or adding an element check or Art. 1 StGB does not restore
+it (at most ⟨r5a_abl_max⟩ acquitted); rules placed before the law bring back the private settings (⟨r5ag_priv⟩).
 
 | Control | Result | Shows |
 |---|---|---|
@@ -227,7 +227,7 @@ Art. 1 StGB, at most ⟨r5a_abl_max⟩ are acquitted; rules placed before the la
 | Unrelated legal text of equal length, then the rules (R5e) | ⟨r5e_same⟩ acquitted | not the length |
 | Verbatim law + element check (R6), of 215 | ⟨r6_acq⟩ acquitted, every one a private setting | an instruction helps little |
 | Lawful criticism of a religion, of 20, convicted (Ja/Nein): no law · rules | DE ⟨dg_de_r0⟩ · ⟨dg_de_r3⟩, FR ⟨dg_fr_r0⟩ · ⟨dg_fr_r3⟩, IT ⟨dg_it_r0⟩ · ⟨dg_it_r3⟩ | the rules raise convictions (German McNemar p = ⟨dg_mcn_de⟩) |
-| The same, law + BGE 131 IV 23; degrading statements | DE ⟨dg_de_r5⟩, FR ⟨dg_fr_r5⟩, IT ⟨dg_it_r5⟩; degrading 20 of 20 everywhere | mixed across framings |
+| The same, law + BGE 131 IV 23; degrading statements | DE ⟨dg_de_r5⟩, FR ⟨dg_fr_r5⟩, IT ⟨dg_it_r5⟩; degrading 20 of 20 everywhere | with the verdict word, German falls to 8 |
 
 *Table 3. Controls (exploratory; `reports/controls_a13.json`, `reports/controls_a22.json`).*
 
@@ -248,12 +248,13 @@ acts before July 2020 (0.00), as its verdicts do.
 
 ⟨table:preference⟩
 
-*Table 4. Preference against the mirror that negates verdict and reasoning, and free text (answers that meet the
+*Table 4. Preference: the correct answer against a mirror that negates verdict and reasoning ("preference") or only the
+verdict word ("verdict only"); free text (answers that meet the
 acceptance criterion, 240 German items). Columns: the deciding element.*
 
 **Post-training and builds** (8B, 162-item battery). From RLVR to DPO (one checkpoint pair), correct acquittals under
-stated rules fall from ⟨stage_rlvr⟩ to ⟨stage_dpo⟩ of 220 (110 acquittals, two framings), all convictions kept; of 648 decisions, the Q8_0 GGUF matches
-bf16 on 638, the Q4_K_M on 622, an MLX 4-bit conversion on 548.
+stated rules fall from ⟨stage_rlvr⟩ to ⟨stage_dpo⟩ of 220 (110 acquittals, two framings), all convictions kept; a 4-bit MLX conversion of the same DPO checkpoint
+agrees with it on 545 of 648 decisions, the public GGUFs of the released model on 638 (Q8_0) and 622 (Q4_K_M).
 
 ## Dataset Limitations
 
@@ -266,7 +267,7 @@ bf16 on 638, the Q4_K_M on 622, an MLX 4-bit conversion on 548.
 ## Lessons Learnt and Recommendations
 
 - **Users:** neither the bare question nor the pasted statute gives a reliable answer; plain rules help with publicity
-  but make lawful criticism of a religion look punishable. For your own case, ask a counselling service or a lawyer.
+  but, in German, make lawful criticism of a religion look punishable (20 of 20, Ja/Nein). For your own case, ask a counselling service or a lawyer.
 - **Retrieval builders:** plain rules work best alone (⟨r3_same⟩ of 75 lawful items acquitted); after the pasted law
   they keep ⟨r5a_same⟩, and placed before it they bring back every private setting but lose the unlisted characteristics.
 - **Developers:** "the list is closed", the in-force dates and the law as written are concrete training targets.

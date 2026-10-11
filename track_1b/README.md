@@ -3,8 +3,8 @@
 **Does Apertus apply Art. 261bis StGB, the Swiss criminal provision against discrimination and incitement to hatred,
 as it is in force?** No. Asked whether a statement is punishable, Apertus v1.5 convicts for words said
 only at a family dinner, for degrading statements about a canton or a profession, and for acts before the article
-entered into force (1 Jan 1995). Rules spelled out in the prompt fix some elements and leave others standing; in German,
-the verbatim law text, as a retrieval pipeline would paste it, changes no forced-choice verdict. 1,980 minimal-twin scenarios in
+entered into force (1 Jan 1995). Rules spelled out in the prompt fix some elements and leave others standing; for the German
+70B, the verbatim law text, as a retrieval pipeline would paste it, changes no forced-choice verdict. 1,980 minimal-twin scenarios in
 German, French and Italian, each verdict computed by code from the pinned law, measure which law the model applies,
 element by element.
 
@@ -43,7 +43,7 @@ R4: plus a sentence on the 1 July 2020 extension; R5: the verbatim Fedlex text a
   settings and 64 of 100 unlisted characteristics: with the correct legal reasoning following, it still favours
   "punishable" for about a third of them.
 - **The date sentence backfires.** One sentence saying that sexual orientation is protected since 1 July 2020 makes the
-  70B stop convicting most punishable cases from 2021–25: with the verdict word it convicts 0 of 35 in German, 1 in French,
+  70B stop convicting most punishable cases from 2021–25 (in Italian with Ja/Nein it holds up): with the verdict word it convicts 0 of 35 in German, 1 in French,
   5 in Italian (Ja/Nein: 3, 11, 29). Across all punishable German scenarios it convicts 22 of 125 about sexual
   orientation, against 296 of 305 about race, ethnicity and religion: it takes the characteristic off the list.
 - **Spelled-out rules make it convict lawful criticism.** Objective criticism of a religion's institutions or
@@ -58,14 +58,14 @@ R4: plus a sentence on the 1 July 2020 extension; R5: the verbatim Fedlex text a
   first-person retellings in all three languages. A second statute in the same format, Art. 179ter StGB, fails in
   another shape: without the law the 70B answers "Nein" to all 120 cases when asked Ja/Nein and "schuldig" to 117 when
   asked for a verdict.
-- **Pre-registered.** Fitted on two wording families, the read-back of the law the model applies predicts the third
-  better than the statute in 21 of 22 readable cells at R3 and R4 (−1.9 to +22 points); the locked 15-point bar is met
-  at R0 for every model (trivially: there the read-back is the constant "convict") and at R3 for the 8B in Italian, so
-  the result is the per-element read-back, as locked. The key numbers here are checked against their results files on
+- **Pre-registered.** The locked held-out bar (15 points in every framing) is met at R0 for every model (trivially:
+  there the read-back is the constant "convict") and at R3 for the 8B in Italian, so the result is the per-element
+  read-back, as locked. Post hoc, the read-back predicts held-out wordings better than the statute in 21 of 22 readable
+  cells at R3 and R4 (−1.9 to +22 points). The key numbers here are checked against their results files on
   every run (`claims.tsv`).
 - **Training stages and builds.** In the 8B at full precision (one checkpoint pair), correct acquittals under stated
-  rules fall from 185 to 146 of 220 (110 acquittals, two framings) from the RLVR to the DPO stage, while keeping every conviction; a 4-bit MLX conversion changes
-  100 of 648 verdicts, the public Q8_0 GGUF 10.
+  rules fall from 185 to 146 of 220 (110 acquittals, two framings) from the RLVR to the DPO stage, while keeping every conviction; a 4-bit MLX conversion of the same DPO
+  checkpoint changes 103 of 648 verdicts.
 
 Hack Apertus 2026 · Track 1B (Swiss Voices, behavioural alignment) · team 444 · report [`444_Report.pdf`](444_Report.pdf)
 · dataset: [huggingface.co/datasets/mi11ion/apertus-recht](https://huggingface.co/datasets/mi11ion/apertus-recht)

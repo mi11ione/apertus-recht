@@ -457,7 +457,22 @@ Juror agents (told it is a one-week hackathon) reviewed release 1.8.0. Changes, 
 - **Court summaries withheld**: the dignity-check fact summaries (pseudonymised data on criminal proceedings) leave the
   release; `packet.sha256` and per-case `facts_sha256` pin them; the codings, dockets and outcomes stay. Earlier
   versions of these files are removed from the git history.
-- **Precision**: the dignity threshold decides 4 of the 23 coded court acquittals (one not final); the court headline
+- **Precision**: the dignity threshold is the coded ground of 6 of the 23 coded court acquittals (three statement-based
+  Abs. 4 acquittals, one not final); the court headline
   is instance-level and includes the later-revised Perinçek conviction; first-person answer headers say their scope
   notes address the speaker; Art. 261 StGB limited to statements in German too; references completed.
+
+## A27 (2026-10-11, after judge round 17): wording before submission; dataset 1.8.5
+No prompt, item verdict or result changed.
+- **Corrections**: the dignity threshold is the coded ground of 6 of the 23 coded court acquittals (A26 said 4); the
+  README's verbatim-law line is limited to the German 70B (the 8B changes 48 of 1,320 verdicts); its pre-registered
+  bullet leads with the locked outcome and labels the cell counts post hoc; the MLX comparison uses the same DPO
+  checkpoint (545 of 648 agree); downloads are worldwide; the card states that tags v1.6.0 to v1.8.3 no longer pass the
+  dignity court step; the Art. 1 StGB authority wording and builds evidence are precise.
+- **Answers** (legal-review agent): the policy demand's Abs. 1 point gives its reason (no right to confessional
+  instruction in public schools, Art. 15 Abs. 4 and 62 BV; a neutral ground); the borderline joke's answer adds that
+  on the stated facts a court would not convict (in dubio pro reo, Art. 10 Abs. 3 StPO); the first-person note on
+  pre-July-2020 acts adds that re-posting after 1 July 2020 is a new, covered act.
+- **Register**: the reference answers are labelled correct or wrong on purpose. **Contact**: private vulnerability
+  reporting enabled on the public repository, as the consent template promises.
 
