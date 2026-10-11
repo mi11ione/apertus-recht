@@ -4,8 +4,8 @@ People ask chat assistants whether something they said is punishable. Apertus-Re
 and Italian minimal-twin scenarios under Art. 261bis StGB, each verdict computed by code from pinned Fedlex texts and
 consistent with ⟨court_ofk⟩ Swiss court rulings we could code (55 convictions, 2 acquittals; always-convict: 55). Without the law in the prompt, Apertus v1.5 70B convicts
 all but at most one of the 215 lawful German scenarios, and in free text calls ⟨open_r0_mislead⟩ of 75 lawful scenarios
-punishable. Rules in plain sentences restore the publicity rule (when asked whether a statement is punishable) but not
-the closed list or the dates, and pasting the
+punishable. Rules in plain sentences restore the publicity rule (when asked whether a statement is punishable) and the
+exclusions they name, but not the rest of the closed list or the dates, and pasting the
 verbatim law, as a retrieval pipeline would, takes the gain back. One command re-derives every label and number.
 
 **Track:** Apertus Readiness · Track 1B (Swiss Voices, behavioural alignment) · **Event:** Online · **Team:** 444  
@@ -40,7 +40,7 @@ layperson cannot check:
 A wrong answer misinforms people about their own speech, in either direction. The users are Swiss residents asking an
 assistant in German, French or Italian, with or without the law in context (Apertus-v1.5-8B: ⟨hf_downloads⟩
 downloads in the 30 days before 9 October 2026). The dataset asks not "how often is the model right" but **which law
-it applies**, element by element. Every scenario carries a note fitted to the case: on a lawful one, what "not
+it applies**, element by element. Every Art. 261bis scenario carries a note fitted to the case: on a lawful one, what "not
 punishable under Art. 261bis" does not mean and where to turn; on a punishable one, that this assesses the stated facts,
 not legal advice, and where those affected can turn.
 
@@ -56,7 +56,7 @@ element-by-element derivation. Released alongside: the scenarios retold in the f
 | Term | Meaning |
 |---|---|
 | Twin | a variant that changes exactly one fact of its base. A *true flip* changes the verdict; a *placebo* does not. |
-| Rung | how much law the prompt carries. **R0** no law · **R3** rules spelled out (the elements, a one-sentence paraphrase of BGE 130 IV 111, the closed list, and that gender identity and sex are not covered) · **R4** R3 plus one sentence on the 2020 extension · **R5** verbatim law (Fedlex text of Art. 261bis and Art. 2 StGB, the Regeste) · **R6** R5 with an instruction to check each element. R1 and R2 are intermediate steps of R3, used in exploration. |
+| Rung | how much law the prompt carries. **R0** no law · **R3** rules spelled out (the elements, a one-sentence paraphrase of BGE 130 IV 111, the closed list, and that gender identity and sex are not covered) · **R4** R3 plus one sentence on the 2020 extension · **R5** verbatim law (Fedlex text of Art. 261bis and Art. 2 StGB, the Regeste) · **R6** R5 with an instruction to check each element. R1 and R2 are intermediate steps of R3, used in exploration. Controls: **R5a** R3's rules after the verbatim law; **R5e** the same rules after unrelated legal text of equal length. |
 | Framing | how the verdict is asked: Ja/Nein, or the verdict word ("Urteil: schuldig / nicht schuldig") |
 | Misapplied (red) | the model convicts a variant the law acquits, while it convicts the unchanged base (95% intervals); for a placebo, a change that should not matter, it stops convicting |
 | Read-back | the law the model applies, element by element, read off the twins |
@@ -89,18 +89,16 @@ element, in the three official languages; the closest work asks when models appl
 
 ## Data Collection Method
 
-**No data was collected from people.** A seeded generator renders the scenarios from YAML templates; an engine of about 100 lines
-computes each verdict from an element model of the statute (`statutes/stgb_261bis/statute.yaml`). Every element cites
-a pinned source: the Fedlex texts of Art. 261bis before and since 1 July 2020 and of Art. 2 StGB in three languages
-(sha256 of each text), the amendment footnotes, and the Regestes of BGE 130 IV 111 and 131 IV 23. The engine, not the
-author, labels each variant a true flip, a placebo or contested; the generator refuses to build if that disagrees with
-the design. French and Italian were translated by Claude agents with the official terms, back-translated blind (0
-critical findings) and localised by a lawyer-persona agent (places in Romandie and Ticino, Swiss formulas). The
-pre-registration was frozen by hash; every later change is a timestamped amendment (`prereg/AMENDMENTS.md`).
+**No data was collected from people.** A seeded generator renders the scenarios from YAML templates; a 100-line engine
+computes each verdict from an element model of the statute whose every element cites a pinned source (Fedlex texts of
+Art. 261bis before and since 1 July 2020 and Art. 2 StGB in three languages, the amendment footnotes, the Regestes of
+BGE 130 IV 111 and 131 IV 23, each with its sha256). The engine labels each variant a true flip, placebo or contested,
+and the generator refuses to build if that disagrees with the design. French and Italian were translated by agents,
+back-translated blind and localised (Romandie, Ticino). Every change after the hash-frozen pre-registration is a
+timestamped amendment (`prereg/AMENDMENTS.md`).
 
-**Verification by re-runnable checks.** Because gold is computed, review looks for errors in the code, the
-element model or the wording. Annotation ran blind, on opaque ids, without code or gold, by Claude agents and a model
-of another family (Qwen-SEA-LION-v4-32B); adjudication and legal review then checked the gold itself.
+**Verification by re-runnable checks.** Annotation ran blind, on opaque ids, without code or gold, by Claude agents and
+Qwen-SEA-LION-v4-32B; adjudication and legal review then checked the gold itself.
 - **Annotation:** six agents labelled 960 items; they agree with the code on ⟨ann_settled⟩ settled items and name the
   deciding element in 315/315 acquittals; a second pass that saw only the law agreed on 939/939. Qwen, given the same
   law-only task, agrees on ⟨qwen_gold⟩; each of its ⟨qwen_gold_dis⟩ disagreements convicts a case the pinned text does
@@ -109,13 +107,14 @@ of another family (Qwen-SEA-LION-v4-32B); adjudication and legal review then che
   sample: gold was wrong in 0 of 94 sampled items (Wilson 95% upper bound ⟨gold_ub⟩).
 - **Courts:** ⟨court_triaged⟩ citing Art. 261bis were triaged and their elements and outcome extracted twice (Cohen's
   κ 0.83–0.98 per field). The engine agrees with ⟨court_agree⟩ in-scope rulings (Wilson 95% 0.94–1.00; always-convict:
-  55) and
-  ⟨court_cases⟩ distinct cases (46 incitement or degradation, 6 genocide denial), including both acquittals (one on the court's own ground, the closed list; one a
-  publicity acquittal the engine reaches through the closed list). The dignity threshold was read against eight more
-  rulings, summarised as facts only and coded blind under BGE 131 IV 23: every coder codes all ⟨dgc_conv⟩ convictions
-  degrading; the coders agree with the courts on ⟨dgc_agree⟩ of 8 (always-convict: 4). The two Claude coders agree with each other on all
-  eight; of the two acquittals both code degrading, one was a first-instance conviction reversed on appeal, the other
-  is a first-instance acquittal still under appeal.
+  55), ⟨court_cases⟩ distinct cases; the 10 genocide-denial rulings among them agree on publicity, characteristic and
+  date only (the denial clause is not modelled). Both acquittals agree, one on the court's own ground (the closed
+  list), one, a publicity acquittal, through the closed list. The dignity threshold was read against seven more
+  final rulings (a non-final one removed), summarised as facts only and coded blind under BGE 131 IV 23: every coder
+  codes all ⟨dgc_conv⟩ convictions degrading; the coders agree with the courts on ⟨dgc_agree⟩ of 7 (always-convict: 4),
+  after one revision of the coder instructions. The two Claude coders agree with each other on all seven; the one
+  acquittal they code degrading was a first-instance conviction reversed on appeal. No sampled ruling concerns
+  criticism of a religion, so this does not test that gold.
 - **Mutation tests** (drop religion from the list, move the 2020 date by a day, make private settings public) flip
   exactly the items each rule governs.
 
@@ -125,20 +124,21 @@ of another family (Qwen-SEA-LION-v4-32B); adjudication and legal review then che
 duplicates; language identity; canary; a PII scan of items, responses, metadata and the released review records
 (0 hits). Tests check every closed-list term and both in-force dates against the official text in three languages.
 
-**Contamination.** None of our 35,241 distinct 13-grams occurs in the 1,069,365 decisions of `voilaj/swiss-caselaw`, a
+**Contamination.** None of the 35,241 distinct 13-grams of the core items (scan of 9 October, before the later
+wording amendments) occurs in the 1,069,365 decisions of `voilaj/swiss-caselaw`, a
 v1.5 pre-training source in the Apertus data catalogue; the same scan finds 846 of the 1,525 13-grams of the statute and
 the Regeste (positive control). The retellings, paraphrases and dignity family were written after that data was
 collected.
 
-**Ethics and licensing.** The scenarios have no data subjects; validation records cite public decisions by docket and
-name no one. CDLA-Permissive-2.0 with per-item licence components and provenance; legal texts public domain (Art. 5
-URG); consent form with an AI-use clause; a content warning; a canary string and a scope note in every item.
+**Ethics and licensing.** The scenarios have no data subjects; the court-validation records cite public, anonymised
+decisions by docket and name no private person. CDLA-Permissive-2.0 with per-item licence components and provenance; legal texts public domain (Art. 5
+URG); consent form with an AI-use clause; a content warning; a canary string in every item record and a scope note on every Art. 261bis item.
 
 ## Evaluation
 
 **Three measurements on one item set.**
-- *Forced choice* (all items, R0 to R6, two framings): the log-probability of the convicting answer minus the
-  acquitting one, exact on vLLM (prefilled answer), from the logits in llama.cpp.
+- *Forced choice* (all items at R0, R3, R4, R5, both framings; R6 German on all items, French and Italian on 240):
+  the log-probability of the convicting answer minus the acquitting one (exact on vLLM; logits in llama.cpp).
 - *Preference* (settled items, R0): the same scoring between each item's `chosen` answer and a mirror. Two mirrors:
   the same sentence with the verdict and the deciding legal claim negated, and `chosen` word for word with only the
   verdict flipped.
@@ -153,18 +153,18 @@ is not convicted cannot be read. The pre-registered
 test fits the read-back on two wording families and predicts the third; it passes a rung if it beats the statute by at
 least 15 points in every readable framing.
 
-**Runs.** The 70B in three languages at R0 to R6; the 8B public Q4_K_M GGUF (sha256 `a037df8d…`) on CPU CI runners in
-three languages; preference on 645 settled items per language; free text on 720 answers per language; Art. 179ter
-(120 items); the 162-item battery for training stages. Every row of the released runs records the served model and a
-request hash; the exploration runs (training stages, builds) are imported with their outputs.
+**Runs.** The 70B in three languages; the 8B public Q4_K_M GGUF on CPU CI runners in three languages; Art. 179ter (120
+items); the 162-item battery for training stages. Released runs record the served model and a request hash per row;
+the exploration runs (training stages, builds) are imported with their outputs.
 
 ## Results
 
 **Pre-registered test.** Fitted on two wording families, the read-back predicts the third better than the statute in
-⟨ho_anch⟩ readable cells at R3 and R4 (⟨ho_range⟩ points); at R3 it predicts ⟨ho_acc⟩ of the 70B's held-out verdicts and
+⟨ho_anch⟩ readable cells at R3 and R4 (the gains run ⟨ho_range⟩ points; the one loss is the 8B in Italian at R4); at R3 it predicts ⟨ho_acc⟩ of the 70B's held-out verdicts and
 ⟨ho_share⟩ of its departures from the statute. It passes at R0 for every model, where it is the constant "convict". The
-locked bar, 15 points in every framing, is met at R3 for the 8B in Italian; the German 70B reaches 14.8 with Ja/Nein
-(95% interval 10.0–18.6) and 18.5 with the verdict word, and in two cells the bar was out of reach (the model departs
+locked bar, 15 points in every framing, is met at R3 for the 8B in Italian (16.2 and 19.0, intervals 10.6–21.2 and
+13.5–24.1); the German and Italian 70B reach 14.8 with Ja/Nein (10.0–18.6 and 10.5–19.5), so pass and near-miss lie
+within each other's noise; in two cells the bar was out of reach (the model departs
 from the statute on under 15% of items). As locked, the result is the per-element read-back of Figure 2. The results
 that follow are exploratory.
 
@@ -193,16 +193,19 @@ verdict word, and the recall of acquittals at R3. The first-person retelling was
 *Figure 1. Share of the 215 lawful scenarios acquitted (solid) and of the 430 punishable ones convicted (dashed), by
 rung, Ja/Nein. R5 replaces the rules with the verbatim law; it is not a further step of R3.*
 
-**With the rules spelled out (R3), publicity is applied; the closed list and the dates are not** (Figure 2):
+**With the rules spelled out (R3), publicity and the named exclusions are applied; the rest of the closed list and the
+dates are not** (Figure 2):
 - **Private settings** are acquitted (German 70B 50 of 55), and the family-worded public placebos are still convicted
   (⟨plc_r3_set⟩): the model reads the setting, not the words "family" or "friends". Asked the other way round ("would a
   court acquit?"), it acquits ⟨rev_r3_priv⟩ of them, so the gain is tied to the question as users ask it.
-- **Canton, disability and political opinion** stay red in German although the prompt lists the four protected
-  characteristics; gender identity is applied once the prompt names it as excluded.
+- **Gender identity and sex**, which the prompt names as excluded, are acquitted; **canton, disability and political
+  opinion** stay red in German although the prompt lists the four protected characteristics.
 - **The date sentence (R4) backfires.** One sentence saying that sexual orientation is protected since 1 July 2020
   makes the 70B acquit the earlier cases, but also stop convicting punishable cases from 2021–25: 0 of 35 with the
   verdict word in German (3 with Ja/Nein). The 8B convicts ⟨so8b_conv⟩ of 35 with Ja/Nein (⟨so8b_ver⟩ with the verdict
-  word). The sentence does not teach the date; it takes the characteristic off the list.
+  word). Across all punishable German scenarios it convicts ⟨so_r4⟩ about sexual orientation (R3: ⟨so_r3⟩), against
+  ⟨oth_r4⟩ about race, ethnicity and religion: the sentence does not teach the date; it takes the characteristic off the
+  list.
 - **Acts from 1993/94**, before the article entered into force, are convicted at every rung.
 
 ![](docs/figures/fig1_synopse.png)
@@ -233,7 +236,7 @@ come back (⟨r5ag_priv⟩) and the unlisted characteristics are lost.
 | First person, of 215 lawful, acquitted | no law DE ⟨lay_acq⟩ · FR ⟨layfr_r0⟩ · IT ⟨layit_r0⟩; rules ⟨lay_r3⟩ · ⟨layfr_r3⟩ · ⟨layit_r3⟩ (third person: 107 · 120 · 97) | not legal register |
 | Natural paraphrases, ⟨para_acq_n⟩ lawful | no law ⟨para_r0⟩, rules ⟨para_r3⟩ (templated: ⟨orig_r0⟩, ⟨orig_r3⟩) | not the template |
 | Art. 179ter, 120 items | no law: "Nein" to all ⟨r179_r0_nein⟩ (Ja/Nein), "schuldig" to ⟨r179_r0_ver⟩; rules: balanced ⟨r179_r2⟩ | not one article |
-| Objective criticism of a religion's institutions, of 20, convicted (Ja/Nein) | no law: DE ⟨dg_de_r0⟩ · FR ⟨dg_fr_r0⟩ · IT ⟨dg_it_r0⟩; rules: ⟨dg_de_r3⟩ · ⟨dg_fr_r3⟩ · ⟨dg_it_r3⟩; law + BGE 131 IV 23: ⟨dg_de_r5⟩ · ⟨dg_fr_r5⟩ · ⟨dg_it_r5⟩; degrading: 20 of 20 | legal context raises convictions of lawful criticism; the leading case does not prevent it |
+| Objective criticism of a religion's institutions or teachings, incl. a policy demand, of 20, convicted (Ja/Nein) | no law: DE ⟨dg_de_r0⟩ · FR ⟨dg_fr_r0⟩ · IT ⟨dg_it_r0⟩; rules: ⟨dg_de_r3⟩ · ⟨dg_fr_r3⟩ · ⟨dg_it_r3⟩; law + BGE 131 IV 23: ⟨dg_de_r5⟩ · ⟨dg_fr_r5⟩ · ⟨dg_it_r5⟩; degrading: 20 of 20 | with Ja/Nein the rules raise convictions of lawful criticism (German R0 vs R3 McNemar p = ⟨dg_mcn_de⟩); the verbatim-law result is mixed across framings |
 
 *Table 3. Controls (exploratory; `reports/controls_a13.json`, `reports/controls_a22.json`). Art. 179ter: even with its
 rules stated, a public debate and an outsider (whose act falls under Art. 179bis) are still convicted.*
@@ -242,7 +245,9 @@ rules stated, a public debate and an outsider (whose act falls under Art. 179bis
 opening verdict word flipped, the German 70B prefers the correct one on ⟨prefv_de_all⟩ of items, but on only
 ⟨prefv_de_priv⟩ private settings and ⟨prefv_de_nl⟩ unlisted characteristics: with the correct legal reasoning following,
 it still favours "punishable" for about a third of them. In Italian it is at chance on punishable items
-(⟨prefv_it_conv⟩). Against a mirror that also negates the reasoning, it picks the correct answer on ⟨pref_de_all⟩ (Table 4).
+(⟨prefv_it_conv⟩). Against a mirror that also negates the reasoning, it picks the correct answer on ⟨pref_de_all⟩
+(Table 4); in French it prefers that mirror on half the punishable items (0.53), and the 8B prefers today's list for
+acts before July 2020 (0.00), as its verdicts do.
 
 ⟨table:preference⟩
 
@@ -250,7 +255,7 @@ it still favours "punishable" for about a third of them. In Italian it is at cha
 acceptance criterion, 240 German items). Columns: the deciding element.*
 
 **Post-training and builds** (8B, 162-item battery). From RLVR to DPO (one checkpoint pair), correct acquittals under
-stated rules fall from ⟨stage_rlvr⟩ to ⟨stage_dpo⟩ of 220, all convictions kept; of 648 decisions, the Q8_0 GGUF matches
+stated rules fall from ⟨stage_rlvr⟩ to ⟨stage_dpo⟩ of 220 (110 acquittals, two framings), all convictions kept; of 648 decisions, the Q8_0 GGUF matches
 bf16 on 638, the Q4_K_M on 622, an MLX 4-bit conversion on 548.
 
 ## Dataset Limitations

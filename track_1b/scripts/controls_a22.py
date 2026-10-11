@@ -493,8 +493,43 @@ def cmd_stats(_a):
     out["original_question_R3_by_element"] = conv_r3_by_element(items)
     out["heldout_gain_bootstrap"] = heldout_boot(items, np)
     out["colour_cluster_bootstrap"] = colour_check(items, np)
+    out["r4_sexual_orientation"] = r4_so_effect(items)
+    out["dignity_r0_vs_r3_mcnemar"] = dignity_mcnemar()
     _out("reports/stats_a22.json", json.dumps(out, ensure_ascii=False, indent=1) + "\n")
     print("wrote reports/stats_a22.json")
+
+
+def r4_so_effect(items):
+    """A23: the R4 date sentence on every punishable German item, by characteristic (70B, exact forced choice)."""
+    lo = {(r["item_id"], r["rung"], r["framing"]): r.get("lo_conv")
+          for r in jl(ROOT / "dataset/responses/publicai-70b-fc-core.jsonl") if "error" not in r}
+    out = {}
+    for fr in ("conv", "ver"):
+        for grp, test in (("sexual_orientation", lambda c: c == "sexual_orientation"),
+                          ("race_ethnicity_religion", lambda c: c != "sexual_orientation")):
+            ids = [i for i, d in items.items() if d["lang"] == "de" and d["subset"] == "core"
+                   and d["gold_verdict"] == "convict" and test(d.get("characteristic"))]
+            conv = {r: sum((lo.get((i, r, fr)) or -1) > 0 for i in ids) for r in ("R3", "R4")}
+            out[f"{grp}|{fr}"] = dict(n=len(ids), convicted_R3=conv["R3"], convicted_R4=conv["R4"])
+    return out
+
+
+def dignity_mcnemar():
+    """A23: objective criticism convicted without the law (R0) and with the rules spelled out (R3), paired by item."""
+    out = {}
+    for lang in ("de", "fr", "it"):
+        it = {d["id"]: d for d in jl(ROOT / f"dataset/dignity/eval/dignity_{lang}.jsonl")}
+        lo = {(r["item_id"], r["rung"], r["framing"]): r.get("lo_conv")
+              for r in jl(ROOT / f"dataset/dignity/responses/publicai-70b-dignity-{lang}.jsonl") if "error" not in r}
+        crit = sorted(i for i, d in it.items() if d["facts"].get("dignity") == "criticism")
+        for fr in ("conv", "ver"):
+            r0 = [lo[(i, "R0", fr)] > 0 for i in crit]
+            r3 = [lo[(i, "R3", fr)] > 0 for i in crit]
+            b = sum((not x) and y for x, y in zip(r0, r3))
+            c = sum(x and not y for x, y in zip(r0, r3))
+            out[f"{lang}|{fr}"] = dict(n=len(crit), R0=sum(r0), R3=sum(r3), only_R3=b, only_R0=c,
+                                       p_exact=round(mcnemar_exact(b, c), 5))
+    return out
 
 
 CHECK = "--check" in sys.argv

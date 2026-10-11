@@ -128,7 +128,7 @@ the pinned statute text and BGE 130 IV 111 E. 5.2, never written by hand.
 - **License:** CDLA-Permissive-2.0 (all items; per-item licence components and provenance in `metadata/items.jsonl`
   for the core and first-person sets, and in `metadata/items.jsonl` inside `dignity/`, `paraphrase/` and `stgb_179ter/`).
 - **Git repository:** https://github.com/mi11ione/apertus-recht (generator, gold engine, harness, tests; Apache-2.0).
-- **Version:** 1.8.1 (generator 1.0.0, seed 261). Changelog at the end.
+- **Version:** 1.8.2 (generator 1.0.0, seed 261). Changelog at the end.
 
 ## Uses
 ### Direct Use
@@ -156,13 +156,15 @@ wording is not established, Art. 10 Abs. 3 StPO, and the criterion accepts that 
 release. Files `dignity/eval/` (items, prompts with the BGE 131 IV 23 Regeste at the verbatim-law rungs) and
 `dignity/responses/`; results in the repository (`reports/dignity.json`). Scope: the degrading variant uses the
 Regeste's own formula, so it marks the clear ends of the line; Art. 261 StGB (disturbing freedom
-of belief) is out of scope. Exploratory, not pre-registered. Read against 8 court rulings (A20,
-`review/dignity_court.json`; 4 acquittals on the dignity threshold, 4 convictions): each case
+of belief) is out of scope. Exploratory, not pre-registered. Read against 7 court rulings (A20,
+`review/dignity_court.json`; 3 acquittals on the dignity threshold, 4 convictions): each case
 summarised as facts only, the element value coded blind from the Regeste of BGE 131 IV 23 by two Claude agents and
 Qwen-SEA-LION. Every coder codes all 4 convictions degrading. Agreement with the courts:
-6, 6, 4 of 8 (always-convict: 4); the two
-Claude coders agree with each other on 8 of 8. (These are the codings after A22, which
-corrected the coder instructions and completed one summary; the round before, on the same redacted summaries, gave 5, 5 and 4.) Of the two acquittals both Claude coders code degrading, one was a first-instance conviction reversed on appeal, partly on the subjective side; the other is a first-instance acquittal still under appeal. Each coding concerns a facts-only
+6, 6, 4 of 7 (always-convict: 4); the two
+Claude coders agree with each other on 7 of 7. (These are the codings after A22, which
+corrected the coder instructions and completed one summary; the round before, on eight rulings, gave 5, 5 and 4 of 8. A24
+removed a first-instance acquittal still under appeal.) The one acquittal both Claude coders code degrading was a
+first-instance conviction reversed on appeal, partly on the subjective side. Each coding concerns a facts-only
 summary, not the persons; the acquittals stand, and the coders' written reasons are not released. No sampled ruling
 concerns criticism of a religion's doctrine or institutions, so the check is consistent with the gold here but does
 not test it.
@@ -181,7 +183,8 @@ Not legal advice and not a model of every element of the offence: intent is fixe
 written to be met outside the dignity family (A18), Abs. 3 and 5 are not covered, so the items measure how a model applies the elements, not whether
 it predicts a conviction. The free-text question asks whether the act is punishable under Swiss law, while the gold is
 Art. 261bis; every answer judged misleading names Art. 261bis as its basis. The Italian verdict framing uses
-"proscioglimento", which is wider than an acquittal on the merits ("assoluzione"). Not a training set: the canary string in every item marks it as evaluation data, to be kept out of training corpora.
+"proscioglimento", which is wider than an acquittal on the merits ("assoluzione"). Not a training set: the canary string in every item record (the `eval/` item files; prompt and response files refer to
+items by id) marks it as evaluation data, to be kept out of training corpora.
 Do not train on generator output either: the reference answers are written per legal reason, so most of them recur
 verbatim for any seed. `chosen_with_scope` documents the answer an assistant should give; use it as a specification
 for training data written independently. Content warning: see the top of this card.
@@ -214,7 +217,8 @@ Main fields: `id`, `lang`, `twin_group`, `family`, `variant` (base / true_flip /
 answer the law supports, specific to the item), `rejected` (a wrong answer phrased as models argue, for preference
 data), `rejected_minimal` (settled items: the chosen answer mirrored, same wording and length, verdict and deciding
 claim negated; the preference prompts use this one, because a shorter `rejected` lets a likelihood comparison measure
-length), `scope_note` and `chosen_with_scope` (every item, A17, A19, A21: on acquittals what "not punishable under Art. 261bis"
+length), `scope_note` and `chosen_with_scope` (every Art. 261bis item of the core, first-person, dignity and paraphrase sets; not the
+162-item exploration battery or the Art. 179ter set; A17, A19, A21: on acquittals what "not punishable under Art. 261bis"
 does not mean and where else to turn; on convictions and open items that this is an assessment of the stated facts,
 not legal advice, and that a court also weighs intent and evidence; `chosen_with_scope` is the answer an assistant
 should give, `chosen` stays the scored reference),
@@ -320,15 +324,17 @@ stored with their verification (`provenance.text_source`).
 #### Source Data Producers and Data Subjects
 Templates: written by the team with Claude Code agents (German), translated by Claude agents (French, Italian),
 reviewed as described below. Every "reviewer", "juror", "counsellor" or "lawyer" named in this card and in the
-amendments is a Claude agent given that role, not a person. There are **no data subjects**: actors are generic ("a man", "a student"), places are
-cities, groups are described by their characteristic.
+amendments is a Claude agent given that role, not a person. The scenarios have **no data subjects**: actors are generic
+("a man", "a student"), places are cities, groups are described by their characteristic. The court-validation records
+are the exception: they hold pseudonymised data on criminal proceedings from public, anonymised decisions (docket, URL,
+outcome, coded elements, notes that name no private person), released for verification.
 #### Ownership and Consent Management
-The team owns the generated text and releases it under CDLA-Permissive-2.0. No personal data and no people: there are
-no data subjects, and no human annotators or reviewers took part (all labelling steps are reproducible agent runs).
+The team owns the generated text and releases it under CDLA-Permissive-2.0. The scenarios contain no personal data, and no
+human annotators or reviewers took part (all labelling steps are reproducible agent runs).
 Anyone who extends the set with human reviewers or human-written scenarios uses the consent and AI-use form in
 [`docs/consent-template.md`](docs/consent-template.md) (pseudonymised reviewers, signed forms kept by the maintainers, withdrawal before each
 release). **AI permissions:** generated with AI assistance (declared). The licence permits any use. The set is built for
-evaluation: we ask that it is kept out of training data (the canary string in every item lets corpus builders exclude
+evaluation: we ask that it is kept out of training data (the canary string in every item record lets corpus builders exclude
 it), and that `chosen_with_scope` serves as a specification for independently written training data, not as data.
 #### Data Processing and Quality Control
 Automated gates (`statute-twins qc`, all passing for this release): schema; **gold recomputed** from the facts for every
@@ -410,11 +416,13 @@ alongside results, since 4-bit conversions changed verdicts in our measurements.
 37 runs (`responses/<run>.jsonl` with `<run>.meta.json`): 8b-bf16-DPO, 8b-bf16-RLVR, 8b-bf16-blend-RLVR-DPO-a0.25, 8b-bf16-blend-RLVR-DPO-a0.5, 8b-bf16-blend-RLVR-DPO-a0.75, 8b-gguf-q4_k_m, 8b-gguf-q4_k_m-cpu-core, 8b-gguf-q4_k_m-cpu-core-fr, 8b-gguf-q4_k_m-cpu-core-it, 8b-gguf-q4_k_m-cpu-pref, 8b-gguf-q8_0, 8b-mlx4-DPO, 8b-mlx4-RLVR, 8b-mlx4-SFT, 8b-mlx4-base-completion, 8b-mlx4-final, publicai-70b-ctrl-de, publicai-70b-ctrl-fr, publicai-70b-ctrl-it, publicai-70b-fc, publicai-70b-fc-core, publicai-70b-fc-core-fr, publicai-70b-fc-core-it, publicai-70b-fc-lay, publicai-70b-fc-lay-fr, publicai-70b-fc-lay-it, publicai-70b-gen, publicai-70b-open, publicai-70b-open-fr, publicai-70b-open-it, publicai-70b-pref, publicai-70b-pref-fr, publicai-70b-pref-it, publicai-70b-r5x-de, publicai-70b-r6-fr, publicai-70b-r6-it, qwen3-8b-mlx4.
 
 ## Changelog
+- 1.8.2 (2026-10-11): amendment A24: the dignity court check reads seven final rulings (a ruling under appeal removed);
+  R4 and dignity paired statistics; wording of coverage and claims. No prompt or result changed.
 - 1.8.1 (2026-10-11): amendment A23: BGE 131 IV 23 considerations pinned; policy-demand answer and note; one scope
   note per open reason; wording of court baselines and the dignity court check. No prompt or result changed. The names removed
   from the court notes in 1.8.0 were removed from the whole git history too, and this repository's history was squashed.
 - 1.8.0 (2026-10-11): amendment A22: dignity criticisms with an objective basis (re-scored), the policy demand with
-  its own answer; victim routes on punishable items; names removed from court notes and the PII gate extended to all
+  its own answer; victim routes on punishable items; five names removed from court notes and the PII gate extended to all
   review files; repaired controls and statistics (`review/controls_a22.json`, `review/stats_a22.json`). The v1.6.0 git
   tag no longer passes CI by design: the unredacted A20 case summaries it needed were removed from the history.
 - 1.7.0 (2026-10-11): amendment A21: scope notes on every item; BGE 131 IV 23 stated in full in the gold answers;
@@ -458,7 +466,7 @@ alongside results, since 4-bit conversions changed verdicts in our measurements.
   title  = {Apertus-Recht: Art. 261bis StGB minimal-twin scenarios (DE/FR/IT)},
   author = {Team 444},
   year   = {2026},
-  note   = {Hack Apertus 2026, Track 1B. Dataset version 1.8.1},
+  note   = {Hack Apertus 2026, Track 1B. Dataset version 1.8.2},
   url    = {https://github.com/mi11ione/apertus-recht}
 }
 ```

@@ -2,7 +2,8 @@
 
 The scenarios have **no data subjects**: every scenario is synthetic, generated from templates; actors are generic ("a
 man", "a student"); no real person, name, address or identifier occurs in them (PII gate in `statute-twins qc`). The
-validation records cite real, public court decisions by docket and URL; their notes name no private person. Court
+validation records cite real, public, anonymised court decisions by docket and URL (pseudonymised data on criminal
+proceedings, released for verification); their notes name no private person. Court
 decisions used for validation are public-domain judgments (Swiss Copyright Act Art. 5), referenced by id and URL; the
 fact summaries written for the dignity check (A20) leave out roles, party names, exact dates and small places, so that
 no anonymised person can be re-identified.

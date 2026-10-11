@@ -132,7 +132,8 @@ PII_PATTERNS = {
     "url": r"https?://\S+",
 }
 # A gazetteer of frequent Swiss given names and surnames (Federal Statistical Office top lists, abbreviated). A hit on a
-# capitalised token outside the allow-list blocks the release until a human clears it.
+# capitalised token outside the allow-list fails the gate; the allow-list below records each token cleared and why.
+# A gazetteer cannot catch every name: free-text notes in the review records are also checked by reading (A22).
 NAMES = set("""Daniel Peter Thomas Martin Christian Hans Michael Andreas Marco David Stefan Markus Urs Bruno Walter Luca
 Maria Anna Ursula Sandra Ruth Elisabeth Monika Barbara Claudia Nicole Laura Sarah Julia Lea Marie Sophie Emma Mia Noah Leon
 Müller Meier Schmid Keller Weber Huber Schneider Meyer Steiner Fischer Gerber Brunner Baumann Frei Zimmermann Moser Widmer
@@ -160,7 +161,8 @@ def pii_hits(text: str) -> list[tuple[str, str]]:
 def check_pii(items, responses: list[dict] | None = None, metadata: list[dict] | None = None):
     hits = []
     for i in items:
-        for f in ("text", "chosen", "rejected", "acceptance_criterion", "rationale"):
+        for f in ("text", "chosen", "rejected", "rejected_minimal", "acceptance_criterion", "rationale", "scope_note",
+                  "chosen_with_scope"):
             for h in pii_hits(i.get(f) or ""):
                 hits.append((i["id"], f, *h))
     for r in responses or []:

@@ -97,3 +97,7 @@ dg_it_r3	11	reports/dignity.json	[c for c in J['cells'] if (c['lang'],c['rung'],
 dg_de_r0v	11	reports/dignity.json	[c for c in J['cells'] if (c['lang'],c['rung'],c['framing'])==('de','R0','ver')][0]['criticism']['convicted']		README.md	python scripts/dignity.py report
 dg_de_r3v	17	reports/dignity.json	[c for c in J['cells'] if (c['lang'],c['rung'],c['framing'])==('de','R3','ver')][0]['criticism']['convicted']		README.md	python scripts/dignity.py report
 dg_de_r5v	8	reports/dignity.json	[c for c in J['cells'] if (c['lang'],c['rung'],c['framing'])==('de','R5','ver')][0]['criticism']['convicted']		README.md	python scripts/dignity.py report
+so_r4	22 of 125	reports/stats_a22.json	"(lambda x: f""{x['convicted_R4']} of {x['n']}"")(J['r4_sexual_orientation']['sexual_orientation|conv'])"		technical_report.md,README.md	python scripts/controls_a22.py stats
+so_r3	123	reports/stats_a22.json	J['r4_sexual_orientation']['sexual_orientation|conv']['convicted_R3']		technical_report.md	python scripts/controls_a22.py stats
+oth_r4	296 of 305	reports/stats_a22.json	"(lambda x: f""{x['convicted_R4']} of {x['n']}"")(J['r4_sexual_orientation']['race_ethnicity_religion|conv'])"		technical_report.md,README.md	python scripts/controls_a22.py stats
+dg_mcn_de	0.0001	reports/stats_a22.json	"f""{J['dignity_r0_vs_r3_mcnemar']['de|conv']['p_exact']:.4f}"""		technical_report.md,README.md	python scripts/controls_a22.py stats

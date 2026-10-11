@@ -388,7 +388,7 @@ Exploratory, post hoc. Juror agents (strict, responsible-AI, Swiss criminal law,
 - **Scope notes**: punishable items name the route for those affected (prosecution ex officio, report to the police
   or prosecutor, the counselling network that fits the group); the pre-1995 note limits the time bar to the expression
   offences that come into question (honour offences, Art. 178 StGB).
-- **Data protection**: the court-extraction notes named four people; the names are replaced. The PII gate now scans
+- **Data protection**: the court-extraction notes named five people; the names are replaced. The PII gate now scans
   every released review file (JSON, JSONL, TSV). The unredacted A20 summaries were removed from the public git history.
 - **Documentation**: content warning on the card and the register; training guidance (reference answers recur across
   seeds, so generator output is not training data either); consent template with a content clause and a licence
@@ -413,7 +413,24 @@ Juror agents (told it is a one-week hackathon) reviewed release 1.8.0. Changes, 
   cells (21 of 22), the read-back's accuracy and share of departures explained, and the cells where the bar was out of
   reach; the twin-group bootstrap is no longer cited as a robustness result (in this design no cell has more than one
   pair per twin group); user advice no longer recommends a plain-rule prompt as reliable.
-- **History**: the four names removed from the court notes in A22 were also removed from every earlier commit (git
+- **History**: the five names removed from the court notes in A22 were also removed from every earlier commit (git
   history rewritten; the pre-registration lock commit de35225 is unchanged), and the Hugging Face history was
   squashed to one commit; earlier dataset versions remain described in the changelog.
+
+## A24 (2026-10-11, after judge round 14): non-final ruling removed; public history replaced; wording; dataset 1.8.2
+- **Dignity court check**: the first-instance acquittal still under appeal (a Zurich first-instance judgment) is removed from the released
+  records; the check now reads seven final rulings (four convictions, three acquittals): agreement 6, 6 and 4 of 7,
+  always-convict 4.
+- **Public history**: GitHub kept serving pre-rewrite commits by their id; the old repository was made private and
+  renamed, and a new public repository with the rewritten history (pre-registration lock commit de35225 unchanged)
+  now carries the name. Old commit ids return 404.
+- **Statistics added** (`reports/stats_a22.json`, selfcheck 2j): the R4 date sentence by characteristic (German 70B,
+  punishable items convicted at R3 / R4: sexual orientation 123 / 22 of 125, race, ethnicity and religion 297 / 296 of
+  305); objective criticism convicted without the law vs with the rules, paired by item (exact McNemar per language and
+  framing).
+- **Wording**: the closed-list claim is limited to the characteristics the prompt does not name as excluded; the
+  dignity claim is limited to Ja/Nein; the forced-choice coverage is stated per rung and language; the pass and the
+  near-misses of the pre-registered bar are given with intervals; genocide-denial rulings are reported apart from
+  incitement and degradation; canary and scope-note coverage stated per file; court records described as pseudonymised
+  data on criminal proceedings; the PII gate also reads scope notes and the mirrored answers.
 

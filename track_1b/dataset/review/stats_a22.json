@@ -1318,5 +1318,77 @@
     "item_bootstrap_changes": []
    }
   }
+ },
+ "r4_sexual_orientation": {
+  "sexual_orientation|conv": {
+   "n": 125,
+   "convicted_R3": 123,
+   "convicted_R4": 22
+  },
+  "race_ethnicity_religion|conv": {
+   "n": 305,
+   "convicted_R3": 297,
+   "convicted_R4": 296
+  },
+  "sexual_orientation|ver": {
+   "n": 125,
+   "convicted_R3": 125,
+   "convicted_R4": 5
+  },
+  "race_ethnicity_religion|ver": {
+   "n": 305,
+   "convicted_R3": 305,
+   "convicted_R4": 300
+  }
+ },
+ "dignity_r0_vs_r3_mcnemar": {
+  "de|conv": {
+   "n": 20,
+   "R0": 6,
+   "R3": 20,
+   "only_R3": 14,
+   "only_R0": 0,
+   "p_exact": 0.00012
+  },
+  "de|ver": {
+   "n": 20,
+   "R0": 11,
+   "R3": 17,
+   "only_R3": 6,
+   "only_R0": 0,
+   "p_exact": 0.03125
+  },
+  "fr|conv": {
+   "n": 20,
+   "R0": 1,
+   "R3": 8,
+   "only_R3": 7,
+   "only_R0": 0,
+   "p_exact": 0.01562
+  },
+  "fr|ver": {
+   "n": 20,
+   "R0": 4,
+   "R3": 1,
+   "only_R3": 0,
+   "only_R0": 3,
+   "p_exact": 0.25
+  },
+  "it|conv": {
+   "n": 20,
+   "R0": 2,
+   "R3": 11,
+   "only_R3": 9,
+   "only_R0": 0,
+   "p_exact": 0.00391
+  },
+  "it|ver": {
+   "n": 20,
+   "R0": 6,
+   "R3": 9,
+   "only_R3": 3,
+   "only_R0": 0,
+   "p_exact": 0.25
+  }
  }
 }
