@@ -199,8 +199,8 @@ configs:
 
 # Apertus-Recht: Art. 261bis StGB minimal-twin scenarios (DE / FR / IT)
 
-{3 * ds['by_lang']['fr']} scenarios ({ds['by_lang']['fr']} per language in DE, FR and IT) about the Swiss racial-discrimination
-offence, Art. 261bis StGB / CP; the same scenarios retold as a first-person paraphrase
+{3 * ds['by_lang']['fr']} scenarios ({ds['by_lang']['fr']} per language in DE, FR and IT) about the Swiss offence of discrimination
+and incitement to hatred, Art. 261bis StGB / CP (Diskriminierung und Aufruf zu Hass); the same scenarios retold as a first-person paraphrase
 by a user asking about their own conduct, in all three languages (`user_voice`, language codes `de_lay`, `fr_lay`,
 `it_lay`; {ds['by_lang']['fr']} each; the German acts keep the statute's vocabulary, the French and Italian ones (A16) describe the act
 in everyday words); and the {ds['battery162']}-item German exploration battery on which
@@ -213,17 +213,18 @@ the pinned statute text and BGE 130 IV 111 E. 5.2, never written by hand.
 ## Dataset Details
 - **Curated by:** the Apertus-Recht team (Hack Apertus 2026, Track 1B, Swiss Voices › Behavioural Alignment).
 - **Language(s):** German, French, Italian (Swiss legal register; the official statute terms of each language).
-- **License:** CDLA-Permissive-2.0 (all items; per-item licence components in `metadata/items.jsonl`).
+- **License:** CDLA-Permissive-2.0 (all items; per-item licence components and provenance in `metadata/items.jsonl`
+  for the core and first-person sets, and in `metadata/items.jsonl` inside `dignity/`, `paraphrase/` and `stgb_179ter/`).
 - **Git repository:** {REPO_URL} (generator, gold engine, harness, tests; Apache-2.0).
-- **Version:** 1.6.0 (generator 1.0.0, seed 261). Changelog at the end.
+- **Version:** 1.7.0 (generator 1.0.0, seed 261). Changelog at the end.
 
 ## Uses
 ### Direct Use
 Evaluating whether a language model applies the Swiss law in force when a user asks a local legal-information
-assistant whether a statement is punishable under Art. 261bis. The model answers each scenario at six prompt rungs
+assistant whether a statement is punishable under Art. 261bis. The model answers each scenario at seven prompt rungs
 (R0: plain question; R1: elements named; R2: + a one-sentence paraphrase of BGE 130 IV 111 and the list; R3: + "the
 list is closed" and that gender identity and sex are not covered; R4: + "sexual orientation only from 1 July 2020"; R5: the verbatim Fedlex text of Art. 261bis and
-Art. 2 StGB with Fedlex's footnote and the Regeste of BGE 130 IV 111) in two answer framings (Ja/Nein; "Urteil:
+Art. 2 StGB with Fedlex's footnote and the Regeste of BGE 130 IV 111; R6: R5 with an instruction to check each element) in two answer framings (Ja/Nein; "Urteil:
 schuldig / nicht schuldig", and the French and Italian equivalents). The
 twins read back **which element** a model gets wrong, not only how often. The same items support the two other
 behavioural-alignment measurements: **preference accuracy** (forced choice between each item's `chosen` and `rejected`
@@ -232,19 +233,23 @@ repository: two blind Claude judges, a judge of another model family (Qwen), a d
 hash-bound to the answer it judged, and a seeded 20% sample laid out so that anyone can audit the judges).
 ### The dignity threshold (A18)
 Where most real acquittals turn: 20 twin groups per language in which a public statement about a religious group is
-either degrading (denying the believers equal worth as human beings: convict), a criticism of the religion's
-institutions or teachings (acquit: Art. 261bis protects persons, not religions; BGE 131 IV 23 E. 3, Regeste pinned in
-DE/FR/IT), or a crude joke whose wording the facts do not give (open; an acquittal reasoned on unproven wording is
-acceptable). Gold comes from the element `dignity` in the statute model; reviewed by a legal-reviewer agent before
+either degrading (denying, or at least calling into question, the believers' equal worth as human beings: convict),
+a criticism of the religion's institutions or teachings that stays objective (acquit: BGE 131 IV 23 E. 3, Regeste pinned
+in DE/FR/IT), or a crude joke whose wording the facts do not give (open, a modelling choice: a court would acquit if the
+wording is not established, Art. 10 Abs. 3 StPO, and the criterion accepts that answer). One of the four criticisms
+(no religious instruction in public schools) is a policy demand; it is tagged `policy_demand`, and its acquittal rests
+on the restraint BGE 131 IV 23 asks for in political debate. Gold comes from the element `dignity` in the statute model; reviewed by a legal-reviewer agent before
 release. Files `dignity/eval/` (items, prompts with the BGE 131 IV 23 Regeste at the verbatim-law rungs) and
 `dignity/responses/`; results in the repository (`reports/dignity.json`). Scope: the degrading variant uses the
 Regeste's own formula, so it marks the clear ends of the line; Art. 261 StGB (disturbing freedom
-of belief) is out of scope. Exploratory, not pre-registered. Checked against {dc['cases']} court rulings (A20,
-`review/dignity_court.json`): each case summarised as facts only, the element value coded blind from the Regeste of
-BGE 131 IV 23 by two Claude agents and Qwen-SEA-LION; every coder codes {min(dc['convictions_coded_degrading'].values())} of
-{dc['convictions']} convictions degrading, and {len(dc['acquittals_degrading_all_coders'])} of {dc['acquittals']} acquittals
-are coded degrading by all three: the courts read those words against one concrete incident and acquit further than the
-Regeste read alone, so objective criticism of an institution (gold acquit here) is acquitted a fortiori.
+of belief) is out of scope. Exploratory, not pre-registered. Read against {dc['cases']} court rulings (A20,
+`review/dignity_court.json`; {dc['acquittals']} acquittals on the dignity threshold, {dc['convictions']} convictions): each case
+summarised as facts only, the element value coded blind from the Regeste of BGE 131 IV 23 by two Claude agents and
+Qwen-SEA-LION. Every coder codes all {dc['convictions']} convictions degrading; on the acquittals the coders are stricter than
+the courts (agreement with the courts {', '.join(v.split('/')[0] for v in dc['agree_with_court'].values())} of {dc['cases']};
+always-convict: {dc['convictions']}). One acquittal is a first-instance judgment under appeal, one rested partly on intent.
+No sampled ruling concerns criticism of a religion's doctrine or institutions, so the check is consistent with the
+gold here but does not test it.
 
 ### Natural paraphrases (A16)
 To test whether the findings depend on the templated wording, a stable sample of 40 twin groups (the same in DE, FR and
@@ -257,12 +262,14 @@ prompts and the 70B's responses alongside; verification in the repository, `repo
 The 70B behaves on them as on the templated originals (`reports/paraphrase.json`). Exploratory, not pre-registered.
 ### Out-of-Scope Use
 Not legal advice and not a model of every element of the offence: intent is fixed, the Abs. 4 dignity threshold is
-written to be met, Abs. 3 and 5 are not covered, so the items measure how a model applies the elements, not whether
+written to be met outside the dignity family (A18), Abs. 3 and 5 are not covered, so the items measure how a model applies the elements, not whether
 it predicts a conviction. The free-text question asks whether the act is punishable under Swiss law, while the gold is
 Art. 261bis; every answer judged misleading names Art. 261bis as its basis. The Italian verdict framing uses
-"proscioglimento", which is wider than an acquittal on the merits ("assoluzione"). Not an evaluation-and-training set: never train on items you evaluate on (canary string in every item); if you use the
-answers to train assistant behaviour outside this evaluation, use `chosen_with_scope`. Contains no hateful
-text; acts are described abstractly in the statute's vocabulary.
+"proscioglimento", which is wider than an acquittal on the merits ("assoluzione"). Not a training set: the canary string in every item marks it as evaluation data, to be kept out of training corpora.
+To train assistant behaviour, generate fresh scenarios with the same generator and another seed (`design.yaml`), and
+use their `chosen_with_scope`. **Content warning:** to test the dignity threshold, some items describe degrading
+statements in substance (for example, a religious group called vermin, a group called second-class people); no slur
+is spelled out.
 ### Specifications
 - **Use case → specification:** the question a person asks about their own or someone else's speech; the elements the
   answer turns on (publicity, characteristic, date) are exactly the slots the twins vary.
@@ -292,9 +299,10 @@ Main fields: `id`, `lang`, `twin_group`, `family`, `variant` (base / true_flip /
 answer the law supports, specific to the item), `rejected` (a wrong answer phrased as models argue, for preference
 data), `rejected_minimal` (settled items: the chosen answer mirrored, same wording and length, verdict and deciding
 claim negated; the preference prompts use this one, because a shorter `rejected` lets a likelihood comparison measure
-length), `scope_note` and `chosen_with_scope` (acquittals, A17: what "not punishable under Art. 261bis" does not mean
-and where else to turn, and the chosen answer with that note; **train on `chosen_with_scope`**, so that an assistant
-does not learn to reassure; `chosen` stays the scored reference),
+length), `scope_note` and `chosen_with_scope` (every item, A17, A19, A21: on acquittals what "not punishable under Art. 261bis"
+does not mean and where else to turn; on convictions and open items that this is an assessment of the stated facts,
+not legal advice, and that a court also weighs intent and evidence; `chosen_with_scope` is the answer an assistant
+should give, `chosen` stays the scored reference),
 `rationale` (the element-by-element derivation), `citation`, `normative_source`, `split` (fit / heldout wording family),
 `licence`, `canary`.
 
@@ -334,8 +342,8 @@ the charge. German only, not pre-registered and not part of the held-out test: i
 second statute, not a second headline. A legal-reviewer persona (a Claude agent) found all 120 gold labels correct and
 asked for wording fixes, applied before any model was scored: the question restricted to the article, a police report
 instead of an indictment (no indictment of a complaint offence without a complaint), no legal conclusions in the facts
-("Täter", "betroffen"), a rent talk in the landlord's flat instead of a phone call (business calls are exempt under
-Art. 179quinquies). Scope of the gold: it answers only "conviction under Art. 179ter". An outsider who records may be
+("Täter", "betroffen"), a rent talk in the landlord's flat instead of a phone call (business phone calls on orders, contracts,
+reservations and similar are exempt under Art. 179quinquies Abs. 1 lit. b). Scope of the gold: it answers only "conviction under Art. 179ter". An outsider who records may be
 punishable under Art. 179bis; without a timely complaint the proceedings are discontinued (Art. 329 Abs. 4 StPO), so for the 16 complaint items
 the verdict framing has no correct answer and they are read in the Ja/Nein framing only; this
 is not an acquittal on the merits; justification, Art. 179quinquies and intent are assumed; a video with sound counts
@@ -369,13 +377,19 @@ court decisions, in German, French and Italian.
 ### Source Data
 Normative sources only (all public domain, Swiss Copyright Act Art. 5): Art. 261bis StGB in the versions before and since
 1 July 2020 and Art. 2 StGB (Fedlex ELI eli/cc/54/757_781_799, DE/FR/IT, sha256-pinned, `metadata/sources.json`), the
-amendment footnotes (AS 1994 2887; AS 2020 1609), and the Regeste of BGE 130 IV 111 (DE/FR/IT).
+amendment footnotes (AS 1994 2887; AS 2020 1609), the Regestes of BGE 130 IV 111 and BGE 131 IV 23 (DE/FR/IT), and for
+the second statute Art. 179bis, 179ter and 179quinquies StGB and Art. 329 StPO. Court decisions for validation (public
+domain, URG Art. 5): `voilaj/swiss-caselaw` (CC0) and, for the dignity check (A20), entscheidsuche.ch; referenced by id
+and URL only.
 #### Data Collection
 No data was collected from people. Scenarios are generated from YAML templates (`metadata/generator/`) by a seeded,
-deterministic generator: `statute-twins build` reproduces every file byte for byte (checked by `make run`).
+deterministic generator: `statute-twins build` reproduces every generated file byte for byte (checked by `make run`).
+The natural paraphrases (A16) are the exception: written by Claude agents from each item's facts, verified blind, and
+stored with their verification (`provenance.text_source`).
 #### Source Data Producers and Data Subjects
 Templates: written by the team with Claude Code agents (German), translated by Claude agents (French, Italian),
-reviewed as described below. There are **no data subjects**: actors are generic ("a man", "a student"), places are
+reviewed as described below. Every "reviewer", "juror", "counsellor" or "lawyer" named in this card and in the
+amendments is a Claude agent given that role, not a person. There are **no data subjects**: actors are generic ("a man", "a student"), places are
 cities, groups are described by their characteristic.
 #### Ownership and Consent Management
 The team owns the generated text and releases it under CDLA-Permissive-2.0. No personal data and no people: there are
@@ -389,7 +403,8 @@ not evaluated on it, and the canary string in every item lets corpus builders ex
 Automated gates (`statute-twins qc`, all passing for this release): schema; **gold recomputed** from the facts for every
 item; twin invariants (each variant differs from its base in exactly one slot; placebos keep and true flips change the
 verdict); duplicates ({qc['gates']['duplicates']['core_duplicates']} in the core set); language identity; **PII scan**
-(Swiss phone, AHV, IBAN, e-mail, addresses, name gazetteer) over items, responses and metadata:
+(Swiss phone, AHV, IBAN, e-mail, addresses, name gazetteer) over items, responses, metadata, the released review
+records and the dignity and paraphrase splits:
 {qc['gates']['pii']['n_hits']} hits; canary. The generator refuses to build if a variant changes more than one slot, if the
 gold engine's role differs from the design, or if a month-precision date's verdict depends on the day. Statute tests
 check the closed-list terms and the amendment dates against the official Fedlex text and footnotes, and mutation tests
@@ -406,7 +421,9 @@ check that changing one rule flips exactly the items that rule governs.
 #### Data Instance Licenses
 Every item: CDLA-Permissive-2.0 (original text). Components cited by each item (statute, amendment, BGE) are public
 domain under URG Art. 5; listed per item in `metadata/items.jsonl` (`licence_components`). Model responses in
-`responses/` are outputs of Apertus (Apache-2.0 model licence) and Qwen3 (Apache-2.0), released under CDLA-Permissive-2.0.
+`responses/` are outputs of Apertus (Apache-2.0 model licence) and Qwen3 (Apache-2.0); the judgements and annotations in
+`review/` are outputs of Claude agents (Anthropic; outputs owned by the team under Anthropic's terms) and of
+Qwen-SEA-LION-v4-32B (a Qwen3-based model served through Public AI); all are released under CDLA-Permissive-2.0.
 
 ### Annotations
 #### Annotation Process
@@ -439,7 +456,7 @@ model family with the generator's author, so their agreement rules out reading e
 law; the statute tests against the official text and the court validation check the law itself.
 
 ## Risks, Bias, and Limitations
-- One statute; templated scenarios (low lexical diversity by design); intent and the dignity threshold are fixed.
+- One statute; templated scenarios (low lexical diversity by design); intent is fixed, and so is the dignity threshold outside the dignity family (A18).
 - Contested items are few ({ds['by_label'].get('contested', 0)} per language) and their verdict is open by construction.
 - FR/IT are translations, checked by blind back-translation and a localisation review, not written by native lawyers.
 - Model responses come from specific builds; the Public AI endpoint named `swiss-ai/apertus-v1.5-8b` serves the 70B
@@ -448,7 +465,8 @@ law; the statute tests against the official text and the court validation check 
 None: no names, no identifiers; PII gate result above.
 ### Sensitive Information
 The scenarios mention protected characteristics (race, ethnicity, religion, sexual orientation, gender identity, etc.)
-of **groups**, as the statute requires; no individual's characteristic is described and no hateful wording is quoted.
+of **groups**, as the statute requires; no individual's characteristic is described. Some items state degrading
+content in substance (see the content warning under Out-of-Scope Use); no slur is spelled out.
 ### Recommendations
 Score with both framings and read the element table, not a single accuracy; report the build (precision, conversion)
 alongside results, since 4-bit conversions changed verdicts in our measurements.
@@ -457,6 +475,9 @@ alongside results, since 4-bit conversions changed verdicts in our measurements.
 {len(runs)} runs (`responses/<run>.jsonl` with `<run>.meta.json`): {', '.join(runs)}.
 
 ## Changelog
+- 1.7.0 (2026-10-11): amendment A21: scope notes on every item; BGE 131 IV 23 stated in full in the gold answers;
+  first-person time-bar note corrected; per-item licence and provenance for the dignity and paraphrase splits; content
+  warning; consent template completed; A20 re-coded on redacted case summaries. No prompt or response changed.
 - 1.6.0 (2026-10-11): amendment A20, the dignity element checked against eight court rulings coded blind
   (`review/dignity_court.json`); no item, prompt or result changed.
 - 1.5.0 (2026-10-11): amendment A19, case-specific scope notes (referral by characteristic, limits of honour and
@@ -495,7 +516,7 @@ alongside results, since 4-bit conversions changed verdicts in our measurements.
   title  = {{Apertus-Recht: Art. 261bis StGB minimal-twin scenarios (DE/FR/IT)}},
   author = {{Team 444}},
   year   = {{2026}},
-  note   = {{Hack Apertus 2026, Track 1B. Dataset version 1.6.0}},
+  note   = {{Hack Apertus 2026, Track 1B. Dataset version 1.7.0}},
   url    = {{{REPO_URL}}}
 }}
 ```

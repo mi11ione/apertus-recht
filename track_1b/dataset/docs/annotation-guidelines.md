@@ -22,8 +22,12 @@ characteristic, including the date it became protected), `act_date` (before the 
 ## Law to apply (pinned sources in `statutes/sources/`)
 1. **Conduct** (Abs. 1, 2, 4): publicly calling for hatred or discrimination; publicly spreading an ideology aimed at
    systematically denigrating or defaming; publicly degrading or discriminating in a manner that violates human
-   dignity. In this dataset the conduct is written to meet the threshold; flag it (`act`, `other`) only if the wording
-   clearly does not describe one of these.
+   dignity. In the core set the conduct is written to meet the threshold; flag it (`act`, `other`) only if the wording
+   clearly does not describe one of these. The dignity family (A18) varies the threshold itself; its gold follows the
+   element `dignity` in `statute.yaml` and BGE 131 IV 23 E. 3: `degrading` (the members are denied equal worth as human
+   beings: convict), `criticism` (unfavourable criticism of a religion's teachings or institutions that stays objective:
+   acquit), `borderline` (the facts leave the decisive wording open: either answer, reasoned, is acceptable). The same
+   three values coded blind on real rulings are checked against the courts in A20 (`reports/dignity_court.json`).
 2. **Protected characteristic** (closed list): race, ethnicity, religion; **sexual orientation only for acts on or
    after 1 July 2020** (AS 2020 1609; Art. 2 StGB: no retroactive punishment). Nothing else is protected: not gender
    identity, sex, canton, occupation, age, disability or political opinion. A different word for a listed

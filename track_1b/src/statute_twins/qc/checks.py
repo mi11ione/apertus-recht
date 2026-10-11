@@ -124,10 +124,10 @@ def check_language(items):
 
 PII_PATTERNS = {
     "email": r"[\w.+-]+@[\w-]+\.[\w.]+",
-    "phone_ch": r"(?:\+41|0041|\b0)\s?\d{2}\s?\d{3}\s?\d{2}\s?\d{2}\b",
+    "phone_ch": r"(?<![\d.])(?:\+41|0041|\b0)\s?\d{2}\s?\d{3}\s?\d{2}\s?\d{2}\b",
     "ahv": r"\b756[.\s]?\d{4}[.\s]?\d{4}[.\s]?\d{2}\b",
     "iban_ch": r"\bCH\d{2}\s?(?:\d{4}\s?){4}\d\b",
-    "street_address": r"\b[A-ZÄÖÜ][a-zäöüé]+(?:strasse|gasse|weg|platz)\s+\d+\b|\b(?:rue|avenue|chemin|via|viale|piazza)\s+[A-Z][\w'-]+\s+\d+\b",
+    "street_address": r"\b[A-ZÄÖÜ][a-zäöüé]+(?:strasse|gasse|weg|platz)\s+\d+\b|\b(?:rue|avenue|chemin|via|viale|piazza)\s+[A-Z][a-zàâçéèêëîïôûùü][\w'-]*\s+\d+\b",
     "postcode_town": r"\b[1-9]\d{3}\s+[A-ZÄÖÜ][a-zäöüé]+\b",
     "url": r"https?://\S+",
 }
@@ -137,7 +137,9 @@ NAMES = set("""Daniel Peter Thomas Martin Christian Hans Michael Andreas Marco D
 Maria Anna Ursula Sandra Ruth Elisabeth Monika Barbara Claudia Nicole Laura Sarah Julia Lea Marie Sophie Emma Mia Noah Leon
 Müller Meier Schmid Keller Weber Huber Schneider Meyer Steiner Fischer Gerber Brunner Baumann Frei Zimmermann Moser Widmer
 Wyss Graf Roth Bianchi Rossi Ferrari Russo Colombo Bernasconi Martin Favre Rochat Bonvin Morel Dubois Girard Mercier""".split())
-ALLOW: set[str] = set()  # tokens a human reviewer has cleared as non-personal (none so far)
+# Tokens that are ordinary words in this domain, not names: "Christian" is the religion adjective in English review
+# text (the dataset's actors are generic and never named).
+ALLOW: set[str] = {"Christian"}
 
 
 def pii_hits(text: str) -> list[tuple[str, str]]:
@@ -267,6 +269,12 @@ def run_all(ds: Path, statute: Statute) -> dict:
         resp += [json.loads(l) for l in p.read_text(encoding="utf-8").splitlines() if l.strip()]
     meta_p = ds / "metadata" / "items.jsonl"
     meta = [json.loads(l) for l in meta_p.read_text(encoding="utf-8").splitlines() if l.strip()] if meta_p.exists() else []
+    # released review records (judgements, annotations, court checks) and the exploratory splits are scanned too
+    for p in sorted((ds / "review").rglob("*.json")) if (ds / "review").exists() else []:
+        meta.append(dict(id=str(p.relative_to(ds)), record=json.loads(p.read_text(encoding="utf-8"))))
+    for sub in ("dignity", "paraphrase"):
+        for p in sorted((ds / sub).rglob("*.jsonl")) if (ds / sub).exists() else []:
+            meta += [json.loads(l) for l in p.read_text(encoding="utf-8").splitlines() if l.strip()]
     gates = [check_schema(items), check_gold(items, statute), check_twins(items), check_duplicates(items),
              check_language(items), check_pii(items, resp, meta), check_canary(items), check_sources(statute)]
     return dict(passed=all(g[1] for g in gates), gates={g[0]: dict(passed=g[1], **g[2]) for g in gates},

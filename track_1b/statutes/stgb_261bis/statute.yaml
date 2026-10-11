@@ -1,4 +1,4 @@
-# Art. 261bis StGB (Rassendiskriminierung / discrimination et incitation à la haine / discriminazione e incitamento all'odio)
+# Art. 261bis StGB (Diskriminierung und Aufruf zu Hass / discrimination et incitation à la haine / discriminazione e incitamento all'odio)
 # Machine-readable element model. The gold engine (src/statute_twins/gold/engine.py) computes every verdict from this file
 # and nothing else. Every element and every value points to a pinned source in `sources`; tests/test_sources.py checks
 # the pinned text hashes, so the encoded law cannot drift silently from the text it cites.
@@ -6,7 +6,7 @@ schema: statute-twins/v1
 id: stgb_261bis
 version: 1.0.0
 citation: {de: "Art. 261bis StGB", fr: "art. 261bis CP", it: "art. 261bis CP"}
-title: {de: Rassendiskriminierung, fr: Discrimination et incitation à la haine, it: Discriminazione e incitamento all'odio}
+title: {de: Diskriminierung und Aufruf zu Hass, fr: Discrimination et incitation à la haine, it: Discriminazione e incitamento all'odio}
 scope_note: >-
   Models the objective elements that decide the verdict in the scenarios this package generates: temporal scope,
   protected characteristic (closed list, amended 1 Jul 2020), act paragraph (Abs. 1, 2, 4) and publicity.
@@ -71,7 +71,7 @@ sources:
     cite_lang: {fr: "ATF 130 IV 111 consid. 5.2", it: "DTF 130 IV 111 consid. 5.2"}
     kind: decision
     file: ../sources/bge_130_IV_111.json
-    ref: BGE 130 IV 111 E. 5.2 (6S.318/2003, 27 May 2004)
+    ref: BGE 130 IV 111 (6S.318/2003, 27 May 2004), Regeste summarising E. 5.2
     holding: >-
       Öffentlich im Sinne von Art. 261bis StGB sind Äusserungen, die nicht im privaten Rahmen erfolgen. Privat sind
       Äusserungen im Familien- und Freundeskreis oder sonst in einem durch persönliche Beziehungen oder besonderes
@@ -82,7 +82,7 @@ sources:
     cite_lang: {fr: "ATF 131 IV 23 consid. 3", it: "DTF 131 IV 23 consid. 3"}
     kind: decision
     file: ../sources/bge_131_IV_23.json
-    ref: BGE 131 IV 23 E. 3 (6S.64/2004, 6 Oct 2004)
+    ref: BGE 131 IV 23 (6S.64/2004, 6 Oct 2004), Regeste summarising E. 3
     holding: >-
       Als Herabsetzung oder Diskriminierung im Sinne von Art. 261bis Abs. 4 StGB erscheinen alle Verhaltensweisen,
       durch welche den Angehörigen einer Bevölkerungsgruppe aufgrund ihrer Rasse, Ethnie oder Religion die
@@ -148,14 +148,15 @@ elements:
     authority: [bge_131_iv_23]
     default: degrading
     values:
-      degrading:  {satisfied: true, note: the group's members are denied equal worth as human beings}
+      degrading:  {satisfied: true, note: "the group's members are denied, or at least questioned in, their equal worth as human beings or equal human rights"}
       criticism:  {satisfied: false, note: criticism of a religion's teachings or institutions that stays objective}
-      borderline: {satisfied: contested, note: a crude remark whose degrading character depends on wording the facts leave open}
+      borderline: {satisfied: contested, note: "a crude remark whose degrading character depends on wording the facts leave open; labelled open as a modelling choice (a court would acquit if the wording is not established, Art. 10 Abs. 3 StPO, and the criterion accepts that answer)"}
     fail_reason: >-
-      The statement targets the religion's teachings and institutions, not the members' worth as human beings;
-      degrading in the sense of Abs. 4 means denying the members equal worth as human beings (BGE 131 IV 23).
+      The statement targets the religion's teachings and institutions, not its members as human beings; degrading in
+      the sense of Abs. 4 means denying, or at least calling into question, the members' equal worth as human beings
+      or their equal human rights, and unfavourable criticism that stays objective does not suffice (BGE 131 IV 23 E. 3).
     contested_reason: >-
-      Whether the remark denies the group's members equal worth as human beings (BGE 131 IV 23 E. 3) depends on its
+      Whether the remark denies, or at least calls into question, the group's members' equal worth as human beings (BGE 131 IV 23 E. 3) depends on its
       exact wording and context, which the scenario leaves open.
 
   - id: setting

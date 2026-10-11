@@ -79,7 +79,7 @@ def compare():
         for c in coders:
             agree[c] += eng[c] == court
         rows.append(dict(blind_id=k["blind_id"], decision_id=k["decision_id"], url=k.get("url"), court=court,
-                         values=vals, engine=eng))
+                         values=vals, engine=eng, note=k.get("note")))
     n = len(rows)
     pair = (sum(r["values"].get("A") == r["values"].get("B") for r in rows) if {"A", "B"} <= set(coders) else None)
     rep = dict(cases=n, acquittals=sum(r["court"] == "acquit" for r in rows),

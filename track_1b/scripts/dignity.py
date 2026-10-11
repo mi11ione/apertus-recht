@@ -48,6 +48,9 @@ def build_split():
         _emit(OUT / "eval" / f"prompts_dignity_{lang}.jsonl", _jsonl(build.build_prompts(d, rows)))
         if not CHECK:
             print(lang, len(rows), "items,", collections.Counter(i["gold_verdict"] for i in rows))
+    from statute_twins.dataset import item_metadata
+    _emit(OUT / "metadata" / "items.jsonl", "".join(json.dumps(item_metadata(d, i, {}), ensure_ascii=False, sort_keys=True)
+                                                    + "\n" for i in items))
 
 
 def report():

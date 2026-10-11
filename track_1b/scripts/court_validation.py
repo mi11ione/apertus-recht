@@ -30,7 +30,13 @@ def classify(t: dict, st) -> dict:
     out = dict(decision_id=t["decision_id"], court=t["court"], language=t["language"], outcome=t["outcome"],
                verified=t.get("verified"))
     if not t.get("rules_on_261bis") or t["outcome"] not in ("convicted", "acquitted"):
-        return dict(out, status="excluded", why="does not rule on a 261bis charge" if not t.get("rules_on_261bis") else t["outcome"])
+        if t.get("rules_on_261bis"):
+            why = t["outcome"]
+        elif t["outcome"] in ("convicted", "acquitted"):
+            why = "not counted here: a duplicate instance of a case counted elsewhere, or a ruling the coders did not treat as deciding the charge (see the tuple's notes)"
+        else:
+            why = "no final ruling on a 261bis charge"
+        return dict(out, status="excluded", why=why)
     if t.get("paragraph") in ("abs3", "abs5"):
         return dict(out, status="out_of_scope", why=f"{t['paragraph']} not modelled")
     if t["outcome"] == "acquitted" and t.get("acquittal_ground") not in MODELLED_GROUNDS:

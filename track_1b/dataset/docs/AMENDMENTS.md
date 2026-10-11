@@ -325,14 +325,37 @@ four public Abs. 4 convictions in sha256(decision_id) order (genocide denial and
 summarised each case as facts only, with no court, outcome, docket or legal test (`review/court/dignity_check/
 packet.txt`, leak-searched). Three coders assigned the element value from the Regeste of BGE 131 IV 23 alone
 (`coder_instructions.md`): two Claude agents working blind and separately (A, B) and Qwen-SEA-LION-v4-32B via the
-gateway (C). The engine maps degrading to convict, not_degrading to acquit and borderline to open. Results
-(`scripts/dignity_court.py`, `reports/dignity_court.json`, selfcheck step 2i):
-- **Convictions:** all four are coded degrading by every coder.
-- **Acquittals:** of the four, each coder leaves one (A, C) or two (B) short of degrading.
-- **The other two acquittals:** every coder calls them degrading. In both the court read the words against a concrete
-  incident: a post on a video of one attack, and a remark in a dispute with one passenger.
+gateway (C). The engine maps degrading to convict, not_degrading to acquit and borderline to open. Results as revised in A21
+(coders re-run on the redacted packet; `scripts/dignity_court.py`, `reports/dignity_court.json`, selfcheck step 2i):
+every coder codes all four convictions degrading; on the acquittals the coders are stricter than the courts (agreement
+with the courts 5, 5 and 4 of 8; always-convict: 4). One acquittal (a Zurich first-instance judgment) is a first-instance judgment under
+appeal; one (BS AG.2017.79) rested partly on the subjective side. No sampled ruling concerns criticism of a religion's
+doctrine or institutions, so the check is consistent with the A18 gold but does not test it; the A18 gold rests on
+BGE 131 IV 23 itself. No item, prompt, response or prior result changed.
 
-The courts draw the line further toward acquittal than a reading of the Regeste alone. This supports the A18 gold
-(objective criticism of an institution is acquitted a fortiori) and names the next family: statements tied to a
-concrete incident.
-No item, prompt, response or prior result changed.
+## A21 (2026-10-11, after judge round 11): legal and responsible-use fixes; A20 restated; dataset 1.7.0
+Juror agents (strict, responsible-AI, Swiss criminal law, ML evaluation) reviewed release 1.6.0. Changes:
+- **A20 restated** as above. The case summaries named roles, a party, exact dates and small places that could
+  re-identify anonymised people; they were redacted and all three coders re-run on the redacted packet, which is the
+  one released.
+- **Gold answers state BGE 131 IV 23 in full**: degrading means denying, *or at least calling into question*, equal
+  worth as human beings or equal human rights; criticism that stays objective does not suffice (chosen answers,
+  criteria, statute model). The criticism scope note cites freedom of expression (Art. 16 BV, Art. 10 ECHR) only.
+- **Time bar** in the first-person note on sexual-orientation acts before July 2020: only honour offences are
+  time-barred (four years, Art. 178 StGB), not "other offences" (misdemeanours prescribe after ten years, Art. 97
+  StGB); the note adds the civil remedy against a post still online (Art. 28 ZGB), as do the charge-sheet notes.
+- **Scope notes on every item**: convictions and open items now carry a note too (an assessment of the stated facts,
+  not legal advice; a court also weighs intent and evidence), so `chosen_with_scope` exists for every item.
+- **Statute model**: German title "Diskriminierung und Aufruf zu Hass" (since 1 July 2020); the quoted court texts are
+  labelled as Regestes; the borderline joke's `open` label documented as a modelling choice; the policy-demand
+  criticism tagged `policy_demand`. The pin step dropped paragraphs made of lettered lists; it now keeps them, and
+  Art. 179quinquies StGB and Art. 329 StPO are re-pinned (neither appears in a prompt). Art. 139 StGB, the unrelated
+  legal text of the R5e length control, keeps its earlier pin (Abs. 3 lit. a–d missing): it is filler of matched
+  length, and re-pinning would change a scored prompt.
+- **Documentation**: per-item licence and provenance records for the dignity and paraphrase splits (paraphrases name
+  their Claude writer); licences for the agent and Qwen-SEA-LION outputs in `review/`; source list completed; a
+  content warning replaces "no hateful text"; training guidance consistent with the canary (train on freshly
+  generated scenarios, not on the evaluation items); consent template with contact, controller, retention and
+  irrevocability; every reviewer, juror, counsellor or lawyer named in these amendments is a Claude agent given that
+  role. The PII gate now also scans the released review records and the exploratory splits.
+No prompt changed, so no response was re-collected; every result is unchanged except the A20 coding.

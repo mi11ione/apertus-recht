@@ -46,8 +46,8 @@ slot_labels:
     cont_office: "eine E-Mail an rund 25 frühere und heutige Arbeitskolleginnen und -kollegen"
     cont_assoc: "eine nicht öffentliche Vereinssitzung mit rund 25 Mitgliedern, teils langjährig bekannt, teils neu"
 chosen:
-  "dignity:failed": "Nein. Die Äusserung richtet sich gegen die Lehren und Institutionen einer Religion, nicht gegen die Gleichwertigkeit ihrer Angehörigen als Menschen; herabsetzend im Sinn von Art. 261bis Abs. 4 StGB ist nur, wer den Angehörigen die Gleichwertigkeit als Menschen abspricht (BGE 131 IV 23)."
-  "dignity:contested": "Das hängt vom genauen Wortlaut ab, den der Sachverhalt offen lässt. Entscheidend ist nach BGE 131 IV 23 E. 3, ob der Witz den Angehörigen der Religion die Gleichwertigkeit als Menschen abspricht oder nur derb und geschmacklos ist."
+  "dignity:failed": "Nein. Die Äusserung richtet sich gegen die Lehren und Institutionen einer Religion, nicht gegen ihre Angehörigen als Menschen; herabsetzend im Sinn von Art. 261bis Abs. 4 StGB ist, wer den Angehörigen die Gleichwertigkeit als menschliche Wesen oder die Gleichberechtigung in Bezug auf die Menschenrechte abspricht oder zumindest in Frage stellt, und Kritik, die sachlich bleibt, erfüllt den Tatbestand nicht (BGE 131 IV 23 E. 3)."
+  "dignity:contested": "Das hängt vom genauen Wortlaut ab, den der Sachverhalt offen lässt. Entscheidend ist nach BGE 131 IV 23 E. 3, ob der Witz den Angehörigen der Religion die Gleichwertigkeit als Menschen abspricht oder zumindest in Frage stellt oder nur derb und geschmacklos ist."
   convict: "Ja. Die Äusserung erfolgte öffentlich im Sinne von BGE 130 IV 111 E. 5.2 ({setting_label}); sie richtet sich gegen eine Gruppe wegen eines geschützten Merkmals ({char_label}) und erfüllt den Tatbestand von Art. 261bis {paragraph_label}. Die Tat {date} fällt in den zeitlichen Geltungsbereich."
   "setting:failed": "Nein. {Setting_label} ist ein privater Rahmen, der durch persönliche Beziehungen geprägt ist; nach BGE 130 IV 111 E. 5.2 fehlt damit die Öffentlichkeit, die Art. 261bis StGB voraussetzt."
   "characteristic:not_listed": "Nein. Das Merkmal «{char_label}» gehört nicht zur abschliessenden Liste von Art. 261bis StGB (Rasse, Ethnie, Religion, sexuelle Orientierung); die Äusserung ist nach dieser Bestimmung nicht strafbar, auch wenn sie öffentlich erfolgte."
@@ -100,7 +100,9 @@ traps:
     - "Nein. Die Tat liegt vor der Revision von 2020, und das Gesetz gilt nicht rückwirkend."
 # A17/A19: case-specific (looked up as <reason>|<characteristic>, <reason>, verdict); not part of the scored `chosen` answer
 scope_note:
+  "convict": "Das ist eine Einschätzung nach der Schilderung, keine Rechtsberatung: Ein Gericht prüft zudem Vorsatz, Beweislage und die Umstände. Im eigenen Fall hilft eine Anwältin oder ein Anwalt."
+  "open": "Ob das strafbar ist, hängt von Umständen ab, die die Schilderung offenlässt (genauer Wortlaut, Zusammenhang). Im eigenen Fall hilft eine Anwältin oder ein Anwalt."
   "acquit": "«Nicht strafbar nach Art. 261bis StGB» heisst nicht folgenlos: Ist eine bestimmte oder bestimmbare Person betroffen, sind eine Ehrverletzung (Art. 173 ff. StGB) oder eine Persönlichkeitsverletzung (Art. 28 ZGB) möglich, am Arbeitsplatz oder im Mietverhältnis auch arbeits- oder mietrechtliche Folgen."
-  "characteristic:not_yet_covered": "Art. 261bis galt für diese Tat noch nicht; andere Delikte aus dieser Zeit wären heute verjährt."
+  "characteristic:not_yet_covered": "Art. 261bis galt für diese Tat noch nicht; Ehrverletzungen aus dieser Zeit wären heute verjährt (vier Jahre, Art. 178 StGB). Ist die Äusserung noch online und betrifft sie eine bestimmte Person, kann diese zivilrechtlich dagegen vorgehen (Art. 28 ZGB)."
   "act_date:not_in_force": "Art. 261bis galt für diese Tat noch nicht; andere Delikte aus dieser Zeit wären heute verjährt."
-  "dignity:failed": "Sachliche Kritik an einer Religion und ihren Institutionen ist durch die Meinungs- und Religionsfreiheit geschützt (Art. 15 und 16 BV, Art. 9 und 10 EMRK). Art. 261 StGB erfasst erst, wer die Glaubensüberzeugung anderer öffentlich und in gemeiner Weise beschimpft oder verspottet."
+  "dignity:failed": "Sachliche Kritik an einer Religion und ihren Institutionen ist durch die Meinungsfreiheit geschützt (Art. 16 BV, Art. 10 EMRK). Art. 261 StGB erfasst erst, wer die Glaubensüberzeugung anderer öffentlich und in gemeiner Weise beschimpft oder verspottet."

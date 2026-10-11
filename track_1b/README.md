@@ -1,10 +1,10 @@
 # Apertus-Recht
 
-**Which racial-discrimination law does Apertus apply?** Not the one in force. Asked whether a statement is punishable
+**Which version of the Swiss anti-discrimination law does Apertus apply?** Not the one in force. Asked whether a statement is punishable
 under Art. 261bis StGB, Apertus v1.5 convicts for words said only at a family dinner, for degrading statements about a canton or
 a profession, and for acts before the article entered into force (1 Jan 1995). Rules spelled out in the prompt fix
 some elements and leave others standing; in German, the verbatim law text, as a retrieval pipeline would paste it,
-changes no verdict. Intent and the dignity threshold are stated in the charge-sheet scenarios, so this measures how the model
+changes no verdict. Intent and, outside the dignity family, the dignity threshold are stated in the charge-sheet scenarios, so this measures how the model
 applies the elements, not whether it predicts a conviction.
 
 ![Synopse: the law in force next to the law Apertus applies](docs/figures/fig1_synopse.png)
@@ -44,10 +44,10 @@ R4: plus a sentence on the 1 July 2020 extension; R5: the verbatim Fedlex text a
   ones acquitted without the law, 47 with the rules, against 2 and 44 for the templated originals. Told in a person's
   own words, in German, French and Italian, it is the same again without the law (0 to 4 of 215), and the rules
   then work somewhat better than on the charge sheet.
-- **Criticism of a religion is punished as racial discrimination.** Where the dignity threshold decides (BGE 131 IV
-  23: degrading the believers is punishable, criticising a religion's institutions is not), the German 70B convicts
-  11 of 20 criticisms without the law and 18 of 20 with the law and that leading case pasted in; French 3 and 8,
-  Italian 6 and 10. Degrading statements are convicted every time (A18).
+- **In German, objective criticism of a religion is punished as discrimination.** Where the dignity threshold decides
+  (BGE 131 IV 23: denying, or at least questioning, equal human worth is punishable; unfavourable criticism that stays
+  objective is not), measured on four institution-level criticisms, the German 70B convicts 11 of 20 without the law
+  and 18 of 20 with the law and that leading case pasted in; French 3 and 8, Italian 6 and 10 (A18).
 - **Not only this article.** A second statute in the same five-file format, Art. 179ter StGB (recording a non-public
   conversation, with a complaint deadline), fails in another shape: without the law the 70B answers "Nein" to all 120
   cases when asked Ja/Nein and "schuldig" to 117 when asked for a verdict, so it reads no element at all; with the
@@ -56,11 +56,12 @@ R4: plus a sentence on the 1 July 2020 extension; R5: the verbatim Fedlex text a
 - **The date sentence backfires.** One sentence saying that sexual orientation is protected since 1 July 2020 makes the
   70B stop convicting punishable cases from 2021–25: with the verdict word it convicts 0 of 35 in German, 1 in French,
   5 in Italian (with Ja/Nein, Italian holds up: 29 of 35).
-- **Pre-registered and verified on every run.** Fitted on two wording families, a read-back of the law the model
-  applies predicts the third better than the statute in every cell; the pre-registered bar (15 points in every
-  framing) is met at R0 and, for the 8B in Italian, at R3, so the per-element table above is the reported result, as
-  the pre-registered rule prescribes. Every number in this README is checked against its results file.
-- **Where it comes from: post-training.** In the 8B at full precision (one checkpoint pair), the DPO step cuts correct acquittals under stated
+- **Pre-registered, reported as locked.** Fitted on two wording families, a read-back of the law the model applies
+  predicts the third better than the statute in 23 of 24 cells at R3 and R4 (−1.9 to +22 points). The locked bar (15
+  points in every framing) is met at R3 for the 8B in Italian and missed elsewhere (the German 70B by under a point);
+  at R0 it is met trivially, since the model convicts everything. So the result is the per-element table above, as
+  the locked rule prescribes. Every number in this README is checked against its results file.
+- **A lead on where it comes from: post-training.** In the 8B at full precision (one checkpoint pair), the DPO step cuts correct acquittals under stated
   rules from 185 to 146 of 220 while keeping every conviction; a 4-bit MLX conversion changes 100 of 648 verdicts, the
   public Q8_0 GGUF 10.
 
@@ -75,11 +76,16 @@ Hack Apertus 2026 · Track 1B (Swiss Voices, behavioural alignment) · team 444 
 > carries a note fitted to the case (`scope_note`, A17, A19): honour and personality claims (Art. 173 ff. StGB,
 > Art. 28 ZGB) only where a particular person is targeted, the counselling service that fits (racism, LGBTIQ,
 > disability, equality at work), time bars for old acts, and, for criticism of a religion, that it is protected speech.
+> Every punishable and open scenario carries one too: an assessment of the stated facts, not legal advice; a court
+> also weighs intent and evidence (A21). The items are evaluation data (canary string); to train, generate fresh
+> scenarios with another seed. **Content warning:** some dignity items state degrading content in substance (a group
+> called vermin); no slur is spelled out. Every reviewer, juror or counsellor named in this repository is a Claude
+> agent given that role.
 
 ## Run it
 
 ```bash
-make run                                 # Docker, CPU, no model, no key: ~25 s
+make run                                 # Docker, CPU, no model, no key: about a minute
 # without Docker (Python >= 3.10):
 pip install -e ".[dev]" && statute-twins selfcheck
 ```
@@ -130,13 +136,14 @@ Exact forced choice on vLLM endpoints, first-token log-probabilities elsewhere, 
   third on conflicts, under a pre-registered rule: the engine agrees with the court in 57/57 rulings on the elements it
   models (Wilson 95% 0.94–1.00). Counted per distinct case, with repeat instances merged and the Perinçek conviction
   left out (revised after the ECtHR found a violation of Art. 10 ECHR), it is 52/52, 6 of them genocide denial (post
-  hoc, A12, A15). Every ruling agrees, including both acquittals on a modelled ground (one on
-  the closed list, one on publicity; 55 of the 57 are convictions, so an always-convict engine would reach 55). The
-  dignity threshold (modelled in A18) is checked on its own rulings (A20): eight cases summarised as facts only, coded
-  blind under BGE 131 IV 23 by three coders of two model families. Every coder codes 4 of 4 convictions degrading; for
-  2 of 4 acquittals all three do too, and in both the court read the words against one concrete incident. The courts
-  acquit further than the Regeste read alone, so the A18 gold (objective criticism acquitted) holds a fortiori, and
-  incident-bound statements are the next family. Rulings on intent and freedom of expression map the rest.
+  hoc, A12, A15). Every ruling agrees in outcome. 55 of the 57 are convictions (an always-convict engine
+  would reach 55); of the two acquittals, one agrees on the court's own ground, the closed list; the other, a publicity
+  acquittal, the engine reaches on another ground (foreigners are not a listed group), so no court acquittal checks
+  the publicity element itself. The dignity threshold (A18) is read against eight rulings of its own (A20): facts
+  only, coded blind under BGE 131 IV 23 by three coders of two model families. Every coder codes 4 of 4 convictions
+  degrading; on the four acquittals the coders are stricter than the courts (agreement 5, 5 and 4 of 8;
+  always-convict: 4), as Apertus is. One acquittal is under appeal and one rested partly on intent; no ruling concerns
+  criticism of doctrine or institutions, so the check is consistent with the A18 gold but does not test it.
 - **Against the training data.** 0 of 35,241 item 13-grams occur in the 1,069,365 decisions of `voilaj/swiss-caselaw`
   (in the Apertus v1.5 training data); the same scan finds 846 of 1,525 13-grams of the statute itself.
 - **Against our own earlier numbers.** The analysis reproduces the published exploration results exactly, and replays

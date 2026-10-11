@@ -85,12 +85,21 @@ CHECK = "--check" in sys.argv
 DIFFS = []
 
 
+def _meta(d, it: dict, note: str) -> dict:
+    """Per-item licence and provenance record, as in the core set's metadata/items.jsonl."""
+    from statute_twins.dataset import item_metadata
+    m = item_metadata(d, it, {})
+    m["licence_components"][0]["note"] = note
+    return m
+
+
 def _emit(path: Path, text: str):
     """Write a file, or with --check compare it with the released one (selfcheck re-derives the split)."""
     if CHECK:
         if not path.exists() or path.read_text(encoding="utf-8") != text:
             DIFFS.append(str(path.relative_to(ROOT)))
         return
+    path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(text, encoding="utf-8")
 
 
@@ -122,6 +131,7 @@ def sample():
 
 
 def extract_packets():
+    meta = []
     for lang in LANGS:
         d = REV / lang
         written = {x["id"]: x for x in json.loads((d / "written.json").read_text(encoding="utf-8"))}
@@ -144,6 +154,7 @@ def extract(who: str):
             else http_transport(base, os.environ.get("LLM_API_KEY")))
     fmt = ('Reply with one JSON object only: {"setting": ..., "characteristic": ..., "act_date": ..., "act": ..., '
            '"severe": true|false, "deliberate": true|false}')
+    meta = []
     for lang in LANGS:
         d = REV / lang
         written = json.loads((d / "written.json").read_text(encoding="utf-8"))
@@ -232,6 +243,7 @@ def check():
     from statute_twins.generator import build, design
     dz = design.load(ROOT / "statutes/stgb_261bis")
     (OUT / "eval").mkdir(parents=True, exist_ok=True)
+    meta = []
     for lang in LANGS:
         d = REV / lang
         written = {x["id"]: x for x in json.loads((d / "written.json").read_text(encoding="utf-8"))}
@@ -239,12 +251,19 @@ def check():
         rows = []
         for pid, iid in keep_all[lang]:
             i = dict(its[iid])
+            prov = dict(i.get("provenance") or {}, text_source=(
+                "paraphrase written by a Claude agent from the original item's facts (A16); facts verified blind by a "
+                "Claude reader and Qwen-SEA-LION-v4-32B (reports/paraphrase_verification.json); gold, facts and "
+                "reference answers are the original item's"))
             i.update(id=iid + "-P", text=written[pid]["text"], subset="paraphrase", paraphrase_of=iid,
-                     genre=written[pid]["genre"], paraphrase_id=pid)
+                     genre=written[pid]["genre"], paraphrase_id=pid, provenance=prov)
             rows.append(i)
+            meta.append(_meta(dz, i, "paraphrase written by a Claude agent (A16) from the original item; gold and "
+                                     "reference answers from the templates in metadata/generator"))
         _emit(OUT / "eval" / f"paraphrase_{lang}.jsonl", "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows))
         prompts = build.build_prompts(dz, rows, rungs=["R0", "R3", "R5"], framings=["conv", "ver"])
         _emit(OUT / "eval" / f"prompts_paraphrase_{lang}.jsonl", "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in prompts))
+    _emit(OUT / "metadata" / "items.jsonl", "".join(json.dumps(r, ensure_ascii=False, sort_keys=True) + "\n" for r in meta))
     _emit(ROOT / "reports/paraphrase_verification.json", json.dumps(rep, indent=1, ensure_ascii=False) + "\n")
 
 

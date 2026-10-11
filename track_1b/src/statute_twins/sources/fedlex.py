@@ -83,16 +83,44 @@ def _text(el: ET.Element) -> str:
     return re.sub(r"\s+", " ", "".join(parts)).strip()
 
 
+def _block_list(bl: ET.Element) -> str:
+    """One lettered/numbered list (AKN <blockList>) as a single string: the list introduction, then every item as
+    "num text" (nested lists rendered recursively), then any wrap-up text, separated by single spaces. Example:
+    "Die Verfahrensleitung prüft, ob: a. die Anklageschrift ...; b. die Prozessvoraussetzungen ...; c. ..."."""
+    parts: list[str] = []
+    for ch in bl:
+        if ch.tag in (AKN + "listIntroduction", AKN + "listWrapUp"):
+            parts.append(_text(ch))
+        elif ch.tag == AKN + "item":
+            item: list[str] = []
+            for sub in ch:
+                if sub.tag == AKN + "num":
+                    item.append(_text(sub))
+                elif sub.tag == AKN + "blockList":
+                    item.append(_block_list(sub))
+                else:
+                    item.append(_text(sub))
+            parts.append(" ".join(t for t in item if t))
+    return " ".join(t for t in parts if t)
+
+
 def extract_article(xml: bytes, eid: str) -> tuple[list[str], list[str]]:
     """(content paragraphs, footnotes) of one article. Paragraphs are the <p> under <content> with footnotes removed;
-    footnotes (amendment history: inserting act, in-force date, AS reference) are kept separately. Whitespace normalised."""
+    a lettered list (<blockList>: introduction plus lit. a, b, c ...) is one paragraph that includes all its items, so a
+    paragraph with a list is never dropped and the array stays aligned with the Abs. numbers. Footnotes (amendment
+    history: inserting act, in-force date, AS reference) are kept separately. Whitespace normalised."""
     root = ET.fromstring(xml)
     for art in root.iter(AKN + "article"):
         if art.get("eId") == eid:
             paras = []
             for content in art.iter(AKN + "content"):
-                for p in content.findall(AKN + "p"):
-                    t = _text(p)
+                for ch in content:
+                    if ch.tag == AKN + "p":
+                        t = _text(ch)
+                    elif ch.tag == AKN + "blockList":
+                        t = _block_list(ch)
+                    else:
+                        continue
                     if t:
                         paras.append(t)
             notes = [re.sub(r"\s+", " ", "".join(n.itertext())).strip() for n in art.iter(AKN + "authorialNote")]

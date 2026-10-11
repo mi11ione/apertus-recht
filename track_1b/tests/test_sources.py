@@ -82,3 +82,27 @@ def test_261bis_versions_differ_exactly_by_sexual_orientation():
     # publicity is an element of Abs. 1, 2 and 4 (and not of Abs. 5), in force and before
     paras = _rec(st, "fedlex_261bis_2026", "de")["paragraphs"]
     assert [("öffentlich" in p) for p in paras[:5]] == [True, True, False, True, False]
+
+
+def test_pin_keeps_paragraphs_with_lettered_lists():
+    """A paragraph made of a list (introduction + lit. a, b ...) is one entry with its items, nested lists included."""
+    from statute_twins.sources.fedlex import extract_article
+    xml = b"""<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0"><body><article eId="art_9">
+    <paragraph eId="art_9/para_1"><num>1</num><content><blockList><listIntroduction> Strafbar ist, wer:</listIntroduction>
+    <item><num>a. </num><p>erstens;</p></item><item><num>b. </num><blockList><listIntroduction>zweitens:</listIntroduction>
+    <item><num>1. </num><p>unter eins,</p></item></blockList></item></blockList></content></paragraph>
+    <paragraph eId="art_9/para_2"><num>2</num><content><p> Zweiter Absatz.<authorialNote><p>Fn.</p></authorialNote></p>
+    </content></paragraph></article></body></akomaNtoso>"""
+    paras, notes = extract_article(xml, "art_9")
+    assert paras == ["Strafbar ist, wer: a. erstens; b. zweitens: 1. unter eins,", "Zweiter Absatz."]
+    assert notes == ["Fn."]
+
+
+def test_pinned_list_paragraphs_are_present():
+    """Regression: Art. 179quinquies Abs. 1 (lit. a/b, the exemption the 179ter answers cite) and Art. 329 Abs. 1 StPO."""
+    from conftest import STATUTES
+    st = S.load(STATUTES / "stgb_179ter")
+    q = _rec(st, "fedlex_179quinquies", "de")["paragraphs"]
+    assert len(q) == 2 and "a. mit Hilfs-, Rettungs- und Sicherheitsdiensten" in q[0] and "b. im Geschäftsverkehr" in q[0]
+    p = _rec(st, "fedlex_stpo_329", "de")["paragraphs"]
+    assert len(p) == 5 and p[0].startswith("Die Verfahrensleitung prüft, ob: a.") and "c. Verfahrenshindernisse" in p[0]

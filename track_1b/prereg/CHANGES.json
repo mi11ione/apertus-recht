@@ -5,14 +5,16 @@
   "A7",
   "A8",
   "A18",
-  "A19"
+  "A19",
+  "A21"
  ],
  "statutes/stgb_261bis/design.yaml": [
   "A1",
   "A3",
   "A8",
   "A18",
-  "A19"
+  "A19",
+  "A21"
  ],
  "src/statute_twins/analysis/heldout.py": [
   "A6",
@@ -32,7 +34,8 @@
   "A11",
   "A17",
   "A18",
-  "A19"
+  "A19",
+  "A21"
  ],
  "dataset/eval/core_fr.jsonl": [
   "A2",
@@ -43,7 +46,8 @@
   "A8",
   "A17",
   "A18",
-  "A19"
+  "A19",
+  "A21"
  ],
  "dataset/eval/core_it.jsonl": [
   "A2",
@@ -54,20 +58,21 @@
   "A8",
   "A17",
   "A18",
-  "A19"
+  "A19",
+  "A21"
  ],
  "prereg/PREREG_court.md": [
   "stratum B (LOCK_court.json: stratum_B)",
   "A4"
  ],
  "sha256_now": {
-  "statutes/stgb_261bis/statute.yaml": "9e26c0153f30891fd40ca544161ca6f5e5b377e68e8c051bf5c6099f83fc6124",
-  "statutes/stgb_261bis/design.yaml": "fbea1b8ac0621a349100002104131094f856961896cffabe5ef3d11d74b4c97b",
+  "statutes/stgb_261bis/statute.yaml": "335993999c0ae16fc25dfab34a101c5c08b51b2a3d30ed657aed8fdeb801376a",
+  "statutes/stgb_261bis/design.yaml": "7ebee1cd6dbe74e40ad14eea9042f2bd306771cbe969dbc5ab9619850ab1cf50",
   "src/statute_twins/analysis/heldout.py": "32837662139ab1b88c5add3fd8872adcd37e02803e061d15ffc083e7a06200e5",
   "src/statute_twins/analysis/results.py": "6e9e22256e237b373a2c72b205d2d21e760e72acedb00e6fff232446bf7218f9",
-  "dataset/eval/core_de.jsonl": "e0c0126537a5bad9658345ef10516a08b4e89939d879de5e3f8a213565e7d7c4",
-  "dataset/eval/core_fr.jsonl": "0d8e306999cddcf0f6afd31b2904d03351d3684bd3defef6c11c715bbcb469d0",
-  "dataset/eval/core_it.jsonl": "690065310714c96d7f0f1c239fb895cdb96122385aaf666947bfaed0d416745b",
+  "dataset/eval/core_de.jsonl": "c2da096eac5ffffd485518ce3fbbc6277173e4cf171bab2687c876baeb7097b7",
+  "dataset/eval/core_fr.jsonl": "64f9fb716784cc5d3ef37b88badd1e56527d5bc3865011d19d5674700f43901e",
+  "dataset/eval/core_it.jsonl": "eea534c0bd13cc20988fc870734e03abb7b8de0f2975ffcc4514c9cfb635cad2",
   "prereg/PREREG_court.md": "65723983e22a3d684b172af35cc7fea6e74246869fc71fde88e852b8e020634f",
   "src/statute_twins/gold/engine.py": "e06f5cbdf72505a019c7c7427c54c3d7e75f5df3279b44303176a9d97da419be"
  },
